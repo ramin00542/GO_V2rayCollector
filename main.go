@@ -23,24 +23,36 @@ var (
 	maxMessages  = 100
 	ConfigsNames = "@Vip_Security join us"
 	configs      = map[string]string{
-		"ss":     "",
-		"vmess":  "",
-		"trojan": "",
-		"vless":  "",
-		"mixed":  "",
+		"ss":         "",
+		"vmess":      "",
+		"trojan":     "",
+		"vless":      "",
+		"http":       "",
+		"socks":      "",
+		"wireguard":  "",
+		"hysteria2":  "",
+		"mixed":      "",
 	}
 	ConfigFileIds = map[string]int32{
-		"ss":     0,
-		"vmess":  0,
-		"trojan": 0,
-		"vless":  0,
-		"mixed":  0,
+		"ss":        0,
+		"vmess":     0,
+		"trojan":    0,
+		"vless":     0,
+		"http":      0,
+		"socks":     0,
+		"wireguard": 0,
+		"hysteria2": 0,
+		"mixed":     0,
 	}
 	myregex = map[string]string{
-		"ss":     `(?m)(...ss:|^ss:)\/\/.+?(%3A%40|#)`,
-		"vmess":  `(?m)vmess:\/\/.+`,
-		"trojan": `(?m)trojan:\/\/.+?(%3A%40|#)`,
-		"vless":  `(?m)vless:\/\/.+?(%3A%40|#)`,
+		"ss":        `(?m)(...ss:|^ss:)\/\/.+?(%3A%40|#)`,
+		"vmess":     `(?m)vmess:\/\/.+`,
+		"trojan":    `(?m)trojan:\/\/.+?(%3A%40|#)`,
+		"vless":     `(?m)vless:\/\/.+?(%3A%40|#)`,
+		"http":      `(?m)https?:\/\/[^\s]+`,
+		"socks":     `(?m)socks(?:5)?:\/\/[^\s]+`,
+		"wireguard": `(?m)wireguard:\/\/[^\s]+`,
+		"hysteria2": `(?m)hysteria2:\/\/[^\s]+`,
 	}
 	sort = flag.Bool("sort", false, "sort from latest to oldest (default : false)")
 )
@@ -93,12 +105,12 @@ func main() {
 		lines := collector.RemoveDuplicate(configcontent)
 		lines = AddConfigNames(lines, proto)
 		if *sort {
-			// 		from latest to oldest mode :
+			// from latest to oldest mode :
 			linesArr := strings.Split(lines, "\n")
 			linesArr = collector.Reverse(linesArr)
 			lines = strings.Join(linesArr, "\n")
 		} else {
-			// 		from oldest to latest mode :
+			// from oldest to latest mode :
 			linesArr := strings.Split(lines, "\n")
 			linesArr = collector.Reverse(linesArr)
 			linesArr = collector.Reverse(linesArr)
@@ -106,7 +118,6 @@ func main() {
 		}
 		lines = strings.TrimSpace(lines)
 		collector.WriteToFile(lines, proto+"_iran.txt")
-
 	}
 
 	gologger.Info().Msg("All Done :D")
@@ -114,11 +125,11 @@ func main() {
 }
 
 func AddConfigNames(config string, configtype string) string {
-	configs := strings.Split(config, "\n")
+	configsList := strings.Split(config, "\n")
 	newConfigs := ""
 	for protoRegex, regexValue := range myregex {
 
-		for _, extractedConfig := range configs {
+		for _, extractedConfig := range configsList {
 
 			re := regexp.MustCompile(regexValue)
 			matches := re.FindStringSubmatch(extractedConfig)
@@ -137,7 +148,6 @@ func AddConfigNames(config string, configtype string) string {
 							newConfigs += extractedConfig + ConfigsNames + " - " + strconv.Itoa(int(ConfigFileIds[configtype])) + "\n"
 						}
 					} else {
-
 						ConfigFileIds[configtype] += 1
 						newConfigs += extractedConfig + ConfigsNames + " - " + strconv.Itoa(int(ConfigFileIds[configtype])) + "\n"
 					}
@@ -160,11 +170,9 @@ func CrawlForV2ray(doc *goquery.Document, channelLink string, HasAllMessagesFlag
 		doc = GetMessages(maxMessages, doc, number, channelLink)
 	}
 
-	// extract v2ray based on message type and store configs at [configs] map
 	if HasAllMessagesFlag {
 		// get all messages and check for v2ray configs
 		doc.Find(".tgme_widget_message_text").Each(func(j int, s *goquery.Selection) {
-			// For each item found, get the band and title
 			messageText, _ := s.Html()
 			str := strings.Replace(messageText, "<br/>", "\n", -1)
 			doc, _ := goquery.NewDocumentFromReader(strings.NewReader(str))
@@ -176,26 +184,32 @@ func CrawlForV2ray(doc *goquery.Document, channelLink string, HasAllMessagesFlag
 				for _, extractedConfig := range extractedConfigs {
 					extractedConfig = strings.ReplaceAll(extractedConfig, " ", "")
 					if extractedConfig != "" {
-
-						// check if it is vmess or not
-						re := regexp.MustCompile(myregex["vmess"])
-						matches := re.FindStringSubmatch(extractedConfig)
-
-						if len(matches) > 0 {
-							extractedConfig = EditVmessPs(extractedConfig, "mixed", false)
-							if line != "" {
-								configs["mixed"] += extractedConfig + "\n"
+						// Determine which protocol this config belongs to
+						matched := false
+						for protoRegex, regexValue := range myregex {
+							re := regexp.MustCompile(regexValue)
+							if re.MatchString(extractedConfig) {
+								if protoRegex == "vmess" {
+									extractedConfig = EditVmessPs(extractedConfig, protoRegex, false)
+									if extractedConfig != "" {
+										configs[protoRegex] += extractedConfig + "\n"
+									}
+								} else {
+									configs[protoRegex] += extractedConfig + "\n"
+								}
+								matched = true
+								break
 							}
-						} else {
+						}
+						if !matched {
 							configs["mixed"] += extractedConfig + "\n"
 						}
-
 					}
 				}
 			}
 		})
 	} else {
-		// get only messages that are inside code or pre tag and check for v2ray configs
+		// get only messages that are inside code or pre tag
 		doc.Find("code,pre").Each(func(j int, s *goquery.Selection) {
 			messageText, _ := s.Html()
 			str := strings.ReplaceAll(messageText, "<br/>", "\n")
@@ -206,9 +220,7 @@ func CrawlForV2ray(doc *goquery.Document, channelLink string, HasAllMessagesFlag
 			for _, data := range lines {
 				extractedConfigs := strings.Split(ExtractConfig(data, []string{}), "\n")
 				for protoRegex, regexValue := range myregex {
-
 					for _, extractedConfig := range extractedConfigs {
-
 						re := regexp.MustCompile(regexValue)
 						matches := re.FindStringSubmatch(extractedConfig)
 						if len(matches) > 0 {
@@ -225,18 +237,13 @@ func CrawlForV2ray(doc *goquery.Document, channelLink string, HasAllMessagesFlag
 										configs[protoRegex] += extractedConfig + "\n"
 									}
 								} else {
-
 									configs[protoRegex] += extractedConfig + "\n"
 								}
-
 							}
 						}
-
 					}
-
 				}
 			}
-
 		})
 	}
 }
