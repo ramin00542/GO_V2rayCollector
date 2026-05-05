@@ -31,6 +31,8 @@ var (
 		"socks":      "",
 		"wireguard":  "",
 		"hysteria2":  "",
+		"mtproto":    "", // Telegram proxy (MTProto)
+		"slipnet":    "", // Slipnet proxy
 		"mixed":      "",
 	}
 	ConfigFileIds = map[string]int32{
@@ -42,6 +44,8 @@ var (
 		"socks":     0,
 		"wireguard": 0,
 		"hysteria2": 0,
+		"mtproto":   0,
+		"slipnet":   0,
 		"mixed":     0,
 	}
 	myregex = map[string]string{
@@ -53,6 +57,8 @@ var (
 		"socks":     `(?m)socks(?:5)?:\/\/[^\s]+`,
 		"wireguard": `(?m)wireguard:\/\/[^\s]+`,
 		"hysteria2": `(?m)hysteria2:\/\/[^\s]+`,
+		"mtproto":   `(?m)tg:\/\/proxy\?[^\s]+`,          // Format: tg://proxy?server=...&port=...&secret=...
+		"slipnet":   `(?m)slipnet:\/\/[^\s]+`,            // Format: slipnet://...
 	}
 	sort = flag.Bool("sort", false, "sort from latest to oldest (default : false)")
 )
