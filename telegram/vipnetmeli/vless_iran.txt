@@ -1,1 +1,1 @@
-vless://7a0e5a9f-8ab0-4fec-b3cc-d97402e3667d@silver.api-tel.xyz:443?path=%2F&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&fp=firefox&type=ws&sni=dany.api-tel.xyz#
+vless://7a0e5a9f-8ab0-4fec-b3cc-d97402e3667d@silver.api-tel.xyz:443?path=%2F&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&fp=firefox&type=ws&sni=dany.api-tel.xyz#-Vipnetmeli

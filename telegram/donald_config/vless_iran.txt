@@ -1,4 +1,2 @@
-vless://7aab6c59-79e1-43b7-e841-730092149afe@104.25.254.88:2096?mode=gun&security=tls&encryption=none&alpn=h2,http/1.1&type=grpc&serviceName=&sni=arxx.amshvip.ir#%40DoNaLD_VpN
-vless://a8b2b399-0614-4045-f38d-ba74d8ed31e5@arxx.amshvip.ir:8443?mode=gun&security=tls&encryption=none&alpn=h2,http/1.1&type=grpc&serviceName=&sni=elv1.amshvip.ir#%40DoNaLD_VpN
-vless://a8b2b399-0614-4045-f38d-ba74d8ed31e5@arxx.amshvip.ir:8443?mode=gun&security=tls&encryption=none&alpn=h2,http/1.1&type=grpc&serviceName=&sni=elv1.amshvip.ir#
-vless://f189beb3-12b1-430b-a270-c759c9e29810@185.146.173.32:2096?mode=gun&security=tls&encryption=none&alpn=h2,http/1.1&authority=&fp=chrome&type=grpc&serviceName=&sni=ch.amshviip.ir#
+vless://62aa5c8e-8eba-4fa6-8014-957b6c5ef5a5@185.146.173.237:8880?type=ws&path=%2F%40Donad_vpn%2C%40donald_vpn%2C%40donad_vpn%2C%40Donad_vpn%2C%40donald_vpn%2C%40donad_…
+vless://f189beb3-12b1-430b-a270-c759c9e29810@185.146.173.32:2096?mode=gun&security=tls&encryption=none&alpn=h2,http/1.1&authority=&fp=chrome&type=grpc&serviceName=&sni=ch.amshviip.ir…

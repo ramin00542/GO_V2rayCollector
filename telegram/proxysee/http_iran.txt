@@ -1,10 +1,10 @@
-https://t.me/proxy?server=92.223.62.212&port=8787&secret=ee46766209367f86584b1cd93742b0bf74636861742e646565707365656b2e636f6d
+https://t.me/proxy?server=185.84.157.100&port=443&secret=3RYDAQIAAQAB_AMThuJMOt0=
 https://t.me/proxy?server=pretty.dokhtarbandari.info.&port=22&secret=eeNEgYdJvXrFGRMCIMJdCQ
+https://testflight.apple.com/join/dwZ6cgN5
+https://t.me/proxy?server=92.223.62.212&port=8787&secret=ee46766209367f86584b1cd93742b0bf74636861742e646565707365656b2e636f6d
 https://t.me/proxy?server=185.84.157.13&port=444&secret=FgMBAgABAAH8AxOG4kw63Q%3D%3D
 https://t.me/proxy?server=185.84.157.102&port=9443&secret=eeNEgYdJvXrFGRMCIMJdCQ
 https://t.me/proxy?server=www.uptv443.shop.&port=8443&secret=3XnnAQIAAQAH8AMDhuJMOt0=
-https://testflight.apple.com/join/xKMGaN3Y
-https://testflight.apple.com/join/dwZ6cgN5
-https://t.me/proxy?server=185.3.200.136&port=2053&secret=ee1603010200010001fc030386e24c3ad3626973636F7474692E79656B74616E65742E636F6D
-https://t.me/proxy?server=185.84.157.100&port=443&secret=3RYDAQIAAQAB_AMThuJMOt0=
 https://t.me/proxy?server=91.239.192.73&port=77777&secret=EERigv%2F%2F%2F%2F%2F%2F+AAA%2F%2FgAAA%3D%3D
+https://t.me/proxy?server=185.3.200.136&port=2053&secret=ee1603010200010001fc030386e24c3ad3626973636F7474692E79656B74616E65742E636F6D
+https://testflight.apple.com/join/xKMGaN3Y

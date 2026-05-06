@@ -1,2 +1,7 @@
+vless://8c4604ef-749c-4b56-adf1-7da405002a21@216.24.57.1:443?path=%2F&security=tls&encryption=none&insecure=0&host=qyi.fqjd663.ggff.net&type=ws&allowInsecure=0&sni=qyi.fqjd663.ggff.net#
 vless://cd63c49a-d4cf-4856-89a6-6fe18b5070eb@snapp.ir:8880?encryption=none&type=ws&path=/&host=moein.akosha.ir#👉🆔@v2ray_configs_pool📡🇮🇷®️Iran©️Tehrān🅿️ping:73.39ms
-vless://8d088bc9-bbd9-4430-ae09-a4129da28c6b@snapp.ir:80?path=/&security=&encryption=none&host=simorgh.darerio.ir&type=ws#👉🆔@v2ray_configs_pool📡🇮🇷®️Iran©️Tehrān🅿️ping:73.76ms
+vless://c5e37ade-1f00-4dfa-a01d-3611f83f39e8@snapp.ir:80?encryption=none&type=ws&path=/&host=simorgh.darerio.ir#👉🆔@v2ray_configs_pool📡🇮🇷®️Iran©️Tehrān🅿️ping:73.76ms
+vless://c4cb5a4b-6225-4c56-8f0b-7c23b4017d54@ww.iwantmoney.ir:8880?path=%2F&security=&encryption=none&type=ws#👉🆔@v2ray_configs_pool📡🇮🇷®️Iran©️Tehrān🅿️ping:79.64ms
+vless://c4cb5a4b-6225-4c56-8f0b-7c23b4017d54@ww.iwantmoney.ir:8880?path=%2F&security=&encryption=none&type=ws#👉🆔@v2ray_configs_pool📡🇮🇷®️Iran©️Tehrān🅿️ping:103.02ms
+vless://a6ed1b73-ee8a-45c9-8288-ae082f5f1ae6@ww.parspas.ir:8880?path=%2F&security=&encryption=none&type=ws#👉🆔@v2ray_configs_pool📡🇮🇷®️Iran©️Tehrān🅿️ping:69.51ms
+vless://debea963-6cc7-4d71-8031-eada060c4429@snapp.ir:8880?type=ws&encryption=none&path=%2F&host=moein.akosha.ir&security=none#👉🆔@v2ray_configs_pool📡🇮🇷®️Iran©️Tehrān🅿️ping:66.36ms

@@ -1,1 +1,2 @@
-vless://c060fd90-7217-e4eb-73c8-1026d8cd2e19@[::ffff:94.184.31.65]:58008?encryption=none&security=none&type=tcp&headerType=http&host=arvancloud.ir#%40filembad-[🌐
+vless://1f39fef1-7887-fe10-78f7-faa773794f24@85.133.214.66:443?security=none&encryption=none&host=myket.ir&headerType=http&type=tcp#%40filembad
+vless://1f39fef1-7887-fe10-78f7-faa773794f24@85.133.214.66:443?security=none&encryption=none&host=myket.ir&headerType=http&type=tcp#

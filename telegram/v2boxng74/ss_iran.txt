@@ -1,0 +1,1 @@
+vless://325f94b4-7115-2729-7da3-5cf9810d5fe2@mak1.vpsino.com:20493?security=none&type=tcp&headerType=none&path=%2F#

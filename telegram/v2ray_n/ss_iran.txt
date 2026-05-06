@@ -1,1 +1,1 @@
-vless://134a208f-9ec0-4ecc-a374-8f598ea1adda@tr1.iranz.me:8443?path=%2F&security=tls&encryption=none&type=ws#%40vpnmaster_info%23tr1
+vless://53747e1d-5253-4c85-ab74-fff0c35add9e@pro2.backdoriran.ml:80?type=ws&security=none&path=%2Fbackdor#@v2ray_N

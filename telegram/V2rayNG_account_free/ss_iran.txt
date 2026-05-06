@@ -1,2 +1,4 @@
-vless://76545e52-ec23-4cbe-e0bc-43ef75ae49fd@asia1.novahomedesigntips.com:17200?type=ws#30GB-955265109-vgkv
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpDeHRjWmFPU0ZZaUpubG95VFpKMHoy@89.22.234.121:443?type=tcp#
+vless://09a54735-f680-425f-a180-59e65d50e5df@172.66.40.99:8880?type=ws&host=www.speedtest.net.tax.gov.ir.aparat.com.a.1.jEy.dPdNs.org.&path=/Telegram@vpnjeyTelegram@vpnjeyTelegram@vpnjey&security=none#%F0%9F%87%A9%F0%9F%87%AA%20@V2rayNG_account_free
+vless://ccbe6b7c-9264-40c4-8bc1-ef8f6205d7a4@www.speedtest.net:8443?type=ws&host=lease-20.access.name.ng&path=/&security=tls&fp=chrome&sni=lease-20.access.name.ng#%F0%9F%87%AC%F0%9F%87%A7%20@V2rayNG_account_free
+vless://d03d8815-a06f-408f-a62f-6c84869b96a9@elegant-corporation.seotoolsforyou.co.uk:80?type=ws&path=/&security=none#

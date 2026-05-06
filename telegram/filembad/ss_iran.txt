@@ -1,3 +1,6 @@
-vless://d8c75894-1595-4b75-8710-ae8b107368be@snapp.ir:80?path=%2F&security=none&encryption=none&host=simorgh.darerio.ir&type=ws#%40filembad
-vless://44a3854a-2954-43e1-b0eb-eed2dc37d2c2@trex.nahidapp.com:443?path=%2Fvless-ws&security=tls&encryption=none&insecure=0&host=trex.nahidapp.com&fp=chrome&type=ws&allowInsecure=0&sni=trex.nahidapp.com#%40filembad
-vless://adcf9278-847d-4f37-9571-fc3989ba6402@snapp.ir:2086?path=%2F&security=none&encryption=none&host=fin2.electrodragon.ir&type=ws#
+vless://c5e37ade-1f00-4dfa-a01d-3611f83f39e8@snapp.ir:80?encryption=none&type=ws&path=%2F&host=simorgh.darerio.ir#
+vless://a4a81693-db29-4634-be84-e97893217487@s3.tehranionliine.ir:80?path=%2F&security=none&encryption=none&type=ws#%40filembad
+vless://8d088bc9-bbd9-4430-ae09-a4129da28c6b@snapp.ir:80?path=%2F&security=&encryption=none&host=simorgh.darerio.ir&type=ws#
+vless://a6ed1b73-ee8a-45c9-8288-ae082f5f1ae6@ww.parspas.ir:8880?path=%2F&security=&encryption=none&type=ws#%40filembad
+vless://adcf9278-847d-4f37-9571-fc3989ba6402@snapp.ir:2052?path=%2F&security=none&encryption=none&host=ge05.electrodragon.ir&type=ws#%40filembad
+vless://779fadea-e409-4ff8-b067-051082d7ae0c@31.14.116.4:16538?type=tcp&encryption=none&security=none#%40filembad

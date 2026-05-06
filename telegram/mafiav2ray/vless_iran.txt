@@ -1,1 +1,2 @@
-vless://19be8473-3ce9-499e-bcfd-d0cb2d65e813@188.114.97.3:443?security=tls&sni=ch2-vless.sshmax.xyz&type=ws&path=/vless&host=ch2-vless.sshmax.xyz&encryption=none#%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86%20%7C%20VLESS%20%7C%20US%F0%9F%87%BA%F0%9F%87%B8%20%7C%200%EF%B8%8F%E2%83%A33%EF%B8%8F%E2%83%A3
+vless://19be8473-3ce9-499e-bcfd-d0cb2d65e813@188.114.97.3:443?security=tls&sni=ch2-vless.sshmax.xyz&type=ws&path=/vless&host=ch2-vless.sshmax.xyz&encryption=none#
+vless://R4D@94.130.109.163:443?security=reality&sni=wordpress.org&fp=chrome&pbk=5i0MySa9-gIBPyHSJ-jVDxpOSRnXqtXc9ZsalSaa-Hk&spx=/&type=grpc&serviceName=@vpn_xw-Telegram:@vpn_xw-Telegram:@vpn_xw-Telegram:@vpn_xw-Telegram:@vpn_xw-Telegram:@vpn_xw-Telegram:@…

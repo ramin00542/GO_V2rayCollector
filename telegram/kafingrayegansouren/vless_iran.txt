@@ -1,7 +1,2 @@
-vless://d89d6641-3b1a-4f51-a194-9c9109fd21b6@108.162.198.154:443?path=%2Ffp%3Dchrome&security=tls&encryption=none&host=DiprOX.pages.DEV&fp=chrome&type=ws&sni=DiprOX.pages.DEV#%40v2reybot_game
-vless://c659ce22-0a02-4d75-8c89-58d99916b846@cdn.halazzon.ir:2053?path=%2F&security=tls&encryption=none&insecure=0&host=ir6.hnbyme.online&fp=chrome&type=ws&allowInsecure=0&sni=ir6.hnbyme.online#
-vless://396c904b-4b62-4334-b793-ee25fc0c61cc@188.114.96.3:443?path=%2FeyJqdW5rIjoiTHczMWlhREZIb0ljUDhoaCIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0%3D%3Fed%3D2560&security=tls&encryption=none&insecure=0&host=8vmU06cxdz59m931xnREgj8qpnoq1-06.pages.dev&type=ws&allowInsecure=0&sni=pages.dev#
-vless://44536d8e-9a37-6ce7-5be3-dd3f232c34f8@85.133.161.177:8080?path=%2FIVApi%2FNL%2F0&security=none&encryption=none&type=ws#
-vless://396c904b-4b62-4334-b793-ee25fc0c61cc@chat.openai.com:443?path=%2FeyJqdW5rIjoiTHczMWlhREZIb0ljUDhoaCIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0%3D%3Fed%3D2560&security=tls&encryption=none&insecure=0&host=8vmU06cxdz59m931xnREgj8qpnoq1-06.pages.dev&type=ws&allowInsecure=0&sni=pages.dev#
-vless://1e1b9a1f-47cd-4cb2-a0dc-103a09e253ba@nl.iccgame.site:3000?security=none&encryption=none&host=chess.com&headerType=http&type=tcp#%40v2reybot_game%20service%20%F0%9F%8F%B4%F0%9F%8F%B3
-vless://1e1b9a1f-47cd-4cb2-a0dc-103a09e253ba@nl.iccgame.site:3000?security=none&encryption=none&host=chess.com&headerType=http&type=tcp#
+vless://664647b0-cf64-4560-b899-b92404b1798e@5.175.249.126:450?security=none&encryption=none&host=zula.ir&headerType=http&type=tcp#%40v2reybot_game%20service%20%28%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85%29
+vless://3f0f36f5-f091-45c5-88c9-4bcc545b922c@188.114.98.0:443?path=%2F45.76.183.217%3D49292&security=tls&encryption=none&insecure=0&host=hetz.x-smm.com&fp=chrome&type=ws&allowInsecure=0&sni=hetz.x-smm.com#

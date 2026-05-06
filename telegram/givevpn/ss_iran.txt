@@ -1,2 +1,7 @@
-vless://46eb1dd2-2826-4e8f-aa7a-83f1f0262a65@snapp.ir:8880?type=ws&encryption=none&path=%2F&host=moein.akosha.ir&security=none#
-vless://46eb1dd2-2826-4e8f-aa7a-83f1f0262a65@snapp.ir:8880?type=ws&encryption=none&path=%2F&host=moein.akosha.ir&security=none#GiveVPN
+vless://20f81fa4-3fa0-4b28-833c-8385e70cc3d3@arvancloud.ir:80?path=upload%3Fed%3D256&security=none&encryption=none&host=website.vgpsl.ir&type=ws#@GiveVPN
+vless://5d412c8c-57ff-468b-8fde-58e87e950269@react.dev:443?encryption=none&extra=%7B%22xPaddingBytes%22%3A%22100-1000%22%7D&fp=&host=apibakaaend.digielipan.store&mode=auto&path=%2Fd&security=tls&sni=apibakaaend.digielipan.store&type=xhttp&x_padding_bytes=100-1000#
+vless://0d84cdbd-c0fb-47c6-ab5d-a25587df2a4a@185.143.233.5:80?path=%2Fxray&security=none&encryption=none&host=bot.vipiranian.de&type=ws#https://t.me/GiveVPN
+vless://75ffa449-d6fd-4d47-93ce-a389756c0045@snapp.ir:80?path=%2F&security=none&encryption=none&host=iranfuture.musicritmic.ir&type=ws#@GiveVPN
+vless://cd3be8f8-b467-4a8c-8813-ce86319a8bf4@185.143.233.5:2052?path=%2F&security=none&encryption=none&host=cd2.sesrsa.com&type=ws#%40GiveVPN
+vless://4d400592-45a1-4e05-80f6-8581658e71eb@5.159.54.140:443?security=reality&encryption=none&pbk=A6_kAMUcoxeuilXwMvzPYFAP8ekULjxDu4KmQssG7Gc&headerType=none&fp=chrome&spx=%2F&type=tcp&sni=aparat.com&sid=510b7f2f#@GiveVPN
+vless://4d400592-45a1-4e05-80f6-8581658e71eb@5.159.54.140:443?security=reality&spx=&encryption=none&pbk=A6_kAMUcoxeuilXwMvzPYFAP8ekULjxDu4KmQssG7Gc&headerType=none&fp=chrome&spx=%2F&type=tcp&sni=aparat.com&sid=510b7f2f#

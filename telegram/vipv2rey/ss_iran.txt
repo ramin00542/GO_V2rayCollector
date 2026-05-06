@@ -1,1 +1,5 @@
-vless://b75b3034-36ab-4979-beae-3d02db1b11ec@104.31.16.77:443?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=always-online1.lp-airdrop.top&type=ws&sni=always-online1.lp-airdrop.top#
+vless://b75b3034-36ab-4979-beae-3d02db1b11ec@104.31.16.133:443?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=always-online1.lp-airdrop.top&type=ws&sni=always-online1.lp-airdrop.top#@vipv2rey
+vless://b75b3034-36ab-4979-beae-3d02db1b11ec@104.31.16.250:443?path=%2F%3Fed%3D2048&security=tls&encryption=none&alpn=h2,http/1.1&host=always-online1.lp-airdrop.top&fp=chrome&type=ws&sni=always-online1.lp-airdrop.top#
+vless://b75b3034-36ab-4979-beae-3d02db1b11ec@104.31.16.77:443?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=always-online1.lp-airdrop.top&type=ws&sni=always-online1.lp-airdrop.top#%40vipv2rey+%7C+All%F0%9F%87%A9%F0%9F%87%AA
+vless://29f8ad12-ea84-431b-bf32-9d3fb5cf2aa2@104.31.16.58:443?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=w1.sylar8.eu.org&type=ws&sni=w1.sylar8.eu.org#%40vipv2rey+%7C+MTN
+vless://07865379-86dd-4ca6-ad22-81255519c482@Iranserver.com:2083?mode=gun&security=tls&encryption=none&alpn=h2,http/1.1&fp=chrome&type=grpc&serviceName=&sni=vipv2rey.mamare.ir#

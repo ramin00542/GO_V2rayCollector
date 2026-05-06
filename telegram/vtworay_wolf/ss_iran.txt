@@ -1,1 +1,1 @@
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpZWGdTOENvbVRhbTdxb2VzUGx6bE1v@83.147.216.70:64519#
+vless://784646e5-8e84-4672-8670-efc9cafcd2cc@212.95.34.18:443?path=%2F&security=tls&encryption=none&type=ws#https%3A%2F%2Ft.me%2FVTWORAY_WOLF

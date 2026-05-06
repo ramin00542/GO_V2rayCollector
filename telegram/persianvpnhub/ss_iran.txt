@@ -1,1 +1,1 @@
-vless://87a09075-f5f0-4ff9-80df-3e81fcdfd10d@185.143.234.235:80?path=%2F&security=none&encryption=none&host=d.nsa03.com&type=ws#%40filtershekan_channel
+vless://4e016302-be30-4aca-9d12-3759d697124b@a2.grizzlygitt.ir:80?path=%2F&security=none&encryption=none&type=ws#%40GrizzlyVPN

@@ -1,1 +1,2 @@
-vless://8c577995-f6cc-4da5-a7a3-c5908f87ea90@fastly2.hamrahflow.ir:443?encryption=&flow=&host=Valsiin.com&path=%2F&security=tls&sni=default.ssl.fastly.net&type=ws#
+vless://feade342-9a00-427e-b049-752a4e584ba5@85.133.161.168:443?encryption=none&flow=&headerType=http&host=fsn.bestlive.ir&type=tcp#
+vless://0d3d266a-ce3c-4fa9-b252-95144b7bc443@vipi11.abdulkhanioffline.pw:22527?encryption=none&flow=&headerType=http&host=cafebazaar.snapp.ir&type=tcp#

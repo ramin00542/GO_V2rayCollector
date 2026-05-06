@@ -1,2 +1,1 @@
-vless://13732170-05c7-4bd6-acd6-9ed74b4d1c1b@visa.com:2096?security=tls&sni=kanal-falcunargo-rmarat.falcunar.asso.eu.org&fp=random&type=ws&path=/?ed%3D2048&host=kanal-falcunargo-rmarat.falcunar.asso.eu.org&encryption=none#
-vless://R4D@94.130.109.163:443?security=reality&sni=wordpress.org&fp=chrome&pbk=5i0MySa9-gIBPyHSJ-jVDxpOSRnXqtXc9ZsalSaa-Hk&spx=/&type=grpc&serviceName=@vpn_xw-Telegram:@vpn_xw-Telegram:@vpn_xw-Telegram:@vpn_xw-Telegram:@vpn_xw-Telegram:@vpn_xw-Telegram:@vpn_xw&encryption=none#
+vless://be8962c2-c299-4b2e-a76d-373ddfd9c886@bloo-netflix23.maj.gamerme.ir:80?security=&type=ws&path=/?ed%3D2048&host=IRON.man.policeoficer-45.GAMERme.IR&encryption=none#

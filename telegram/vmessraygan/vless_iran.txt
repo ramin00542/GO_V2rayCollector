@@ -1,6 +1,1 @@
-vless://504d9da5-ea6d-429e-a4e5-76d6fe9bdc54@m.xuii.sbs:2087?type=grpc&serviceName=&security=tls&fp=chrome&alpn=http%2F1.1%2Ch2&sni=moji.xuii.sbs#
-vless://504d9da5-ea6d-429e-a4e5-76d6fe9bdc54@discord.gg:2087?mode=gun&security=tls&encryption=none&fp=chrome&type=grpc&serviceName=&sni=moji.xuii.sbs#telegram:@vmessraygan
-vless://504d9da5-ea6d-429e-a4e5-76d6fe9bdc54@m.xuii.sbs:2087?type=grpc&serviceName=&security=tls&fp=chrome&alpn=http%2F1.1%2Ch2&sni=moji.xuii.sbs#telegram:@vmessraygan
-vless://53a37908-4cb1-4ae4-bdad-6653dce9cdaf@german.vp22ray.site:443?mode=gun&security=reality&encryption=none&pbk=QUyXIx6S7HgIqh3oryjejQl8zgWwnKWJpoWINluG22A&fp=firefox&spx=%2F&type=grpc&serviceName=@vp22ray@vp22ray@vp22ray&sni=Ftp.debian.org&sid=ee6bce0a#telegram:@vmessraygan
-vless://2fe3f85d-f0b9-4896-9aff-40181dfe3182@mohsen.i.hihihahaaml.online:2059?security=none&encryption=none&host=www.speedtest.net&headerType=http&type=tcp#telegram:@vmessraygan
-vless://53a37908-4cb1-4ae4-bdad-6653dce9cdaf@german.vp22ray.site:443?mode=gun&security=reality&encryption=none&pbk=QUyXIx6S7HgIqh3oryjejQl8zgWwnKWJpoWINluG22A&fp=firefox&spx=%2F&type=grpc&serviceName=@vp22ray@vp22ray@vp22ray&sni=Ftp.debian.org&sid=ee6bce0a#
+vless://504d9da5-ea6d-429e-a4e5-76d6fe9bdc54@www.speedtest.com:2087?mode=gun&security=tls&encryption=none&fp=chrome&type=grpc&serviceName=&sni=moji.xuii.sbs#telegram:@vmessraygan

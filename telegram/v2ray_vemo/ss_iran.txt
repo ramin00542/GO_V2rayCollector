@@ -1,1 +1,3 @@
-vless://cad855e2-973b-40ec-b1c2-d12f8a5b40bc@ali.faroo.space:80?path=%2F&security=none&encryption=none&host=admin-panell.musicmovmj.space&type=ws#%40V2ray_vemo
+vless://cad855e2-973b-40ec-b1c2-d12f8a5b40bc@ali.faroo.space:80?path=%2F&security=none&encryption=none&host=admin-panell.musicmovmj.space&type=ws#
+vless://346d4e21-83c0-4456-b227-5aed15c2d70a@sub1.mosicmovi.space:2083?path=%2F&security=tls&encryption=none&alpn=h2,http/1.1&fp=chrome&type=ws&sni=sub1.mosicmovi.space#
+vless://a1f06046-4b2b-47b0-864c-3d35a344bbde@tamit.ir:8443?path=%2F%3Fed%3D2058&security=tls&encryption=none&alpn=h2,http/1.1&host=en.movianmusic.space&fp=firefox&type=ws&sni=en.movianmusic.space#

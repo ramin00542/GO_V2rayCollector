@@ -1,3 +1,1 @@
-vless://8f2f135a-6cb4-4e93-d092-9f24aa6d6593@join.digiv2ray.online:443?security=none&encryption=none&host=speedtest.net&headerType=http&type=tcp#
-vless://8f2f135a-6cb4-4e93-d092-9f24aa6d6593@join.digiv2ray.online:443?security=none&encryption=none&host=speedtest.net&headerType=http&type=tcp#%40UniqueNett-MTN-%F0%9F%87%A9%F0%9F%87%AA-Germany
-vless://d5a0662a-1a0d-4ecd-ecd7-f243fc1bc882@178.33.172.135:39571?security=none&encryption=none&host=zula.ir&headerType=http&type=tcp#%40UniqueNett-MTN-%F0%9F%87%A9%F0%9F%87%AA-Germany
+vless://d5a0662a-1a0d-4ecd-ecd7-f243fc1bc882@178.33.172.135:39571?security=none&encryption=none&host=zula.ir&headerType=http&type=tcp#

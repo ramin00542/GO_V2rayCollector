@@ -1,1 +1,1 @@
-vless://0113dbe3-7b54-455f-b412-00c8e3b3c65c@185.143.233.200:80?path=%2F&security=none&encryption=none&host=a1.supreme-xfast.ir&type=ws#
+vless://60de7f07-71b7-4b37-a04c-db5d769ec130@62.60.147.73:20020?security=&encryption=none&headerType=none&type=tcp#

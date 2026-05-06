@@ -1,14 +1,2 @@
-vless://2513b09b-6515-4590-9662-d03e0fbc6c8e@multiport.artunnel57.host:443?security=tls&encryption=none&type=ws&headerType=none&path=%252Fvless-tls&sni=YourBugHost&host=multiport.artunnel57.host#
-vless://9bb3a0f2-d252-4098-884c-8c7fa9278615@uae.artunnel57.host:443?security=tls&encryption=none&type=ws&headerType=none&path=%252FCUSTOMPATH&sni=uae.artunnel57.host&host=uae.artunnel57.host#
-vless://a9fd5e71-f23d-4a4d-af9a-566a4db14fa7@newyork.artunnel57.host:443?security=tls&encryption=none&type=grpc&mode=gun&serviceName=vless-grpc&sni=newyork.artunnel57.host#Vless_gRPC
-vless://ad88a919-a28a-4286-adbc-29a0cb9c33b1@sg.multiport1.artunnel57.host:80?security=tls&encryption=none&type=ws&headerType=none&path=%252Fkuota-habis%252F&sni=sg.multiport1.artunnel57.host&host=sg.multiport1.artunnel57.host#
-vless://b854bd47-d0c6-40ab-8267-1685cc989ec6@sg.multiport1.artunnel57.host:443?security=tls&encryption=none&type=grpc&mode=gun&serviceName=vless-grpc&sni=sg.multiport1.artunnel57.host#vless_grpc_TLS
-vless://5665f8b7-0285-4672-ae1f-c71f111da10b@xray.artunnel57.host:80?security=none&encryption=none&type=ws&headerType=none&path=%252FCUSTOMPATH&host=xray.artunnel57.host#
-vless://562702c9-c327-4340-b4d2-c6300bbd99f9@newyork.artunnel57.host:80?security=none&encryption=none&type=ws&headerType=none&path=%252Fvless-ntls&host=newyork.artunnel57.host#NTLS_Vless_WS
-vless://0b98bb8a-fe65-40a7-9c52-b4649db7c2ad@asia.artunnel57.host:80?security=none&encryption=none&type=ws&headerType=none&path=%252Fvless-ntls&host=asia.artunnel57.host#Vless_WS_ntls(CustomPath)
-vless://ad88a919-a28a-4286-adbc-29a0cb9c33b1@sg.multiport1.artunnel57.host:80?security=tls&encryption=none&type=ws&headerType=none&path=%252Fkuota-habis%252F&sni=sg.multiport1.artunnel57.host&host=sg.multiport1.artunnel57.host#V2vless_ws_TLS_80
-vless://9d0cfc7a-7707-4cca-a9f8-4a7ffea5a699@frankfurt.artunnel57.host:80?security=none&encryption=none&type=ws&headerType=none&path=%252Fvless-ntls&host=frankfurt.artunnel57.host#NTLS_Vless_WS
-vless://779bf764-0aa1-4f58-89d2-0c92dcc25acb@sg.multiport1.artunnel57.host:443?security=tls&encryption=none&type=ws&headerType=none&path=/vless-tls&sni=sg.multiport1.artunnel57.host&host=sg.multiport1.artunnel57.host#
-vless://3a87f6fc-a1fe-4aba-ad25-89a828ea1b44@sg.multiport1.artunnel57.host:80?security=none&encryption=none&type=ws&headerType=none&path=%252Fkuota-habis%252F&host=sg.multiport1.artunnel57.host#V2vless_ws_NTLS_80
-vless://53af45d6-f6be-4397-a33a-15bb88df76f5@singapore.artunnel57.host:443?security=tls&encryption=none&type=grpc&mode=gun&serviceName=vless-grpc&sni=singapore.artunnel57.host#
-vless://afdd5f32-1efd-4429-b7c5-fcc65a49da58@sg.multiport1.artunnel57.host:443?security=tls&encryption=none&type=tcp&sni=sg.multiport1.artunnel57.host#Xvless_tcp_XTLS_443
+vless://5665f8b7-0285-4672-ae1f-c71f111da10b@xray.artunnel57.host:80?security=none&encryption=none&type=ws&headerType=none&path=%252FCUSTOMPATH&host=xray.artunnel57.host#Vless_WS_ntls(CustomPath)
+vless://1b4947ef-711e-4b7c-b55b-21b65bc3fb43@asia.artunnel57.host:443?security=xtls&encryption=none&type=tcp&sni=asia.artunnel57.host&flow=xtls-rprx-direct#Vless_TCP_XTLS

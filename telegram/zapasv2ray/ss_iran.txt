@@ -1,2 +1,2 @@
-vless://a0562dec-26ac-43d4-ba1d-785c334e644f@65.108.54.206:443?mode=gun&security=reality&encryption=none&pbk=J8vhC3eshe9rG-ubqcgSQW6dPFeiZZEQn16eHGqxBT8&fp=firefox&spx=%2F&type=grpc&serviceName=@ipV2Ray&sni=ftp.debian.org&sid=fada4f5f#
 vless://b9ad895b-12ac-40fc-a5ac-a5b2a1285001@104.21.28.62:443?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=3k.pureboy.eu.org&type=ws&sni=3k.pureboy.eu.org#
+vless://356c890f-31a8-47d8-984f-f79727412994@104.24.176.7:80?path=%2FTalaNetwork&security=none&encryption=none&host=it.sponsored-by.talanetwork.me&type=ws#

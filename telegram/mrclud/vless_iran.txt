@@ -1,6 +1,1 @@
-vless://e2c3e5b6-ef09-4649-bd32-b0f448a073e3@104.31.16.98:80?type=ws&path=%2F&host=server-j377d.xbox.blackops1.heydasfrance.name.ng#🇫🇷پاریس🇫🇷-🔵همراه
-vless://64afe0cf-d56b-4471-983a-5428d32958de@51.195.169.100:443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=yahoo.com&fp=firefox&security=reality&pbk=p0Q_UwGTMDM4Hk1v-2F43NO4AekmT1crXiPIJS_NzF8&sid=01417ce2#
-vless://64afe0cf-d56b-4471-983a-5428d32958de@104.31.16.98:80?type=ws&path=%2F&host=lashashin.garayane.xbox.heydas.heydasgermany.name.ng#🇩🇪فرانکفورت🇩🇪-🔵همراه
-vless://64afe0cf-d56b-4471-983a-5428d32958de@51.195.169.100:443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=yahoo.com&fp=firefox&security=reality&pbk=p0Q_UwGTMDM4Hk1v-2F43NO4AekmT1crXiPIJS_NzF8&sid=01417ce2#🇬🇧انگلیس🇬🇧-🟡ایرانسل|رایتل🟣
-vless://e2c3e5b6-ef09-4649-bd32-b0f448a073e3@104.31.16.98:80?type=ws&path=%2F&host=lashashin.garayane.xbox.heydas.heydasgermany.name.ng#
-vless://e02208b6-2626-49ef-8b93-0d80ed33f4ac@104.31.16.98:80?type=ws&path=%2F&host=server-j377d.xbox.blackops1.heydasuk.name.ng#🇬🇧بریتانیا🇬🇧-🔵همراه
+vless://e02208b6…

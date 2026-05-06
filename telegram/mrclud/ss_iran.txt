@@ -1,2 +1,1 @@
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprVGpsTHhybmNLeDRpMkhJanhmQTNN@51.142.171.150:49499#
-vless://12ef2fb8-4c06-4e9e-b1b6-0dbde357790b@iranserver.com:2087?sni=arguvpnnn.v2raycfz.cloud&security=tls&mode=gun&encryption=none&serviceName=www.speedtest.net&alpn=h2,http/1.1&type=grpc#%40injectormconf-%40mrclud+%D8%AA%D9%85%D8%A7%D9%85+%D8%A7%D9%BE%D8%B1%D8%A7%D8%AA%D9%88%D8%B1+%D9%87%D8%A7
+vless://e2c3e5b6-ef09-4649-bd32-b0f448a073e3@104.31.16.98:80?type=ws&path=%2F&host=lashashin.garayane.xbox.heydas.heydasgermany.name.ng#

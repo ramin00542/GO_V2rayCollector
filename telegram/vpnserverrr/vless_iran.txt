@@ -1,1 +1,1 @@
-vless://868f9a0f-aa09-4898-a213-e8f7ccf80091@stare.unknowns.ir:8080?path=%2F&security=none&encryption=none&type=ws#
+vless://d86e2e96-b637-40dd-bd2f-08f37e5d8139@plse4.gishevip.xyz:80?path=%2Fxray&security=none&encryption=none&host=bot.vipiranian.de&type=ws#%40vpnserverrr

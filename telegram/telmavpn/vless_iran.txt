@@ -1,9 +1,1 @@
-vless://17fafaf9-7402-40eb-87ae-a75944c84c52@104.21.69.44:8443?path=%2FTelegram-%40V2ray_Alpha%2F%3Fed%3D2048&security=tls&encryption=none&host=ggho.pages.dev.&fp=randomized&type=ws&sni=ggho.pages.dev.#telegram%3A+%40telmavpn
-vless://5c85bd8e-fcb0-4b60-832b-ead08f355e9a@www.speedtest.net:80?path=%2F&security=none&encryption=none&host=SHHPROXY-free.xn--69-pv2cl2k5x3fipr.org.&type=ws#%F0%9F%87%A9%F0%9F%87%AA%40telmavpn+%7C+MCI
-vless://e971e939-c844-4209-8720-e93db30210e3@37.32.5.185:443?mode=gun&security=tls&encryption=none&fp=chrome&type=grpc&serviceName=&sni=tara2.striside.com#%F0%9F%91%89%F0%9F%86%94+%40telmavpn
-vless://e8254dcc-47dc-4ebb-a534-6922f0f35576@37.32.5.185:443?mode=multi&security=tls&encryption=none&alpn=h3,h2&fp=chrome&type=grpc&serviceName=&sni=zeebusbest7.especializacionpaz.info#%F0%9F%91%89%F0%9F%86%94+%40telmavpn
-vless://ab03c163-c098-44ce-8e68-ed1578c82035@103.167.234.248:1182?security=none&encryption=none&headerType=none&type=tcp#
-vless://e8254dcc-47dc-4ebb-a534-6922f0f35576@37.32.5.185:443?mode=multi&security=tls&encryption=none&alpn=h3,h2&fp=chrome&type=grpc&serviceName=&sni=zeebusbest7.especializacionpaz.info#
-vless://d342d11e-d424-4583-b36e-524ab1f0afa7@ed9485634jkfhggh.pages.dev:8443?path=Telegram%40SINABIGO%40SINABIGO%40SINABIGO%2F%3Fed%3D2048&security=tls&encryption=none&host=ed9485634jkfhggh.pages.dev&fp=random&type=ws&sni=ed9485634jkfhggh.pages.dev#
-vless://17fafaf9-7402-40eb-87ae-a75944c84c52@104.21.69.44:8443?path=%2FTelegram-%40V2ray_Alpha%2F%3Fed%3D2048&security=tls&encryption=none&host=ggho.pages.dev.&fp=randomized&type=ws&sni=ggho.pages.dev.#
-vless://d342d11e-d424-4583-b36e-524ab1f0afa7@ed9485634jkfhggh.pages.dev:8443?path=Telegram%40SINABIGO%40SINABIGO%40SINABIGO%2F%3Fed%3D2048&security=tls&encryption=none&host=ed9485634jkfhggh.pages.dev&fp=random&type=ws&sni=ed9485634jkfhggh.pages.dev#%40telmavpn
+vless://0dcaa67f-90c2-42ca-8745-698465cf6655@ho1.bestgameir.ir:2083?path=%2Fws&security=tls&encryption=none&alpn=h2,http/1.1&fp=chrome&type=ws&sni=ho1.bestgameir.ir#

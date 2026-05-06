@@ -1,15 +1,3 @@
-vless://11e41a32-6672-48a0-b9cb-c8694242ecff@87.239.106.153:443?security=reality&encryption=none&pbk=zr8_rtHm86s_G1gfRwNtunStGngYZSdYkA3PyBFXpDg&headerType=none&fp=random&type=tcp&flow=xtls-rprx-vision&sni=m.vk.ru&sid=48fccabc158a4c22#
-vless://48e3ec8d-44ce-4542-aa4d-a48573e0d423@94.184.24.235:56001?security=none&encryption=none&headerType=none&type=tcp#%40v2rayland02%F0%9F%8C%90
-vless://4c765647-bc2e-456c-8ac0-47a5e45c9fad@[::ffff:26f2:eae4]:80?path=%2FeyJqdW5rIjoiNDBNWGY3Z0NPd0loZ2YiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByb3h5aXAiLCJwYW5lbElQcyI6W119%3Fed%3D2560&security=none&encryption=none&host=.....jorjina.1q2w3e4r5t6y7u8i9o0p1a2s3d4f5g6h7j8k9l01z2x3c4v5b6n7m8goot.store......&type=ws#%40v2rayland02%F0%9F%8C%90
-vless://11e41a32-6672-48a0-b9cb-c8694242ecff@87.239.106.153:443?security=reality&encryption=none&pbk=zr8_rtHm86s_G1gfRwNtunStGngYZSdYkA3PyBFXpDg&headerType=none&fp=random&type=tcp&flow=xtls-rprx-vision&sni=m.vk.ru&sid=48fccabc158a4c22#%40v2rayland02%F0%9F%8C%90
-vless://6202b230-417c-4d8e-b624-0f71afa9c75d@185.162.231.138:2096?path=%2F%3Fed%3D%23TELEGRAM-YamYamProxy_YamYamProxy_YamYamProxy_YamYamProxy_YamYamProxy%3Fed%3D512&security=tls&encryption=none&host=sni.111000.indevs.in&type=ws&sni=sni.111000.indevs.in#%40v2rayland02%F0%9F%8C%90
 vless://34911a7b-a3d9-47fe-ac0d-e07eeeea4864@162.159.194.86:2087?path=%2F&security=tls&encryption=none&host=amorix.abresani.com&type=ws&sni=amorix.abresani.com#%40v2rayland02%F0%9F%8C%90
-vless://c8812004-f201-4c73-8f98-8b75f3f3ddb6@194.61.3.100:17799?security=none&encryption=none&host=ripe.net&headerType=http&type=tcp#%40v2rayland02%F0%9F%8C%90
-vless://4c765647-bc2e-456c-8ac0-47a5e45c9fad@[::ffff:26f2:eae4]:80?path=%2FeyJqdW5rIjoiNDBNWGY3Z0NPd0loZ2YiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByb3h5aXAiLCJwYW5lbElQcyI6W119%3Fed%3D2560&security=none&encryption=none&host=.....jorjina.1q2w3e4r5t6y7u8i9o0p1a2s3d4f5g6h7j8k9l01z2x3c4v5b6n7m8goot.store......&type=ws#
-vless://084dac85-a82a-4462-9c43-13f0dcf7467c@mail.speedmizban.net:1517?security=none&encryption=none&host=testspeed-foreign.tci.ir&headerType=http&type=tcp#
-vless://991519c1-3680-49b7-bb9f-9029a7a39067@c2.s-sub.org:8443?path=%2F&security=tls&encryption=none&alpn=h2,http/1.1&host=backup.f-sub.cfd&fp=chrome&type=ws&sni=backup.f-sub.cfd#
-vless://15a8a868-ddd3-4a8c-bf7a-bb81671bf157@f1.springpaatogh8.store:2053?path=%2F%3Fed%3D2560&security=tls&encryption=none&host=chess.sorza.ir&type=ws&sni=digikala.sorza.ir#%40v2rayland02%F0%9F%8C%90
-vless://5ca6e49d-d15e-400e-9e9e-4fddcc4d8e41@poli.appleseraj.ir:2096?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=nurenburges.appleseraj.ir&fp=chrome&type=ws&sni=nurenburges.appleseraj.ir#
-vless://9a5a118d-06ab-4064-fe4b-89e47f1368b2@3.126.118.220:443?security=none&encryption=none&headerType=none&type=tcp#
-vless://ee9b0614-50ec-41b6-951b-e1d5d755fa4b@glob.thisiswe.uno:2053?path=%2F%3FTELEGRAM-YamYamProxy_YamYamProxy_YamYamProxy_YamYamProxy_YamYamProxy%3Fed%3D512&security=tls&encryption=none&host=cd11.thisiswe.uno&fp=chrome&type=ws&sni=cd11.thisiswe.uno#
-vless://94a03e9a-74d5-4036-95e9-563cc19355de@62.133.60.50:443?security=tls&encryption=none&headerType=none&type=tcp&sni=decdn12.suio.me#%40v2rayland02%F0%9F%8C%90
+vless://fe08cb95-a7bd-48d3-b3e8-e083ab8cd9bc@193.151.158.183:9000?security=none&encryption=none&headerType=http&type=tcp#%40v2rayland02%F0%9F%8C%90
+vless://991519c1-3680-49b7-bb9f-9029a7a39067@c2.s-sub.org:8443?path=%2F&security=tls&encryption=none&alpn=h2,http/1.1&host=backup.f-sub.cfd&fp=chrome&type=ws&sni=backup.f-sub.cfd#%40v2rayland02%F0%9F%8C%90

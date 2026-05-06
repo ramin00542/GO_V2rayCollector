@@ -1,2 +1,2 @@
-vless://d3153cb1-c5e5-480e-9929-d5c608cf0535@www.parsvds.ir:8080?path=%2Ftelegram%3DV_2RAYNGVPN&security=none&encryption=none&host=FySuMyYk3.aMirsiTesos.sItE.&type=ws#
-vless://91440b27-a0e5-4107-9aee-478361210fcd@www.speedtest.net:80?path=%2Ftelegram%3DV_2RAYNGVPN&security=none&encryption=none&host=FySuMyYk3.aMirsiTesos.sItE.&type=httpupgrade#%40V_2rayngVpn
+vless://bfe63cc5-412d-4aa7-b04e-75c9d52b5831@www.zula.ir:80?path=%2Ftelegram%3DV_2RAYNGVPN&security=none&encryption=none&host=FySuMyYk3.aMirsiTesos.sItE.&type=httpupgrade#
+vless://e258977b-e413-4718-a3af-02d75492c349@162.159.152.4:443?path=%2F&security=tls&encryption=none&insecure=0&host=ww23.sgxaniu.qzz.io&type=ws&allowInsecure=0&sni=ww23.sgxaniu.qzz.io#

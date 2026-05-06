@@ -1,2 +1,1 @@
-vless://adcf9278-847d-4f37-9571-fc3989ba6402@snapp.ir:2086?path=/&security=none&encryption=none&host=sari.electrodragon.ir&type=ws#👉🆔@v2ray_configs_pool📡🇮🇷®️Iran©️Tehrān🅿️ping:75.66ms
-vless://cd63c49a-d4cf-4856-89a6-6fe18b5070eb@snapp.ir:8880?encryption=none&type=ws&path=%2F&host=moein.akosha.ir#👉🆔@v2ray_configs_pool📡🇮🇷®️Iran©️Tehrān🅿️ping:73.39ms
+vless://cd63c49a-d4cf-4856-89a6-6fe18b5070eb@snapp.ir:8880?encryption=none&type=ws&path=/&host=moein.akosha.ir#

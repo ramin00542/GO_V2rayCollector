@@ -1,6 +1,1 @@
-vless://SVNTEAMs@www.speedtest.net:8080?path=/SVNTEAM?ed=2048&security=none&encryption=none&host=SVNTEAM-V2ray-FR.xn--fhq0la447aac5504dea701axr1g.Com.&type=ws#
-vless://SVNTEAMs@188.40.14.212:80?path=/SVNTEAM?ed=1048&security=none&encryption=none&host=SVNTEAM-V2ray-FR.xn--fhq0la447aac5504dea701axr1g.Com&type=ws#MTN
-vless://efe70b53-38d6-4434-f41c-ad45862a9cd6@hi--1join.outline-vpn.cloud:28585?path=%2F&security=none&encryption=none&type=ws#Persian+17+ID%28%40Outline_Vpn%29
-vless://23ca8a29-5605-4dbe-9be3-137772c16aec@per----join.outline-vpn.cloud:2086?path=%2F&security=none&encryption=none&host=a1.virankade.site&type=ws#Persian+11+ID%28%40Outline_Vpn%29
-vless://1eac6212-ed22-42ab-b6ea-bf13b387c6a9@77.91.84.45:22?security=reality&encryption=none&pbk=ksx0hPrRqVF_fCBua6cSk-tG3cs44ypIxU31AJ4_xiw&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=discord.com&sid=453bd40e2900fc73#
-vless://aa81e188-a979-411e-a10b-08287646cc43@wireless52---join.outline-vpn.cloud:443?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=vl26.rnd.biz.id&type=ws&sni=vl26.rnd.biz.id#
+vless://462acb01-a275-433c-9fc6-074de3d68ba0@turkws.configforvpn.fun:2087?path=%2F&security=tls&encryption=none&type=ws&sni=turkws.configforvpn.fun#

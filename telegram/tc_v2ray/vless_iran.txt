@@ -1,1 +1,2 @@
-vless://054a8c92-59df-47aa-feac-4bbb4d8ca1e0@v2rayfroshmtnn.ddns.net:2096?mode=gun&security=tls&encryption=none&type=grpc&serviceName=&sni=new.in-case-jadid-mane-follow-nemikone-vali-fane.site#%40TC_V2Ray
+vless://1385ed54-d251-48fb-801f-ee52663bcab2@gr2.shahinpanel.site:26717/?type=tcp&security=reality&fp=firefox&pbk=bzqIqnE_o81ih-XahmftHAPn-X1Vh1LqbOzlY2SvPzg&sni=blog.api.www.c…
+vless://1385ed54-d251-48fb-801f-ee52663bcab2@gr2.shahinpanel.site:26717/?type=tcp&security=reality&fp=firefox&pbk=bzqIqnE_o81ih-XahmftHAPn-X1Vh1LqbOzlY2SvPzg&sni=blog.api.www.cloudflare.com&sid=1364c780&spx=%2F#%20-%20Cloned-%40TC_V2ray
