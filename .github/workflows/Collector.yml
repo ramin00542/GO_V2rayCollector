@@ -32,7 +32,7 @@ jobs:
         git diff --staged --quiet || git commit -m "✔️ $(date '+%Y-%m-%d %H:%M:%S') Collected"
 
     - name: Push Changes
-      uses: ad-m/github-push-action@v0.8.0
+      uses: ad-m/github-push-action@v1.1.0
       with:
         branch: main
         github_token: ${{ secrets.GITHUB_TOKEN }}
