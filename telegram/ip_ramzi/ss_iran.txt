@@ -1,4 +1,7 @@
+vless://3f2d2ba4-7f52-4ded-8580-890461bc0005@65.20.96.60:999?security=reality&encryption=none&pbk=9wfsGBdHj4v57u3U-YDUrqyHcBzZP_43xYXw0aT_UHE&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=ghbi.ir#
+vless://ca3b458f-d5ba-4e81-8cdb-ca40eb193ebd@54.37.6.85:2096?security=none&encryption=none&host=ghbi.ir&headerType=http&type=tcp#
+vless://0cc1d046-7767-4c4f-9d8e-7f40427130b3@54.37.6.85:2096?security=none&encryption=none&host=ghbi.ir&headerType=http&type=tcp#
+vless://884c73ef-495f-4bf6-99b4-b007781af488@15.188.82.235:3389?security=reality&encryption=none&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&headerType=none&fp=chrome&type=tcp&sni=www.xbox.com#%40IP_Ramzi+%7C+%D8%A8%D9%87+%D8%B3%D9%88%DB%8C+%D8%A2%D8%B2%D8%A7%D8%AF%DB%8C
+vless://8a702809-5224-4f84-84e2-da389fca5144@88.135.47.56:2052?path=%2F&security=none&encryption=none&type=ws#
+vless://ca3b458f-d5ba-4e81-8cdb-ca40eb193ebd@54.37.6.85:2096?security=none&encryption=none&host=ghbi.ir&headerType=http&type=tcp#%40IP_Ramzi+%7C+%D8%A8%D9%87+%D8%B3%D9%88%DB%8C+%D8%A2%D8%B2%D8%A7%D8%AF%DB%8C
 vless://8b2e84cc-2574-4d4d-92bf-d0ee4f0c303e@31.171.250.158:56995?security=none&encryption=none&headerType=http&type=tcp#
-vless://6ec23107-119b-479c-b7fa-9d8ae9def4b8@2.189.130.94:10128?path=%2F&security=none&encryption=none&type=ws#
-vless://884c73ef-495f-4bf6-99b4-b007781af488@15.188.82.235:3389?security=reality&encryption=none&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&headerType=none&fp=chrome&type=tcp&sni=www.xbox.com#
-vless://6ec23107-119b-479c-b7fa-9d8ae9def4b8@2.189.130.94:10128?path=%2F&security=none&encryption=none&type=ws#%40IP_Ramzi+%7C+%D8%A8%D9%87+%D8%B3%D9%88%DB%8C+%D8%A2%D8%B2%D8%A7%D8%AF%DB%8C

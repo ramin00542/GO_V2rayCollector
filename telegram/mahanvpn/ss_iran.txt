@@ -1,4 +1,3 @@
-vless://mahanvpn-free-iran7@162.159.10.81:443?path=%2Fassets&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&host=MAHANteAm.noD32Cpu.iR&fp=ios&type=ws&sni=MAHANteAm.noD32Cpu.iR#
-vless://mahanvpn-free-iran5@162.159.10.81:443?path=%2Fassets&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&host=MAHANteAm.noD32Cpu.iR&fp=ios&type=ws&sni=MAHANteAm.noD32Cpu.iR#%F0%9F%87%A9%F0%9F%87%AA%F0%9F%94%91Tel%40mahanvpn-3-free%20iran
-vless://mahanvpn-free-iran6@104.19.177.157:443?path=%2Fassets&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&host=MAHANteAm.noD32Cpu.iR&fp=ios&type=ws&sni=MAHANteAm.noD32Cpu.iR#
-vless://mahanvpn-free-iran5@188.114.98.0:443?path=%2Fassets&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&host=MAHANteAm.noD32Cpu.iR&fp=ios&type=ws&sni=MAHANteAm.noD32Cpu.iR#%F0%9F%87%A9%F0%9F%87%AA%F0%9F%94%91Tel%40mahanvpn-2-free%20iran
+vless://mahanvpn-free-iran6@104.19.177.157:443?path=%2Fassets&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&host=MAHANteAm.noD32Cpu.iR&fp=ios&type=ws&sni=MAHANteAm.noD32Cpu.iR#%F0%9F%87%A9%F0%9F%87%AA%F0%9F%94%91Tel%40mahanvpn-4-free%20iran
+vless://mahanvpn-free-iran5@188.114.98.0:443?path=%2Fassets&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&host=MAHANteAm.noD32Cpu.iR&fp=ios&type=ws&sni=MAHANteAm.noD32Cpu.iR#
+vless://mahanvpn-free-iran5@104.19.177.157:443?path=%2Fassets&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&host=MAHANteAm.noD32Cpu.iR&fp=ios&type=ws&sni=MAHANteAm.noD32Cpu.iR#

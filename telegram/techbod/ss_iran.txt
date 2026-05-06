@@ -1,1 +1,5 @@
-vless://2c145456-285f-427e-82b3-6373dd4e7811@snapp.ir:2086?type=ws&encryption=none&path=&host=jing.eemehaze.lol&security=none#@techbod
+vless://ef4b29be-c494-4635-883b-27b4536d000d@snapp.ir:80?path=%2F%3Fed%3D2080&security=none&encryption=none&host=1.jojo.avenflow.ir&type=ws#
+vless://174377a8-7429-4793-af64-7d53e0675a84@tamin.ir:80?encryption=none&security=none&type=ws&host=mysql.reedsy.ir&path=%2F#@techbod
+vless://04272a6c-8df2-47d4-b948-082f89cf0997@wanted.linkinfo.cloud:8880?path=%2F&security=none&encryption=none&type=ws#@techbod
+vless://cc431002-21ef-47a1-9b51-cd2026bd4603@varzesh3.com:80?type=ws&encryption=none&path=%2Fws&host=nobody.fasterspeed.ir&security=none#
+vless://41714fa2-7fe0-43eb-8814-68dfe2237994@185.208.79.188:23458?type=tcp&encryption=none&security=none#@techbod

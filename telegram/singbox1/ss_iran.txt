@@ -1,6 +1,2 @@
-vless://96930f31-8e68-4186-a101-5593f0b2b274@anten.ir:2052?path=%2F&security=none&encryption=none&host=new.nanoline.ir&type=ws#%40proxy_kafee
+vless://c7784e78-ad09-4890-92b7-6feb6742b6b9@185.143.233.235:80?path=%2Fws-dl-echovps&security=none&encryption=none&host=dl.echovps.ir&type=ws#%40proxy_kafee1
 vless://1113d596-587f-4553-b276-0a288c88b6b9@vitallife.gg:443?path=%2Fwp-content%2Fcachecache&security=tls&alpn=http%2F1.1&encryption=none&insecure=0&host=vitallife.gg&fp=chrome&type=ws&allowInsecure=0&sni=vitallife.gg#%40proxy_kafee2
-vless://1113d596-587f-4553-b276-0a288c88b6b9@vitallife.gg:443?path=%2Fwp-content%2Fcachecache&security=tls&alpn=http%2F1.1&encryption=none&insecure=0&host=vitallife.gg&fp=chrome&type=ws&allowInsecure=0&sni=vitallife.gg#
-vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?path=%2F&security=none&encryption=none&host=sr.novatechsapr.ir&type=ws#%40proxy_kafee
-vless://6b5a5b5a-e909-4fdf-812d-cd2a4063121f@red.nahidapp.com:443?security=tls&type=ws&headerType=&path=%2Fred%2F&host=red.nahidapp.com&sni=red.nahidapp.com&fp=#@proxy_kafee
-vless://e05ad0d3-5bf0-463d-9ba2-817680c6f895@snapp.ir:8080?path=%2F&security=none&encryption=none&host=simorgh.darerio.ir&type=ws#%40proxy_kafee

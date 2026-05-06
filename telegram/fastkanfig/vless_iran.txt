@@ -1,10 +1,1 @@
-vless://a66525c0-328e-4af8-ae76-3ce1e4eeb9d2@snapp.ir:80?path=%2Findex.html&security=none&encryption=none&host=aiagentshop.aruxm.ir&type=ws#%40fastkanfig
-vless://895a74fa-7b90-4cca-912d-cd2b8607c9fa@185.208.79.188:23458?security=&encryption=none&headerType=none&type=tcp#
-vless://dc64677e-9025-4ec8-95d3-be7e5cf23844@plse3.gishevip.xyz:80?path=%2F&security=none&encryption=none&host=pl1.dns-coco.ir&type=ws#%40fastkanfig
-vless://dae2ddc6-a892-495f-a001-181cec56ad12@snapp.ir:2052?path=%2F&security=&encryption=none&host=p1.razstar.ir&type=ws#
-vless://64569c45-7ce4-4336-bae6-fa3e59c9498a@snapp.ir:80?path=%2F&security=none&encryption=none&host=M1.snllshop.ir&type=ws#
-vless://64569c45-7ce4-4336-bae6-fa3e59c9498a@snapp.ir:80?path=%2F&security=none&encryption=none&host=M1.snllshop.ir&type=ws#%F0%9F%9A%80%20%40fastkanfig
-vless://64569c45-7ce4-4336-bae6-fa3e59c9498a@snapp.ir:2052?path=%2F&security=none&encryption=none&host=M3.snllshop.ir&type=ws#
-vless://dc4dccda-55c9-480a-9bc1-8edd8e2ccf69@185.213.165.81:48660?security=none&encryption=none&headerType=none&type=tcp#%F0%9F%8D%93%40fastkanfig
-vless://64569c45-7ce4-4336-bae6-fa3e59c9498a@snapp.ir:8080?path=%2F&security=none&encryption=none&host=M2.snllshop.ir&type=ws#
-vless://21cb5cae-36f6-4e20-b497-dc0a30f2edf9@185.143.233.200:8880?path=%2F&security=none&encryption=mlkem768x25519plus.native.0rtt.-dHBgFiE3o72yiSy-lApCXI5RZiQ__iyVOGUfrCZiwM&host=nima.hayalco.ir&type=ws#
+vless://895a74fa-7b90-4cca-912d-cd2b8607c9fa@185.208.79.188:23458?security=&encryption=none&headerType=none&type=tcp#Freee%E2%9A%A1%EF%B8%8F%202

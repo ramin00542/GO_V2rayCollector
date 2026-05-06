@@ -1,3 +1,2 @@
+vless://7d37755e-4865-41b5-bd6e-1f8fc7171a30@85.133.161.162:18025?encryption=none&type=tcp&headerType=none#
 vless://4831ab5a-f3a7-4064-bd9a-643cc89c2e72@net.asokord.fun:35824?security=none&encryption=none&headerType=none&type=tcp#
-vless://dae2ddc6-a892-495f-a001-181cec56ad12@snapp.ir:2052?encryption=none&type=ws&path=%2F&host=p1.razstar.ir#@YamYamProxy
-vless://7d37755e-4865-41b5-bd6e-1f8fc7171a30@85.133.161.162:18025?encryption=none&type=tcp&headerType=none#@YamYamProxy

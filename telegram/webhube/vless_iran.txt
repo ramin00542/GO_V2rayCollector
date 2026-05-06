@@ -1,1 +1,2 @@
-vless://a9c28cf3-1962-8824-1175-a69268a0e213@92.42.203.170:5690?encryption=none&security=none&type=tcp&headerType=none#%F0%9F%86%94%5Bt.me%2FWEBHUBE%5D%F0%9F%91%89IR4545
+vless://d749c2c0-4ba4-45fe-f8f4-2f422d689a21@pxqhkkokwtgf.eu-central-1.clawcloudrun.com:43144?encryption=none&flow=xtls-rprx-vision&security=tls&sni=devblogs.microsoft.com&insecure=1&allowInsecure=1&type=tcp&headerType=none#%F0%9F%86%94%5Bt.me%2FWEBHUBE%5D%F0%9F%91%89MCI527
+vless://1a94fbd9-79d2-4aa7-bf1d-074f678d27ab@172.66.128.70:80?encryption=none&security=none&type=ws&host=EqUiPPed-phOToZkoA7K5e6P.eCoTOuRiss.Co.uk.&path=%2F%3Fed#%F0%9F%86%94%5Bt.me%2FWEBHUBE%5D%F0%9F%91%89MTN70128

@@ -1,5 +1,6 @@
-vless://5f3db645-ae0b-4cf6-aee1-838a92b6ea68@javad.rbj5847.workers.dev:443?path=vless-ws%2F%3Fed%3D2048&security=tls&encryption=none&alpn=h2&host=javad.rbj5847.workers.dev&fp=randomized&type=ws&sni=javad.rbj5847.workers.dev#
+vless://2b5e6655-7385-45fe-8196-0cba24993fa0@94.156.203.237:2087?security=reality&type=grpc&host=&headerType=&serviceName=xyz&sni=discordapp.com&fp=chrome&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&sid=&spx=#%F0%9F%9A%80%20Marz%20%28v2ray%29%20%5BVLESS%20-%20grpc%5D
+vless://590c749b-22c0-4963-80f4-24fcfcb5118a@178.22.69.174:48495?mode=gun&security=none&encryption=none&type=grpc&serviceName=#v2ray1
+vless://2b5e6655-7385-45fe-8196-0cba24993fa0@ javad.myddns.me:2087?security=tls&type=grpc&host=&headerType=&serviceName=xyz&sni=lol.v2rayvpn2.sbs&fp=chrome&alpn=#
 vless://c1f9851d-2939-4332-8d82-3a51273b963f@v2rayo7ybv67i76.bounceme.net:2053?mode=gun&security=reality&encryption=none&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&fp=chrome&type=grpc&serviceName=xy…
-vless://c1f9851d-2939-4332-8d82-3a51273b963f@v2rayo7ybv67i76.bounceme.net:2053?mode=gun&security=reality&encryption=none&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&fp=chrome&type=grpc&serviceName=xyz&sni=discordapp.com#%40v2rayo7ybv67i76
-vless://3b29dfdf-1bbe-4c14-beaa-932b650d6c0b@82.115.16.170:2053?mode=gun&security=reality&encryption=none&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&fp=chrome&type=grpc&serviceName=xyz&sni=discordapp.com#v2ray
+vless://584cfc39-6df2-43c5-bed7-1a54e87a9350@93.123.83.181:8443?security=reality&type=tcp&host=&headerType=&path=&sni=cdn.discordapp.com&fp=chrome&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&sid=&spx=#
 vless://2b5e6655-7385-45fe-8196-0cba24993fa0@

@@ -1,1 +1,2 @@
-vless://7a7d2067-3ebd-4b25-9b00-13f35ea41a7a@s15.leader21.top:5054?type=ws&encryption=none&security=none&host=s15.leader21.top&path=%2Fhttp#%DA%A9%D8%A7%D9%86%D9%81%DB%8C%DA%AF+%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86+%DA%A9%D8%A7%D9%86%D8%A7%D9%84+%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85+Golf_VPN+%F0%9F%9A%80
+vless://341a1b4e-3a62-4367-bb57-ae744cfffaba@s14.leaders711.top:5050?type=ws&encryption=none&security=none&host=s14.leaders711.top&path=%2Fhttps#%DA%A9%D8%A7%D9%86%D9%81%DB%8C%DA%AF+%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86+%DA%A9%D8%A7%D9%86%D8%A7%D9%84+%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85+Golf_VPN+%F0%9F%9A%80
+vless://b7b52207-3f71-4f97-87c8-7d18810c6ee0@s14.leaders711.top:5050?type=ws&encryption=none&security=none&host=s14.leaders711.top&path=%2Fhttps#

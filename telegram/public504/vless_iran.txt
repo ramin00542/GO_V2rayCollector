@@ -1,1 +1,1 @@
-vless://9d5fd220-4f17-48e2-a833-5b1a62a3411c@cloud.ns.n01l.nochofscu.sbs:10443?security=reality&sni=www.speedtest.net&fp=firefox&pbk=n8tbatLDMMjIgL42OziDdK-lQGi3M1hFz4xVtmOjuTE&sid=93a1f0fa&spx=/&type=tcp&encryption=none#
+vless://cc6bfed8-7010-4eab-a8e7-89793ade0815@cloud.ns.g01e.nochofscu.sbs:10443?security=reality&sni=www.speedtest.net&fp=firefox&pbk=n8tbatLDMMjIgL42OziDdK-lQGi3M1hFz4xVtmOjuTE&sid=93a1f0fa&spx=/&type=tcp&encryption=none#%F0%9F%87%A9%F0%9F%87%AA%F0%9F%8E%81%20@Shaxerver

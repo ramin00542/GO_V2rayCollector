@@ -1,2 +1,2 @@
+vless://727b54ea-0ae5-412f-d5bf-9590d3f91246@104.21.37.215:443?security=tls&sni=new1.alpha5.top&type=grpc&serviceName=@V2ray_Alpha%20@V2ray_Alpha%20@V2ray_Alpha&encryption=none#%DA%A9%D8%A7%D9%86%D8%A7%D9%84%20%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85%20v2rayXservers
 vless://1dda754a-ddc9-496a-83f3-ab1a1187eb17@mtn.vpnprosec.com:443?security=tls&sni=V2ray.SvnBuy.Online&type=grpc&encryption=none#
-vless://210d48ca-acbd-4b2e-9a85-2654e4514851@asia.netblocksiran.xyz:5610?security=&type=tcp&headerType=http&host=Zula.ir&encryption=none#%DA%A9%D8%A7%D9%86%D8%A7%D9%84%20%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85%20v2rayXservers

@@ -1,2 +1,1 @@
-vless://41714fa2-7fe0-43eb-8814-68dfe2237994@185.208.79.188:23458?type=tcp&encryption=none&security=none#@techbod
-vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?encryption=none&type=ws&path=%2F&host=sr.novatechsapr.ir#@techbod
+vless://174377a8-7429-4793-af64-7d53e0675a84@tamin.ir:80?encryption=none&security=none&type=ws&host=mysql.reedsy.ir&path=%2F#

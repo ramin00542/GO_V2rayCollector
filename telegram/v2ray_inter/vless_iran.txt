@@ -1,1 +1,1 @@
-vless://22f1eb0f-fa76-40dd-a6b3-9bde95efd8db@fOxrAy.MaKuP.tOp:2096?mode=gun&security=tls&encryption=none&fp=safari&type=grpc&serviceName=@arian_pk&sni=iisBV2raYli.MaKuP.toP#
+vless://d6200861-3330-47a2-b822-06e4761ffe74@all.v-2rayngvpn.cfd:443?mode=multi&security=tls&encryption=none&type=grpc&serviceName=@V_2rayngVpn-@V_2rayngVpn-@V_2rayngVpn-@V_2rayngVpn-@V_2rayngVpn&sni=Loop.v2rayvpn2.sbs#%40V_2rayngVpn+TLS

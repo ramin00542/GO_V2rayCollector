@@ -1,3 +1,1 @@
-vless://42164a1f-6190-4840-b58e-5241121abde5@turkmen.cloud:21308?security=none&encryption=none&host=zula.ir&headerType=http&type=tcp#
 vless://1999c5a1-de07-4e55-b93a-5d778948e7c1@91.107.244.143:8443?mode=gun&security=reality&encryption=none&pbk=BmwfqSOh33mH2ywv3xgKgTANTSvqgmWMRB9Et695dVk&fp=chrome&spx=%2F&type=grpc&serviceName=@loatvpn :چنل سازنده&sni=www.speedtest.net&sid=8f6570c1#
-vless://42164a1f-6190-4840-b58e-5241121abde5@turkmen.cloud:21308?security=none&encryption=none&host=zula.ir&headerType=http&type=tcp#%40loatvpn--The%27end+Channel%3A+%40loatvpn

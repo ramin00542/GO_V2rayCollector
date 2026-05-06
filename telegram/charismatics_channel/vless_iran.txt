@@ -1,1 +1,1 @@
-vless://feade342-9a00-427e-b049-752a4e584ba5@85.133.161.168:443?encryption=none&flow=&headerType=http&host=fsn.bestlive.ir&type=tcp#%E2%98%ACSH%CE%9EN%E2%84%A2%F0%9F%93%A1%E2%90%83%20
+vless://0d3d266a-ce3c-4fa9-b252-95144b7bc443@vipi11.abdulkhanioffline.pw:22527?encryption=none&flow=&headerType=http&host=cafebazaar.snapp.ir&type=tcp#%E2%98%ACSH%CE%9EN%E2%84%A2%F0%9F%93%A1%E2%90%80%20

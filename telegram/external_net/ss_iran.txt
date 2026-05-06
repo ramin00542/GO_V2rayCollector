@@ -1,2 +1,1 @@
 vless://ba426d0a-e90a-408b-b6c0-2798a3cc5f46@45.82.138.240:80?type=tcp&encryption=none&security=none#
-vless://ba426d0a-e90a-408b-b6c0-2798a3cc5f46@45.82.138.240:80?type=tcp&encryption=none&security=none#test

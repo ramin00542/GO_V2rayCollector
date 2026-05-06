@@ -1,1 +1,1 @@
-vless://c7784e78-ad09-4890-92b7-6feb6742b6b9@185.143.233.235:80?path=%2Fws-dl-echovps&security=none&encryption=none&host=dl.echovps.ir&type=ws#
+vless://826beb96-4c53-486d-9ddd-c1d09970eb17@yasinpanel.pointspeed.ir:80?encryption=none&type=ws&path=%2Farvancloud.ir&host=ybvpnadmin.pointspeed.ir#%40Hddify

@@ -1,3 +1,1 @@
-vless://bf72c0c8-4309-4661-aff0-144d67db02ff@ad1.xiqpanelz.com:40200?security=&encryption=none&host=ir31.uploadboy.com&headerType=http&type=tcp#%F0%9F%94%B4%20MTN%20%7C%20RGT
-vless://bf72c0c8-4309-4661-aff0-144d67db02ff@ad1.xiqpanelz.com:40200?security=&encryption=none&host=ir31.uploadboy.com&headerType=http&type=tcp#
-vless://69c397dd-70c6-447b-f364-1dace20ce83f@80.good-ping.scriptboy.ir:80?type=ws&path=%2F32875&host=good-ping.scriptboy.ir&security=none#
+vless://54ba32d3-2389-40b9-9f2c-ec0bb9a8bc8c@ad1.xiqpanelz.com:40200?security=&encryption=none&host=ir31.uploadboy.com&headerType=http&type=tcp#

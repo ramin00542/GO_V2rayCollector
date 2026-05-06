@@ -1,2 +1,2 @@
-vless://a66f90d8-cfc8-4eef-ad19-378aeede1d9b@25.129.199.0:2052?path=%2F%3Fed%3D2048&security=none&encryption=none&host=FINLAND.SODOGODPING.IR&type=ws#
-vless://5416af83-c120-4bfd-80ba-104d8ac61456@62.60.158.79:80?path=%3F5661173337.zip&security=none&encryption=none&host=tgju.org&type=ws#
+vless://41c9e6be-cd11-4511-996c-7db798d38540@185.8.172.182:20249?security=&encryption=none&headerType=none&type=tcp#%40UnNurmal
+vless://b251f81a-95aa-4c83-a716-889acec63fa5@ee1vip.vnet215.xyz:24009?security=none&encryption=none&host=zara.com&headerType=http&type=tcp#

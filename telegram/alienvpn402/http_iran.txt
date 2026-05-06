@@ -1,6 +1,6 @@
 https://play.google.com/store/apps/details?id=org.outline.android.client
-https://s3.amazonaws.com/outline-releases/client/windows/stable/Outline-Client.exe
 https://raw.githubusercontent.com/AlienVPN402/Clash-Subscribe/main/index.html
-https://alienvpn402.github.io/AlienVPN402-subscribe-servers-sing-box/
-https://raw.githubusercontent.com/AlienVPN402/SFA-Config-Servers/main/index.html
 https://raw.githubusercontent.com/AlienVPN402/Surfboard-Subscribe/main/index.html
+https://raw.githubusercontent.com/AlienVPN402/SFA-Config-Servers/main/index.html
+https://alienvpn402.github.io/AlienVPN402-subscribe-servers-sing-box/
+https://s3.amazonaws.com/outline-releases/client/windows/stable/Outline-Client.exe

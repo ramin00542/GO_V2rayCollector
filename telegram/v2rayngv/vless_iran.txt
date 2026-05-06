@@ -1,4 +1,1 @@
-vless://c1ea5250-43d6-4f91-8d0f-64ed231cc559@pishgam.sdcards.ir:8080?path=%2F%3Fed%3D2087&security=none&encryption=none&host=pivaz-a.plas-nim.org&type=httpupgrade#%40V2rayNGV
-vless://8f90b851-8f60-411a-ace2-efe1c1edda4b@62.60.159.191:443?path=%2Fws%3Fed%3D2560&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&host=de222.4qwertyuiopasdfghjklzxcvbnmmnbvcxzlkjhgfdsapoiuytrewq1234567890.com&fp=randomized&type=ws&sni=de222.4qwertyuiopasdfghjklzxcvbnmmnbvcxzlkjhgfdsapoiuytrewq1234567890.com#
-vless://53bea386-912e-4fe3-9eff-59c2285a176c@pages.dev:2053?path=%2Fadmins%3Fed%3D2560&security=tls&alpn=http%2F1.1&encryption=none&host=9.neshaan.org&fp=chrome&type=ws&sni=9.neshaan.org#%40V2rayNGV
-vless://6865584d-f1ed-4791-9f64-f9544bc14391@www.bandmusic.ir:443?path=%2F%3Fed%3D2560&security=tls&encryption=none&alpn=h2&host=join.kiava.fun&fp=firefox&type=ws&sni=join.kiava.fun#%40V2rayNGV
+vless://TELEGRAM-NUFiLTER@NUFiLTER.fastly80.hosting-ip.com:80?path=%2Ftelegram-NUFiLTER%2Ctelegram-NUFiLTER%2Ctelegram-NUFiLTER%2Ctelegram-NUFiLTER%3Fed%3D2048&security=none&encryption=none&host=Bashetokhobi.ir&type=ws#%40V2rayNGV

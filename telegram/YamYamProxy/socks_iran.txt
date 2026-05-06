@@ -1,8 +1,8 @@
 socks://62.220.126.56:26483?type=tcp#@YamYamProxy
+socks://Og@62.220.126.92:30494#@YamYamProxy
+socks://62.220.126.56:31405?type=tcp#@YamYamProxy
+socks://Og@62.220.126.92:30376#@YamYamProxy
+socks://62.220.126.56:31548?type=tcp#@YamYamProxy
+socks://Og@62.220.126.92:30230#@YamYamProxy
 socks://Og@62.220.126.56:32139#@YamYamProxy
 socks://185.8.172.128:443?type=tcp#@YamYamProxy
-socks://62.220.126.56:31548?type=tcp#@YamYamProxy
-socks://62.220.126.56:31405?type=tcp#@YamYamProxy
-socks://Og@62.220.126.92:30230#@YamYamProxy
-socks://Og@62.220.126.92:30376#@YamYamProxy
-socks://Og@62.220.126.92:30494#@YamYamProxy

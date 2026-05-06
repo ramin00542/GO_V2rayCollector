@@ -1,1 +1,1 @@
-vless://21ec8aa4-b509-4056-908f-960ef9126062@xoxo.i-missvezze.ir:29262?type=tcp&path=%2F&headerType=http&security=none#
+vless://49193b33-7ff4-4b3b-abf2-94e120bf6098@2.189.85.218:39387?security=none&encryption=none&host=fast.com&headerType=http&type=tcp#%40vezze_vpn

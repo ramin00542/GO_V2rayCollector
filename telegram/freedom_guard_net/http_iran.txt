@@ -1,4 +1,4 @@
-https://github.com/Freedom-Guard/FG_MOBILE/releases/latest/download/app-release.apk
-https://feedback.freedomguard.workers.dev/
 https://config-fl.freedomguard.workers.dev/ok#@FG_Link
+https://feedback.freedomguard.workers.dev/
 https://freedom-guard.github.io/
+https://github.com/Freedom-Guard/FG_MOBILE/releases/latest/download/app-release.apk

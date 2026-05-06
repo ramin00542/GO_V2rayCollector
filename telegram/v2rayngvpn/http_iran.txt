@@ -1,2 +1,1 @@
-socks://Og@62.220.126.56:30992#https://t.me/UnNurmal
 https://t.me/UnNurmal

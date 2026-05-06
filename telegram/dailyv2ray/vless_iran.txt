@@ -1,5 +1,7 @@
-vless://7f64eeb1-b5f1-40a0-d80e-e6c718f6bd6a@mtn.ircf.space:2096?mode=gun&security=tls&encryption=none&type=grpc&serviceName=(
-vless://4d1de325-20a9-4fe8-cfe8-6dee9c8f0d16@fast13.foxnim.info:8443?mode=multi&security=tls&encryption=none&type=grpc&serviceName=@VPNCUSTOMIZE&sni=www.loveislam.top#
-vless://7f64eeb1-b5f1-40a0-d80e-e6c718f6bd6a@mci.ircf.space:2096?mode=gun&security=tls&encryption=none&type=grpc&serviceName=(
+vless://ba089996-6155-4202-8982-fefcc7c7d43a@www80.nowbest.cf:18567?type=grpc&security=tls&serviceName=&sni=www80.nowbest.cf&fp=chrome#80free4
+vless://5477899c-c36d-4943-d5ec-325f7daff716@www30.nowbest.cf:13737?type=grpc&security=tls&serviceName=&sni=www30.nowbest.cf&fp=chrome#
+vless://defab7ba-d5e8-46da-afad-33d453f6f5ee@5.161.20.101:56702?host=zula.ir&type=tcp&security=none&headerType=http&encryption=none#%E2%9C%85+%D8%B3%D8%B1%D9%88%D8%B1%D9%87%D8%A7%DB%8C+%D8%A8%DB%8C%D8%B4%D8%AA%D8%B1+%D8%AF%D8%B1+%DA%A9%D8%A7%D9%86%D8%A7%D9%84+%3A++prrofile_purple%40+%E2%9C%85
 vless://eb123cb1-ecee-42c4-c509-fedd52be15fe@AzadiIran.irov2ray.lol:2096?mode=gun&security=tls&encryption=none&type=grpc&serviceName=(
 vless://7ce27a4e-10a6-459b-fd47-d078df5f22fe@104.17.187.102:2096?mode=gun&security=tls&encryption=none&type=grpc&serviceName=(
+vless://7f64eeb1-b5f1-40a0-d80e-e6c718f6bd6a@mtn.ircf.space:2096?mode=gun&security=tls&encryption=none&type=grpc&serviceName=(
+vless://7f64eeb1-b5f1-40a0-d80e-e6c718f6bd6a@mci.ircf.space:2096?mode=gun&security=tls&encryption=none&type=grpc&serviceName=(

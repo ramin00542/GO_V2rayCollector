@@ -1,2 +1,2 @@
-vless://47a508c1-2a1f-4af9-8462-b30ec9d188e6@amir.itur.store:48213?security=none&encryption=none&host=telewebion.com&headerType=http&type=tcp#
-vless://bbad4026-54a7-4681-a28e-f60efd857ab5@tn.pingtools.net:2087?security=none&encryption=none&host=skyroom.online&headerType=http&type=tcp#
+vless://7a66b8ef-9713-4b69-b839-6bb45070af35@91.99.198.174:443?security=none&encryption=none&host=zula.ir%2F%3FTELEGRAM%40JOKERRVPN&headerType=http&type=tcp#%F0%9F%87%AA%F0%9F%87%A6%40Jeyksatan
+vless://8cad6474-5344-476a-9bf9-8e65d5a70d93@tunnel.bestserver.sbs:80?path=%2F%3Fed%3D2560&security=none&encryption=none&host=v2ray2.bestserver.sbs&type=ws#%40Jeyksatan

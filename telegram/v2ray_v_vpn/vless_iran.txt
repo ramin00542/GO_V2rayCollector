@@ -1,3 +1,1 @@
 vless://982c75a1-e8f8-4006-b50f-42a2c3bdd0b2@varzesh3.com:80?type=ws&encryption=none&path=%2Fws&host=nobody.fasterspeed.ir&security=none
-vless://810b4a88-75bc-4180-8715-8387ff1af093@Snapp.ir:8080?path=%2F&security=none&encryption=none&host=uplinkdl27.lyraforge.ir&type=ws#
-vless://c09816d1-9b53-4e0d-85a8-9def477121ab@snappfood.ir:80?path=%2Fws&security=none&encryption=none&host=cdnisfucka.drnimaamini.ir&type=ws#@@v2ray_v_vpn

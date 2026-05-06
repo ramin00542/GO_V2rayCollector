@@ -1,12 +1,13 @@
-https://t.me/proxy?server=178.104.72.162&Telegram-ICV2RAY-Telegram-ICV2RAY-Telegram-ICV2RAY-Telegram-ICV2RAY-Telegram-ICV2RAY-Telegram-ICV2RAY-Telegram-ICV2RAY-Telegram-ICV2RAY&port=443&secret=dd104462821249bd7ac519130220c25d09
+https://t.me/proxy?server=95.217.235.33&port=443&secret=dd104462821249bd7ac519130220c25d09
 https://t.me/proxy?server=api.nirvana-smoke.com&port=443&user=Azir_30ad4317f2c73dd1f6&pass=Azir_30ad4317f2c73dd1f6
 https://t.me/proxy?server=panel.azirlink.net&port=8443&user=Azir_30ad4317f2c73dd1f6&pass=Azir_30ad4317f2c73dd1f6
 https://t.me/proxy?server=62.220.126.92&port=31876&user=Telegram:@v2rayng_vpn403
-https://t.me/proxy?server=77.42.79.76&port=4455&secret=dd104462821249bd7ac519130220c25d09**
+https://t.me/proxy?server=178.104.72.162&Telegram-ICV2RAY-Telegram-ICV2RAY-Telegram-ICV2RAY-Telegram-ICV2RAY-Telegram-ICV2RAY-Telegram-ICV2RAY-Telegram-ICV2RAY-Telegram-ICV2RAY&port=443&secret=dd104462821249bd7ac519130220c25d09
 https://t.me/proxy?server=62.220.126.92&port=31876&user=Telegram%3A%40V2RAYNG_FARS
+https://t.me/proxy?server=77.42.79.76&port=4455&secret=dd104462821249bd7ac519130220c25d09**
 https://t.me/proxy?server=quickrouteapp.xyz&port=443&secret=ee7e4f1c8b3d2a5e9c6f0b4d8a1c5e7f2b717569636b726f7574656170702e78797a
 https://t.me/proxy?server=borehole.friary.impressure.pinoyteleseryeonline.com&port=443&secret=ee326558bcba6e6c0dcd93d43094239667647a656e2e7275&&channel=@baicai_dev
-https://t.me/proxy?server=mtp.ascel.la&port=8443&secret=dd5a168da5855fbccf12ccba3e0c4df359&&channel=@baicai_dev
 https://t.me/proxy?server=77.42.79.76&port=4455&secret=dd104462821249bd7ac519130220c25d09
+https://t.me/proxy?server=mtp.ascel.la&port=8443&secret=dd5a168da5855fbccf12ccba3e0c4df359&&channel=@baicai_dev
 https://t.me/proxy?server=theoriginalproxies-5.com&port=443&secret=ee722ba6ba8dca2a31690a58c3a3223e2f7777772e636c6f7564666c6172652e636f6d
 https://t.me/proxy?server=62.238.0.202&port=4455&secret=dd104462821249bd7ac519130220c25d09

@@ -1,1 +1,2 @@
-vless://6e0342ac-6d42-46a6-b97c-1499582b9247@sq3jawc8ga85xaq.dlcenter.shop:29252?type=tcp&security=none#@vpn_kade01
+vless://44956c15-75bb-4e09-b5b8-d58af3c1f5cb@13.39.214.100:21464?type=tcp&security=none#
+vless://084e7414-5226-4d46-920d-6a5e0cc1b649@h556vhtvs2y5otj.dlcenter.shop:13170?security=&encryption=none&headerType=&type=tcp#%40vpn_kade01

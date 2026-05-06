@@ -1,1 +1,2 @@
-vless://97d53a59-918e-45fc-bc5d-ba487f090cc1@80.240.23.101:443?type=xhttp&path=%2FDota2%3Fed%3D2048&host=&mode=auto&security=reality&pbk=HhI0Y1IV5Vks0OqsV6N4Csvaivc1BH_IzoSbw5Ii_3o&fp=randomized&sni=hundleymechanical.com&sid=008c74&spx=%2F#
+vless://b37bc820-b959-4811-a0a1-27d319a22d7d@77.221.154.111:43035?type=tcp&security=none#free%20iran-vbyu0zam
+vless://dba21741-9901-4e3f-b9fe-a52ec3633b67@www.digitalcity5.com:2083?path=%2F&security=tls&encryption=none&alpn=h2,http/1.1&host=s14.sg-forum.info&fp=randomized&type=ws&sni=s14.sg-forum.info#

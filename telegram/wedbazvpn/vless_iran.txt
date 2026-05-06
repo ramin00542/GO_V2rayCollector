@@ -1,1 +1,1 @@
-vless://0d84cdbd-c0fb-47c6-ab5d-a25587df2a4a@185.143.233.5:80?path=%2Fxray&security=none&encryption=none&host=bot.vipiranian.de&type=ws#@wedbazgap
+vless://dc4dccda-55c9-480a-9bc1-8edd8e2ccf69@185.213.165.81:48660?encryption=none&type=tcp&headerType=none#@wedbazgap

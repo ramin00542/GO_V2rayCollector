@@ -1,9 +1,8 @@
-vless://628f8495-f851-42dd-8aa6-0e7157cd31d6@arvancloud.ir:80?type=ws&encryption=none&path=/&host=m.ahwazteem.ir&security=none#[47124]
-vless://c4cb5a4b-6225-4c56-8f0b-7c23b4017d54@ww.iwantmoney.ir:8880?path=%2F&security=&encryption=none&type=ws#[47077]
-vless://debea963-6cc7-4d71-8031-eada060c4429@snapp.ir:8880?type=ws&encryption=none&path=%2F&host=moein.akosha.ir&security=none#[47076]
-vless://ee9b0614-50ec-41b6-951b-e1d5d755fa4b@45.130.125.198:2053?security=tls&encryption=none&insecure=0&host=cd11.thisiswe.uno&fp=chrome&type=ws&allowInsecure=0&sni=cd11.thisiswe.uno#[47110]
-vless://2b80ea9f-a613-4386-b293-532b5c2e799b@pg.nexorainnovationhub.ir:80?path=/&security=none&encryption=none&host=finland.lezzaluxa.ir&type=ws#[47092]
-vless://c5e37ade-1f00-4dfa-a01d-3611f83f39e8@snapp.ir:80?encryption=none&type=ws&path=/&host=simorgh.darerio.ir#
-vless://a160da89-e6a7-4335-a99b-60381d229058@185.143.234.235:2053?path=%3Fed%3D2048&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&insecure=0&host=dl.lexwill.site&fp=chrome&type=ws&allowInsecure=0&sni=dl.lexwill.site#[47108]
-vless://a6ed1b73-ee8a-45c9-8288-ae082f5f1ae6@ww.parspas.ir:8880?path=/&security=&encryption=none&type=ws#[47054]
-vless://65b6bdac-c258-4742-8342-7b97cfa8451c@trex.nahidapp.com:443?path=%2Fvless-ws&security=tls&encryption=none&insecure=0&host=trex.nahidapp.com&fp=chrome&type=ws&allowInsecure=0&sni=trex.nahidapp.com#[47091]
+vless://2f5e621f-fedf-4efa-b84f-a9a1bafa50c7@arvancloud.ir:80?path=%2F&security=none&encryption=none&host=t1.tunnellinuweb.ir&type=ws#[47139]
+vless://04272a6c-8df2-47d4-b948-082f89cf0997@wanted.linkinfo.cloud:8880?path=%2F&security=none&encryption=none&type=ws#
+vless://8e26ca05-e8e6-411f-9fce-e0c88d84136b@snapp.ir:80?path=/&security=none&encryption=none&host=simorgh.darerio.ir&type=ws#[47123]
+vless://65b6bdac-c258-4742-8342-7b97cfa8451c@trex.nahidapp.com:443?path=/vless-ws&security=tls&encryption=none&insecure=0&host=trex.nahidapp.com&fp=chrome&type=ws&allowInsecure=0&sni=trex.nahidapp.com#[47125]
+vless://c09816d1-9b53-4e0d-85a8-9def477121ab@185.143.233.122:80?encryption=none&security=none&type=ws&host=cdnisfucka.drnimaamini.ir&path=%2Fws#[47114]
+vless://b2xhsbsj45hsuzunsozox:14371type=tcp&encryption=none&security=#
+vless://2f5e621f-fedf-4efa-b84f-a9a1bafa50c7@arvancloud.ir:80?path=%2F&security=none&encryption=none&host=t1.tunnellinuweb.ir&type=ws#
+vless://628f8495-f851-42dd-8aa6-0e7157cd31d6@arvancloud.ir:80?type=ws&encryption=none&path=%2F&host=m.ahwazteem.ir&security=none#[47117]

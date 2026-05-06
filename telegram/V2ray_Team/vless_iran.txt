@@ -1,1 +1,1 @@
-vless://7449519c-e462-46e4-a143-519996d16d9b@python.org:80?mode=auto&path=%2F%3Fed%3D2052&security=&encryption=none&host=waslima.openwrld.tk&type=xhttp#
+vless://d6e0253b-5743-055d-ffb2-644676291644@c.brimliski.com:443?security=tls&alpn=http%2F1.1&encryption=none&insecure=0&host=acutemugforeveryoneintwondocuk3.zhongyang-telecom.com&fp=chrome&type=ws&allowInsecure=0#Mci%20%7C%20%40v2ray_team

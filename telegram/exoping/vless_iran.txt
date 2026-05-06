@@ -1,1 +1,1 @@
-vless://45a674d8-0aee-42c4-a739-983347bd0268@exoping.ddns.net:8953?security=reality&encryption=none&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&headerType=none&fp=chrome&type=tcp&sni=mmd.org#
+vless://aa704c4e-7b1d-48ca-860a-55fce180f45b@exoping.ddns.net:28695?security=reality&encryption=none&pbk=_kjDssk-RJt-TpyB1N6krQB69kYD-8Q9V8yw3Nh1fSg&headerType=none&fp=chrome&spx=%2F&type=tcp&sni=Canva.com&sid=5b7f33cf#

@@ -1,3 +1,1 @@
-vless://e2c3e5b6-ef09-4649-bd32-b0f448a073e3@51.89.74.164:443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=canva.com&fp=firefox&security=reality&pbk=jaKtop_bUOLThfO3zLRv_s5EY66rGe7lxsB_ezD2kko&sid=a311b9f4#
-vless://64afe0cf-d56b-4471-983a-5428d32958de@104.31.16.98:80?type=ws&path=%2F&host=server-j377d.xbox.blackops1.heydasfrance.name.ng#🇫🇷پاریس🇫🇷-🔵همراه
 vless://e02208b6…

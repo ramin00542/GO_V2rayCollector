@@ -1,1 +1,1 @@
-vless://70a12f51-07ad-4c6d-bfb2-c29f0872b9c6@a2.grizzlygitt.ir:80?path=%2F&security=none&encryption=none&type=ws#[🇮🇷]t.me/ConfigsHub
+vless://9d200545-cfe3-4349-8d87-76fb0bf11e12@snapp.ir:80?encryption=none&type=ws&path=%2FFIRELINKKVPN&host=firelinkk.arian-go-internet.ir#

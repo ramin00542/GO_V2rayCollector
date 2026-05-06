@@ -1,2 +1,2 @@
-https://t.me/socks?server=azir-3.azirlink.net&port=3389&user=Azir69b83ad68dcdb&pass=Azir69b83ad68dcdb
 https://t.me/proxy?server=37.152.189.153&port=46969&secret=767cf6f14f461cdd166b54eddb53e1b0
+https://t.me/socks?server=azir-3.azirlink.net&port=3389&user=Azir69b83ad68dcdb&pass=Azir69b83ad68dcdb

@@ -1,1 +1,2 @@
-vless://826beb96-4c53-486d-9ddd-c1d09970eb17@yasinpanel.pointspeed.ir:80?encryption=none&type=ws&path=%2Farvancloud.ir&host=ybvpnadmin.pointspeed.ir#
+vless://6b5a5b5a-e909-4fdf-812d-cd2a4063121f@red.nahidapp.com:443?security=tls&type=ws&headerType=&path=%2Fred%2F&host=red.nahidapp.com&sni=red.nahidapp.com&fp=#
+vless://6b5a5b5a-e909-4fdf-812d-cd2a4063121f@red.nahidapp.com:443?security=tls&type=ws&headerType=&path=%2Fred%2F&host=red.nahidapp.com&sni=red.nahidapp.com&fp=#@Hddify

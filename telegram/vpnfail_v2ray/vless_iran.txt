@@ -1,2 +1,1 @@
-vless://649a8f7a-59f7-4b3f-b733-e671086c9ad8@194.39.254.113:26480?security=&encryption=none&headerType=none&type=tcp#
-vless://3cbad916-d882-4773-8dfb-15564f2d29fe@zone.ca.f2zone.ir:17759?](https://t.me/+VSwXq3A2QmRjNDc0)[security](https://t.me/+VSwXq3A2QmRjNDc0)#filembad-111
+vless://7b471aa5-9344-4567-96a9-82bec6427f85@18.199.103.58:443?security=&encryption=none&headerType=none&type=tcp#

@@ -1,3 +1,1 @@
 vless://6202b230-417c-4d8e-b624-0f71af…
-vless://f57c2196-4c99-43c3-95c8-f9a0cf941f98@snapp.ir:80?encryption=none&host=newbalance.zivaroid.ir&path=%2F&security=none&type=ws#
-vless://3197da6a-163a-4585-b5ce-4d7c586274e1@mom.uwuwiak.ir:2087?alpn=h2%2Chttp%2F1.1&encryption=none&fp=firefox&host=moosashopping.hajiirex.ir&path=%2F&security=tls&sni=moosashopping.hajiirex.ir&type=ws#

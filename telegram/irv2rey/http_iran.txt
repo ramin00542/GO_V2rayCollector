@@ -1,8 +1,8 @@
 https://t.me/socks?server=62.220.126.56&port=31785
-https://t.me/socks?server=62.220.126.56&port=30871
+https://t.me/socks?server=127.0.0.1&port=10880&user=%40zel2ovpn
+https://t.me/proxy?server=m4in-fr4mes-are-comp1ex-but-cut3.top&port=853&secret=ee54ce330e4690cc297d2b031ff3f288b06d742e616b656e61692e636c69636b
 https://t.me/proxy?server=free-germany.kimt.space&port=443&secret=ee7b7ef45d40766b5b5f494f801f53af40667265652d6765726d616e792e6b696d742e7370616365
 https://t.me/socks?server=45.149.77.106&port=8070&user=%40Art24x&pass=1111
-https://t.me/socks?server=62.220.126.56&port=30523&user=lnterFreedom&pass=lnterFreedom
-https://t.me/socks?server=127.0.0.1&port=10880&user=%40zel2ovpn
 https://t.me/socks?server=62.220.126.56&port=31627
-https://t.me/proxy?server=m4in-fr4mes-are-comp1ex-but-cut3.top&port=853&secret=ee54ce330e4690cc297d2b031ff3f288b06d742e616b656e61692e636c69636b
+https://t.me/socks?server=62.220.126.56&port=30871
+https://t.me/socks?server=62.220.126.56&port=30523&user=lnterFreedom&pass=lnterFreedom

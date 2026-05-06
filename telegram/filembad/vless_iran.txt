@@ -1,5 +1,4 @@
-vless://a160da89-e6a7-4335-a99b-60381d229058@185.143.234.235:2053?path=%3Fed%3D2048&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&insecure=0&host=dl.lexwill.site&fp=chrome&type=ws&allowInsecure=0&sni=dl.lexwill.site#
-vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?encryption=none&type=ws&path=%2F&host=sr.novatechsapr.ir#
-vless://2c145456-285f-427e-82b3-6373dd4e7811@snapp.ir:2086?type=ws&encryption=none&path=&host=jing.eemehaze.lol&security=none#%40filembad
+vless://2f5e621f-fedf-4efa-b84f-a9a1bafa50c7@arvancloud.ir:80?path=%2F&security=none&encryption=none&host=t1.tunnellinuweb.ir&type=ws#%40filembad
+vless://52bda602-6d25-4ea5-99e8-8356d96dc7a9@snapp.ir:80?path=%2F&security=none&encryption=none&host=sphrrzv.iranofilm.ir&type=ws#%40filembad
+vless://e146d8d7-7aab-4797-a7f2-4d0f938807f0@185.143.234.200:80?path=%2Fws%2F0-2&security=none&encryption=none&host=0-2-websocket.danalap.shop&type=ws#%40filembad
 vless://6443d542-00af-484b-ba77-a78226fa30cc@snapp.ir:8880?encryption=none&host=vizhennet.px-ir.ir&path=%2Fapi&security=none&type=ws#
-vless://8bcce937-b400-45fd-8a01-a380081832ad@trex.nahidapp.com:443?path=%2Fvless-ws&security=tls&encryption=none&insecure=0&host=trex.nahidapp.com&fp=chrome&type=ws&allowInsecure=0&sni=trex.nahidapp.com#%40filembad

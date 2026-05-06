@@ -1,2 +1,2 @@
-vless://dae2ddc6-a892-495f-a001-181cec56ad12@snapp.ir:2052?encryption=none&type=ws&path=%2F&host=p1.razstar.ir#@icv2ray
-vless://eef82e78-5a10-ac23-747b-43569143c696@i-love-iran.amlakayuni.ir:2087?path=%2F%3Fed%3D2087&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&insecure=0&host=i-love-iran.amlakayuni.ir&fp=randomized&type=ws&allowInsecure=0&sni=i-love-iran.amlakayuni.ir#@icv2ray
+vless://3b74fb6e-65c6-4d15-98ef-5be3b419ba37@matio.mestor.top:23865?type=tcp&encryption=none&security=none#
+vless://96930f31-8e68-4186-a101-5593f0b2b274@anten.ir:2052?path=%2F&security=none&encryption=none&host=new.nanoline.ir&type=ws#@icv2ray

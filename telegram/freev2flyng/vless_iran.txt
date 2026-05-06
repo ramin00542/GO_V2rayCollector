@@ -1,4 +1,1 @@
-vless://447084f6-a5d9-4171-be4b-46ed3005ce51@ger.mitowear.com:2083?type=ws&security=tls&path=/&host=&sni=cf.mitowear.com#
-vless://fb301d2e-4430-4b41-95d6-764460b8ef13@cf.mitowear.com:2053?security=tls&sni=9b56CFEe5b258C44c45bA18FA122293.mIToweAr.cOm&type=grpc&encryption=none#
-vless://fb301d2e-4430-4b41-95d6-764460b8ef13@cf.mitowear.com:2053?security=tls&sni=9b56CFEe5b258C44c45bA18FA122293.mIToweAr.cOm&type=grpc&encryption=none#[%F0%9F%87%A9%F0%9F%87%AA]-@Expreset-1110189433-62816
-vless://88aa25ac-da6d-467a-b14f-6e1845fb4be0@test-civfggbw.expreset.click:2053?security=tls&sni=transaction-3af6f365ddd02bfa606e2a7b9f3731d21e8b5544f2003fc6f394fc9a53f6cfea.mitsonic.com&type=ws&path=/?ed%3D2048&host=ukr-6bf25ce9e2c7cbd34662df8cc7.mitsonic.com&encryption=none#
+vless://7adcfea9-b9fa-4884-b4b1-64176d494de1@cf.mitowear.com:2053?security=tls&sni=2B20492b82520fF981bAEb3fGh8jkLMN1PQRstuVwXyZ2c4d6e7.MitOweAr.com&type=grpc&encryption=none#[%F0%9F%87%A9%F0%9F%87%AA]-@Expreset-1110189433-30976

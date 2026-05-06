@@ -1,2 +1,1 @@
-vless://Parsashonam-0@www.speedtest.net:443?path=%2FParsashonam&security=tls&encryption=none&alpn=h2,http/1.1&host=same-jones-huntington-ll.trycloudflare.com&fp=chrome&type=ws&sni=same-jones-huntington-ll.trycloudflare.com#
-vless://1eac6212-ed22-42ab-b6ea-bf13b387c6a9@77.91.84.45:22?security=reality&encryption=none&pbk=ksx0hPrRqVF_fCBua6cSk-tG3cs44ypIxU31AJ4_xiw&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=discord.com&sid=453bd40e2900fc73#
+vless://SVNTEAMs@www.speedtest.net:8080?path=/SVNTEAM?ed=2048&security=none&encryption=none&host=SVNTEAM-V2ray-FR.xn--fhq0la447aac5504dea701axr1g.Com.&type=ws#
