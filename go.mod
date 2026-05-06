@@ -6,6 +6,7 @@ require (
 	github.com/PuerkitoBio/goquery v1.9.1
 	github.com/jszwec/csvutil v1.10.0
 	github.com/projectdiscovery/gologger v1.1.12
+	gopkg.in/yaml.v3 v3.0.1
 )
 
 require (
