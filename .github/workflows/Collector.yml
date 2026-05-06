@@ -10,7 +10,6 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    # 👇 دسترسی‌های لازم برای attest
     permissions:
       id-token: write
       attestations: write
@@ -43,7 +42,6 @@ jobs:
     - name: Run collector
       run: ./myapp -sort -clash
 
-    # 👇 مرحله attest در اینجا اضافه می‌شود (بعد از build و قبل از commit)
     - name: Attest Build Provenance
       uses: actions/attest-build-provenance@v4.1.0
       with:
@@ -53,7 +51,7 @@ jobs:
       run: |
         git config --local user.email "actions@github.com"
         git config --local user.name "GitHub Actions"
-        git add telegram/ subscription/ mixed/ daily_archive/ config_cache.json clash-config.yaml stats.json go.sum
+        git add telegram/ subscription/ mixed/ daily/ config_cache.json clash-config.yaml stats.json go.sum
         git diff --staged --quiet || git commit -m "✔️ $(date '+%Y-%m-%d %H:%M:%S') Collected"
 
     - name: Push changes
