@@ -6,6 +6,8 @@ on:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  GOPROXY: https://proxy.golang.org,direct
+  GOSUMDB: sum.golang.org
 
 jobs:
   build:
@@ -29,15 +31,13 @@ jobs:
       run: go version
 
     - name: Download dependencies
-      run: go mod download
+      run: go mod download -x
 
-    - name: Tidy dependencies (regenerate go.sum)
-      run: |
-        rm -f go.sum
-        go mod tidy
+    - name: Tidy dependencies (ensure go.sum is correct)
+      run: go mod tidy
 
     - name: Build Go app
-      run: go build -o myapp
+      run: go build -v -o myapp
 
     - name: Run collector
       run: ./myapp -sort -clash
