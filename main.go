@@ -30,7 +30,7 @@ import (
 
 // ========================== تنظیمات ==========================
 const (
-	MaxConfigsPerProtocol = 50000
+	MaxConfigsPerProtocol = 3000
 	MaxWorkers            = 5
 	RequestTimeout        = 15 * time.Second
 )
