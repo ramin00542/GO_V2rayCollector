@@ -1,0 +1,16 @@
+tg://proxy?server=95.217.28.246&port=443&secret=dd104462821249bd7ac519130220c25d09@Vip_Security join us - 16
+tg://proxy?server=95.217.235.33&port=443&secret=dd104462821249bd7ac519130220c25d09@Vip_Security join us - 15
+tg://proxy?server=89.37.66.110&port=443&secret=ee68747470733a2f2f74656c656772616d2e6d65@Vip_Security join us - 14
+tg://proxy?server=89.37.66.109&port=443&secret=ee68747470733a2f2f74656c656772616d2e6d65@Vip_Security join us - 13
+tg://proxy?server=89.37.66.108&port=443&secret=ee68747470733a2f2f74656c656772616d2e6d65@Vip_Security join us - 12
+tg://proxy?server=89.37.66.107&port=443&secret=ee68747470733a2f2f74656c656772616d2e6d65@Vip_Security join us - 11
+tg://proxy?server=89.37.66.106&port=443&secret=ee68747470733a2f2f74656c656772616d2e6d65@Vip_Security join us - 10
+tg://proxy?server=89.37.66.105&port=443&secret=ee68747470733a2f2f74656c656772616d2e6d65@Vip_Security join us - 9
+tg://proxy?server=89.37.66.104&port=443&secret=ee68747470733a2f2f74656c656772616d2e6d65@Vip_Security join us - 8
+tg://proxy?server=77.42.79.76&port=4455&secret=dd104462821249bd7ac519130220c25d09@Vip_Security join us - 7
+tg://proxy?server=62.238.0.202&port=4455&secret=dd104462821249bd7ac519130220c25d09@Vip_Security join us - 6
+tg://proxy?server=204.168.153.162&port=8080&secret=dd104462821249bd7ac519130220c25d09@Vip_Security join us - 5
+tg://proxy?server=195.254.165.249&port=25565&secret=dd79e344818749bd7ac519130220c25d09@Vip_Security join us - 4
+tg://proxy?server=178.104.81.34&port=4455&secret=dd104462821249bd7ac519130220c25d09@Vip_Security join us - 3
+tg://proxy?server=178.104.244.158&port=8080&secret=dd104462821249bd7ac519130220c25d09@Vip_Security join us - 2
+tg://proxy?server=135.181.31.175&port=443&secret=dd104462821249bd7ac519130220c25d09@Vip_Security join us - 1
