@@ -23,26 +23,27 @@ var (
 	client       = &http.Client{Timeout: 15 * time.Second}
 	maxMessages  = 100
 	ConfigsNames = "@Vip_Security join us"
-	configs      = map[string]string{
-		"ss": "", "vmess": "", "trojan": "", "vless": "", "http": "", "socks": "",
-		"wireguard": "", "hysteria2": "", "mtproto": "", "tuic": "", "mixed": "",
-	}
-	ConfigFileIds = map[string]int32{
-		"ss": 0, "vmess": 0, "trojan": 0, "vless": 0, "http": 0, "socks": 0,
-		"wireguard": 0, "hysteria2": 0, "mtproto": 0, "tuic": 0, "mixed": 0,
-	}
-	myregex = map[string]string{
-		"ss":        `(?m)(...ss:|^ss:)\/\/.+?(%3A%40|#)`,
-		"vmess":     `(?m)vmess:\/\/.+`,
-		"trojan":    `(?m)trojan:\/\/.+?(%3A%40|#)`,
-		"vless":     `(?m)vless:\/\/.+?(%3A%40|#)`,
-		"http":      `(?m)https?:\/\/[^\s]+`,
-		"socks":     `(?m)socks(?:5)?:\/\/[^\s]+`,
-		"wireguard": `(?m)wireguard:\/\/[^\s]+`,
-		"hysteria2": `(?m)hysteria2:\/\/[^\s]+`,
-		"mtproto":   `(?m)tg:\/\/proxy\?[^\s]+`,
-		"tuic":      `(?m)tuic:\/\/[^\s]+`,
-	}
+configs = map[string]string{
+    "ss": "", "vmess": "", "trojan": "", "vless": "", "http": "", "socks": "",
+    "wireguard": "", "hysteria2": "", "mtproto": "", "tuic": "", "slipnet": "", "mixed": "",
+}
+ConfigFileIds = map[string]int32{
+    "ss": 0, "vmess": 0, "trojan": 0, "vless": 0, "http": 0, "socks": 0,
+    "wireguard": 0, "hysteria2": 0, "mtproto": 0, "tuic": 0, "slipnet": 0, "mixed": 0,
+}
+myregex = map[string]string{
+    "ss":        `(?m)(...ss:|^ss:)\/\/.+?(%3A%40|#)`,
+    "vmess":     `(?m)vmess:\/\/.+`,
+    "trojan":    `(?m)trojan:\/\/.+?(%3A%40|#)`,
+    "vless":     `(?m)vless:\/\/.+?(%3A%40|#)`,
+    "http":      `(?m)https?:\/\/[^\s]+`,
+    "socks":     `(?m)socks(?:5)?:\/\/[^\s]+`,
+    "wireguard": `(?m)wireguard:\/\/[^\s]+`,
+    "hysteria2": `(?m)hysteria2:\/\/[^\s]+`,
+    "mtproto":   `(?m)tg:\/\/proxy\?[^\s]+`,
+    "tuic":      `(?m)tuic:\/\/[^\s]+`,
+    "slipnet":   `(?m)(?:slipnet|slip):\/\/[^\s]+`,
+}
 	sort = flag.Bool("sort", false, "sort from latest to oldest (default : false)")
 )
 
