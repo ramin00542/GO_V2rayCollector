@@ -1,0 +1,1 @@
+vless://26a1e667-19e3-4817-bec9-80122da80675@5.42.82.167:443?encryption=none&security=reality&sni=www.speedtest.net&fp=random&pbk=JfjZapoZVCvAfLcULqEVuYH57CFQmGOnckAXHlOHcVo&sid=ce30532c&spx=%2F&type=grpc#Join%20%40NetAzadChannel

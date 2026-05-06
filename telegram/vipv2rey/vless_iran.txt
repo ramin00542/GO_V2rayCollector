@@ -1,0 +1,2 @@
+vless://5b5c6557-d611-4c6f-a43b-a2c48c0b541d@46.102.136.69:57803?security=none&encryption=none&host=fast.com&headerType=http&type=tcp#
+vless://5b5c6557-d611-4c6f-a43b-a2c48c0b541d@46.102.136.69:57803?security=none&encryption=none&host=fast.com&headerType=http&type=tcp#%E2%9A%9C%EF%B8%8FTelegram%3A%40vipv2rey

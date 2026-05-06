@@ -1,0 +1,1 @@
+vless://054a8c92-59df-47aa-feac-4bbb4d8ca1e0@v2rayfroshmtnn.ddns.net:2096?mode=gun&security=tls&encryption=none&type=grpc&serviceName=&sni=new.in-case-jadid-mane-follow-nemikone-vali-fane.site#%40TC_V2Ray

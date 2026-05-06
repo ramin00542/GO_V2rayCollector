@@ -1,0 +1,1 @@
+vless://abaaff2a-a66d-40cb-bfdf-9b6c3762789b@31.14.118.226:24100?security=none&encryption=none&host=fast.com&headerType=http&type=tcp#%D9%87%D9%85%D9%87+%D8%A7%D9%BE%D8%B1%D8%A7%D8%AA%D9%88%D8%B1+%D9%87%D8%A7%F0%9F%87%A9%F0%9F%87%AA.+%40lak.vpn

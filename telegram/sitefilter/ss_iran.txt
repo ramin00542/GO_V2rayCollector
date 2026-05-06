@@ -1,0 +1,2 @@
+vless://331c5f9f-540e-4c28-ddde-16ffc2bdf80c@mtn.icv2ray.top:2083?mode=gun&security=tls&encryption=none&type=grpc&serviceName=@icv2ray,@icv2ray,@icv2ray,@icv2ray,@icv2ray,@icv2ray,@icv2ray&serviceName=%40%41%6e%74%69%46%69l%74%65%72%43%68%56%32,%40%41%6e%74%69%46%69l%74%65%72%43%68%56%32,%40%41%6e%74%69%46%69l%74%65%72%43%68%56%32&sni=mk.%41%6e%74%69%56%32%72%61%79.space#
+vless://e28bb3f8-e64a-4419-9496-33c46220354b@tel.icv2ray.top:443?path=tel.iCV2ray.space&security=tls&encryption=none&host=sdgf.bdfstt.sbs&type=ws&sni=sdgf.bdfstt.sbs#

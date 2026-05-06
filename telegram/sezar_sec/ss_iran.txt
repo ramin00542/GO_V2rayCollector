@@ -1,0 +1,1 @@
+vless://ce069292-c8bf-40dd-a6b1-87818a1e64e9@dnew.cc:443?encryption=none&security=tls&sni=2-7fc.pages.dev&fp=chrome&insecure=0&allowInsecure=0&type=ws&host=2-7fc.pages.dev&path=%2F#%40Sezar_Sec

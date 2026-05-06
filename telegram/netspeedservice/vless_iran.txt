@@ -1,0 +1,2 @@
+vless://b9ad895b-12ac-40fc-a5ac-a5b2a1285001@104.21.28.62:443?type=ws&host=3k.pureboy.eu.org&path=/?ed%3D2048&security=tls&sni=3k.pureboy.eu.org#%F0%9F%8C%8D@NetSpeedService%F0%9F%87%B3%F0%9F%87%B1
+vless://b9ad895b-12ac-40fc-a5ac-a5b2a1285001@104.21.28.62:443?type=ws&host=3k.pureboy.eu.org&path=/?ed%3D2048&security=tls&sni=3k.pureboy.eu.org#

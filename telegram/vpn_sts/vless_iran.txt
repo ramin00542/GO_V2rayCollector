@@ -1,0 +1,1 @@
+vless://f44755e7-9dc9-43db-956b-6da23f40d662@5.wodegv.xyz:27303?security=reality&encryption=none&pbk=qzxyAq2MkNrE6S7GtWMJmyKSpF7wAPaaZ12kksb6LTw&headerType=none&fp=firefox&spx=%2F&type=tcp&flow=xtls-rprx-vision&sni=buylite.tv.apple.com#sts%20is%20the%20best

@@ -1,0 +1,2 @@
+trojan://Pooria@www.speedtest.net:443?path=%2FtrJF1XisQEbWZpxEHh%3Fed%3D2560&security=tls&alpn=h2,http/1.1&host=redfree8w.pooriam.ir&fp=randomized&type=ws&sni=redfree8w.pooriam.ir#
+trojan://Pooria@www.speedtest.net:80?path=%2FtrLwW5jwrnymnOdqki%3Fed%3D2560&security=none&host=redfree8w.pooriam.ir&type=ws#

@@ -1,0 +1,2 @@
+vless://6a28dfb1-5117-42b4-b66f-5de9740257ae@www.zula.ir:443?mode=multi&security=tls&encryption=none&fp=safari&type=grpc&serviceName=@VPNCUSTOMIZE,@VPNCUSTOMIZE&sni=V2ray-Napsternet-Irancell-Iran-Fair.Varzesh3-CDN.site#
+vless://6a28dfb1-5117-42b4-b66f-5de9740257ae@www.zula.ir:443?mode=multi&security=tls&encryption=none&fp=safari&type=grpc&serviceName=@VPNCUSTOMIZE,@VPNCUSTOMIZE&sni=V2ray-Napsternet-Irancell-Iran-Fair.Varzesh3-CDN.site#Telegram%3A%40v2rayng_serverr1

@@ -1,0 +1,1 @@
+vless://9249776a-d5c7-4c6f-b95d-3c63a0ab4756@ursa.pardazwe.ir:2052?encryption=none&host=&path=%2F&security=none&type=ws#

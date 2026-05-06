@@ -1,0 +1,2 @@
+vless://84c904ff-f094-496f-876b-9948bc6605ad@109.120.140.62:16147?mode=auto&path=%2F&security=reality&encryption=none&pbk=tAZcZGjhHkxngkihX5oYvAynTnipNQvthqS0swS9iys&fp=chrome&spx=%2F&type=xhttp&sni=varzesh3.com&sid=e70bdcaa#
+vless://fef4a93d-eb4f-4657-b56b-32a0dc060045@104.18.32.47:443?path=%2F&security=tls&encryption=none&insecure=0&host=dev.twistsparrow.xyz&type=ws&allowInsecure=0&sni=dev.twistsparrow.xyz#%E2%9A%A1tel%3A%40ai_duet%20%7C%20%40v2rayngsupbot

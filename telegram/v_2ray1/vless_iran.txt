@@ -1,0 +1,2 @@
+vless://95d6261c-b971-4dcb-b02e-93b91fe4765c@dnschecker.org:443?mode=gun&security=tls&encryption=none&alpn=h2,http/1.1&fp=chrome&type=grpc&serviceName=@ipV2Ray&sni=fm.irandtehran.org#
+vless://95d6261c-b971-4dcb-b02e-93b91fe4765c@dnschecker.org:443?mode=gun&security=tls&encryption=none&alpn=h2,http/1.1&fp=chrome&type=grpc&serviceName=@ipV2Ray&sni=fm.irandtehran.org#🇫🇮@V_2ray1_

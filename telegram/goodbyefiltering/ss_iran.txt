@@ -1,0 +1,1 @@
+vless://9208e854-c58f-4d42-9fb4-8d0927b33285@cdn.king4father.shop:8080?encryption=none&security=none&type=ws&path=%2Fcustom-config#

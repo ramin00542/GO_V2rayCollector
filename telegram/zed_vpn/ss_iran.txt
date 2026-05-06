@@ -1,0 +1,2 @@
+vless://cdd64fef-92f7-4b0e-adb5-45268345a016@190.93.247.155:2096?type=grpc&serviceName=Channel---Telegram---ZED_VPN---ZED_VPN---Telegram---ZED_VPN---ZED_VPN---Telegram---ZED_VPN---ZED_VPN&security=tls&fp=chrome&alpn=h2&sni=Cloud.zed-zoon.tech#%40ZED_VPN%20%F0%9F%87%AB%F0%9F%87%AE
+vless://69328496-50e5-4556-a645-d5d7dc6e9593@Discord.gg:2096?type=grpc&serviceName=Channel---Telegram---ZED_VPN---ZED_VPN---Telegram---ZED_VPN---ZED_VPN---Telegram---ZED_VPN---ZED_VPN&security=tls&fp=chrome&alpn=h2&sni=ads.zed-zoon.tech#

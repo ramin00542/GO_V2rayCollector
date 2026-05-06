@@ -1,0 +1,1 @@
+trojan://W6u8Tsa7Wh2q8wXQVbxJucgf7FFw3o2@[::ffff:5eb8:1f32]:443?path=FWsoInxhJTVLXmAuQkAzJU9raylCQx1CXmVBNSESKgl8TH5nBzADOBJac1gQ&security=tls&insecure=1&fp=safari&type=ws&allowInsecure=1&sni=mciglobal.ir#

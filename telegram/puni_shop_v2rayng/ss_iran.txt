@@ -1,0 +1,3 @@
+vless://b7ef3741-92f4-4302-9b06-9f943f3700e5@bot.nimeshab-nabod.info:80?mode=auto&path=%2F%40itsproxy%3Fed%3D2560&security=&encryption=none&host=Behrfbot.global.ssl.fastly.net&type=xhttp#@puni_shop_v2rayNG
+vless://53fa8faf-ba4b-4322-9c69-a3e5b1555049@www.speedtest.net:80?path=%2F%3Fed%3D2560&security=&encryption=none&host=redfree8mahsang6.redfree8.ir&type=ws#@puni_shop_v2rayNG
+vless://7c9e3c1d-a360-4429-9189-e45a98de7fde@add.ski1plag.ir:80?path=%2Fupload&security=&encryption=none&host=my.ski1plag.ir&type=ws#@puni_shop_v2rayNG

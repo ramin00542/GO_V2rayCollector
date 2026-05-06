@@ -1,0 +1,2 @@
+vless://89db4672-9111-4e14-9b10-8ac13d3cce1c@www.speedtest.net:8080?path=/@Maznet--@MAZNET--@Maznet--@MAZNET--@Maznet--@MAZNET--@Maznet--@MAZNET--@Maznet--@MAZNET%3Fed%3D1024&encryption=none&security=none&type=ws&host=maznet---_-_---maznet2.iMamhussaIn.sbs.#%40Maznet-47455-%28MCI%29
+vless://7379eb18-959d-4b33-ddf7-e9369a0e1769@170.114.46.173:443?mode=gun&security=tls&encryption=none&type=grpc&serviceName=&sni=ger.vwfghin.info#

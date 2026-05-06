@@ -1,0 +1,1 @@
+trojan://PDomE47dow91jyl3sVC8yT@mci.necrocdn.mom:443?sni=trkg.nmare20106460.workers.dev&host=trkg.nmare20106460.workers.dev&type=ws&security=tls&path=%2Ftw#

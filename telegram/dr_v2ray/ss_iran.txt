@@ -1,0 +1,3 @@
+vless://c05ec0f8-dadc-4c0c-b2a9-19b2ab5a20cf@178.128.86.252:27459?path=%2FFREE%20By%20Tharuwa%20%280767597317%29&security=none&encryption=none&host=m.zoom.us&type=ws#Free%20By%20Tharuwa%20%28%40z_z_z_zz_z%29
+vless://126dd15e-2fef-49d1-b5ce-2c4690abda90@157.230.253.157:8443?path=%2FFREE%20By%20Tharuwa%20%280767597317%29&security=tls&encryption=none&fp=chrome&type=ws&sni=zoom.us#
+vless://e7e90652-2156-4363-8118-8951344659f3@172.237.73.26:59793?path=%2FFREE%20By%20Tharuwa%20%280767597317%29&security=none&encryption=none&host=m.zoom.us&type=ws#Free-Tharuwa(0767597317)

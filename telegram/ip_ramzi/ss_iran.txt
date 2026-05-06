@@ -1,0 +1,2 @@
+vless://0cc1d046-7767-4c4f-9d8e-7f40427130b3@54.37.6.85:2096?security=none&encryption=none&host=ghbi.ir&headerType=http&type=tcp#%40IP_Ramzi+%7C+%D8%A8%D9%87+%D8%B3%D9%88%DB%8C+%D8%A2%D8%B2%D8%A7%D8%AF%DB%8C
+vless://7a39089c-4054-4cd5-b7d4-417d2a534d1e@54.37.6.85:2096?security=none&encryption=none&host=ghbi.ir&headerType=http&type=tcp#

@@ -1,0 +1,3 @@
+vless://7a675193-24b8-40e4-b849-6ec694b83839@don.dayvip.ir:8443?mode=gun&security=tls&encryption=none&alpn=h2,http/1.1&fp=chrome&type=grpc&serviceName=&sni=elv.amshvip.ir#--%40DoNaLD_VpN
+vless://a6267bde-0344-462e-d69c-7a2bed7f4763@45.82.161.120:19011?type=tcp&security=none#%F0%9F%87%BA%F0%9F%87%B8-DoNaLD_VPN-FREE
+vless://7a675193-24b8-40e4-b849-6ec694b83839@don.dayvip.ir:8443?mode=gun&security=tls&encryption=none&alpn=h2,http/1.1&fp=chrome&type=grpc&serviceName=&sni=elv.amshvip.ir#

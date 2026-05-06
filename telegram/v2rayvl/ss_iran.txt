@@ -1,0 +1,1 @@
+vless://0011d228-e5e7-42c7-d178-2014ba4c88bc@joinm.servernett.shop:443?mode=gun&security=tls&encryption=none&type=grpc&serviceName=@ServerNett&sni=irancell.servernett.shop#

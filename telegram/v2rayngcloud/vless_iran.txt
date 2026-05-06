@@ -1,0 +1,1 @@
+vless://89b3cbba-e6ac-485a-9481-976a0415eab9@104.20.5.134:2083?encryption=none&type=ws&security=tls&path=%2F%25252F&host=cIAllO-EGB.pAGES.dev&sni=cIAllO-EGB.pAGES.dev&allowInsecure=1#@V2RAYNGCLOUD

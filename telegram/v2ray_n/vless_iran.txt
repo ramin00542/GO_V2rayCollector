@@ -1,0 +1,1 @@
+vless://b37dfbae-b74c-47b0-9c5e-0eaaab90afaf@fi1.vpnmaster.website:8443?path=%2F&security=tls&encryption=none&type=ws#%40vpnmaster_info%23fi1

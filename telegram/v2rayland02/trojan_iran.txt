@@ -1,0 +1,1 @@
+trojan://humanity@www.gossipglove.com:443?path=%252Fassignment&security=tls&fp=chrome&type=ws&sni=www.gossipglove.com#

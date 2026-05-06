@@ -1,0 +1,2 @@
+vless://b75b3034-36ab-4979-beae-3d02db1b11ec@cxc--join.outline-vpn.cloud:443?security=tls&encryption=none&type=ws&host=always-online1.lp-airdrop.top&path=Path/Telegram@V2ray_alpha/?ed%3D2048&sni=always-online1.lp-airdrop.top&fp=randomized#Irancell+
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp1MTdUM0J2cFlhYWl1VzJjQHNlcmllcy1hMi1tZWMuc2FtYW5laGhhLmNvOjQ0Mw==#

@@ -1,0 +1,1 @@
+vless://392afad2-43e3-4414-a5c3-b529a44df4e3@avalpardakht.com:80?path=%2F%40v2rayNG_VPNN&security=none&encryption=none&host=7.arsalanv2.sbs&type=ws#@ProoxyK

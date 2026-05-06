@@ -1,0 +1,10 @@
+vless://4af37467-bf79-4630-98d5-73e7dad60e90@ak2.vpnfreedom.tech:443?security=reality&encryption=none&pbk=l0saUZNgojrR6PjhL_fMHEBZlZ2TJypjRdQyy2mrFFI&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=google.com&sid=58#@ae_proxy
+vless://756ee7f2-e208-4c36-a412-8be1890395a8@185.143.233.5:2086?path=/&security=none&encryption=none&host=cdn.sesrsa.com&type=ws#
+vless://df862b4c-2150-4b36-81ac-405036cf9ff6@162.159.152.208:2096?allowInsecure=1&encryption=none&fp=chrome&host=kalami-eew.pages.dev&path=/&security=tls&sni=kalami-eew.pages.dev&type=ws#@ae_proxy
+vmess://eyJhZGQiOiIxMDQuMTguMjEyLjEyIiwiYWlkIjoiMCIsImhvc3QiOiJzdWIueWlmZW5qaWNoYW5nLnRvcCIsImlkIjoiMDNmY2M2MTgtYjkzZC02Nzk2LTZhZWQtOGEzOGM5NzVkNTgxIiwibmV0Ijoid3MiLCJwYXRoIjoiL29saXYuYmVhdXR5OjQ0My9saW5rdndzIiwicG9ydCI6IjQ0MyIsInBzIjoi8J+HvfCfh70gWFggfCBWTUVTUyB8IEB2cG5nYXRlX2NvbmZpZyAjMSIsInNjeSI6ImF1dG8iLCJzbmkiOiJzdWIueWlmZW5qaWNoYW5nLnRvcCIsInRscyI6InRscyIsInR5cGUiOiJhdXRvIiwidiI6IjIifQ==#
+vless://6202b230-417c-4d8e-b624-0f71afa9c75d@95.85.25.127:2053?ed=2560&eh=Sec-WebSocket-Protocol&encryption=none&host=sni.111000.dns.army&path=/?https://t.me/WangCai2🇨🇳=&security=tls&sni=sni.111000.dns.army&type=ws#@ae_proxy
+vless://6202b230-417c-4d8e-b624-0f71afa9c75d@95.85.25.127:2053?ed=2560&eh=Sec-WebSocket-Protocol&encryption=none&host=sni.111000.dns.army&path=/?https://t.me/WangCai2🇨🇳=&security=tls&sni=sni.111000.dns.army&type=ws#
+vless://abbff0f3-741b-f33f-8773-ebbb65ae8d8d@snapp.ir:443?path=/&security=tls&alpn=h2,http/1.1&encryption=none&insecure=0&fp=chrome&type=ws&allowInsecure=0&sni=cdn.fars-rehan.ir#
+vless://e3f1a0a0-54a3-41dc-bdd7-95cfdf63b850@Ikco.ir:8080?path=/cdn&security=none&encryption=none&host=cp.movizdl.ir&type=ws#@ae_proxy
+vless://4b581293-af3a-4658-b9b2-06949626bf86@104.18.16.56:443?encryption=none&security=tls&sni=cdnde.sheriffbus.com&fp=chrome&type=xhttp&host=cdnde.sheriffbus.com&path=/@SheriffNet&mode=auto#@ae_proxy
+vless://70d35773-7940-47a7-8375-177732e7c4df@stream.overdoes.site:2083?mode=gun&security=tls&encryption=none&alpn=h2,http/1.1&fp=chrome&type=grpc&serviceName=&sni=q1.overdoes.site#@ae_proxy

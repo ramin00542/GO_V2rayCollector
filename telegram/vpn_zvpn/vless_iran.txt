@@ -1,0 +1,4 @@
+vless://Parsashonam-67@www.speedtest.net:8080?security=none&encryption=none&type=ws&host=Parsashonam.%E6%88%91%E4%BB%AC%E7%B4%AF%E4%BA%86.tech.&path=/?Telegram:@proxy_mtm#
+vless://Parsashonam-67@www.speedtest.net:8080?security=none&encryption=none&type=ws&host=Parsashonam.%E6%88%91%E4%BB%AC%E7%B4%AF%E4%BA%86.tech.&path=/?Telegram:@proxy_mtm#Joinus(@vpn_Zvpn)
+vless://29f8ad12-ea84-431b-bf32-9d3fb5cf2aa2@172.67.174.190:443?security=tls&encryption=none&type=ws&host=w1.sylar8.eu.org&path=/?ed&sni=w1.sylar8.eu.org&fp=chrome#
+vless://04a93bb8-0a5b-4aa8-ab7f-31fc7adab1c1@edgu.pureboy.eu.org:443?security=tls&encryption=none&type=ws&host=edgu.pureboy.eu.org&path=/?ed%3D2048&sni=edgu.pureboy.eu.org&fp=chrome#ZVPN

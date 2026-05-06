@@ -1,0 +1,1 @@
+trojan://psycho@104.21.48.1:443?path=%2Ftr7m9KE73yqd6Htr2E%3Fed%3D2560&security=tls&alpn=http%2F1.1&host=psycho.suex12.ir&fp=randomized&type=ws&sni=pSychO.sueX12.IR#

@@ -1,0 +1,2 @@
+vless://e59bb857-5e77-482c-babd-1eb21f1ea9d4@172.245.213.136:52738/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=google.com&fp=chrome&security=reality&pbk=6463bLFXSSjl40OYA_yEXGWuN1C6T9YlzLQYJDS0XkE&sid=0301547db360#%40vmessiranproxy
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpZMjl4M0RVOWNpZk1yMmZvWmg4YXZYM0Q5RmtWNG1FaWdaUGlOaWJvQUJwQURSOFNNdmpOUDJ6R2dpMkZSczN2ZjZ2dlZYdHY5VkJrZ2tzUVdMVTZkWnNqaTNyRDJMMVg@www2.broadalx.cfd:40934#

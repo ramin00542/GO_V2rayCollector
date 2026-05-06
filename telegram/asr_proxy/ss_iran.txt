@@ -1,0 +1,1 @@
+vless://d83232d3-974e-46a2-85f8-b59ec05d6c3c@cd2.consolegamenet.ir:2087?path=%2Fpath&security=tls&encryption=none&host=sau.consolegamenet.ir&type=ws&sni=sau.consolegamenet.ir#

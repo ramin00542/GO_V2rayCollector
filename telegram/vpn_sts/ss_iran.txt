@@ -1,0 +1,2 @@
+vless://f44755e7-9dc9-43db-956b-6da23f40d662@5.wodegv.xyz:27303?security=reality&encryption=none&pbk=qzxyAq2MkNrE6S7GtWMJmyKSpF7wAPaaZ12kksb6LTw&headerType=none&fp=firefox&spx=%2F&type=tcp&flow=xtls-rprx-vision&sni=buylite.tv.apple.com#
+vless://aaaaaabb-4ddd-4eee-9fff-ffffffffffff@104.21.48.147:80?path=%2F64.181.218.67%3D443&security=none&encryption=none&host=afrcloud22.mmv.kr&type=ws#%40vpn_sts%F0%9F%9A%80

@@ -1,0 +1,2 @@
+vless://538cc8f2-55ef-422b-ba47-f3c2433f5a7c@se3.deata.ir:2025?security=none&encryption=none&host=playstation.com&headerType=http&type=tcp#
+vless://a3459558-bbdf-4c17-ae79-becc5461291d@fast2.majicplay.pro:21762?security=none&encryption=none&host=playstation.com&headerType=http&type=tcp#

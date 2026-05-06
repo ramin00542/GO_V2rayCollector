@@ -1,0 +1,2 @@
+vless://5e082e92-fce3-42d0-b015-aeec99515ca4@VpnCustomize.oyoha.site:8443?mode=gun&security=tls&encryption=none&type=grpc&serviceName=@VPNCUSTOMIZE&sni=ch.TrV2ray.cfd#
+vless://7f95f302-945c-4348-8fde-ddeb340b1f33@channel.digiv2ray.fun:443?security=none&encryption=none&host=xbox.com&headerType=http&type=tcp#%40vpnVG

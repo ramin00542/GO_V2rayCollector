@@ -1,0 +1,3 @@
+vless://2550ffd0-4975-4c29-9012-d5be249421f3@185.239.105.218:23026?path=%2F&security=none&encryption=none&type=ws#%F0%9F%87%AB%F0%9F%87%B7+paris+%7C+t.me%2FUvpnIR+%7C+%40UvpnIR
+vless://51e823ea-da11-43e7-89b0-32a729f14551@185.239.105.218:49098?path=%2F&security=none&encryption=none&type=ws#
+vless://5d5c5ec2-d3fb-460d-bd07-23ba76e434a7@194.120.24.125:10431?type=tcp&path=%2F&host=speedtest.net&headerType=http&security=none#

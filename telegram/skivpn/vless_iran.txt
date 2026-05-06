@@ -1,0 +1,1 @@
+vless://4d456b18-df16-4708-982d-1edec52e1643@185.128.139.11:45191?security=none&encryption=none&headerType=none&type=tcp#EMO%F0%9F%A4%B4%F0%9F%AB%86

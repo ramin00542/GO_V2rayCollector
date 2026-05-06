@@ -1,13 +1,2 @@
-vless://96930f31-8e68-4186-a101-5593f0b2b274@anten.ir:2052?type=ws&encryption=none&path=%2F&host=new.nanoline.ir&security=none#V2rayng_Fast
-vless://1bfba457-f37a-45e6-a7e3-3704b06f71c6@snapp.ir:2087?path=%2F&security=tls&alpn=h2%2Chttp%2F1.1%2Ch3&encryption=none&host=01team.no1plus.ir&fp=chrome&type=ws&sni=01team.no1plus.ir#V2rayng_Fast
-vless://8a642e35-328c-42ee-aad0-d050b131dbab@pg.nexorainnovationhub.ir:80?path=%2F&security=none&encryption=none&host=germany.lezzaluxa.ir&type=ws#V2rayng_Fast
-vless://a3bfe21b-0d7a-496f-8e97-0bbc33bff55d@185.143.233.5:443?path=%2Fchat%3Fed%3D128&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&insecure=0&host=in.8lack.ir&fp=firefox&type=ws&allowInsecure=0&sni=in.8lack.ir#V2rayng_Fast
-vless://80a4cead-eef6-41b7-bfdb-cad1564fbcc8@jll.az99x.info:8880?path=%2F&security=none&encryption=none&type=ws#V2rayng_Fast
-vless://73869b84-f4e6-4411-a0b0-b1074242f88f@snapp.ir:8080?encryption=none&security=none&type=ws&host=ts.programming-coding.ir&path=%2F#
-vless://c300016e-48de-4b38-8e64-42e23a52dfd8@snapp.ir:80?path=%2F&security=none&encryption=none&host=simorgh.darerio.ir&type=ws#V2rayng_Fast
-vless://9fb406d1-e835-4848-bf20-4485555f7930@185.143.233.5:2086?path=%2F&security=none&encryption=none&host=cdn.mizbanertebatfarda.ir&type=ws#
-vless://abbff0f3-741b-f33f-8773-ebbb65ae8d8d@iranassistance.com:80?path=/&security=&encryption=none&host=cdn.fars-rehan.ir&type=ws#V2rayng_Fast
-vless://b9bf6789-62d6-4abc-aca9-9efb09f34ab0@185.143.233.5:443?path=%2F%40alaedin%3Fed%3D128&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&host=alaedin5.8lack.ir&fp=firefox&type=ws&sni=alaedin5.8lack.ir#V2rayng_Fast
-vless://8a642e35-328c-42ee-aad0-d050b131dbab@pg.nexorainnovationhub.ir:80?path=%2F&security=none&encryption=none&host=germany.lezzaluxa.ir&type=ws#
-vless://7fdc42cd-c31e-46c7-bf79-cb7e877c9165@ir2.cdnk1.cfd:443?encryption=none&host=ir2.cdnk1.cfd&path=%2Ftime&security=tls&type=ws#V2rayng_Fast
-vless://5f117758-a07f-4b20-82bf-25b7665ee514@185.143.233.5:2052?path=%2F&security=none&encryption=none&host=cd2.sesrsa.com&type=ws#V2rayng_Fast
+vless://2898f99f-337b-406a-b5d3-09d03e9ee4b5@anten.ir:2052?path=%2F&security=none&encryption=none&host=new.nanoline.ir&type=ws#V2rayng_Fast
+vless://fef4a93d-eb4f-4657-b56b-32a0dc060045@188.114.98.0:443?path=%2F&security=tls&encryption=none&insecure=0&host=dev.twistsparrow.xyz&type=ws&allowInsecure=0&sni=dev.twistsparrow.xyz#V2rayng_Fast

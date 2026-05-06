@@ -1,0 +1,1 @@
+vless://914b24f0-ad36-447a-8807-d6fdff103afb@172.67.223.49:443?security=tls&sni=sudoshark.workers.dev&alpn=http/1.1&type=ws&path=/ADvrAJEsvSViONF5?ed&host=g-r3hlvytx-ct024y-0fdnr0myhnad4i.sudoshark.workers.dev&packetEncoding=xudp&encryption=none#

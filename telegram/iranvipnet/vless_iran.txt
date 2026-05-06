@@ -1,0 +1,2 @@
+vless://Telegram-VPNCUSTOMIZE@hajlab.ucdavis.edu:443?path=/@VPNCUSTOMIZE-----@VPNCUSTOMIZE-----@VPNCUSTOMIZE---@VPNCUSTOMIZE---@VPNCUSTOMIZE---@VPNCUSTOMIZE---@VPNCUSTOMIZE%3Fed%3D2560&security=tls&encryption=none&host=JoinBedeeee--VPNCUSTOMIZE.ir&fp=randomized&type=ws&sni=hajlab.ucdavis.edu#ALL
+vless://-VPNCUSTOMIZE-@fishlab.ucdavis.edu:443?path=/@VPNCUSTOMIZE-----@VPNCUSTOMIZE-----@VPNCUSTOMIZE---@VPNCUSTOMIZE---@VPNCUSTOMIZE---@VPNCUSTOMIZE---@VPNCUSTOMIZE%3Fed%3D2560&security=tls&host=JoinBedeeeeee--VPNCUSTOMIZE.ir.&type=ws&sni=fishlab.ucdavis.edu#All

@@ -1,0 +1,1 @@
+vless://62d66671-0ab5-43b4-8a2f-3d74857fa5b2@185.143.233.68:443?encryption=none&security=tls&type=ws&headerType=none&path=%2F&host=backend.parhamm2.ir&sni=backend.parhamm2.ir&fp=random#@ehsawn8

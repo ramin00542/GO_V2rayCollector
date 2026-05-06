@@ -1,0 +1,1 @@
+vless://a61588f7-2ef0-47a1-b0d6-843473c0eb91@mtn-VpnCustomize.aparat.lol:8443?mode=multi&security=tls&encryption=none&type=grpc&serviceName=@VPNCUSTOMIZE&sni=vpncustomizeV2ray.subscribev2.sbs#%D8%B1%D8%B6%D8%A7%DB%8C%DB%8C

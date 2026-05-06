@@ -1,0 +1,4 @@
+vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?encryption=none&type=ws&path=%2F&host=sr.novatechsapr.ir#@wedbazgap
+vless://6873911c-7144-459a-a099-daa793fcccad@red.nahidapp.com:443?security=tls&type=ws&headerType=&path=%2Fred%2F&host=red.nahidapp.com&sni=red.nahidapp.com&fp=#@wedbazgap
+vless://a66525c0-328e-4af8-ae76-3ce1e4eeb9d2@snapp.ir:80?encryption=none&type=ws&path=%2Findex.html&host=aiagentshop.aruxm.ir#@wedbazgap
+vless://cd63c49a-d4cf-4856-89a6-6fe18b5070eb@snapp.ir:8880?encryption=none&type=ws&path=%2F&host=moein.akosha.ir#@wedbazgap

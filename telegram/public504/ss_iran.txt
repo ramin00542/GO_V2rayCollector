@@ -1,0 +1,2 @@
+vless://caafb022-ed9a-47a5-f35f-cffe760c9d22@free.bartartek.ir:53285?security=reality&encryption=none&pbk=mbok0ZF27k8XOyqh6r_hwou60jUhw7vctMjlQdsj_Ec&headerType=none&fp=chrome&spx=%2F&type=tcp&flow=xtls-rprx-vision&sni=eset.com&sid=3282a4#
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo0ZTl1ZmExYTJqZUFOQVZlYkYwd3FO@india.dodohee.info:6980#

@@ -1,0 +1,2 @@
+vless://88d08ed7-091a-4aa9-bea5-5b830d8e1db8@fOxRAY.666gAmE.BUzz:2087?path=%2F&security=tls&encryption=none&host=iIsBv2RaYli.666GaMe.bUzz&fp=safari&type=ws&sni=iIsBv2RaYli.666GaMe.bUzz#
+vless://22f1eb0f-fa76-40dd-a6b3-9bde95efd8db@fOxrAy.MaKuP.tOp:2096?mode=gun&security=tls&encryption=none&fp=safari&type=grpc&serviceName=@arian_pk&sni=iisBV2raYli.MaKuP.toP#

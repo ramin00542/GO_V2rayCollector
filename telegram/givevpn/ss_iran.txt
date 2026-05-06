@@ -1,0 +1,2 @@
+vless://46eb1dd2-2826-4e8f-aa7a-83f1f0262a65@snapp.ir:8880?type=ws&encryption=none&path=%2F&host=moein.akosha.ir&security=none#
+vless://46eb1dd2-2826-4e8f-aa7a-83f1f0262a65@snapp.ir:8880?type=ws&encryption=none&path=%2F&host=moein.akosha.ir&security=none#GiveVPN

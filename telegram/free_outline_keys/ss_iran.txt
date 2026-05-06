@@ -1,0 +1,4 @@
+vless://cd34aece-f7f5-421c-a3d5-13002429a6b7@130.49.189.40:443?encryption=none&flow=xtls-rprx-vision&type=tcp&security=reality&sni=telegavpn.com&fp=chrome&pbk=WvNaAxI0W__qfUKbtysH4IwF155YENlv3PG6crCmPkA#
+vless://cd34aece-f7f5-421c-a3d5-13002429a6b7@45.140.205.215:443?encryption=none&flow=xtls-rprx-vision&type=tcp&security=reality&sni=telegavpn.com&fp=chrome&pbk=WvNaAxI0W__qfUKbtysH4IwF155YENlv3PG6crCmPkA#
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpGR3QwVnlvQkpYNldYTk54QTVNci1QM0ZiU1J2Uzgzbg==@138.124.118.94:8080#
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp6MDJudTBqVlJDNkQ4eTRZaEJmN1FfYjNlOGhxTnZ2NQ==@138.124.118.94:8080#

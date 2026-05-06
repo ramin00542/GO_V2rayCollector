@@ -1,0 +1,1 @@
+vless://41970c5b-7790-4ed6-a3d8-b320f86cc61d@zula.ir:443?mode=gun&security=tls&encryption=none&alpn=h3,h2,http/1.1&authority=&fp=chrome&type=grpc&serviceName=%40ConfigTell%2C%40ConfigTell%2C%40ConfigTell%2C%40ConfigTell%2C%40ConfigTell%2C%40ConfigTell%2C%40ConfigTell%2C%40ConfigTell%2C%40ConfigTell&sni=ConfigTell.felafel.org#

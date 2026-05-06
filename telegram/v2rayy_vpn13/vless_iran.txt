@@ -1,0 +1,2 @@
+vless://338469e5-b7d6-43f2-ab41-837b9fbea6a4@172.67.192.245:443?path=%2F&security=tls&encryption=none&alpn=http/1.1&host=armanibashtestamouzesh.askdhbasikjbas.shop&fp=chrome&type=ws&sni=armanibashtestamouzesh.askdhbasikjbas.shop#
+vless://3ae3befb-22ca-4316-9a98-f5812b4a5c84@discord.gg:443?path=/&security=tls&encryption=none&alpn=h2,http/1.1&host=de.vpncustomize.Website&fp=chrome&type=ws&sni=de.vpncustomize.Website#@QrV2ray

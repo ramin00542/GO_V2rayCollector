@@ -1,0 +1,1 @@
+vless://6c558594-52f0-4d84-8db2-963b5387ecf0@lllliraniv2rayllll.norooz.online:443?path=%2F%40iraniV2ray&security=tls&encryption=none&fp=firefox&type=ws&sni=lllliraniv2rayllll.norooz.online#%40iraniV2ray

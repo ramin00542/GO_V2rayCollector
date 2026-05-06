@@ -1,0 +1,1 @@
+tg://proxy?server=pubghezzi.co.vu&port=443&secret=dd00000000000000000000000000000000

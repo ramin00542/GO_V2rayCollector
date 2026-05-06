@@ -1,0 +1,1 @@
+vless://connectix@5.161.131.62:443?security=reality&encryption=none&pbk=2RhV9anikf5qukF-8jjKhbG50C8B8KbeIS3UmIQpay8&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=replaceMe#

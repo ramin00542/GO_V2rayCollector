@@ -1,0 +1,12 @@
+vless://eed9f958-6ffa-4e63-b22e-7d959aca07d5@xray.artunnel57.host:443?security=xtls&encryption=none&type=tcp&sni=xray.artunnel57.host&flow=xtls-rprx-direct#Vless_TCP_XTLS
+vless://562702c9-c327-4340-b4d2-c6300bbd99f9@newyork.artunnel57.host:443?security=tls&encryption=none&type=ws&headerType=none&path=%252Fvless-tls&sni=newyork.artunnel57.host&host=newyork.artunnel57.host#
+vless://afdd5f32-1efd-4429-b7c5-fcc65a49da58@sg.multiport1.artunnel57.host:80?security=tls&encryption=none&type=tcp&sni=sg.multiport1.artunnel57.host#Xvless_tcp_TLS_80
+vless://2513b09b-6515-4590-9662-d03e0fbc6c8e@multiport.artunnel57.host:80?security=none&encryption=none&type=ws&headerType=none&path=%252Fvless-ntls&host=multiport.artunnel57.host#NTLS_Vless_WS
+vless://2513b09b-6515-4590-9662-d03e0fbc6c8e@multiport.artunnel57.host:443?security=tls&encryption=none&type=ws&headerType=none&path=%252Fvless-tls&sni=YourBugHost&host=multiport.artunnel57.host#TLS_Vless_WS
+vless://109c1261-f639-4cff-a31c-e405db66fb02@london.artunnel57.host:443?security=tls&encryption=none&type=ws&headerType=none&path=%252Fvless-tls&sni=london.artunnel57.host&host=london.artunnel57.host#
+vless://eb92d7de-45ea-40bf-a26c-18111bdf59f4@singapore.artunnel57.host:443?security=tls&encryption=none&type=ws&headerType=none&path=%252Fvless-tls&sni=singapore.artunnel57.host&host=singapore.artunnel57.host#
+vless://eed9f958-6ffa-4e63-b22e-7d959aca07d5@xray.artunnel57.host:443?security=xtls&encryption=none&type=tcp&sni=xray.artunnel57.host&flow=xtls-rprx-direct#
+vless://ae052459-18ac-40d2-8319-9a49061a31d7@uae.artunnel57.host:443?security=xtls&encryption=none&type=tcp&sni=uae.artunnel57.host&flow=xtls-rprx-direct#Vless_TCP_XTLS
+vless://9d0cfc7a-7707-4cca-a9f8-4a7ffea5a699@frankfurt.artunnel57.host:443?security=tls&encryption=none&type=ws&headerType=none&path=%252Fvless-tls&sni=frankfurt.artunnel57.host&host=frankfurt.artunnel57.host#TLS_Vless_WS
+vless://ae052459-18ac-40d2-8319-9a49061a31d7@uae.artunnel57.host:443?security=xtls&encryption=none&type=tcp&sni=uae.artunnel57.host&flow=xtls-rprx-direct#
+vless://1b4947ef-711e-4b7c-b55b-21b65bc3fb43@asia.artunnel57.host:443?security=xtls&encryption=none&type=tcp&sni=asia.artunnel57.host&flow=xtls-rprx-direct#

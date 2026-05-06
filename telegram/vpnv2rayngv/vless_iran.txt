@@ -1,0 +1,1 @@
+vless://fc7132e6-6943-424c-84bc-adbb60398a93@snapp.ir:80?path=%2Fapp1&security=none&encryption=none&host=cdn.yeksanstudio.ir&type=ws#@vpnv2rayNGv

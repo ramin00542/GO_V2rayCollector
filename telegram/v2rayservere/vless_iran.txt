@@ -1,0 +1,1 @@
+vless://Parsashonam-44@www.visa.com:443?path=%2F&security=tls&encryption=none&alpn=h2,http/1.1&host=mail.offch.blog&fp=chrome&type=ws&sni=mail.offch.blog#

@@ -1,0 +1,1 @@
+tg://proxy?server=65.108.198.182&port=8080&secret=dd49a70de57a60174f18dfd7fe6ef6aaf5

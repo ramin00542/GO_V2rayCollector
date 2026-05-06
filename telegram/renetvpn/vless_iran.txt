@@ -1,0 +1,1 @@
+vless://b9ad895b-12ac-40fc-a5ac-a5b2a1285001@104.22.38.37:443?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=3k.pureboy.eu.org&fp=chrome&type=ws&sni=3k.pureboy.eu.org#Telegram+%40RENET-VPN
