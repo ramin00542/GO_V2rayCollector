@@ -10,10 +10,10 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4          # اصلاح نسخه
+      uses: actions/checkout@v4
 
     - name: Set up Go
-      uses: actions/setup-go@v5          # اصلاح نسخه
+      uses: actions/setup-go@v5
       with:
         go-version: '>=1.21.3'
 
@@ -21,20 +21,19 @@ jobs:
       run: go version
 
     - name: Download dependencies
-      run: go mod download               # اختیاری اما توصیه می‌شود
+      run: go mod download
 
     - name: Build Go app
       run: go build -o myapp
 
     - name: Run collector
-      run: ./myapp -sort                 # در صورت نیاز می‌توانید فلگ‌های دیگر هم اضافه کنید
+      run: ./myapp -sort -clash   # می‌توانید فلگ‌های دیگر مثل -dedup هم اضافه کنید
 
     - name: Commit changes
       run: |
         git config --local user.email "actions@github.com"
         git config --local user.name "GitHub Actions"
-        # حذف git pull – نیازی نیست
-        git add telegram/ subscription/ mixed/ daily_archive/ config_cache.json
+        git add telegram/ subscription/ mixed/ daily_archive/ config_cache.json clash-config.yaml stats.json
         git diff --staged --quiet || git commit -m "✔️ $(date '+%Y-%m-%d %H:%M:%S') Collected"
 
     - name: Push changes
@@ -42,4 +41,4 @@ jobs:
       with:
         branch: main
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        force: false                     # پیش‌فرض false است، می‌توانید برای امنیت بگذارید
+        force: false
