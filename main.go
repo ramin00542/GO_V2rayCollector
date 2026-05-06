@@ -25,6 +25,7 @@ import (
 	"github.com/mrvcoder/V2rayCollector/collector"
 	"github.com/projectdiscovery/gologger"
 	"github.com/projectdiscovery/gologger/levels"
+	"gopkg.in/yaml.v3"
 )
 
 // ========================== تنظیمات ==========================
@@ -41,6 +42,7 @@ var (
 	testFlag    = flag.Bool("test", false, "test connectivity for a sample of configs")
 	concurrent  = flag.Int("concurrent", 3, "number of concurrent workers for fetching sources")
 	maxMessages = flag.Int("max-msgs", 100, "maximum messages to fetch per Telegram channel")
+	clashFlag   = flag.Bool("clash", false, "generate Clash YAML file for all configs")
 
 	// ریجکس‌های کامپایل شده (سراسری)
 	regexCache = make(map[string]*regexp.Regexp)
@@ -72,9 +74,9 @@ var (
 
 // ساختار ورودی cache
 type CacheEntry struct {
-	Timestamp int64  `json:"timestamp"`
-	Source    string `json:"source"` // "telegram" or "subscription"
-	Fingerprint string `json:"fingerprint,omitempty"` // برای dedup پیشرفته
+	Timestamp   int64  `json:"timestamp"`
+	Source      string `json:"source"` // "telegram" or "subscription"
+	Fingerprint string `json:"fingerprint,omitempty"`
 }
 
 type ChannelsType struct {
@@ -100,14 +102,12 @@ func main() {
 	// فچ همزمان کانال‌های تلگرام و ساب‌لینک‌ها
 	var wg sync.WaitGroup
 
-	// 1. تلگرام
 	wg.Add(1)
 	go func() {
 		defer wg.Done()
 		fetchAllTelegramChannels()
 	}()
 
-	// 2. ساب‌لینک‌ها
 	wg.Add(1)
 	go func() {
 		defer wg.Done()
@@ -116,34 +116,27 @@ func main() {
 
 	wg.Wait()
 
-	// به‌روزرسانی cache با کانفیگ‌های جدید (حذف تکراری)
 	updateCache()
-
-	// prune بر اساس پروتکل و تعداد مجاز
 	pruneCacheByProtocol()
-
-	// تولید فایل‌های خروجی
 	writeOutputFiles()
 
-	// آرشیو روزانه
 	today := time.Now().Format("2006-01-02")
 	if lastArchiveDate != today {
 		archiveDaily()
 		lastArchiveDate = today
+		saveCache()
 	}
 
-	// اگر فلگ test فعال است، نمونه‌ای از کانفیگ‌ها را تست کن
+	if *clashFlag {
+		generateClashYAML()
+	}
+
 	if *testFlag {
 		testSampleConfigs()
 	}
 
-	// نمایش آمار نهایی
 	printStats()
-
-	// ذخیره cache در دیسک
 	saveCache()
-
-	// لاگ پایان کار
 	gologger.Info().Msg("All Done! Program finished successfully.")
 }
 
@@ -188,10 +181,6 @@ func getPatternForProto(proto string) string {
 
 func setupLogging() {
 	gologger.DefaultLogger.SetMaxLevel(levels.LevelDebug)
-	// نوشتن لاگ در فایل (اختیاری)
-	logFile, _ := os.OpenFile("collector.log", os.O_CREATE|os.O_APPEND|os.O_WRONLY, 0644)
-	// می‌توان logFile را به writer اضافه کرد، فعلاً ساده می‌گذاریم
-	_ = logFile
 }
 
 func createDirs() {
@@ -254,18 +243,29 @@ func updateCache() {
 	newCount := 0
 	dupCount := 0
 
-	// تابع کمکی برای افزودن کانفیگ به cache
 	addIfNew := func(cfg, source string) {
 		if cfg == "" {
 			return
 		}
 		cacheMutex.Lock()
 		defer cacheMutex.Unlock()
+
+		// Dedup پیشرفته با fingerprint
+		if *dedupFlag && strings.HasPrefix(cfg, "vmess://") {
+			fp := fingerprintVmess(cfg)
+			for existingCfg, entry := range configCache {
+				if entry.Fingerprint == fp && entry.Fingerprint != "" && existingCfg != cfg {
+					dupCount++
+					return
+				}
+			}
+		}
+
 		if _, exists := configCache[cfg]; exists {
 			dupCount++
 			return
 		}
-		// محاسبه fingerprint در صورت نیاز
+
 		fp := ""
 		if *dedupFlag && strings.HasPrefix(cfg, "vmess://") {
 			fp = fingerprintVmess(cfg)
@@ -276,7 +276,7 @@ func updateCache() {
 			Fingerprint: fp,
 		}
 		newCount++
-		// بروز آمار
+
 		stats.Lock()
 		stats.newCount++
 		if source == "telegram" {
@@ -289,13 +289,11 @@ func updateCache() {
 		stats.Unlock()
 	}
 
-	// پردازش tempTelegram
 	for _, list := range tempTelegram {
 		for _, cfg := range list {
 			addIfNew(cfg, "telegram")
 		}
 	}
-	// پردازش tempSub
 	for _, list := range tempSub {
 		for _, cfg := range list {
 			addIfNew(cfg, "subscription")
@@ -306,7 +304,6 @@ func updateCache() {
 }
 
 func pruneCacheByProtocol() {
-	// گروه‌بندی با استفاده از یک map موقت
 	groups := make(map[string][]struct {
 		key string
 		ts  int64
@@ -324,15 +321,12 @@ func pruneCacheByProtocol() {
 	newCache := make(map[string]CacheEntry)
 	for proto, items := range groups {
 		if len(items) <= MaxConfigsPerProtocol {
-			// نگهداری همه
 			for _, it := range items {
 				newCache[it.key] = configCache[it.key]
 			}
 			continue
 		}
-		// مرتب‌سازی نزولی بر اساس timestamp
 		sort.Slice(items, func(i, j int) bool { return items[i].ts > items[j].ts })
-		// نگهداری MaxConfigsPerProtocol تای اول
 		for i := 0; i < MaxConfigsPerProtocol; i++ {
 			it := items[i]
 			newCache[it.key] = configCache[it.key]
@@ -354,9 +348,7 @@ func detectProtocol(cfg string) string {
 	return "mixed"
 }
 
-// تولید اثرانگشت برای vmess (بر اساس server:port:uuid)
 func fingerprintVmess(vmessUrl string) string {
-	// vmess://base64
 	parts := strings.SplitN(vmessUrl, "vmess://", 2)
 	if len(parts) != 2 {
 		return ""
@@ -369,7 +361,6 @@ func fingerprintVmess(vmessUrl string) string {
 	if err = json.Unmarshal(decoded, &data); err != nil {
 		return ""
 	}
-	// استخراج فیلدهای اصلی
 	add := fmt.Sprintf("%v:%v:%v", data["add"], data["port"], data["id"])
 	hash := md5.Sum([]byte(add))
 	return fmt.Sprintf("%x", hash)
@@ -388,7 +379,6 @@ func fetchAllTelegramChannels() {
 		return
 	}
 
-	// استفاده از worker pool برای پردازش همزمان کانال‌ها
 	jobs := make(chan ChannelsType, len(channels))
 	var wg sync.WaitGroup
 	for i := 0; i < *concurrent; i++ {
@@ -416,9 +406,83 @@ func telegramWorker(jobs <-chan ChannelsType, wg *sync.WaitGroup) {
 			gologger.Error().Msgf("Failed to parse %s: %v", url, err)
 			continue
 		}
+		doc.Url = resp.Request.URL
 		gologger.Info().Msgf("Crawling Telegram: %s", url)
-		crawlTelegram(doc, ch.AllMessagesFlag)
+
+		allTexts := getAllMessages(doc, *maxMessages)
+		for _, text := range allTexts {
+			processConfigLines(text, "telegram")
+		}
 	}
+}
+
+func getAllMessages(startDoc *goquery.Document, max int) []string {
+	var allTexts []string
+	seen := make(map[string]bool)
+
+	currentURL := startDoc.Url.String()
+	doc := startDoc
+
+	for len(allTexts) < max {
+		texts := extractMessagesFromDoc(doc)
+		for _, t := range texts {
+			if !seen[t] {
+				seen[t] = true
+				allTexts = append(allTexts, t)
+			}
+		}
+		if len(allTexts) >= max {
+			break
+		}
+		// پیدا کردن لینک پیام آخر
+		lastMsg := doc.Find(".tgme_widget_message_wrap").Last()
+		postLink, _ := lastMsg.Attr("data-post")
+		if postLink == "" {
+			break
+		}
+		parts := strings.Split(postLink, "/")
+		if len(parts) < 2 {
+			break
+		}
+		before := parts[len(parts)-1]
+		nextURL := fmt.Sprintf("%s?before=%s", strings.TrimSuffix(currentURL, "/"), before)
+		nextDoc := loadMore(nextURL)
+		if nextDoc == nil {
+			break
+		}
+		doc = nextDoc
+		currentURL = nextURL
+		time.Sleep(500 * time.Millisecond)
+	}
+	return allTexts
+}
+
+func extractMessagesFromDoc(doc *goquery.Document) []string {
+	var texts []string
+	doc.Find(".tgme_widget_message_text").Each(func(i int, s *goquery.Selection) {
+		html, _ := s.Html()
+		text := strings.ReplaceAll(html, "<br/>", "\n")
+		plain := extractTextFromHTML(text)
+		texts = append(texts, plain)
+	})
+	return texts
+}
+
+func loadMore(link string) *goquery.Document {
+	req, _ := http.NewRequest("GET", link, nil)
+	resp, err := client.Do(req)
+	if err != nil {
+		gologger.Error().Msgf("loadMore error: %v", err)
+		return nil
+	}
+	defer resp.Body.Close()
+	doc, err := goquery.NewDocumentFromReader(resp.Body)
+	if err != nil {
+		gologger.Error().Msgf("parse error: %v", err)
+		return nil
+	}
+	doc.Url = resp.Request.URL
+	return doc
 }
 
 func fetchAllSubscriptions() {
@@ -433,7 +497,6 @@ func fetchAllSubscriptions() {
 		return
 	}
 
-	// worker pool برای ساب‌لینک‌ها
 	jobs := make(chan string, len(sources))
 	var wg sync.WaitGroup
 	for i := 0; i < *concurrent; i++ {
@@ -455,81 +518,6 @@ func subWorker(jobs <-chan string, wg *sync.WaitGroup) {
 	}
 }
 
-// ========================== کرال تلگرام (اصلاح شده) ==========================
-func crawlTelegram(doc *goquery.Document, allMessages bool) {
-	// دریافت تمام پیام‌ها با صفحه‌بندی صحیح
-	fullDoc := getAllMessages(doc, *maxMessages)
-
-	// استخراج متن از پیام‌ها
-	if allMessages {
-		fullDoc.Find(".tgme_widget_message_text").Each(func(j int, s *goquery.Selection) {
-			html, _ := s.Html()
-			text := strings.Replace(html, "<br/>", "\n", -1)
-			plain := extractTextFromHTML(text)
-			processConfigLines(plain, "telegram")
-		})
-	} else {
-		fullDoc.Find("code,pre").Each(func(j int, s *goquery.Selection) {
-			html, _ := s.Html()
-			text := strings.ReplaceAll(html, "<br/>", "\n")
-			plain := extractTextFromHTML(text)
-			processConfigLines(plain, "telegram")
-		})
-	}
-}
-
-func getAllMessages(doc *goquery.Document, max int) *goquery.Document {
-	currentDoc := doc
-	for {
-		msgs := currentDoc.Find(".tgme_widget_message_wrap")
-		if msgs.Length() >= max {
-			break
-		}
-		lastMsg := msgs.Last()
-		postLink, exists := lastMsg.Attr("data-post")
-		if !exists || postLink == "" {
-			break
-		}
-		// استخراج عدد پیام از data-post (مثال: channel/1234)
-		parts := strings.Split(postLink, "/")
-		if len(parts) < 2 {
-			break
-		}
-		before := parts[len(parts)-1]
-		channelUrl := strings.TrimSuffix(currentDoc.Url.String(), "/")
-		nextUrl := fmt.Sprintf("%s?before=%s", channelUrl, before)
-		nextDoc := loadMore(nextUrl)
-		if nextDoc == nil {
-			break
-		}
-		// ادغام محتوای جدید
-		bodyHTML, _ := nextDoc.Html()
-		newDoc, _ := goquery.NewDocumentFromReader(strings.NewReader(bodyHTML))
-		currentDoc.Find("body").AppendSelection(newDoc.Find("body").Children())
-		currentDoc.Url = nextDoc.Url
-		time.Sleep(500 * time.Millisecond) // احترام به محدودیت
-	}
-	return currentDoc
-}
-
-func loadMore(link string) *goquery.Document {
-	req, _ := http.NewRequest("GET", link, nil)
-	resp, err := client.Do(req)
-	if err != nil {
-		gologger.Error().Msgf("loadMore error: %v", err)
-		return nil
-	}
-	defer resp.Body.Close()
-	doc, err := goquery.NewDocumentFromReader(resp.Body)
-	if err != nil {
-		gologger.Error().Msgf("parse error: %v", err)
-		return nil
-	}
-	doc.Url = resp.Request.URL
-	return doc
-}
-
-// ========================== پردازش ساب‌لینک ==========================
 func fetchSubscription(url string) {
 	resp, err := http.Get(url)
 	if err != nil {
@@ -543,14 +531,12 @@ func fetchSubscription(url string) {
 		return
 	}
 	content := string(body)
-	// تلاش برای دیکد base64
 	if decoded, err := base64.StdEncoding.DecodeString(strings.TrimSpace(content)); err == nil {
 		content = string(decoded)
 	}
 	processConfigLines(content, "subscription")
 }
 
-// ========================== استخراج کانفیگ‌ها (اصلاح شده) ==========================
 func processConfigLines(raw string, source string) {
 	lines := strings.Split(raw, "\n")
 	for _, line := range lines {
@@ -558,14 +544,12 @@ func processConfigLines(raw string, source string) {
 		if line == "" {
 			continue
 		}
-		// با تابع جدید تمام کانفیگ‌ها را استخراج کن
 		configs := extractAllConfigs(line)
 		for _, cfg := range configs {
 			cfg = strings.TrimSpace(cfg)
 			if cfg == "" {
 				continue
 			}
-			// اصلاح vmess (اضافه کردن نام)
 			if strings.HasPrefix(cfg, "vmess://") {
 				cfg = editVmessPs(cfg, source)
 			}
@@ -582,14 +566,11 @@ func processConfigLines(raw string, source string) {
 	}
 }
 
-// تابع جدید: استخراج همه کانفیگ‌ها از یک خط
 func extractAllConfigs(text string) []string {
 	var results []string
-	// برای هر پروتکل، تمام matchها را پیدا کن
-	for proto, re := range regexCache {
+	for _, re := range regexCache {
 		matches := re.FindAllString(text, -1)
 		for _, m := range matches {
-			// حذف موارد تکراری در همان خط (مثلاً اگر vmess داخل متن تکراری بود)
 			if !contains(results, m) {
 				results = append(results, m)
 			}
@@ -622,7 +603,6 @@ func editVmessPs(config string, source string) string {
 		gologger.Warning().Msgf("Failed to unmarshal vmess: %v", err)
 		return config
 	}
-	// ساخت نام معنادار: منبع+زمان
 	newName := fmt.Sprintf("%s-%d", source, time.Now().Unix())
 	data["ps"] = newName
 	jsonData, err := json.Marshal(data)
@@ -634,35 +614,34 @@ func editVmessPs(config string, source string) string {
 }
 
 func extractTextFromHTML(html string) string {
-	doc, _ := goquery.NewDocumentFromReader(strings.NewReader(html))
+	doc, err := goquery.NewDocumentFromReader(strings.NewReader(html))
+	if err != nil {
+		return ""
+	}
 	return doc.Text()
 }
 
-// ========================== تولید فایل‌های خروجی (با در نظر گرفتن sortFlag) ==========================
+// ========================== تولید فایل‌های خروجی ==========================
 func writeOutputFiles() {
-	// مخلوط (mixed) با استفاده از cache
 	writeMixedFolder()
-
-	// telegram و subscription با در نظر گرفتن source و sortFlag
 	writeSourceFolder("telegram", "telegram")
 	writeSourceFolder("subscription", "subscription")
 }
 
 func writeMixedFolder() {
-	// گروه‌بندی بر اساس پروتکل و مرتب‌سازی بر اساس timestamp
-	byProto := make(map[string][]string)
 	cacheMutex.RLock()
 	defer cacheMutex.RUnlock()
 
-	// جمع‌آوری تمام کانفیگ‌ها
-	type item struct {
+	protoItems := make(map[string][]struct {
 		cfg string
 		ts  int64
-	}
-	protoItems := make(map[string][]item)
+	})
 	for cfg, entry := range configCache {
 		proto := detectProtocol(cfg)
-		protoItems[proto] = append(protoItems[proto], item{cfg, entry.Timestamp})
+		protoItems[proto] = append(protoItems[proto], struct {
+			cfg string
+			ts  int64
+		}{cfg, entry.Timestamp})
 	}
 
 	for proto, items := range protoItems {
@@ -685,7 +664,6 @@ func writeSourceFolder(folder, sourceFilter string) {
 	cacheMutex.RLock()
 	defer cacheMutex.RUnlock()
 
-	// گروه‌بندی بر اساس پروتکل از cache با source مورد نظر
 	byProto := make(map[string][]struct {
 		cfg string
 		ts  int64
@@ -716,7 +694,7 @@ func writeSourceFolder(folder, sourceFilter string) {
 	}
 }
 
-// ========================== آرشیو روزانه (با رعایت محدودیت) ==========================
+// ========================== آرشیو روزانه ==========================
 func archiveDaily() {
 	today := time.Now().Format("2006-01-02")
 	archiveDir := filepath.Join("daily_archive", today)
@@ -738,7 +716,6 @@ func archiveDaily() {
 	}
 
 	for proto, items := range byProto {
-		// مرتب‌سازی نزولی و برش به MaxConfigsPerProtocol
 		sort.Slice(items, func(i, j int) bool { return items[i].ts > items[j].ts })
 		if len(items) > MaxConfigsPerProtocol {
 			items = items[:MaxConfigsPerProtocol]
@@ -756,11 +733,10 @@ func archiveDaily() {
 	gologger.Info().Msgf("Daily archive created in %s", archiveDir)
 }
 
-// ========================== تست نمونه کانفیگ‌ها (اختیاری) ==========================
+// ========================== تست نمونه کانفیگ ==========================
 func testSampleConfigs() {
 	gologger.Info().Msg("Testing a sample of configs (first 10 from each protocol)...")
-	// پیاده‌سازی ساده: فقط vmess را با یک درخواست http تست می‌کنیم (نمونه)
-	// به دلیل طولانی شدن، فقط یک نمونه لاگ می‌دهیم
+	// در صورت نیاز پیاده‌سازی کنید
 	gologger.Info().Msg("Test feature not fully implemented in this example.")
 }
 
@@ -779,18 +755,16 @@ func printStats() {
 	}
 	gologger.Info().Msg("================================")
 
-	// ذخیره آمار در فایل JSON
 	statFile, _ := json.MarshalIndent(map[string]interface{}{
-		"total":     len(configCache),
-		"new":       stats.newCount,
-		"telegram":  stats.telegramCount,
+		"total":        len(configCache),
+		"new":          stats.newCount,
+		"telegram":     stats.telegramCount,
 		"subscription": stats.subCount,
-		"protocols": stats.protoCounts,
+		"protocols":    stats.protoCounts,
 	}, "", "  ")
 	os.WriteFile("stats.json", statFile, 0644)
 }
 
-// ========================== توابع کمکی ==========================
 func HttpRequest(url string) *http.Response {
 	req, _ := http.NewRequest("GET", url, nil)
 	resp, err := client.Do(req)
@@ -799,4 +773,272 @@ func HttpRequest(url string) *http.Response {
 		return nil
 	}
 	return resp
+}
+
+// ========================== CLASH YAML GENERATION ==========================
+type ClashProxy struct {
+	Name     string `yaml:"name"`
+	Type     string `yaml:"type"`
+	Server   string `yaml:"server"`
+	Port     int    `yaml:"port"`
+	UUID     string `yaml:"uuid,omitempty"`
+	Password string `yaml:"password,omitempty"`
+	Cipher   string `yaml:"cipher,omitempty"`
+	Network  string `yaml:"network,omitempty"`
+	TLS      bool   `yaml:"tls,omitempty"`
+	Sni      string `yaml:"sni,omitempty"`
+}
+
+func generateClashYAML() {
+	cacheMutex.RLock()
+	defer cacheMutex.RUnlock()
+
+	var proxies []ClashProxy
+	count := 0
+
+	for cfg, entry := range configCache {
+		proto := detectProtocol(cfg)
+		var cp *ClashProxy
+		switch proto {
+		case "vmess":
+			cp = vmessToClash(cfg, entry.Source)
+		case "ss":
+			cp = ssToClash(cfg)
+		case "trojan":
+			cp = trojanToClash(cfg)
+		case "vless":
+			cp = vlessToClash(cfg)
+		default:
+			continue
+		}
+		if cp != nil {
+			proxies = append(proxies, *cp)
+			count++
+		}
+		if count >= 2000 { // محدودیت برای جلوگیری از فایل خیلی بزرگ
+			break
+		}
+	}
+
+	if len(proxies) == 0 {
+		gologger.Warning().Msg("No proxies converted for Clash YAML.")
+		return
+	}
+
+	// ایجاد proxy-groups
+	proxyNames := make([]string, len(proxies))
+	for i, p := range proxies {
+		proxyNames[i] = p.Name
+	}
+
+	clashConfig := struct {
+		Proxies     []ClashProxy `yaml:"proxies"`
+		ProxyGroups []any        `yaml:"proxy-groups"`
+		Rules       []string     `yaml:"rules"`
+	}{
+		Proxies: proxies,
+		ProxyGroups: []any{
+			map[string]any{
+				"name":    "PROXY",
+				"type":    "select",
+				"proxies": append([]string{"IRAN", "DIRECT"}, proxyNames...),
+			},
+			map[string]any{
+				"name":     "IRAN",
+				"type":     "fallback",
+				"proxies":  proxyNames,
+				"url":      "http://www.gstatic.com/generate_204",
+				"interval": 300,
+			},
+		},
+		Rules: []string{
+			"GEOIP,IRAN,IRAN",
+			"MATCH,PROXY",
+		},
+	}
+
+	data, err := yaml.Marshal(&clashConfig)
+	if err != nil {
+		gologger.Error().Msgf("Failed to marshal Clash YAML: %v", err)
+		return
+	}
+	if err := os.WriteFile("clash-config.yaml", data, 0644); err != nil {
+		gologger.Error().Msgf("Failed to write Clash YAML: %v", err)
+	} else {
+		gologger.Info().Msgf("Clash YAML generated with %d proxies: clash-config.yaml", len(proxies))
+	}
+}
+
+// vmess://base64 to ClashProxy
+func vmessToClash(vmessURL, source string) *ClashProxy {
+	parts := strings.SplitN(vmessURL, "vmess://", 2)
+	if len(parts) != 2 {
+		return nil
+	}
+	decoded, err := base64.StdEncoding.DecodeString(parts[1])
+	if err != nil {
+		return nil
+	}
+	var data map[string]interface{}
+	if err := json.Unmarshal(decoded, &data); err != nil {
+		return nil
+	}
+	server, _ := data["add"].(string)
+	portRaw, _ := data["port"].(string)
+	port, _ := strconv.Atoi(portRaw)
+	uuid, _ := data["id"].(string)
+	cipher, _ := data["scy"].(string)
+	if cipher == "" {
+		cipher = "auto"
+	}
+	net, _ := data["net"].(string)
+	tlsVal, _ := data["tls"].(string)
+	tls := tlsVal == "tls"
+	sni, _ := data["sni"].(string)
+
+	name := fmt.Sprintf("%s_%s_%d", source, server, port)
+	return &ClashProxy{
+		Name:     name,
+		Type:     "vmess",
+		Server:   server,
+		Port:     port,
+		UUID:     uuid,
+		Cipher:   cipher,
+		Network:  net,
+		TLS:      tls,
+		Sni:      sni,
+	}
+}
+
+// ss://method:pass@server:port to ClashProxy
+func ssToClash(ssURL string) *ClashProxy {
+	// Format: ss://base64(method:pass)@server:port#name
+	if !strings.HasPrefix(ssURL, "ss://") {
+		return nil
+	}
+	withoutScheme := strings.TrimPrefix(ssURL, "ss://")
+	atIdx := strings.Index(withoutScheme, "@")
+	if atIdx == -1 {
+		return nil
+	}
+	userinfoB64 := withoutScheme[:atIdx]
+	rest := withoutScheme[atIdx+1:]
+	colonIdx := strings.LastIndex(rest, ":")
+	if colonIdx == -1 {
+		return nil
+	}
+	server := rest[:colonIdx]
+	portStr := rest[colonIdx+1:]
+	port, _ := strconv.Atoi(portStr)
+
+	userinfo, err := base64.StdEncoding.DecodeString(userinfoB64)
+	if err != nil {
+		return nil
+	}
+	parts := strings.SplitN(string(userinfo), ":", 2)
+	if len(parts) != 2 {
+		return nil
+	}
+	method, password := parts[0], parts[1]
+
+	name := fmt.Sprintf("ss_%s_%d", server, port)
+	return &ClashProxy{
+		Name:     name,
+		Type:     "ss",
+		Server:   server,
+		Port:     port,
+		Cipher:   method,
+		Password: password,
+	}
+}
+
+// trojan://pass@server:port?peer=...
+func trojanToClash(trojanURL string) *ClashProxy {
+	if !strings.HasPrefix(trojanURL, "trojan://") {
+		return nil
+	}
+	withoutScheme := strings.TrimPrefix(trojanURL, "trojan://")
+	atIdx := strings.Index(withoutScheme, "@")
+	if atIdx == -1 {
+		return nil
+	}
+	password := withoutScheme[:atIdx]
+	rest := withoutScheme[atIdx+1:]
+	colonIdx := strings.Index(rest, ":")
+	if colonIdx == -1 {
+		return nil
+	}
+	server := rest[:colonIdx]
+	restAfterPort := rest[colonIdx+1:]
+	questionIdx := strings.Index(restAfterPort, "?")
+	var portStr string
+	if questionIdx != -1 {
+		portStr = restAfterPort[:questionIdx]
+	} else {
+		portStr = restAfterPort
+	}
+	port, _ := strconv.Atoi(portStr)
+
+	name := fmt.Sprintf("trojan_%s_%d", server, port)
+	return &ClashProxy{
+		Name:     name,
+		Type:     "trojan",
+		Server:   server,
+		Port:     port,
+		Password: password,
+	}
+}
+
+// vless://uuid@server:port?encryption=none&security=tls&...
+func vlessToClash(vlessURL string) *ClashProxy {
+	if !strings.HasPrefix(vlessURL, "vless://") {
+		return nil
+	}
+	withoutScheme := strings.TrimPrefix(vlessURL, "vless://")
+	atIdx := strings.Index(withoutScheme, "@")
+	if atIdx == -1 {
+		return nil
+	}
+	uuid := withoutScheme[:atIdx]
+	rest := withoutScheme[atIdx+1:]
+	colonIdx := strings.Index(rest, ":")
+	if colonIdx == -1 {
+		return nil
+	}
+	server := rest[:colonIdx]
+	restAfterPort := rest[colonIdx+1:]
+	questionIdx := strings.Index(restAfterPort, "?")
+	var portStr string
+	if questionIdx != -1 {
+		portStr = restAfterPort[:questionIdx]
+	} else {
+		portStr = restAfterPort
+	}
+	port, _ := strconv.Atoi(portStr)
+
+	// پارامترهای اضافی
+	params := make(map[string]string)
+	if questionIdx != -1 {
+		query := restAfterPort[questionIdx+1:]
+		for _, pair := range strings.Split(query, "&") {
+			kv := strings.SplitN(pair, "=", 2)
+			if len(kv) == 2 {
+				params[kv[0]] = kv[1]
+			}
+		}
+	}
+	security := params["security"]
+	tls := security == "tls" || security == "reality"
+	sni := params["sni"]
+
+	name := fmt.Sprintf("vless_%s_%d", server, port)
+	return &ClashProxy{
+		Name:     name,
+		Type:     "vless",
+		Server:   server,
+		Port:     port,
+		UUID:     uuid,
+		TLS:      tls,
+		Sni:      sni,
+	}
 }
