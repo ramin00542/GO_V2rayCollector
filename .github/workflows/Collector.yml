@@ -2,7 +2,7 @@ name: Collector
 on:
   workflow_dispatch:
   schedule:
-     - cron: "*/15 * * * *"
+    - cron: "*/15 * * * *"
 
 jobs:
   build:
@@ -19,14 +19,14 @@ jobs:
 
     - name: Build and run Golang file
       run: |
-          go build -o myapp
-          ./myapp -sort
+        go build -o myapp
+        ./myapp -sort
 
     - name: Commit Changes
       run: |
         git config --local user.email "actions@github.com"
         git config --local user.name "GitHub Actions"
-        git pull origin main --rebase
+        git pull origin main --rebase --autostash
         git add vmess_iran.txt trojan_iran.txt vless_iran.txt ss_iran.txt mixed_iran.txt
         git add http_iran.txt socks_iran.txt wireguard_iran.txt hysteria2_iran.txt mtproto_iran.txt tuic_iran.txt slipnet_iran.txt
         git diff --staged --quiet || git commit -m "✔️ $(date '+%Y-%m-%d %H:%M:%S') Collected"
