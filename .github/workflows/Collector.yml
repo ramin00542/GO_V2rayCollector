@@ -51,7 +51,7 @@ jobs:
       run: |
         git config --local user.email "actions@github.com"
         git config --local user.name "GitHub Actions"
-        git add telegram/ subscription/ mixed/ daily/ config_cache.json clash-config.yaml stats.json go.sum
+        git add telegram/ subscription/ mixed/ daily_archive/ all_configs/ config_cache.json clash-config.yaml stats.json go.sum links.txt
         git diff --staged --quiet || git commit -m "✔️ $(date '+%Y-%m-%d %H:%M:%S') Collected"
 
     - name: Push changes
