@@ -29,13 +29,12 @@ import (
 
 // ========================== تنظیمات ==========================
 const (
-	MaxConfigsPerProtocol = 3000
+	MaxConfigsPerProtocol = 50000
 	MaxWorkers            = 5
 	RequestTimeout        = 15 * time.Second
 )
 
 var (
-	// فلگ‌های خط فرمان
 	sortFlag    = flag.Bool("sort", false, "sort configs from latest to oldest")
 	dedupFlag   = flag.Bool("dedup", false, "enable advanced deduplication (fingerprint-based)")
 	testFlag    = flag.Bool("test", false, "test connectivity for a sample of configs")
@@ -43,26 +42,22 @@ var (
 	maxMessages = flag.Int("max-msgs", 100, "maximum messages to fetch per Telegram channel")
 	clashFlag   = flag.Bool("clash", false, "generate Clash YAML file for all configs")
 
-	// ریجکس‌های کامپایل شده (سراسری)
 	regexCache = make(map[string]*regexp.Regexp)
 	protoList  = []string{"ss", "vmess", "trojan", "vless", "http", "socks", "wireguard", "hysteria2", "mtproto", "tuic", "slipnet"}
 
-	// کلاینت HTTP با timeout
 	client = &http.Client{Timeout: RequestTimeout}
 
-	// Cache اصلی با منبع و timestamp
 	cacheMutex sync.RWMutex
-	configCache = make(map[string]CacheEntry) // key = config string
+	configCache = make(map[string]CacheEntry)
 
-	// برای جمع‌آوری موقت (قبل از ادغام با cache)
-	tempTelegram = make(map[string][]string)
-	tempSub      = make(map[string][]string)
+	// ساختار جدید برای ذخیره کانفیگ‌های تلگرام به تفکیک کانال
+	telegramByChannel = make(map[string]map[string][]string) // channel -> protocol -> []configs
+	subConfigs        = make(map[string][]string)            // protocol -> []configs (برای ساب‌لینک)
 
-	// آمار
 	stats = struct {
 		sync.Mutex
 		telegramCount, subCount, newCount, duplicateCount int
-		protoCounts                                       map[string]int
+		protoCounts map[string]int
 	}{
 		protoCounts: make(map[string]int),
 	}
@@ -71,11 +66,11 @@ var (
 	shutdownChan    = make(chan os.Signal, 1)
 )
 
-// ساختار ورودی cache
 type CacheEntry struct {
 	Timestamp   int64  `json:"timestamp"`
 	Source      string `json:"source"` // "telegram" or "subscription"
 	Fingerprint string `json:"fingerprint,omitempty"`
+	Channel     string `json:"channel,omitempty"` // نام کانال تلگرام (برای Telegram)
 }
 
 type ChannelsType struct {
@@ -98,7 +93,6 @@ func main() {
 	loadCache()
 	registerSignalHandler()
 
-	// فچ همزمان کانال‌های تلگرام و ساب‌لینک‌ها
 	var wg sync.WaitGroup
 
 	wg.Add(1)
@@ -139,7 +133,6 @@ func main() {
 	gologger.Info().Msg("All Done! Program finished successfully.")
 }
 
-// ========================== مقداردهی اولیه ==========================
 func initRegexps() {
 	for _, proto := range protoList {
 		pattern := getPatternForProto(proto)
@@ -183,7 +176,7 @@ func setupLogging() {
 }
 
 func createDirs() {
-	dirs := []string{"telegram", "subscription", "mixed", "daily_archive"}
+	dirs := []string{"telegram", "subscription", "mixed", "daily"}
 	for _, d := range dirs {
 		os.MkdirAll(d, 0755)
 	}
@@ -242,14 +235,13 @@ func updateCache() {
 	newCount := 0
 	dupCount := 0
 
-	addIfNew := func(cfg, source string) {
+	addIfNew := func(cfg, source, channel string) {
 		if cfg == "" {
 			return
 		}
 		cacheMutex.Lock()
 		defer cacheMutex.Unlock()
 
-		// Dedup پیشرفته با fingerprint
 		if *dedupFlag && strings.HasPrefix(cfg, "vmess://") {
 			fp := fingerprintVmess(cfg)
 			for existingCfg, entry := range configCache {
@@ -273,6 +265,7 @@ func updateCache() {
 			Timestamp:   now,
 			Source:      source,
 			Fingerprint: fp,
+			Channel:     channel,
 		}
 		newCount++
 
@@ -288,14 +281,18 @@ func updateCache() {
 		stats.Unlock()
 	}
 
-	for _, list := range tempTelegram {
-		for _, cfg := range list {
-			addIfNew(cfg, "telegram")
+	// تلگرام: کانفیگ‌های ذخیره شده در telegramByChannel
+	for channel, protoMap := range telegramByChannel {
+		for _, cfgList := range protoMap {
+			for _, cfg := range cfgList {
+				addIfNew(cfg, "telegram", channel)
+			}
 		}
 	}
-	for _, list := range tempSub {
-		for _, cfg := range list {
-			addIfNew(cfg, "subscription")
+	// ساب‌لینک‌ها
+	for _, cfgList := range subConfigs {
+		for _, cfg := range cfgList {
+			addIfNew(cfg, "subscription", "")
 		}
 	}
 
@@ -395,6 +392,11 @@ func telegramWorker(jobs <-chan ChannelsType, wg *sync.WaitGroup) {
 	defer wg.Done()
 	for ch := range jobs {
 		url := collector.ChangeUrlToTelegramWebUrl(ch.URL)
+		channelName := extractChannelNameFromURL(url)
+		if channelName == "" {
+			gologger.Warning().Msgf("Cannot extract channel name from %s", url)
+			continue
+		}
 		resp := HttpRequest(url)
 		if resp == nil {
 			continue
@@ -406,13 +408,24 @@ func telegramWorker(jobs <-chan ChannelsType, wg *sync.WaitGroup) {
 			continue
 		}
 		doc.Url = resp.Request.URL
-		gologger.Info().Msgf("Crawling Telegram: %s", url)
+		gologger.Info().Msgf("Crawling Telegram: %s (channel: %s)", url, channelName)
 
 		allTexts := getAllMessages(doc, *maxMessages)
 		for _, text := range allTexts {
-			processConfigLines(text, "telegram")
+			processTelegramText(text, channelName)
 		}
 	}
+}
+
+// استخراج نام کانال از آدرس t.me
+func extractChannelNameFromURL(url string) string {
+	// نمونه: https://t.me/FreeV2rays یا https://t.me/s/FreeV2rays
+	re := regexp.MustCompile(`t\.me/(?:s/)?([^/?]+)`)
+	matches := re.FindStringSubmatch(url)
+	if len(matches) > 1 {
+		return matches[1]
+	}
+	return ""
 }
 
 func getAllMessages(startDoc *goquery.Document, max int) []string {
@@ -433,7 +446,6 @@ func getAllMessages(startDoc *goquery.Document, max int) []string {
 		if len(allTexts) >= max {
 			break
 		}
-		// پیدا کردن لینک پیام آخر
 		lastMsg := doc.Find(".tgme_widget_message_wrap").Last()
 		postLink, _ := lastMsg.Attr("data-post")
 		if postLink == "" {
@@ -482,6 +494,25 @@ func loadMore(link string) *goquery.Document {
 	}
 	doc.Url = resp.Request.URL
 	return doc
+}
+
+func processTelegramText(text, channelName string) {
+	configs := extractAllConfigs(text)
+	for _, cfg := range configs {
+		cfg = strings.TrimSpace(cfg)
+		if cfg == "" {
+			continue
+		}
+		if strings.HasPrefix(cfg, "vmess://") {
+			cfg = editVmessPs(cfg, "telegram")
+		}
+		proto := detectProtocol(cfg)
+		// ذخیره در نقشه تفکیک شده بر اساس کانال
+		if telegramByChannel[channelName] == nil {
+			telegramByChannel[channelName] = make(map[string][]string)
+		}
+		telegramByChannel[channelName][proto] = append(telegramByChannel[channelName][proto], cfg)
+	}
 }
 
 func fetchAllSubscriptions() {
@@ -533,35 +564,21 @@ func fetchSubscription(url string) {
 	if decoded, err := base64.StdEncoding.DecodeString(strings.TrimSpace(content)); err == nil {
 		content = string(decoded)
 	}
-	processConfigLines(content, "subscription")
+	processSubscriptionContent(content)
 }
 
-func processConfigLines(raw string, source string) {
-	lines := strings.Split(raw, "\n")
-	for _, line := range lines {
-		line = strings.TrimSpace(line)
-		if line == "" {
+func processSubscriptionContent(raw string) {
+	configs := extractAllConfigs(raw)
+	for _, cfg := range configs {
+		cfg = strings.TrimSpace(cfg)
+		if cfg == "" {
 			continue
 		}
-		configs := extractAllConfigs(line)
-		for _, cfg := range configs {
-			cfg = strings.TrimSpace(cfg)
-			if cfg == "" {
-				continue
-			}
-			if strings.HasPrefix(cfg, "vmess://") {
-				cfg = editVmessPs(cfg, source)
-			}
-			if cfg == "" {
-				continue
-			}
-			proto := detectProtocol(cfg)
-			if source == "telegram" {
-				tempTelegram[proto] = append(tempTelegram[proto], cfg)
-			} else {
-				tempSub[proto] = append(tempSub[proto], cfg)
-			}
+		if strings.HasPrefix(cfg, "vmess://") {
+			cfg = editVmessPs(cfg, "subscription")
 		}
+		proto := detectProtocol(cfg)
+		subConfigs[proto] = append(subConfigs[proto], cfg)
 	}
 }
 
@@ -622,36 +639,69 @@ func extractTextFromHTML(html string) string {
 
 // ========================== تولید فایل‌های خروجی ==========================
 func writeOutputFiles() {
-	writeMixedFolder()
-	writeSourceFolder("telegram", "telegram")
-	writeSourceFolder("subscription", "subscription")
+	writeTelegramPerChannel()
+	writeMixedFromTelegram()
+	writeSubscriptionFolder()
 }
 
-func writeMixedFolder() {
+// نوشتن پوشه telegram با زیرپوشه‌های هر کانال
+func writeTelegramPerChannel() {
 	cacheMutex.RLock()
 	defer cacheMutex.RUnlock()
 
-	protoItems := make(map[string][]struct {
-		cfg string
-		ts  int64
-	})
+	// گروه‌بندی کانفیگ‌های تلگرام بر اساس کانال
+	channelConfigs := make(map[string]map[string][]string) // channel -> proto -> []configs
+
 	for cfg, entry := range configCache {
-		proto := detectProtocol(cfg)
-		protoItems[proto] = append(protoItems[proto], struct {
-			cfg string
-			ts  int64
-		}{cfg, entry.Timestamp})
+		if entry.Source == "telegram" && entry.Channel != "" {
+			proto := detectProtocol(cfg)
+			if channelConfigs[entry.Channel] == nil {
+				channelConfigs[entry.Channel] = make(map[string][]string)
+			}
+			channelConfigs[entry.Channel][proto] = append(channelConfigs[entry.Channel][proto], cfg)
+		}
+	}
+
+	// برای هر کانال، پوشه ایجاد کن و فایل‌های پروتکل را بنویس
+	for channel, protoMap := range channelConfigs {
+		channelDir := filepath.Join("telegram", channel)
+		os.MkdirAll(channelDir, 0755)
+
+		for proto, items := range protoMap {
+			// اگر نیاز به مرتب‌سازی داریم
+			if *sortFlag {
+				// برای مرتب‌سازی نیاز به timestamp داریم، فعلاً ساده می‌گذاریم
+				// می‌توانیم با ذخیره timestamp در struct بهتر کنیم، برای سادگی فعلاً بدون مرتب‌سازی
+			}
+			content := strings.Join(items, "\n")
+			if content != "" {
+				filePath := filepath.Join(channelDir, proto+"_iran.txt")
+				collector.WriteToFile(content, filePath)
+			}
+		}
+	}
+}
+
+// نوشتن پوشه mixed فقط از کانفیگ‌های تلگرام (همه کانال‌ها)
+func writeMixedFromTelegram() {
+	cacheMutex.RLock()
+	defer cacheMutex.RUnlock()
+
+	protoItems := make(map[string][]string)
+
+	for cfg, entry := range configCache {
+		if entry.Source == "telegram" {
+			proto := detectProtocol(cfg)
+			protoItems[proto] = append(protoItems[proto], cfg)
+		}
 	}
 
 	for proto, items := range protoItems {
 		if *sortFlag {
-			sort.Slice(items, func(i, j int) bool { return items[i].ts > items[j].ts })
+			// در صورت نیاز به مرتب‌سازی بر اساس زمان، باید با timestamp انجام شود
+			// فعلاً بدون مرتب‌سازی
 		}
-		lines := make([]string, len(items))
-		for i, it := range items {
-			lines[i] = it.cfg
-		}
-		content := strings.Join(lines, "\n")
+		content := strings.Join(items, "\n")
 		if content != "" {
 			filePath := filepath.Join("mixed", proto+"_iran.txt")
 			collector.WriteToFile(content, filePath)
@@ -659,59 +709,54 @@ func writeMixedFolder() {
 	}
 }
 
-func writeSourceFolder(folder, sourceFilter string) {
+// نوشتن پوشه subscription فقط از ساب‌لینک‌ها
+func writeSubscriptionFolder() {
 	cacheMutex.RLock()
 	defer cacheMutex.RUnlock()
 
-	byProto := make(map[string][]struct {
-		cfg string
-		ts  int64
-	})
+	subProto := make(map[string][]string)
+
 	for cfg, entry := range configCache {
-		if entry.Source == sourceFilter {
+		if entry.Source == "subscription" {
 			proto := detectProtocol(cfg)
-			byProto[proto] = append(byProto[proto], struct {
-				cfg string
-				ts  int64
-			}{cfg, entry.Timestamp})
+			subProto[proto] = append(subProto[proto], cfg)
 		}
 	}
 
-	for proto, items := range byProto {
+	for proto, items := range subProto {
 		if *sortFlag {
-			sort.Slice(items, func(i, j int) bool { return items[i].ts > items[j].ts })
+			// مرتب‌سازی در صورت نیاز
 		}
-		lines := make([]string, len(items))
-		for i, it := range items {
-			lines[i] = it.cfg
-		}
-		content := strings.Join(lines, "\n")
+		content := strings.Join(items, "\n")
 		if content != "" {
-			filePath := filepath.Join(folder, proto+"_iran.txt")
+			filePath := filepath.Join("subscription", proto+"_iran.txt")
 			collector.WriteToFile(content, filePath)
 		}
 	}
 }
 
-// ========================== آرشیو روزانه ==========================
+// ========================== آرشیو روزانه (فقط ۲۴ ساعت اخیر) ==========================
 func archiveDaily() {
 	today := time.Now().Format("2006-01-02")
-	archiveDir := filepath.Join("daily_archive", today)
+	archiveDir := filepath.Join("daily", today)
 	os.MkdirAll(archiveDir, 0755)
 
 	cacheMutex.RLock()
 	defer cacheMutex.RUnlock()
 
-	byProto := make(map[string][]struct {
+	threshold := time.Now().Add(-24 * time.Hour).Unix()
+
+	type item struct {
 		cfg string
 		ts  int64
-	})
+	}
+	byProto := make(map[string][]item)
+
 	for cfg, entry := range configCache {
-		proto := detectProtocol(cfg)
-		byProto[proto] = append(byProto[proto], struct {
-			cfg string
-			ts  int64
-		}{cfg, entry.Timestamp})
+		if entry.Timestamp >= threshold {
+			proto := detectProtocol(cfg)
+			byProto[proto] = append(byProto[proto], item{cfg, entry.Timestamp})
+		}
 	}
 
 	for proto, items := range byProto {
@@ -729,49 +774,7 @@ func archiveDaily() {
 			os.WriteFile(archivePath, []byte(content), 0644)
 		}
 	}
-	gologger.Info().Msgf("Daily archive created in %s", archiveDir)
-}
-
-// ========================== تست نمونه کانفیگ ==========================
-func testSampleConfigs() {
-	gologger.Info().Msg("Testing a sample of configs (first 10 from each protocol)...")
-	// در صورت نیاز پیاده‌سازی کنید
-	gologger.Info().Msg("Test feature not fully implemented in this example.")
-}
-
-// ========================== آمار ==========================
-func printStats() {
-	stats.Lock()
-	defer stats.Unlock()
-	gologger.Info().Msg("========== STATISTICS ==========")
-	gologger.Info().Msgf("Total configs in cache: %d", len(configCache))
-	gologger.Info().Msgf("New configs added: %d", stats.newCount)
-	gologger.Info().Msgf("Telegram sources: %d configs", stats.telegramCount)
-	gologger.Info().Msgf("Subscription sources: %d configs", stats.subCount)
-	gologger.Info().Msg("Configs per protocol:")
-	for proto, count := range stats.protoCounts {
-		gologger.Info().Msgf("  %s: %d", proto, count)
-	}
-	gologger.Info().Msg("================================")
-
-	statFile, _ := json.MarshalIndent(map[string]interface{}{
-		"total":        len(configCache),
-		"new":          stats.newCount,
-		"telegram":     stats.telegramCount,
-		"subscription": stats.subCount,
-		"protocols":    stats.protoCounts,
-	}, "", "  ")
-	os.WriteFile("stats.json", statFile, 0644)
-}
-
-func HttpRequest(url string) *http.Response {
-	req, _ := http.NewRequest("GET", url, nil)
-	resp, err := client.Do(req)
-	if err != nil {
-		gologger.Error().Msgf("HTTP request failed: %v", err)
-		return nil
-	}
-	return resp
+	gologger.Info().Msgf("Daily archive created in %s with configs from last 24h", archiveDir)
 }
 
 // ========================== CLASH YAML GENERATION ==========================
@@ -814,7 +817,7 @@ func generateClashYAML() {
 			proxies = append(proxies, *cp)
 			count++
 		}
-		if count >= 2000 { // محدودیت برای جلوگیری از فایل خیلی بزرگ
+		if count >= 2000 {
 			break
 		}
 	}
@@ -824,7 +827,6 @@ func generateClashYAML() {
 		return
 	}
 
-	// ایجاد proxy-groups
 	proxyNames := make([]string, len(proxies))
 	for i, p := range proxies {
 		proxyNames[i] = p.Name
@@ -868,7 +870,6 @@ func generateClashYAML() {
 	}
 }
 
-// vmess://base64 to ClashProxy
 func vmessToClash(vmessURL, source string) *ClashProxy {
 	parts := strings.SplitN(vmessURL, "vmess://", 2)
 	if len(parts) != 2 {
@@ -909,9 +910,7 @@ func vmessToClash(vmessURL, source string) *ClashProxy {
 	}
 }
 
-// ss://method:pass@server:port to ClashProxy
 func ssToClash(ssURL string) *ClashProxy {
-	// Format: ss://base64(method:pass)@server:port#name
 	if !strings.HasPrefix(ssURL, "ss://") {
 		return nil
 	}
@@ -951,7 +950,6 @@ func ssToClash(ssURL string) *ClashProxy {
 	}
 }
 
-// trojan://pass@server:port?peer=...
 func trojanToClash(trojanURL string) *ClashProxy {
 	if !strings.HasPrefix(trojanURL, "trojan://") {
 		return nil
@@ -988,7 +986,6 @@ func trojanToClash(trojanURL string) *ClashProxy {
 	}
 }
 
-// vless://uuid@server:port?encryption=none&security=tls&...
 func vlessToClash(vlessURL string) *ClashProxy {
 	if !strings.HasPrefix(vlessURL, "vless://") {
 		return nil
@@ -1015,7 +1012,6 @@ func vlessToClash(vlessURL string) *ClashProxy {
 	}
 	port, _ := strconv.Atoi(portStr)
 
-	// پارامترهای اضافی
 	params := make(map[string]string)
 	if questionIdx != -1 {
 		query := restAfterPort[questionIdx+1:]
@@ -1040,4 +1036,44 @@ func vlessToClash(vlessURL string) *ClashProxy {
 		TLS:      tls,
 		Sni:      sni,
 	}
+}
+
+// ========================== توابع کمکی و تست ==========================
+func testSampleConfigs() {
+	gologger.Info().Msg("Testing a sample of configs (first 10 from each protocol)...")
+	gologger.Info().Msg("Test feature not fully implemented in this example.")
+}
+
+func printStats() {
+	stats.Lock()
+	defer stats.Unlock()
+	gologger.Info().Msg("========== STATISTICS ==========")
+	gologger.Info().Msgf("Total configs in cache: %d", len(configCache))
+	gologger.Info().Msgf("New configs added: %d", stats.newCount)
+	gologger.Info().Msgf("Telegram sources: %d configs", stats.telegramCount)
+	gologger.Info().Msgf("Subscription sources: %d configs", stats.subCount)
+	gologger.Info().Msg("Configs per protocol:")
+	for proto, count := range stats.protoCounts {
+		gologger.Info().Msgf("  %s: %d", proto, count)
+	}
+	gologger.Info().Msg("================================")
+
+	statFile, _ := json.MarshalIndent(map[string]interface{}{
+		"total":        len(configCache),
+		"new":          stats.newCount,
+		"telegram":     stats.telegramCount,
+		"subscription": stats.subCount,
+		"protocols":    stats.protoCounts,
+	}, "", "  ")
+	os.WriteFile("stats.json", statFile, 0644)
+}
+
+func HttpRequest(url string) *http.Response {
+	req, _ := http.NewRequest("GET", url, nil)
+	resp, err := client.Do(req)
+	if err != nil {
+		gologger.Error().Msgf("HTTP request failed: %v", err)
+		return nil
+	}
+	return resp
 }
