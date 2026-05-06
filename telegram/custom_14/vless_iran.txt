@@ -1,1 +1,1 @@
-vless://6378d738-1ed3-4678-89ab-27c7f19b5272@51.89.119.171:59494?security=none&encryption=none&host=varzesh3.com&headerType=http&type=tcp#%40v2rayng_org
+vless://a3e76574-9458-4783-905b-970cf0ccdcd1@melo-mtn.outline-vpn.cloud:443?mode=gun&security=tls&encryption=none&alpn=h2,http/1.1&fp=chrome&type=grpc&serviceName=@melo&sni=ip6.melobigg.site#

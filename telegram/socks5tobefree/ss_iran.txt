@@ -1,2 +1,4 @@
-vless://524ef193-d0ee-4f6b-bf0b-1ab15a76cc9a@europeless.duckdns.org:443?type=ws&path=%2Fgetupdates&host=europeless.duckdns.org&security=tls#@socks5tobefree
+vless://78f71fb4-3425-4eb8-a734-8b5401634fa8@lessless.duckdns.org:443?type=ws&path=%2Fgetupdates&host=lessless.duckdns.org&security=tls#@socks5tobefree
 vless://a8c69dd7-9d17-436e-b9ed-383846dbfbdf@cookies.oops.wtf:43774?type=tcp&security=reality&pbk=ZLAYpx5wkCanyDNjQO_-7kwg0K5e728t2FPD9fSZ4VE&fp=random&sni=tutu.ru&sid=b9a9aba39ba5ab&spx=%2F&flow=xtls-rprx-vision#@socks5tobefree
+vless://d32dbead-42d4-49b7-aece-b6523a0e945f@cookies.oops.wtf:43774?security=reality&encryption=none&pbk=ZLAYpx5wkCanyDNjQO_-7kwg0K5e728t2FPD9fSZ4VE&headerType=&fp=random&spx=%2F&type=tcp&flow=xtls-rprx-vision&sni=tutu.ru&sid=b9a9aba39ba5ab#socks5tobefree
+vless://524ef193-d0ee-4f6b-bf0b-1ab15a76cc9a@europeless.duckdns.org:443?type=ws&path=%2Fgetupdates&host=europeless.duckdns.org&security=tls#@socks5tobefree

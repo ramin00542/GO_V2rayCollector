@@ -1,0 +1,2 @@
+vless://e05ad0d3-5bf0-463d-9ba2-817680c6f895@snapp.ir:8080?path=%2F&security=none&encryption=none&host=simorgh.darerio.ir&type=ws#https://t.me/ultrasurf_12
+vless://c09816d1-9b53-4e0d-85a8-9def477121ab@185.143.233.122:80?path=%2Fws&security=none&encryption=none&host=cdnisfucka.drnimaamini.ir&type=ws#%F0%9F%8D%81%40ultrasurf_12

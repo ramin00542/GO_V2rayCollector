@@ -1,0 +1,1 @@
+vless://abd3221a-af6d-42b7-9373-dfe3efe6f512@37.202.238.213:2095?encryption=none&security=none&type=tcp&headerType=http&host=Myket.ir#%40digiv2ray-50GB

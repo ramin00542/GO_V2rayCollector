@@ -1,4 +1,2 @@
 vless://761c5103-01a1-45fe-91b4-f351e253f355@230920393.f-sub.com:3799?security=none&encryption=none&host=speedtest.net&headerType=http&type=tcp#%F0%9F%87%AB%F0%9F%87%B7%20%40Jeyksatan
-vless://2eaef053-5fd6-4def-b234-d760690355ff@91.99.203.70:51615?security=none&encryption=none&host=zula.ir&headerType=http&type=tcp#
 vless://2bc31b80-7870-47e2-b6d7-4358108c0646@0us.amazon-osishop.ir:8880?security=none&encryption=none&host=eN.TwiTtER.cOM.%3A8880&headerType=http&type=tcp#%40Jeyksatan
-vless://1f5056ca-fb4c-4b51-a31e-891083588351@104.21.72.109:80?path=%2F8WrRNGUr2d25Kcpp%2FNTQuMjAwLjI0NC45Mw%3D%3D%3Fed%3D2560&security=none&encryption=none&host=pamchall.com.&type=ws#%40Jeyksatan
