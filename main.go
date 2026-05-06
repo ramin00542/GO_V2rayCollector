@@ -49,8 +49,12 @@ var (
 
 	cacheMutex     sync.RWMutex
 	configCache    = make(map[string]CacheEntry)
-	telegramByChannel = make(map[string]map[string][]string)
-	subConfigs     = make(map[string][]string)
+
+	subConfigs         = make(map[string][]string)
+	subConfigsMutex    sync.Mutex
+
+	telegramByChannel      = make(map[string]map[string][]string)
+	telegramByChannelMutex sync.Mutex
 
 	stats = struct {
 		sync.Mutex
@@ -257,6 +261,7 @@ func updateCache() {
 		stats.Unlock()
 	}
 
+	telegramByChannelMutex.Lock()
 	for ch, pm := range telegramByChannel {
 		for _, lst := range pm {
 			for _, cfg := range lst {
@@ -264,11 +269,16 @@ func updateCache() {
 			}
 		}
 	}
+	telegramByChannelMutex.Unlock()
+
+	subConfigsMutex.Lock()
 	for _, lst := range subConfigs {
 		for _, cfg := range lst {
 			addIfNew(cfg, "subscription", "")
 		}
 	}
+	subConfigsMutex.Unlock()
+
 	gologger.Info().Msgf("Cache update: %d new, %d dup", newCount, dupCount)
 }
 
@@ -455,10 +465,12 @@ func processTelegramText(text, channelName string) {
 			cfg = editVmessPs(cfg, "telegram")
 		}
 		proto := detectProtocol(cfg)
+		telegramByChannelMutex.Lock()
 		if telegramByChannel[channelName] == nil {
 			telegramByChannel[channelName] = make(map[string][]string)
 		}
 		telegramByChannel[channelName][proto] = append(telegramByChannel[channelName][proto], cfg)
+		telegramByChannelMutex.Unlock()
 	}
 }
 
@@ -516,7 +528,9 @@ func processSubscriptionContent(raw string) {
 			cfg = editVmessPs(cfg, "subscription")
 		}
 		proto := detectProtocol(cfg)
+		subConfigsMutex.Lock()
 		subConfigs[proto] = append(subConfigs[proto], cfg)
+		subConfigsMutex.Unlock()
 	}
 }
 
