@@ -1,1 +1,4 @@
-vless://621c3631-ed9b-453a-b486-4068212bf483@185.143.233.233:2082?path=%2F&security=none&encryption=none&host=meli.hoorakan-cloud.ir&type=ws#
+vless://4f46b0b7-d44e-404d-aae0-b878c3f6b787@nextjs.org:443?mode=auto&path=%2Fzyphervpnsalle&security=tls&encryption=none&insecure=0&host=vercel-xhttp-beta-flame.vercel.app&type=xhttp&allowInsecure=0&sni=nextjs.org#%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%A7%D8%AA%D8%B5%D8%A7%D9%84%20%D8%AF%D8%A7%D8%A6%D9%85%DB%8C%20%D8%AC%D9%88%DB%8C%D9%86%20%D8%B4%D9%88%F0%9F%97%BE%20prrofile_purple%40
+vless://9abd3240-0dd5-47de-a2be-7a8d4f22a283@snapp.ir:80?path=%2F&security=none&encryption=none&host=nig.vxhosting.ir&type=ws#
+vless://83de2233-558d-410b-b86f-3306620ebeda@rfiksma.top:52978?security=none&encryption=none&headerType=none&type=tcp#%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%A7%D8%AA%D8%B5%D8%A7%D9%84%20%D8%AF%D8%A7%D8%A6%D9%85%DB%8C%20%D8%AC%D9%88%DB%8C%D9%86%20%D8%B4%D9%88%F0%9F%97%BE%20prrofile_purple%40
+vless://143ee061-29ce-4507-93cc-04e3dd2c3881@snappfood.ir:80?path=%2Fws&security=none&encryption=none&host=cdnisfucka.drnimaamini.ir&type=ws#

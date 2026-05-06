@@ -1,1 +1,2 @@
+vless://60404e8a-a1d0-4374-9b4c-6aeb32dcf51b@185.143.233.235:8080?encryption=none&type=ws&host=Test.bosbedetoto.site&path=/&security=none#@ehsawn8
 vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?path=%2F&security=none&encryption=none&host=sr.novatechsapr.ir&type=ws#%40filtershekan_channel

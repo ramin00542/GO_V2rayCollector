@@ -1,13 +1,16 @@
 {
-  "new": 578,
+  "new": 992,
   "protocols": {
-    "http": 3,
-    "ss": 38,
-    "trojan": 1,
-    "vless": 6,
-    "vmess": 530
+    "http": 23,
+    "mtproto": 3,
+    "socks": 3,
+    "ss": 190,
+    "trojan": 15,
+    "vless": 236,
+    "vmess": 520,
+    "wireguard": 2
   },
-  "subscription": 392,
-  "telegram": 186,
-  "total": 12823
+  "subscription": 658,
+  "telegram": 334,
+  "total": 13815
 }

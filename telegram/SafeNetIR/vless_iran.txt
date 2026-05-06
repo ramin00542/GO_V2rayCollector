@@ -1,1 +1,2 @@
 vless://3aa7db12-eb93-47fc-af04-d54c0243b6d2@eco.gymplusplus.com:2052?path=%2F&security=&encryption=none&type=ws#
+vless://71e05525-a3e9-4f1c-94a0-0d2f50927618@185.143.233.235:80?security=none&encryption=none&host=vixon.portab.org&type=ws#

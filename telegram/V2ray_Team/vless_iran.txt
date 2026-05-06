@@ -1,2 +1,3 @@
-vless://d6e0253b-5743-055d-ffb2-644676291644@c.brimliski.com:443?security=tls&alpn=http%2F1.1&encryption=none&insecure=0&host=acutemugforeveryoneintwondocuk3.zhongyang-telecom.com&fp=chrome&type=ws&allowInsecure=0#Mci%20%7C%20%40v2ray_team
 vless://a780c927-6d30-4e88-8ae9-7c0a54e7c76b@fast.wortexnetwork.com:80?mode=auto&security=none&encryption=none&host=so-fast-server-3.global.ssl.fastly.net&type=xhttp#
+vless://1d819aab-2593-40e0-a537-f1b48a6fd069@162.159.152.4:2096?path=%2F&security=tls&alpn=http%2F1.1&encryption=none&insecure=0&host=rb11.fasst11.shop&fp=chrome&type=ws&allowInsecure=0&sni=rb11.fasst11.shop#
+vless://7c63f43f-f526-49bb-b5c8-2be26e11ef00@statue.lnmarketplace.net:443?mode=stream-one&path=%2Fstatue&security=tls&alpn=h2&encryption=none&insecure=0&host=statue.lnmarketplace.net&type=xhttp&allowInsecure=0&sni=statue.lnmarketplace.net#Mci%20%7C%20%40v2ray_team
