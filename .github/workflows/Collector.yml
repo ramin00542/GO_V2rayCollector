@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: "*/15 * * * *"
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true   # <-- برای رفع اخطار Node.js 20
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,11 +26,14 @@ jobs:
     - name: Download dependencies
       run: go mod download
 
+    - name: Tidy dependencies   # <-- مرحله جدید برای رفع missing go.sum entry
+      run: go mod tidy
+
     - name: Build Go app
       run: go build -o myapp
 
     - name: Run collector
-      run: ./myapp -sort -clash   # می‌توانید فلگ‌های دیگر مثل -dedup هم اضافه کنید
+      run: ./myapp -sort -clash   # فلگ‌های دیگر مثل -dedup را هم می‌توانید اضافه کنید
 
     - name: Commit changes
       run: |
