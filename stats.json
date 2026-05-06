@@ -1,19 +1,14 @@
 {
-  "new": 10798,
+  "new": 4978,
   "protocols": {
-    "http": 809,
-    "hysteria2": 19,
-    "mtproto": 39,
-    "slipnet": 6,
-    "socks": 50,
-    "ss": 7448,
-    "trojan": 530,
-    "tuic": 2,
-    "vless": 1036,
-    "vmess": 856,
-    "wireguard": 3
+    "http": 1,
+    "socks": 2,
+    "ss": 1888,
+    "trojan": 5,
+    "vless": 2524,
+    "vmess": 558
   },
-  "subscription": 6885,
-  "telegram": 3913,
-  "total": 6403
+  "subscription": 3329,
+  "telegram": 1649,
+  "total": 8879
 }
