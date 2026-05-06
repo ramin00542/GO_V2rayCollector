@@ -21,16 +21,15 @@ import (
 
 	"github.com/PuerkitoBio/goquery"
 	"github.com/jszwec/csvutil"
-	"github.com/mrvcoder/V2rayCollector/collector"
+	"github.com/ramin00542/GO_V2rayCollector/collector"
 	"github.com/projectdiscovery/gologger"
 	"github.com/projectdiscovery/gologger/levels"
 	"gopkg.in/yaml.v3"
 )
 
-// ========================== تنظیمات ==========================
 const (
 	MaxConfigsPerProtocol = 50000
-	MaxConfigsAll         = 50000 // حداکثر خط برای all_protocols.txt
+	MaxConfigsAll         = 50000
 	MaxWorkers            = 5
 	RequestTimeout        = 15 * time.Second
 )
@@ -48,19 +47,16 @@ var (
 
 	client = &http.Client{Timeout: RequestTimeout}
 
-	cacheMutex sync.RWMutex
-	configCache = make(map[string]CacheEntry)
-
+	cacheMutex     sync.RWMutex
+	configCache    = make(map[string]CacheEntry)
 	telegramByChannel = make(map[string]map[string][]string)
-	subConfigs        = make(map[string][]string)
+	subConfigs     = make(map[string][]string)
 
 	stats = struct {
 		sync.Mutex
 		telegramCount, subCount, newCount, duplicateCount int
 		protoCounts map[string]int
-	}{
-		protoCounts: make(map[string]int),
-	}
+	}{protoCounts: make(map[string]int)}
 
 	lastArchiveDate string
 	shutdownChan    = make(chan os.Signal, 1)
@@ -107,9 +103,9 @@ func main() {
 
 	updateCache()
 	pruneCacheByProtocol()
-	writeOutputFiles()          // فایل‌های قبلی (telegram, mixed, subscription)
-	writeAllConfigs()           // فایل‌های new: all_configs
-	generateLinksFile()         // فایل links.txt
+	writeOutputFiles()      // telegram, mixed, subscription
+	writeAllConfigs()       // all_configs
+	generateLinksFile()     // links.txt
 
 	today := time.Now().Format("2006-01-02")
 	if lastArchiveDate != today {
@@ -129,7 +125,7 @@ func main() {
 	gologger.Info().Msg("All Done!")
 }
 
-// ========================== توابع اولیه ==========================
+// ==================== توابع اولیه ====================
 func initRegexps() {
 	for _, proto := range protoList {
 		pattern := getPatternForProto(proto)
@@ -188,11 +184,11 @@ func registerSignalHandler() {
 	}()
 }
 
-// ========================== Cache ==========================
+// ==================== مدیریت Cache ====================
 func loadCache() {
 	data, err := os.ReadFile("config_cache.json")
 	if err != nil {
-		gologger.Info().Msg("No existing cache file.")
+		gologger.Info().Msg("No existing cache file, starting fresh.")
 		return
 	}
 	var cd CacheData
@@ -204,7 +200,7 @@ func loadCache() {
 	configCache = cd.Configs
 	lastArchiveDate = cd.LastDate
 	cacheMutex.Unlock()
-	gologger.Info().Msgf("Loaded %d configs", len(configCache))
+	gologger.Info().Msgf("Loaded %d configs from cache", len(configCache))
 }
 
 func saveCache() {
@@ -337,11 +333,11 @@ func fingerprintVmess(vmessUrl string) string {
 	return fmt.Sprintf("%x", hash)
 }
 
-// ========================== دریافت از تلگرام و ساب ==========================
+// ==================== دریافت از تلگرام ====================
 func fetchAllTelegramChannels() {
 	fileData, err := collector.ReadFileContent("channels.csv")
 	if err != nil {
-		gologger.Warning().Msg("channels.csv not found")
+		gologger.Warning().Msg("channels.csv not found, skipping Telegram.")
 		return
 	}
 	var channels []ChannelsType
@@ -383,9 +379,9 @@ func telegramWorker(jobs <-chan ChannelsType, wg *sync.WaitGroup) {
 
 func extractChannelNameFromURL(url string) string {
 	re := regexp.MustCompile(`t\.me/(?:s/)?([^/?]+)`)
-	matches := re.FindStringSubmatch(url)
-	if len(matches) > 1 {
-		return matches[1]
+	m := re.FindStringSubmatch(url)
+	if len(m) > 1 {
+		return m[1]
 	}
 	return ""
 }
@@ -466,9 +462,11 @@ func processTelegramText(text, channelName string) {
 	}
 }
 
+// ==================== دریافت از ساب‌لینک ====================
 func fetchAllSubscriptions() {
 	data, err := collector.ReadFileContent("Sources.json")
 	if err != nil {
+		gologger.Warning().Msg("Sources.json not found, skipping subscriptions.")
 		return
 	}
 	var sources []string
@@ -565,7 +563,7 @@ func extractTextFromHTML(html string) string {
 	return doc.Text()
 }
 
-// ========================== خروجی‌های اصلی ==========================
+// ==================== خروجی‌های اصلی ====================
 func writeOutputFiles() {
 	writeTelegramPerChannel()
 	writeMixedFromTelegram()
@@ -633,18 +631,16 @@ func writeSubscriptionFolder() {
 	}
 }
 
-// ========================== all_configs (فقط 24 ساعت اخیر) ==========================
+// ==================== all_configs (فقط 24 ساعت اخیر) ====================
 func writeAllConfigs() {
 	threshold := time.Now().Add(-24 * time.Hour).Unix()
 	cacheMutex.RLock()
 	defer cacheMutex.RUnlock()
 
-	// جمع‌آوری کانفیگ‌های ۲۴ ساعت اخیر
 	type item struct {
 		cfg string
 		ts  int64
 	}
-	// برای all_protocols.txt (پروتکل‌های مشخص شده)
 	allowedProtos := map[string]bool{
 		"socks": true, "ss": true, "trojan": true, "tuic": true,
 		"vless": true, "vmess": true, "wireguard": true, "hysteria2": true,
@@ -670,13 +666,11 @@ func writeAllConfigs() {
 		}
 	}
 
-	// مرتب‌سازی نزولی (جدیدترین اول)
 	sort.Slice(allItems, func(i, j int) bool { return allItems[i].ts > allItems[j].ts })
 	sort.Slice(httpItems, func(i, j int) bool { return httpItems[i].ts > httpItems[j].ts })
 	sort.Slice(mtprotoItems, func(i, j int) bool { return mtprotoItems[i].ts > mtprotoItems[j].ts })
 	sort.Slice(slipnetItems, func(i, j int) bool { return slipnetItems[i].ts > slipnetItems[j].ts })
 
-	// تابع کمکی برای نوشتن فایل با حداکثر خط
 	writeLimited := func(filename string, items []item, maxLines int) {
 		if len(items) > maxLines {
 			items = items[:maxLines]
@@ -689,18 +683,16 @@ func writeAllConfigs() {
 		if content != "" {
 			collector.WriteToFile(content, filepath.Join("all_configs", filename))
 		} else {
-			// فایل خالی را حذف کن (یا خالی بنویس)
 			os.WriteFile(filepath.Join("all_configs", filename), []byte{}, 0644)
 		}
 	}
-
 	writeLimited("all_protocols.txt", allItems, MaxConfigsAll)
 	writeLimited("http.txt", httpItems, MaxConfigsAll)
 	writeLimited("mtproto.txt", mtprotoItems, MaxConfigsAll)
 	writeLimited("slipnet.txt", slipnetItems, MaxConfigsAll)
 }
 
-// ========================== آرشیو روزانه ==========================
+// ==================== آرشیو روزانه ====================
 func archiveDaily() {
 	today := time.Now().Format("2006-01-02")
 	archiveDir := filepath.Join("daily_archive", today)
@@ -737,12 +729,11 @@ func archiveDaily() {
 	gologger.Info().Msgf("Daily archive created in %s", archiveDir)
 }
 
-// ========================== تولید فایل links.txt ==========================
+// ==================== تولید فایل links.txt ====================
 func generateLinksFile() {
-	// گرفتن نام مخزن از GitHub Actions (یا پیش‌فرض)
 	repo := os.Getenv("GITHUB_REPOSITORY")
 	if repo == "" {
-		repo = "mrvcoder/V2rayCollector" // پیش‌فرض
+		repo = "ramin00542/GO_V2rayCollector"
 	}
 	branch := "main"
 	baseURL := fmt.Sprintf("https://raw.githubusercontent.com/%s/%s", repo, branch)
@@ -751,7 +742,7 @@ func generateLinksFile() {
 	links = append(links, "# Links to configuration files")
 	links = append(links, "")
 
-	// 1. all_configs
+	// all_configs
 	links = append(links, "## all_configs")
 	files, _ := filepath.Glob("all_configs/*.txt")
 	for _, f := range files {
@@ -761,10 +752,10 @@ func generateLinksFile() {
 	}
 	links = append(links, "")
 
-	// 2. daily_archive (زیرپوشه‌های تاریخ)
+	// daily_archive
 	links = append(links, "## daily_archive")
 	archives, _ := filepath.Glob("daily_archive/*")
-	sort.Strings(archives) // 2026-05-06
+	sort.Strings(archives)
 	for _, arch := range archives {
 		stat, _ := os.Stat(arch)
 		if stat != nil && stat.IsDir() {
@@ -780,7 +771,7 @@ func generateLinksFile() {
 	}
 	links = append(links, "")
 
-	// 3. mixed
+	// mixed
 	links = append(links, "## mixed")
 	mixedFiles, _ := filepath.Glob("mixed/*.txt")
 	for _, f := range mixedFiles {
@@ -790,7 +781,7 @@ func generateLinksFile() {
 	}
 	links = append(links, "")
 
-	// 4. subscription
+	// subscription
 	links = append(links, "## subscription")
 	subFiles, _ := filepath.Glob("subscription/*.txt")
 	for _, f := range subFiles {
@@ -800,7 +791,7 @@ func generateLinksFile() {
 	}
 	links = append(links, "")
 
-	// 5. telegram (به همراه زیرپوشه‌های کانال)
+	// telegram
 	links = append(links, "## telegram")
 	channels, _ := filepath.Glob("telegram/*")
 	sort.Strings(channels)
@@ -817,14 +808,11 @@ func generateLinksFile() {
 			}
 		}
 	}
-
-	// نوشتن فایل links.txt
-	content := strings.Join(links, "\n")
-	os.WriteFile("links.txt", []byte(content), 0644)
+	os.WriteFile("links.txt", []byte(strings.Join(links, "\n")), 0644)
 	gologger.Info().Msg("links.txt generated")
 }
 
-// ========================== Clash YAML (بدون تغییر) ==========================
+// ==================== Clash YAML ====================
 type ClashProxy struct {
 	Name     string `yaml:"name"`
 	Type     string `yaml:"type"`
@@ -1018,7 +1006,7 @@ func vlessToClash(vlessURL string) *ClashProxy {
 	return &ClashProxy{Name: name, Type: "vless", Server: server, Port: port, UUID: uuid, TLS: tls, Sni: sni}
 }
 
-// ========================== توابع کمکی ==========================
+// ==================== توابع کمکی ====================
 func testSampleConfigs() {
 	gologger.Info().Msg("Test feature not implemented")
 }
