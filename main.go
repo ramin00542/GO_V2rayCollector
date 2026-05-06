@@ -107,9 +107,9 @@ func main() {
 
 	updateCache()
 	pruneCacheByProtocol()
-	writeOutputFiles()      // telegram, mixed, subscription
-	writeAllConfigs()       // all_configs
-	generateLinksFile()     // links.txt
+	writeOutputFiles()
+	writeAllConfigs()
+	generateLinksFile()
 
 	today := time.Now().Format("2006-01-02")
 	if lastArchiveDate != today {
@@ -534,6 +534,8 @@ func processSubscriptionContent(raw string) {
 	}
 }
 
+// ==================== توابع کمکی پردازش متن ====================
+
 func extractAllConfigs(text string) []string {
 	var results []string
 	for _, re := range regexCache {
@@ -566,9 +568,15 @@ func editVmessPs(config, source string) string {
 		return config
 	}
 	var data map[string]interface{}
-	json.Unmarshal(decoded, &data)
+	if err := json.Unmarshal(decoded, &data); err != nil || data == nil {
+		// اگر unmarshal ناموفق بود یا دیتا nil بود، کانفیگ اصلی را برگردان
+		return config
+	}
 	data["ps"] = fmt.Sprintf("%s-%d", source, time.Now().Unix())
-	jsonData, _ := json.Marshal(data)
+	jsonData, err := json.Marshal(data)
+	if err != nil {
+		return config
+	}
 	return "vmess://" + base64.StdEncoding.EncodeToString(jsonData)
 }
 
