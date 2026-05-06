@@ -27,9 +27,12 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
+// ========================== تنظیمات ==========================
 const (
 	MaxConfigsPerProtocol = 50000
-	MaxConfigsAll         = 50000
+	MaxAllConfigs         = 50000
+	MaxMixedPerProtocol   = 5000
+	MaxTelegramPerChannelPerProtocol = 5000
 	MaxWorkers            = 5
 	RequestTimeout        = 15 * time.Second
 )
@@ -84,6 +87,7 @@ type CacheData struct {
 	LastDate  string                `json:"last_archive_date,omitempty"`
 }
 
+// ========================== MAIN ==========================
 func main() {
 	flag.Parse()
 	initRegexps()
@@ -535,7 +539,6 @@ func processSubscriptionContent(raw string) {
 }
 
 // ==================== توابع کمکی پردازش متن ====================
-
 func extractAllConfigs(text string) []string {
 	var results []string
 	for _, re := range regexCache {
@@ -569,7 +572,6 @@ func editVmessPs(config, source string) string {
 	}
 	var data map[string]interface{}
 	if err := json.Unmarshal(decoded, &data); err != nil || data == nil {
-		// اگر unmarshal ناموفق بود یا دیتا nil بود، کانفیگ اصلی را برگردان
 		return config
 	}
 	data["ps"] = fmt.Sprintf("%s-%d", source, time.Now().Unix())
@@ -585,75 +587,124 @@ func extractTextFromHTML(html string) string {
 	return doc.Text()
 }
 
-// ==================== خروجی‌های اصلی ====================
+// ==================== خروجی‌های معمولی (تنها ۲۴ ساعت گذشته) ====================
 func writeOutputFiles() {
 	writeTelegramPerChannel()
-	writeMixedFromTelegram()
+	writeMixedFromTelegramAndSubscription()
 	writeSubscriptionFolder()
 }
 
+// telegram: فقط کانفیگ‌های ۲۴ ساعت اخیر، هر کانال هر پروتکل حداکثر ۵۰۰۰
 func writeTelegramPerChannel() {
+	threshold := time.Now().Add(-24 * time.Hour).Unix()
 	cacheMutex.RLock()
 	defer cacheMutex.RUnlock()
-	chMap := make(map[string]map[string][]string)
+
+	type item struct {
+		cfg string
+		ts  int64
+	}
+	channelProtoItems := make(map[string]map[string][]item)
+
 	for cfg, e := range configCache {
-		if e.Source == "telegram" && e.Channel != "" {
+		if e.Source == "telegram" && e.Channel != "" && e.Timestamp >= threshold {
 			proto := detectProtocol(cfg)
-			if chMap[e.Channel] == nil {
-				chMap[e.Channel] = make(map[string][]string)
+			if channelProtoItems[e.Channel] == nil {
+				channelProtoItems[e.Channel] = make(map[string][]item)
 			}
-			chMap[e.Channel][proto] = append(chMap[e.Channel][proto], cfg)
+			channelProtoItems[e.Channel][proto] = append(channelProtoItems[e.Channel][proto], item{cfg, e.Timestamp})
 		}
 	}
-	for ch, pm := range chMap {
-		dir := filepath.Join("telegram", ch)
-		os.MkdirAll(dir, 0755)
-		for proto, lst := range pm {
-			content := strings.Join(lst, "\n")
+
+	for channel, protoMap := range channelProtoItems {
+		channelDir := filepath.Join("telegram", channel)
+		os.MkdirAll(channelDir, 0755)
+
+		for proto, items := range protoMap {
+			sort.Slice(items, func(i, j int) bool { return items[i].ts > items[j].ts })
+			if len(items) > MaxTelegramPerChannelPerProtocol {
+				items = items[:MaxTelegramPerChannelPerProtocol]
+			}
+			lines := make([]string, len(items))
+			for i, it := range items {
+				lines[i] = it.cfg
+			}
+			content := strings.Join(lines, "\n")
 			if content != "" {
-				collector.WriteToFile(content, filepath.Join(dir, proto+"_iran.txt"))
+				collector.WriteToFile(content, filepath.Join(channelDir, proto+"_iran.txt"))
 			}
 		}
 	}
 }
 
-func writeMixedFromTelegram() {
+// mixed: ترکیب telegram + subscription ، فقط ۲۴ ساعت اخیر، هر پروتکل حداکثر ۵۰۰۰
+func writeMixedFromTelegramAndSubscription() {
+	threshold := time.Now().Add(-24 * time.Hour).Unix()
 	cacheMutex.RLock()
 	defer cacheMutex.RUnlock()
-	mixed := make(map[string][]string)
+
+	type item struct {
+		cfg string
+		ts  int64
+	}
+	protoItems := make(map[string][]item)
+
 	for cfg, e := range configCache {
-		if e.Source == "telegram" {
+		if (e.Source == "telegram" || e.Source == "subscription") && e.Timestamp >= threshold {
 			proto := detectProtocol(cfg)
-			mixed[proto] = append(mixed[proto], cfg)
+			protoItems[proto] = append(protoItems[proto], item{cfg, e.Timestamp})
 		}
 	}
-	for proto, lst := range mixed {
-		content := strings.Join(lst, "\n")
+
+	for proto, items := range protoItems {
+		sort.Slice(items, func(i, j int) bool { return items[i].ts > items[j].ts })
+		if len(items) > MaxMixedPerProtocol {
+			items = items[:MaxMixedPerProtocol]
+		}
+		lines := make([]string, len(items))
+		for i, it := range items {
+			lines[i] = it.cfg
+		}
+		content := strings.Join(lines, "\n")
 		if content != "" {
 			collector.WriteToFile(content, filepath.Join("mixed", proto+"_iran.txt"))
 		}
 	}
 }
 
+// subscription: فقط ساب‌لینک‌ها، فقط ۲۴ ساعت اخیر، بدون محدودیت تعداد
 func writeSubscriptionFolder() {
+	threshold := time.Now().Add(-24 * time.Hour).Unix()
 	cacheMutex.RLock()
 	defer cacheMutex.RUnlock()
-	sub := make(map[string][]string)
+
+	type item struct {
+		cfg string
+		ts  int64
+	}
+	subItems := make(map[string][]item)
+
 	for cfg, e := range configCache {
-		if e.Source == "subscription" {
+		if e.Source == "subscription" && e.Timestamp >= threshold {
 			proto := detectProtocol(cfg)
-			sub[proto] = append(sub[proto], cfg)
+			subItems[proto] = append(subItems[proto], item{cfg, e.Timestamp})
 		}
 	}
-	for proto, lst := range sub {
-		content := strings.Join(lst, "\n")
+
+	for proto, items := range subItems {
+		sort.Slice(items, func(i, j int) bool { return items[i].ts > items[j].ts })
+		lines := make([]string, len(items))
+		for i, it := range items {
+			lines[i] = it.cfg
+		}
+		content := strings.Join(lines, "\n")
 		if content != "" {
 			collector.WriteToFile(content, filepath.Join("subscription", proto+"_iran.txt"))
 		}
 	}
 }
 
-// ==================== all_configs (فقط 24 ساعت اخیر) ====================
+// ==================== all_configs (فقط ۲۴ ساعت اخیر، حداکثر ۵۰۰۰۰) ====================
 func writeAllConfigs() {
 	threshold := time.Now().Add(-24 * time.Hour).Unix()
 	cacheMutex.RLock()
@@ -673,18 +724,17 @@ func writeAllConfigs() {
 	slipnetItems := []item{}
 
 	for cfg, e := range configCache {
-		if e.Timestamp < threshold {
-			continue
-		}
-		proto := detectProtocol(cfg)
-		if allowedProtos[proto] {
-			allItems = append(allItems, item{cfg, e.Timestamp})
-		} else if proto == "http" {
-			httpItems = append(httpItems, item{cfg, e.Timestamp})
-		} else if proto == "mtproto" {
-			mtprotoItems = append(mtprotoItems, item{cfg, e.Timestamp})
-		} else if proto == "slipnet" {
-			slipnetItems = append(slipnetItems, item{cfg, e.Timestamp})
+		if e.Timestamp >= threshold {
+			proto := detectProtocol(cfg)
+			if allowedProtos[proto] {
+				allItems = append(allItems, item{cfg, e.Timestamp})
+			} else if proto == "http" {
+				httpItems = append(httpItems, item{cfg, e.Timestamp})
+			} else if proto == "mtproto" {
+				mtprotoItems = append(mtprotoItems, item{cfg, e.Timestamp})
+			} else if proto == "slipnet" {
+				slipnetItems = append(slipnetItems, item{cfg, e.Timestamp})
+			}
 		}
 	}
 
@@ -702,43 +752,48 @@ func writeAllConfigs() {
 			lines[i] = it.cfg
 		}
 		content := strings.Join(lines, "\n")
-		if content != "" {
-			collector.WriteToFile(content, filepath.Join("all_configs", filename))
-		} else {
-			os.WriteFile(filepath.Join("all_configs", filename), []byte{}, 0644)
-		}
+		os.WriteFile(filepath.Join("all_configs", filename), []byte(content), 0644)
 	}
-	writeLimited("all_protocols.txt", allItems, MaxConfigsAll)
-	writeLimited("http.txt", httpItems, MaxConfigsAll)
-	writeLimited("mtproto.txt", mtprotoItems, MaxConfigsAll)
-	writeLimited("slipnet.txt", slipnetItems, MaxConfigsAll)
+	writeLimited("all_protocols.txt", allItems, MaxAllConfigs)
+	writeLimited("http.txt", httpItems, MaxAllConfigs)
+	writeLimited("mtproto.txt", mtprotoItems, MaxAllConfigs)
+	writeLimited("slipnet.txt", slipnetItems, MaxAllConfigs)
 }
 
-// ==================== آرشیو روزانه ====================
+// ==================== آرشیو روزانه (بر اساس روز تقویمی، نه ۲۴ ساعت قبل) ====================
 func archiveDaily() {
-	today := time.Now().Format("2006-01-02")
+	now := time.Now()
+	// شروع امروز (ساعت 00:00:00)
+	startOfDay := time.Date(now.Year(), now.Month(), now.Day(), 0, 0, 0, 0, now.Location())
+	// پایان امروز (ساعت 23:59:59)
+	endOfDay := startOfDay.Add(24*time.Hour - time.Second)
+
+	startUnix := startOfDay.Unix()
+	endUnix := endOfDay.Unix()
+
+	today := now.Format("2006-01-02")
 	archiveDir := filepath.Join("daily_archive", today)
 	os.MkdirAll(archiveDir, 0755)
 
 	cacheMutex.RLock()
 	defer cacheMutex.RUnlock()
-	threshold := time.Now().Add(-24 * time.Hour).Unix()
+
 	type item struct {
 		cfg string
 		ts  int64
 	}
 	byProto := make(map[string][]item)
+
 	for cfg, e := range configCache {
-		if e.Timestamp >= threshold {
+		if e.Timestamp >= startUnix && e.Timestamp <= endUnix {
 			proto := detectProtocol(cfg)
 			byProto[proto] = append(byProto[proto], item{cfg, e.Timestamp})
 		}
 	}
+
 	for proto, items := range byProto {
+		// مرتب‌سازی نزولی (جدیدترین اول)
 		sort.Slice(items, func(i, j int) bool { return items[i].ts > items[j].ts })
-		if len(items) > MaxConfigsPerProtocol {
-			items = items[:MaxConfigsPerProtocol]
-		}
 		lines := make([]string, len(items))
 		for i, it := range items {
 			lines[i] = it.cfg
@@ -748,10 +803,10 @@ func archiveDaily() {
 			os.WriteFile(filepath.Join(archiveDir, proto+"_iran.txt"), []byte(content), 0644)
 		}
 	}
-	gologger.Info().Msgf("Daily archive created in %s", archiveDir)
+	gologger.Info().Msgf("Daily archive created in %s (configs from %s)", archiveDir, startOfDay.Format("2006-01-02"))
 }
 
-// ==================== تولید فایل links.txt ====================
+// ==================== فایل links.txt ====================
 func generateLinksFile() {
 	repo := os.Getenv("GITHUB_REPOSITORY")
 	if repo == "" {
@@ -830,11 +885,12 @@ func generateLinksFile() {
 			}
 		}
 	}
+
 	os.WriteFile("links.txt", []byte(strings.Join(links, "\n")), 0644)
 	gologger.Info().Msg("links.txt generated")
 }
 
-// ==================== Clash YAML ====================
+// ==================== Clash YAML (بدون تغییر) ====================
 type ClashProxy struct {
 	Name     string `yaml:"name"`
 	Type     string `yaml:"type"`
