@@ -28,7 +28,6 @@ func ReadFileContent(filePath string) (string, error) {
 	if err != nil {
 		return "", err
 	}
-
 	// Convert the content to a string and return
 	return string(content), nil
 }
@@ -51,7 +50,6 @@ func RemoveDuplicate(config string) string {
 }
 
 func WriteToFile(fileContent string, filePath string) {
-
 	// Check if the file exists
 	if _, err := os.Stat(filePath); err == nil {
 		// If the file exists, clear its content
