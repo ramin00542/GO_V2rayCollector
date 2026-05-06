@@ -1,0 +1,1 @@
+vless://b6d129a3-1f94-43a2-8a8b-fe5ec87fe945@185.143.233.200:80?path=%2F&security=none&encryption=mlkem768x25519plus.native.0rtt.sdQ0jWsX6B8yh97yoZt4k_1nlR0zlApK3MV_hQD7KyA&host=nima.hayalco.ir&type=ws#VPNPROXY_V2RAYNG

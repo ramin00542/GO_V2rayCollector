@@ -90,6 +90,7 @@
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/Capital_NET/vless_iran.txt)
 ### Capoit
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/Capoit/ss_iran.txt)
+  - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/Capoit/vless_iran.txt)
 ### CloudCityy
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/CloudCityy/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/CloudCityy/vless_iran.txt)
@@ -100,6 +101,7 @@
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/ConfigX2ray/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/ConfigX2ray/vless_iran.txt)
 ### ConfigX2ray0
+  - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/ConfigX2ray0/http_iran.txt)
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/ConfigX2ray0/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/ConfigX2ray0/vless_iran.txt)
 ### Configforvpn01
@@ -142,6 +144,7 @@
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/Free_HTTPCustom/vless_iran.txt)
 ### Freedomnetir
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/Freedomnetir/ss_iran.txt)
+  - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/Freedomnetir/vless_iran.txt)
 ### GozargahVPN
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/GozargahVPN/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/GozargahVPN/vless_iran.txt)
@@ -265,9 +268,12 @@
 ### V2rayng_Fast
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/V2rayng_Fast/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/V2rayng_Fast/vless_iran.txt)
+### VIPV2rayNGNP
+  - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/VIPV2rayNGNP/ss_iran.txt)
 ### Vaslchi_VPN
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/Vaslchi_VPN/http_iran.txt)
 ### ViPVpn_v2ray
+  - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/ViPVpn_v2ray/ss_iran.txt)
   - [vmess_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/ViPVpn_v2ray/vmess_iran.txt)
 ### ViProxys
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/ViProxys/ss_iran.txt)
@@ -297,6 +303,7 @@
 ### airdroplandcod
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/airdroplandcod/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/airdroplandcod/vless_iran.txt)
+  - [vmess_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/airdroplandcod/vmess_iran.txt)
 ### alienvpn402
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/alienvpn402/http_iran.txt)
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/alienvpn402/ss_iran.txt)
@@ -313,6 +320,8 @@
 ### antimeli
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/antimeli/http_iran.txt)
   - [socks_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/antimeli/socks_iran.txt)
+### anty_filter
+  - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/anty_filter/ss_iran.txt)
 ### apple_x1
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/apple_x1/http_iran.txt)
 ### appsooner
@@ -574,6 +583,7 @@
   - [hysteria2_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/dns68/hysteria2_iran.txt)
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/dns68/ss_iran.txt)
   - [tuic_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/dns68/tuic_iran.txt)
+  - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/dns68/vless_iran.txt)
 ### donald_config
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/donald_config/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/donald_config/vless_iran.txt)
@@ -630,6 +640,8 @@
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/expressvpn_420/http_iran.txt)
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/expressvpn_420/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/expressvpn_420/vless_iran.txt)
+### external_net
+  - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/external_net/ss_iran.txt)
 ### f_nirevil
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/f_nirevil/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/f_nirevil/vless_iran.txt)
@@ -822,6 +834,8 @@
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/get2ray/vless_iran.txt)
 ### ghachvpn
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/ghachvpn/http_iran.txt)
+### ghalagyann
+  - [socks_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/ghalagyann/socks_iran.txt)
 ### givevpn
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/givevpn/http_iran.txt)
   - [mtproto_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/givevpn/mtproto_iran.txt)
@@ -959,6 +973,7 @@
 ### irv2rey
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/irv2rey/http_iran.txt)
   - [mtproto_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/irv2rey/mtproto_iran.txt)
+  - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/irv2rey/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/irv2rey/vless_iran.txt)
 ### isvvpn
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/isvvpn/http_iran.txt)
@@ -1002,6 +1017,7 @@
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/kesslervpn/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/kesslervpn/vless_iran.txt)
 ### khalaa_vpn
+  - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/khalaa_vpn/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/khalaa_vpn/vless_iran.txt)
 ### khoneproxy
   - [vmess_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/khoneproxy/vmess_iran.txt)
@@ -1199,6 +1215,7 @@
 ### mtpproxy0098
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/mtpproxy0098/http_iran.txt)
   - [mtproto_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/mtpproxy0098/mtproto_iran.txt)
+  - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/mtpproxy0098/ss_iran.txt)
 ### mtproto_dx
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/mtproto_dx/http_iran.txt)
 ### mtproxy_lists
@@ -1239,6 +1256,7 @@
 ### netspeedservice
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/netspeedservice/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/netspeedservice/vless_iran.txt)
+  - [vmess_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/netspeedservice/vmess_iran.txt)
 ### new_mtproxi2
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/new_mtproxi2/http_iran.txt)
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/new_mtproxi2/ss_iran.txt)
@@ -1291,6 +1309,7 @@
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/nufilter2/http_iran.txt)
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/nufilter2/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/nufilter2/vless_iran.txt)
+  - [vmess_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/nufilter2/vmess_iran.txt)
 ### ohvpn
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/ohvpn/http_iran.txt)
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/ohvpn/ss_iran.txt)
@@ -1373,12 +1392,14 @@
 ### proxy_kafee
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/proxy_kafee/http_iran.txt)
   - [socks_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/proxy_kafee/socks_iran.txt)
+  - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/proxy_kafee/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/proxy_kafee/vless_iran.txt)
 ### proxy_kuto
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/proxy_kuto/http_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/proxy_kuto/vless_iran.txt)
 ### proxy_mtproto_vpns_free
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/proxy_mtproto_vpns_free/http_iran.txt)
+  - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/proxy_mtproto_vpns_free/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/proxy_mtproto_vpns_free/vless_iran.txt)
   - [vmess_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/proxy_mtproto_vpns_free/vmess_iran.txt)
 ### proxy_n1
@@ -1446,6 +1467,7 @@
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/prroxyng/vless_iran.txt)
 ### psiphonf
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/psiphonf/http_iran.txt)
+  - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/psiphonf/ss_iran.txt)
 ### pubg_vpn_ir
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/pubg_vpn_ir/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/pubg_vpn_ir/vless_iran.txt)
@@ -1705,6 +1727,7 @@
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/tehranargo/vless_iran.txt)
 ### tehranargo1
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/tehranargo1/http_iran.txt)
+  - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/tehranargo1/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/tehranargo1/vless_iran.txt)
 ### tehranfreevpn
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/tehranfreevpn/http_iran.txt)
@@ -1754,6 +1777,7 @@
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/torang_vpn/vless_iran.txt)
 ### toucan_vpn
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/toucan_vpn/http_iran.txt)
+  - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/toucan_vpn/ss_iran.txt)
   - [vmess_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/toucan_vpn/vmess_iran.txt)
 ### tov2rayy
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/tov2rayy/ss_iran.txt)
@@ -1763,6 +1787,10 @@
   - [trojan_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/toyota_proxy/trojan_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/toyota_proxy/vless_iran.txt)
   - [vmess_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/toyota_proxy/vmess_iran.txt)
+### toyota_proxyyyy
+  - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/toyota_proxyyyy/ss_iran.txt)
+  - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/toyota_proxyyyy/vless_iran.txt)
+  - [vmess_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/toyota_proxyyyy/vmess_iran.txt)
 ### trand_farsi
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/trand_farsi/http_iran.txt)
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/trand_farsi/ss_iran.txt)
@@ -1797,6 +1825,7 @@
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/tv_v2ray/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/tv_v2ray/vless_iran.txt)
 ### ultrasurf_12
+  - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/ultrasurf_12/http_iran.txt)
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/ultrasurf_12/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/ultrasurf_12/vless_iran.txt)
 ### uniquenett
@@ -1848,6 +1877,7 @@
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/v2fetch/vless_iran.txt)
 ### v2fox_config
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/v2fox_config/ss_iran.txt)
+  - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/v2fox_config/vless_iran.txt)
 ### v2freenet
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/v2freenet/ss_iran.txt)
   - [trojan_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/v2freenet/trojan_iran.txt)
@@ -1912,6 +1942,8 @@
 ### v2rayNG_Matsuri
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/v2rayNG_Matsuri/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/v2rayNG_Matsuri/vless_iran.txt)
+### v2rayNGcloud
+  - [vmess_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/v2rayNGcloud/vmess_iran.txt)
 ### v2ray_configs_pool
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/v2ray_configs_pool/http_iran.txt)
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/v2ray_configs_pool/ss_iran.txt)
@@ -2149,6 +2181,8 @@
   - [vmess_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/v2rayng_v2_ray/vmess_iran.txt)
 ### v2rayngalpha
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/v2rayngalpha/http_iran.txt)
+  - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/v2rayngalpha/ss_iran.txt)
+  - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/v2rayngalpha/vless_iran.txt)
 ### v2rayngalphagamer
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/v2rayngalphagamer/http_iran.txt)
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/v2rayngalphagamer/ss_iran.txt)
@@ -2318,6 +2352,8 @@
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/v2rayvl/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/v2rayvl/vless_iran.txt)
   - [vmess_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/v2rayvl/vmess_iran.txt)
+### v2rayvlp
+  - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/v2rayvlp/ss_iran.txt)
 ### v2rayvmess
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/v2rayvmess/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/v2rayvmess/vless_iran.txt)
@@ -2445,6 +2481,7 @@
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vipufovpn/vless_iran.txt)
 ### vipv2rayngnp
   - [socks_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vipv2rayngnp/socks_iran.txt)
+  - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vipv2rayngnp/ss_iran.txt)
 ### vipv2rayvip
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vipv2rayvip/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vipv2rayvip/vless_iran.txt)
@@ -2540,6 +2577,7 @@
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vpn_kanfik/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vpn_kanfik/vless_iran.txt)
 ### vpn_king_v2ray
+  - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vpn_king_v2ray/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vpn_king_v2ray/vless_iran.txt)
 ### vpn_ocean
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vpn_ocean/ss_iran.txt)
@@ -2551,6 +2589,7 @@
   - [vmess_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vpn_proxy_v2ry/vmess_iran.txt)
 ### vpn_storm
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vpn_storm/http_iran.txt)
+  - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vpn_storm/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vpn_storm/vless_iran.txt)
 ### vpn_sts
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vpn_sts/ss_iran.txt)
@@ -2585,6 +2624,7 @@
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vpncostumer/http_iran.txt)
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vpncostumer/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vpncostumer/vless_iran.txt)
+  - [vmess_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vpncostumer/vmess_iran.txt)
 ### vpnepic
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vpnepic/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vpnepic/vless_iran.txt)
@@ -2651,6 +2691,7 @@
 ### vpnproxy_v2rayng
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vpnproxy_v2rayng/http_iran.txt)
   - [socks_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vpnproxy_v2rayng/socks_iran.txt)
+  - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vpnproxy_v2rayng/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vpnproxy_v2rayng/vless_iran.txt)
 ### vpnservergprc
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vpnservergprc/http_iran.txt)
@@ -2713,8 +2754,10 @@
   - [vmess_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vpray3/vmess_iran.txt)
 ### vrayhub
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vrayhub/ss_iran.txt)
+  - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vrayhub/vless_iran.txt)
 ### vruntech
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vruntech/http_iran.txt)
+  - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vruntech/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vruntech/vless_iran.txt)
   - [vmess_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vruntech/vmess_iran.txt)
 ### vtolink
@@ -2799,12 +2842,14 @@
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/yaritovpn/http_iran.txt)
 ### yasv2ray
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/yasv2ray/http_iran.txt)
+  - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/yasv2ray/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/yasv2ray/vless_iran.txt)
 ### yekoyekvpn
   - [mtproto_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/yekoyekvpn/mtproto_iran.txt)
 ### yuproxytelegram
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/yuproxytelegram/http_iran.txt)
   - [mtproto_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/yuproxytelegram/mtproto_iran.txt)
+  - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/yuproxytelegram/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/yuproxytelegram/vless_iran.txt)
 ### yxjnode
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/yxjnode/ss_iran.txt)
@@ -2827,6 +2872,7 @@
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/zedmodeontech/http_iran.txt)
 ### zeptovpn
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/zeptovpn/http_iran.txt)
+  - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/zeptovpn/vless_iran.txt)
 ### zerobaipiao
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/zerobaipiao/ss_iran.txt)
   - [trojan_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/zerobaipiao/trojan_iran.txt)

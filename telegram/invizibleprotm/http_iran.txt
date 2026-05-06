@@ -1,6 +1,6 @@
-https://t.me/VPN_Raketa_bot?start=global_229
+https://t.me/socks?server=47.239.147.84&port=3060&user=123&pass=123
 https://t.me/socks?server=47.239.134.180&port=3060&user=123&pass=123
 https://t.me/socks?server=47.239.162.1&port=3060&user=123&pass=123
+https://t.me/VPN_Raketa_bot?start=global_229
 https://t.me/socks?server=47.239.159.70&port=3060&user=123&pass=123
-https://t.me/socks?server=47.239.147.84&port=3060&user=123&pass=123
 https://t.me/VPN_GROZA_BOT?start=global_143

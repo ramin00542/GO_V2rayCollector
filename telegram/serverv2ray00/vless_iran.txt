@@ -1,1 +1,1 @@
-vless://SVNTEAM@185.146.173.59:80?path=%2FSvnTeam-TeleGram-ChaNnel-VIP%3Fed%3D2048&security=none&encryption=none&host=SvnTeamV2rayGm7.7.7.7.ir.Com.Site.xn--fhq0laa256bac7403eea044azr5g.CoM.&type=ws#
+vless://SVNTEAM@185.146.173.59:80?path=%2FSvnTeam-TeleGram-ChaNnel-VIP%3Fed%3D2048&security=none&encryption=none&host=SvnTeamV2rayGm7.7.7.7.ir.Com.Site.xn--fhq0laa256bac7403eea044azr5g.CoM.&type=ws#%40serverv2ray00

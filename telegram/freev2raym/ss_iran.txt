@@ -1,2 +1,1 @@
-vless://f97c7f12-e303-4679-8723-80edf65bbe37@91.107.160.74:39851?security=none&encryption=none&headerType=http&type=tcp#
-vless://9044733f-2a53-4a83-bd70-4ad5a2dfd9e6@antipingfree.melin.shop:58634?security=none&encryption=none&host=zula.ir&headerType=http&type=tcp#%40anti_ping+%D8%B9%D8%B6%D9%88+%D8%B4%D9%88
+vless://7b0066b1-5c34-4cf4-bf89-6d98da423807@37.152.179.33:777?security=none&encryption=none&headerType=none&type=tcp#

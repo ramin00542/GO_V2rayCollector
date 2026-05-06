@@ -1,4 +1,1 @@
-vless://dae2ddc6-a892-495f-a001-181cec56ad12@snapp.ir:2052?encryption=none&type=ws&path=%2F&host=p1.razstar.ir#@vasl_bashim
-vless://dc4dccda-55c9-480a-9bc1-8edd8e2ccf69@185.213.165.81:48660?security=none&encryption=none&headerType=none&type=tcp#
-vless://dae2ddc6-a892-495f-a001-181cec56ad12@snapp.ir:2052?encryption=none&type=ws&path=%2F&host=p1.razstar.ir#
-vless://20f81fa4-3fa0-4b28-833c-8385e70cc3d3@arvancloud.ir:80?path=upload%3Fed%3D256&security=none&encryption=none&host=website.vgpsl.ir&type=ws#@UnNurmal
+vless://30e35bd7-6ce7-4c0c-8fbd-cec03071852f@faraaa.darakio.ir:80?path=%2F&security=none&encryption=none&type=ws#%40vpnbaz%20%7C%20%D8%AA%D8%B1%DA%A9%DB%8C%D8%A8%DB%8C

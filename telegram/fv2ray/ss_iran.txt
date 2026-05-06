@@ -1,1 +1,2 @@
-vless://a01daac7-1e65-4645-854d-b47d226f6b08@127.0.0.1:40443?encryption=none&security=tls&sni=y6-3cj.PAgES.DEV&insecure=0&allowInsecure=0&type=ws&host=y6-3cj.PAgES.DEV&path=%2F#
+vless://a01daac7-1e65-4645-854d-b47d226f6b08@127.0.0.1:40443?encryption=none&security=tls&sni=y6-3cj.PAgES.DEV&insecure=0&allowInsecure=0&type=ws&host=y6-3cj.PAgES.DEV&path=%2F#test
+vless://20ed1b6d-c84a-468a-b42d-67332ec56096@ir.ir.xy-v4ray.lat:8443?mode=auto&path=%2F&security=tls&alpn=h2&encryption=none&extra=%7B%22scMaxEachPostBytes%22%3A1000000%2C%22scMaxConcurrentPosts%22%3A100%2C%22scMinPostsIntervalMs%22%3A30%2C%22xPaddingBytes%22%3A%22100-1000%22%2C%22noGRPCHeader%22%3Afalse%7D&insecure=0&host=files22.xy-v4ray.lat&fp=chrome&type=xhttp&allowInsecure=0&sni=files22.xy-v4ray.lat#

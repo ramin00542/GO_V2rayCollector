@@ -1,1 +1,2 @@
 vless://Telegram-Parsashonam@8.6.112.6:443?path=%2F&security=tls&encryption=none&insecure=0&host=test.atlasw.ir&type=ws&allowInsecure=0&sni=test.atlasw.ir#
+vless://Telegram-Parsashonam@8.6.112.6:443?path=%2F&security=tls&encryption=none&insecure=0&host=test.atlasw.ir&type=ws&allowInsecure=0&sni=test.atlasw.ir#%40FarazV2ray%20ALL%20NET

@@ -1,4 +1,2 @@
-vless://d86e2e96-b637-40dd-bd2f-08f37e5d8139@plse4.gishevip.xyz:80?path=/xray&security=none&encryption=none&host=bot.vipiranian.de&type=ws#
-vless://4f127da2-1e6d-4287-855c-b99a5782988d@snapp.ir:80?path=/&security=none&encryption=none&host=simorgh.darerio.ir&type=ws#
-vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?path=%2F&security=none&encryption=none&host=sr.novatechsapr.ir&type=ws#🐦‍🔥-@SPEEDS_VPN
-vless://5eb86c04-381a-4493-abf1-44511e5a4f26@snapp.ir:80?path=/&security=&encryption=none&host=simorgh.darerio.ir&type=ws#
+vless://df08ab2f-fed0-46c6-8f44-53555c4d70ea@dl2.silentrp.ir:80?path=/js&security=none&encryption=none&host=dl2.silentrp.ir&type=ws#🐦‍🔥-@SPEEDS_VPN
+vless://adcf9278-847d-4f37-9571-fc3989ba6402@snapp.ir:2082?path=%2F&security=none&encryption=none&host=op2.electrodragon.ir&type=ws#🐦‍🔥-@SPEEDS_VPN

@@ -1,1 +1,1 @@
-vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?encryption=none&type=ws&path=%2F&host=sr.novatechsapr.ir#
+vless://58891394-068a-4e3c-ab85-09b4083e0d94@m19.lionets.nl:443?encryption=mlkem768x25519plus.native.0rtt.6cBQkJP8JQ5AqiSQDhLM_46lQF8-7qAjY3d9oaBVVEU&type=grpc&security=reality&serviceName=m19.lionets.nl&authority=m19.lionets.nl&sni=aparat.com&fp=firefox&allowInsecure=1&pbk=03RfDn2wfFmBEVW4w7UNzomS6dsS5OAfATlzlM9FTHY&sid=405257f7c43c1792&spx=%2FuHPYg9SaQpI1H1i#@V2rayHapp

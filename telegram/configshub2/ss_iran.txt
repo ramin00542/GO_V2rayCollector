@@ -1,3 +1,6 @@
-vless://7bb415e0-bae6-4157-85d9-a1dc71da574e@arvancloud.ir:80?path=%2F&security=none&encryption=none&host=t1.tunnellinuweb.ir&type=ws#[🇮🇷]t.me/ConfigsHub
-vless://df862b4c-2150-4b36-81ac-405036cf9ff6@172.67.65.144:2083?security=tls&type=ws&host=kalami-eew.pages.dev&fp=chrome&sni=kalami-eew.pages.dev&path=%2F&encryption=none#
+vless://30e35bd7-6ce7-4c0c-8fbd-cec03071852f@faraaa.darakio.ir:80?path=%2F&security=none&encryption=none&type=ws#[🇮🇷]t.me/ConfigsHub
+vless://44a3854a-2954-43e1-b0eb-eed2dc37d2c2@trex.nahidapp.com:443?path=%2Fvless-ws&security=tls&encryption=none&insecure=0&host=trex.nahidapp.com&fp=chrome&type=ws&allowInsecure=0&sni=trex.nahidapp.com#[🇮🇷]t.me/ConfigsHub
+vless://75bc85db-0c31-4b7b-9732-9e77dfa226e0@arvancloud.ir:80?path=/&security=none&encryption=none&host=t1.tunnellinuweb.ir&type=ws#[🇮🇷]t.me/ConfigsHub
+vless://dae2ddc6-a892-495f-a001-181cec56ad12@snapp.ir:2052?path=%2F&security=none&encryption=none&host=p1.razstar.ir&type=ws#[🇮🇷]t.me/ConfigsHub
+vless://c09816d1-9b53-4e0d-85a8-9def477121ab@185.143.233.122:80?encryption=none&security=none&type=ws&host=cdnisfucka.drnimaamini.ir&path=%2Fws#[🇮🇷]t.me/ConfigsHub
 vless://174377a8-7429-4793-af64-7d53e0675a84@tamin.ir:80?encryption=none&security=none&type=ws&host=mysql.reedsy.ir&path=%2F#[🇮🇷]t.me/ConfigsHub

@@ -1,5 +1,1 @@
-vless://5a2f17fc-5b8e-4091-8754-6e5783f335c9@104.16.2.136:80?path=%2F&security=none&encryption=none&host=bia-to-channel4.unlimiteddev.shop&type=ws#
-vless://b24c8dc2-570e-488e-a7ee-fc64594ce388@turkws.configforvpn.fun:2087?path=%2F&security=tls&encryption=none&fp=chrome&type=ws&sni=turkws.configforvpn.fun#
-vless://--MsV2ray--MsV2ray--MsV2ray--@de.MsV2ray.sbs:443?path=%2F&security=tls&encryption=none&host=ws.MsV2ray.sbs&type=ws&sni=ws.MsV2ray.sbs#
-vless://5a2f17fc-5b8e-4091-8754-6e5783f335c9@104.21.220.87:80?path=%2F&security=none&encryption=none&host=bia-to-channel4.unlimiteddev.shop&type=ws#%40baraye2121
-vless://217fe2bc-16f3-421b-8e6c-5e59a43e54bf@cloud.configforvpn.fun:2087?mode=gun&security=tls&encryption=none&fp=chrome&type=grpc&serviceName=@configforVPN&sni=cloud.configforvpn.fun#%40baraye2121
+vless://5a2f17fc-5b8e-4091-8754-6e5783f335c9@104.16.2.136:80?path=%2F&security=none&encryption=none&host=bia-to-channel4.unlimiteddev.shop&type=ws#%40baraye2121

@@ -1,1 +1,1 @@
-vless://4cf2e843-31b1-4ad7-ae33-0d092e12d396@85.9.96.221:41128?security=none&encryption=none&headerType=none&type=tcp#%40V2rayngconfiig
+vless://0da640df-a497-4ec2-8705-707c44705f47@fastly1.hamrahflow.ir:443?path=%2F&security=tls&encryption=none&host=Valsiin.com&type=ws&sni=default.ssl.fastly.net#

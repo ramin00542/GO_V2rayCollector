@@ -1,4 +1,1 @@
-vless://00b0d4de-b126-4511-87c1-8f1feb462fa6@171.22.114.248:27394?security=reality&encryption=none&pbk=TZO1nvxk-x90cL3v9ixowQNC56sQ8k76_KaGU6jczks&headerType=none&fp=chrome&type=tcp&sni=yahoo.com&sid=c2fa#
-vless://ee122f13-9b54-49b6-abc5-aa47b464fdb3@norman.ns.cloudflare.com:443?path=%2Fyhowcws&security=tls&encryption=none&type=ws&sni=azizoarjmand.info#Bulgaria%20WorkTitans
-vless://e0306a33-9971-4b75-a5e0-a176a5a48a2e@15.168.173.144:443?security=reality&allowInsecure=0&encryption=none&type=tcp&sni=swdist.apple.com&sid=232c6f7b520b89&fp=ios&pbk=vP8gpoNVFYROBMtlCswj3S7q6ypRdE9VMGdg5KPKFG0&spx=/WrlEujUojrpP7Bk&headerType=none#Japan+AWS
-vless://0062f09d-9579-4722-9bd3-d5438970d54a@us7.candyfans.win:443?path=%2Fjqliws&security=tls&encryption=none&host=us7.candyfans.win&type=ws&sni=us7.candyfans.win#
+vless://61757901-3818-46c7-8482-683fa7f6ba10@103.90.75.252:3001?security=none&encryption=none&headerType=none&type=tcp#

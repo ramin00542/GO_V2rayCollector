@@ -1,2 +1,1 @@
-vless://idTel-Hqv2rayNG@84.234.31.28:443?security=reality&encryption=none&pbk=FtDr_UhjnVUI0icGx9L4isHVQTNOl_cGsFEDSWigM28&headerType=none&fp=safari&spx=%2F&type=tcp&flow=xtls-rprx-vision&sni=refersion.com&sid=7c4ea43b6c6f#
-vless://8ed5d5c6-08c6-40ed-8f15-ff724c4ecad9@ns.cloudflare.com:2086?path=%2FGoodLuck%3Fed%3D2560&security=none&encryption=none&host=turkiye.serrjioo.ir&type=httpupgrade#%40SROVPN%20%7C%20All
+vless://8ed5d5c6-08c6-40ed-8f15-ff724c4ecad9@ns.cloudflare.com:2086?path=%2FGoodLuck%3Fed%3D2560&security=&encryption=none&host=USA11.serrjioo.ir&type=httpupgrade#

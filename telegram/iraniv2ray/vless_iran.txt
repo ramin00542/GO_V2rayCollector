@@ -1,1 +1,2 @@
-vless://6c558594-52f0-4d84-8db2-963b5387ecf0@lllliraniv2rayllll.norooz.online:443?path=%2F%40iraniV2ray&security=tls&encryption=none&fp=firefox&type=ws&sni=llliraniv2raylll.norooz.online#
+vless://50134848-6190-4e13-f99e-f441c2cf25f2@lllliraniv2rayllll.norooz.online:443?path=%2F%40iraniV2ray&security=tls&encryption=none&fp=firefox&type=ws&sni=llliraniv2raylll.norooz.online#
+vless://50134848-6190-4e13-f99e-f441c2cf25f2@lllliraniv2rayllll.norooz.online:443?path=%2F%40iraniV2ray&security=tls&encry…

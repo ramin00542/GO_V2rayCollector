@@ -1,1 +1,4 @@
-vless://0d84cdbd-c0fb-47c6-ab5d-a25587df2a4a@185.143.233.5:80?path=%2Fxray&security=none&encryption=none&host=bot.vipiranian.de&type=ws#https://t.me/KurdConfing
+vless://66f73678-34a5-4863-bd7b-cba151a2562e@185.143.233.5:2086?path=%2F&security=none&encryption=none&host=cdn.sesrsa.com&type=ws#%DA%A9%D9%88%D8%B1%D8%AF%20%DA%A9%D8%A7%D9%86%D9%81%DB%8C%DA%AF%20KurdConfing%40
+vless://44d701d0-115b-432e-8c50-46966ecd3d61@s4.tehranionliine.ir:80?path=%2F&security=none&encryption=none&type=ws#
+vless://c09816d1-9b53-4e0d-85a8-9def477121ab@185.143.233.122:80?encryption=none&security=none&type=ws&host=cdnisfucka.drnimaamini.ir&path=%2Fws#@KurdConfing
+vless://66f73678-34a5-4863-bd7b-cba151a2562e@185.143.233.5:2086?path=%2F&security=none&encryption=none&host=cdn.sesrsa.com&type=ws#%40KurdConfing

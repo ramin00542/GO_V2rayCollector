@@ -1,6 +1,8 @@
-vless://7b471aa5-9344-4567-96a9-82bec6427f85@18.199.103.58:443?security=&encryption=none&headerType=none&type=tcp#
-vless://b8799fac-622a-4142-aab2-2aa862ad35f2@185.143.234.235:80?path=%2F&security=&encryption=none&host=vixon.portab.org&type=ws#NormanV2ray-253
-vless://7b471aa5-9344-4567-96a9-82bec6427f85@18.199.103.58:443?security=&encryption=none&headerType=none&type=tcp#canfingV2rayNG-182
-vless://3cbad916-d882-4773-8dfb-15564f2d29fe@zone.ca.f2zone.ir:17759?](https://t.me/+VSwXq3A2QmRjNDc0)[security](https://t.me/+VSwXq3A2QmRjNDc0)#
-vless://d077cd35-4410-4aea-f9ef-5cd0310a742d@18.157.165.161:17083?security=&encryption=none&headerType=&type=tcp#
-vless://fc8dedc7-b2b9-4ff8-a78d-ba5daa1945ce@fastlyv2.panelha.com:80?path=cdn%2Fv2&security=&encryption=none&host=alireza6.global.ssl.fastly.net&type=ws#canfingV2rayNG-351
+vless://649a8f7a-59f7-4b3f-b733-e671086c9ad8@194.39.254.113:26480?security=&encryption=none&headerType=none&type=tcp#canfingV2rayNG-157
+vless://c4cb5a4b-6225-4c56-8f0b-7c23b4017d54@ww.iwantmoney.ir:8880?path=%2F&security=&encryption=none&type=ws#filembad-276
+vless://d077cd35-4410-4aea-f9ef-5cd0310a742d@18.157.165.161:17083?security=&encryption=none&headerType=&type=tcp#canfingV2rayNG-287
+vless://fc8dedc7-b2b9-4ff8-a78d-ba5daa1945ce@fastlyv2.panelha.com:80?path=cdn%2Fv2&security=&encryption=none&host=alireza6.global.ssl.fastly.net&type=ws#
+vless://dfc22538-ea23-411f-a533-6859c26a0f12@snapp.ir:80?type=ws&encryption=none&path=%2Fpok&host=pokim1.pokpok.site&security=none#filembad-297
+vless://dfc22538-ea23-411f-a533-6859c26a0f12@snapp.ir:80?type=ws&encryption=none&path=%2Fpok&host=pokim1.pokpok.site&security=none#
+vless://b5057540-580a-45f3-ba5f-769540a80b55@Tu3.Pokerpings.com:35485?security=&encryption=none&host=Hub.docker.com&headerType=http&type=tcp#
+vless://ee9b0614-50ec-41b6-951b-e1d5d755fa4b@glob.thisiswe.uno:2053?security=tls&alpn=networld_vpn-channel%40.networld_vpn-channel%40.networld_vpn-channel%40.networld_vpn-channel%40.networld_vpn-channel%40.networld_vpn-channel%40.networld_vpn-&encryption=none&insecure=0&host=cd11.thisiswe.uno&fp=chrome&type=ws&allowInsecure=0&sni=cd11.thisiswe.uno#

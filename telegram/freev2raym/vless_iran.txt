@@ -1,4 +1,3 @@
 vless://084a7d29-d80b-4660-be82-44f2d0ff6fa3@anti_ping.antiping.click:443?mode=gun&security=tls&encryption=none&type=grpc&serviceName=@freev2raym
+vless://f97c7f12-e303-4679-8723-80edf65bbe37@antipingfree.antimelinet.click:39851?security=none&encryption=none&headerType=http&type=tcp#join%3A%40freev2raym
 vless://f97c7f12-e303-4679-8723-80edf65bbe37@antipingfree.antime…
-vless://222badf2-8e87-479a-8b77-1a3c952edac2@antipingchannel.antiping.click:2096?mode=gun&security=tls&encryption=none&alpn=h2,http/1.1&fp=chrome&type=grpc&serviceName=sourceforge.net&sni=vipping.antiping.click#join%3A%40anti_ping
-vless://f97c7f12-e303-4679-8723-80edf65bbe37@91.107.160.74:39851?security=none&encryption=none&headerType=http&type=tcp#Test-xcr1f4xr

@@ -1,8 +1,1 @@
-vless://e4ceb917-3020-4486-a1ab-36534aed11de@s16.leader21.top:5053?type=ws&encryption=none&security=none&host=s16.leader21.top&path=%2Fhttp#
-vless://30f3412d-dcb9-451d-8e58-737d7b704b0e@s14.leaders711.top:5050?type=ws&encryption=none&security=none&host=s14.leaders711.top&path=%2Fhttps#
-vless://341a1b4e-3a62-4367-bb57-ae744cfffaba@s14.leaders711.top:5050?type=ws&encryption=none&security=none&host=s14.leaders711.top&path=%2Fhttps#
-vless://47ef0566-5f8f-46bf-8c7f-57e3d68d8695@s15.leader21.top:5054?type=ws&encryption=none&security=none&host=s15.leader21.top&path=%2Fhttp#%DA%A9%D8%A7%D9%86%D9%81%DB%8C%DA%AF+%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86+%DA%A9%D8%A7%D9%86%D8%A7%D9%84+%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85+Golf_VPN+%F0%9F%9A%80
-vless://635442ac-1c52-4227-948a-fd4bd2cc6e68@s13.leaders711.top:5054?path=%2Fhttp&security=none&encryption=none&host=s13.leaders711.top&type=ws#%DA%A9%D8%A7%D9%86%D9%81%DB%8C%…
-vless://e3b89bf0-3e33-4722-b2d4-99129445c039@s15.leader21.top:5054?type=ws&encryption=none&security=none&host=s15.leader21.top&path=%2Fhttp#
 vless://7a7d2067-3ebd-4b25-9b00-13f35ea41a7a@s15.leader21.top:5054?type=ws&encryption=none&security=none&host=s15.leader21.top&path=%2Fhttp#%DA%A9%D8%A7%D9%86%D9%81%DB%8C%DA%AF+%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86+%DA%A9%D8%A7%D9%86%D8%A7%D9%84+%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85+Golf_VPN+%F0%9F%9A%80
-vless://e3b89bf0-3e33-4722-b2d4-99129445c039@s15.leader21.top:5054?type=ws&encryption=none&security=none&host=s15.leader21.top&path=%2Fhttp#%DA%A9%D8%A7%D9%86%D9%81%DB%8C%DA%AF+%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86+%DA%A9%D8%A7%D9%86%D8%A7%D9%84+%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85+Golf_VPN+%F0%9F%9A%80

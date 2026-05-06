@@ -1,2 +1,1 @@
-vless://b97cdd0e-bba9-4391-b265-b72f80b670db@cafe.zhaal.ir:2052?path=%2F&security=none&encryption=none&type=ws#WebRovers+%F0%9F%91%BB
-vless://d9b3134e-007e-41e0-a146-8c53977e27f5@zula.ir:443?path=Telegram-proxy_mtm%2F%3Fed%3D2048&security=tls&encryption=none&alpn=h2,http/1.1&host=academivpn1-bo7.pages.dev&fp=chrome&type=ws&sni=academivpn1-bo7.pages.dev#
+vless://1d86846c-5a27-43c8-8981-57bb75c82195@speedtest.org:443?path=%2Fparadise&security=tls&encryption=none&host=polo.gdorri.info&type=ws&sni=polo.gdorri.info#

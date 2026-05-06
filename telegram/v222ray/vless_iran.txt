@@ -1,2 +1,1 @@
-vless://0195d3b8-8bfa-4c6e-9988-56396952a50a@finland.dehnavy.ir:39461?path=%2F&security=none&encryption=none&type=ws#
-vless://179ddf63-c263-40ff-98a1-f53708573059@188.40.210.8:1083?encryption=none&security=none&type=tcp&headerType=none#
+vless://179ddf63-c263-40ff-98a1-f53708573059@188.40.210.8:1083?encryption=none&security=none&type=tcp&headerType=none#%40v222ray

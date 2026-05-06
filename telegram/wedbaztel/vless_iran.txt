@@ -1,8 +1,4 @@
-vless://7a3ffd65-dbf5-4f80-819d-b94922481d06@post.exitping.store:33089?security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&headerType=none&fp=chrome&type=tcp&sni=post.exitping.store#
-vless://ff943148-d5db-46df-a419-81536ed1ad9e@snappfood.ir:80?path=%2Fws&security=none&encryption=none&host=cdnisfucka.drnimaamini.ir&type=ws#
-vless://5dedf8b3-44ae-4ef1-870b-5ed3782e0731@185.143.233.200:443?path=%2F%3Fed%3D443&security=tls&encryption=none&insecure=0&host=alef.ir.oadeflantrogm.mapircdn.com&fp=randomized&type=ws&allowInsecure=0&sni=alef.ir.oadeflantrogm.mapircdn.com#
-vless://771bc433-feba-4922-a916-e278fc8b7984@snapp.ir:80?path=%2F&security=none&encryption=none&host=cpi.lithiumnet.ir&type=ws#
-vless://79ed806a-6476-4ca3-9020-0ab9e19425e1@snapp.ir:80?path=%2F&security=&encryption=none&host=iranfuture.musicritmic.ir&type=ws#
-vless://ff943148-d5db-46df-a419-81536ed1ad9e@snappfood.ir:80?path=%2Fws&security=none&encryption=none&host=cdnisfucka.drnimaamini.ir&type=ws#Join
-vless://c8e6715e-232a-4026-8901-155a40f304ef@185.143.233.5:443?path=%2Fchat%3Fed%3D128&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&insecure=0&host=an.8lack.ir&fp=firefox&type=ws&allowInsecure=0&sni=an.8lack.ir#Join
+vless://91c514fe-7cf0-42f1-9aa2-1e60b743b093@185.143.233.5:443?path=%2Fchat%3Fed%3D128&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&insecure=0&host=jn.8lack.ir&fp=firefox&type=ws&allowInsecure=0&sni=jn.8lack.ir#Join
+vless://2f55f3de-d062-42de-8fe6-0c2c26e020da@trex.nahidapp.com:443?path=%2Fvless-ws&security=tls&encryption=none&insecure=0&host=trex.nahidapp.com&fp=chrome&type=ws&allowInsecure=0&sni=trex.nahidapp.com#
+vless://be179768-b26a-4d3f-92c4-e81645fde3f4@43.250.54.33:443?security=reality&encryption=none&pbk=LCcIGVnAk4EclhY5Fb9EAKrMlJ9BRVA0WpYylqKgnD8&headerType=none&type=tcp&sni=www.microsoft.com#
 vless://c622d4dc-a0da-4f0a-9d3d-be3178eec11b@snapp.ir:80?path=%2F&security=none&encryption=none&host=fonix.musicritmic.ir&type=ws#Join

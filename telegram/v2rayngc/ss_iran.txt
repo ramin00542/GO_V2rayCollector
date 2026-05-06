@@ -1,6 +1,4 @@
+vless://041f929a-63f6-4af1-a492-8cbff5797b8a@avval.ir:2096?encryption=none&security=tls&sni=telegram-falcunargo-emiratess.falcunar.asso.eu.org&fp=random&type=ws&host=telegram-falcunargo-emiratess.falcunar.asso.eu.org&path=%2F#
+vless://1b807c00-25cc-407e-9056-60d80f39e16d@iranserver.com:2053?mode=gun&security=tls&encryption=none&type=grpc&serviceName=VALdGZ9k&sni=clonaze_pam.sansorchi2.cloud#
+vless://13656ef3-8948-5ddb-8a49-2ef5ee992387@d1s1.datatools.tk:443?path=%2Fxlnzws&security=tls&encryption=none&host=farmone8.online&type=ws&sni=farmone8.online#@V2RayNGc
 vless://c4c52a36-bf9b-4219-b587-a11c58e7fc31@bug16.mlgolden.site:443?path=%2F&security=tls&encryption=none&type=ws&sni=bug16.mlgolden.site#%F0%9F%87%B7%F0%9F%87%BA+%F0%9F%91%91%F0%9F%8C%8F%40v2ray_vpn_ir.++%D8%AC%D9%88%DB%8C%D9%86+%D8%B4%D9%88
-vless://13656ef3-8948-5ddb-8a49-2ef5ee992387@d1s1.datatools.tk:443?path=%2Fxlnzws&security=tls&encryption=none&host=farmone8.online&type=ws&sni=farmone8.online#
-vless://041f929a-63f6-4af1-a492-8cbff5797b8a@avval.ir:2096?encryption=none&security=tls&sni=telegram-falcunargo-emiratess.falcunar.asso.eu.org&fp=random&type=ws&host=telegram-falcunargo-emiratess.falcunar.asso.eu.org&path=%2F#t.me%2Fv2Line%20%7C%20%281471%29%20DE
-vless://1b807c00-25cc-407e-9056-60d80f39e16d@discord.com:2053?mode=gun&security=tls&encryption=none&type=grpc&serviceName=VALdGZ9k&sni=clonaze_pam.sansorchi2.cloud#%F0%9F%A5%B0%E2%9C%85%40V2ray_vpn_ir+%D8%A7%D8%AE%D8%AA%D8%B5%D8%A7%D8%B5%DB%8C+%DA%A9%D8%A7%D9%86%D8%A7%D9%84
-vless://c4c52a36-bf9b-4219-b587-a11c58e7fc31@185.143.234.120:443?path=%2F&security=tls&encryption=none&host=bugde6v.mlgolden.site&type=ws&sni=bugde6v.mlgolden.site#
-vless://1949f066-bcb0-49be-88e9-74abd940f80e@51.75.30.8:80?encryption=none&security=none&type=ws&path=%2Fhttp#

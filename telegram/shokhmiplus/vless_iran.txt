@@ -1,2 +1,1 @@
-vless://0c5d51cd-14af-da89-975d-99bd7a60d762@shop.fox-11-fox.com:2052?security=none&type=tcp&packetEncoding=xudp&encryption=none#
 vless://fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf@185.148.106.63:8880?security=tls&sni=jp.laoyoutiao.link&type=ws&path=/Telegram%F0%9F%87%A8%F0%9F%87%B3&host=jp.laoyoutiao.link&packetEncoding=xudp&encryption=none#

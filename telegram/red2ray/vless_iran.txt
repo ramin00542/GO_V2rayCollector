@@ -1,2 +1,1 @@
-vless://3b7ec44b-66d8-4822-b772-f1f50c3fec95@ip-data.turkserver.ir:2083?path=%2F&security=tls&encryption=none&alpn=h2%2Chttp%2F1.1&host=all-dm1.netsnap.ir.&fp=firefox&type=ws&sni=all-dm1.netsnap.ir.#
-vless://e05f8655-2cec-401a-ba05-607e3624804d@us.loyalstore.space:1003?security=reality&encryption=none&pbk=tsFLusemXXwWC0wTZdzU62X1xUOOOhImDFkQQ5s790E&headerType=none&fp=chrome&type=tcp&sni=www.stackoverflow.com#Telegram%3A+%40Red2Ray
+vless://396c904b-4b62-4334-b793-ee25fc0c61cc@188.114.96.3:443?path=%2FeyJqdW5rIjoiTHczMWlhREZIb0ljUDhoaCIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0%3D%3Fed%3D2560&security=tls&encryption=none&host=8vmU06cxdz59m931xnREgj8qpnoq1-06.pages.dev&type=ws&sni=pages.dev#Telegram%3A+%40Red2Ray

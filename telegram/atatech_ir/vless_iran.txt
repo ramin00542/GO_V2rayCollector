@@ -1,1 +1,1 @@
-vless://b0378ed7-3f8c-4d37-818e-78b62a7e4fe4@arvancloud.ir:80?type=ws&encryption=none&path=%40TunizoNET&host=ri.amirenzohost.ir&security=none#atatech_ir
+vless://05efb4e3-7e56-4c31-a0fa-7bfed931ad57@snapp.ir:8880?path=%2Felctro&security=none&encryption=none&host=clud.extra-tm.ir&type=ws#atatech_ir

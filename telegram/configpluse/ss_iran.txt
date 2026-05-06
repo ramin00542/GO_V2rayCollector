@@ -1,2 +1,8 @@
-vless://7ef79266-c7e3-4dd5-937b-45ac56adcc16@snapp.ir:443?security=tls&type=ws&headerType=&path=%2Fws&host=vip2.tu5pars.ir&sni=vip2.tu5pars.ir&fp=&allowInsecure=1#
-vless://7ef79266-c7e3-4dd5-937b-45ac56adcc16@snapp.ir:443?security=tls&type=ws&headerType=&path=%2Fws&host=vip2.tu5pars.ir&sni=vip2.tu5pars.ir&fp=&allowInsecure=1#N7v2I7%20%7C%2060.0%20GB%20%7C%2031D
+vless://c7ba57bf-0418-4b66-89bb-d320b5cdd8e5@5.182.36.90:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=Z--Ieq3GtHx_Qtqj3NUyK5wY2foVBtlOkyzXqESeswU&security=reality&sid=0c80cc39&sni=store.steampowered.com&type=tcp#%F0%9F%AB%9F66@oneclickvpnkeys
+vless://75807638-6f19-07d0-ae08-38492ee85c88@178.72.182.20:52006?allowInsecure=1&encryption=none&flow=xtls-rprx-vision&fp=chrome&security=tls&sni=cl-ru-1.edgeflux.ru&type=tcp#
+vless://e69d5f8a-2629-45ac-889b-981983209933@166.1.89.21:443?security=reality&encryption=none&pbk=PxiVEKI3dp1UpqzpgnD31-Wl4MFiHjTI23ylGFn5Slg&headerType=none&type=tcp&flow=xtls-rprx-vision&sni=www.apple.com&sid=111111#%40
+vless://75807638-6f19-07d0-ae08-38492ee85c88@178.72.182.29:52006?allowInsecure=1&encryption=none&flow=xtls-rprx-vision&security=tls&sni=cl-ru-1.edgeflux.ru&type=tcp#
+vless://75807638-6f19-07d0-ae08-38492ee85c88@178.72.182.23:52006?allowInsecure=1&encryption=none&flow=xtls-rprx-vision&fp=chrome&security=tls&sni=cl-ru-1.edgeflux.ru&type=tcp#
+vless://76713d07-5a6b-49c2-abd8-bc450a2fa7fc@77.42.4.26:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=joMQZiNZWpGdcKDBOyAJQMnvSfU54GYUqqP_NwUtHAo&security=reality&sid=a1b2c3d4&sni=www.microsoft.com&type=tcp#%F0%9F%AB%9F100@oneclickvpnkeys
+vless://75807638-6f19-07d0-ae08-38492ee85c88@178.72.182.29:52006?allowInsecure=1&encryption=none&flow=xtls-rprx-vision&security=tls&sni=cl-ru-1.edgeflux.ru&type=tcp#%F0%9F%AB%9F98@oneclickvpnkeys
+vless://6202b230-417c-4d8e-b624-0f71afa9c75d@51.91.251.149:443?encryption=none&host=sni.111000.v6.navy&security=tls&sni=sni.111000.v6.navy&type=ws#

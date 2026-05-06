@@ -1,1 +1,3 @@
-vless://d342d11e-d424-4583-b36e-524ab1f0afa4@172.67.139.111:2087?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=baipiao1.curly-train.pages.dev&type=ws&sni=baipiao1.curly-train.pages.dev#
+vless://9b97bb00-48b8-46dd-a9f2-ecd2e16fc41c@mediafire.com:2095?path=%2F%3Fed%3D2048&security=none&encryption=none&host=it1.vlessx.xyz&type=ws#
+vless://43d327c1-ab4a-42e6-918a-00b168b3616c@141.95.106.230:38818?security=none&encryption=none&host=ghbi.ir&headerType=http&type=tcp#Tel%3A%20%40Novinology
+vless://0333b495-1f8b-4d75-be2e-11c023bf78e5@upload.ir:80?path=%2F%3Fed%3D2048&security=none&encryption=none&host=nl21.vlessx.us&type=ws#Tel%3A%20%40Novinology

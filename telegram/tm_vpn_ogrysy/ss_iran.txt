@@ -1,3 +1,1 @@
-ss://Y2hhY2hhMjAtaWV0Zjp2cG5sYWU@vpn.brazilsouth.cloudapp.azure.com:2021#
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTowODk0MTc5NWU5YjQ5NDc3@51.103.53.52:555#
-ss://YWVzLTI1Ni1nY206Q1VuZFNabllzUEtjdTZLajhUSFZNQkhEQGdmdC50bXZwbjU5MTEuZG5zYS54eXo6Mzk3NzI=#
+ss://Y2hhY2hhMjAtaWV0Zjo4N2YyZjRmNTQ0YTkyNjBmQDIwLjExMy4yNy4yNTA6OTgwNQ#

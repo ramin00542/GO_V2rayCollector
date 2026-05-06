@@ -1,2 +1,2 @@
-trojan://v703y9eMc7@91.107.217.236:8880?security=none&headerType=none&type=tcp#
 trojan://eJ67ay58NI@188.34.194.165:8080?type=tcp&security=none#
+trojan://v703y9eMc7@91.107.217.236:8880?security=none&headerType=none&type=tcp#

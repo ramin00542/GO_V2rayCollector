@@ -1,4 +1,2 @@
-vless://b251f81a-95aa-4c83-a716-889acec63fa5@ee1vip.vnet215.xyz:24009?security=none&encryption=none&host=zara.com&headerType=http&type=tcp#%40vpnbaz%20%7C%20%D9%86%D8%AA%20%D9%85%D9%84%DB%8C
-vless://66f73678-34a5-4863-bd7b-cba151a2562e@185.143.233.5:2086?path=%2F&security=none&encryption=none&host=cdn.sesrsa.com&type=ws#%40UnNurmal
-vless://b251f81a-95aa-4c83-a716-889acec63fa5@ee1vip.vnet215.xyz:24009?security=none&encryption=none&host=zara.com&headerType=http&type=tcp#
-vless://9f6979f5-fec9-4f40-b5f9-15dde47c6b91@185.143.233.5:2052?path=%2F&security=none&encryption=none&host=cdn.sesrsa.com&type=ws#
+vless://a66f90d8-cfc8-4eef-ad19-378aeede1d9b@25.129.199.0:2052?path=%2F%3Fed%3D2048&security=none&encryption=none&host=FINLAND.SODOGODPING.IR&type=ws#
+vless://5416af83-c120-4bfd-80ba-104d8ac61456@62.60.158.79:80?path=%3F5661173337.zip&security=none&encryption=none&host=tgju.org&type=ws#

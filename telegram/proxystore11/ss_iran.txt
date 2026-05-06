@@ -1,4 +1,4 @@
-vless://e3ae4fd3-9644-4520-a1fb-d092ab9ea20d@snapp.ir:8880?path=%2F&security=none&encryption=none&host=mmd.electrodragon.ir&type=ws#%F0%9F%87%A9%F0%9F%87%AA%20%20%7C%20%40proxystore11%20-%20ViP
-vless://6a54d481-27ee-4f24-b185-5ea44cb23073@snapp.ir:2095?path=%2F&security=none&encryption=none&host=fb.bazisazy.ir&type=ws#%F0%9F%8F%B4%E2%80%8D%E2%98%A0%EF%B8%8F%20%20%7C%20%40proxystore11
-vless://af8f4239-a62d-4e64-8971-9fff51e518ba@snapp.ir:80?path=%2FFIRELINKKVPN&security=none&encryption=none&host=firelinkk.arian-go-internet.ir&type=ws#
-vless://716a36ce-dc52-4524-a7a5-8e0d2376a06f@185.143.233.235:8080?path=%2F&security=none&encryption=none&host=R.artarona.ir&type=ws#
+vless://c5e08a5d-ef7f-464e-8675-764531c74ecb@test.net1.beauty:80?mode=auto&path=%2F&security=none&encryption=none&host=test.net1.beauty&type=xhttp#%F0%9F%87%B3%F0%9F%87%B1%20%20%7C%20%40proxystore11
+vless://9b6038df-33fb-47df-8b78-9bb8fdec4ca0@s3.vahshat.xyz:80?path=%2Fws&security=none&encryption=none&host=v2.greentab.ir&type=ws#
+vless://134a306b-e8dd-445d-9968-7013c39cd74a@185.143.233.5:2086?path=%2F&security=none&encryption=none&host=cdn.mizbanertebatfarda.ir&type=ws#%40Tesla_confingh%20%7C%20%20%F0%9D%97%A9%F0%9D%9F%AE%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%86%F0%9D%97%A1%F0%9D%97%9A%20%2B%20%F0%9D%97%A3%F0%9D%98%80%F0%9D%97%B6%F0%9D%97%BD%F0%9D%97%B5%F0%9D%97%BC%F0%9D%97%BB
+vless://716a36ce-dc52-4524-a7a5-8e0d2376a06f@185.143.233.235:8080?path=%2F&security=none&encryption=none&host=R.artarona.ir&type=ws#%40proxystore11

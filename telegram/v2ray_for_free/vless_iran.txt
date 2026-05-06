@@ -1,2 +1,2 @@
-vless://424c2031-1add-4063-8fc0-d57dc8358b21@151.101.0.155:80?path=%2Fde%3Fed%3D1048&security=none&encryption=none&host=Yghbshup.com&type=ws#
-vless://e39ea9ab-a0ee-4ca9-cc5d-32cda0258cbc@65.109.218.179:2083?mode=gun&security=reality&encryption=none&pbk=mDWXgatiJqUc4fmeDQqGusEBIhjFVrQ85y_ZUfNpFV8&fp=firefox&type=grpc&serviceName=melov2ray&sni=khamenei.ir&sid=54602915a7#%F0%9F%87%AB%F0%9F%87%AE%40FreakConfig
+vless://b272917b-d154-423d-cdbe-9627f6099472@213.176.65.115:8501?security=none&encryption=none&headerType=none&type=tcp#
+vless://e39ea9ab-a0ee-4ca9-cc5d-32cda0258cbc@65.109.218.179:2083?mode=gun&security=reality&encryption=none&pbk=mDWXgatiJqUc4fmeDQqGusEBIhjFVrQ85y_ZUfNpFV8&fp=firefox&type=grpc&serviceName=melov2ray&sni=khamenei.ir&sid=54602915a7#

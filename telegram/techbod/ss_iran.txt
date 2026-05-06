@@ -1,2 +1,1 @@
-vless://a66525c0-328e-4af8-ae76-3ce1e4eeb9d2@snapp.ir:80?encryption=none&type=ws&path=%2Findex.html&host=aiagentshop.aruxm.ir#@techbod
-vless://2c145456-285f-427e-82b3-6373dd4e7811@snapp.ir:2086?type=ws&encryption=none&path=&host=jing.eemehaze.lol&security=none#
+vless://2c145456-285f-427e-82b3-6373dd4e7811@snapp.ir:2086?type=ws&encryption=none&path=&host=jing.eemehaze.lol&security=none#@techbod

@@ -1,2 +1,2 @@
-vless://b0378ed7-3f8c-4d37-818e-78b62a7e4fe4@arvancloud.ir:80?type=ws&encryption=none&path=%40TunizoNET&host=ri.amirenzohost.ir&security=none#
-vless://9f6979f5-fec9-4f40-b5f9-15dde47c6b91@185.143.233.5:2052?path=%2F&security=none&encryption=none&host=cdn.sesrsa.com&type=ws#atatech_ir
+vless://0cb44c5c-fba1-4f77-9b3f-4d29cac66b2f@varzesh3.com:80?type=ws&encryption=none&path=%2Fws&host=nobody.fasterspeed.ir&security=none#atatech_ir
+vless://05efb4e3-7e56-4c31-a0fa-7bfed931ad57@snapp.ir:8880?path=%2Felctro&security=none&encryption=none&host=clud.extra-tm.ir&type=ws#

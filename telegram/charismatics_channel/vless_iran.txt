@@ -1,2 +1,1 @@
-vless://4c3042f4-90af-4a3b-9baa-f5c9dbe3f793@193.151.155.171:5454?encryption=none&flow=&headerType=http&host=Speedtest.net&type=tcp#
-vless://ee9b0614-50ec-41b6-951b-e1d5d755fa4b@45.130.125.198:2053?encryption=none&flow=&fp=chrome&host=kaja.thisiswe.uno&path=%2F&security=tls&sni=kaja.thisiswe.uno&type=ws#
+vless://feade342-9a00-427e-b049-752a4e584ba5@85.133.161.168:443?encryption=none&flow=&headerType=http&host=fsn.bestlive.ir&type=tcp#%E2%98%ACSH%CE%9EN%E2%84%A2%F0%9F%93%A1%E2%90%83%20

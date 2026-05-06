@@ -1,3 +1,1 @@
-vless://2601740f-12a1-4e61-ba12-4e84915f5ed8@185.143.234.235:80?security=none&encryption=none&host=vixon.portab.org&type=ws#Join%20us%20%3A%20%40Vmess_iran
-vless://40e1b62b-6245-4ec0-b57d-6dc4190db762@185.143.234.235:8080?path=%2F&security=none&encryption=none&host=io.binping.lol&type=ws#
-vless://40e1b62b-6245-4ec0-b57d-6dc4190db762@185.143.234.235:8080?path=%2F&security=none&encryption=none&host=io.binping.lol&type=ws#@vmess_iran
+vless://388a6c57-87e7-420b-afe2-b3eb670fd7da@104.18.16.56:80?path=%2F%20%40ProxyVPN11&security=none&encryption=none&host=vip.yaml7.ggff.net&type=ws#%D8%AC%D9%88%DB%8C%D9%86%20%D8%A8%D8%AF%D9%87%20%DA%A9%D8%A7%D9%86%DA%A9%D8%AA%20%D8%A8%D9%85%D9%88%D9%86%DB%8C%3A%20%40STAPersiaNews

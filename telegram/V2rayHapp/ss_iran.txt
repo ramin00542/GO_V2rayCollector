@@ -1,2 +1,2 @@
+vless://a3f3a69a-1468-43f3-9f7f-11c05d183dc6@185.143.234.235:80?encryption=none&type=ws&path=%2F&host=al1.apicallminecrafegame.online#
 vless://a3f3a69a-1468-43f3-9f7f-11c05d183dc6@185.143.234.235:80?encryption=none&type=ws&path=%2F&host=al1.apicallminecrafegame.online#@V2rayHapp
-vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?encryption=none&type=ws&path=%2F&host=sr.novatechsapr.ir#@V2rayHapp

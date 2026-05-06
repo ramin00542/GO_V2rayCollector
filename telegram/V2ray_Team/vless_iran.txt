@@ -1,4 +1,1 @@
-vless://a780c927-6d30-4e88-8ae9-7c0a54e7c76b@fast.wortexnetwork.com:80?mode=auto&security=none&encryption=none&host=so-fast-server-3.global.ssl.fastly.net&type=xhttp#
-vless://7c63f43f-f526-49bb-b5c8-2be26e11ef00@statue.lnmarketplace.net:443?mode=stream-one&path=%2Fstatue&security=tls&alpn=h2&encryption=none&insecure=0&host=statue.lnmarketplace.net&type=xhttp&allowInsecure=0&sni=statue.lnmarketplace.net#Mci%20%7C%20%40v2ray_team
-vless://7c63f43f-f526-49bb-b5c8-2be26e11ef00@statue.lnmarketplace.net:443?mode=stream-one&path=%2Fstatue&security=tls&alpn=h2&encryption=none&insecure=0&host=statue.lnmarketplace.net&type=xhttp&allowInsecure=0&sni=statue.lnmarketplace.net#
-vless://7449519c-e462-46e4-a143-519996d16d9b@python.org:80?mode=auto&path=%2F%3Fed%3D2052&security=&encryption=none&host=waslima.openwrld.tk&type=xhttp#Mci%20%7C%20%40v2ray_team
+vless://7449519c-e462-46e4-a143-519996d16d9b@python.org:80?mode=auto&path=%2F%3Fed%3D2052&security=&encryption=none&host=waslima.openwrld.tk&type=xhttp#

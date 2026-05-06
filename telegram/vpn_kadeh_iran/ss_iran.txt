@@ -1,1 +1,2 @@
+vless://5050a84d-8bac-406d-adfc-b599542df1cc@212.80.10.215:8443?type=tcp&security=none#
 vless://2bc0b14f-1a9a-4806-bace-2dbd3b149bb3@46.29.34.138:443?type=tcp&security=tls&fp=&alpn=h2%2Chttp%2F1.1&sni=irstock.chickvpb.xyz#

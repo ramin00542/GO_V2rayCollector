@@ -1,2 +1,2 @@
-https://t.me/proxy?server=10.45.46.75&port=8081&secret=767cf6f14f461cdd166b54eddb53e1b0
 https://t.me/bored_vpn
+https://t.me/proxy?server=10.45.46.75&port=8081&secret=767cf6f14f461cdd166b54eddb53e1b0

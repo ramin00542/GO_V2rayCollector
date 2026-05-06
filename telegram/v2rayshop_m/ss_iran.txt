@@ -1,3 +1,2 @@
-vless://c924c16b-27f8-43f7-8394-c28b875bde30@chanel.goldenteam2.shop:22304?type=tcp&path=%2F&host=fast.com&headerType=http&security=none#
-vless://7f453ff7-fe7d-4970-ab4b-5f00bbb855ce@chanel.nilmmd.shop:443?security=none&encryption=none&host=fast.com&headerType=http&type=tcp#
+vless://d804322a-1d92-4be6-a303-2b4a2b08412b@178.162.242.78:5990?security=reality&encryption=none&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&headerType=none&fp=chrome&type=tcp&sni=businessmadesimple.com#
 vless://789ce3ce-2f17-4da8-8383-69e06cd095f8@94.130.173.189:31188?security=none&encryption=none&host=fast.com&headerType=http&type=tcp#

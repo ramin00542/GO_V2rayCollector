@@ -1,2 +1,1 @@
-vless://48bd4d22-e42f-4749-af6a-85ecf716c823@ubia2-join.outline-vpn.cloud:80?path=%2F%3Fed%3D2048&security=none&encryption=none&host=fkhamnei.kosnanatfilterchi.eu.org&type=ws#%D8%B3%D8%B1%D9%88%D8%B1+%D9%87%D8%A7%DB%8C+%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86+%D8%AF%D8%B1+%DA%A9%D8%A7%D9%86%D8%A7%D9%84%40lemonshopvpn%E2%9C%85
-vless://04dc7b3a-1814-4af2-a53a-d08d5b86b345@78.141.193.208:41085?security=none&encryption=none&host=fast.com&headerType=http&type=tcp#%40lemonshopvpn+%7CTELEGRAM%F0%9F%8D%8B
+vless://04dc7b3a-1814-4af2-a53a-d08d5b86b345@78.141.193.208:41085?security=none&encryption=none&host=fast.com&headerType=http&type=tcp#

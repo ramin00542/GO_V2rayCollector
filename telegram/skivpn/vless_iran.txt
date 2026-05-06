@@ -1,2 +1,1 @@
-vless://e6e34bd4-ff66-46f1-a7be-669992e5e6c0@pg.nexorainnovationhub.ir:80?path=%2F&security=none&encryption=none&host=germany.lezzaluxa.ir&type=ws#
-vless://8a642e35-328c-42ee-aad0-d050b131dbab@pg.nexorainnovationhub.ir:80?path=%2F&security=none&encryption=none&host=germany.lezzaluxa.ir&type=ws#
+vless://469b6631-f0ab-4ad7-93af-869dd32535e3@185.143.234.235:80?path=%2F&security=none&encryption=none&host=al1.apicallminecrafegame.online&type=ws#%F0%9F%A4%B4%F0%9F%91%B8Skivpn%F0%9F%91%B8%F0%9F%A4%B4

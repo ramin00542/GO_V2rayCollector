@@ -1,2 +1,2 @@
+vless://0011d228-e5e7-42c7-d178-2014ba4c88bc@joinm.servernett.shop:443?mode=gun&security=tls&encryption=none&type=grpc&serviceName=@ServerNett&sni=irancell.servernett.shop#%F0%9D%97%9D%F0%9D%97%BC%F0%9D%97%B6%F0%9D%97%BB+%E2%9E%AA+%40V2range
 vless://b8530ccb-e274-cb88-a574-317b0aa97550@37.152.179.88:31488?security=none&encryption=none&host=uk4cdmo5.divarcdn.com%2C+uk4cdmo5.tic.ir%2C+uk4cdmo5.soft98.ir%2C+uk4cdmo5.irib.ir%2C+uk4cdmo5.splus.ir&headerType=http&type=tcp#
-vless://0011d228-e5e7-42c7-d178-2014ba4c88bc@joinm.servernett.shop:443?mode=gun&security=tls&encryption=none&type=grpc&serviceName=@ServerNett&sni=irancell.servernett.shop#

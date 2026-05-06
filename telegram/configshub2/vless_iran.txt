@@ -1,1 +1,1 @@
-vless://fc8dedc7-b2b9-4ff8-a78d-ba5daa1945ce@fastlyv2.panelha.com:80?path=cdn%2Fv2&security=&encryption=none&host=alireza6.global.ssl.fastly.net&type=ws#[🇮🇷]t.me/ConfigsHub
+vless://70a12f51-07ad-4c6d-bfb2-c29f0872b9c6@a2.grizzlygitt.ir:80?path=%2F&security=none&encryption=none&type=ws#[🇮🇷]t.me/ConfigsHub

@@ -1,4 +1,5 @@
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTowSVM0NHVzZjJUZzI3a3lnVTdjNVRsTnVSaWdOcmJuVENtMHVvSVRsVDBzPQ==@18.199.145.153:2087#
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpCb2cwRUxtTU05RFN4RGRR@fast_2ray_telchannelll2.fast2rayy.eu.org:443#
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpOR1F6TXpReg==@94.131.111.32:8388#
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpqY0FIVVJsQ2ZFTnBKbUI3Nkgwajd3@49.13.19.135:32927#
+vless://d3a12e79-ef42-4268-b367-42eeb3494e60@visa.com:443?path=Path%2FTelegram%40V2ray_alpha%2F%3Fed%3D2048&security=tls&encryption=none&host=Hagh.PaGes.DEv&type=ws&sni=Hagh.PaGes.DEv#
+vless://95d6261c-b971-4dcb-b02e-93b91fe4765c@dnschecker.org:443?mode=gun&security=tls&encryption=none&alpn=h2,http/1.1&fp=chrome&type=grpc&serviceName=@ipV2Ray&sni=fm.irandtehran.org#🇫🇮@V_2ray1_
+vless://0078ca67-afc3-476f-9447-b991fc657a36@visa.com:8443?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=telegram-falcunargo-ch.falcunar.uk.eu.org&fp=random&type=ws&sni=telegram-falcunargo-ch.falcunar.uk.eu.org#@V_2ray1
 vless://95d6261c-b971-4dcb-b02e-93b91fe4765c@dnschecker.org:443?mode=gun&security=tls&encryption=none&alpn=h2,http/1.1&fp=chrome&type=grpc&serviceName=@ipV2Ray&sni=fm.irandtehran.org#

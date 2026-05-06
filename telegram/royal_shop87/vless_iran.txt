@@ -1,7 +1,2 @@
-vless://2418f2e4-7ec2-466c-a164-d09318b5f2ab@ir.mrspeeds.info:2087?type=grpc&security=tls&serviceName=&sni=mys4.mrspeeds.info#
-vless://b9ad895b-12ac-40fc-a5ac-a5b2a1285001@104.21.28.62:443?path=2048&security=tls&encryption=none&host=3k.pureboy.eu.org&type=ws&sni=3k.pureboy.eu.org#
-vless://e2ab0d33-9ca7-4b93-8fcf-b13651c75ae9@ip.zarnet.xyz:80?security=none&type=ws&host=ger1.melitest.sbs&headerType=&path=%2F#%F0%9F%8C%B5%20%40MeliVPNN%20Vless%20Germany%201
-vless://b9ad895b-12ac-40fc-a5ac-a5b2a1285001@104.21.28.62:443?path=2048&security=tls&encryption=none&host=3k.pureboy.eu.org&type=ws&sni=3k.pureboy.eu.org#vpn
-vless://902b771e-1c47-481d-b074-5e0d4d23ec66@shhproxy.varzesh3-cnd.site:2087?path=/&security=tls&encryption=none&host=gmV2raybo.shhproxyfree.com&type=ws&sni=gmV2raybo.shhproxyfree.com#
-vless://2b383735-3c00-4cbd-8f7f-6e4e2a5e8ab6@104.31.16.92:80?type=ws&path=%2F&host=frankfurt.heydasip.com#
-vless://b9ad895b-12ac-40fc-a5ac-a5b2a1285001@172.67.183.26:443?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=3k.pureboy.eu.org&type=ws&sni=3k.pureboy.eu.org#Cod_Arshiya0
+vless://2b383735-3c00-4cbd-8f7f-6e4e2a5e8ab6@cixoo.cixoo.store:443?encryption=none&security=tls&sni=&alpn=h2%2Chttp%2F1.1&fp=chrome&type=ws&path=/ws#
+vless://3a097323-4836-4e25-b164-8e73fb4f594d@188.121.100.22:443?type=tcp&security=none#vpnsal

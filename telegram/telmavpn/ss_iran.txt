@@ -1,1 +1,8 @@
-vless://5c85bd8e-fcb0-4b60-832b-ead08f355e9a@www.speedtest.net:80?path=%2F&security=none&encryption=none&host=SHHPROXY-free.xn--69-pv2cl2k5x3fipr.org.&type=ws#
+vless://04a68729-bbc6-454d-869f-a44de1da7c8d@172.66.213.38:80?path=%2F&security=none&encryption=none&host=store.kellekcollection.com&type=ws#
+vless://d342d11e-d424-4583-b36e-524ab1f0afa7@ed9485634jkfhggh.pages.dev:2053?path=Telegram%40SINABIGO%40SINABIGO%40SINABIGO%2F%3Fed%3D2048&security=tls&encryption=none&host=ed9485634jkfhggh.pages.dev&fp=random&type=ws&sni=ed9485634jkfhggh.pages.dev#%40telmavpn
+vless://aa3f82c5-83d6-4f78-a064-d07a8b0e4985@god1.bestgameir.ir:2083?path=%2Fws&security=tls&encryption=none&alpn=h2,http/1.1&fp=chrome&type=ws&sni=god1.bestgameir.ir#
+vless://d342d11e-d424-4583-b36e-524ab1f0afa7@ed9485634jkfhggh.pages.dev:8443?path=Telegram%40SINABIGO%40SINABIGO%40SINABIGO%2F%3Fed%3D2048&security=tls&encryption=none&host=ed9485634jkfhggh.pages.dev&fp=random&type=ws&sni=ed9485634jkfhggh.pages.dev#%40telmavpn
+vless://ab03c163-c098-44ce-8e68-ed1578c82035@216.9.224.31:1181?security=none&encryption=none&headerType=none&type=tcp#
+vless://0dcaa67f-90c2-42ca-8745-698465cf6655@ho1.bestgameir.ir:2083?path=%2Fws&security=tls&encryption=none&alpn=h2,http/1.1&fp=chrome&type=ws&sni=ho1.bestgameir.ir#
+vless://aa3f82c5-83d6-4f78-a064-d07a8b0e4985@god1.bestgameir.ir:2083?path=%2Fws&security=tls&encryption=none&alpn=h2,http/1.1&fp=chrome&type=ws&sni=god1.bestgameir.ir#%40telmavpn%F0%9F%8C%B5
+vless://90c392b7-f567-47d4-b584-dc1caf5bfb28@ufo1.bestgameir.ir:2083?path=%2Fws&security=tls&encryption=none&alpn=h2,http/1.1&fp=chrome&type=ws&sni=ufo1.bestgameir.ir#%40telmavpn

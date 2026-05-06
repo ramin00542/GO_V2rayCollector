@@ -1,4 +1,1 @@
-vless://f44755e7-9dc9-43db-956b-6da23f40d662@5.wodegv.xyz:27303?security=reality&encryption=none&pbk=qzxyAq2MkNrE6S7GtWMJmyKSpF7wAPaaZ12kksb6LTw&headerType=none&fp=firefox&spx=%2F&type=tcp&flow=xtls-rprx-vision&sni=buylite.tv.apple.com#sts%20is%20the%20best
-vless://d9a83363-40a6-4a21-9dbe-cb2b7d287048@104.26.15.21:443?path=%2F107.174.121.122%3D443&security=tls&encryption=none&insecure=1&host=afrcloud22.mmv.kr&type=ws&allowInsecure=1&sni=afrcloud22.mmv.kr#%40vpn_sts%F0%9F%9A%80
-vless://aaaaaabb-4ddd-4eee-9fff-ffffffffffff@104.21.48.147:80?path=%2F64.181.218.67%3D443&security=none&encryption=none&host=afrcloud22.mmv.kr&type=ws#%40vpn_sts%F0%9F%9A%80
-vless://f44755e7-9dc9-43db-956b-6da23f40d662@3.wodegv.xyz:27301?security=reality&encryption=none&pbk=tD0hNThFt6Y5Ifo5VqeIhYCF8iHXDFOBIc5-To4gK20&headerType=none&fp=qq&spx=%2F&type=tcp&flow=xtls-rprx-vision&sni=buylite.tv.apple.com#
+vless://f44755e7-9dc9-43db-956b-6da23f40d662@5.wodegv.xyz:27303?security=reality&encryption=none&pbk=qzxyAq2MkNrE6S7GtWMJmyKSpF7wAPaaZ12kksb6LTw&headerType=none&fp=firefox&spx=%2F&type=tcp&flow=xtls-rprx-vision&sni=buylite.tv.apple.com#

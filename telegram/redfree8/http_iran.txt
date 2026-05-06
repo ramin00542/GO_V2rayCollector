@@ -1,10 +1,10 @@
-https://raw.githubusercontent.com/pooriaredorg1/pooria/refs/heads/main/configs/proxy_configs.txt#POORIA-mixpro
-https://t.me/vpntogo_bot?start=908895170
 https://apps.apple.com/app/id6472431552
 https://raw.githubusercontent.com/Shervinuri/V4ray/main/configs/CollecSHEN.txt
-https://github.com/hiddify/hiddify-next/releases/download/v2.5.7/Hiddify-Android-arm7.apk
-https://t.me/maviks_bot?start=69774543a7af681e4a84beeb
-https://github.com/KaringX/karing/releases/download/v1.1.4.730/karing_1.1.4.730_android_armeabi-v7a.apk
+https://t.me/vpntogo_bot?start=908895170
+https://raw.githubusercontent.com/pooriaredorg1/pooria/refs/heads/main/configs/proxy_configs.txt#POORIA-mixpro
 https://apps.apple.com/us/app/amneziavpn/id1600529900
-https://zaya.io/redfree8_pooria_red
 https://github.com/hiddify/hiddify-next/releases/download/v2.5.7/Hiddify-Android-arm7.apk…
+https://t.me/maviks_bot?start=69774543a7af681e4a84beeb
+https://zaya.io/redfree8_pooria_red
+https://github.com/KaringX/karing/releases/download/v1.1.4.730/karing_1.1.4.730_android_armeabi-v7a.apk
+https://github.com/hiddify/hiddify-next/releases/download/v2.5.7/Hiddify-Android-arm7.apk

@@ -1,2 +1,1 @@
-vless://3581187d-45af-46e0-acb1-18d70140b271@salar.mohad.sbs:80?path=%2F&security=none&encryption=none&type=ws#%40Next_Serverpanel
-vless://3581187d-45af-46e0-acb1-18d70140b271@salar.mohad.sbs:80?path=%2F&security=none&encryption=none&type=ws#
+vless://a630a4c4-9472-4b9e-9a8f-f1e1fe8c26c2@salar.mohad.sbs:80?path=%2F&security=none&encryption=none&type=ws#%D9%86%DA%A9%D8%B3%D8%AA+%D8%B3%D8%B1%D9%88%D8%B1

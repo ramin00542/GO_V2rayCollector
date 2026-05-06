@@ -1,17 +1,5 @@
-vless://073e74f3-ae5d-425a-815d-02f369820504@www80.nowbest.cf:42922?type=grpc&security=tls&serviceName=&sni=www80.nowbest.cf&fp=chrome#
-vless://42547c93-cdf1-4384-c207-038146690fa7@dailyv2ray-mtn1.ddns.net:2096?mode=gun&security=tls&encryption=none&type=grpc&serviceName=@dailyV2ray:‌چنل‌تلگرامی&sni=tm.dailyV2ray.cfd#%40dailyV2ray+%7C+Mtn
-vless://d56cbe9d-bd4f-400c-b7cd-d19128cab78e@www30.nowbest.cf:18663?type=ws&security=tls&path=%2F&sni=www30.nowbest.cf&fp=chrome#
-vless://ba089996-6155-4202-8982-fefcc7c7d43a@www80.nowbest.cf:18567?type=grpc&security=tls&serviceName=&sni=www80.nowbest.cf&fp=chrome#
-vless://d56cbe9d-bd4f-400c-b7cd-d19128cab78e@www30.nowbest.cf:18663?type=ws&security=tls&path=%2F&sni=www30.nowbest.cf&fp=chrome#30free2
-vless://54057203-a668-4a13-9668-2b8897e70ce3@www10.nowbest.cf:49575?type=ws&security=tls&path=%2F&sni=www10.nowbest.cf&fp=chrome#
-vless://543e67bb-15c6-4731-d0c9-7641517783b2@193.164.6.27:80?security=none&encryption=none&type=ws&host=vpnsal&path=/#
-vless://8a9d94e8-2009-4cf1-98c3-d8ecaf4c7932@dailyv2ray-mci1.ddns.net:2083?mode=gun&security=tls&encryption=none&type=grpc&serviceName=@V2ray:‌چنل‌تلگرامی&sni=tm.MsV2ray.cfd#%40dailyV2ray+%7C+Mci
-vless://82547c93-cdf1-4384-c207-038146690fa7@dailyv2ray-mtn1.ddns.net:2096?mode=gun&security=tls&encryption=none&type=grpc&serviceName=@dailyV2ray:‌چنل‌تلگرامی&sni=tm.V2ray.cfd#%40MsV2ray+%7C+Mtn
-vless://3f68e3a9-89d0-426d-e706-42458a57fb12@tm-chanell.dailyv2ray.shop:2096?mode=gun&security=tls&encryption=none&type=grpc&serviceName=@DailyV2ray&sni=telegram.dailyv2ray.shop#%40V2RAYNGNET+%D8%A8%DB%8C%D8%A7+%DA%A9%D8%A7%D9%86%D8%A7%D9%84
-vless://7f64eeb1-b5f1-40a0-d80e-e6c718f6bd6a@mci.ircf.space:2096?mode=gun&security=tls&encryption=none&type=grpc&serviceName=(   @ITV2RAY:تلگرام   )&sni=ITV2RAY.iRoV2ray.lol#
-vless://8a9d94e8-2009-4cf1-98c3-d8ecaf4c7932@dailyv2ray-mci1.ddns.net:2083?mode=gun&security=tls&encryption=none&type=grpc&serviceName=@V2ray:‌چنل‌تلگرامی&sni=tm.MsV2ray.cfd#
-vless://adf9f664-7603-4677-e3a1-5bdef60e04d3@www10.nowbest.cf:49575?type=ws&security=tls&path=%2F&sni=www10.nowbest.cf&fp=chrome#vpnharrooz
-vless://8672c94d-e856-4cab-d992-c963459b704d@www10.nowbest.cf:49575?type=ws&security=tls&path=%2F&sni=www10.nowbest.cf&fp=chrome#vpnharrooz
-vless://ba089996-6155-4202-8982-fefcc7c7d43a@www80.nowbest.cf:18567?type=grpc&security=tls&serviceName=&sni=www80.nowbest.cf&fp=chrome#80free4
-vless://54057203-a668-4a13-9668-2b8897e70ce3@www10.nowbest.cf:49575?type=ws&security=tls&path=%2F&sni=www10.nowbest.cf&fp=chrome#vpnharrooz
-vless://8672c94d-e856-4cab-d992-c963459b704d@www10.nowbest.cf:49575?type=ws&security=tls&path=%2F&sni=www10.nowbest.cf&fp=chrome#
+vless://7f64eeb1-b5f1-40a0-d80e-e6c718f6bd6a@mtn.ircf.space:2096?mode=gun&security=tls&encryption=none&type=grpc&serviceName=(
+vless://4d1de325-20a9-4fe8-cfe8-6dee9c8f0d16@fast13.foxnim.info:8443?mode=multi&security=tls&encryption=none&type=grpc&serviceName=@VPNCUSTOMIZE&sni=www.loveislam.top#
+vless://7f64eeb1-b5f1-40a0-d80e-e6c718f6bd6a@mci.ircf.space:2096?mode=gun&security=tls&encryption=none&type=grpc&serviceName=(
+vless://eb123cb1-ecee-42c4-c509-fedd52be15fe@AzadiIran.irov2ray.lol:2096?mode=gun&security=tls&encryption=none&type=grpc&serviceName=(
+vless://7ce27a4e-10a6-459b-fd47-d078df5f22fe@104.17.187.102:2096?mode=gun&security=tls&encryption=none&type=grpc&serviceName=(
