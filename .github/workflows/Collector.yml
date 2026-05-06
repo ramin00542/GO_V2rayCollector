@@ -31,9 +31,9 @@ jobs:
       run: go version
 
     - name: Download dependencies
-      run: go mod download -x
+      run: go mod download
 
-    - name: Tidy dependencies (ensure go.sum is correct)
+    - name: Tidy dependencies
       run: go mod tidy
 
     - name: Build Go app
