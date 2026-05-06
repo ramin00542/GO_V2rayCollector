@@ -27,8 +27,8 @@ jobs:
         git config --local user.email "actions@github.com"
         git config --local user.name "GitHub Actions"
         git pull origin main --rebase --autostash
-        git add vmess_iran.txt trojan_iran.txt vless_iran.txt ss_iran.txt mixed_iran.txt
-        git add http_iran.txt socks_iran.txt wireguard_iran.txt hysteria2_iran.txt mtproto_iran.txt tuic_iran.txt slipnet_iran.txt
+        # اضافه کردن پوشه‌های جدید و فایل cache
+        git add telegram/ subscription/ mixed/ daily_archive/ config_cache.json
         git diff --staged --quiet || git commit -m "✔️ $(date '+%Y-%m-%d %H:%M:%S') Collected"
 
     - name: Push Changes
