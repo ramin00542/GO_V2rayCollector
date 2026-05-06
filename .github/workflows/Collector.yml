@@ -10,29 +10,36 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v6
+      uses: actions/checkout@v4          # اصلاح نسخه
 
-    - uses: actions/setup-go@v6
+    - name: Set up Go
+      uses: actions/setup-go@v5          # اصلاح نسخه
       with:
         go-version: '>=1.21.3'
-    - run: go version
 
-    - name: Build and run Golang file
-      run: |
-        go build -o myapp
-        ./myapp -sort
+    - name: Display Go version
+      run: go version
 
-    - name: Commit Changes
+    - name: Download dependencies
+      run: go mod download               # اختیاری اما توصیه می‌شود
+
+    - name: Build Go app
+      run: go build -o myapp
+
+    - name: Run collector
+      run: ./myapp -sort                 # در صورت نیاز می‌توانید فلگ‌های دیگر هم اضافه کنید
+
+    - name: Commit changes
       run: |
         git config --local user.email "actions@github.com"
         git config --local user.name "GitHub Actions"
-        git pull origin main --rebase --autostash
-        # اضافه کردن پوشه‌های جدید و فایل cache
+        # حذف git pull – نیازی نیست
         git add telegram/ subscription/ mixed/ daily_archive/ config_cache.json
         git diff --staged --quiet || git commit -m "✔️ $(date '+%Y-%m-%d %H:%M:%S') Collected"
 
-    - name: Push Changes
+    - name: Push changes
       uses: ad-m/github-push-action@v1.1.0
       with:
         branch: main
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        force: false                     # پیش‌فرض false است، می‌توانید برای امنیت بگذارید
