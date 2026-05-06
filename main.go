@@ -13,7 +13,6 @@ import (
 	"time"
 
 	"github.com/mrvcoder/V2rayCollector/collector"
-
 	"github.com/PuerkitoBio/goquery"
 	"github.com/jszwec/csvutil"
 	"github.com/projectdiscovery/gologger"
@@ -139,7 +138,6 @@ func fetchAndProcessSubscription(subURL string) {
 	}
 
 	content := string(bodyBytes)
-	// If content is base64, decode it
 	if decoded, err := base64.StdEncoding.DecodeString(strings.TrimSpace(content)); err == nil {
 		content = string(decoded)
 	}
