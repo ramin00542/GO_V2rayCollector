@@ -1,6 +1,1 @@
-vless://telegram-id-qeshmserver@139.180.146.164:2020?type=tcp&security=reality&pbk=YH_SRHZR1KpI5H1qwcqwp3_8lYSWWMZYWn_FStgKihc&fp=chrome&sni=ea.com&sid=05fb89d5&spx=%2F&flow=xtls-rprx-vision#%40QeshmServer-QeshmServer
-vless://qeshmserver@151.101.3.8:80?type=xhttp&mode=auto&host=qeshmserverfree.global.ssl.fastly.net&security=none#@QeshmServer
-vless://telegram-id-qeshmserver@95.179.138.190:443?type=tcp&security=reality&pbk=ipM5-HQ6sNBZhPGNLNpq8voqMvgxBeL9LDZY4sQ5Yyk&fp=chrome&sni=zula.ir&sid=d2bab77a&spx=%2F#
-vless://qeshmserver@151.101.3.8:80?type=xhttp&mode=auto&host=qeshmserverfree.global.ssl.fastly.net&security=none#
-vless://3cac427f-306c-421b-a2a0-adf8f49e1f48@45.76.32.68:43144?type=tcp&security=reality&pbk=iBm5uoc-I3ZPxcCYNLhV1nUL2eSKYt-lUsLocLrj3Sg&fp=chrome&sni=ea.com&sid=5ed04739&spx=%2F&flow=xtls-rprx-vision#
-vless://telegram-id-qeshmserver@139.180.146.164:2020?type=tcp&security=reality&pbk=YH_SRHZR1KpI5H1qwcqwp3_8lYSWWMZYWn_FStgKihc&fp=chrome&sni=ea.com&sid=05fb89d5&spx=%2F&flow=xtls-rprx-vision#
+vless://telegram-id-qeshmserver@108.61.103.121:19297?type=ws&path=%2F&security=none#

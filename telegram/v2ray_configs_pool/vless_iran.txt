@@ -1,1 +1,2 @@
-vless://cd63c49a-d4cf-4856-89a6-6fe18b5070eb@snapp.ir:8880?encryption=none&type=ws&path=/&host=moein.akosha.ir#
+vless://7bb415e0-bae6-4157-85d9-a1dc71da574e@arvancloud.ir:80?path=%2F&security=none&encryption=none&host=t1.tunnellinuweb.ir&type=ws#👉🆔@v2ray_configs_pool📡🇮🇷®️Iran©️Tehrān🅿️ping:75.88ms
+vless://174377a8-7429-4793-af64-7d53e0675a84@tamin.ir:80?encryption=none&security=none&type=ws&host=mysql.reedsy.ir&path=%2F#👉🆔@v2ray_configs_pool📡🇮🇷®️Iran©️Tehrān🅿️ping:209.38ms

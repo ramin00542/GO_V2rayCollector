@@ -1,2 +1,2 @@
-vless://89b3cbba-e6ac-485a-9481-976a0415eab9@172.66.132.196:8443?path=%2FTelegram%40V2ray_Alpha%3D%3Fed%3D2560&security=tls&encryption=none&host=UuHuHyygESDFGh.uyHjhGVGfcJGUJHbUilbvfdxdXM.xYz&type=ws&sni=UuHuHyygESDFGh.uyHjhGVGfcJGUJHbUilbvfdxdXM.xYz#%F0%9F%87%A9%F0%9F%87%AAAll%C2%B9%20%7C%20%40SROVPN
-vless://8ed5d5c6-08c6-40ed-8f15-ff724c4ecad9@ns.cloudflare.com:2086?path=%2FGoodLuck%3Fed%3D2560&security=&encryption=none&host=USA11.serrjioo.ir&type=httpupgrade#%40%F0%9F%87%AC%F0%9F%87%A7%20%40SROVPN%20%7C%20All%20%F0%9F%87%AC%F0%9F%87%A7
+vless://idTel-Hqv2rayNG@84.234.31.28:443?security=reality&encryption=none&pbk=FtDr_UhjnVUI0icGx9L4isHVQTNOl_cGsFEDSWigM28&headerType=none&fp=safari&spx=%2F&type=tcp&flow=xtls-rprx-vision&sni=refersion.com&sid=7c4ea43b6c6f#
+vless://8ed5d5c6-08c6-40ed-8f15-ff724c4ecad9@ns.cloudflare.com:2086?path=%2FGoodLuck%3Fed%3D2560&security=none&encryption=none&host=turkiye.serrjioo.ir&type=httpupgrade#%40SROVPN%20%7C%20All

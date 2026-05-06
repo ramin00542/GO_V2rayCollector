@@ -1,3 +1,1 @@
-vless://c7784e78-ad09-4890-92b7-6feb6742b6b9@185.143.233.235:80?path=%2Fws-dl-echovps&security=none&encryption=none&host=dl.echovps.ir&type=ws#%40filtershekan_channel
-vless://87a09075-f5f0-4ff9-80df-3e81fcdfd10d@185.143.234.235:80?path=%2F&security=none&encryption=none&host=d.nsa03.com&type=ws#%40filtershekan_channel
-vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?path=%2F&security=none&encryption=none&host=sr.novatechsapr.ir&type=ws#%40filtershekan_channel
+vless://be473af0-2a23-41d8-9dcf-9532aa65dd33@melllipen.shop:2095?path=%2Fxs&security=none&encryption=none&host=melllipen.shop&type=ws#

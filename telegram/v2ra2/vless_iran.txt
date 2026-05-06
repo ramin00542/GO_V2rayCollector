@@ -1,2 +1,1 @@
-vless://85bc1120-3cb3-45ff-a12f-9e7d94f40634@bwiz.mediafilm.media:1003?type=tcp#
-vless://85bc1120-3cb3-45ff-a12f-9e7d94f40634@bwiz.mediafilm.media:1003?type=tcp#%D9%87%D8%AF%DB%8C%D9%87%201%20%D8%B1%D9%88%D8%B2%D9%87-%40server_V2rayNG
+vless://85bc1120-3cb3-45ff-a12f-9e7d94f40634@212.16.68.63:1003?type=tcp#%D9%87%D8%AF%DB%8C%D9%87%203%20%D8%B1%D9%88%D8%B2%D9%87-%40server_V2rayNG

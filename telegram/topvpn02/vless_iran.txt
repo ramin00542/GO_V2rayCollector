@@ -1,1 +1,2 @@
-vless://b04859a9-1156-4d22-8873-60980d5b599d@104.21.72.252:8080?type=ws&path=%2Fconnectix&host=connectix.eo-wee3242343-rewre-efwe-f-ewffew-f-ewa-f290fwa-fawfe.online&security=none#@connectix
+vless://b04859a9-1156-4d22-8873-60980d5b599d@104.21.72.252:8080?type=ws&path=%2Fconnectix&host=connectix.eo-wee3242343-rewre-efwe-f-ewffew-f-ewa-f290fwa-fawfe.online&security=none#
+vless://b04859a9-1156-4d22-8873-60980d5b599d@free.connectix.workers.dev:443?path=%2Fconnectix&security=tls&encryption=none&alpn=h2,http/1.1&fp=randomized&type=ws#

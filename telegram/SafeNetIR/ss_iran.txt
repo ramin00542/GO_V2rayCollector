@@ -1,1 +1,1 @@
-vless://60de7f07-71b7-4b37-a04c-db5d769ec130@62.60.147.73:20020?security=&encryption=none&headerType=none&type=tcp#
+vless://fbd73a5f-3ed7-49d3-8649-55af03dc36cb@snapp.ir:80?security=none&allowInsecure=0&encryption=none&type=ws&host=firelink.arian-go-internet.ir&path=/ICV2RAY#

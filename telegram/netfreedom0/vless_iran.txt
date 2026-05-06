@@ -1,1 +1,2 @@
-vless://8dc7722c-2767-4eea-a28b-2f8daacc07e3@45.82.251.116:8880/?type=grpc&encryption=none&flow=#116-NetFreedom0
+vless://6919e588-cff3-4c1b-b7a3-3ca0ada5fb69@s3.daneshvardost.com:26480/?type=tcp&encryption=none#
+vless://8dc7722c-2767-4eea-a28b-2f8daacc07e3@45.82.251.116:8880/?type=grpc&encryption=none&flow=#

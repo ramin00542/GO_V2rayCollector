@@ -1,0 +1,1 @@
+vless://ae438428-104c-4e6c-af20-03f4f7530515@5.75.196.2:8010?security=none&encryption=none&host=fast.com&headerType=http&type=tcp#VPNPlus100

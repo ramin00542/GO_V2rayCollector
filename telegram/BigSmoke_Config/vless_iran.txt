@@ -1,2 +1,2 @@
-vless://8bbf71fd-02c5-7400-d256-b2ae183e01c1@pari.masterdadeh.ir:80?security=none&allowInsecure=0&encryption=none&type=ws&path=/#BigSmoke_Config
 vless://8bbf71fd-02c5-7400-d256-b2ae183e01c1@pari.masterdadeh.ir:80?security=none&allowInsecure=0&encryption=none&type=ws&path=/#
+vless://8bbf71fd-02c5-7400-d256-b2ae183e01c1@pari.masterdadeh.ir:80?security=none&allowInsecure=0&encryption=none&type=ws&path=/#BigSmoke_Config

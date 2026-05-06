@@ -1,4 +1,4 @@
-https://raw.githubusercontent.com/bia-pain-bache/BPB-Wizard/main/install.sh)
 https://github.com/termux/termux-app/releases/download/v0.118.3/termux-app_v0.118.3+github-debug_arm64-v8a.apk
 http://www.gstatic.com/generate_204
 https://github.com/2dust/v2rayn/releases
+https://raw.githubusercontent.com/bia-pain-bache/BPB-Wizard/main/install.sh)

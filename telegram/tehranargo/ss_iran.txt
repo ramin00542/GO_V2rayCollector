@@ -1,1 +1,1 @@
-vless://a01daac7-1e65-4645-854d-b47d226f6b08@104.20.6.134:443?path=%2F&security=tls&encryption=none&insecure=1&host=y6-3cj.PAgES.DEV&type=ws&allowInsecure=1&sni=y6-3cj.PAgES.DEV#%40TEHRANARGO
+vless://6202b230-417c-4d8e-b624-0f71afa9c75d@104.20.6.134:8443?path=%2F%3FTelegram%20%40v2%72ayngz%65nd%65gimamad&security=tls&encryption=none&host=sni.111000.dynv6.net&type=ws&sni=sni.111000.dynv6.net#

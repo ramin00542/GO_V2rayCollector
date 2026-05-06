@@ -1,2 +1,5 @@
-vless://dba21741-9901-4e3f-b9fe-a52ec3633b67@ahgdjs.digitalcity7.com:2083?path=%2F&security=tls&encryption=none&alpn=h2,http/1.1&host=s14.sg-forum.info&fp=randomized&type=ws&sni=s14.sg-forum.info#%F0%9F%87%A9%F0%9F%87%AA
-vless://dba21741-9901-4e3f-b9fe-a52ec3633b67@www.digitalcity5.com:2083?path=%2F&security=tls&encryption=none&alpn=h2,http/1.1&host=s14.sg-forum.info&fp=randomized&type=ws&sni=s14.sg-forum.info#
+vless://52b45d8f-3ab7-44fd-af91-321a27982584@2.56.220.2:443?encryption=none&security=tls&sni=promo.worldofwarships.eu&alpn=h2%2Chttp%2F1.1&fp=firefox&type=ws&host=mythstore.ir&path=%2Fws%2F%3Fed%3D2048#%F0%9F%87%AB%F0%9F%87%B7%20V2rayngninja
+vless://25468dd2-7fb0-478c-8ce7-3e72cf65936d@146.75.74.62:443?encryption=none&security=tls&sni=app.com&alpn=h2%2Chttp%2F1.1&fp=chrome&type=ws&host=wow-online.ir&path=%2F#
+vless://c3077f1d-3b94-4a83-aecb-f4e9beb4dc7e@[::ffff:6812:cae8]:8080?path=%2F&security=none&encryption=none&host=xn--047h.iman-v2ray.sbs.&type=ws#%40V2rayExpress+MCI
+vless://97d53a59-918e-45fc-bc5d-ba487f090cc1@80.240.23.101:443?type=xhttp&path=%2FDota2%3Fed%3D2048&host=&mode=auto&security=reality&pbk=HhI0Y1IV5Vks0OqsV6N4Csvaivc1BH_IzoSbw5Ii_3o&fp=randomized&sni=hundleymechanical.com&sid=008c74&spx=%2F#
+vless://c3077f1d-3b94-4a83-aecb-f4e9beb4dc7e@[::ffff:b992:ad3b]:8080?path=%2F&security=none&encryption=none&host=xn--047h.iman-v2ray.sbs.&type=ws#

@@ -1,0 +1,1 @@
+vless://11ae0edd-2f63-4495-8683-037abbda9986@amin.karkas1.ir:443?path=%2FEJUVVd6sh0f9J6dsNkGkxxW7&security=tls&encryption=none&alpn=http/1.1&host=amin.karkas1.ir&fp=safari&type=ws&sni=amin.karkas1.ir#Cdn_tls_WS_direct_vless

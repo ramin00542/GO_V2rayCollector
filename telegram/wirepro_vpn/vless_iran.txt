@@ -1,1 +1,2 @@
-vless://f73f802f-d34f-4b4e-bf66-0ed9e94ef831@164.90.172.122:8443?type=tcp&path=%2F&host=cloudflare.com&headerType=http&security=none#
+vless://eb19a0a9-a5a6-4649-e8da-71128b8cc8f7@104.17.225.199:2083?type=grpc&serviceName=&mode=multi&security=tls&fp=&alpn=http%2F1.1%2Ch2&sni=tls.fpsvpn.shop#
+vless://007eae9f-1a59-4d4e-e8cc-db56657eddf2@tls.wireprovpn.xyz:2096?type=ws&path=%2F&security=tls&fp=chrome&alpn=http%2F1.1&allowInsecure=1&sni=tls.wireprovpn.xyz#

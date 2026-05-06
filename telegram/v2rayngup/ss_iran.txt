@@ -1,2 +1,1 @@
-vless://71d85ba3-c15f-4024-f30f-ce3ce3b71a81@speedtest.net:80?encryption=none&security=none&type=ws&host=softgameriovlioebs69.ir&path=%2Flw%3Fed%3D2048#
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpzYVNaOElUaWphMGtUVVJhRXBraTJUWXorQmxLYVV1bjJSM1Rydk1remJZPQ==@91.107.201.212:1080#
+vless://71d85ba3-c15f-4024-f30f-ce3ce3b71a81@speedtest.net:80?encryption=none&security=none&type=ws&host=softgameriovlioebs69.ir&path=%2Flw%3Fed%3D2048#%40v2rayNGup%2B%3A%DA%A9%D8%A7%D9%86%D8%A7%D9%84%2B%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85%2B%D9%85%D8%A7

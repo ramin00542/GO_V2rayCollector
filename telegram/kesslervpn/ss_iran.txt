@@ -1,2 +1,1 @@
-vless://7d12caa2-43e0-45d2-8636-08b342615c7b@104.17.72.206:443?path=%2F&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&insecure=0&fp=chrome&type=ws&allowInsecure=0&sni=clod.pedramhost.shop#93rgsjtf
-vless://0f705100-9799-4e7e-be81-cfcfc6835630@104.18.12.149:443?path=%2F&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&insecure=0&host=c1.iranesf031.ir&fp=chrome&type=ws&allowInsecure=0&sni=c1.iranesf031.ir#
+vless://8a30cf48-9fa2-46c5-8815-2822b12852e0@188.114.98.0:443?path=%2F&security=tls&encryption=none&insecure=1&host=xqkxw.ccwu.cc&type=ws&allowInsecure=1&sni=xqkxw.ccwu.cc#

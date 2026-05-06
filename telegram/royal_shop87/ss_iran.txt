@@ -1,3 +1,2 @@
-vless://2b383735-3c00-4cbd-8f7f-6e4e2a5e8ab6@104.31.16.92:80?type=ws&path=%2F&host=abgoshtbotuk.ligerteam.com#
-vless://b9ad895b-12ac-40fc-a5ac-a5b2a1285001@172.67.183.26:443?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=3k.pureboy.eu.org&type=ws&sni=3k.pureboy.eu.org#%D8%B9%D8%B6%D9%88+%D8%B4%D9%88+%3A+%40zibanabz
-vless://2b383735-3c00-4cbd-8f7f-6e4e2a5e8ab6@104.31.16.92:80?type=ws&path=%2F&host=frankfurt.heydasip.com#🇩🇪فرانکفورت🇩🇪-🔵همراه
+vless://e2ab0d33-9ca7-4b93-8fcf-b13651c75ae9@ip.zarnet.xyz:80?security=none&type=ws&host=ger1.melitest.sbs&headerType=&path=%2F#
+vless://376b9861-2fc6-4647-959c-18185cd9c95a@104.17.50.203:443?path=%2Ffflsws&security=tls&encryption=none&host=lmn39.sbs&type=ws&sni=lmn39.sbs#vpnsal

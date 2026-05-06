@@ -1,11 +1,6 @@
-vless://e9adbac6-90e1-4c1f-ad17-46226d45a262@85.133.221.52:3001?security=&encryption=none&host=fast.con&headerType=http&type=tcp#canfingV2rayNG-309
-vless://e3bef281-40e6-4e5d-9e25-b1d861e6c043@217.60.238.167:8084?security=&encryption=none&headerType=http&type=tcp#
-vless://b5057540-580a-45f3-ba5f-769540a80b55@Tu3.Pokerpings.com:35485?security=&encryption=none&host=Hub.docker.com&headerType=http&type=tcp#canfingV2rayNG-251
-vless://2271c50f-ac7a-4d7f-8b04-64085b0daa56@b.pabloping.cloud:2052?mode=auto&path=pabloping&security=&encryption=none&host=upnl.pabloping.pro&type=xhttp#canfingV2rayNG-70
-vless://b8799fac-622a-4142-aab2-2aa862ad35f2@185.143.234.235:80?path=%2F&security=&encryption=none&host=vixon.portab.org&type=ws#
-vless://a1344e0b-ce20-48a2-9fc2-8313e93e0ba4@snapp.ir:8080?path=%2Ftrust&security=none&encryption=none&host=hola.saatcloud.ir&type=ws#filembad-202
-vless://b5057540-580a-45f3-ba5f-769540a80b55@Tu3.Pokerpings.com:35485?security=&encryption=none&host=Hub.docker.com&headerType=http&type=tcp#
-vless://dfc22538-ea23-411f-a533-6859c26a0f12@snapp.ir:80?type=ws&encryption=none&path=%2Fpok&host=pokim1.pokpok.site&security=none#filembad-297
-vless://ee9b0614-50ec-41b6-951b-e1d5d755fa4b@glob.thisiswe.uno:2053?security=tls&alpn=networld_vpn-channel%40.networld_vpn-channel%40.networld_vpn-channel%40.networld_vpn-channel%40.networld_vpn-channel%40.networld_vpn-channel%40.networld_vpn-&encryption=none&insecure=0&host=cd11.thisiswe.uno&fp=chrome&type=ws&allowInsecure=0&sni=cd11.thisiswe.uno#canfingV2rayNG-330
-vless://e9adbac6-90e1-4c1f-ad17-46226d45a262@85.133.221.52:3001?security=&encryption=none&host=fast.con&headerType=http&type=tcp#
-vless://6202b230-417c-4d8e-b624-0f71afa9c75d@185.16.110.238:2096?path=%3Fed%3D2560&security=tls&encryption=none&insecure=0&host=sni.jpmj.dev&type=ws&allowInsecure=0&sni=sni.jpmj.dev#
+vless://7b471aa5-9344-4567-96a9-82bec6427f85@18.199.103.58:443?security=&encryption=none&headerType=none&type=tcp#
+vless://b8799fac-622a-4142-aab2-2aa862ad35f2@185.143.234.235:80?path=%2F&security=&encryption=none&host=vixon.portab.org&type=ws#NormanV2ray-253
+vless://7b471aa5-9344-4567-96a9-82bec6427f85@18.199.103.58:443?security=&encryption=none&headerType=none&type=tcp#canfingV2rayNG-182
+vless://3cbad916-d882-4773-8dfb-15564f2d29fe@zone.ca.f2zone.ir:17759?](https://t.me/+VSwXq3A2QmRjNDc0)[security](https://t.me/+VSwXq3A2QmRjNDc0)#
+vless://d077cd35-4410-4aea-f9ef-5cd0310a742d@18.157.165.161:17083?security=&encryption=none&headerType=&type=tcp#
+vless://fc8dedc7-b2b9-4ff8-a78d-ba5daa1945ce@fastlyv2.panelha.com:80?path=cdn%2Fv2&security=&encryption=none&host=alireza6.global.ssl.fastly.net&type=ws#canfingV2rayNG-351

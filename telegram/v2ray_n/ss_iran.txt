@@ -1,1 +1,2 @@
-vless://53747e1d-5253-4c85-ab74-fff0c35add9e@pro2.backdoriran.ml:80?type=ws&security=none&path=%2Fbackdor#@v2ray_N
+vless://04ec11e1-e60e-4c81-e3cc-eb402d9b9b89@net.vipnetop.tk:11042?path=%2F&security=none&encryption=none&type=ws#
+vless://134a208f-9ec0-4ecc-a374-8f598ea1adda@tr1.iranz.me:8443?path=%2F&security=tls&encryption=none&type=ws#%40vpnmaster_info%23tr1

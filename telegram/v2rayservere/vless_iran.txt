@@ -1,1 +1,2 @@
-vless://Parsashonam-44@www.visa.com:443?path=%2F&security=tls&encryption=none&alpn=h2,http/1.1&host=mail.offch.blog&fp=chrome&type=ws&sni=mail.offch.blog#
+vless://46bc1dbd-ffff-4d0f-87d8-9fdb53533092@www.gov.se:80?path=%2F%3Fed%3D2560&security=none&encryption=none&host=v2raylandd-65.utsxgao.workers.DEV&type=ws#%40v2raylandd+%DA%A9%D8%A7%D9%86%D8%A7%D9%84+%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85%DB%8C
+vless://a4f5723f-4c6c-499e-bec1-c13becba9c70@www.gov.se:8443?path=%2F%3Fed%3D2560&security=tls&encryption=none&host=v2raylandd-66-irancell.utsxgao.workers.dEV&fp=randomized&type=ws&sni=v2raylandd-66-irancell.utsxgao.workers.DeV#%40v2raylandd-irancell

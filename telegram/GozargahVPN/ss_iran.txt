@@ -1,3 +1,1 @@
-vless://74b1f2da-0e37-4795-b1df-a2896d5e7cde@104.17.72.206:443?mode=auto&path=%2Fapi%2F%3Fref%3Dsupervoid&security=tls&encryption=none&alpn=h2,http/1.1&host=meow.tanvexor.ir&fp=chrome&allowinsecure=0&type=xhttp&sni=meow.tanvexor.ir#%E2%9C%94%EF%B8%8FTelegram%3A+GozargahVPN
-vless://74b1f2da-0e37-4795-b1df-a2896d5e7cde@104.17.72.206:443?mode=auto&path=%2Fapi%2F%3Fref%3Dsupervoid&security=tls&encryption=none&alpn=h2,http/1.1&host=meow.tanvexor.ir&fp=chrome&allowinsecure=0&type=xhttp&sni=meow.tanvexor.ir#
-vless://d37a75db-76b6-4db8-b213-0d5b044d138d@104.20.6.134:443?path=%2F&security=tls&encryption=none&insecure=0&host=hio-awx.pages.dev&type=ws&allowInsecure=0&sni=hio-awx.pages.dev#%40GozargahVPN
+vless://d37a75db-76b6-4db8-b213-0d5b044d138d@104.20.6.134:443?path=%2F&security=tls&encryption=none&insecure=0&host=hio-awx.pages.dev&type=ws&allowInsecure=0&sni=hio-awx.pages.dev#

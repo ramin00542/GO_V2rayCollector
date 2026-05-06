@@ -1,0 +1,1 @@
+vless://ecb790d4-36ca-4dfc-a142-b3a395d1c50d@ad1.xiqpanelz.com:40200?security=&encryption=none&host=ir31.uploadboy.com&headerType=http&type=tcp#%F0%9F%94%B4%20CONFIG%202%20%7C%20ping%3D400

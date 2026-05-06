@@ -1,1 +1,2 @@
-vless://30e35bd7-6ce7-4c0c-8fbd-cec03071852f@faraaa.darakio.ir:80?path=%2F&security=none&encryption=none&type=ws#%40filtershekan_channel
+vless://7ef79266-c7e3-4dd5-937b-45ac56adcc16@snapp.ir:443?path=%2Fws&security=tls&encryption=none&host=vip2.tu5pars.ir&fp=chrome&type=ws&sni=vip2.tu5pars.ir#
+vless://e05ad0d3-5bf0-463d-9ba2-817680c6f895@snapp.ir:8080?path=%2F&security=none&encryption=none&host=simorgh.darerio.ir&type=ws#%40filtershekan_channel

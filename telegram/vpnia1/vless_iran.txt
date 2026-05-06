@@ -1,2 +1,4 @@
+vless://ef268b07-a6d6-44d4-a800-889e5c7bd2a1@Artemis.sbs:80?path=%2F%40Artemis_vpn&security=none&encryption=none&host=free-03.quado-02.buzz&type=ws#
 vless://754c3079-15cf-401e-dd34-71f1461357b8@5.75.214.32:443?mode=gun&security=reality&encryption=none&pbk=FV4Cqcwx4TOrdQ1wXEKH-2FwvaZQvZqqULm9l3YYuHk&fp=random&spx=%2F&type=grpc&serviceName=@VPNCUSTOMIZE&sni=www.speedtest.net&sid=56#%D8%B1%D8%B6%D8%A7%DB%8C%DB%8C
 vless://vPNCUSTOMIZE@mtn-VpnCustomize.aparat.lol:8443?mode=multi&security=tls&encryption=none&type=grpc&serviceName=@VPNCUSTOMIZE&sni=tel.LsV2ray.fun#
+vless://ef268b07-a6d6-44d4-a800-889e5c7bd2a1@Artemis.sbs:80?path=%2F%40Artemis_vpn&security=none&encryption=none&host=free-03.quado-02.buzz&type=ws#%D8%B1%D8%B6%D8%A7%DB%8C%DB%8C

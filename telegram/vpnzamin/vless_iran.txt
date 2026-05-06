@@ -1,1 +1,1 @@
-vless://1a4f9baa-b135-45e0-ba40-b11e30545c69@qq.mmd111.sbs:46541?security=none&encryption=none&host=speedtest.net&headerType=http&type=tcp#
+vless://b7eff165-572e-4268-a32d-ea18fa01002d@104.31.16.65:8443?mode=gun&security=tls&encryption=none&type=grpc&serviceName=&sni=ch.donaldvpn.sbs#%40vpnzamin+%DA%A9%D8%A7%D9%86%D8%A7%D9%84+%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85%DB%8C

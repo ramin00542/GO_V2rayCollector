@@ -1,2 +1,1 @@
-vless://cad855e2-973b-40ec-b1c2-d12f8a5b40bc@ali.faroo.space:80?path=%2F&security=none&encryption=none&host=admin-panell.musicmovmj.space&type=ws#%40V2ray_vemo
-vless://a1f06046-4b2b-47b0-864c-3d35a344bbde@tamit.ir:8443?path=%2F%3Fe…
+vless://8d975dee-ef51-43e0-b2b5-51e0b3725d50@tamit.ir:2096?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=test.moviijmusic.space&fp=chrome&type=ws&sni=test.moviijmusic.space#V2ray_VEMO

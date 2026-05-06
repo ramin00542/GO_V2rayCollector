@@ -1,4 +1,6 @@
-vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?path=%2F&security=none&encryption=none&host=sr.novatechsapr.ir&type=ws#@SPEEDS_VPN-جوین-بدید
-vless://5eb86c04-381a-4493-abf1-44511e5a4f26@snapp.ir:80?path=/&security=&encryption=none&host=simorgh.darerio.ir&type=ws#🐦‍🔥-@SPEEDS_VPN
-vless://ca2f0962-d16a-4720-914d-232d46edc9f9@pg.nexorainnovationhub.ir:80?path=/&security=none&encryption=none&host=finland.lezzaluxa.ir&type=ws#🐦‍🔥-@SPEEDS_VPN
-vless://13d012d2-16fd-48c3-92b4-571dacf610f8@snapp.ir:80?path=/&security=none&encryption=none&host=simorgh.darerio.ir&type=ws#🐦‍🔥-@SPEEDS_VPN
+vless://fc9855a7-116d-4f81-b601-e632df7a2f0a@arvancloud.ir:80/?path=%40TunizoNET&security=none&encryption=none&host=ri.amirenzohost.ir&type=ws#🐦‍🔥-@SPEEDS_VPN
+vless://adcf9278-847d-4f37-9571-fc3989ba6402@snapp.ir:2082?path=%2F&security=none&encryption=none&host=op2.electrodragon.ir&type=ws#🐦‍🔥-@SPEEDS_VPN
+vless://4f127da2-1e6d-4287-855c-b99a5782988d@snapp.ir:80?path=/&security=none&encryption=none&host=simorgh.darerio.ir&type=ws#🐦‍🔥-@SPEEDS_VPN
+vless://13d012d2-16fd-48c3-92b4-571dacf610f8@snapp.ir:80?path=/&security=none&encryption=none&host=simorgh.darerio.ir&type=ws#
+vless://7f912339-fe20-49ce-a273-1a43b82c13d5@185.143.233.5:2082?security=none&allowInsecure=0&encryption=none&type=ws&host=cdn.mizbanertebatfarda.ir&path=/#🐦‍🔥-@SPEEDS_VPN
+vless://df08ab2f-fed0-46c6-8f44-53555c4d70ea@dl2.silentrp.ir:80?path=/js&security=none&encryption=none&host=dl2.silentrp.ir&type=ws#

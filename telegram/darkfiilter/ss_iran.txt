@@ -1,1 +1,1 @@
-vless://db47858f-d33d-4177-a1d8-80898cf99af9@217.69.6.138:442/?type=grpc&encryption=none&flow=&serviceName=FOX_VPN66&sni=sourceforge.net&fp=firefox&security=reality&pbk=5ymESWL8fiNj53FXaFl9VoiyP775drBZ9t97Ie_luwY&sid=d8c6a509#
+vless://db47858f-d33d-4177-a1d8-80898cf99af9@217.69.6.138:442/?type=grpc&encryption=none&flow=&serviceName=FOX_VPN66&sni=sourceforge.net&fp=firefox&security=reality&pbk=5ymESWL8fiNj53FXaFl9VoiyP775drBZ9t97Ie_luwY&sid=d8c6a509#%F0%9F%91%89%F0%9F%8F%BB%20tel%3A%40DarkFiilter

@@ -1,9 +1,9 @@
-https://t.me/socks?server=62.220.126.56&port=32656@proxy_kafee
-https://t.me/socks?server=62.220.126.56&port=32737@proxy_kafee
 https://t.me/socks?server=62.220.126.92&port=30685@proxy_kafee
-https://t.me/socks?server=62.220.126.56&port=32438@proxy_kafee
-https://t.me/socks?server=62.220.126.56&port=32236@proxy_kafee
 https://t.me/socks?server=62.220.126.56&port=31920@proxy_kafee
-https://t.me/ronaldo1370000
-https://t.me/socks?server=62.220.126.56&port@proxy_kafee
 https://t.me/socks?server=185.8.172.128&port=443@proxy_kafee
+https://t.me/socks?server=62.220.126.56&port=32438@proxy_kafee
+https://t.me/socks?server=62.220.126.56&port=32737@proxy_kafee
+https://t.me/socks?server=62.220.126.56&port@proxy_kafee
+https://t.me/socks?server=62.220.126.56&port=32236@proxy_kafee
+https://t.me/socks?server=62.220.126.56&port=32656@proxy_kafee
+https://t.me/ronaldo1370000

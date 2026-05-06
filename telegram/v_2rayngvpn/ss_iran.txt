@@ -1,6 +1,1 @@
-vless://91440b27-a0e5-4107-9aee-478361210fcd@www.speedtest.net:80?path=%2Ftelegram%3DV_2RAYNGVPN&security=none&encryption=none&host=FySuMyYk3.aMirsiTesos.sItE.&type=httpupgrade#
-vless://1c607eb9-ccc8-4405-b19c-a9b06d7baee2@opv2raybot1.v2moxbot.store:2052?path=%2F%3Fed%3D2560&security=none&encryption=none&host=opv2raybot.v2moxbot.store&type=ws#
-vless://1c607eb9-ccc8-4405-b19c-a9b06d7baee2@opv2raybot1.v2moxbot.store:2052?path=%2F%3Fed%3D2560&security=none&encryption=none&host=opv2raybot.v2moxbot.store&type=ws#%40Opv2raybot
-vless://d34dac88-5207-49a3-b5dc-1b737e2a7f6f@8.6.112.0:443?path=%2F141.95.127.113%3D2053&security=tls&encryption=none&insecure=0&host=lutranautilus.qzz.io&type=ws&allowInsecure=0&sni=lutranautilus.qzz.io#%40V_2rayngVpn%20%D9%BE%D8%B1%20%D8%B3%D8%B1%D8%B9%D8%AA
-vless://d3153cb1-c5e5-480e-9929-d5c608cf0535@www.parsvds.ir:8080?path=%2Ftelegram%3DV_2RAYNGVPN&security=none&encryption=none&host=FySuMyYk3.aMirsiTesos.sItE.&type=ws#%40V_2rayngVpn
-vless://bfe63cc5-412d-4aa7-b04e-75c9d52b5831@www.zula.ir:80?path=%2Ftelegram%3DV_2RAYNGVPN&security=none&encryption=none&host=FySuMyYk3.aMirsiTesos.sItE.&type=httpupgrade#%40V_2rayngVpn
+vless://d34dac88-5207-49a3-b5dc-1b737e2a7f6f@8.6.112.0:443?path=%2F141.95.127.113%3D2053&security=tls&encryption=none&insecure=0&host=lutranautilus.qzz.io&type=ws&allowInsecure=0&sni=lutranautilus.qzz.io#

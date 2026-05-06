@@ -1,3 +1,2 @@
-vless://78e4df0c-5174-4e18-a874-995ef6e6a38d@speedtest.net:80?path=%2Folem%2Fws%3Fed%3D1024&security=none&encryption=none&host=foffmelo.com&type=ws#%D8%A8%D9%87%20%D8%B9%D8%B4%D9%82%20%D8%A8%DA%86%D9%87%20%D9%87%D8%A7%DB%8C%20%DA%A9%D8%A7%D9%86%D8%A7%D9%84%F0%9F%98%8D%E2%99%A5%EF%B8%8F
-vless://bc1cfd52-fddf-4c94-affd-cdc9f47eafde@194.60.133.108:2095?path=%2Fvless&security=none&encryption=none&type=ws#
-vless://e5c756d0-6270-4207-b830-6518385cea93@18.192.200.226:18916?type=tcp&security=none#
+vless://e5c756d0-6270-4207-b830-6518385cea93@18.192.200.226:18916?type=tcp&security=none#18916-IP
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTozVG5RZGdtMm1WSlFidVNDWG1SNVZj@81.19.141.45:443#

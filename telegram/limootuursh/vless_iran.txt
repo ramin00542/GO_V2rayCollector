@@ -1,1 +1,4 @@
-vless://b9ad895b-12ac-40fc-a5ac-a5b2a1285001@104.21.28.62:443?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=3k.pureboy.eu.org&type=ws&sni=3k.pureboy.eu.org#25+YALDA+NIGHT+%F0%9F%8D%89
+vless://b9ad895b-12ac-40fc-a5ac-a5b2a1285001@3k.pureboy.eu.org:443?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=3k.pureboy.eu.org&type=ws&sni=3k.pureboy.eu.org#26+YALDA+NIGHT+%F0%9F%8D%89
+vless://61958b98-d52a-420e-bb42-a3fd22985895@telus.com:2096?mode=gun&security=tls&encryption=none&alpn=h2,http/1.1&fp=chrome&type=grpc&serviceName=.....&sni=pol.dalixw.fun#
+vless://f9f89381-7aa4-4c1f-8ce5-4e0e15453d90@49.12.192.107:2096?mode=gun&security=reality&encryption=none&pbk=OVCexPrzOMdpDzigcnRe-Ufilj4qQe2bXA-LAT---jo&fp=chrome&type=grpc&serviceName=ZEDMODEON&sni=sourceforge.net&sid=e46a1eae#29+YALDA+NIGHT+%F0%9F%8D%89
+vless://1dffb1fd-09b3-4bbe-9631-a3ae6a9a57d1@104.18.78.200:80?path=%2F&security=none&encryption=none&host=gxg7RQ.dL-apArAT.coM&type=ws#

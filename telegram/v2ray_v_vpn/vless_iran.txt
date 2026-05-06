@@ -1,2 +1,2 @@
-vless://982c75a1-e8f8-4006-b50f-42a2c3bdd0b2@varzesh3.com:80?type=ws&encryption=none&path=%2Fws&host=nobody.fasterspeed.ir&security=none
-vless://4d400592-45a1-4e05-80f6-8581658e71eb@5.159.54.140:443?encryption=none&type=tcp&security=reality&headerType=none&sni=aparat.com&fp=firefox&allowInsecure=1&pbk=A6_kAMUcoxeuilXwMvzPYFAP8ekULjxDu4KmQssG7Gc&sid=510b7f2f&spx=%2F#
+vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?path=%2F&security=&encryption=none&host=sr.novatechsapr.ir&type=ws#alavi
+vless://3db4f30e-8237-40a3-92d4-f5aabb87b797@snapp.ir:2086?type=ws&encryption=none&path=&host=jing.eemehaze.lol&security=none#@d1alavi

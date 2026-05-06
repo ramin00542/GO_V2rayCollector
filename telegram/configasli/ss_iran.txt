@@ -1,2 +1,1 @@
-vless://83e410d7-810f-48f8-9c90-f90010642313@91.107.183.90:53234?mode=gun&security=reality&encryption=none&pbk=nHcG3w_9U-6o7Cu-IBfxt28sUm7Cge8O6va5c3oJ0y8&fp=chrome&spx=%2F&type=grpc&serviceName=Telegram @Configasli&sni=www.speedtest.net&sid=d2fd9fe1#
-vless://a19f4213-fcb8-4384-9c85-cb51cae8ab8b@s1.aparat-movies-download.ir:4450?flow=xtls-rprx-vision&type=tcp&security=reality&fp=firefox&sni=zhaket.com&pbk=y6JSkggQ__RA_nmCJpX1_ddSQC6vzDUPaN7KyvjVuic#@LeavxVPN
+vless://8a5db114-7ad1-4922-aca4-b079a79f4f04@78.46.162.62:10878?mode=gun&security=reality&encryption=none&pbk=xQvsy1P86UklsO5dbNDjaaUiQK3A9PHpM6rirHWSSDw&fp=chrome&spx=%2F&type=grpc&serviceName=&sni=www.speedtest.net&sid=812db24b#

@@ -1,3 +1,1 @@
-vless://cd63c49a-d4cf-4856-89a6-6fe18b5070eb@snapp.ir:8880?encryption=none&type=ws&path=%2F&host=moein.akosha.ir#[🇮🇷]t.me/ConfigsHub
-vless://0d12ff24-5e9b-4c6a-bd92-397f4dd40165@arvancloud.ir:80?path=/&security=none&encryption=none&host=t1.tunnellinuweb.ir&type=ws#[🇮🇷]t.me/ConfigsHub
-vless://c4cb5a4b-6225-4c56-8f0b-7c23b4017d54@ww.iwantmoney.ir:8880?path=/&security=&encryption=none&type=ws#[🇮🇷]t.me/ConfigsHub
+vless://fc8dedc7-b2b9-4ff8-a78d-ba5daa1945ce@fastlyv2.panelha.com:80?path=cdn%2Fv2&security=&encryption=none&host=alireza6.global.ssl.fastly.net&type=ws#[🇮🇷]t.me/ConfigsHub

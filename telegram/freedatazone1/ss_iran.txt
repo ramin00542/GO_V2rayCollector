@@ -1,1 +1,1 @@
-vless://63d7155f-a53a-4573-84cf-532d35c8127c@139.59.125.84:42821?path=%2FFREE%20by%20Tharuwa%20%280767597317%29&security=none&encryption=none&host=m.zoom.us&type=ws#
+vless://ab63e55a-8600-4fae-90bd-2e180a2fe24e@139.59.125.84:8443?path=%2FFREE%20By%20Tharuwa%20%280767597317%29&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&fp=chrome&type=ws&sni=zoom.us#

@@ -1,1 +1,2 @@
-vless://e69d5f8a-2629-45ac-889b-981983209933@166.1.89.21:443?security=reality&encryption=none&pbk=PxiVEKI3dp1UpqzpgnD31-Wl4MFiHjTI23ylGFn5Slg&headerType=none&type=tcp&flow=xtls-rprx-vision&sni=www.apple.com&sid=111111#%40
+vless://7ef79266-c7e3-4dd5-937b-45ac56adcc16@snapp.ir:443?security=tls&type=ws&headerType=&path=%2Fws&host=vip2.tu5pars.ir&sni=vip2.tu5pars.ir&fp=&allowInsecure=1#
+vless://7ef79266-c7e3-4dd5-937b-45ac56adcc16@snapp.ir:443?security=tls&type=ws&headerType=&path=%2Fws&host=vip2.tu5pars.ir&sni=vip2.tu5pars.ir&fp=&allowInsecure=1#N7v2I7%20%7C%2060.0%20GB%20%7C%2031D

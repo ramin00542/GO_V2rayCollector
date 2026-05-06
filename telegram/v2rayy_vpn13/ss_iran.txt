@@ -1,7 +1,2 @@
-vless://VPNCUSTOMiZE@www.canva.com:443?path=%2F%3Fed%3D2048&security=tls&encryption=none&alpn=http/1.1&host=confignginxV2rayng.vpncustomize.Website&fp=chrome&type=ws&sni=confignginxV2rayng.vpncustomize.Website#join
-vless://VPNCUSTOMiZE@www.canva.com:443?path=%2F%3Fed%3D2048&security=tls&encryption=none&alpn=http/1.1&host=confignginxV2rayng.vpncustomize.Website&fp=chrome&type=ws&sni=confignginxV2rayng.vpncustomize.Website#@QrV2ray
-vless://b3303f6c-a8bb-47f5-ae8e-2b5da6ab5560@discord.gg:443?path=/&security=tls&encryption=none&alpn=h2,http/1.1&host=de.vpncustomize.Website&fp=chrome&type=ws&sni=de.vpncustomize.Website#@QrV2ray
-vless://3003c4dc-66c7-446c-b4ba-5f3ee893ec66@accpremium.outlineprivate.store:443?type=grpc&mode=multi&serviceName=@OUTLINEIRAN,@OUTLINEIRAN,@OUTLINEIRAN,@OUTLINEIRAN,@OUTLINEIRAN&security=reality&fp=firefox&sni=ftp.debian.org&pbk=bbGjxnVYyeEri21g3WxECXblTTUYtSdah1nn0zYeKUw&sid=6f760d96&spx=/#
-vless://3ae3befb-22ca-4316-9a98-f5812b4a5c84@discord.gg:443?path=/&security=tls&encryption=none&alpn=h2,http/1.1&host=de.vpncustomize.Website&fp=chrome&type=ws&sni=de.vpncustomize.Website#join
-vless://b3303f6c-a8bb-47f5-ae8e-2b5da6ab5560@discord.gg:443?path=/&security=tls&encryption=none&alpn=h2,http/1.1&host=de.vpncustomize.Website&fp=chrome&type=ws&sni=de.vpncustomize.Website#join
-vless://f7e08961-ba18-4ac8-aac0-e925107417af@discord.gg:443?path=/&security=tls&encryption=none&alpn=h2,http/1.1&host=de.vpncustomize.Website&fp=chrome&type=ws&sni=de.vpncustomize.Website#
+vless://338469e5-b7d6-43f2-ab41-837b9fbea6a4@172.67.192.245:443?path=%2F&security=tls&encryption=none&alpn=http/1.1&host=armanibashtestamouzesh.askdhbasikjbas.shop&fp=chrome&type=ws&sni=armanibashtestamouzesh.askdhbasikjbas.shop#%40V2RAY1_NG
+vless://e28bb3f8-e64a-4419-9496-33c46220354b@172.67.194.57:443?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=sdgf.bdfstt.sbs&type=ws&sni=sdgf.bdfstt.sbs#%40V2ray1_Ng

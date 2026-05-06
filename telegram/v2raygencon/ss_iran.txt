@@ -1,6 +1,5 @@
-vless://5976b860-e481-41e2-b2f2-9f8901bf84a2@94.183.241.159:22222?security=none&encryption=none&headerType=none&type=tcp#%40filembad
-vless://8992a806-e060-457d-acea-34262cd31043@91.217.10.166:9443?security=reality&type=tcp&headerType=&path=&host=&flow=xtls-rprx-vision&sni=api.avito.ru&fp=&pbk=WvNaAxI0W__qfUKbtysH4IwF155YENlv3PG6crCmPkA&sid=#
-vless://28c22b90-2c31-4e46-9cb3-d55fcab64294@78.157.47.150:52356?security=none&encryption=none&host=Zula.ir&headerType=http&type=tcp#%40@xAmyraly
-vless://a4f7ac23-8146-464b-a932-9753f97303aa@sr-d-2.sedarchahar.top:9102?security=&encryption=none&host=api.live98.ir&headerType=http&type=tcp#%F0%9F%87%A9%F0%9F%87%AA%20GERMANY%202
-vless://08b772b5-966b-4dd4-bbb1-0df97744a408@custom.rezadvr.ir:43434?security=none&encryption=none&headerType=none&type=tcp#
-vless://02f8ee0f-499a-4a9a-a150-f4dc8e4c85b2@de-2-tun-single.starping1.fun:8083?security=none&encryption=none&host=www.speedtest.net&headerType=http&type=tcp#%E2%97%BD%E2%96%AB%EF%B8%8F
+vless://a4f7ac23-8146-464b-a932-9753f97303aa@sr-d-2.sedarchahar.top:9102?security=&encryption=none&host=api.live98.ir&headerType=http&type=tcp#
+vless://8992a806-e060-457d-acea-34262cd31043@91.217.10.166:9443?security=reality&type=tcp&headerType=&path=&host=&flow=xtls-rprx-vision&sni=api.avito.ru&fp=&pbk=WvNaAxI0W__qfUKbtysH4IwF155YENlv3PG6crCmPkA&sid=#%40filembad
+vless://42ad4aa3-5741-417a-9cf8-60be19fbcd0a@entekhabat.iran.asiatech.iranvatanam.com:538?security=&encryption=none&host=rubika.ir%2Cigap.net%2Csplus.ir%2Cskyroom.online&headerType=http&type=tcp#%40filembad
+vless://5976b860-e481-41e2-b2f2-9f8901bf84a2@94.183.241.159:22222?security=none&encryption=none&headerType=none&type=tcp#
+vless://7f8da1f9-2d1c-43d8-ae16-2222e0c5da6b@s2.mesterkit.com:52917?encryption=none&security=none&type=tcp&headerType=http#

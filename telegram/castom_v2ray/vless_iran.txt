@@ -1,1 +1,2 @@
+vless://U@vpncustomize.cam:443?mode=gun&security=reality&encryption=none&pbk=55xH-tqPd6c0VZpbwlxRxhmfvp9lVUtp45CDJLpcw2I&fp=firefox&spx=%2F&type=grpc&serviceName=@VPNCUSTOMIZE&sni=www.iranserver.com&sid=6b0541cd#
 vless://0a45fb6b-77af-48b3-ab7d-8404d5ad5ccb@panel.castomayz.ir:2082?security=none&encryption=none&headerType=http&type=tcp#

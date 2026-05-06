@@ -1,3 +1,3 @@
+https://t.me/proxy?server=smoothvp1.ranginkamaan.de&port=443&secret=00000000000000000000000000000001
 https://t.me/proxy?server=57.128.19.46&port=443&secret=ee000000000000000000000000000000017777772e676f6f676c652e636f6d
 https://t.me/proxy?server=51.210.144.92&port=443&secret=935dd2eb2f6cafe78363b224099f75c8
-https://t.me/proxy?server=smoothvp1.ranginkamaan.de&port=443&secret=00000000000000000000000000000001

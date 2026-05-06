@@ -1,1 +1,2 @@
-vless://2322341b-74c0-49ca-8b7f-28705e99c909@shop.zonix.sbs:59420?type=tcp&path=%2F&host=@SHOPZONIX
+vless://2eefeacf-2bd3-495f-b042-7de1056d50b3@shop.zonix.sbs:26200?type=tcp&path=%2F&host=Speed.cloudflare.com&headerType=http&security=none#TELEGRAM
+vless://ad0f9b7d-1bf8-4267-8951-999b73595400@shop.zonix.sbs:59420?type=tcp&path=%2F&host=cloudflare.com&headerType=http&security=none#@SHOPZONIX

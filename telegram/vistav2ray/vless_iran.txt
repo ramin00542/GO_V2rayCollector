@@ -1,1 +1,2 @@
-vless://59ab21e3-c0cc-42d6-9ff5-fd49abfc0780@185.143.233.5:443?path=%2Fchat%3Fed%3D128&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&insecure=0&host=an.8lack.ir&fp=firefox&type=ws&allowInsecure=0&sni=an.8lack.ir#
+vless://388a6c57-87e7-420b-afe2-b3eb670fd7da@104.20.6.134:80?path=%2F%2B%40ProxyVPN11&security=none&encryption=none&host=vip.yaml7.ggff.net&type=ws#
+vless://22ef145a-aa80-4bfa-8519-2635c63ce851@kilb.simbaaa.top:443?security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&insecure=0&headerType=none&type=tcp&allowInsecure=0&sni=cdn.simbaaa.top#

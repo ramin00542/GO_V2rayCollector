@@ -1,5 +1,2 @@
-vless://505997ba-cbdb-466e-a3ad-69c6a4553b38@151.101.25.242:80?encryption=none&security=none&type=ws&host=pizzabama.global.ssl.fastly.net&path=%2Fcontainers%2Ffi#%F0%9F%93%A1%F0%9F%87%BA%F0%9F%87%B8%C2%AE%EF%B8%8F%F0%9F%86%94%5Bt.me%2FWEBHUBE%F0%9F%91%89MCI
-vless://1a94fbd9-79d2-4aa7-bf1d-074f678d27ab@172.66.128.70:80?encryption=none&security=none&type=ws&host=EqUiPPed-phOToZkoA7K5e6P.eCoTOuRiss.Co.uk.&path=%2F%3Fed#
-vless://a9c28cf3-1962-8824-1175-a69268a0e213@92.42.203.170:5690?encryption=none&security=none&type=tcp&headerType=none#%F0%9F%86%94%5Bt.me%2FWEBHUBE%5D%F0%9F%91%89IR4545
-vless://1a94fbd9-79d2-4aa7-bf1d-074f678d27ab@172.66.128.70:80?encryption=none&security=none&type=ws&host=EqUiPPed-phOToZkoA7K5e6P.eCoTOuRiss.Co.uk.&path=%2F%3Fed#%F0%9F%86%94%5Bt.me%2FWEBHUBE%5D%F0%9F%91%89MTN70128
-vless://a9c28cf3-1962-8824-1175-a69268a0e213@92.42.203.170:5690?encryption=none&security=none&type=tcp&headerType=none#
+vless://20df8c30-c07a-494e-b83d-4af21ee57788@perl.org:80?encryption=none&security=none&type=ws&host=lexeu.global.ssl.fastly.net&path=%2Fcontainers%2Ffi#%F0%9F%86%94%5Bt.me%2FWEBHUBE%5D%F0%9F%91%89MCI801
+vless://505997ba-cbdb-466e-a3ad-69c6a4553b38@151.101.25.242:80?encryption=none&security=none&type=ws&host=pizzabama.global.ssl.fastly.net&path=%2Fcontainers%2Ffi#

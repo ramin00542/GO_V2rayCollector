@@ -1,2 +1,4 @@
-vless://dbb7efe6-5bd2-4331-8cf5-e3d5c8cdd4ab@Tamin.ir:2083/?type=ws&encryption=none&path=%2F&host=s2.reevan.ir&security=tls&fp=firefox&alpn=h2%2Chttp%2F1.1&sni=s2.reevan.ir#%40filembad
-vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?encryption=none&security=none&type=ws&host=sr.novatechsapr.ir&path=%2F#%40filembad
+vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?encryption=none&type=ws&path=%2F&host=sr.novatechsapr.ir#%40filembad
+vless://2b80ea9f-a613-4386-b293-532b5c2e799b@pg.nexorainnovationhub.ir:80?path=%2F&security=none&encryption=none&host=germany.lezzaluxa.ir&type=ws#%40filembad
+vless://0d84cdbd-c0fb-47c6-ab5d-a25587df2a4a@185.143.233.5:80?path=%2Fxray&security=none&encryption=none&host=bot.vipiranian.de&type=ws#%40filembad
+vless://a160da89-e6a7-4335-a99b-60381d229058@185.143.234.235:2053?path=%3Fed%3D2048&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&insecure=0&host=dl.lexwill.site&fp=chrome&type=ws&allowInsecure=0&sni=dl.lexwill.site#%40filembad

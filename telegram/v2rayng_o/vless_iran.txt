@@ -1,1 +1,2 @@
-vless://7379eb18-959d-4b33-ddf7-e9369a0e1769@170.114.46.1:443?mode=gun&security=tls&encryption=none&type=grpc&serviceName=&sni=ger.vwfghin.info#join%E2%9C%93%5B%E2%84%A2%40v2ray_vpn_ir%5D-zut42uc
+vless://7379eb18-959d-4b33-ddf7-e9369a0e1769@170.114.46.173:443?mode=gun&security=tls&encryption=none&type=grpc&serviceName=&sni=ger.vwfghin.info#join%E2%9C%93%5B%E2%84%A2%40v2ray_vpn_ir%5D-zut42uc
+vless://7379eb18-959d-4b33-ddf7-e9369a0e1769@170.114.46.169:443?mode=gun&security=tls&encryption=none&type=grpc&serviceName=&sni=ger.vwfghin.info#join%E2%9C%93%5B%E2%84%A2%40v2ray_vpn_ir%5D-zut42uc

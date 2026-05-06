@@ -1,1 +1,1 @@
-vless://6f4a8cbd-cd62-4f54-85b6-36ced3aac3c3@uk2.connecton.surf:443?security=tls&type=ws&path=/vless#
+vless://e263415e-8181-4f89-8197-2da7c0f256d1@uk2.connecton.surf:443?security=tls&type=ws&path=/vless#

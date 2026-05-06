@@ -1,6 +1,2 @@
-vless://0d84cdbd-c0fb-47c6-ab5d-a25587df2a4a@185.143.233.5:80?path=%2Fxray&security=none&encryption=none&host=bot.vipiranian.de&type=ws#@wedbazgap
-vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?path=%2F&security=&encryption=none&host=sr.novatechsapr.ir&type=ws#@wedbazgap
-vless://c5e37ade-1f00-4dfa-a01d-3611f83f39e8@snapp.ir:80?encryption=none&type=ws&path=%2F&host=simorgh.darerio.ir#@wedbazgap
-vless://868f9a0f-aa09-4898-a213-e8f7ccf80091@stare.unknowns.ir:8080?encryption=none&type=ws&path=%2F#
-vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?encryption=none&type=ws&path=%2F&host=sr.novatechsapr.ir#@wedbazgap
-vless://6a54d481-27ee-4f24-b185-5ea44cb23073@snapp.ir:2095?encryption=none&type=ws&path=%2F&host=fb.bazisazy.ir#@wedbazgap
+vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?path=%2F&security=none&encryption=none&host=sr.novatechsapr.ir&type=ws#@wedbazgap
+vless://dae2ddc6-a892-495f-a001-181cec56ad12@snapp.ir:2052?encryption=none&type=ws&path=%2F&host=p1.razstar.ir#@wedbazgap

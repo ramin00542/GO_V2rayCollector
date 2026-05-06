@@ -1,1 +1,2 @@
-vless://12c230ce-1e3f-4185-b6cc-48553ca5c4d6@188.114.97.2…
+vless://12c230ce-1e3f-4185-b6cc-48553ca5c4d6@188.114.97.2:443?mode=gun&security=tls&encryption=none&type=grpc&serviceName=&sni=Teacherone2agV2rayes.Dreamsvn.Site#
+vless://d727ba19-4f1a-490f-a624-e10a7b76dac0@188.114.96.2:2087?mode=gun&security=tls&encryption=none&type=grpc&serviceName=&sni=WebSite.agV2raYes.Top#GERMANY+%F0%9F%87%A9%F0%9F%87%AA

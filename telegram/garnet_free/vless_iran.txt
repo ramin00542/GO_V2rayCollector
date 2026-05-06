@@ -1,5 +1,6 @@
-vless://a75cb418-c1d6-476a-9464-ad1bd5181e3c@discord.gg:443?path=%2F&security=tls&encryption=none&alpn=h2,http/1.1&host=e.vpncustomize.Website&fp=chrome&type=ws&sni=de.vpncustomize.Website#
-vless://a75cb418-c1d6-476a-9464-ad1bd5181e3c@discord.gg:8080?path=%2F&security=none&encryption=none&host=de.vpncustomize.Website&type=ws#@Garnet_Free
-vless://9ff5546e-a7ce-4c89-a789-d711b11326e1@ygvbhutfcdcfcv.beingpopular.sbs:2095?type=tcp&path=%2F&host=support.cloudflare.com&headerType=http&security=none#@Garnet_Free
-vless://d3fd9082-6ba0-42ef-9a79-87c7fea7eda9@garnet.torch1.top:443/?type=ws&path=%2F&security=tls&fp=chrome&alpn=h2%2Chttp%2F1.1#
 vless://9ff5546e-a7ce-4c89-a789-d711b11326e1@ygvbhutfcdcfcv.beingpopular.sbs:2095?type=tcp&path=%2F&host=support.cloudflare.com&headerType=http&security=none#
+vless://d342d11e-d424-4583-b36e-524ab1f0afa4@104.19.19.58:2096?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=baipiao1.curly-train.pages.dev&type=ws&sni=baipiao1.curly-train.pages.dev#@Garnet_Free
+vless://d3fd9082-6ba0-42ef-9a79-87c7fea7eda9@garnet.torch1.top:443/?type=ws&path=%2F&security=tls&fp=chrome&alpn=h2%2Chttp%2F1.1#
+vless://a75cb418-c1d6-476a-9464-ad1bd5181e3c@discord.gg:443?path=%2F&security=tls&encryption=none&alpn=h2,http/1.1&host=e.vpncustomize.Website&fp=chrome&type=ws&sni=de.vpncustomize.Website#
+vless://8e7e606b-ff2c-4dd3-b3e1-6ebf0c46c97b@ygvbhutfcdcfcv.beingpopular.sbs:2082?type=tcp&path=%2F&host=www.cloudflare.com&headerType=http&security=none#@Garnet_Free
+vless://a75cb418-c1d6-476a-9464-ad1bd5181e3c@discord.gg:8080?path=%2F&security=none&encryption=none&host=de.vpncustomize.Website&type=ws#@Garnet_Free
