@@ -1,0 +1,2 @@
+vless://5be7ilee481-c711-4b74-964e-bbd4453fe138@185.145.233.5:443?encryption=none&security=tls&type=ws&headerType=none&path=%2Fchat%3Fed%3D128&host=dn.8lack.ir&sni=dn.8lack.ir&fp=firefox&alpn=h2%2Chttp%2F1.1#@crayingroom
+vless://835b7482-9686-45e8-8cad-8ad9feab7465@185.143.233.5:443?encryption=none&security=tls&type=ws&headerType=none&path=%2F%40alaedin%3Fed%3D128&host=alaedin9.8lack.ir&sni=alaedin9.8lack.ir&fp=firefox&alpn=h2%2Chttp%2F1.1#@crayingroom

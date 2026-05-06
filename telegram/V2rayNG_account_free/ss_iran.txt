@@ -1,0 +1,3 @@
+vless://76545e52-ec23-4cbe-e0bc-43ef75ae49fd@asia1.novahomedesigntips.com:17200?type=ws#30GB-955265109-vgkv
+vless://8e615b78-0905-48bb-ab68-fb0dfdff7688@www.speedtest.net:8443?type=ws&host=server10.coin.name.ng&path=/&security=tls&sni=server10.coin.name.ng#
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpDeHRjWmFPU0ZZaUpubG95VFpKMHoy@89.22.234.121:443?type=tcp#

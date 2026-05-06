@@ -1,0 +1,1 @@
+vless://40e1b62b-6245-4ec0-b57d-6dc4190db762@185.143.234.235:8080?path=%2F&security=none&encryption=none&host=io.binping.lol&type=ws#

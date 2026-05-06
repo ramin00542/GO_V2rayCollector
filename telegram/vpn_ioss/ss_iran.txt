@@ -1,0 +1,1 @@
+vless://98aec3c3-d957-4363-9933-018e533c7c06@freedom.gov:443?path=%2F%3Fhost%3Alocalhoat%3A443%2F&security=tls&alpn=http%2F1.1&encryption=none&host=uk.dlaparat.ir&fp=chrome&type=ws&sni=uk.dlaparat.ir#
