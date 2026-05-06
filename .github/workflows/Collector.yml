@@ -5,7 +5,7 @@ on:
     - cron: "*/15 * * * *"
 
 env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true   # <-- برای رفع اخطار Node.js 20
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   build:
@@ -26,20 +26,22 @@ jobs:
     - name: Download dependencies
       run: go mod download
 
-    - name: Tidy dependencies   # <-- مرحله جدید برای رفع missing go.sum entry
-      run: go mod tidy
+    - name: Tidy dependencies (regenerate go.sum)
+      run: |
+        rm -f go.sum
+        go mod tidy
 
     - name: Build Go app
       run: go build -o myapp
 
     - name: Run collector
-      run: ./myapp -sort -clash   # فلگ‌های دیگر مثل -dedup را هم می‌توانید اضافه کنید
+      run: ./myapp -sort -clash
 
     - name: Commit changes
       run: |
         git config --local user.email "actions@github.com"
         git config --local user.name "GitHub Actions"
-        git add telegram/ subscription/ mixed/ daily_archive/ config_cache.json clash-config.yaml stats.json
+        git add telegram/ subscription/ mixed/ daily_archive/ config_cache.json clash-config.yaml stats.json go.sum
         git diff --staged --quiet || git commit -m "✔️ $(date '+%Y-%m-%d %H:%M:%S') Collected"
 
     - name: Push changes
