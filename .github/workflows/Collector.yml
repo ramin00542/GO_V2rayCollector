@@ -10,6 +10,12 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # 👇 دسترسی‌های لازم برای attest
+    permissions:
+      id-token: write
+      attestations: write
+      artifact-metadata: write
+      contents: read
 
     steps:
     - name: Checkout repository
@@ -36,6 +42,12 @@ jobs:
 
     - name: Run collector
       run: ./myapp -sort -clash
+
+    # 👇 مرحله attest در اینجا اضافه می‌شود (بعد از build و قبل از commit)
+    - name: Attest Build Provenance
+      uses: actions/attest-build-provenance@v4.1.0
+      with:
+        subject-path: 'myapp'
 
     - name: Commit changes
       run: |
