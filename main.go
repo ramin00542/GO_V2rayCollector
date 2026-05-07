@@ -78,7 +78,7 @@ var (
 	keyToFingerprint = make(map[string]string)
 	fpMutex          sync.RWMutex
 	telegramOffsets  = make(map[string]string)
-	offsetsMutex     sync.Mutex
+	offsetsMutex     sync.RWMutex
 	mainWg           sync.WaitGroup
 
 	lastArchiveTime  int64
