@@ -23,6 +23,10 @@
 - 🟢 [unknown.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/all_configs/subscription/unknown.txt)
 
 ## 📁 all_configs/telegram
+- 🟢 [all_protocols.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/all_configs/telegram/all_protocols.txt)
+- 🟢 [http.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/all_configs/telegram/http.txt)
+- 🟢 [mtproto.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/all_configs/telegram/mtproto.txt)
+- 🟢 [slipnet.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/all_configs/telegram/slipnet.txt)
 
 ## 📁 daily_archive
 ### 2026-05-07

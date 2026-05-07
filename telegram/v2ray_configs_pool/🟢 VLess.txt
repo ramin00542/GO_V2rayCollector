@@ -1,0 +1,3 @@
+vless://2114c6a0-bbb5-4cf7-be56-ff507eee32a0@Snapp.ir:443?type=ws&encryption=none&path=/&host=&security=tls&fp=chrome&alpn=h2,http/1.1&sni=Geramaphone.enzoweb.ir#👉🆔@v2ray_configs_pool📡🇮🇷®️Iran©️Tehrān🅿️ping:88.81ms
+vless://f37eaf42-40dc-4cf4-a87d-53b2bc071115@nobitex.ir:8080?path=/&security=&encryption=none&host=sayanstoree.tel.goleij.ir&type=ws#👉🆔@v2ray_configs_pool📡🇮🇷®️Iran©️Tehrān🅿️ping:93.69ms
+vless://08629fcf-2eb1-4491-b878-3adf8e5b2c33@nobitex.ir:8080?path=/&security=&encryption=none&host=sayanstoree.tel.goleij.ir&type=ws#👉🆔@v2ray_configs_pool📡🇮🇷®️Iran©️Tehrān🅿️ping:93.69ms

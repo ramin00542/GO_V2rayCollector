@@ -1,0 +1,1 @@
+tg://proxy?server=77.42.27.171&port=4455&secret=dd104462821249bd7ac519130220c25d09https://t.me/socks?server=62.220.126.92&port=30055https://t.me/socks?server=62.220.126.92&port=30376@Capoit

@@ -1,0 +1,7 @@
+https://t.me/proxy?server=deltavpn1bot.deltamarket4.ir&port=1405&secret=dd943d361f70a15b117d6f83e38dfa7ee9@crayingroom
+https://t.me/proxy?server=195.254.165.247&port=25565&secret=dd79e344818749bd7ac519130220c25d09&user=%40@crayingroom@crayingroom
+https://t.me/proxy?server=deltavpn1bot.deltamarket5.ir&port=8443&secret=dd8013a8fc815b05f1d9da361ec6dc4b4b@crayingroom
+https://t.me/socks?server=185.232.152.86&port=5050&user=%40@crayingroom@crayingroom
+https://t.me/proxy?server=213.233.184.133&port=443&secret=ee3d212b624aff427b01ec1aa0d9c8c0f87777772e636c6f7564666c6172652e636f6d#@crayingroom@crayingroom
+https://t.me/socks?server=62.220.126.92&port=31876@crayingroom
+https://t.me/socks?server=91.222.196.93&port=6080&user=123&pass=crayingroom@crayingroom

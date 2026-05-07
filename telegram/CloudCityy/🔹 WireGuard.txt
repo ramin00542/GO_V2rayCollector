@@ -1,0 +1,2 @@
+wireguard://OOicuCbzj3puvgvdxm6hTBJJVdHoik06Rg444ziobXI%3D@37.32.13.144:9066?address=10.160.64.63&presharedkey=&reserved=0%2C0%2C0&publickey=6FEr0nfofl8%2BIsJNCVRmX03QjpBOb8mjP178TJI2yHY%3D&mtu=1420#%40CloudCity
+wireguard://OOicuCbzj3puvgvdxm6hTBJJVdHoik06Rg444ziobXI%3D@37.32.13.144:9066?address=10.160.64.63&publickey=6FEr0nfofl8%2BIsJNCVRmX03QjpBOb8mjP178TJI2yHY%3D&privatekey=OOicuCbzj3puvgvdxm6hTBJJVdHoik06Rg444ziobXI%3D#@CloudCityy
