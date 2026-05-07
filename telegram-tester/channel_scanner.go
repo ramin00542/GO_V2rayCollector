@@ -38,16 +38,16 @@ var (
 )
 
 type ChannelSuggestion struct {
-	URL      string
-	Current  bool
+	URL       string
+	Current   bool
 	Suggested bool
-	Reason   string
+	Reason    string
 }
 
 func main() {
 	if len(os.Args) < 2 {
 		fmt.Println("Usage: go run channel_scanner.go <channels.csv> [output.csv]")
-		fmt.Println("Example: go run channel_scanner.go channels.csv channels_new.csv")
+		fmt.Println("Example: go run channel_scanner.go ../channels.csv ../channels_suggested.csv")
 		os.Exit(1)
 	}
 	inputFile := os.Args[1]
@@ -108,7 +108,7 @@ func main() {
 		time.Sleep(1 * time.Second) // احترام به محدودیت
 	}
 
-	// نوشتن فایل خروجی جدید
+	// نوشتن فایل CSV خروجی
 	outFile, err := os.Create(outputFile)
 	if err != nil {
 		fmt.Printf("Error creating output file: %v\n", err)
@@ -117,10 +117,7 @@ func main() {
 	defer outFile.Close()
 	writer := csv.NewWriter(outFile)
 	defer writer.Flush()
-
-	// نوشتن هدر
 	writer.Write([]string{"URL", "AllMessagesFlag", "SuggestedFlag", "Reason"})
-	// نوشتن داده‌ها
 	for _, res := range results {
 		writer.Write([]string{
 			res.URL,
@@ -129,18 +126,76 @@ func main() {
 			res.Reason,
 		})
 	}
-	fmt.Printf("\n✅ Done. Output written to %s\n", outputFile)
+	fmt.Printf("\n✅ Output CSV written to %s\n", outputFile)
 
-	// نمایش خلاصه
-	var trueCount, falseCount int
+	// محاسبه آمار
+	var trueCurrent, falseCurrent int
+	var trueSuggested, falseSuggested int
+	reasonCounts := make(map[string]int)
+	var deadChannels []string
+
 	for _, res := range results {
-		if res.Suggested {
-			trueCount++
+		if res.Current {
+			trueCurrent++
 		} else {
-			falseCount++
+			falseCurrent++
+		}
+		if res.Suggested {
+			trueSuggested++
+		} else {
+			falseSuggested++
+		}
+		reasonCounts[res.Reason]++
+		if strings.Contains(res.Reason, "No config found") {
+			deadChannels = append(deadChannels, res.URL)
 		}
 	}
-	fmt.Printf("Summary: Suggested true: %d, Suggested false: %d\n", trueCount, falseCount)
+
+	// نوشتن فایل خلاصه متن
+	summaryContent := strings.Builder{}
+	summaryContent.WriteString("=== Channel Scanner Summary ===\n")
+	summaryContent.WriteString(fmt.Sprintf("Scan date: %s\n", time.Now().Format("2006-01-02 15:04:05")))
+	summaryContent.WriteString(fmt.Sprintf("Total channels processed: %d\n\n", len(results)))
+	summaryContent.WriteString("--- Current Flags ---\n")
+	summaryContent.WriteString(fmt.Sprintf("true: %d\n", trueCurrent))
+	summaryContent.WriteString(fmt.Sprintf("false: %d\n\n", falseCurrent))
+	summaryContent.WriteString("--- Suggested Flags ---\n")
+	summaryContent.WriteString(fmt.Sprintf("Suggested true (need AllMessagesFlag=true): %d\n", trueSuggested))
+	summaryContent.WriteString(fmt.Sprintf("Suggested false (AllMessagesFlag=false is enough): %d\n\n", falseSuggested))
+	summaryContent.WriteString("--- Reasons breakdown ---\n")
+	for reason, cnt := range reasonCounts {
+		summaryContent.WriteString(fmt.Sprintf("%s: %d\n", reason, cnt))
+	}
+	summaryContent.WriteString("\n--- Dead channels (no config found) ---\n")
+	if len(deadChannels) > 0 {
+		for i, ch := range deadChannels {
+			if i >= 20 {
+				summaryContent.WriteString(fmt.Sprintf("... and %d more\n", len(deadChannels)-20))
+				break
+			}
+			summaryContent.WriteString(fmt.Sprintf("%s\n", ch))
+		}
+	} else {
+		summaryContent.WriteString("None\n")
+	}
+	summaryContent.WriteString("\n--- Action Items ---\n")
+	summaryContent.WriteString(fmt.Sprintf("* %d channels should be set to true (currently %d are true).\n", trueSuggested, trueCurrent))
+	if trueSuggested > trueCurrent {
+		summaryContent.WriteString("* You need to increase the number of true flags.\n")
+	} else if trueSuggested < trueCurrent {
+		summaryContent.WriteString("* You have too many true flags; you can safely set many to false.\n")
+	} else {
+		summaryContent.WriteString("* The number of true flags is already optimal.\n")
+	}
+	summaryContent.WriteString(fmt.Sprintf("* Consider removing %d dead channels to speed up the collector.\n", len(deadChannels)))
+
+	summaryFile := "channel_scan_summary.txt"
+	err = os.WriteFile(summaryFile, []byte(summaryContent.String()), 0644)
+	if err != nil {
+		fmt.Printf("Error writing summary file: %v\n", err)
+	} else {
+		fmt.Printf("✅ Summary written to %s\n", summaryFile)
+	}
 }
 
 func boolToString(b bool) string {
@@ -151,7 +206,6 @@ func boolToString(b bool) string {
 }
 
 func analyzeChannel(channelURL string) (bool, string) {
-	// تبدیل آدرس به فرمت t.me/s/
 	channelName := extractChannelName(channelURL)
 	if channelName == "" {
 		return false, "Invalid channel URL"
@@ -172,16 +226,15 @@ func analyzeChannel(channelURL string) (bool, string) {
 		return false, fmt.Sprintf("Parse error: %v", err)
 	}
 
-	// استخراج متن داخل pre/code
+	// متن داخل pre/code
 	var codeTexts []string
 	doc.Find("pre, code").Each(func(i int, s *goquery.Selection) {
 		codeTexts = append(codeTexts, s.Text())
 	})
 
-	// استخراج متن کل پیام‌ها (خارج از pre/code)
+	// متن کل پیام‌ها خارج از pre/code
 	var plainTexts []string
 	doc.Find(".tgme_widget_message_text").Each(func(i int, s *goquery.Selection) {
-		// clone element to remove pre/code children
 		clone := s.Clone()
 		clone.Find("pre, code").Remove()
 		plain := strings.TrimSpace(clone.Text())
@@ -190,7 +243,6 @@ func analyzeChannel(channelURL string) (bool, string) {
 		}
 	})
 
-	// بررسی وجود کانفیگ در هر گروه
 	hasConfigInCode := hasAnyConfig(strings.Join(codeTexts, "\n"))
 	hasConfigInPlain := hasAnyConfig(strings.Join(plainTexts, "\n"))
 
