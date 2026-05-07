@@ -79,7 +79,7 @@ var (
 	keyToFingerprint = make(map[string]string)
 	fpMutex          sync.RWMutex
 	telegramOffsets  = make(map[string]string)
-	offsetsMutex     sync.RWMutex // ← اصلاح شده از Mutex
+	offsetsMutex     sync.RWMutex
 	mainWg           sync.WaitGroup
 
 	lastArchiveTime  int64
@@ -125,6 +125,30 @@ type ClashProxy struct {
 	Network  string `yaml:"network,omitempty"`
 	TLS      bool   `yaml:"tls,omitempty"`
 	Sni      string `yaml:"sni,omitempty"`
+}
+
+// ========================== تابع تبدیل پروتکل به نام فایل با ایموجی ==========================
+func protocolFileName(proto string) string {
+	switch proto {
+	case "vmess":
+		return "🔵 VMess"
+	case "vless":
+		return "🟢 VLess"
+	case "trojan":
+		return "🔒 Trojan"
+	case "ss":
+		return "⚡ Shadowsocks"
+	case "mixed":
+		return "🌍 Mixed"
+	case "mtproto":
+		return "🟣 MTProto"
+	case "http":
+		return "🟠 HTTP Proxy"
+	case "socks":
+		return "🟡 SOCKS Proxy"
+	default:
+		return proto
+	}
 }
 
 // ========================== MAIN ==========================
@@ -185,13 +209,12 @@ func initTelegramLimiter() {
 	telegramLimiter = rate.NewLimiter(rate.Limit(TelegramRequestsPerSecond), TelegramBurstSize)
 }
 
-// ==================== آرشیو روزانه (فقط mixed/) ====================
+// ==================== آرشیو روزانه (بکاپ کامل all_configs و سپس پاک کردن) ====================
 func archiveDaily() {
 	today := time.Now().Format("2006-01-02")
 	archiveDir := filepath.Join("daily_archive", today)
 	markerFile := filepath.Join(archiveDir, ".done")
 
-	// اگر امروز قبلاً آرشیو شده، برگرد
 	if _, err := os.Stat(markerFile); err == nil {
 		gologger.Debug().Msg("Already archived today, skipping")
 		return
@@ -202,12 +225,22 @@ func archiveDaily() {
 		return
 	}
 
-	// فقط فایل‌های پوشه mixed/ را کپی کن (http_iran.txt, vmess_iran.txt, ...)
-	mixedFiles, err := filepath.Glob("mixed/*.txt")
-	if err != nil {
-		gologger.Error().Msgf("Failed to list mixed files: %v", err)
+	// 1. کپی کل all_configs به داخل daily_archive (با حفظ زیرپوشه‌ها)
+	if err := copyDir("all_configs", archiveDir); err != nil {
+		gologger.Error().Msgf("Failed to copy all_configs: %v", err)
 		return
 	}
+
+	// 2. خالی کردن تمام فایل‌های متنی داخل all_configs
+	files, _ := filepath.Glob("all_configs/*/*.txt")
+	for _, f := range files {
+		if err := os.Truncate(f, 0); err != nil {
+			gologger.Warning().Msgf("Error truncating %s: %v", f, err)
+		}
+	}
+
+	// 3. (اختیاری) کپی فایل‌های mixed برای دسترسی سریع در ریشه آرشیو
+	mixedFiles, _ := filepath.Glob("mixed/*.txt")
 	for _, src := range mixedFiles {
 		dest := filepath.Join(archiveDir, filepath.Base(src))
 		data, err := os.ReadFile(src)
@@ -215,17 +248,43 @@ func archiveDaily() {
 			gologger.Warning().Msgf("Read error %s: %v", src, err)
 			continue
 		}
-		if len(data) == 0 {
-			continue
-		}
-		if err := os.WriteFile(dest, data, 0644); err != nil {
-			gologger.Warning().Msgf("Write error %s: %v", dest, err)
+		if len(data) > 0 {
+			if err := os.WriteFile(dest, data, 0644); err != nil {
+				gologger.Warning().Msgf("Write error %s: %v", dest, err)
+			}
 		}
 	}
 
-	// علامتگذاری انجام آرشیو امروز
+	// 4. به‌روزرسانی زمان آخرین آرشیو
+	archiveTimeMutex.Lock()
+	lastArchiveTime = time.Now().Unix()
+	archiveTimeMutex.Unlock()
+	saveLastArchiveTime()
+
 	os.WriteFile(markerFile, []byte("archived"), 0644)
-	gologger.Info().Msgf("Archived mixed files to %s", archiveDir)
+	gologger.Info().Msgf("Archived all_configs to %s and cleared", archiveDir)
+}
+
+// تابع کمکی برای کپی بازگشتی پوشه
+func copyDir(src, dst string) error {
+	return filepath.Walk(src, func(path string, info os.FileInfo, err error) error {
+		if err != nil {
+			return err
+		}
+		rel, err := filepath.Rel(src, path)
+		if err != nil {
+			return err
+		}
+		destPath := filepath.Join(dst, rel)
+		if info.IsDir() {
+			return os.MkdirAll(destPath, info.Mode())
+		}
+		data, err := os.ReadFile(path)
+		if err != nil {
+			return err
+		}
+		return os.WriteFile(destPath, data, info.Mode())
+	})
 }
 
 // ==================== توابع اولیه ====================
@@ -981,7 +1040,7 @@ func extractAllConfigs(text string) []string {
 	return results
 }
 
-// ==================== خروجی‌های اصلی ====================
+// ==================== خروجی‌های اصلی با نام فایل‌های ایموجی ====================
 func writeOutputFiles() {
 	writeTelegramPerChannel()
 	writeMixedFromTelegramAndSubscription()
@@ -1019,7 +1078,8 @@ func writeTelegramPerChannel() {
 			}
 			content := strings.Join(configs, "\n")
 			if content != "" {
-				filename := filepath.Join(channelDir, proto+"_iran.txt")
+				displayName := protocolFileName(proto)
+				filename := filepath.Join(channelDir, displayName+".txt")
 				if err := os.WriteFile(filename, []byte(content), 0644); err != nil {
 					gologger.Warning().Msgf("Failed to write %s: %v", filename, err)
 				}
@@ -1035,36 +1095,32 @@ func writeMixedFromTelegramAndSubscription() {
 	}
 	cacheMutex.RLock()
 	defer cacheMutex.RUnlock()
-	protoConfigs := make(map[string][]string)
+
+	var unknownConfigs []string
 	for cfg, e := range configCache {
 		if (e.Source == "telegram" || e.Source == "subscription") && (cutoff == 0 || e.Timestamp >= cutoff) {
 			proto := e.Protocol
 			if proto == "" {
 				proto = detectProtocol(cfg)
 			}
-			protoConfigs[proto] = append(protoConfigs[proto], cfg)
-		}
-	}
-	for proto, configs := range protoConfigs {
-		if *sortFlag {
-			sort.Slice(configs, func(i, j int) bool {
-				return configCache[configs[i]].Timestamp > configCache[configs[j]].Timestamp
-			})
-		}
-		content := strings.Join(configs, "\n")
-		if content != "" {
-			filename := filepath.Join("mixed", proto+"_iran.txt")
-			if err := os.WriteFile(filename, []byte(content), 0644); err != nil {
-				gologger.Warning().Msgf("Failed to write %s: %v", filename, err)
+			if proto == "mixed" {
+				unknownConfigs = append(unknownConfigs, cfg)
 			}
 		}
 	}
-	if mixedConfigs, ok := protoConfigs["mixed"]; ok {
-		content := strings.Join(mixedConfigs, "\n")
-		if content != "" {
-			if err := os.WriteFile(filepath.Join("mixed", "mixed_iran.txt"), []byte(content), 0644); err != nil {
-				gologger.Warning().Msgf("Failed to write mixed_iran.txt: %v", err)
-			}
+
+	if *sortFlag {
+		sort.Slice(unknownConfigs, func(i, j int) bool {
+			return configCache[unknownConfigs[i]].Timestamp > configCache[unknownConfigs[j]].Timestamp
+		})
+	}
+
+	content := strings.Join(unknownConfigs, "\n")
+	if content != "" {
+		displayName := protocolFileName("mixed")
+		filename := filepath.Join("mixed", displayName+".txt")
+		if err := os.WriteFile(filename, []byte(content), 0644); err != nil {
+			gologger.Warning().Msgf("Failed to write %s: %v", filename, err)
 		}
 	}
 }
@@ -1091,7 +1147,8 @@ func writeSubscriptionFolder() {
 		}
 		content := strings.Join(configs, "\n")
 		if content != "" {
-			filename := filepath.Join("subscription", proto+"_iran.txt")
+			displayName := protocolFileName(proto)
+			filename := filepath.Join("subscription", displayName+".txt")
 			if err := os.WriteFile(filename, []byte(content), 0644); err != nil {
 				gologger.Warning().Msgf("Failed to write %s: %v", filename, err)
 			}
@@ -1180,68 +1237,7 @@ func writeAllConfigs() {
 	}
 }
 
-func archiveDaily() {
-	today := time.Now().Format("2006-01-02")
-	archiveDir := filepath.Join("daily_archive", today)
-	if err := os.MkdirAll(archiveDir, 0755); err != nil {
-		gologger.Warning().Msgf("Failed to create archive dir: %v", err)
-		return
-	}
-
-	sourceDir := "all_configs"
-	pattern := filepath.Join(sourceDir, "*", "*.txt")
-	files, err := filepath.Glob(pattern)
-	if err != nil {
-		gologger.Error().Msgf("Failed to list all_configs files: %v", err)
-		return
-	}
-
-	anyData := false
-	for _, srcFile := range files {
-		rel, err := filepath.Rel(sourceDir, srcFile)
-		if err != nil {
-			continue
-		}
-		destFile := filepath.Join(archiveDir, rel)
-		if err := os.MkdirAll(filepath.Dir(destFile), 0755); err != nil {
-			gologger.Warning().Msgf("Cannot create archive subdir: %v", err)
-			continue
-		}
-
-		data, err := os.ReadFile(srcFile)
-		if err != nil {
-			continue
-		}
-		if len(data) == 0 {
-			continue
-		}
-		anyData = true
-		f, err := os.OpenFile(destFile, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
-		if err != nil {
-			gologger.Warning().Msgf("Cannot open archive file %s: %v", destFile, err)
-			continue
-		}
-		if _, err := f.Write(data); err != nil {
-			gologger.Warning().Msgf("Error writing to archive file: %v", err)
-		}
-		f.Close()
-		if err := os.Truncate(srcFile, 0); err != nil {
-			gologger.Warning().Msgf("Error truncating %s: %v", srcFile, err)
-		}
-	}
-
-	if anyData {
-		archiveTimeMutex.Lock()
-		lastArchiveTime = time.Now().Unix()
-		archiveTimeMutex.Unlock()
-		saveLastArchiveTime()
-		gologger.Info().Msgf("Archived configs to %s and cleared all_configs", archiveDir)
-	} else {
-		gologger.Debug().Msg("No new data to archive today")
-	}
-}
-
-// ==================== links.txt ====================
+// ==================== links.txt با توضیحات پروتکل و اموجی وضعیت ====================
 func generateLinksFile() {
 	var baseURLStr string
 	if *baseURL != "" {
@@ -1261,49 +1257,70 @@ func generateLinksFile() {
 	var links []string
 	links = append(links, "# Links to configuration files")
 	links = append(links, "")
+	links = append(links, "## 📖 Protocol Descriptions")
+	links = append(links, "")
+	links = append(links, "- 🔵 **VMess** – پروتکل اختصاصی V2Ray، امن و پرسرعت")
+	links = append(links, "- 🟢 **VLess** – نسخه سبک‌تر VMess بدون شناسه ثابت")
+	links = append(links, "- 🔒 **Trojan** – شبیه‌سازی ترافیک HTTPS برای عبور از فیلتر")
+	links = append(links, "- ⚡ **Shadowsocks** – پروتکل سبک و سریع برای دور زدن محدودیت")
+	links = append(links, "- 🌍 **Mixed** – کانفیگ‌های ناشناخته یا ترکیبی")
+	links = append(links, "- 🟣 **MTProto** – پروتکل پروکسی اختصاصی تلگرام")
+	links = append(links, "- 🟠 **HTTP Proxy** – پروکسی معمولی HTTP/HTTPS")
+	links = append(links, "- 🟡 **SOCKS Proxy** – پروکسی SOCKS4/SOCKS5")
+	links = append(links, "")
+	links = append(links, "---")
+	links = append(links, "")
 
-	links = append(links, "## all_configs/subscription")
+	fileStatus := func(path string) string {
+		info, err := os.Stat(path)
+		if err != nil || info.Size() == 0 {
+			return "🔴"
+		}
+		return "🟢"
+	}
+
+	links = append(links, "## 📁 all_configs/subscription")
 	files, _ := filepath.Glob("all_configs/subscription/*.txt")
 	for _, f := range files {
 		name := filepath.Base(f)
 		url := fmt.Sprintf("%s/all_configs/subscription/%s", baseURLStr, name)
-		links = append(links, fmt.Sprintf("- [%s](%s)", name, url))
+		links = append(links, fmt.Sprintf("- %s [%s](%s)", fileStatus(f), name, url))
 	}
 	links = append(links, "")
 
-	links = append(links, "## all_configs/telegram")
+	links = append(links, "## 📁 all_configs/telegram")
 	files, _ = filepath.Glob("all_configs/telegram/*.txt")
 	for _, f := range files {
 		name := filepath.Base(f)
 		url := fmt.Sprintf("%s/all_configs/telegram/%s", baseURLStr, name)
-		links = append(links, fmt.Sprintf("- [%s](%s)", name, url))
+		links = append(links, fmt.Sprintf("- %s [%s](%s)", fileStatus(f), name, url))
 	}
 	links = append(links, "")
 
-	links = append(links, "## daily_archive")
+	links = append(links, "## 📁 daily_archive")
 	archives, _ := filepath.Glob("daily_archive/*")
 	sort.Strings(archives)
 	for _, arch := range archives {
 		if info, _ := os.Stat(arch); info != nil && info.IsDir() {
 			subDir := filepath.Base(arch)
 			links = append(links, fmt.Sprintf("### %s", subDir))
-			innerFiles, _ := filepath.Glob(filepath.Join(arch, "*", "*.txt"))
+			innerFiles, _ := filepath.Glob(filepath.Join(arch, "*.txt"))
 			for _, f := range innerFiles {
-				rel, _ := filepath.Rel(arch, f)
-				url := fmt.Sprintf("%s/daily_archive/%s/%s", baseURLStr, subDir, rel)
-				links = append(links, fmt.Sprintf("  - [%s](%s)", rel, url))
+				name := filepath.Base(f)
+				url := fmt.Sprintf("%s/daily_archive/%s/%s", baseURLStr, subDir, name)
+				links = append(links, fmt.Sprintf("  - %s [%s](%s)", fileStatus(f), name, url))
 			}
 		}
 	}
 	links = append(links, "")
 
-	for _, name := range []string{"mixed", "subscription", "telegram"} {
-		links = append(links, fmt.Sprintf("## %s", name))
-		files, _ := filepath.Glob(fmt.Sprintf("%s/*.txt", name))
+	for _, folder := range []string{"mixed", "subscription", "telegram"} {
+		links = append(links, fmt.Sprintf("## 📁 %s", folder))
+		files, _ = filepath.Glob(fmt.Sprintf("%s/*.txt", folder))
 		for _, f := range files {
-			base := filepath.Base(f)
-			url := fmt.Sprintf("%s/%s/%s", baseURLStr, name, base)
-			links = append(links, fmt.Sprintf("- [%s](%s)", base, url))
+			name := filepath.Base(f)
+			url := fmt.Sprintf("%s/%s/%s", baseURLStr, folder, name)
+			links = append(links, fmt.Sprintf("- %s [%s](%s)", fileStatus(f), name, url))
 		}
 		links = append(links, "")
 	}
@@ -1311,7 +1328,7 @@ func generateLinksFile() {
 	if err := os.WriteFile("links.txt", []byte(strings.Join(links, "\n")), 0644); err != nil {
 		gologger.Warning().Msgf("Failed to write links.txt: %v", err)
 	} else {
-		gologger.Info().Msg("links.txt generated")
+		gologger.Info().Msg("links.txt generated with protocol descriptions and status emojis")
 	}
 }
 
