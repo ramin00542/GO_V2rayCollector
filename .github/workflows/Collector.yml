@@ -19,44 +19,58 @@ jobs:
       contents: write
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Set up Go
-      uses: actions/setup-go@v5
-      with:
-        go-version: '>=1.21.3'
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '>=1.21.3'
 
-    - name: Display Go version
-      run: go version
+      - name: Display Go version
+        run: go version
 
-    - name: Download dependencies
-      run: go mod download
+      - name: Download dependencies
+        run: go mod download
 
-    - name: Tidy dependencies
-      run: go mod tidy
+      - name: Tidy dependencies
+        run: go mod tidy
 
-    - name: Build Go app
-      run: go build -v -o myapp
+      - name: Build Go app
+        run: go build -v -o myapp
 
-    - name: Run collector
-      run: ./myapp -sort -clash
+      - name: Run collector
+        run: ./myapp -sort -clash
 
-    - name: Attest Build Provenance
-      uses: actions/attest-build-provenance@v4.1.0
-      with:
-        subject-path: 'myapp'
+      - name: Attest Build Provenance
+        uses: actions/attest-build-provenance@v4.1.0
+        with:
+          subject-path: 'myapp'
 
-    - name: Commit changes
-      run: |
-        git config --local user.email "actions@github.com"
-        git config --local user.name "GitHub Actions"
-        git add telegram/ subscription/ mixed/ daily_archive/ all_configs/ config_cache.json clash-config.yaml stats.json go.sum links.txt
-        git diff --staged --quiet || git commit -m "✔️ $(date '+%Y-%m-%d %H:%M:%S') Collected"
+      - name: Add statistics to job summary
+        run: |
+          echo "## 📊 Collector Statistics" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          cat collector_stats.txt >> $GITHUB_STEP_SUMMARY 2>/dev/null || echo "No stats file yet" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "## 🔗 Subscription Links from Telegram" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          cat subscription_links.txt >> $GITHUB_STEP_SUMMARY 2>/dev/null || echo "No subscription links found" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
 
-    - name: Push changes
-      uses: ad-m/github-push-action@v1.1.0
-      with:
-        branch: main
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        force: false
+      - name: Commit changes
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add telegram/ subscription/ mixed/ daily_archive/ all_configs/ config_cache.json clash-config.yaml stats.json go.sum links.txt collector_stats.txt subscription_links.txt
+          git diff --staged --quiet || git commit -m "✔️ $(date '+%Y-%m-%d %H:%M:%S') Collected"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@v1.1.0
+        with:
+          branch: main
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: false
