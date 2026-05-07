@@ -2,9 +2,7 @@ package main
 
 import (
 	"fmt"
-	"io"
 	"net/http"
-	"os"
 	"regexp"
 	"strings"
 	"time"
@@ -29,12 +27,11 @@ var (
 )
 
 func main() {
-	// لیست کانال‌ها، برای تست سریع، می‌تونید فقط یکی از اونارو بذارید.
+	// لیست کانال‌ها (برای تست سریع می‌توانید فقط یکی را نگه دارید)
 	channels := []string{
 		"FreeV2rays",
 		"V2rayCollectorDonate",
 		"ConfigV2rayNG",
-		"FreeV2ray",
 	}
 	
 	fmt.Println("🔍 Starting telegram connection test...")
@@ -89,7 +86,7 @@ func testChannel(channel string) bool {
 	if len(configs) > 0 {
 		fmt.Printf("   🟢 Success! Found %d config(s):\n", len(configs))
 		for i, cfg := range configs {
-			if i < 3 { // فقط 3 تا از اولین‌ها رو نشون بده
+			if i < 3 { // فقط 3 تا از اولین‌ها را نشان بده
 				fmt.Printf("      - %s\n", cfg)
 			}
 		}
@@ -99,7 +96,7 @@ func testChannel(channel string) bool {
 		return true
 	} else {
 		fmt.Printf("   ⚠️ Connected but no configs found\n")
-		// حتی اگه کانفیگ پیدا نشد، اتصال برقرار شده
+		// حتی اگر کانفیگ پیدا نشد، اتصال برقرار شده
 		return true
 	}
 }
