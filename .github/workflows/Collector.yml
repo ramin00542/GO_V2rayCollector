@@ -2,7 +2,7 @@ name: Collector
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "*/20 * * * *"
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -40,7 +40,11 @@ jobs:
         run: go build -v -o myapp
 
       - name: Run collector
-        run: ./myapp -sort -clash
+        run: ./myapp -sort -clash -fork-scan
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Attest Build Provenance
         uses: actions/attest-build-provenance@v4.1.0
@@ -51,21 +55,13 @@ jobs:
         run: |
           echo "## 📊 Collector Statistics" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo '```' >> $GITHUB_STEP_SUMMARY
-          cat collector_stats.txt >> $GITHUB_STEP_SUMMARY 2>/dev/null || echo "No stats file yet" >> $GITHUB_STEP_SUMMARY
-          echo '```' >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "## 🔗 Subscription Links from Telegram" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo '```' >> $GITHUB_STEP_SUMMARY
-          cat subscription_links.txt >> $GITHUB_STEP_SUMMARY 2>/dev/null || echo "No subscription links found" >> $GITHUB_STEP_SUMMARY
-          echo '```' >> $GITHUB_STEP_SUMMARY
+          cat collector_stats.md >> $GITHUB_STEP_SUMMARY
 
       - name: Commit changes
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          git add telegram/ subscription/ mixed/ daily_archive/ all_configs/ config_cache.json clash-config.yaml stats.json go.sum links.txt collector_stats.txt subscription_links.txt
+          git add telegram/ subscription/ mixed/ daily_archive/ all_configs/ config_cache.json clash-config.yaml stats.json go.sum links.txt links.md collector_stats.txt collector_stats.md subscription_links.txt
           git diff --staged --quiet || git commit -m "✔️ $(date '+%Y-%m-%d %H:%M:%S') Collected"
 
       - name: Push changes
