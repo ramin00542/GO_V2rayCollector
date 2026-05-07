@@ -185,6 +185,49 @@ func initTelegramLimiter() {
 	telegramLimiter = rate.NewLimiter(rate.Limit(TelegramRequestsPerSecond), TelegramBurstSize)
 }
 
+// ==================== آرشیو روزانه (فقط mixed/) ====================
+func archiveDaily() {
+	today := time.Now().Format("2006-01-02")
+	archiveDir := filepath.Join("daily_archive", today)
+	markerFile := filepath.Join(archiveDir, ".done")
+
+	// اگر امروز قبلاً آرشیو شده، برگرد
+	if _, err := os.Stat(markerFile); err == nil {
+		gologger.Debug().Msg("Already archived today, skipping")
+		return
+	}
+
+	if err := os.MkdirAll(archiveDir, 0755); err != nil {
+		gologger.Warning().Msgf("Failed to create archive dir: %v", err)
+		return
+	}
+
+	// فقط فایل‌های پوشه mixed/ را کپی کن (http_iran.txt, vmess_iran.txt, ...)
+	mixedFiles, err := filepath.Glob("mixed/*.txt")
+	if err != nil {
+		gologger.Error().Msgf("Failed to list mixed files: %v", err)
+		return
+	}
+	for _, src := range mixedFiles {
+		dest := filepath.Join(archiveDir, filepath.Base(src))
+		data, err := os.ReadFile(src)
+		if err != nil {
+			gologger.Warning().Msgf("Read error %s: %v", src, err)
+			continue
+		}
+		if len(data) == 0 {
+			continue
+		}
+		if err := os.WriteFile(dest, data, 0644); err != nil {
+			gologger.Warning().Msgf("Write error %s: %v", dest, err)
+		}
+	}
+
+	// علامتگذاری انجام آرشیو امروز
+	os.WriteFile(markerFile, []byte("archived"), 0644)
+	gologger.Info().Msgf("Archived mixed files to %s", archiveDir)
+}
+
 // ==================== توابع اولیه ====================
 func initCombinedRegex() {
 	patterns := []string{
