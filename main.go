@@ -41,12 +41,10 @@ const (
 	CacheTTL                         = 30 * 24 * time.Hour
 	RetryCount                       = 3
 	RetryBackoff                     = 2 * time.Second
-	TelegramPageDelayBase            = 1 * time.Second
-	TelegramPageJitter               = 1 * time.Second
-	HealthCheckTimeout               = 5 * time.Second
-	HealthCheckConcurrency           = 10
 	TelegramRequestsPerSecond        = 5
 	TelegramBurstSize                = 10
+	HealthCheckTimeout               = 5 * time.Second
+	HealthCheckConcurrency           = 10
 )
 
 var (
@@ -78,8 +76,6 @@ var (
 	fingerprintToKey = make(map[string]string)
 	keyToFingerprint = make(map[string]string)
 	fpMutex          sync.RWMutex
-	telegramOffsets  = make(map[string]string)
-	offsetsMutex     sync.RWMutex
 	mainWg           sync.WaitGroup
 
 	lastArchiveTime  int64
@@ -98,7 +94,6 @@ type CacheEntry struct {
 	Source      string `json:"source"`
 	Fingerprint string `json:"fingerprint"`
 	Channel     string `json:"channel,omitempty"`
-	Offset      string `json:"offset,omitempty"`
 	Original    string `json:"original,omitempty"`
 	Protocol    string `json:"protocol"`
 }
@@ -106,7 +101,6 @@ type CacheEntry struct {
 type CacheData struct {
 	Configs   map[string]CacheEntry `json:"configs"`
 	Timestamp int64                 `json:"timestamp"`
-	Offsets   map[string]string     `json:"offsets"`
 }
 
 type ChannelsType struct {
@@ -210,6 +204,8 @@ func main() {
 	printStats()
 	saveCache()
 	saveLastArchiveTime()
+	writeStatsFile() // تولید فایل آمار پس از اتمام کار
+
 	gologger.Info().Msg("All Done!")
 }
 
@@ -217,7 +213,7 @@ func initTelegramLimiter() {
 	telegramLimiter = rate.NewLimiter(rate.Limit(TelegramRequestsPerSecond), TelegramBurstSize)
 }
 
-// ==================== آرشیو روزانه (کپی mixed, subscription, telegram به daily_archive با حفظ ساختار) ====================
+// ==================== آرشیو روزانه (کپی mixed, subscription, telegram به daily_archive) ====================
 func archiveDaily() {
 	today := time.Now().Format("2006-01-02")
 	archiveDir := filepath.Join("daily_archive", today)
@@ -229,7 +225,7 @@ func archiveDaily() {
 	}
 	os.MkdirAll(archiveDir, 0755)
 
-	// کپی پوشه mixed (فایل‌های سطح اول)
+	// کپی mixed (فایل‌های سطح اول)
 	mixedFiles, _ := filepath.Glob("mixed/*.txt")
 	for _, src := range mixedFiles {
 		dest := filepath.Join(archiveDir, filepath.Base(src))
@@ -239,39 +235,29 @@ func archiveDaily() {
 		}
 	}
 
-	// کپی کل پوشه subscription (با همان نام فایل‌ها)
-	if err := copyDir("subscription", filepath.Join(archiveDir, "subscription")); err != nil {
-		gologger.Error().Msgf("Failed to copy subscription: %v", err)
-	}
-
-	// کپی کل پوشه telegram (با زیرپوشه‌های کانال)
-	if err := copyDir("telegram", filepath.Join(archiveDir, "telegram")); err != nil {
-		gologger.Error().Msgf("Failed to copy telegram: %v", err)
-	}
+	// کپی پوشه subscription
+	copyDir("subscription", filepath.Join(archiveDir, "subscription"))
+	// کپی پوشه telegram
+	copyDir("telegram", filepath.Join(archiveDir, "telegram"))
 
 	os.WriteFile(markerFile, []byte("archived"), 0644)
 	gologger.Info().Msgf("Archived mixed, subscription, telegram to %s", archiveDir)
 }
 
-// تابع کمکی برای کپی بازگشتی پوشه
-func copyDir(src, dst string) error {
-	return filepath.Walk(src, func(path string, info os.FileInfo, err error) error {
+func copyDir(src, dst string) {
+	filepath.Walk(src, func(path string, info os.FileInfo, err error) error {
 		if err != nil {
-			return err
+			return nil
 		}
-		rel, err := filepath.Rel(src, path)
-		if err != nil {
-			return err
-		}
+		rel, _ := filepath.Rel(src, path)
 		destPath := filepath.Join(dst, rel)
 		if info.IsDir() {
-			return os.MkdirAll(destPath, info.Mode())
+			os.MkdirAll(destPath, info.Mode())
+			return nil
 		}
-		data, err := os.ReadFile(path)
-		if err != nil {
-			return err
-		}
-		return os.WriteFile(destPath, data, info.Mode())
+		data, _ := os.ReadFile(path)
+		os.WriteFile(destPath, data, info.Mode())
+		return nil
 	})
 }
 
@@ -375,11 +361,6 @@ func loadCache() {
 	cacheMutex.Lock()
 	configCache = cd.Configs
 	cacheMutex.Unlock()
-	offsetsMutex.Lock()
-	if cd.Offsets != nil {
-		telegramOffsets = cd.Offsets
-	}
-	offsetsMutex.Unlock()
 
 	if *dedupFlag {
 		fpMutex.Lock()
@@ -401,9 +382,6 @@ func saveCache() {
 		Timestamp: time.Now().Unix(),
 	}
 	cacheMutex.RUnlock()
-	offsetsMutex.RLock()
-	cd.Offsets = telegramOffsets
-	offsetsMutex.RUnlock()
 
 	data, err := json.MarshalIndent(cd, "", "  ")
 	if err != nil {
@@ -590,7 +568,7 @@ func fingerprintCredentialURL(cfg string) string {
 	return fmt.Sprintf("%x", hash)
 }
 
-func addToCache(cfg, source, channel string, offset ...string) {
+func addToCache(cfg, source, channel string) {
 	if cfg == "" {
 		return
 	}
@@ -619,16 +597,11 @@ func addToCache(cfg, source, channel string, offset ...string) {
 		return
 	}
 
-	off := ""
-	if len(offset) > 0 {
-		off = offset[0]
-	}
 	configCache[cfg] = CacheEntry{
 		Timestamp:   time.Now().Unix(),
 		Source:      source,
 		Fingerprint: fp,
 		Channel:     channel,
-		Offset:      off,
 		Original:    cfg,
 		Protocol:    proto,
 	}
@@ -692,7 +665,7 @@ func saveLastArchiveTime() {
 	}
 }
 
-// ==================== دریافت ====================
+// ==================== دریافت تلگرام (نسخه ساده و مطمئن) ====================
 func fetchAllTelegramChannels(ctx context.Context) {
 	fileData, err := os.ReadFile(*channelsFile)
 	if err != nil {
@@ -704,88 +677,59 @@ func fetchAllTelegramChannels(ctx context.Context) {
 		gologger.Error().Msgf("Failed to parse channels.csv: %v", err)
 		return
 	}
-	validChannels := []ChannelsType{}
 	for _, ch := range channels {
-		if !strings.Contains(ch.URL, "t.me") && !strings.Contains(ch.URL, "telegram.me") {
-			gologger.Warning().Msgf("Invalid telegram URL: %s", ch.URL)
-			continue
-		}
-		validChannels = append(validChannels, ch)
-	}
-	jobs := make(chan ChannelsType, len(validChannels))
-	var wg sync.WaitGroup
-	for i := 0; i < *concurrent; i++ {
-		wg.Add(1)
-		go telegramWorker(ctx, jobs, &wg)
-	}
-	for _, ch := range validChannels {
-		select {
-		case <-ctx.Done():
-			break
-		case jobs <- ch:
-		}
-	}
-	close(jobs)
-	wg.Wait()
-}
-
-func telegramWorker(ctx context.Context, jobs <-chan ChannelsType, wg *sync.WaitGroup) {
-	defer wg.Done()
-	for ch := range jobs {
 		select {
 		case <-ctx.Done():
 			return
 		default:
 		}
-		webURL := changeUrlToTelegramWebUrl(ch.URL)
-		channelName := extractChannelNameFromURL(webURL)
+		channelName := extractChannelNameFromURL(ch.URL)
 		if channelName == "" {
 			continue
 		}
-		offsetsMutex.Lock()
-		lastOffset := telegramOffsets[channelName]
-		offsetsMutex.Unlock()
-
-		maxMsg := *maxMessages
-		if ch.AllMessagesFlag {
-			maxMsg = 10000
+		webURL := fmt.Sprintf("https://t.me/s/%s", channelName)
+		if err := fetchTelegramSimple(ctx, webURL, channelName); err != nil {
+			gologger.Warning().Msgf("Failed to fetch %s: %v", webURL, err)
 		}
-		allMessages, lastMsgOffset := fetchTelegramMessagesWithResume(ctx, webURL, lastOffset, maxMsg)
-
-		if lastMsgOffset != "" {
-			offsetsMutex.Lock()
-			telegramOffsets[channelName] = lastMsgOffset
-			offsetsMutex.Unlock()
-			saveOffsetsCheckpoint()
-		}
-		for _, text := range allMessages {
-			processTelegramText(text, channelName)
-		}
-		jitter := time.Duration(rand.Int63n(int64(TelegramPageJitter)))
-		time.Sleep(TelegramPageDelayBase + jitter)
+		time.Sleep(1 * time.Second) // احترام به محدودیت نرخ
 	}
 }
 
-func saveOffsetsCheckpoint() {
-	offsetsMutex.RLock()
-	data, err := json.Marshal(telegramOffsets)
-	offsetsMutex.RUnlock()
+func fetchTelegramSimple(ctx context.Context, url, channelName string) error {
+	req, err := http.NewRequestWithContext(ctx, "GET", url, nil)
 	if err != nil {
-		gologger.Warning().Msgf("Failed to marshal offsets checkpoint: %v", err)
-		return
+		return err
 	}
-	if err := os.WriteFile("telegram_offsets_checkpoint.json", data, 0644); err != nil {
-		gologger.Warning().Msgf("Failed to write offsets checkpoint: %v", err)
+	req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36")
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		return err
 	}
-}
-
-func changeUrlToTelegramWebUrl(tgURL string) string {
-	re := regexp.MustCompile(`(?:https?://)?(?:t\.me|telegram\.me|web\.telegram\.org)/([^/?]+)`)
-	match := re.FindStringSubmatch(tgURL)
-	if len(match) == 2 {
-		return fmt.Sprintf("https://t.me/%s", match[1])
+	defer resp.Body.Close()
+	if resp.StatusCode != http.StatusOK {
+		return fmt.Errorf("HTTP %d", resp.StatusCode)
 	}
-	return tgURL
+	doc, err := goquery.NewDocumentFromReader(resp.Body)
+	if err != nil {
+		return err
+	}
+	var texts []string
+	doc.Find(".tgme_widget_message_text, pre, code").Each(func(i int, s *goquery.Selection) {
+		plain := strings.TrimSpace(s.Text())
+		if plain != "" {
+			texts = append(texts, plain)
+		}
+	})
+	for _, text := range texts {
+		configs := extractAllConfigs(text)
+		for _, cfg := range configs {
+			cfg = strings.TrimSpace(cfg)
+			if cfg != "" {
+				addToCache(cfg, "telegram", channelName)
+			}
+		}
+	}
+	return nil
 }
 
 func extractChannelNameFromURL(rawURL string) string {
@@ -794,120 +738,15 @@ func extractChannelNameFromURL(rawURL string) string {
 	if len(matches) > 1 {
 		return matches[1]
 	}
+	re2 := regexp.MustCompile(`t\.me/s/([^/?]+)`)
+	matches2 := re2.FindStringSubmatch(rawURL)
+	if len(matches2) > 1 {
+		return matches2[1]
+	}
 	return ""
 }
 
-func fetchTelegramMessagesWithResume(ctx context.Context, startURL, offset string, max int) ([]string, string) {
-	var allTexts []string
-	seenTexts := make(map[string]bool)
-	var lastUsedOffset string
-	currentURL := startURL
-	if offset != "" {
-		currentURL = fmt.Sprintf("%s?before=%s", strings.TrimSuffix(startURL, "/"), offset)
-	}
-	maxIterations := 100
-	iter := 0
-	for len(allTexts) < max && iter < maxIterations {
-		iter++
-		select {
-		case <-ctx.Done():
-			return allTexts, lastUsedOffset
-		default:
-		}
-		doc, err := fetchDocWithRetry(ctx, currentURL)
-		if err != nil {
-			gologger.Debug().Msgf("Failed to fetch %s: %v", currentURL, err)
-			break
-		}
-		if doc == nil {
-			break
-		}
-		texts := extractMessagesFromDoc(doc)
-		for _, t := range texts {
-			if !seenTexts[t] {
-				seenTexts[t] = true
-				allTexts = append(allTexts, t)
-			}
-		}
-		if len(allTexts) >= max {
-			break
-		}
-		lastMsg := doc.Find(".tgme_widget_message_wrap").Last()
-		postLink, _ := lastMsg.Attr("data-post")
-		if postLink == "" {
-			break
-		}
-		parts := strings.Split(postLink, "/")
-		newOffset := parts[len(parts)-1]
-		if newOffset == offset {
-			break
-		}
-		offset = newOffset
-		lastUsedOffset = offset
-		currentURL = fmt.Sprintf("%s?before=%s", strings.TrimSuffix(startURL, "/"), offset)
-		jitter := time.Duration(rand.Int63n(int64(TelegramPageJitter)))
-		time.Sleep(TelegramPageDelayBase + jitter)
-	}
-	return allTexts, lastUsedOffset
-}
-
-func fetchDocWithRetry(ctx context.Context, urlStr string) (*goquery.Document, error) {
-	if err := telegramLimiter.Wait(ctx); err != nil {
-		return nil, err
-	}
-	var resp *http.Response
-	var err error
-	for i := 0; i < RetryCount; i++ {
-		req, _ := http.NewRequestWithContext(ctx, "GET", urlStr, nil)
-		req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36")
-		resp, err = httpClient.Do(req)
-		if err == nil && resp.StatusCode == http.StatusOK {
-			break
-		}
-		if resp != nil {
-			resp.Body.Close()
-			if resp.StatusCode == http.StatusTooManyRequests {
-				if retryAfter := resp.Header.Get("Retry-After"); retryAfter != "" {
-					secs, _ := strconv.Atoi(retryAfter)
-					time.Sleep(time.Duration(secs) * time.Second)
-				}
-			}
-		}
-		time.Sleep(RetryBackoff * time.Duration(i+1))
-	}
-	if err != nil || resp == nil || resp.StatusCode != http.StatusOK {
-		return nil, fmt.Errorf("failed to fetch %s: %v", urlStr, err)
-	}
-	defer resp.Body.Close()
-	doc, err := goquery.NewDocumentFromReader(resp.Body)
-	if err != nil {
-		return nil, err
-	}
-	return doc, nil
-}
-
-func extractMessagesFromDoc(doc *goquery.Document) []string {
-	var texts []string
-	doc.Find(".tgme_widget_message_text, .tgme_widget_message, pre, code").Each(func(i int, s *goquery.Selection) {
-		plain := strings.TrimSpace(s.Text())
-		if plain != "" {
-			texts = append(texts, plain)
-		}
-	})
-	return texts
-}
-
-func processTelegramText(text, channelName string) {
-	configs := extractAllConfigs(text)
-	for _, cfg := range configs {
-		cfg = strings.TrimSpace(cfg)
-		if cfg == "" {
-			continue
-		}
-		addToCache(cfg, "telegram", channelName)
-	}
-}
-
+// ==================== دریافت ساب‌لینک ====================
 func fetchAllSubscriptions(ctx context.Context) {
 	data, err := os.ReadFile(*sourcesFile)
 	if err != nil {
@@ -1041,10 +880,7 @@ func writeTelegramPerChannel() {
 	}
 	for channel, protoMap := range temp {
 		channelDir := filepath.Join("telegram", channel)
-		if err := os.MkdirAll(channelDir, 0755); err != nil {
-			gologger.Warning().Msgf("Cannot create dir %s: %v", channelDir, err)
-			continue
-		}
+		os.MkdirAll(channelDir, 0755)
 		for proto, configs := range protoMap {
 			if *sortFlag {
 				sort.Slice(configs, func(i, j int) bool {
@@ -1055,9 +891,7 @@ func writeTelegramPerChannel() {
 			if content != "" {
 				displayName := protocolFileName(proto)
 				filename := filepath.Join(channelDir, displayName+".txt")
-				if err := os.WriteFile(filename, []byte(content), 0644); err != nil {
-					gologger.Warning().Msgf("Failed to write %s: %v", filename, err)
-				}
+				os.WriteFile(filename, []byte(content), 0644)
 			}
 		}
 	}
@@ -1198,7 +1032,7 @@ func writeAllConfigs() {
 	}
 }
 
-// ==================== links.txt با توضیحات پروتکل و اموجی وضعیت ====================
+// ==================== فایل links.txt با توضیحات پروتکل و اموجی وضعیت ====================
 func generateLinksFile() {
 	var baseURLStr string
 	if *baseURL != "" {
@@ -1266,21 +1100,18 @@ func generateLinksFile() {
 		if info, _ := os.Stat(arch); info != nil && info.IsDir() {
 			subDir := filepath.Base(arch)
 			links = append(links, fmt.Sprintf("### %s", subDir))
-			// فایل‌های سطح اول (mixed)
 			innerFiles, _ := filepath.Glob(filepath.Join(arch, "*.txt"))
 			for _, f := range innerFiles {
 				name := filepath.Base(f)
 				url := fmt.Sprintf("%s/daily_archive/%s/%s", baseURLStr, subDir, name)
 				links = append(links, fmt.Sprintf("  - %s [%s](%s)", fileStatus(f), name, url))
 			}
-			// زیرپوشه subscription
 			subFiles, _ := filepath.Glob(filepath.Join(arch, "subscription", "*.txt"))
 			for _, f := range subFiles {
 				name := filepath.Base(f)
 				url := fmt.Sprintf("%s/daily_archive/%s/subscription/%s", baseURLStr, subDir, name)
 				links = append(links, fmt.Sprintf("  - %s [subscription/%s](%s)", fileStatus(f), name, url))
 			}
-			// زیرپوشه telegram (با کانال‌ها)
 			channels, _ := filepath.Glob(filepath.Join(arch, "telegram", "*"))
 			for _, ch := range channels {
 				if infoCh, _ := os.Stat(ch); infoCh != nil && infoCh.IsDir() {
@@ -1306,10 +1137,64 @@ func generateLinksFile() {
 		}
 		links = append(links, "")
 	}
-	if err := os.WriteFile("links.txt", []byte(strings.Join(links, "\n")), 0644); err != nil {
-		gologger.Warning().Msgf("Failed to write links.txt: %v", err)
+	os.WriteFile("links.txt", []byte(strings.Join(links, "\n")), 0644)
+}
+
+// ==================== فایل آمار (collector_stats.txt) ====================
+func writeStatsFile() {
+	var sb strings.Builder
+	sb.WriteString("📊 Collector Statistics\n")
+	sb.WriteString(fmt.Sprintf("Time: %s\n\n", time.Now().Format("2006-01-02 15:04:05")))
+
+	cacheMutex.RLock()
+	totalConfigs := len(configCache)
+	cacheMutex.RUnlock()
+	sb.WriteString(fmt.Sprintf("Total configs in cache: %d\n", totalConfigs))
+
+	stats.Lock()
+	sb.WriteString(fmt.Sprintf("New configs added: %d\n", stats.newCount))
+	sb.WriteString(fmt.Sprintf("Duplicates skipped: %d\n", stats.duplicateCount))
+	sb.WriteString(fmt.Sprintf("Telegram sources: %d configs\n", stats.telegramCount))
+	sb.WriteString(fmt.Sprintf("Subscription sources: %d configs\n", stats.subCount))
+	sb.WriteString("\nProtocol counts:\n")
+	for proto, cnt := range stats.protoCounts {
+		sb.WriteString(fmt.Sprintf("  %s: %d\n", proto, cnt))
+	}
+	stats.Unlock()
+
+	// آمار تفکیک شده بر اساس کانال تلگرام
+	cacheMutex.RLock()
+	channelStats := make(map[string]int)
+	for _, e := range configCache {
+		if e.Source == "telegram" && e.Channel != "" {
+			channelStats[e.Channel]++
+		}
+	}
+	cacheMutex.RUnlock()
+
+	if len(channelStats) > 0 {
+		sb.WriteString("\nConfigs per Telegram channel:\n")
+		type kv struct {
+			ch  string
+			cnt int
+		}
+		var sorted []kv
+		for ch, cnt := range channelStats {
+			sorted = append(sorted, kv{ch, cnt})
+		}
+		sort.Slice(sorted, func(i, j int) bool { return sorted[i].cnt > sorted[j].cnt })
+		for _, kv := range sorted {
+			sb.WriteString(fmt.Sprintf("  %s: %d\n", kv.ch, kv.cnt))
+		}
 	} else {
-		gologger.Info().Msg("links.txt generated with protocol descriptions and status emojis")
+		sb.WriteString("\nNo Telegram channels with configs.\n")
+	}
+
+	err := os.WriteFile("collector_stats.txt", []byte(sb.String()), 0644)
+	if err != nil {
+		gologger.Warning().Msgf("Failed to write collector_stats.txt: %v", err)
+	} else {
+		gologger.Info().Msg("collector_stats.txt generated")
 	}
 }
 
@@ -1379,9 +1264,7 @@ func generateClashYAML() {
 		Rules: []string{"GEOIP,IRAN,IRAN", "MATCH,PROXY"},
 	}
 	data, _ := yaml.Marshal(&clashConfig)
-	if err := os.WriteFile("clash-config.yaml", data, 0644); err != nil {
-		gologger.Warning().Msgf("Failed to write clash-config.yaml: %v", err)
-	}
+	os.WriteFile("clash-config.yaml", data, 0644)
 }
 
 func vmessToClash(vmessURL, source string) *ClashProxy {
@@ -1613,9 +1496,7 @@ func generateSingBoxJSON() {
 		"version":   "1.0.0",
 	}
 	data, _ := json.MarshalIndent(result, "", "  ")
-	if err := os.WriteFile("singbox.json", data, 0644); err != nil {
-		gologger.Warning().Msgf("Failed to write singbox.json: %v", err)
-	}
+	os.WriteFile("singbox.json", data, 0644)
 }
 
 func vmessToSingbox(vmessURL, tag string) map[string]interface{} {
