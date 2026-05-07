@@ -1,2 +1,2 @@
-http://netlify.parsashonam.sbs:444".replace(/\/$/,
 http://netlify.parsashonam.sbs:444کانفیگی
+http://netlify.parsashonam.sbs:444".replace(/\/$/,
