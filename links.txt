@@ -6,6 +6,10 @@
 - 🟢 **VLess** – نسخه سبک‌تر VMess بدون شناسه ثابت
 - 🔒 **Trojan** – شبیه‌سازی ترافیک HTTPS برای عبور از فیلتر
 - ⚡ **Shadowsocks** – پروتکل سبک و سریع برای دور زدن محدودیت
+- 🌀 **Hysteria2** – پروتکل مبتنی بر QUIC با سرعت بالا
+- ✨ **SSR** – ShadowsocksR با قابلیت‌های اضافی
+- 🟦 **Tuic** – پروتکل مدرن بر پایه QUIC
+- 🔹 **WireGuard** – پروتکل مدرن و امن VPN
 - 🌍 **Mixed** – کانفیگ‌های ناشناخته یا ترکیبی
 - 🟣 **MTProto** – پروتکل پروکسی اختصاصی تلگرام
 - 🟠 **HTTP Proxy** – پروکسی معمولی HTTP/HTTPS
@@ -14,14 +18,17 @@
 ---
 
 ## 📁 all_configs/subscription
-- 🔴 [all_protocols.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/all_configs/subscription/all_protocols.txt)
-- 🔴 [http.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/all_configs/subscription/http.txt)
-- 🔴 [unknown.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/all_configs/subscription/unknown.txt)
+- 🟢 [all_protocols.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/all_configs/subscription/all_protocols.txt)
+- 🟢 [http.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/all_configs/subscription/http.txt)
+- 🟢 [unknown.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/all_configs/subscription/unknown.txt)
 
 ## 📁 all_configs/telegram
 
 ## 📁 daily_archive
 ### 2026-05-07
+  - 🟢 [subscription/all_protocols.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/daily_archive/2026-05-07/subscription/all_protocols.txt)
+  - 🟢 [subscription/http.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/daily_archive/2026-05-07/subscription/http.txt)
+  - 🟢 [subscription/unknown.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/daily_archive/2026-05-07/subscription/unknown.txt)
 
 ## 📁 mixed
 
@@ -31,10 +38,14 @@
 - 🟢 [tuic.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/subscription/tuic.txt)
 - 🟢 [wireguard.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/subscription/wireguard.txt)
 - 🟢 [⚡ Shadowsocks.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/subscription/⚡ Shadowsocks.txt)
+- 🟢 [✨ SSR.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/subscription/✨ SSR.txt)
+- 🟢 [🌀 Hysteria2.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/subscription/🌀 Hysteria2.txt)
 - 🟢 [🔒 Trojan.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/subscription/🔒 Trojan.txt)
 - 🟢 [🔵 VMess.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/subscription/🔵 VMess.txt)
+- 🟢 [🔹 WireGuard.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/subscription/🔹 WireGuard.txt)
 - 🟢 [🟠 HTTP Proxy.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/subscription/🟠 HTTP Proxy.txt)
 - 🟢 [🟡 SOCKS Proxy.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/subscription/🟡 SOCKS Proxy.txt)
 - 🟢 [🟢 VLess.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/subscription/🟢 VLess.txt)
+- 🟢 [🟦 Tuic.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/subscription/🟦 Tuic.txt)
 
 ## 📁 telegram
