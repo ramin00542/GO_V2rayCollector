@@ -1,1 +1,4 @@
-vless://8dc7722c-2767-4eea-a28b-2f8daacc07e3@yesok42v2.ip4exordir.shop:8880?mode=gun&security=&encryption=none&type=grpc#%40vpnfail_bot%20free%v2ray
+vless://8dc7722c-2767-4eea-a28b-2f8daacc07e3@45.82.251.208:8880?mode=gun&security=&encryption=none&fp=chrome&type=grpc#%40vpnfail_bot%20free%v2ray
+vless://505997ba-cbdb-466e-a3ad-69c6a4553b38@151.101.25.242:80?path=%2Fcontainers%2Ffi&security=none&encryption=none&host=pizzabama.global.ssl.fastly.net&type=ws#%40vpnfail_bot%20free%v2ray
+vless://8dc7722c-2767-4eea-a28b-2f8daacc07e3@45.82.251.208:8880?mode=gun&security=&encryption=none&fp=chrome&type=grpc#
+vless://505997ba-cbdb-466e-a3ad-69c6a4553b38@151.101.25.242:80?path=%2Fcontainers%2Ffi&security=none&encryption=none&host=pizzabama.global.ssl.fastly.net&type=ws#

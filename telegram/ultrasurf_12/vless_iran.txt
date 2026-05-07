@@ -1,3 +1,1 @@
-vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?path=%2F&security=none&encryption=none&host=sr.novatechsapr.ir&type=ws#%40ultrasurf_12
-vless://a80fishfr…
-vless://b2xhsbsj45hsuzunsozox:14371type=tcp&encryption=none&security=
+vless://0d84cdbd-c0fb-47c6-ab5d-a25587df2a4a@185.143.233.5:80?path=%2Fxray&security=none&encryption=none&host=bot.vipiranian.de&type=ws#@ultrasurf_12

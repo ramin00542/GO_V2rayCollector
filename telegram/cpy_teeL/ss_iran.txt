@@ -1,1 +1,1 @@
-vless://3159eeeb-9443-4afb-b65e-2c9324088f4f@ger1bot-ws.headerip.com:80?security=none&allowInsecure=0&encryption=none&type=ws&host=ger1.mv5.ir&path=/#🌵
+vless://3159eeeb-9443-4afb-b65e-2c9324088f4f@ger1bot-ws.headerip.com:80?security=none&allowInsecure=0&encryption=none&type=ws&host=ger1.mv5.ir&path=/#

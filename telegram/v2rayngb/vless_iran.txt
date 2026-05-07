@@ -1,4 +1,2 @@
-vless://86d22529-b92a-40de-86c2-591d195a2d55@mtn.MsV2ray.space:2083?mode=gun&security=tls&encryption=none&type=grpc&serviceName=@MsV2ray&sni=tm.MsV2ray.cfd#
-vless://86d22529-b92a-40de-86c2-591d195a2d55@mtn.MsV2ray.space:2083?mode=gun&security=tls&encryption=none&type=grpc&serviceName=@MsV2ray&sni=tm.MsV2ray.cfd#%40V2RAYNGNET+%D8%A8%DB%8C%D8%A7+%DA%A9%D8%A7%D9%86%D8%A7%D9%84
-vless://534273a6-288f-4e09-fae3-c705f5bc3f89@ge2.aban88.monster:11972?security=none&encryption=none&host=aparat.com&headerType=http&type=tcp#
-vless://0ed5d08c-571d-414a-9a76-135cfddc9de5@49.13.10.167:57242?type=tcp&security=none&path=/&host=bmi.ir&headerType=http#
+vless://96ad7e7f-59db-4a7b-bda6-d6c9a18598c8@mci.backshop.cf:2053?type=ws&security=tls&path=/&host=imsurn.backshop.cf&sni=mci.backshop.cf&flow=#@V2RAY_VMES
+vless://96ad7e7f-59db-4a7b-bda6-d6c9a18598c8@adsl.backshop.cf:2053?type=ws&security=tls&path=/&host=imsurn.backshop.cf&sni=adsl.backshop.cf&flow=#

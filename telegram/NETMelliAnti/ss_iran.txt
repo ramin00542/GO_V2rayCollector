@@ -1,6 +1,4 @@
-vless://ebe44c2c-96ed-4a36-8456-2e9ee60c859c@104.16.80.73:2083?path=%2Fwss14139%3Fed%3D2048&security=tls&alpn=http%2F1.1&encryption=none&insecure=0&host=mnv1.gozargahping.top&fp=chrome&type=ws&allowInsecure=0&sni=mnv1.gozargahping.top#
-vless://b60e5c32-3d4e-425c-a785-a36cd0621a72@104.18.12.149:443?path=%2F&security=tls&encryption=none&insecure=0&host=S4-f45.pAGeS.DeV&type=ws&allowInsecure=0&sni=S4-f45.pAGeS.DeV#
-vless://d37a75db-76b6-4db8-b213-0d5b044d138d@104.18.12.149:443?path=%2F&security=tls&encryption=none&insecure=1&host=hio-awx.pages.dev&type=ws&allowInsecure=1&sni=hio-awx.pages.dev#%40NETMelliAnti
-vless://06ef598c-1555-4887-b3f9-08214a2f6792@104.17.72.206:443?path=%2F222.167.202.31%3A7443&security=tls&encryption=none&insecure=1&host=2026.hhhhh.eu.org&type=ws&allowInsecure=1&sni=2026.hhhhh.eu.org#%40NETMelliAnti
-vless://ae29791e-b4e7-4a42-bab1-e937a24ab4a1@we.configfast.site:1142?security=none&encryption=none&host=bale.ai%2Cweb.splus.ir%2Cigap.net&headerType=http&type=tcp#%40NETMelliAnti
-vless://6202b230-417c-4d8e-b624-0f71afa9c75d@104.18.12.149:2096?path=%2F%3Fed%3D2560&security=tls&encryption=none&insecure=0&host=sni.jpmj.dev&fp=chrome&type=ws&allowInsecure=0&sni=sni.jpmj.dev#%40NETMelliAnti
+vless://ae29791e-b4e7-4a42-bab1-e937a24ab4a1@we.configfast.site:1142?security=none&encryption=none&host=bale.ai%2Cweb.splus.ir%2Cigap.net&headerType=http&type=tcp#
+vless://d37a75db-76b6-4db8-b213-0d5b044d138d@104.18.12.149:443?path=%2F&security=tls&encryption=none&insecure=1&host=hio-awx.pages.dev&type=ws&allowInsecure=1&sni=hio-awx.pages.dev#
+vless://7f8da1f9-2d1c-43d8-ae16-2222e0c5da6b@s2.mesterkit.com:52917?security=none&encryption=none&headerType=http&type=tcp#
+vless://7f8da1f9-2d1c-43d8-ae16-2222e0c5da6b@s2.mesterkit.com:52917?security=none&encryption=none&headerType=http&type=tcp#%40NETMelliAnti

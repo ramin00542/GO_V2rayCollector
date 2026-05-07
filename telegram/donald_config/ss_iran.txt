@@ -1,1 +1,4 @@
-vless://69e278cb-d671-4a10-afd5-1d8cd03ac56c@donald.pydri.ir:8080?security=none&encryption=none&type=ws&path=/#@donald_vpn
+vless://7a675193-24b8-40e4-b849-6ec694b83839@don.dayvip.ir:8443?mode=gun&security=tls&encryption=none&alpn=h2,http/1.1&fp=chrome&type=grpc&serviceName=&sni=elv.amshvip.ir#--%40DoNaLD_VpN
+vless://a6267bde-0344-462e-d69c-7a2bed7f4763@45.82.161.120:19011?type=tcp&security=none#%F0%9F%87%BA%F0%9F%87%B8-DoNaLD_VPN-FREE
+vless://7aab6c59-79e1-43b7-e841-730092149afe@104.25.254.88:2096?mode=gun&security=tls&encryption=none&alpn=h2,http/1.1&type=grpc&serviceName=&sni=arxx.amshvip.ir#
+vless://a8b2b399-0614-4045-f38d-ba74d8ed31e5@arxx.amshvip.ir:8443?mode=gun&security=tls&encryption=none&alpn=h2,http/1.1&type=grpc&serviceName=&sni=elv1.amshvip.ir#

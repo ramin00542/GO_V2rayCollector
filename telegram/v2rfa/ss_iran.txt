@@ -1,4 +1,1 @@
-vless://fc9855a7-116d-4f81-b601-e632df7a2f0a@arvancloud.ir:80/?path=%40TunizoNET&security=none&encryption=none&host=ri.amirenzohost.ir&type=ws#V2rayng_Fast
-vless://0c9353bd-2377-4124-86df-c1a51f777954@trex.nahidapp.com:443?security=tls&allowInsecure=0&encryption=none&type=ws&host=trex.nahidapp.com&path=/vless-ws&sni=trex.nahidapp.com&fp=chrome#V2RFA
-vless://643eb548-a90d-4661-aed7-f9264eefb756@trex.nahidapp.com:443?path=%2Fvless-ws&security=tls&encryption=none&insecure=1&host=trex.nahidapp.com&fp=chrome&type=ws&allowInsecure=1&sni=trex.nahidapp.com#
-vless://fc9855a7-116d-4f81-b601-e632df7a2f0a@arvancloud.ir:80/?path=%40TunizoNET&security=none&encryption=none&host=ri.amirenzohost.ir&type=ws#
+vless://c4cb5a4b-6225-4c56-8f0b-7c23b4017d54@ww.iwantmoney.ir:8880?path=%2F&security=&encryption=none&type=ws#V2rayng_Fast

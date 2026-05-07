@@ -1,1 +1,2 @@
-vless://1dffb1fd-09b3-4bbe-9631-a3ae6a9a57d1@104.18.78.200:80?path=%2F&security=none&encryption=none&host=gxg7RQ.dL-apArAT.coM&type=ws#
+vless://80ce8c17-f249-471b-b78a-17a60f17b1be@104.21.19.124:80?path=%2Ftelegram%2Fid%2Fov2ray&security=none&encryption=none&host=www.moji1372.buzz&type=ws#
+vless://f9f89381-7aa4-4c1f-8ce5-4e0e15453d90@49.12.192.107:2096?mode=gun&security=reality&encryption=none&pbk=OVCexPrzOMdpDzigcnRe-Ufilj4qQe2bXA-LAT---jo&fp=chrome&type=grpc&serviceName=ZEDMODEON&sni=sourceforge.net&sid=e46a1eae#29+YALDA+NIGHT+%F0%9F%8D%89

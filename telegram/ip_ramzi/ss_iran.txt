@@ -1,2 +1,1 @@
-vless://8b2e84cc-2574-4d4d-92bf-d0ee4f0c303e@31.171.250.158:56995?security=none&encryption=none&headerType=http&type=tcp#%40IP_Ramzi+%7C+%D8%A8%D9%87+%D8%B3%D9%88%DB%8C+%D8%A2%D8%B2%D8%A7%D8%AF%DB%8C
-vless://7a39089c-4054-4cd5-b7d4-417d2a534d1e@54.37.6.85:2096?security=none&encryption=none&host=ghbi.ir&headerType=http&type=tcp#%40IP_Ramzi+%7C+%D8%A8%D9%87+%D8%B3%D9%88%DB%8C+%D8%A2%D8%B2%D8%A7%D8%AF%DB%8C
+vless://ca3b458f-d5ba-4e81-8cdb-ca40eb193ebd@54.37.6.85:2096?security=none&encryption=none&host=ghbi.ir&headerType=http&type=tcp#

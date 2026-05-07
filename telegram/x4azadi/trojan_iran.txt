@@ -1,2 +1,2 @@
-trojan://ypDt8RkT7J@207.211.215.169:43118?security=tls&alpn=http/1.1&headerType=none&fp=chrome&type=tcp&sni=tpmwf.phooeyunfold.com#
 trojan://ypDt8RkT7J@212.102.54.11:43118?security=tls&alpn=http/1.1&headerType=none&fp=random&type=tcp&sni=tpmrq.phooeyunfold.com#
+trojan://ypDt8RkT7J@207.211.215.169:43118?security=tls&alpn=http/1.1&headerType=none&fp=chrome&type=tcp&sni=tpmwf.phooeyunfold.com#

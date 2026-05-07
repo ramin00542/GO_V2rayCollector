@@ -1,1 +1,1 @@
-vless://a2772ce5-647f-4967-835a-135ed9701422@185.143.234.235:80?path=%2F&security=&encryption=none&host=vixon.portab.org&type=ws#
+vless://8bbf71fd-02c5-7400-d256-b2ae183e01c1@pari.masterdadeh.ir:80?security=none&allowInsecure=0&encryption=none&type=ws&path=/#

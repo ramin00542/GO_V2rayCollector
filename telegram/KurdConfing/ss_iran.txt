@@ -1,3 +1,5 @@
-ss://MjAyMi1ibGFrZTMtYWVzLTI1Ni1nY206bzMwLy96bVFablcrRzZsdGJ3aU5PVEFCdHI2Skx5TDBNQnd1ZDBnZDBGWT06T09xcUpGSHI1S1pYUUloVTFBZFhHT1NtRkFHb0UvdmxmZ0toc1RyU1dMYz0@87.107.111.105:80#
-vless://c09816d1-9b53-4e0d-85a8-9def477121ab@185.143.233.122:80?encryption=none&security=none&type=ws&host=cdnisfucka.drnimaamini.ir&path=%2Fws#
-vless://44203abd-18b1-4316-b972-a37e8bbce930@tik.var.hi-phonee.ir:50216?path=%2F&security=none&encryption=none&type=ws#%40KurdConfing
+vless://6202b230-417c-4d8e-b624-0f71afa9c75d@141.98.115.65:8443?security=tls&encryption=none&insecure=1&host=sni.111000.v6.rocks&type=ws&allowInsecure=1&sni=sni.111000.v6.rocks#https://t.me/KurdConfing
+vless://9692c29e-f714-44a5-abef-430d1169635a@45.90.75.168:2015?security=none&encryption=none&headerType=none&type=tcp#KurdConfing
+vless://0d84cdbd-c0fb-47c6-ab5d-a25587df2a4a@185.143.233.5:80?path=%2Fxray&security=none&encryption=none&host=bot.vipiranian.de&type=ws#https://t.me/KurdConfing
+vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?path=%2F&security=none&encryption=none&host=sr.novatechsapr.ir&type=ws#%40KurdConfing
+vless://6202b230-417c-4d8e-b624-0f71afa9c75d@141.98.115.65:8443?security=tls&encryption=none&insecure=1&host=sni.111000.v6.rocks&type=ws&allowInsecure=1&sni=sni.111000.v6.rocks#

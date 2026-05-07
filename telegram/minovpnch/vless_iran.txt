@@ -1,1 +1,4 @@
+vless://e1034c59-c944-4a60-bdba-8f9cea0324b1@92.223.124.29:443?path=%2Ftelegram%3Fed%3D2048&security=tls&encryption=none&host=zema-brand.ir&fp=randomized&type=ws&sni=speedtest-fr5.gcore.com#%D8%A7%DB%8C%D8%B1%D8%…
+vless://4d263c1a-fbb9-4946-a639-1de531120cde@185.18.250.67:8080?encryption=none&security=none&type=xhttp&host=amazon.joingulf.lol&path=%2Fawduhiawad%3Fed%3D2560&mode=auto#
 vless://b9ada8b3-6ad0-45cc-b72f-ace43c7de476@45.94.215.101:443?encryption=none&security=none&type=tcp&headerType=http&host=fast.com#xn99nj6b
+vless://8285eef0-147d-4bb6-9d12-0e4601a36e78@151.101.204.190:80?encryption=none&security=none&type=xhttp&host=minovpnch.net&path=%2Fawduhiawad%3Fed%3D2560&mode=auto#

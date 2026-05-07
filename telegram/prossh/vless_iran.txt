@@ -1,1 +1,2 @@
 vless://c24a32f1-b645-47da-98a3-1e7c713229c1@104.18.12.149:8880?path=%2Fapi&security=none&encryption=none&host=armenia.chatgpt.com.siasia.ir&type=httpupgrade#Armenia%28%40proSSH%29
+vless://556d2515-b565-4519-9ad0-9ad6f792b6c1@104.18.12.149:8880?path=%2Fapi&security=none&encryption=none&host=prossh.octarpmta.ir&type=httpupgrade#

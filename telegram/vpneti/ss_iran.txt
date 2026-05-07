@@ -1,6 +1,2 @@
-vless://6b7376dd-11d8-443c-804a-996072aefd81@16.16.143.152:8443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=coinmarketcap.com&fp=chrome&security=reality&pbk=u-mmAoP_KxdQr89ydrgD1970cYthkkUMAUEPvd8vw2Y&sid=5e#
-vless://6b7376dd-11d8-443c-804a-996072aefd81@13.53.186.182:8443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=coinmarketcap.com&fp=chrome&security=reality&pbk=St67ftiosJQuHrHUaTNkr3_F915xSVeCTGx_oXznzHk&sid=5e#%40VPNETI
-vless://09f16c89-bd12-49d0-8a42-68f5a8d59b07@167.235.205.233:8443/?type=grpc&encryption=none&flow=&sni=expat.com&fp=chrome&security=reality&pbk=RtvB1dn0j--CA8FrYf2uAht4z8_rGOkQvTbmt9neYms&sid=abdc0763#%40VPNETI
-vless://ba3b1bb0-466e-4d7d-92d7-f2eeb4c73e76@channel-tel.vpneti.cf:443/?type=ws&encryption=none&flow=&host=tel-channel.vpneti.cf&path=%2Fde2.vlessx.xyz%2F%3Fed%3D2048&security=tls&sni=tel-channel.vpneti.cf#%40VPNETI
-vless://c1f0fda6-55f3-438f-a985-8615ec79e0c3@15.204.244.253:31970/?encryption=none&flow=&host=internet.life.com.by&type=tcp&headerType=http#%40VPNETI
-vless://6c6a1474-a170-4947-b491-cf0384295ec3@157.90.144.211:443/?type=grpc&encryption=none&flow=&sni=dash.cloudflare.com&fp=firefox&security=reality&pbk=KuZOpuz0L4H-VNikILS8NP9oA6Ra9uTGEZLHH0FODFM&sid=83cdb009#%40VPNETI
+vless://ba3b1bb0-466e-4d7d-92d7-f2eeb4c73e76@channel-tel.vpneti.cf:443/?type=ws&encryption=none&flow=&host=tel-channel.vpneti.cf&path=%2Fde2.vlessx.xyz%2F%3Fed%3D2048&security=tls&sni=tel-channel.vpneti.cf#
+vless://6b7376dd-11d8-443c-804a-996072aefd81@16.170.40.252:8443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=coinmarketcap.com&fp=chrome&security=reality&pbk=kV-EuEdgW8OwU85SCOZlC-Cg0XR25QpRPjGYniBSqxY&sid=5e#

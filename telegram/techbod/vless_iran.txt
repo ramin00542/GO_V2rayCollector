@@ -1,3 +1,6 @@
-vless://dae2ddc6-a892-495f-a001-181cec56ad12@snapp.ir:2052?path=%2F&security=none&encryption=none&host=p1.razstar.ir&type=ws#@techbod
-vless://3eeb1bff-5d48-4697-a48a-b476bf4e5830@snapp.ir:80?encryption=none&type=ws&path=%2F&host=novin3.deltamarket8.ir#@techbod
-vless://df64d23f-b89a-44a2-a39b-b2036019670e@snapp.ir:80?security=none&type=ws&headerType=&path=%2F%3Fed%3D2080&host=1.jojo.avenflow.ir#@techbod
+vless://9692c29e-f714-44a5-abef-430d1169635a@45.90.75.168:2015?encryption=none&type=tcp&headerType=none#@techbod
+vless://898dbb77-3379-4980-944f-a56a1ba91bcc@nullnetwork.mashhad-gsm.ir:42726?encryption=none&type=tcp#
+vless://935e8f53-c72d-462c-9c2f-5b5bff06398d@nullnetwork.mashhad-gsm.ir:42726?encryption=none&type=tcp#@techbod
+vless://fb034b2c-bf04-47f2-bd72-135190f79fab@nullnetwork.mashhad-gsm.ir:42726?encryption=none&type=tcp#
+vless://c271e563-0482-4f04-b8da-bccae5a544e1@nullnetwork.mashhad-gsm.ir:42726?encryption=none&type=tcp#
+vless://59941910-c958-45c4-b8c6-b5523970c41f@nullnetwork.mashhad-gsm.ir:42726?encryption=none&type=tcp#@techbod

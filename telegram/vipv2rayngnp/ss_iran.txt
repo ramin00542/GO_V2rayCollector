@@ -1,1 +1,1 @@
-ss://MjAyMi1ibGFrZTMtYWVzLTI1Ni1nY206bzMwLy96bVFablcrRzZsdGJ3aU5PVEFCdHI2Skx5TDBNQnd1ZDBnZDBGWT06T09xcUpGSHI1S1pYUUloVTFBZFhHT1NtRkFHb0UvdmxmZ0toc1RyU1dMYz0=@87.107.111.105:80#
+vless://9692c29e-f714-44a5-abef-430d1169635a@45.90.75.168:2015?security=none&encryption=none&headerType=none&type=tcp#%40VIPV2rayNGNP

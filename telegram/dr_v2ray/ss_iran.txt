@@ -1,11 +1,4 @@
-vless://4b811a3e-8a38-447f-9050-abd4cb81b382@129.212.239.177:42036?path=%2FFREE%20By%20Tharuwa%20%280767597317%29&security=none&encryption=none&host=m.zoom.us&type=ws#
-vless://c05ec0f8-dadc-4c0c-b2a9-19b2ab5a20cf@159.223.93.44:13395?path=%2FFREE%20By%20Tharuwa%20%280767597317%29&security=none&encryption=none&host=m.zoom.us&type=ws#Free%20By%20Tharuwa%20%28%40z_z_z_zz_z%29
-vless://095c7b74-5409-45e5-8c75-c84dc31f919b@188.166.224.45:52714?path=%2FFREE%20By%20Tharuwa%20%280767597317%29&security=none&encryption=none&host=m.zoom.us&type=ws#
-vless://bfb7355f-da10-470c-99d2-16c5061c403a@152.42.185.230:23675?path=%2FFREE%20By%20Tharuwa%20%280767597317%29&security=none&encryption=none&host=m.zoom.us&type=ws#
-vless://e7e90652-2156-4363-8118-8951344659f3@172.237.73.26:59793?path=%2FFREE%20By%20Tharuwa%20%280767597317%29&security=none&encryption=none&host=m.zoom.us&type=ws#
-vless://c05ec0f8-dadc-4c0c-b2a9-19b2ab5a20cf@178.128.86.252:27459?path=%2FFREE%20By%20Tharuwa%20%280767597317%29&security=none&encryption=none&host=m.zoom.us&type=ws#Free%20By%20Tharuwa%20%28%40z_z_z_zz_z%29
-vless://39039c78-41a2-45f1-a64d-f6818efcae03@172.104.161.138:27420?path=%2FFREE%20By%20Tharuwa%20%280767597317%29&security=none&encryption=none&host=m.zoom.us&type=ws#
-vless://171bf1a6-237d-49ce-ab00-32758da0f9a2@178.128.17.93:11125?path=%2FFREE%20By%20Tharuwa%20%280767597317%29&security=none&encryption=none&host=zoom.us&type=ws#Free%20By%20Tharuwa
-vless://126dd15e-2fef-49d1-b5ce-2c4690abda90@157.230.253.157:8443?path=%2FFREE%20By%20Tharuwa%20%280767597317%29&security=tls&encryption=none&fp=chrome&type=ws&sni=zoom.us#
-vless://c05ec0f8-dadc-4c0c-b2a9-19b2ab5a20cf@159.223.93.44:13395?path=%2FFREE%20By%20Tharuwa%20%280767597317%29&security=none&encryption=none&host=m.zoom.us&type=ws#
-vless://e7e90652-2156-4363-8118-8951344659f3@172.237.73.26:59793?path=%2FFREE%20By%20Tharuwa%20%280767597317%29&security=none&encryption=none&host=m.zoom.us&type=ws#Free-Tharuwa(0767597317)
+vless://ab63e55a-8600-4fae-90bd-2e180a2fe24e@139.59.125.84:8443?path=%2FFREE%20By%20Tharuwa%20%280767597317%29&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&fp=chrome&type=ws&sni=zoom.us#
+vless://095c7b74-5409-45e5-8c75-c84dc31f919b@188.166.224.45:52714?path=%2FFREE%20By%20Tharuwa%20%280767597317%29&security=none&encryption=none&host=m.zoom.us&type=ws#Free%20By%20Tharuwa%20%280767597317%29
+vless://d7a84b8a-66c3-4b9c-b1b7-d576058c489f@167.172.83.42:11441?path=%2FFREE%20By%20Tharuwa%20%280767597317%29&security=none&encryption=none&host=zoom.us&type=ws#
+vless://4b811a3e-8a38-447f-9050-abd4cb81b382@129.212.239.177:42036?path=%2FFREE%20By%20Tharuwa%20%280767597317%29&security=none&encryption=none&host=m.zoom.us&type=ws#Free%20By%20Tharuwa%20WebSocket%20%28%40z_z_z_zz_z%29

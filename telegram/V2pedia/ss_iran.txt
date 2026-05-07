@@ -1,1 +1,2 @@
 vless://65b5d3f8-d239-5b29-e242-ab84f63ea3a2@hmt.masterdadeh.ir:80?type=ws&host=&security=none&sni=185.226.94.242&alpn=&path=/&headerType=http#aWg1AL-Bot
+vless://a3d096e0-1ed1-318c-16d2-0667e91ce11f@hmt.masterdadeh.ir:80?type=ws&host=&security=none&sni=185.226.94.242&alpn=&path=/&headerType=http#

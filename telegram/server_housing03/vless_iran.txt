@@ -1,1 +1,2 @@
-vless://df0680ca-e43c-498d-ed86-8e196eedd012@84.32.9.29:8880?mode=gun&security=none&encryption=none&type=grpc#%40SERVER_HOUSING03
+vless://df0680ca-e43c-498d-ed86-8e196eedd012@638779006056417026.rasht-drec-abac.info:8880?mode=gun&security=none&encryption=none&type=grpc#
+vless://df0680ca-e43c-498d-ed86-8e196eedd012@37.27.42.250:8880?mode=gun&security=none&encryption=none&type=grpc#%40SERVER_HOUSING03

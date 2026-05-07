@@ -1,3 +1,2 @@
-vless://d80e27b6-1dee-466a-8b18-8f64bfd66a60@104.27.114.192:2052?security=none&allowInsecure=0&encryption=none&type=ws&host=vxpor.positivsis.website&path=/#https://t.me/CaV2ray
 https://t.me/CaV2ray
 https://t.me/proxy?server=85.133.200.190&port=8080&secret=dd66881e6e1e6d1ff6666666616d66aeae

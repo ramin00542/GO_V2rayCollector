@@ -1,1 +1,1 @@
-vless://4e016302-be30-4aca-9d12-3759d697124b@:80?path=%2F&security=none&encryption=none&type=ws#
+vless://4e016302-be30-4aca-9d12-3759d697124b@:80?path=%2F&security=none&encryption=none&type=ws#%40GrizzlyVPN

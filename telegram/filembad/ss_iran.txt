@@ -1,8 +1,2 @@
-vless://96c8de35-de20-4014-85d2-e56e3d64a85b@tapsi.ir:443?path=%2F&security=tls&alpn=h3&encryption=none&insecure=0&host=isoout.pbvsrk.carnagesv.top&fp=random&type=ws&allowInsecure=0&sni=isoout.pbvsrk.carnagesv.top#%40filembad
-vless://96c8de35-de20-4014-85d2-e56e3d64a85b@tapsi.ir:443?path=%2F&security=tls&alpn=h3&encryption=none&insecure=0&host=isoout.pbvsrk.carnagesv.top&fp=random&type=ws&allowInsecure=0&sni=isoout.pbvsrk.carnagesv.top#
-vless://beff4c4f-19db-48c4-92c4-7be7aaf15ad0@s.ar-panelar.com:8443?mode=auto&path=%2F&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&insecure=0&fp=chrome&type=xhttp&allowInsecure=0&sni=s.ar-panelar.com#
-vless://7f296207-cab4-4105-8c98-73ca610079f1@vitallife.gg:443?encryption=none&type=ws&security=tls&path=%2Fwp-content%2Fcachecache&host=vitallife.gg&sni=vitallife.gg&alpn=http%2F1.1&fp=chrome&allowInsecure=1#%40filembad
-vless://f49886d9-4f8b-4e4d-a620-98f2d74da580@snapp.ir:80?type=ws&encryption=none&path=%2F&host=cwh.persianstorebnd.ir&security=none#%40filembad
-vless://aff777df-4462-4993-bf4d-dd01f30508e6@pg.nexorainnovationhub.ir:80?path=%2F&security=none&encryption=none&host=germany.lezzaluxa.ir&type=ws#%40filembad
-vless://d86e2e96-b637-40dd-bd2f-08f37e5d8139@plse4.gishevip.xyz:80?path=%2Fxray&security=none&encryption=none&host=bot.vipiranian.de&type=ws#
-vless://52bda602-6d25-4ea5-99e8-8356d96dc7a9@snapp.ir:80?path=%2F&security=none&encryption=none&host=sphrrzv.iranofilm.ir&type=ws#%40filembad
+vless://3295028b-9f47-dd81-a5db-f5c21bef2179@tr.tehranionliine.ir:80?path=/&security=none&encryption=none&type=ws#%40filembad
+vless://628f8495-f851-42dd-8aa6-0e7157cd31d6@arvancloud.ir:80?path=%2F&security=none&encryption=none&host=m.ahwazteem.ir&type=ws#%40filembad

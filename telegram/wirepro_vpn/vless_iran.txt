@@ -1,2 +1,7 @@
-vless://SvnTeam@104.17.204.57:443?security=tls&encryption=none&type=grpc&sni=Fnd.SvnNvs.Online&fp=chrome&alpn=h2,http/1.1#
-vless://2199db53-be52-4f99-9ade-255754dd430a@164.90.172.122:8443?type=tcp&path=%2F&host=cloudflare.com&headerType=http&security=none#%40WirePro_VPN-Free%20Config
+vless://b1149adc-102b-4bcf-e9b4-9614ad888d70@195.177.255.165:28093?type=tcp&path=%2F&headerType=http#
+vless://2199db53-be52-4f99-9ade-255754dd430a@164.90.172.122:8443?type=tcp&path=%2F&host=cloudflare.com&headerType=http&security=none#
+vless://82f4c905-2d1f-4e45-a6a7-8f4c3a4a6548@85.198.17.173:28093?type=tcp&path=%2F&host=telewebion.com&headerType=http&security=none#
+vless://d67f26b6-91bf-447e-b5b9-43ceeab528df@164.90.172.122:8443?type=tcp&path=%2F&host=cloudflare.com&headerType=http&security=none#
+vless://f73f802f-d34f-4b4e-bf66-0ed9e94ef831@164.90.172.122:8443?type=tcp&path=%2F&host=cloudflare.com&headerType=http&security=none#
+vless://47b11937-ba66-479b-ee3a-daf8e84fe54f@tls.wireprovpn.xyz:2083?type=grpc&serviceName=&security=tls&fp=chrome&alpn=http%2F1.1&allowInsecure=1&sni=tls.wireprovpn.xyz#
+vless://007eae9f-1a59-4d4e-e8cc-db56657eddf2@tls.wireprovpn.xyz:2096?type=ws&path=%2F&security=tls&fp=chrome&alpn=http%2F1.1&allowInsecure=1&sni=tls.wireprovpn.xyz#%40WirePro_VPN-Config%20Free

@@ -1,1 +1,1 @@
-vless://935573d9-db1a-4235-8454-ded612105be6@5.180.82.155:8080?security=reality&encryption=none&pbk=-y9ICGWwLbWYcKSXZNiBAaSvh9e1odOgYVKxiCIuhWw&headerType=none&fp=chrome&type=tcp&sni=yahoo.com&sid=abc6c826d165#
+vless://e53a92c7-4a78-49cc-ab01-917661058b9a@172.64.153.22:8443?path=%2F%3Fed%3D2560&security=tls&encryption=none&insecure=0&host=egaxhxw0p031z8iyfgjt9fyhhb1hwj4vr3gn0xoxqu901o8ruij.zjde5.de5.net&type=ws&allowInsecure=0&sni=egaxhxw0p031z8iyfgjt9fyhhb1hwj4vr3gn0xoxqu901o8ruij.zjde5.de5.net#%D8%AF%DA%A9%D8%AA%D8%B1%20%D9%86%DB%8C%DA%A9

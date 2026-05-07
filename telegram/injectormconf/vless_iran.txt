@@ -1,2 +1,6 @@
-vless://52c602fc-532d-49ee-9383-f8eb0007322b@54.38.59.30:443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=canva.com&fp=firefox&security=reality&pbk=JYX6QCdjl0yIzfE_TMjJAnD0zyuroMhT2fj3oAzlTWc&sid=8b62ab46#
-vless://e02208b6-2626-49ef-8b93-0d80ed33f4ac@51.195.169.100:443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=yahoo.com&fp=firefox&security=reality&pbk=p0Q_UwGTMDM4Hk1v-2F43NO4AekmT1crXiPIJS_NzF8&sid=01417ce2#🇬🇧انگلیس🇬🇧-🟡ایرانسل|رایتل🟣
+vless://52c602fc-532d-49ee-9383-f8eb0007322b@104.31.16.92:80?type=ws&path=%2F&host=netherlands.ligerteam.com#
+vless://52c602fc-532d-49ee-9383-f8eb0007322b@104.31.16.92:80?type=ws&path=%2F&host=unitedstates.heydasip.com#
+vless://52c602fc-532d-49ee-9383-f8eb0007322b@104.31.16.92:80?type=ws&path=%2F&host=heydasfrance.ligerteam.com#🇫🇷فرانسه🇫🇷-🔵همراه
+vless://52c602fc-532d-49ee-9383-f8eb0007322b@104.31.16.92:80?type=ws&path=%2F&host=unitedstates.heydasip.com#🇺🇸نیویورک🇺🇸-🔵همراه
+vless://52c602fc-532d-49ee-9383-f8eb0007322b@54.38.59.30:443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=canva.com&fp=firefox&security=reality&pbk=JYX6QCdjl0yIzfE_TMjJAnD0zyuroMhT2fj3oAzlTWc&sid=8b62ab46#🇵🇱لهستان🇵🇱-🟡ایرانسل|رایتل🟣
+vless://52c602fc-532d-49ee-9383-f8eb0007322b@104.31.16.92:80?type=ws&path=%2F&host=netherlands.ligerteam.com#🇳🇱آمستردام🇳🇱-🔵همراه

@@ -1,2 +1,4 @@
-vless://7a66b8ef-9713-4b69-b839-6bb45070af35@91.99.198.174:443?security=none&encryption=none&host=zula.ir%2F%3FTELEGRAM%40JOKERRVPN&headerType=http&type=tcp#%F0%9F%87%AA%F0%9F%87%A6%40Jeyksatan
-vless://8cad6474-5344-476a-9bf9-8e65d5a70d93@tunnel.bestserver.sbs:80?path=%2F%3Fed%3D2560&security=none&encryption=none&host=v2ray2.bestserver.sbs&type=ws#%40Jeyksatan
+vless://2eaef053-5fd6-4def-b234-d760690355ff@91.99.203.70:51615?security=none&encryption=none&host=zula.ir&headerType=http&type=tcp#
+vless://53fa8faf-ba4b-4322-9c69-a3e5b1555049@104.17.147.22:80?path=%2FTelegram%40V2ray_Alpha%2F%3Fed%3D2560&security=none&encryption=none&host=redfree8mahsang6.redfree8.ir&type=ws#%40Jeyksatan
+vless://761c5103-01a1-45fe-91b4-f351e253f355@230920393.f-sub.com:3799?security=none&encryption=none&host=speedtest.net&headerType=http&type=tcp#
+vless://53fa8faf-ba4b-4322-9c69-a3e5b1555049@104.17.147.22:80?path=%2FTelegram%40V2ray_Alpha%2F%3Fed%3D2560&security=none&encryption=none&host=redfree8mahsang6.redfree8.ir&type=ws#

@@ -1,1 +1,2 @@
-vless://aaaaaabb-4ddd-4eee-9fff-ffffffffffff@104.21.48.147:80?path=%2F64.181.218.67%3D443&security=none&encryption=none&host=afrcloud22.mmv.kr&type=ws&sni=afrcloud22.mmv.kr#%40V2rayMiner%20%F0%9F%87%BA%F0%9F%87%B2
+vless://7376dac3-b0dc-1822-adee-beb99c1342d9@fi1.mahboob.top:2086?security=none&encryption=none&headerType=none&type=tcp#%40V2rayMiner%20%F0%9F%87%AB%F0%9F%87%AE
+vless://6a2cb1ed-83fa-4f31-999c-d51a6628ef69@kiramshadhendi.global.ssl.fastly.net:443?path=%2Fsite&security=tls&alpn=http%2F1.1&encryption=none&insecure=0&fp=chrome&type=ws&allowInsecure=0&sni=kiramshadhendi.global.ssl.fastly.net#%40V2rayMiner%20%F0%9F%87%B3%F0%9F%87%B1

@@ -1,4 +1,1 @@
-vless://4831ab5a-f3a7-4064-bd9a-643cc89c2e72@net.asokord.fun:35824?security=none&encryption=none&headerType=none&type=tcp#%40YamYamProxy
-vless://c09816d1-9b53-4e0d-85a8-9def477121ab@snappfood.ir:80?encryption=none&type=ws&path=%2Fws&host=cdnisfucka.drnimaamini.ir#
-vless://df58aacd-86b8-41e2-a399-d6ccbe1527d0@185.252.86.89:443?encryption=none&type=xhttp&path=%2F&host=invalidconnection.global.ssl.fastly.net&mode=auto&extra=%7B%22xPaddingBytes%22%3A%220%22%7D#
-vless://df58aacd-86b8-41e2-a399-d6ccbe1527d0@185.252.86.89:443?encryption=none&type=xhttp&path=%2F&host=invalidconnection.global.ssl.fastly.net&mode=auto&extra=%7B%22xPaddingBytes%22%3A%220%22%7D#@YamYamProxy
+vless://dae2ddc6-a892-495f-a001-181cec56ad12@snapp.ir:2052?encryption=none&type=ws&path=%2F&host=p1.razstar.ir#@YamYamProxy

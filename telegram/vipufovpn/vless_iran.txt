@@ -1,2 +1,1 @@
-vless://aef3b456-2f83-4ca6-a66c-32bd2f534b68@162.159.138.6:80?path=%2F%3Fed%3D2048&security=none&encryption=none&host=ac7.zxv.biz.id&type=ws#
-vless://a89c9199-0b1d-4470-f3ea-94725589deb8@104.16.29.8:80?path=%2F&security=none&encryption=none&host=COuNSElInG.aPArAt.bio&type=ws#Channel+id%3A+%40ShadowProxy66%F0%9F%87%A8%F0%9F%87%A6
+vless://aef3b456-2f83-4ca6-a66c-32bd2f534b68@162.159.138.6:80?path=%2F%3Fed%3D2048&security=none&encryption=none&host=ac7.zxv.biz.id&type=ws#Channel+id%3A+%40ShadowProxy66%F0%9F%87%A8%F0%9F%87%A6

@@ -1,1 +1,1 @@
-vless://06c9fd44-3a53-4c2a-877c-01df0d32e4ee@arvancloud.ir:80?type=ws&encryption=none&path=%40TunizoNET&host=ri.amirenzohost.ir&security=none#https://t.me/falcunargo
+vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?path=%2F&security=none&encryption=none&host=sr.novatechsapr.ir&type=ws#@AarazV2ray

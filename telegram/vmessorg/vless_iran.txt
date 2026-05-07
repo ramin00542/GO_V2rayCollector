@@ -1,1 +1,3 @@
-vless://cf1b86c8-a98f-4e1a-8cad-396c25a66131@104.20.6.134:80?mode=auto&path=%2F&security=none&encryption=none&host=ws.ab841.com.&type=xhttp#
+vless://6202b230-417c-4d8e-b624-0f71afa9c75d@104.20.6.134:2096?security=tls&allowInsecure=0&encryption=none&type=ws&host=sni.111000.indevs.in&path=/&sni=sni.111000.indevs.in&fp=chrome#
+vless://6202b230-417c-4d8e-b624-0f71afa9c75d@104.20.6.134:2096?path=%2F&security=tls&encryption=none&insecure=1&host=sni.111000.indevs.in&type=ws&allowInsecure=1&sni=sni.111000.indevs.in#vmessorg
+vless://441239f9-3017-4ab3-b123-23eeaa48133b@104.20.6.134:443?encryption=none&type=ws&host=cdn.hosseincapri.sbs&path=/ws&security=tls&sni=cdn.hosseincapri.sbs#

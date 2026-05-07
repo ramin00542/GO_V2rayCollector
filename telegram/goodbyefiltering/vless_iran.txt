@@ -1,1 +1,3 @@
-vless://1176c741-aaf3-4af2-9b52-1ee72fcaad15@128.140.117.241:30195?mode=gun&security=reality&encryption=none&pbk=oky43kNBJPeO6nucKr1FrtDcY0twTjZmr-XS_AoYmz0&fp=chrome&spx=%2F&type=grpc&serviceName=@Funza-@Funza-@ShadowSocks_s-@Funza-@Funza-@ShadowSocks_s-@Funza-@Funza-@ShadowSocks_s-@Funza-@Funza-@ShadowSocks_s-@Funza-@Funza-@ShadowSocks_s-@Funza-@Funza-@ShadowSocks_s-@Funza-@Funza-@ShadowSocks_s&sni=a.gsmarena.com&sid=c61b48cb#
+vless://9208e854-c58f-4d42-9fb4-8d0927b33285@cdn.king4father.shop:8080?encryption=none&security=none&type=ws&path=%2Fcustom-config#%40custom_config
+vless://0f3baa1b-58fa-4cc2-a3d7-d834bb8d970c@in1rfsblhhoh.azborn.ir:443/?type=ws&encryption=none&path=%2F&security=tls&sni=in1rfsblhhoh.azborn.ir#
+vless://0f3baa1b-58fa-4cc2-a3d7-d834bb8d970c@in1rfsblhhoh.azborn.ir:443/?type=ws&encryption=none&path=%2F&security=tls&sni=in1rfsblhhoh.azborn.ir#Join_Telegram%2B%3A%2B%40vpnsshocean

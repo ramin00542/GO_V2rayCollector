@@ -1,2 +1,2 @@
-vless://c3077f1d-3b94-4a83-aecb-f4e9beb4dc7e@[::ffff:b992:ad3b]:8080?path=%2F&security=none&encryption=none&host=xn--047h.iman-v2ray.sbs.&type=ws#
-vless://c3077f1d-3b94-4a83-aecb-f4e9beb4dc7e@[::ffff:6812:cae8]:8080?path=%2F&security=none&encryption=none&host=xn--047h.iman-v2ray.sbs.&type=ws#
+vless://22ebc3ad-2e41-4fb3-acdd-c6269ac9bf81@95.85.95.85:443?encryption=none&security=tls&sni=promo.worldofwarships.com&alpn=h2%2Chttp%2F1.1&fp=chrome&type=ws&host=mamadgamenetcsgoskin2.ir&path=%2F#
+vless://b37bc820-b959-4811-a0a1-27d319a22d7d@77.221.154.111:43035?type=tcp&security=none#free%20iran-vbyu0zam

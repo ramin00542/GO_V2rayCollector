@@ -1,1 +1,1 @@
-vless://93e7483a-08f3-4d41-a36d-c789d55f20e9@77.105.146.113:8443?type=grpc&serviceName=&mode=multi&security=reality&fp=firefox&pbk=1kjs8QkhZ4acdATX4LATtfHJDHeqnmwMyRsA4ThRvWU&sni=cdn.accuweather.com&sid=fb58979f&spx=%2Fen%2Fweather-forecasts#Irancell-Reality%20%40MarzAzad-test
+vless://93e7483a-08f3-4d41-a36d-c789d55f20e9@77.105.146.113:8443?type=grpc&serviceName=&mode=multi&security=reality&fp=firefox&pbk=1kjs8QkhZ4acdATX4LATtfHJDHeqnmwMyRsA4ThRvWU&sni=cdn.accuweather.com&sid=fb58979f&spx=%2Fen%2Fweather-forecasts#

@@ -1,2 +1,2 @@
-vless://dae2ddc6-a892-495f-a001-181cec56ad12@snapp.ir:2052?path=%2F&security=none&encryption=none&host=p1.razstar.ir&type=ws#
-vless://20299437-d0ee-429a-aa81-ad0f8a08e114@mmm5.skiv.me:2087?path=%2Fapi30%3Fed%3D2048&security=tls&encryption=none&fp=safari&type=ws#
+vless://30e35bd7-6ce7-4c0c-8fbd-cec03071852f@faraaa.darakio.ir:80?encryption=none&type=ws&path=%2F#@vasl_bashim
+vless://dae2ddc6-a892-495f-a001-181cec56ad12@snapp.ir:2052?encryption=none&type=ws&path=%2F&host=p1.razstar.ir#@vasl_bashim

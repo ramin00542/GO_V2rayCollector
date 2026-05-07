@@ -1,3 +1,3 @@
-vless://Telegram-BLuev2rayng--joine1@www.speedtest.net:8080?path=%2FTelgram%3Fed%3D2048&security=none&encryption=none&host=5.WwW.SpeedTEST.NEt.zULa.IR.shopShirvAn.IR.&type=ws#
-vless://config--BLUEV2RAYNG--chaneel@www.speedtest.net:80?path=%2FChaneel-BLUETOWVRAYNG%3Fed%3D2048&security=none&encryption=none&host=5.WwW.SpeedTEST.NEt.zULa.IR.shopShirvAn.IR.&type=ws#Kopltall+all
-vless://config--BLUEV2RAYNG--chaneel@www.speedtest.net:80?path=%2FChaneel-BLUETOWVRAYNG%3Fed%3D2048&security=none&encryption=none&host=5.WwW.SpeedTEST.NEt.zULa.IR.shopShirvAn.IR.&type=ws#
+vless://Telegram-BLuev2rayng--joine1@www.speedtest.net:8080?path=%2FTelgram%3Fed%3D2048&security=none&encryption=none&host=5.WwW.SpeedTEST.NEt.zULa.IR.shopShirvAn.IR.&type=ws#CDN++KOPLTALL
+vless://Telegram-BLuev2rayng@www.speedtest.net:8080?path=%2FTelgram%3Fed%3D2048&security=none&encryption=none&host=5.WwW.SpeedTEST.NEt.zULa.IR.shopShirvAn.IR.&type=ws#
+vless://f1652ca5-c3fc-4ec6-83af-2f85579da0ed@85.133.204.8:51011?security=none&encryption=none&host=telewebion.com&headerType=http&type=tcp#

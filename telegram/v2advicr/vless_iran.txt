@@ -1,2 +1,2 @@
-vless://66f73678-34a5-4863-bd7b-cba151a2562e@185.143.233.5:2086?path=%2F&security=none&encryption=none&host=cdn.sesrsa.com&type=ws#%40UnNurmal
-vless://c09816d1-9b53-4e0d-85a8-9def477121ab@185.143.233.122:80?encryption=none&security=none&type=ws&host=cdnisfucka.drnimaamini.ir&path=%2Fws#UnNurmal
+vless://41c9e6be-cd11-4511-996c-7db798d38540@185.8.172.182:20249?security=&encryption=none&headerType=none&type=tcp#%40UnNurmal
+vless://a66f90d8-cfc8-4eef-ad19-378aeede1d9b@25.129.199.0:2052?path=%2F%3Fed%3D2048&security=none&encryption=none&host=FINLAND.SODOGODPING.IR&type=ws#%40V2advicr

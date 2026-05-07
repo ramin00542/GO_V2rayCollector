@@ -1,3 +1,2 @@
-vless://c09816d1-9b53-4e0d-85a8-9def477121ab@snappfood.ir:80?path=%2Fws&security=none&encryption=none&host=cdnisfucka.drnimaamini.ir&type=ws#@@v2ray_v_vpn
-vless://3db4f30e-8237-40a3-92d4-f5aabb87b797@snapp.ir:2086?type=ws&encryption=none&path=&host=jing.eemehaze.lol&security=none#@d1alavi
-vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?path=%2F&security=&encryption=none&host=sr.novatechsapr.ir&type=ws#
+vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?path=%2F&security=none&encryption=none&host=sr.novatechsapr.ir&type=ws#%40alavi
+vless://b401aadf-bf2f-4b2a-880b-18eee4c3388b@Tapsi.ir:8080?path=%2Fcdn&security=none&encryption=none&host=Zp.movizdl.ir&type=ws#

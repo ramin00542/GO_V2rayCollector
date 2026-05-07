@@ -1,1 +1,1 @@
-vless://e05ad0d3-5bf0-463d-9ba2-817680c6f895@snapp.ir:8080?path=%2F&security=none&encryption=none&host=simorgh.darerio.ir&type=ws#https://t.me/ultrasurf_12
+vless://9692c29e-f714-44a5-abef-430d1169635a@45.90.75.168:2015?security=none&encryption=none&headerType=none&type=tcp#https://t.me/ultrasurf_12

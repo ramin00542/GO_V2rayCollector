@@ -1,7 +1,1 @@
-vless://4e9860f0-ecbd-46bb-93b2-9378c1296b05@0733.outline-vpn.cloud:8080?path=%2Fbackup&security=none&encryption=none&host=home.telewebion.network&type=ws#
-vless://4e9860f0-ecbd-46bb-93b2-9378c1296b05@0733.outline-vpn.cloud:8080?path=%2Fbackup&security=none&encryption=none&host=home.telewebion.network&type=ws#Persian+14+ID%28%40Outline_Vpn%29
-vless://1eac6212-ed22-42ab-b6ea-bf13b387c6a9@77.91.84.45:22?security=reality&encryption=none&pbk=ksx0hPrRqVF_fCBua6cSk-tG3cs44ypIxU31AJ4_xiw&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=discord.com&sid=453bd40e2900fc73#%40V2rayvpnchannel+%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%D8%B3%D9%84%F0%9F%9F%A1
-vless://1eac6212-ed22-42ab-b6ea-bf13b387c6a9@77.91.84.45:22?security=reality&encryption=none&pbk=ksx0hPrRqVF_fCBua6cSk-tG3cs44ypIxU31AJ4_xiw&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=discord.com&sid=453bd40e2900fc73#
-vless://b75b3034-36ab-4979-beae-3d02db1b11ec@cxc--join.outline-vpn.cloud:443?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=always-online1.lp-airdrop.top&fp=randomized&type=ws&sni=always-online1.lp-airdrop.top#
-vless://23ca8a29-5605-4dbe-9be3-137772c16aec@per----join.outline-vpn.cloud:2086?path=%2F&security=none&encryption=none&host=a1.virankade.site&type=ws#Persian+11+ID%28%40Outline_Vpn%29
-vless://efe70b53-38d6-4434-f41c-ad45862a9cd6@hi--1join.outline-vpn.cloud:28585?path=%2F&security=none&encryption=none&type=ws#
+vless://b75b3034-36ab-4979-beae-3d02db1b11ec@cxc--join.outline-vpn.cloud:443?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=always-online1.lp-airdrop.top&fp=randomized&type=ws&sni=always-online1.lp-airdrop.top#Persian+10+ID%28%40Outline_Vpn%29

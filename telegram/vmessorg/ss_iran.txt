@@ -1,1 +1,1 @@
-vless://6202b230-417c-4d8e-b624-0f71afa9c75d@104.20.6.134:2096?security=tls&allowInsecure=0&encryption=none&type=ws&host=sni.111000.indevs.in&path=/&sni=sni.111000.indevs.in&fp=chrome#vmessorg
+vless://441239f9-3017-4ab3-b123-23eeaa48133b@104.20.6.134:443?encryption=none&type=ws&host=cdn.hosseincapri.sbs&path=/ws&security=tls&sni=cdn.hosseincapri.sbs#@vmessorg

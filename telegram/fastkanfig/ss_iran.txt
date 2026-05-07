@@ -1,6 +1,5 @@
-vless://64569c45-7ce4-4336-bae6-fa3e59c9498a@snapp.ir:8080?path=%2F&security=none&encryption=none&host=M2.snllshop.ir&type=ws#
-vless://08665c10-c5ae-44f2-bc67-9c456a04014b@2.144.5.137:30536?security=none&encryption=none&headerType=none&type=tcp#
-vless://64569c45-7ce4-4336-bae6-fa3e59c9498a@snapp.ir:2052?path=%2F&security=none&encryption=none&host=M3.snllshop.ir&type=ws#%F0%9F%9A%80%20%40fastkanfig
-vless://9f70861b-b752-4bac-9b58-82ca8aa8dd26@l1.msljha8844.site:1050?security=none&encryption=none&host=cafeariel.ir&headerType=http&type=tcp#
-vless://a66525c0-328e-4af8-ae76-3ce1e4eeb9d2@snapp.ir:80?path=%2Findex.html&security=none&encryption=none&host=aiagentshop.aruxm.ir&type=ws#
-vless://64569c45-7ce4-4336-bae6-fa3e59c9498a@snapp.ir:80?path=%2F&security=none&encryption=none&host=M1.snllshop.ir&type=ws#%F0%9F%9A%80%20%40fastkanfig
+vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?path=%2F&security=none&encryption=none&host=sr.novatechsapr.ir&type=ws#%D8%AA%D8%B1%DA%A9%DB%8C%D8%A8%20%D8%A8%D8%A7%20%D8%B3%D8%A7%DB%8C%D9%81%D9%88%D9%86
+vless://9f70861b-b752-4bac-9b58-82ca8aa8dd26@l1.msljha8844.site:1050?security=none&encryption=none&host=cafeariel.ir&headerType=http&type=tcp#%40fastkanfig%20telegram
+vless://66e438fc-699a-4ac2-85a9-3d9d7e2c6f3a@snapp.ir:2095?path=%2Ffilmirani%3Fed%3D2048&security=none&encryption=none&host=vip.magicping.ir&type=ws#%40fastkanfig
+vless://08665c10-c5ae-44f2-bc67-9c456a04014b@2.144.5.137:30536?security=none&encryption=none&headerType=none&type=tcp#%40fastkanfig%20%F0%9F%AB%A1
+vless://dae2ddc6-a892-495f-a001-181cec56ad12@snapp.ir:2052?path=%2F&security=&encryption=none&host=p1.razstar.ir&type=ws#

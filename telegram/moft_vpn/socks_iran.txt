@@ -1,4 +1,4 @@
 socks://Og@62.220.126.92:30376#%40Moft_Vpn%20%D8%AA%D8%B1%DA%A9%DB%8C%D8%A8%DB%8C
+socks://Og@45.94.213.213:443#%40moft_vpn
 socks://Og@62.220.126.56:31548#%40Moft_Vpn
 socks://Og@185.8.172.128:443#%40Moft_Vpn
-socks://Og@45.94.213.213:443#%40moft_vpn

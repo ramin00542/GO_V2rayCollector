@@ -1,1 +1,1 @@
-vless://ceb70fc0-4886-4462-9651-d53b6367846d@snapp.ir:80?path=%2FFIRELINK&security=none&encryption=none&host=firelink.arian-go-internet.ir&type=ws#
+vless://a3bfe21b-0d7a-496f-8e97-0bbc33bff55d@185.143.233.5:443?path=%2Fchat%3Fed%3D128&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&insecure=0&host=in.8lack.ir&fp=firefox&type=ws&allowInsecure=0&sni=in.8lack.ir#

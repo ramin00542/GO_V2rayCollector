@@ -1,2 +1,5 @@
-vless://a75cb418-c1d6-476a-9464-ad1bd5181e3c@discord.gg:443?path=%2F&security=tls&encryption=none&alpn=h2,http/1.1&host=e.vpncustomize.Website&fp=chrome&type=ws&sni=de.vpncustomize.Website#
-vless://8e7e606b-ff2c-4dd3-b3e1-6ebf0c46c97b@ygvbhutfcdcfcv.beingpopular.sbs:2082?type=tcp&path=%2F&host=www.cloudflare.com&headerType=http&security=none#
+vless://a75cb418-c1d6-476a-9464-ad1bd5181e3c@discord.gg:8080?path=%2F&security=none&encryption=none&host=de.vpncustomize.Website&type=ws#
+vless://a75cb418-c1d6-476a-9464-ad1bd5181e3c@all.vpncustomize.cam:2096?mode=gun&security=tls&encryption=none&type=grpc&serviceName=@VPNCUSTOMIZE&sni=CaNNectV2ray-OnlyIRAN-mCi-iraracnzsk-rgt-mkh.varzesh3-CDN.site#
+vless://a75cb418-c1d6-476a-9464-ad1bd5181e3c@all.vpncustomize.cam:2096?mode=gun&security=tls&encryption=none&alpn=h2&type=grpc&serviceName=@VPNCUSTOMIZE&sni=QvssvpfpV2ray-Soyosha-IranCCrl-mcisk-mtn-mciaoaovpn.SNAPP.monster#@Garnet_Free
+vless://d3fd9082-6ba0-42ef-9a79-87c7fea7eda9@garnet.torch1.top:443/?type=ws&path=%2F&security=tls&fp=chrome&alpn=h2%2Chttp%2F1.1#
+vless://a75cb418-c1d6-476a-9464-ad1bd5181e3c@all-vpncustomize.aparat.lol:2096?mode=gun&security=tls&encryption=none&alpn=h2,http/1.1&type=grpc&serviceName=@VPNCUSTOMIZE&sni=ConfigForV2rayng.Snapp.monster#

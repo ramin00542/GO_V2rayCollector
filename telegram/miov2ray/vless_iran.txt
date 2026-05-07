@@ -1,1 +1,1 @@
-vless://b9ad895b-12ac-40fc-a5ac-a5b2a1285001@104.21.28.62:443?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=3k.pureboy.eu.org&type=ws&sni=3k.pureboy.eu.org#%40MioV2ray
+vless://51905fd3-29de-4b4e-b351-83542f1d5390@parspack.com:443?path=%2F&security=tls&encryption=none&alpn=h2,http/1.1&host=biA.ALlhub.LTD&fp=random&type=ws&sni=Bia.alLhub.Ltd#%D8%AC%D9%88%DB%8C%D9%86+%D8%B4%DB%8C%D8%AF+%40MioV2ray

@@ -1,11 +1,6 @@
-vless://c9baac5d-a59a-4493-b215-3c6c64f498ed@red.nahidapp.com:443?path=%2Fred%2F&security=tls&encryption=none&insecure=0&host=red.nahidapp.com&type=ws&allowInsecure=0&sni=red.nahidapp.com#filembad-289
-vless://45a28c16-d212-4082-9eff-4f232edaa847@naggout.oblivionspark.com:1094?security=&encryption=none&headerType=none&type=tcp#canfingV2rayNG-141
-vless://42436f1d-5bdd-4b3a-8649-a17ef75e9672@18.197.254.88:48307?security=&encryption=none&headerType=&type=tcp#canfingV2rayNG-121
-vless://8823712c-9a8d-4c2a-b2a7-d5b3690d849a@185.83.113.134:54465?security=none&encryption=none&headerType=none&type=tcp#NormanV2ray-194
-vless://1723e136-0261-45e6-9a53-1b3bb06be78a@Tapsi.ir:8080?path=%2Fcdn&security=&encryption=none&host=Zp.movizdl.ir&type=ws#filembad-51
-vless://1d509c22-4e43-4067-9185-873ec5bb49da@de2.b762plus.shop:2015?security=&encryption=none&host=zula.ir&headerType=none&type=tcp#canfingV2rayNG-54
-vless://7e7a4ad3-4b94-47e7-b692-b77f94fc25f9@Rose8.lhpuniversity.online:41488?security=&encryption=none&host=aparat.com&headerType=http&type=tcp#canfingV2rayNG-195
-vless://fe08cb95-a7bd-48d3-b3e8-e083ab8cd9bc@193.151.158.183:9000?security=&encryption=none&headerType=http&type=tcp#canfingV2rayNG-355
-vless://ee9b0614-50ec-41b6-951b-e1d5d755fa4b@45.130.125.198:2053?security=tls&encryption=none&insecure=0&host=cd11.thisiswe.uno&fp=chrome&type=ws&allowInsecure=0&sni=cd11.thisiswe.uno#canfingV2rayNG-333
-vless://78fe9e47-dd71-484f-a90b-5b7c50599f09@voltage.fpnshop.ir:80?type=ws&encryption=none&path=%2F&host=voltage.socialxxmedia.sbs&security=none#filembad-185
-vless://dae2ddc6-a892-495f-a001-181cec56ad12@snapp.ir:2052?path=%2F&security=none&encryption=none&host=p1.razstar.ir&type#
+vless://42436f1d-5bdd-4b3a-8649-a17ef75e9672@18.197.254.88:48307?security=&encryption=none&headerType=&type=tcp#canfingV2rayNG-101
+vless://0bbdd35b-d7b5-42df-b93d-140ec600a3dc@185.228.236.226:80?path=%2Fpreply&security=none&encryption=none&host=app.gplance.com&type=ws#NetMeli9-26
+vless://fb034b2c-bf04-47f2-bd72-135190f79fab@nullnetwork.mashhad-gsm.ir:42726?encryption=none&type=tcp#filembad-299
+vless://AstroVPN-Official@kubernetes.io:443?mode=auto&path=%2Fappxa&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&extra=%7B%22xPaddingBytes%22%3A%22100-1000%22%7D&insecure=0&host=neon-pixie-167b20.netlify.app&fp=chrome&type=xhttp&allowInsecure=0&sni=kubernetes.io#NetMeli9-212
+vless://bc953469-14e8-4536-afbd-56dc8edf138a@194.59.215.131:672?security=none&allowInsecure=0&encryption=none&type=tcp&headerType=none#
+vless://01dfd6bf-4576-4ce3-8d72-bb1e4ccba2e4@arvancloud.ir:80?encryption=none&type=ws&path=@TunizoNET#filembad-16

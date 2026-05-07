@@ -1,1 +1,2 @@
-vless://e4824193-4f54-453b-d037-88368e85ef0e@104.21.86.253:443?mode=gun&security=tls&encryption=none&type=grpc&sni=pqh27v1.carwashipdir.shop#
+vless://02d87d00-c769-48d8-91cb-bd05e2f62790@151.101.25.242:80?mode=auto&path=%2F&security=none&encryption=none&host=jetfr228.global.ssl.fastly.net&type=xhttp#
+vless://099dbf2d-a8e0-406e-a85f-eba0ac9a68aa@195.135.252.28:443?security=reality&encryption=none&pbk=hGGVm0PiHJwNL34pBG6NLtbFGYVdcWhDu5zHYDoct08&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=yahoo.com&sid=4360e536#Latvia%20Sia%20Veesp

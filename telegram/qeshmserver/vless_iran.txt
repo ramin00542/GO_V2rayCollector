@@ -1,1 +1,1 @@
-vless://qeshmserver@151.101.3.8:80?type=xhttp&mode=auto&host=qeshmserverfree.global.ssl.fastly.net&security=none#@QeshmServer
+vless://qeshmserver@151.101.3.8:80?type=xhttp&mode=auto&host=qeshmserverfree.global.ssl.fastly.net&security=none#

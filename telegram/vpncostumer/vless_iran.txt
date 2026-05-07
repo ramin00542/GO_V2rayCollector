@@ -1,2 +1,2 @@
-vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?path=%2F&security=none&encryption=none&host=sr.novatechsapr.ir&type=ws#@UnNurmal
-vless://9e363a45-22c7-3d91-5820-5ed45bcb3f00@yas.masterdadeh.ir:80?type=ws&host=&security=none&sni=185.226.94.203&alpn=&path=/&headerType=http#@UnNurmal
+vless://dae2ddc6-a892-495f-a001-181cec56ad12@snapp.ir:2052?encryption=none&type=ws&path=%2F&host=p1.razstar.ir#@irshum2
+vless://c3074143-8951-4795-ae0f-71d24cb39d0a@trex.nahidapp.com:443?path=%2Fvless-ws&security=tls&encryption=none&insecure=0&host=trex.nahidapp.com&fp=chrome&type=ws&allowInsecure=0&sni=trex.nahidapp.com#

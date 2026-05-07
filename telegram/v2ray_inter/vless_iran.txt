@@ -1,1 +1,2 @@
-vless://d6200861-3330-47a2-b822-06e4761ffe74@all.v-2rayngvpn.cfd:443?mode=multi&security=tls&encryption=none&type=grpc&serviceName=@V_2rayngVpn-@V_2rayngVpn-@V_2rayngVpn-@V_2rayngVpn-@V_2rayngVpn&sni=Loop.v2rayvpn2.sbs#%40V_2rayngVpn+TLS
+vless://cb9b1442-ef9b-4b50-97f4-66ae6298e6b2@fOxrAy.MaKuP.tOp:2096?mode=gun&security=tls&encryption=none&fp=safari&type=grpc&serviceName=@arian_pk&sni=iisBV2raYli.MaKuP.toP#
+vless://06188bf1-a31d-468d-811e-7fa7cb3678d6@104.18.78.200:80?path=%2Fbackup&security=none&encryption=none&host=eAphx6.AmOozesHgAH-pC.cOm&type=ws#server_nekobox

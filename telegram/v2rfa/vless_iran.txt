@@ -1,1 +1,1 @@
-vless://a6ed1b73-ee8a-45c9-8288-ae082f5f1ae6@ww.parspas.ir:8880?path=%2F&security=&encryption=none&type=ws#V2RFA
+vless://fd6a4ad3-13cf-4996-bb44-ebc7687fe291@arvancloud.ir:80?path=%2F&security=none&encryption=none&host=t1.tunnellinuweb.ir&type=ws#

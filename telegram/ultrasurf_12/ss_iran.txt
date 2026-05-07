@@ -1,1 +1,1 @@
-vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?path=%2F&security=none&encryption=none&host=sr.novatechsapr.ir&type=ws#%E2%99%A5%EF%B8%8F%40ultrasurf_12
+vless://e05ad0d3-5bf0-463d-9ba2-817680c6f895@snapp.ir:8080?path=%2F&security=none&encryption=none&host=simorgh.darerio.ir&type=ws#https://t.me/ultrasurf_12

@@ -1,1 +1,1 @@
-vless://9d200545-cfe3-4349-8d87-76fb0bf11e12@snapp.ir:80?encryption=none&type=ws&path=%2FFIRELINKKVPN&host=firelinkk.arian-go-internet.ir#
+vless://0c821f70-e814-40de-98be-4a0758255769@137.220.57.240:48292?security=none&encryption=none&headerType=none&type=tcp#[🏁]t.me/ConfigsHub

@@ -1,1 +1,2 @@
-vless://d342d11e-d424-4583-b36e-524ab1f0afa4@singapore.com:2083?alpn=http%2F1.1&ed=2560&eh=Sec-WebSocket-Protocol&encryption=none&host=index.0x15.workers.dev&path=%2F9quSDGMroCZkFeWzTk&security=tls&sni=index.0x15.workers.DEV&type=ws#REvil¹⁵¹
+vless://135849fe-1e2c-43e5-95a3-8ad2f982d674@www.speedtest.net:2053?allowInsecure=1&alpn=http%2F1.1&ed=2560&eh=Sec-WebSocket-Protocol&encryption=none&host=socks5.revil-time.workers.dev&path=%2Fassets&security=tls&sni=Socks5.REVIL-TIME.workers.DEV&type=ws#REvil¹¹
+vless://135849fe-1e2c-43e5-95a3-8ad2f982d674@www.speedtest.net:2053?allowInsecure=1&alpn=http%2F1.1&ed=2560&eh=Sec-WebSocket-Protocol&encryption=none&host=socks5.revil-time.workers.dev&path=%2Fassets&security=tls&sni=Socks5.REVIL-TIME.workers.DEV&type=ws#

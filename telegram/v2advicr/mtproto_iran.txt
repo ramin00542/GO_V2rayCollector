@@ -1,2 +1,2 @@
-tg://proxy?server=new.rivardino3.ir&port=33&secret=eeeee7010200010007f0030386e24c3add63646e2e79656b74616e65742e636f6d
 tg://proxy?server=85.158.59.4&port=99&secret=eeeee7010200010007f0030386e24c3add63646e2e79656b74616e65742e636f6d
+tg://proxy?server=new.rivardino3.ir&port=33&secret=eeeee7010200010007f0030386e24c3add63646e2e79656b74616e65742e636f6d

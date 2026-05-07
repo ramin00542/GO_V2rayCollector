@@ -1,1 +1,1 @@
-vless://20ccc96a-190a-438f-a269-be3fda7b245f@104.31.16.24:8443?mode=gun&security=tls&encryption=none&type=grpc&serviceName=@CONFIG_ViP7,&sni=configvip7.site#grpc+-+Cloned-VIP%F0%9F%87%A9%F0%9F%87%AA
+vless://20ccc96a-190a-438f-a269-be3fda7b245f@104.31.16.24:8443?mode=gun&security=tls&encryption=none&type=grpc&serviceName=@CONFIG_ViP7,&sni=configvip7.site#
