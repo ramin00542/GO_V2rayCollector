@@ -1,2 +1,0 @@
-vless://2418f2e4-7ec2-466c-a164-d09318b5f2ab@ir.mrspeeds.info:2087?type=grpc&security=tls&serviceName=&sni=mys4.mrspeeds.info#test85
-vless://2b383735-3c00-4cbd-8f7f-6e4e2a5e8ab6@51.89.74.164:443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=canva.com&fp=firefox&security=reality&pbk=jaKtop_bUOLThfO3zLRv_s5EY66rGe7lxsB_ezD2kko&sid=a311b9f4#

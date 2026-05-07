@@ -1,6 +1,0 @@
-vless://d342d11e-d424-4583-b36e-524ab1f0afa4@www.gov.se:2082?encryption=none&security=none&type=ws&host=aryoovpn.commen-esoteric-0q.workers.dev&path=%2F%3Fed%3D2560#
-vless://d342d11e-d424-4583-b36e-524ab1f0afa4@www.gov.se:2086?encryption=none&security=none&type=ws&host=aryoovpn.commen-esoteric-0q.workers.dev&path=%2F%3Fed%3D2560#
-vless://d342d11e-d424-4583-b36e-524ab1f0afa4@www.gov.se:8443?encryption=none&security=tls&sni=aryoovpn.commen-esoteric-0q.workers.dev&type=ws&host=aryoovpn.commen-esoteric-0q.workers.dev&path=%2F%3Fed%3D2560#aryoovpn-cf-vless-TLS-8443
-vless://d342d11e-d424-4583-b36e-524ab1f0afa4@www.gov.se:2082?encryption=none&security=none&type=ws&host=aryoovpn.commen-esoteric-0q.workers.dev&path=%2F%3Fed%3D2560#aryoovpn-cf-vless-2082
-vless://d342d11e-d424-4583-b36e-524ab1f0afa4@www.gov.se:2096?encryption=none&security=tls&sni=aryoovpn.commen-esoteric-0q.workers.dev&type=ws&host=aryoovpn.commen-esoteric-0q.workers.dev&path=%2F%3Fed%3D2560#aryoovpn-cf-vless-TLS-2096
-vless://d342d11e-d424-4583-b36e-524ab1f0afa4@www.gov.se:2053?encryption=none&security=tls&sni=aryoovpn.commen-esoteric-0q.workers.dev&type=ws&host=aryoovpn.commen-esoteric-0q.workers.dev&path=%2F%3Fed%3D2560#aryoovpn-cf-vless-TLS-2053

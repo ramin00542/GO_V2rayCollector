@@ -1,1 +1,0 @@
-vless://a823b9b0-41d1-48c2-b00f-12d88f7be435@188.114.98.0:2095?encryption=none&type=httpupgrade&host=it.carefreemob2.com.&path=/&security=none#%F0%9F%87%AE%F0%9F%87%B9%20l%20IT

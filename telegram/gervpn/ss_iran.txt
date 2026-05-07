@@ -1,2 +1,0 @@
-vless://7d2dfb7a-2ecc-4448-bcbe-245a2092fe85@151.101.64.223:443?path=%2FTelegram-Xv2ry2%3Fed%3D1080&security=tls&encryption=none&host=2v.com&type=ws&sni=python.org#
-vless://c2c8a201-09b9-47a7-b336-fcf1657f54a8@172.66.44.75:443?path=%2FTelegram%40Azarakhsh_Proxy%2F%3Fed%3D2560&security=tls&encryption=none&alpn=h2,http/1.1&host=bpb-worker-panel-3jc.pages.dev&fp=randomized&type=ws&sni=bpb-wORKer-paNeL-3JC.pAgeS.DeV#

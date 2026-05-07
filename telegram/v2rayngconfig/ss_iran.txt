@@ -1,2 +1,0 @@
-vless://6461860a-d367-4d47-8e82-7d8e1047a152@127.0.0.1:40443?encryption=none&security=tls&sni=aier.eu.cc&insecure=1&allowInsecure=1&type=ws&host=aier.eu.cc&path=%2F#APPXA-test
-vless://Parsashonam@127.0.0.1:40443?encryption=none&security=tls&sni=test.atlasw.ir&insecure=0&allowInsecure=0&type=ws&host=test.atlasw.ir&path=%2F#

@@ -1,2 +1,0 @@
-vless://3db4f30e-8237-40a3-92d4-f5aabb87b797@snapp.ir:2086?type=ws&encryption=none&path=&host=jing.eemehaze.lol&security=none#
-vless://810b4a88-75bc-4180-8715-8387ff1af093@Snapp.ir:8080?path=%2F&security=none&encryption=none&host=uplinkdl27.lyraforge.ir&type=ws#

@@ -1,6 +1,0 @@
-vless://5b64b4cc-b4d9-4bb6-b36e-464f8876ce6c@snapp.ir:2083?path=%2F&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&insecure=0&host=like.abkeyping.click&fp=chrome&type=ws&allowInsecure=0&sni=like.abkeyping.click#@GiveVPN
-vless://dae2ddc6-a892-495f-a001-181cec56ad12@snapp.ir:2052?path=%2F&security=none&encryption=none&host=p1.razstar.ir&type=ws#%E2%99%9F%20%4
-vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?path=%2F&security=none&encryption=none&host=sr.novatechsapr.ir&type=ws#%40CODElXl%20GiveVPN
-vless://3295028b-9f47-dd81-a5db-f5c21bef2179@tr.tehranionliine.ir:80?path=/&security=none&encryption=none&type=ws#@GiveVPN
-vless://cf9501db-5a66-45ab-bd5e-1b14e7a3a57f@arvancloud.ir:80?path=%40TunizoNET&security=none&encryption=none&host=ri.amirenzohost.ir&type=ws#%40GiveVPN
-vless://46eb1dd2-2826-4e8f-aa7a-83f1f0262a65@snapp.ir:8880?type=ws&encryption=none&path=%2F&host=moein.akosha.ir&security=none#GiveVPN

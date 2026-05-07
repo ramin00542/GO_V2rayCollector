@@ -1,4 +1,0 @@
-vless://7b71f04e-984f-4c59-8875-790ba512c56a@5.78.50.111:2095?path=%2FthqUaEuuyteRBTrgg%40noforcedheaven&security=&encryption=none&type=ws#%40NoForcedHeaven
-vless://ef8e608b-3edc-4235-8963-b6334f44b88e@chatgpt.com:443?encryption=none&security=tls&sni=uk-02p.allhubb.info&alpn=h2%2Chttp%2F1.1&fp=chrome&type=ws&path=%2Fcheck#
-vless://b2ce47d7-f8dc-4fcf-8d51-de4c235a7c40@5.78.48.77:2095?security=&encryption=none&type=grpc#%40NoForcedHeaven
-vless://b2ce47d7-f8dc-4fcf-8d51-de4c235a7c40@5.78.48.77:2095?security=&encryption=none&type=grpc#

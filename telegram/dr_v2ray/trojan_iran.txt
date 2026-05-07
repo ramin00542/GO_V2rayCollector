@@ -1,1 +1,0 @@
-trojan://o2XA8dydWM@free.tharuwa.store:2020?path=%2FFREE%20By%20Tharuwa%20%280767597317%29&security=tls&alpn=h2%2Chttp%2F1.1&fp=chrome&type=ws&sni=zoom.us#

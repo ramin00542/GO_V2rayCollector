@@ -1,2 +1,0 @@
-vless://afa55666-1324-44d3-d119-815cfad3f6bf@vpn5.v2panda.shop:39701?security=none&encryption=none&host=discord.com&headerType=http&type=tcp#
-vless://8f3a431b-5287-4948-b13c-210171c52441@vpn4.v2turbo.tech:23260?type=tcp&path=%2F&host=discord.com&headerType=http#

@@ -1,1 +1,0 @@
-tg://proxy?server=87.248.149.13&port=8443&secret=dd79e344818749bd7ac519130220c25d09

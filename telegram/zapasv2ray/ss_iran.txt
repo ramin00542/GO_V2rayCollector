@@ -1,1 +1,0 @@
-vless://356c890f-31a8-47d8-984f-f79727412994@104.24.176.7:80?path=%2FTalaNetwork&security=none&encryption=none&host=it.sponsored-by.talanetwork.me&type=ws#sajad_vpn+%F0%9F%86%94%3A+%40configv2ray_s

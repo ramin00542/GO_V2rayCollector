@@ -1,1 +1,0 @@
-trojan://dTjHHw2kDE@23.94.122.66:38505?security=tls&headerType=none&type=tcp#

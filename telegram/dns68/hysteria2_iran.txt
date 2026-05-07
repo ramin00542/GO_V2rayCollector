@@ -1,2 +1,0 @@
-hysteria2://51bfa975-92ab-4382-a21f-1963604f4fe1@zhe.stlive.top:10023?sni=addons.mozilla.org&insecure=1&allowInsecure=1&mport=65000-65535
-hysteria2://bc93605a@lb.stlive.top:4133?sni=bing.com&insecure=1&allowInsecure=1&mport=65000-65535#WEI

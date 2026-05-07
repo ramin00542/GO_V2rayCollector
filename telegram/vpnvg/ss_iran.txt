@@ -1,2 +1,0 @@
-vless://7f95f302-945c-4348-8fde-ddeb340b1f33@channel.digiv2ray.fun:443?security=none&encryption=none&host=xbox.com&headerType=http&type=tcp#
-vless://0ca56b7e-89a6-4658-b943-1ef0978c3c00@159.69.102.125:2096?security=none&encryption=none&host=speedtest.net&headerType=http&type=tcp#%40vpnVG

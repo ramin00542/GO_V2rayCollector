@@ -1,2 +1,0 @@
-vless://fef4a93d-eb4f-4657-b56b-32a0dc060045@104.18.32.47:443?path=%2F&security=tls&encryption=none&insecure=0&host=dev.twistsparrow.xyz&type=ws&allowInsecure=0&sni=dev.twistsparrow.xyz#%E2%9A%A1tel%3A%40ai_duet%20%7C%20%40v2rayngsupbot
-vless://977ae33e-7eca-4ea8-a6cc-a652fa687d36@free2.aattaash.com:2087?path=%2F&security=tls&encryption=none&insecure=0&fp=chrome&type=ws&allowInsecure=0&sni=free.aattaash.com#%F0%9F%86%94Telegram%20%3A%20%40v2rayngsupbot

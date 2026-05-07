@@ -1,2 +1,0 @@
-vless://bc63be87-2dec-4173-813d-4e18f111ab5e@us1ip6.turningpage.online:443?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=singbox.turningpage.online&fp=randomized&type=ws&sni=singbox.turningpage.online#singbox.turningpage.online
-vless://bc63be87-2dec-4173-813d-4e18f111ab5e@us1ip6.turningpage.online:443?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=singbox.turningpage.online&fp=randomized&type=ws&sni=singbox.turningpage.online#

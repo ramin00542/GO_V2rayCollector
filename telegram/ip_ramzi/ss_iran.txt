@@ -1,5 +1,0 @@
-vless://6ec23107-119b-479c-b7fa-9d8ae9def4b8@2.189.130.94:10128?path=%2F&security=none&encryption=none&type=ws#
-vless://0cc1d046-7767-4c4f-9d8e-7f40427130b3@54.37.6.85:2096?security=none&encryption=none&host=ghbi.ir&headerType=http&type=tcp#
-vless://ca3b458f-d5ba-4e81-8cdb-ca40eb193ebd@54.37.6.85:2096?security=none&encryption=none&host=ghbi.ir&headerType=http&type=tcp#
-vless://77836d21-7bc9-4d77-de71-06aa060dcecf@188.165.122.11:26877?mode=gun&security=reality&encryption=none&pbk=kx60sWSmKF9DlV-wa2tZXDUIfhUluJFF1EReclsOsyg&fp=firefox&type=grpc&serviceName=/@v2rayng12023/@v2rayng12023/@v2rayng12023/@v2rayng12023/@v2rayng12023&sni=www.speedtest.net#%40IP_Ramzi+%7C+%D8%A8%D9%87+%D8%B3%D9%88%DB%8C+%D8%A2%D8%B2%D8%A7%D8%AF%DB%8C
-vless://6ec23107-119b-479c-b7fa-9d8ae9def4b8@2.189.130.94:10128?path=%2F&security=none&encryption=none&type=ws#%40IP_Ramzi+%7C+%D8%A8%D9%87+%D8%B3%D9%88%DB%8C+%D8%A2%D8%B2%D8%A7%D8%AF%DB%8C

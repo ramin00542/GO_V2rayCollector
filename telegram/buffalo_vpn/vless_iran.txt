@@ -1,1 +1,0 @@
-vless://5ee58902-ad14-419d-88dc-d2a74f2c1482@telegram.cloudsnapbot.tech:2053?type=grpc&security=reality&mode=gun&serviceName=,Telegram:@CloudSnapBot&fp=random&sni=Appleid.cdn-apple.com&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc#FREE500GB+EVERY+DAY

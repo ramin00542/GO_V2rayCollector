@@ -1,2 +1,0 @@
-vless://3f7e0b9a-0288-4040-b386-5d7805b24f2c@mtn.reallyrich.space:443?mode=gun&security=tls&encryption=none&alpn=h2,http/1.1&fp=random&type=grpc&serviceName=mtn.reallyrich.space&sni=sv.reallyrich.space#
-vless://3f7e0b9a-0288-4040-b386-5d7805b24f2c@mtn.reallyrich.space:443?mode=gun&security=tls&encryption=none&alpn=h2,http/1.1&fp=random&type=grpc&serviceName=mtn.reallyrich.space&sni=sv.reallyrich.space#%40NetAzadChannel

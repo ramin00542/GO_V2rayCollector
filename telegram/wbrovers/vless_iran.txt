@@ -1,4 +1,0 @@
-vless://d9b3134e-007e-41e0-a146-8c53977e27f5@104.25.221.166:443?path=%2F&security=tls&encryption=none&host=academivpn1-bo7.pages.dev&fp=randomized&type=ws&sni=academivpn1-bo7.pages.dev#WebRovers+%F0%9F%91%BB
-vless://79473718-0451-41c3-a0a2-9f6d21c99f75@9052b030.joinmahdiserver-90p.pages.dev:443?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=9052b030.joinmahdiserver-90p.pages.dev&fp=randomized&type=ws&sni=9052b030.joinmahdiserver-90p.pages.dev#WebRovers+%F0%9F%91%BB
-vless://b97cdd0e-bba9-4391-b265-b72f80b670db@cafe.zhaal.ir:2052?path=%2F&security=none&encryption=none&type=ws#
-vless://107d3a95-e17e-4931-94b9-e42cdcabb05b@172.67.204.84:80?path=%2Fbackup&security=none&encryption=none&host=MFvh5agb49bGYkqzTHqC.dl-onLiNeDOCtOR.BIO&type=ws#WebRovers+%F0%9F%91%BB

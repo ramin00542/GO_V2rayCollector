@@ -1,5 +1,0 @@
-https://google.com
-https://github.com/patterniha/MITM-DomainFronting/
-https://soft98.ir/software/programming/16260-python.html
-https://mirror-pypi.runflare.com/simple/
-https://github.com/masterking32/MasterHttpRelayVPN

@@ -1,1 +1,0 @@
-vless://e807354d-c97b-4afb-88d0-f6cb3121954a@fqm.mhdizeb.cfd:2053?type=grpc&serviceName=&security=reality&fp=firefox&pbk=k6KsDDNr7BL2Kd4fHtEVLx2yUZNLgFcWo39AwmL1jRg&sni=www.pubg.com&sid=795f7e17&spx=%2Famomahdi#

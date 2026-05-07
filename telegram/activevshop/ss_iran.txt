@@ -1,1 +1,0 @@
-vless://e8100609-b30b-45a3-a7ff-033afd579b4d@70.34.252.38:2056?type=tcp&path=%2F&host=speed.cloudflare.com%2Ccloudflare.com&headerType=http&security=none#

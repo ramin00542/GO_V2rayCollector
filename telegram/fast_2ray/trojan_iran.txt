@@ -1,2 +1,0 @@
-trojan://T9BpZIVMNv@v1.dabache.top:8443?path=%2Famd&security=tls&host=sweden.vmaxpanel.com&type=ws&sni=sweden.vmaxpanel.com#
-trojan://T9BpZIVMNv@172.66.47.45:8443?path=%2Famd&security=tls&host=sweden.vmaxpanel.com&fp=random&type=ws&sni=sweden.vmaxpanel.com#

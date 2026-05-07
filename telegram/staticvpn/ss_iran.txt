@@ -1,1 +1,0 @@
-vless://5948350a-2406-4543-9973-9697e105670f@chatgpt.com:443?path=%2Ftestttt&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&host=eybaba.chizmarket.com&fp=chrome&type=ws&sni=eybaba.chizmarket.com#

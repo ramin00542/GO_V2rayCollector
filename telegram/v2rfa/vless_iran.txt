@@ -1,4 +1,0 @@
-vless://98e85ab7-5ed2-c5a5-f734-226074d50aa3@sdl.ciliko.ir:80?path=%2F&security=none&encryption=none&type=ws#V2RFA
-vless://fd6a4ad3-13cf-4996-bb44-ebc7687fe291@arvancloud.ir:80?path=%2F&security=none&encryption=none&host=t1.tunnellinuweb.ir&type=ws#Tel%20%3A%20%40V2RFA
-vless://0c9353bd-2377-4124-86df-c1a51f777954@trex.nahidapp.com:443?security=tls&allowInsecure=0&encryption=none&type=ws&host=trex.nahidapp.com&path=/vless-ws&sni=trex.nahidapp.com&fp=chrome#
-vless://0c9353bd-2377-4124-86df-c1a51f777954@trex.nahidapp.com:443?security=tls&allowInsecure=0&encryption=none&type=ws&host=trex.nahidapp.com&path=/vless-ws&sni=trex.nahidapp.com&fp=chrome#V2RFA

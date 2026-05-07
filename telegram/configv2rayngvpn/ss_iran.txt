@@ -1,2 +1,0 @@
-vless://92669584-6357-4c04-88da-60c1b1ea953d@ips.configforvpn.fun:8080?path=%2Fh&security=none&encryption=none&host=best.configforvpn.fun&type=ws#%40ConfigforVPN
-vless://446cf1db-74f9-4f26-91ad-3acb9fc2beb0@best.configforvpn.fun:2053?mode=gun&security=reality&encryption=none&pbk=d7ai1rsnr28Xv2F2TktDrZ_YCbUK55w0QHPHcUYWLR8&fp=chrome&spx=%2F&type=grpc&serviceName=@configforVPN&sni=greenpepper.ir&sid=614214c8#%40ConfigforVPN

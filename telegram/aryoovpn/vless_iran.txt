@@ -1,4 +1,0 @@
-vless://90cd4a77-141a-43c9-991b-08263cfe9c10@79193c43.aryoovpn-5fr.pages.dev:443?encryption=none&security=tls&sni=79193c43.aryoovpn-5fr.pages.dev&fp=randomized&type=ws&host=79193c43.aryoovpn-5fr.pages.dev&path=%2F%3Fed%3D2048#
-vless://d342d11e-d424-4583-b36e-524ab1f0afa4@www.gov.se:80?encryption=none&security=none&type=ws&host=aryoovpn.commen-esoteric-0q.workers.dev&path=%2F%3Fed%3D2560#aryoovpn-cf-vless-80
-vless://d342d11e-d424-4583-b36e-524ab1f0afa4@www.gov.se:8080?encryption=none&security=none&type=ws&host=aryoovpn.commen-esoteric-0q.workers.dev&path=%2F%3Fed%3D2560#aryoovpn-cf-vless-8080
-vless://d342d11e-d424-4583-b36e-524ab1f0afa4@www.gov.se:2052?encryption=none&security=none&type=ws&host=aryoovpn.commen-esoteric-0q.workers.dev&path=%2F%3Fed%3D2560#aryoovpn-cf-vless-2052

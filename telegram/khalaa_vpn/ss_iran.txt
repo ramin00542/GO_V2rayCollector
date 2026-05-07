@@ -1,1 +1,0 @@
-vless://b69f3e77-cdf1-4b84-851a-4b7ebede5433@Swedeeen.mehrdadsadaf.com:1300?mode=gun&security=reality&encryption=none&pbk=AZSptdvlWvvmKWEDTY56UsIcnTP8nGCafvPEQOozrxw&fp=chrome&type=grpc&serviceName=1300vless&sni=rosbalt.ru&sid=765e8e700426816c#%40yaqyy%F0%9F%87%B8%F0%9F%87%AA

@@ -1,2 +1,0 @@
-vless://717284f5-c674-4ffd-a197-ea9786ee3f61@turkws.configforvpn.fun:2087?path=%2F&security=tls&encryption=none&fp=chrome&type=ws&sni=turkws.configforvpn.fun#
-vless://92669584-6357-4c04-88da-60c1b1ea953d@ips.configforvpn.fun:8080?path=%2Fh&security=none&encryption=none&host=best.configforvpn.fun&type=ws#

@@ -1,2 +1,0 @@
-https://t.me/socks?server=38.47.104.122&port=5555&user=socks5&pass=socks5
-https://t.me/socks?server=47.243.233.169&port=1080&user=123456&pass=123456

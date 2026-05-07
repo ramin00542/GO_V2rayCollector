@@ -1,1 +1,0 @@
-hysteria2://DBUklcvOyH@45.81.19.251:443/?insecure=1&sni=web.bale.ai#telegram:%20@OpenSSTPVpn

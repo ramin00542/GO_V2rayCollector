@@ -1,2 +1,0 @@
-vless://e8213d4c-a3e2-46b1-a041-9bc78c7b8442@62.60.172.104:43973?security=none&headerType=http&type=tcp&host=varzesh3.com%2Ctelewebion.com#8164961-%40TmNetBot
-vless://e8213d4c-a3e2-46b1-a041-9bc78c7b8442@62.60.172.104:43973?security=none&headerType=http&type=tcp&host=varzesh3.com%2Ctelewebion.com#

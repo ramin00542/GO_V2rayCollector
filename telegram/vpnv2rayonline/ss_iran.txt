@@ -1,1 +1,0 @@
-vless://fc1191c8-e724-482f-a492-90d3d386719c@sisand.waztow.WOrkerS.Dev:2053?path=vless-ws%2F%3Fed%3D2048&security=tls&encryption=none&alpn=h2,http/1.1&host=sisand.waztow.WOrkerS.Dev&fp=edge&type=ws&sni=sisand.waztow.WOrkerS.Dev#

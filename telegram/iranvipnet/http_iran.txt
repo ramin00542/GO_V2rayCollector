@@ -1,3 +1,0 @@
-http://captive.apple.com/hotspot-detect.htm
-http://detectportal.firefox.com
-http://cp.cloudflare.com

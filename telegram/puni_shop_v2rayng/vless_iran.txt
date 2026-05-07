@@ -1,4 +1,0 @@
-vless://53fa8faf-ba4b-4322-9c69-a3e5b1555049@www.speedtest.net:80?path=%2F%3Fed%3D2560&security=&encryption=none&host=redfree8mahsang6.redfree8.ir&type=ws#
-vless://eea43b1a-4411-4ff7-f5b4-a860a81cad63@3.72.76.222:28706?security=none&encryption=none&headerType=none&type=tcp#@puni_shop_v2rayNG
-vless://53fa8faf-ba4b-4322-9c69-a3e5b1555049@www.speedtest.net:80?path=%2F%3Fed%3D2560&security=&encryption=none&host=redfree8mahsang6.redfree8.ir&type=ws#@puni_shop_v2rayNG
-vless://af5d0aa0-0709-405b-b0a3-318568a909ba@104.18.32.47:443?path=%2FeyJqdW5rIjoiNDBNWGY3Z0NPd0loZ2YiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByb3h5aXAiLCJwYW5lbElQcyI6W119%3Fed%3D2560&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&insecure=0&host=free.marzshekan.com.tr&fp=chrome&type=ws&allowInsecure=0&sni=free.marzshekan.com.tr#

@@ -1,2 +1,0 @@
-vless://d84855ac-e636-46d1-acb2-7480821e6f7b@s4.vpean.shop:2096?mode=gun&security=reality&encryption=none&pbk=09M-cWI7MtBCO64wedaolg1BJxA3mc_2kzrXxOFtczg&fp=chrome&spx=%2F&type=grpc&serviceName=&sni=tradingview.com&sid=7d088d2b#%40vpean+%DA%A9%D8%A7%D9%86%D8%A7%D9%84+%D9%85%D8%A7-vpean3
-vless://d84855ac-e636-46d1-acb2-7480821e6f7b@s4.vpean.shop:2096?mode=gun&security=reality&encryption=none&pbk=09M-cWI7MtBCO64wedaolg1BJxA3mc_2kzrXxOFtczg&fp=chrome&spx=%2F&type=grpc&serviceName=&sni=tradingview.com&sid=7d088d2b#

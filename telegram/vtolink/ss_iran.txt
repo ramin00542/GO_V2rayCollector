@@ -1,1 +1,0 @@
-vless://5459d9c2-b016-44f3-d34d-49e4b422c603@iq8.xiqpanelz.shop:443?security=none&encryption=none&host=speedtest.net&headerType=http&type=tcp#-test

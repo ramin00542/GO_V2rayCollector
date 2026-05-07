@@ -1,1 +1,0 @@
-vless://a2772ce5-647f-4967-835a-135ed9701422@185.143.234.235:80?path=%2F&security=none&encryption=none&host=vixon.portab.org&type=ws#%40Maznet-Psiphon-2

@@ -1,5 +1,0 @@
-https://raw.githubusercontent.com/IranianCypherpunks/sub/main/config
-https://t.me/forwardv2ray
-https://youtu.be/T_p9VqngfY8?si=XVRR4qZPykV2XYgk
-https://github.com/esfelurm/iran-bomber
-https://raw.githubusercontent.com/electron-v2ray/Telegram-Config-Dumpr/main/config.txt

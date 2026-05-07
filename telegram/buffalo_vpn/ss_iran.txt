@@ -1,2 +1,0 @@
-vless://b0286bc2-e17c-4c17-b0e6-d39c93f74937@104.22.46.204:443?type=ws&security=tls&host=ap-aminoo.pages.dev&path=/?ed%3D2048&fp=randomized&sni=ap-aminoo.pages.dev&alpn=h2,http/1.1#Buffalo_1
-vless://b0286bc2-e17c-4c17-b0e6-d39c93f74937@104.22.46.204:443?type=ws&security=tls&host=ap-aminoo.pages.dev&path=/?ed%3D2048&fp=randomized&sni=ap-aminoo.pages.dev&alpn=h2,http/1.1#

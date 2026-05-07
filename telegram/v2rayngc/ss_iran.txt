@@ -1,4 +1,0 @@
-vless://c4c52a36-bf9b-4219-b587-a11c58e7fc31@bug16.mlgolden.site:443?path=%2F&security=tls&encryption=none&type=ws&sni=bug16.mlgolden.site#%F0%9F%87%B7%F0%9F%87%BA+%F0%9F%91%91%F0%9F%8C%8F%40v2ray_vpn_ir.++%D8%AC%D9%88%DB%8C%D9%86+%D8%B4%D9%88
-vless://041f929a-63f6-4af1-a492-8cbff5797b8a@avval.ir:2096?encryption=none&security=tls&sni=telegram-falcunargo-emiratess.falcunar.asso.eu.org&fp=random&type=ws&host=telegram-falcunargo-emiratess.falcunar.asso.eu.org&path=%2F#t.me%2Fv2Line%20%7C%20%281471%29%20DE
-vless://826e43d2-dbe9-41a6-bbf8-3aed2f93f5d4@pardazeshvpn-tg20.pages.dev:443?encryption=none&security=tls&sni=pardazeshvpn-tg20.pages.dev&fp=randomized&type=ws&host=pardazeshvpn-tg20.pages.dev&path=%2F#
-vless://1b807c00-25cc-407e-9056-60d80f39e16d@iranserver.com:2053?mode=gun&security=tls&encryption=none&type=grpc&serviceName=VALdGZ9k&sni=clonaze_pam.sansorchi2.cloud#

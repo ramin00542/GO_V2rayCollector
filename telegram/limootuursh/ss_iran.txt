@@ -1,2 +1,0 @@
-vless://f9f89381-7aa4-4c1f-8ce5-4e0e15453d90@49.12.192.107:2096?mode=gun&security=reality&encryption=none&pbk=OVCexPrzOMdpDzigcnRe-Ufilj4qQe2bXA-LAT---jo&fp=chrome&type=grpc&serviceName=ZEDMODEON&sni=sourceforge.net&sid=e46a1eae#29+YALDA+NIGHT+%F0%9F%8D%89
-vless://f9f89381-7aa4-4c1f-8ce5-4e0e15453d90@49.12.192.107:2096?mode=gun&security=reality&encryption=none&pbk=OVCexPrzOMdpDzigcnRe-Ufilj4qQe2bXA-LAT---jo&fp=chrome&type=grpc&serviceName=ZEDMODEON&sni=sourceforge.net&sid=e46a1eae#

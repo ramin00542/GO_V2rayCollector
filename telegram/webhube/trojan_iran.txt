@@ -1,1 +1,0 @@
-trojan://hSA6YXe15O@104.11.86.252:443?security=tls&sni=Telegram%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%2B%40WangCai2&insecure=1&allowInsecure=1&type=tcp&headerType=none#

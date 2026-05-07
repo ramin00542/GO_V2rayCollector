@@ -1,3 +1,0 @@
-vless://bb5044f2-4e09-4ad6-a8fe-c9c520a47c52@ir.bov.yasdu.ir:80?path=%2FKJt7WBdoXenfAO2xg94ji2fQ&security=none&alpn=http%2F1.1&encryption=none&host=soft98.ir&fp=randomized&type=httpupgrade&sni=soft98.ir#
-ss://YWVzLTEyOC1nY206OTA2ZTRmM2UtNTIzZS00ZGE1LWJjNTUtZjA2ODVhMjhlMGM2@eu2.dns-node.top:46305#
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.214:8080#

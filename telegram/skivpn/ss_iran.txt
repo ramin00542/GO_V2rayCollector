@@ -1,2 +1,0 @@
-vless://8a642e35-328c-42ee-aad0-d050b131dbab@pg.nexorainnovationhub.ir:80?path=%2F&security=none&encryption=none&host=finland.lezzaluxa.ir&type=ws#EMO%F0%9F%AB%86%F0%9F%A4%B4%F0%9F%91%B8Skivpn%F0%9F%91%B8%F0%9F%A4%B4
-vless://4d456b18-df16-4708-982d-1edec52e1643@185.128.139.11:45191?security=none&encryption=none&headerType=none&type=tcp#EMO%F0%9F%A4%B4%F0%9F%AB%86

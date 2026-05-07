@@ -1,2 +1,0 @@
-vless://c6764a61-8f14-47ba-bdcc-4c260926bab3@snapp.ir:80?encryption=none&host=api.sobhan.cam&path=%2F&type=ws&security=none#🌪-@SPEEDS_VPN1
-vless://e041b478-70ee-4353-ae90-a0e2997e5596@Tapsi.ir:8080?path=%2Fcdn&security=none&encryption=none&host=Zp.movizdl.ir&type=ws#

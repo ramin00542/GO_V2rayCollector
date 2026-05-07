@@ -1,1 +1,0 @@
-tuic://ed6a538a-6e66-4f21-a769-4b389bb2f3ab:dongtaiwang@tuic3.dtku47.xyz:12255/?congestion_control=bbr&udp_relay_mode=native&alpn=h3#meta_tuic_21

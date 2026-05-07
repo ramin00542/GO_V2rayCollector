@@ -1,4 +1,0 @@
-vless://e999db7a-1b17-4da6-bc37-c9fa24af2e93@104.19.144.33:8443?encryption=none&security=tls&sni=Q9cI2lEeUz.GiTi4.OrG&type=ws&host=Q9cI2lEeUz.GiTi4.OrG&path=%2F#@StrongProtocol
-vless://18164b40-8a2d-46f8-b758-bf6c87cb5e9e@ir-www-germani1.khabarkamkwww.fun:8081?security=none&encryption=none&host=www.speedtest.net&headerType=http&type=tcp#@StrongProtocol
-vless://e8f8d7d6-8c21-4499-b6b4-2bc9972fff72@melli.tehransnr.com:443?security=none&encryption=none&headerType=none&type=tcp#@StrongProtocol
-vless://f25e7ea5-ef6b-4f63-8617-8151ca31b7b1@VIP2.xQFire.iR:811?security=none&encryption=none&headerType=none&type=tcp#@StrongProtocol

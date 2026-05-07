@@ -1,1 +1,0 @@
-vless://254669c0-134b-410f-b47e-229d8877b058@join-bede.deragv2ray.net:2083?type=ws&path=%2F&host=allnet.deragv2ray.net&security=tls&fp=&alpn=&sni=allnet.deragv2ray.net#%40Deragv2ray-sactidpz

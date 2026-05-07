@@ -1,1 +1,0 @@
-vless://2322341b-74c0-49ca-8b7f-28705e99c909@shop.zonix.sbs:59420?type=tcp&path=%2F&host=@SHOPZONIX

@@ -1,1 +1,0 @@
-vless://4dc0b42a-1a8a-4337-851b-5d8a1f149fca@172.64.152.23:8443?path=%2F&security=tls&encryption=none&insecure=0&host=deold.turboo-server.com.co&fp=chrome&type=ws&allowInsecure=0&sni=deold.turboo-server.com.co#

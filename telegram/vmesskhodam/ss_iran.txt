@@ -1,3 +1,0 @@
-vless://3b36d989-801f-49d7-95e4-133fbdf7eee4@snapp.ir:80?encryption=none&security=none&type=ws&headerType=none&path=%2Fprivate&host=nl.sapax-cloud.ir#%@vmesskhodam
-vless://3b36d989-801f-49d7-95e4-133fbdf7eee4@snapp.ir:8880?encryption=none&security=none&type=ws&headerType=none&path=%2Fprivate&host=tr.sapax-cloud.ir#
-vless://3b36d989-801f-49d7-95e4-133fbdf7eee4@185.143.234.200:8080?encryption=none&security=none&type=ws&headerType=none&path=%2Fprivate&host=de.sapax-cloud.ir#

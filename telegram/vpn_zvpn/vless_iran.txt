@@ -1,4 +1,0 @@
-vless://b75b3034-36ab-4979-beae-3d02db1b11ec@cxc--join.outline-vpn.cloud:443?security=tls&encryption=none&type=ws&host=always-online1.lp-airdrop.top&path=Path/Telegram@V2ray_alpha/?ed%3D2048&sni=always-online1.lp-airdrop.top&fp=randomized#
-vless://Parsashonam-67@www.visa.com:8080?security=none&encryption=none&type=ws&host=Parsashonam.%E6%88%91%E4%BB%AC%E7%B4%AF%E4%BA%86.tech.&path=/#Joinus(@vpn_Zvpn)
-vless://04a93bb8-0a5b-4aa8-ab7f-31fc7adab1c1@edgu.pureboy.eu.org:443?security=tls&encryption=none&type=ws&host=edgu.pureboy.eu.org&path=/?ed%3D2048&sni=edgu.pureboy.eu.org&fp=chrome#ZVPN
-vless://b9ad895b-12ac-40fc-a5ac-a5b2a1285001@3k.pureboy.eu.org:443?security=tls&encryption=none&type=ws&host=3k.pureboy.eu.org&path=TELEGRAM...PROXY_MTM?ed%3D2048&sni=3k.pureboy.eu.org&fp=chrome&alpn=http/1.1#

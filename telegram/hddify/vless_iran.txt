@@ -1,1 +1,0 @@
-vless://826beb96-4c53-486d-9ddd-c1d09970eb17@yasinpanel.pointspeed.ir:80?encryption=none&type=ws&path=%2Farvancloud.ir&host=ybvpnadmin.pointspeed.ir#

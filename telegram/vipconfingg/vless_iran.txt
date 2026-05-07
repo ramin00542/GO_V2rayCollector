@@ -1,1 +1,0 @@
-vless://98b61be1-6613-43db-b784-38877b106be6@milli.gold:80?encryption=none&type=ws&host=Pan4e.nexoratechcenter.ir&path=/#@vipconfingg

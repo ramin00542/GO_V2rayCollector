@@ -1,1 +1,0 @@
-vless://caedb6d9-aece-4e6a-9d6c-29f73df2f1a5@188.114.99.99:2053?type=grpc&serviceName=https%3A%2F%2Ft.me%2Fnew_proxy_channel-%40new_proxy_channel&authority=&security=tls&fp=chrome&alpn=http%2F1.1&sni=kanon.parhamtraberthos.IR.#

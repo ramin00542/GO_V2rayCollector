@@ -1,1 +1,0 @@
-trojan://4OE9MojBpg@37.32.20.55:80?type=tcp&security=none#

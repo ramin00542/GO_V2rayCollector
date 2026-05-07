@@ -1,1 +1,0 @@
-vless://715f8d7f-2d48-4ecf-b008-e7d12c5ab23c@mci.servernett.shop:8443?mode=gun&security=tls&encryption=none&type=grpc&serviceName=@servernett&sni=irancell.servernett.shop#%F0%9D%97%9D%F0%9D%97%BC%F0%9D%97%B6%F0%9D%97%BB+%E2%9E%AA+%40V2range

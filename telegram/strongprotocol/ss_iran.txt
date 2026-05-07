@@ -1,5 +1,0 @@
-vless://f25e7ea5-ef6b-4f63-8617-8151ca31b7b1@VIP2.xQFire.iR:811?security=none&encryption=none&headerType=none&type=tcp#
-vless://f7322a53-0931-47fd-a133-233dbb7d43f3@irr1.topsflag.sbs:2094?type=tcp&security=none#@StrongProtocol
-vless://f0874314-b134-4d38-84c2-d1b32cd30136@vipde1.persianpinggame.com:9091?security=none&encryption=none&host=myket.ir&headerType=http&type=tcp#
-vless://eef39638-45eb-47c1-ba53-708eea36210c@haji.arezoni1.ir:666?security=none&encryption=none&headerType=none&type=tcp#@StrongProtocol
-vless://19199927-fb46-4203-8872-672fd1daca14@54.38.214.56:37171?security=none&encryption=none&headerType=none&type=tcp#@StrongProtocol

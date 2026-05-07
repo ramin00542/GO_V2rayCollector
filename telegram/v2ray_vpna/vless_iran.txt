@@ -1,6 +1,0 @@
-vless://SvnTeamm@mtn.vpnprosec.com:2087?type=grpc&serviceName=&security=tls&fp=chrome&alpn=http%2F1.1%2Ch2&sni=V2rayDvid.Mmdnet.Online#
-vless://SvnTeam@mtn.VPNPROSEC.com:2087/?type=grpc&serviceName=&security=tls&fp=&alpn=http%2F1.1%2Ch2&sni=Fnd.gelofenshop.online#Finland
-vless://SvnTeam@mtn.vpnprosec.com:443/?type=grpc&serviceName=&security=tls&fp=chrome&alpn=http%2F1.1%2Ch2&sni=loveukhomeinimybroV2rayloveirantunnel.svnteam.shop#
-vless://SvnTeamm@mtn.vpnprosec.com:2087/?type=grpc&serviceName=&security=tls&fp=chrome&alpn=http%2F1.1%2Ch2&sni=gm.v2rayn.top#
-vless://SvnTeam@mtn.vpnprosec.com:443/?type=grpc&serviceName=&security=tls&fp=chrome&alpn=http%2F1.1%2Ch2&sni=love2ukhomeinimybroV2rayloveirantunnel.svnteam.shop#
-vless://SvnTean@mtn.vpnprosec.com:443/?type=grpc&serviceName=&security=tls&fp=&alpn=http%2F1.1%2Ch2&sni=love3ukhomeinimybroV2rayloveirantunnel.svnteam.shop#USA

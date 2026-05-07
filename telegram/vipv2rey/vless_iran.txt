@@ -1,4 +1,0 @@
-vless://5b5c6557-d611-4c6f-a43b-a2c48c0b541d@46.102.136.69:57803?security=none&encryption=none&host=fast.com&headerType=http&type=tcp#
-vless://5b5c6557-d611-4c6f-a43b-a2c48c0b541d@46.102.136.69:57803?security=none&encryption=none&host=fast.com&headerType=http&type=tcp#%E2%9A%9C%EF%B8%8FTelegram%3A%40vipv2rey
-vless://29f8ad12-ea84-431b-bf32-9d3fb5cf2aa2@104.31.16.58:443?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=w1.sylar8.eu.org&type=ws&sni=w1.sylar8.eu.org#%40vipv2rey+%7C+MTN
-vless://07865379-86dd-4ca6-ad22-81255519c482@Iranserver.com:2083?mode=gun&security=tls&encryption=none&alpn=h2,http/1.1&fp=chrome&type=grpc&serviceName=&sni=vipv2rey.mamare.ir#

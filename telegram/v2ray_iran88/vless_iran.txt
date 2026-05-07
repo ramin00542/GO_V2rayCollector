@@ -1,3 +1,0 @@
-vless://77de458b-5d58-4379-927a-7e749b2d17f8@test.gold15.ir:443?mode=multi&security=tls&encryption=none&fp=chrome&type=grpc&serviceName=fast.com&sni=test.gold15.ir#
-vless://897fbabf-468d-4948-881b-dad1eb24cfe7@chanel.nilmmd.buzz:21842?type=tcp&path=%2F&host=fast.com&headerType=http&security=none#
-vless://e9e437c2-1ee5-4f0d-ae09-4bfafc835e47@185.143.233.120:2086?path=%2Fwp-admin%3Fed%3D2048&security=none&encryption=none&host=getasa.ir&type=ws#goldd_v2ray

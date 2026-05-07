@@ -1,2 +1,0 @@
-vless://66de1322-2173-52da-840c-8c72319eba2b@plus.realityip.org:80?encryption=none&headerType=none&type=ws&path=%2FArmageddon&host=plus.realityip.org#
-vless://66de1322-2173-52da-840c-8c72319eba2b@plus.realityip.org:80?encryption=none&headerType=none&type=ws&path=%2FArmageddon&host=plus.realityip.org#🇬🇧Alcohol

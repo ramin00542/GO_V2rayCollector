@@ -1,1 +1,0 @@
-vless://1af6107c-4618-464f-9ac1-7fe2986aead9@silver.api-tel.xyz:443?path=%2F&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&fp=firefox&type=ws&sni=dany.api-tel.xyz#

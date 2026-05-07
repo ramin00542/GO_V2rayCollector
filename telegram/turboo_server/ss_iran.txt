@@ -1,2 +1,0 @@
-vless://4dc0b42a-1a8a-4337-851b-5d8a1f149fca@104.18.13.149:8443?path=%2F&security=tls&encryption=none&insecure=0&host=kingman.turboo-server.com.co&type=ws&allowInsecure=0&sni=kingman.turboo-server.com.co#Turboo_Server
-vless://4dc0b42a-1a8a-4337-851b-5d8a1f149fca@172.64.152.23:8443?path=%2F&security=tls&encryption=none&insecure=0&host=deold.turboo-server.com.co&type=ws&allowInsecure=0&sni=deold.turboo-server.com.co#Turboo_Server6

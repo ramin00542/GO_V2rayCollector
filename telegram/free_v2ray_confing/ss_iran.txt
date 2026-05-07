@@ -1,1 +1,0 @@
-vless://9e350477-e6b4-4142-8912-7f2472a8b646@speed.mobilekamali.com:41000?encryption=none&security=none&type=tcp&headerType=http&host=fast.com#

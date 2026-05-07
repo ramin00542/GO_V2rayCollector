@@ -1,6 +1,0 @@
-vless://4ea381a1-6af5-4d2f-af08-4ba432fd7210@79.143.85.9:4430?mode=auto&path=%2F&security=none&encryption=none&host=varzesh3.com&type=xhttp#@speeds_vpn-کانال-پشتیبان-جوین-بشید
-vless://225ddf30-ea59-49fa-9df9-bcb82ef35d96@snapp.ir:80?encryption=none&type=ws&host=simorgh.darerio.ir&path=/&security=none#🐦‍🔥-@SPEEDS_VPN
-vless://c61ca522-e9f3-48a9-b3a8-20e5dee20146@185.143.234.235:8080?path=%2Fvless&security=none&encryption=none&host=fuck.spacehub.ir&type=ws#@speeds_vpn-کانال-پشتیبان-جوین-بشید
-vless://08b4ede0-5db7-48f2-a363-b3b5fc623d18@snapp.ir:80?path=%2F&security=none&encryption=none&host=simorgh.darerio.ir&type=ws#🐦‍🔥-@SPEEDS_VPN
-vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?path=%2F&security=none&encryption=none&host=sr.novatechsapr.ir&type=ws#🐦‍🔥-@SPEEDS_VPN
-vless://a3bfe21b-0d7a-496f-8e97-0bbc33bff55d@185.143.233.5:443?path=%2Fchat%3Fed%3D128&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&insecure=0&host=in.8lack.ir&fp=firefox&type=ws&allowInsecure=0&sni=in.8lack.ir#🐦‍🔥-@SPEEDS_VPN

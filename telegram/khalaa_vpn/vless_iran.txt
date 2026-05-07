@@ -1,1 +1,0 @@
-vless://e52d6cb4-f689-478d-cb79-9b76ab2fa4d9@mxdrug32.lmxtinl.com:2087?type=grpc&serviceName=&authority=&security=tls&fp=chrome&alpn=http%2F1.1%2Ch2&allowInsecure=1&sni=mxdrug32.lmxtinl.com#

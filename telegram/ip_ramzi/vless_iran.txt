@@ -1,1 +1,0 @@
-vless://3f2d2ba4-7f52-4ded-8580-890461bc0005@65.20.96.60:999?security=reality&encryption=none&pbk=9wfsGBdHj4v57u3U-YDUrqyHcBzZP_43xYXw0aT_UHE&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=ghbi.ir#%40IP_Ramzi+%7C+%D8%A8%D9%87+%D8%B3%D9%88%DB%8C+%D8%A2%D8%B2%D8%A7%D8%AF%DB%8C

@@ -1,2 +1,0 @@
-tg://proxy?server=77.42.123.21&port=443&secret=dd104462821249bd7ac519130220c25d09)
-tg://proxy?server=de.xomodz.fit&port=853&secret=ee78a3039828ea09d09f328b2590943c6564652e786f6d6f647a2e666974)

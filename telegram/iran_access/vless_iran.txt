@@ -1,4 +1,0 @@
-vless://89b3cbba-e6ac-485a-9481-976a0415eab9@172.66.44.254:2053?path=%2F&security=tls&encryption=none&alpn=h2,http/1.1&host=cXrolvpn.pagEs.DEv&fp=randomized&type=ws&sni=cXrOLvPn.PAgEs.dev#%40IRAN_access
-vless://fdb60214-1d03-4b83-c4b7-3d2d33c08073@81.12.27.91:21807?path=%2F&security=none&encryption=none&type=ws#%40IRAN_access
-vless://89b3cbba-e6ac-485a-9481-976a0415eab9@www.speedtest.net:443?path=%2F3ixeZxIuzmrYVV6J%3Fed%3D2560&security=tls&encryption=none&alpn=h2,http/1.1&host=iRaNSofTwAre85985611.PaGes.Dev&fp=randomized&type=ws&sni=iRANSOFTWare85985611.PaGes.dEV#%40IRAN_access
-vless://e2f4d1fa-0a6d-48c3-a5bb-8b438e78af23@www.speedtest.net:443?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=119f3a0b.chikiy123w.pages.dev&fp=randomized&type=ws&sni=119f3a0b.chikiy123w.pages.dev#

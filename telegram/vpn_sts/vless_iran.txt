@@ -1,2 +1,0 @@
-vless://ff6edb51-e8dc-404a-8ed5-8c3046574b72@lit5.litiran.ir:2083?security=tls&encryption=none&insecure=1&host=photob-in.storelit.ir&type=ws&allowInsecure=1&sni=photob-in.storelit.ir#%40vpn_sts
-vless://d9a83363-40a6-4a21-9dbe-cb2b7d287048@104.26.15.21:443?path=%2F107.174.121.122%3D443&security=tls&encryption=none&insecure=1&host=afrcloud22.mmv.kr&type=ws&allowInsecure=1&sni=afrcloud22.mmv.kr#%40vpn_sts%F0%9F%9A%80

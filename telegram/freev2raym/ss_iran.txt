@@ -1,2 +1,0 @@
-vless://f97c7f12-e303-4679-8723-80edf65bbe37@antipingfree.antimelinet.click:39851?security=none&encryption=none&headerType=http&type=tcp#join%3A%40freev2raym
-vless://7b0066b1-5c34-4cf4-bf89-6d98da423807@37.152.179.33:777?security=none&encryption=none&headerType=none&type=tcp#%40anti_ping%3A%DA%A9%D8%A7%D9%86%D8%A7%D9%84+%D9%85%D8%A7

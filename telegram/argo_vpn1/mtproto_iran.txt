@@ -1,1 +1,0 @@
-tg://proxy?server=52.56.135.13&port=80&secret=dd104462821249bd7ac519130220c25d09

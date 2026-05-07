@@ -1,2 +1,0 @@
-trojan://dQUWbcwECl@20.191.138.47:443?security=tls&headerType=none&type=tcp&sni=automq4-proxy.automq-sg.com#
-trojan://28bdfb42-f7ae-4a1f-9c85-dbc7f6b6cc95@45.146.232.170:46926?security=tls&headerType=none&type=tcp&sni=q08m.vgraxiw73s.hasyaf.cn#

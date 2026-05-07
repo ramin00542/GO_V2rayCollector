@@ -1,1 +1,0 @@
-vless://06f73c30-b767-492f-ad4f-50226053aa4f@iran.nikirani.sfree.persianmemberiranmember.shop:8443?security=reality&encryption=none&pbk=g2n6BaJw9Wfs7PqXVkodEAeaCCXKgxtJ2N0qAzKDCgw&host=varzesh3.com&headerType=http&fp=firefox&spx=%2F&type=tcp&sni=tuyaeu.com&sid=c22ed49b#

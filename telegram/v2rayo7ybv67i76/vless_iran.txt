@@ -1,5 +1,0 @@
-vless://584cfc39-6df2-43c5-bed7-1a54e87a9350@93.123.83.181:8443?security=reality&type=tcp&host=&headerType=&path=&sni=cdn.discordapp.com&fp=chrome&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&sid=&spx=#%F0%9F%9A%80%20Marz%20%28v2ray%29%20%5BVLESS%20-%20tcp%5D
-vless://2b5e6655-7385-45fe-8196-0cba24993fa0@94.156.203.237:2087?security=reality&type=grpc&host=&headerType=&serviceName=xyz&sni=discordapp.com&fp=chrome&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&sid=&spx=#
-vless://3b29dfdf-1bbe-4c14-beaa-932b650d6c0b@82.115.16.170:2053?mode=gun&security=reality&encryption=none&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&fp=chrome&type=grpc&serviceName=xyz&sni=discordapp.com#v2ray
-vless://2cca1b6f-b2ea-49f7-832a-0c8363c30ded@178.22.69.174:43857?security=none&encryption=none&headerType=none&type=tcp#v2ray
-vless://584cfc39-6df2-43c5-bed7-1a54e87a9350@93.123.83.181:2053?security=reality&type=grpc&host=&headerType=&serviceName=xyz&sni=discordapp.com&fp=chrome&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&sid=&spx=#

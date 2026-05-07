@@ -1,1 +1,0 @@
-trojan://humanity@104.20.6.134:443?type=ws&security=tls&path=%2Fassignment&host=www.multiplydose.com&sni=www.multiplydose.com&fp=chrome&allowInsecure=1#

@@ -1,1 +1,0 @@
-https://raw.githubusercontent.com/masterking32/MasterDnsVPN/main/server_linux_install.sh)

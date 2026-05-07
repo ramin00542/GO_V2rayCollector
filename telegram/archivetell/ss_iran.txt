@@ -1,2 +1,0 @@
-vless://Telegram-Parsashonam@94.130.50.12:443?encryption=none&security=tls&sni=kubernetes.io&alpn=h2%2Chttp%2F1.1&insecure=1&allowInsecure=1&type=xhttp&host=ir-netlify-1.netlify.app&path=%2Fp4r34m&mode=auto#%F0%9F%8C%90%20%40IR_NETLIFY%20%20kubernetes.io%20%2094.130.50.12
-vless://Telegram-Parsashonam@94.130.13.19:443?encryption=none&security=tls&sni=jobset.sigs.k8s.io&alpn=h2%2Chttp%2F1.1&insecure=1&allowInsecure=1&type=xhttp&host=ir-netlify-1.netlify.app&path=%2Fp4r34m&mode=auto#%F0%9F%8C%90%20%40IR_NETLIFY%20%20jobset.sigs.k8s.io%20%2094.130.13.19

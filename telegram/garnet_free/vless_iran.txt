@@ -1,4 +1,0 @@
-vless://9ff5546e-a7ce-4c89-a789-d711b11326e1@ygvbhutfcdcfcv.beingpopular.sbs:2095?type=tcp&path=%2F&host=support.cloudflare.com&headerType=http&security=none#@Garnet_Free
-vless://a75cb418-c1d6-476a-9464-ad1bd5181e3c@all.vpncustomize.cam:2096?mode=gun&security=tls&encryption=none&type=grpc&serviceName=@VPNCUSTOMIZE&sni=CaNNectV2ray-OnlyIRAN-mCi-iraracnzsk-rgt-mkh.varzesh3-CDN.site#@Garnet_Free
-vless://a75cb418-c1d6-476a-9464-ad1bd5181e3c@discord.gg:8080?path=%2F&security=none&encryption=none&host=de.vpncustomize.Website&type=ws#
-vless://8e7e606b-ff2c-4dd3-b3e1-6ebf0c46c97b@ygvbhutfcdcfcv.beingpopular.sbs:2082?type=tcp&path=%2F&host=www.cloudflare.com&headerType=http&security=none#@Garnet_Free

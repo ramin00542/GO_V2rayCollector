@@ -1,2 +1,0 @@
-vless://0ecb2769-9d3c-4ed3-9ffd-88a96f90f30a@abr.superip.ir:2086?path=%2FAPI%2Fsuperip&security=&encryption=none&host=cd2.phill-up.ir&type=ws#
-vless://0ecb2769-9d3c-4ed3-9ffd-88a96f90f30a@abr.superip.ir:2086?path=%2FAPI%2Fsuperip&security=&encryption=none&host=cd2.phill-up.ir&type=ws#@vpnv2rayNGv

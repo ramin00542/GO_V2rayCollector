@@ -1,5 +1,0 @@
-vless://88776902-d750-44f6-e6e8-3ba82ef9fe2c@fr68.drinfoo.com:53895?path=%2F&security=none&encryption=none&type=ws#%40vpn_irane%D8%A7%D8%AE%D8%AA%D8%B5%D8%A7%D8%B5%DB%8C+%D8%A8%D8%AF%D9%88%D9%86+%D9%85%D8%AD%D8%AF%D9%88%DB%8C%D8%AA+%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1+100%DA%AF%DB%8C%DA%AF
-vless://d330b788-4621-432c-d96b-2a1cf343d4ba@178.162.165.203:46919?path=%2FBfth56htf&security=none&encryption=none&type=ws#
-vless://f01b9f68-2d6d-49f6-f03d-39d8539030cf@178.162.164.199:28749?path=%2FD85h464g&security=none&encryption=none&type=ws#%40lrnbymaa
-vless://a0597c21-66ae-4eb6-809f-fbf785dcada9@lu1.v2vless.xyz:80?path=%2Fvless&security=none&encryption=none&type=ws#Power+ON+%28%40Net_IR_free%29%F0%9F%94%A5
-vless://7b3efda3-1892-4094-93fd-58796b745f48@178.162.165.202:39324?path=%2FB84th4r5fb&security=none&encryption=none&type=ws#%40lrnbymaa

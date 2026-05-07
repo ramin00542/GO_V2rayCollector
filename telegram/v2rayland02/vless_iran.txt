@@ -1,6 +1,0 @@
-vless://34911a7b-a3d9-47fe-ac0d-e07eeeea4864@162.159.194.86:2087?path=%2F&security=tls&encryption=none&host=amorix.abresani.com&type=ws&sni=amorix.abresani.com#%40v2rayland02%F0%9F%8C%90
-vless://6fab6cc6-e340-4073-93e1-c6c6802002c7@104.26.14.21:443?path=%2F167.179.110.68%3D8443%2F%3FTELEGRAM-YamYamProxy_YamYamProxy_YamYamProxy_YamYamProxy_YamYamProxy%3Fed%3D512&security=tls&encryption=none&host=afrcloud22.mmv.kr&type=ws&sni=afrcloud22.mmv.kr#%40v2rayland02%F0%9F%8C%90
-vless://084dac85-a82a-4462-9c43-13f0dcf7467c@mail.speedmizban.net:1517?security=none&encryption=none&host=testspeed-foreign.tci.ir&headerType=http&type=tcp#%40v2rayland02%F0%9F%8C%90
-vless://94a03e9a-74d5-4036-95e9-563cc19355de@62.133.60.50:443?security=tls&encryption=none&headerType=none&type=tcp&sni=decdn12.suio.me#%40v2rayland02%F0%9F%8C%90
-vless://61113265-3e78-4012-8f42-692b5069ddac@104.26.15.21:443?path=%2F140.245.53.45%3D443&security=tls&encryption=none&host=afrcloud22.mmv.kr&type=ws&sni=afrcloud22.mmv.kr#%40v2rayland02%F0%9F%8C%90
-vless://9a5a118d-06ab-4064-fe4b-89e47f1368b2@3.126.118.220:443?security=none&encryption=none&headerType=none&type=tcp#%40v2rayland02%F0%9F%8C%90

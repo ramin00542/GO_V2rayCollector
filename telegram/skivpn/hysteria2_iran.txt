@@ -1,1 +1,0 @@
-hysteria2://DBUklcvOyH@45.81.19.251:443?security=tls&insecure=1&sni=web.bale.ai#%F0%9F%A4%B4%F0%9F%91%B8Skivpn%F0%9F%91%B8%F0%9F%A4%B4

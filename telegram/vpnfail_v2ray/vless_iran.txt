@@ -1,6 +1,0 @@
-vless://66b2d54e-85ae-4664-88a2-90d70808d624@mv2.amydoodles.com:443?mode=auto&path=%2F&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&insecure=0&host=baba-nazan-h1.global.ssl.fastly.net&fp=firefox&type=xhttp&allowInsecure=0&sni=default.ssl.fastly.net#canfingV2rayNG-140
-vless://c59eb69f-8bb9-4901-a5d4-edad5362f8ab@trex.nahidapp.com:443?path=%2Fvless-ws&security=tls&encryption=none&insecure=1&host=trex.nahidapp.com&fp=chrome&type=ws&allowInsecure=1&sni=trex.nahidapp.com#filembad-232
-vless://1d509c22-4e43-4067-9185-873ec5bb49da@109.122.255.198:1022?security=&encryption=none&host=zula.ir&headerType=http&type=tcp#canfingV2rayNG-40
-vless://12d89ee5-1075-4121-9ec7-7c36e6f239a9@trex.nahidapp.com:443?path=%2Fvless-ws&security=tls&encryption=none&insecure=1&host=trex.nahidapp.com&fp=chrome&type=ws&allowInsecure=1&sni=trex.nahidapp.com#filembad-32
-vless://4065179d-5bce-4d97-9e07-26481911b22a@193.58.119.134:443?security=&encryption=none&host=google.com&headerType=http&type=tcp#
-vless://810e5833-e1b4-546b-8332-2368440e63f5@snapp.ir:8880?path=%2Fvless&security=none&encryption=none&host=asal.kalak.ca&type=ws#filembad-173

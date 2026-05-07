@@ -1,8 +1,0 @@
-vless://41c9e6be-cd11-4511-996c-7db798d38540@185.8.172.182:20249?security=none&encryption=none&headerType=none&type=tcp#@icv2ray
-vless://eef82e78-5a10-ac23-747b-43569143c696@i-love-iran.amlakayuni.ir:2087?security=tls&allowInsecure=0&encryption=none&type=ws&host=i-love-iran.amlakayuni.ir&path=/?ed%3D2087&sni=i-love-iran.amlakayuni.ir&fp=randomized&alpn=h2,http/1.1#
-vless://bfbf1ff0-734a-4082-86b1-38dc88441406@snapp.ir:8080?path=%2F&security=none&encryption=none&host=simorgh.darerio.ir&type=ws#
-vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?path=%2F&security=none&encryption=none&host=sr.novatechsapr.ir&type=ws#
-vless://4d400592-45a1-4e05-80f6-8581658e71eb@5.159.54.140:443?security=reality&spx=&encryption=none&pbk=A6_kAMUcoxeuilXwMvzPYFAP8ekULjxDu4KmQssG7Gc&headerType=none&fp=chrome&spx=%2F&type=tcp&sni=aparat.com&sid=510b7f2f#
-vless://4d400592-45a1-4e05-80f6-8581658e71eb@5.159.54.140:443?security=reality&encryption=none&pbk=A6_kAMUcoxeuilXwMvzPYFAP8ekULjxDu4KmQssG7Gc&headerType=none&fp=chrome&spx=%2F&type=tcp&sni=aparat.com&sid=510b7f2f#
-vless://9e363a45-22c7-3d91-5820-5ed45bcb3f00@yas.masterdadeh.ir:80?type=ws&host=&security=none&sni=185.226.94.203&alpn=&path=/&headerType=http#@icv2ray
-vless://4d400592-45a1-4e05-80f6-8581658e71eb@5.159.54.140:443?security=reality&spx=&encryption=none&pbk=A6_kAMUcoxeuilXwMvzPYFAP8ekULjxDu4KmQssG7Gc&headerType=none&fp=chrome&spx=%2F&type=tcp&sni=aparat.com&sid=510b7f2f#@icv2ray

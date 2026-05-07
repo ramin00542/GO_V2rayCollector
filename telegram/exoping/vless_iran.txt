@@ -1,2 +1,0 @@
-vless://9f25b526-7146-480f-81d9-cf564f65d93e@exoping.ddns.net:8954?security=reality&encryption=none&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&headerType=none&fp=chrome&type=tcp&sni=brave.com#%27%27%E2%80%8CGift4%27%27%E2%9A%A1%40exoping+%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85
-vless://a06ed316-d399-4cd0-963d-1feabe1db325@exoping.ddns.net:8954?security=reality&encryption=none&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&headerType=none&fp=chrome&type=tcp&sni=brave.com#%27%27%E2%80%8CGift5%27%27%E2%9A%A1%40exoping+%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85

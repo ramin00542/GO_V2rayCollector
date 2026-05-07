@@ -1,2 +1,0 @@
-vless://25c65101-45fe-4212-bafa-58a5d74089cd@zir.alihapps3.aghanami.ir:80?path=%2F&security=none&encryption=none&type=ws#%40Taziyanteam
-vless://a5094968-b0b0-4982-a0f4-5f8ff09275fe@red.nahidapp.com:443?path=%2Fred%2F&security=tls&encryption=none&insecure=0&host=red.nahidapp.com&type=ws&allowInsecure=0&sni=red.nahidapp.com#

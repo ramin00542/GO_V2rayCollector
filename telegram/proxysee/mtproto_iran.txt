@@ -1,3 +1,0 @@
-tg://proxy?server=1.full.filmne1t.info&port=8080&secret=dd49a70de57a60174f18dfd7fe6ef6aaf5
-tg://proxy?server=12.full.filmne1t.info&port=8080&secret=dd49a70de57a60174f18dfd7fe6ef6aaf5
-tg://proxy?server=Df.filmne2t.info&port=8080&secret=dd49a70de57a60174f18dfd7fe6ef6aaf5

@@ -1,1 +1,0 @@
-vless://mahsa-amini2@185.230.163.62:80?mode=gun&security=reality&encryption=none&pbk=Q_KxtcfORnJxFfa70ylJb0BDMwLyecYkQaVktvnatlM&fp=chrome&spx=%2F&type=grpc&serviceName=&sni=account.zula.ir#

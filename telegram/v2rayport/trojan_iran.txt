@@ -1,1 +1,0 @@
-trojan://bpb-trojan@104.21.75.193:443?path=%2Ftr%3Fed%3D2560%23Telegram%40V2ray_Alpha&security=tls&host=bpb-hd.aaronchin.xyz&type=ws&sni=bpb-hd.aaronchin.xyz#

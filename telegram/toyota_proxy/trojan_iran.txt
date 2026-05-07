@@ -1,1 +1,0 @@
-trojan://71409d3e488548e8bb076d229778f008@104.17.147.77:443?sni=bangladeshipatri.com&host=bangladeshipatri.com&security=tls&type=ws&path=6b777a91#

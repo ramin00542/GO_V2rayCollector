@@ -1,3 +1,0 @@
-vless://1d5a1410-baf7-4ed7-8ab5-5690d8665fff@s4.vpean.shop:443?mode=gun&security=reality&encryption=none&pbk=oZtXtUBEQV0k9CmOL06o5XolAewLJkaPpLBqDeqKjDQ&fp=chrome&spx=%2F&type=grpc&serviceName=کانال ما رو دنبال کنید@vpean&sni=yahoo.com&sid=f356ee71#
-vless://83e601d5-2ffa-419c-9358-9f2c7e694800@s4.vpean.shop:2096?type=grpc&serviceName=&security=reality&fp=chrome&pbk=09M-cWI7MtBCO64wedaolg1BJxA3mc_2kzrXxOFtczg&sni=tradingview.com&sid=7d088d2b&spx=%2F#
-vless://12498c82-3eb4-4815-a737-cb7ec1a68773@panel.vpean.shop:2095?mode=gun&security=reality&encryption=none&pbk=jP_pNM4dc9vO8USPWtGZb61idRFQ_9-rYod4rosYxVU&fp=firefox&spx=%2F&type=grpc&serviceName=&sni=Tradingview.com&sid=6a0cbb97#

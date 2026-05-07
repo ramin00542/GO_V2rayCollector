@@ -1,2 +1,0 @@
-socks://Og@62.220.126.92:25393#@KurdConfing
-socks://Og@185.8.172.128:443#%40KurdConfing

@@ -1,3 +1,0 @@
-vless://08665c10-c5ae-44f2-bc67-9c456a04014b@2.144.5.137:30536?security=none&encryption=none&headerType=none&type=tcp#%40fastkanfig%20%F0%9F%AB%A1
-vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?path=%2F&security=none&encryption=none&host=sr.novatechsapr.ir&type=ws#%D8%AA%D8%B1%DA%A9%DB%8C%D8%A8%20%D8%A8%D8%A7%20%D8%B3%D8%A7%DB%8C%D9%81%D9%88%D9%86
-vless://a3f3a69a-1468-43f3-9f7f-11c05d183dc6@185.143.234.235:80?path=%2F&security=none&encryption=none&host=al1.apicallminecrafegame.online&type=ws#%F0%9F%94%B5%40fastkanfig

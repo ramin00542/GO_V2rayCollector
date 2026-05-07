@@ -1,2 +1,0 @@
-vless://45a674d8-0aee-42c4-a739-983347bd0268@exoping.ddns.net:8953?security=reality&encryption=none&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&headerType=none&fp=chrome&type=tcp&sni=mmd.org#
-vless://9f25b526-7146-480f-81d9-cf564f65d93e@exoping.ddns.net:8954?security=reality&encryption=none&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&headerType=none&fp=chrome&type=tcp&sni=brave.com#

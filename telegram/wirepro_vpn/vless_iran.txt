@@ -1,2 +1,0 @@
-vless://eb19a0a9-a5a6-4649-e8da-71128b8cc8f7@104.17.225.199:2083?type=grpc&serviceName=&mode=multi&security=tls&fp=&alpn=http%2F1.1%2Ch2&sni=tls.fpsvpn.shop#
-vless://a5c2ce82-8240-4521-8d48-f1c7e900f481@85.198.17.173:28093?type=tcp&path=%2F&host=telewebion.com&headerType=http&security=none#%40WirePro_VPN-Free%20Config

@@ -1,2 +1,0 @@
-vless://1d57f77e-e42c-4dab-923f-81925e3b00ae@www.speedtest.net:443?type=ws&path=%2F&host=vip.hackers855.sbs&security=tls&fp=chrome&alpn=&sni=vip.hackers855.sbs#
-vless://3a067aa4-8434-4975-99b9-010e66064859@vip.hackers855.sbs:721?type=tcp&path=%2F&host=bmw.com&headerType=http&security=none#%F0%9F%87%AB%F0%9F%87%AE%20Finland%20(T2)-%DA%86%D9%86%D9%84%20%D9%85%D8%A7%20%3A%20iranproxypro

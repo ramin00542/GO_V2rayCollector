@@ -1,6 +1,0 @@
-vless://9d33dc91-fb84-4f96-d9b1-fe28a230a94f@5.223.42.211:443?security=reality&encryption=none&pbk=fXxqq2kGD1gwVUdFEHMtyxDudwQgQRWYz_YM02ONiW8&headerType=none&fp=chrome&spx=%2Fx1&type=tcp&sni=www.faceit.com&sid=f7#%40V2rayExpress
-vless://55a4210c-e765-427f-813d-0c55b763f6b0@199.247.28.17:44914?type=xhttp&path=%2F&host=&mode=auto&security=reality&pbk=o1n1Qj_IBvl3xGDkMPzmuRJzKKW31L_r9kEeyW7e3F8&fp=chrome&sni=black-moai.com&sid=1ac2a2dde288&spx=%2F#
-vless://b5e5c843-eb6b-438d-93c5-4faa71780ac4@139.162.146.9:443?type=splithttp&path=%2F&host=&mode=auto&security=reality&pbk=JrQipo4fliL8f9hLW49Wpr96XjYFaZPsom7hzlvaMio&fp=chrome&sni=eu.account.battle.net&sid=02#
-vless://977cf430-e251-4b5f-8bc4-c974fdec0df9@217.71.204.148:2096?encryption=none&security=reality&sni=WWW.speedtest.net,Speedtest.net&fp=chrome&pbk=ueUB3nxbexEGsLstcIG5w84Tqz9IiHYdVQMdy6aPO0E&sid=f8baf4dd88f32724&type=xhttp#
-vless://b5e5c843-eb6b-438d-93c5-4faa71780ac4@139.162.146.9:443?type=splithttp&path=%2F&host=&mode=auto&security=reality&pbk=JrQipo4fliL8f9hLW49Wpr96XjYFaZPsom7hzlvaMio&fp=chrome&sni=eu.account.battle.net&sid=02#Germany
-vless://73cc7084-a427-4193-8fe0-6dd72ac48265@80.240.23.101:47567?type=xhttp&path=%2F&host=&mode=auto&security=reality&pbk=qmdcGi9MFglpiaqalAFvOUGNehBjYIwaXLbula8K0gU&fp=firefox&sni=www.black-moai.com&sid=a862ded52ae3ea&spx=%2F#

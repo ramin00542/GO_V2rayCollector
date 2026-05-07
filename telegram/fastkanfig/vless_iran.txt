@@ -1,5 +1,0 @@
-vless://dc64677e-9025-4ec8-95d3-be7e5cf23844@plse3.gishevip.xyz:80?path=%2F&security=none&encryption=none&host=pl1.dns-coco.ir&type=ws#%40fastkanfig
-vless://9f70861b-b752-4bac-9b58-82ca8aa8dd26@l1.msljha8844.site:1050?security=none&encryption=none&host=cafeariel.ir&headerType=http&type=tcp#%40fastkanfig%20telegram
-vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?path=%2F&security=none&encryption=none&host=sr.novatechsapr.ir&type=ws#%40fastkanfig%20%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85
-vless://dc64677e-9025-4ec8-95d3-be7e5cf23844@plse3.gishevip.xyz:80?path=%2F&security=none&encryption=none&host=pl1.dns-coco.ir&type=ws#
-vless://dc4dccda-55c9-480a-9bc1-8edd8e2ccf69@185.213.165.81:48660?security=none&encryption=none&headerType=none&type=tcp#

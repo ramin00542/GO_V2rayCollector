@@ -1,5 +1,0 @@
-vless://7f64eeb1-b5f1-40a0-d80e-e6c718f6bd6a@mci.ircf.space:2096?mode=gun&security=tls&encryption=none&type=grpc&serviceName=(
-vless://ba089996-6155-4202-8982-fefcc7c7d43a@www80.nowbest.cf:18567?type=grpc&security=tls&serviceName=&sni=www80.nowbest.cf&fp=chrome#
-vless://7ce27a4e-10a6-459b-fd47-d078df5f22fe@104.17.187.102:2096?mode=gun&security=tls&encryption=none&type=grpc&serviceName=(
-vless://eb123cb1-ecee-42c4-c509-fedd52be15fe@AzadiIran.irov2ray.lol:2096?mode=gun&security=tls&encryption=none&type=grpc&serviceName=(
-vless://7f64eeb1-b5f1-40a0-d80e-e6c718f6bd6a@mtn.ircf.space:2096?mode=gun&security=tls&encryption=none&type=grpc&serviceName=(

@@ -1,4 +1,0 @@
-vless://0dcaa67f-90c2-42ca-8745-698465cf6655@ho1.bestgameir.ir:2083?path=%2Fws&security=tls&encryption=none&alpn=h2,http/1.1&fp=chrome&type=ws&sni=ho1.bestgameir.ir#%40telmavpn
-vless://d342d11e-d424-4583-b36e-524ab1f0afa7@ed9485634jkfhggh.pages.dev:2053?path=Telegram%40SINABIGO%40SINABIGO%40SINABIGO%2F%3Fed%3D2048&security=tls&encryption=none&host=ed9485634jkfhggh.pages.dev&fp=random&type=ws&sni=ed9485634jkfhggh.pages.dev#
-vless://07ffa30b-2366-4621-8c3a-aa7daeb70731@87.236.208.30:8080?path=%2F&security=none&encryption=none&type=ws#
-vless://5c85bd8e-fcb0-4b60-832b-ead08f355e9a@www.speedtest.net:80?path=%2F&security=none&encryption=none&host=SHHPROXY-free.xn--69-pv2cl2k5x3fipr.org.&type=ws#

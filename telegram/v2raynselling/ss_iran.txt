@@ -1,1 +1,0 @@
-vless://630713ae-0866-4238-a9b9-f743495d4dc7@zula.ir:2053?mode=gun&security=tls&encryption=none&fp=chrome&type=grpc&serviceName=&sni=aali.hihihahaaml.online#%40v2raynselling

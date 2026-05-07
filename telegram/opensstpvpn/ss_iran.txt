@@ -1,3 +1,0 @@
-vless://d17f8922-93e7-4756-be18-c15c8ee59b63@varzesh3.com:80?path=%2F&security=none&encryption=none&host=nobody.panivo.ir&type=ws#
-vless://d17f8922-93e7-4756-be18-c15c8ee59b63@varzesh3.com:80?path=%2F&security=none&encryption=none&host=nobody.panivo.ir&type=ws#3%D8%AA%D8%B1%DA%A9%DB%8C%D8%A8%20%D8%A8%D8%A7%20%D8%B3%D8%A7%DB%8C%D9%81%D9%88%D9%86%20tg%3A%20%40OpenSSTPVp
-vless://ceb70fc0-4886-4462-9651-d53b6367846d@snapp.ir:80?path=%2FFIRELINK&security=none&encryption=none&host=firelink.arian-go-internet.ir&type=ws#

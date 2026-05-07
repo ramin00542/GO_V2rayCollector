@@ -1,2 +1,0 @@
-vless://404c4d9a-3ef1-57cd-a636-9872df9d344e@alcohol.callofip.com:80?encryption=none&headerType=none&type=ws&path=%2Fstream&host=alcohol.callofip.com#
-vless://1b19829e-cda8-5b9e-974e-add34230797f@zero.realityip.org:80?encryption=none&headerType=none&type=ws&path=%2FArmageddon&host=zero.realityip.org#🇩🇪

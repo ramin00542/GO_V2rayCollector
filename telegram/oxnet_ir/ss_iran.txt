@@ -1,2 +1,0 @@
-vless://ecb703b3-8203-41e7-9ecf-e9cf4300edbf@Ikco.ir:8080?path=%2Fcdn&security=none&encryption=none&host=cp.movizdl.ir&type=ws#%40oxnet_ir%20%7C%20%D8%AA%D8%B1%DA%A9%DB%8C%D8%A8%20%D9%BE%D9%86%D8%AC
-vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?path=%2F&security=none&encryption=none&host=sr.novatechsapr.ir&type=ws#%40oxnet_ir%20%7C%20%D8%AA%D8%B1%DA%A9%DB%8C%D8%A8%2011

@@ -1,4 +1,0 @@
-vless://052df1a5-f53f-46dc-8aeb-7ed893310551@185.221.222.202:31779?security=&encryption=none&headerType=none&type=tcp#
-vless://TELEGRAM-CONFiGLiNE-115@ip.fastlynew.hosting-ip.com:80?mode=auto&path=%%3Fed%3D2048&security=&encryption=none&host=barakanal3.global.ssl.fastly.net&type=xhttp#
-vless://telegram-id-Arfilter@www.speedtest.net:443?path=%2%3Fed%3D2048&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&host=t.arfilter2.blog&fp=firefox&type=ws&sni=t.arfilter2.blog#
-vless://effe77be-8068-4808-9bcb-3f3c1c455456@151.101.3.8:80?path=/-LiV2ry@LIGHTNING6-TEL--@LIGHTNING6-TEL--@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL-@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL--@LIGHTNING6%3Fed%3D2048&security=none&encryption=none&host=fotofactory.pk&type=xhttp#

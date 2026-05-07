@@ -1,2 +1,0 @@
-vless://d29bc788-3cd2-4513-a1d4-6ed295e0adae@Artemis.sbs:80?path=%2F%40Artemis_vpn&security=none&encryption=none&host=free-03.artemis-21.sbs&type=ws#%D8%B1%D8%B6%D8%A7%DB%8C%DB%8C
-vless://a61588f7-2ef0-47a1-b0d6-843473c0eb91@mtn-VpnCustomize.aparat.lol:8443?mode=multi&security=tls&encryption=none&type=grpc&serviceName=@VPNCUSTOMIZE&sni=vpncustomizeV2ray.subscribev2.sbs#%D8%B1%D8%B6%D8%A7%DB%8C%DB%8C

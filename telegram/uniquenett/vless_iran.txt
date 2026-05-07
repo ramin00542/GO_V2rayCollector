@@ -1,1 +1,0 @@
-vless://d5a0662a-1a0d-4ecd-ecd7-f243fc1bc882@178.33.172.135:39571?security=none&encryption=none&host=zula.ir&headerType=http&type=tcp#%40UniqueNett-MTN-%F0%9F%87%A9%F0%9F%87%AA-Germany

@@ -1,2 +1,0 @@
-vless://41970c5b-7790-4ed6-a3d8-b320f86cc61d@zula.ir:443?mode=gun&security=tls&encryption=none&alpn=h3,h2,http/1.1&authority=&fp=chrome&type=grpc&serviceName=%40ConfigTell%2C%40ConfigTell%2C%40ConfigTell%2C%40ConfigTell%2C%40ConfigTell%2C%40ConfigTell%2C%40ConfigTell%2C%40ConfigTell%2C%40ConfigTell&sni=ConfigTell.felafel.org#%F0%9F%87%A9%F0%9F%87%AA+%40ConfigTell
-vless://bae93bc6-f9e8-4fd2-8904-f61f367f0af0@channel.maghzkade.top:8585?type=tcp&security=none#

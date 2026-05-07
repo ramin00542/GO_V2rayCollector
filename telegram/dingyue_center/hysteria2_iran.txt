@@ -1,1 +1,0 @@
-hysteria2://0e1a66ab-5313-45b3-90e8-ab2a62ff1bdf@107.175.194.57:8882?sni=cn.bing.com&alpn=h3&insecure=1#RN-3T3%E5%A4%A9

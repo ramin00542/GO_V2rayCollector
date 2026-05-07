@@ -1,1 +1,0 @@
-tg://proxy?server=139.162.53.165&port=8087&secret=dd1603010200010001fc030386e24c3add

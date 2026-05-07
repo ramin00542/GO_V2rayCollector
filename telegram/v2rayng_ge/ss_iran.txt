@@ -1,2 +1,0 @@
-vless://3f056d4c-983c-4f1c-8ebc-20100fa61150@dll17.whatbro.info:8017?path=%2F&security=none&encryption=none&host=Fast.com&type=ws#USA%F0%9F%87%BA%F0%9F%87%B8+%281%29
-vless://3f056d4c-983c-4f1c-8ebc-20100fa61150@dll19.whatbro.info:8019?security=none&encryption=none&host=Fast.com&headerType=http&type=tcp#

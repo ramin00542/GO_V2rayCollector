@@ -1,2 +1,0 @@
-vless://0b7484b9-c2b4-44cd-bc85-4401ecc77141@vGZYbv.hosted-in.p7d.ir:2052?path=%2F%EC%98%88%EC%81%9C%2B%EC%97%AC%EC%9E%90%EC%B9%9C%EA%B5%AC%EA%B0%80%2B%EC%97%86%EC%96%B4%EC%84%9C%2B%EB%84%88%EB%AC%B4%2B%EC%99%B8%EB%A1%9C%EC%9B%8C%EC%9A%94%3Fed%3D2560&security=none&encryption=none&host=20315d826807a488.de1.node.chat2.fun&type=httpupgrade#
-vless://6202b230-417c-4d8e-b624-0f71afa9c75d@172.64.149.54:2096?path=%2F%3Fed%3D2560&security=tls&encryption=none&host=sni.jpmj.dev&fp=chrome&type=ws&sni=sni.jpmj.dev#PixelB0X

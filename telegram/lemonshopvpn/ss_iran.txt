@@ -1,4 +1,0 @@
-vless://d6cfdcef-d6c0-40b4-a257-ae379a6e5e01@par.lemonsubor.monster:2610?security=none&type=tcp&headerType=http&path=%2F&host=speedtest.net#%F0%9F%8D%8B%20Lemonshop%28LemonShop%29
-vless://48bd4d22-e42f-4749-af6a-85ecf716c823@ubia2-join.outline-vpn.cloud:80?path=%2F%3Fed%3D2048&security=none&encryption=none&host=fkhamnei.kosnanatfilterchi.eu.org&type=ws#
-vless://2b5e2b86-55b6-4571-abc1-c1dec8605725@www.zula.ir:443?path=%2Fvless&security=tls&encryption=none&host=tr1-vless.sshmax.xyz&type=ws&sni=tr1-vless.sshmax.xyz#%40lemonshopvpn%7CTELEGRAM
-vless://d6cfdcef-d6c0-40b4-a257-ae379a6e5e01@par.lemonsubor.monster:2610?security=none&type=tcp&headerType=http&path=%2F&host=speedtest.net#

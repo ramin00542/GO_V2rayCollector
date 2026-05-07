@@ -1,3 +1,0 @@
-vless://2fc61051-230b-401b-94f7-19827732661f@zula.ir:2053?mode=gun&security=tls&encryption=none&alpn=http/1.1,h2&fp=chrome&type=grpc&serviceName=&sni=aali.hihihahaaml.online#
-vless://902ab4f5-f49d-453a-ac88-fc27194d3064@85.9.106.146:21330?security=none&encryption=none&headerType=http&type=tcp#
-vless://902ab4f5-f49d-453a-ac88-fc27194d3064@85.9.106.146:21330?security=none&encryption=none&headerType=http&type=tcp#%40v2raynselling

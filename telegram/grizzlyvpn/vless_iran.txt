@@ -1,1 +1,0 @@
-vless://7563a7e8-cd2b-41f8-9c59-cf90f9b9fbbe@:80?encryption=none&security=none&type=ws&path=%2F#

@@ -1,3 +1,0 @@
-vless://00e82199-4878-49f0-b4b0-0e0eb13921f4@0916.globalingredients.pe:2053?mode=gun&security=tls&encryption=none&type=grpc&serviceName=&sni=khj.mvclife.website#@V2R
-vless://76d22529-b92a-40de-86c2-591d195a2d55@mtn.MsV2ray.space:2083?mode=gun&security=tls&encryption=none&type=grpc&serviceName=@MsV2ray&sni=tm.MsV2ray.cfd#
-vless://0ed5d08c-571d-414a-9a76-135cfddc9de5@49.13.10.167:57242?type=tcp&security=none&path=/&host=bmi.ir&headerType=http#

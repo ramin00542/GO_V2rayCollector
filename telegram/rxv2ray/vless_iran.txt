@@ -1,3 +1,0 @@
-vless://47867494-9509-4c32-a90a-e9253b033279@fn11.irsbv2.ir:443?path=%2F&security=none&encryption=none&host=cloudflare.com&type=ws#
-vless://39a192ed-7e78-42f4-b956-2f0ea17f677f@108.162.194.99:443?path=%2Frbjisuws&security=tls&encryption=none&host=639018301854287215.camry-amsjk.info&type=ws&sni=639018301854287215.camry-amsjk.info#
-vless://SERVERNETT-SERVERNETT1@rf4.sernett.ir:80?mode=auto&path=%2F&security=none&encryption=none&type=xhttp#%40rxv2ray

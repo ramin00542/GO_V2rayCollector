@@ -1,1 +1,0 @@
-vless://d2900c83-c946-4022-91cc-662b808ee186@proxysudochannel.ddns.net:8443?mode=gun&security=reality&encryption=none&pbk=QIYQ18dVZZ4H3sseAPw34I2glJNfXTwM9OHRUSm-Uxw&fp=safari&spx=%2Fabout&type=grpc&serviceName=&sni=instructure.com&sid=b6b63505#%40ProxySudo-join-join-join

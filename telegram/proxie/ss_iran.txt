@@ -1,1 +1,0 @@
-vless://f98e06c6-6b36-47f1-a0e3-77d7937c3ec7@104.21.62.144:443?type=xhttp&path=%2FSauron%2F&host=&mode=auto&security=tls&fp=randomized&alpn=h3%2Ch2%2Chttp%2F1.1&allowInsecure=1&sni=sauron.melkore.ir#

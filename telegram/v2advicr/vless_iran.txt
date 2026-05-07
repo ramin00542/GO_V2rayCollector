@@ -1,2 +1,0 @@
-vless://7947bfb3-bb9a-4eee-a544-cb05aad24b13@chatgpt.com:2096?path=%2F&security=tls&encryption=none&host=s3d.maxriser.ir&fp=chrome&type=ws&sni=s3d.maxriser.ir#
-vless://5416af83-c120-4bfd-80ba-104d8ac61456@62.60.158.79:80?path=%3F5661173337.zip&security=none&encryption=none&host=tgju.org&type=ws#

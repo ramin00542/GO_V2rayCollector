@@ -1,1 +1,0 @@
-trojan://22dxmxezsm@pouriya.cf:443?security=tls&sni=brec3xLN7Zl2.pouriya.cf&alpn=http%2F1.1%2Ch2%2Ch3&fp=chrome&type=grpc&serviceName=Amsterdam&mode=gun#

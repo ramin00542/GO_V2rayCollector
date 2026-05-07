@@ -1,1 +1,0 @@
-vless://59480731-5c54-4177-a783-cba2578f3b2c@tttt1.hennessypro.site:4001?type=tcp&path=%2F&host=zula.ir&headerType=http&security=none#@fastservice

@@ -1,1 +1,0 @@
-vless://96930f31-8e68-4186-a101-5593f0b2b274@anten.ir:2052?path=%2F&security=none&encryption=none&host=new.nanoline.ir&type=ws#NetAccount

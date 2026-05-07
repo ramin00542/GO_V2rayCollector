@@ -1,4 +1,0 @@
-vless://cc6bfed8-7010-4eab-a8e7-89793ade0815@cloud.ns.g01e.nochofscu.sbs:10443?security=reality&sni=www.speedtest.net&fp=firefox&pbk=n8tbatLDMMjIgL42OziDdK-lQGi3M1hFz4xVtmOjuTE&sid=93a1f0fa&spx=/&type=tcp&encryption=none#%F0%9F%87%A9%F0%9F%87%AA%F0%9F%8E%81%20@Shaxerver
-vless://turboo-server@fr.turboo-server.xyz:443?security=none&encryption=none&host=bmw.com&headerType=http&type=tcp#
-vless://32b58171-8941-4039-a2e6-f26fbf0ece14@pouriya.cf:2053?encryption=none&security=tls&sni=dr7N90onaxlw.pouriya.cf&alpn=http%2F1.1%2Ch2%2Ch3&fp=chrome&type=ws&host=cLr5th7cRaha.pouriya.cf&path=%2FAmsterdam#
-vless://c695824d-75d7-42a4-ae05-a13ca34d497e@mysv2.nochofscu.sbs:50050?type=grpc&serviceName=TELEGRAM%3A%40Shaxerver&security=reality&fp=chrome&pbk=-pLP-KdBKO8tD8TOKlfYAOxBiMcFNnLqyfm3u46cwkY&sni=www.speedtest.net&sid=b14e0bf0&spx=%2F#%40Shaxerver%20Free…

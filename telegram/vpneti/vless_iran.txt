@@ -1,2 +1,0 @@
-vless://c1f0fda6-55f3-438f-a985-8615ec79e0c3@15.204.244.253:31970/?encryption=none&flow=&host=internet.life.com.by&type=tcp&headerType=http#
-vless://6b7376dd-11d8-443c-804a-996072aefd81@16.16.143.152:8443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=coinmarketcap.com&fp=chrome&security=reality&pbk=u-mmAoP_KxdQr89ydrgD1970cYthkkUMAUEPvd8vw2Y&sid=5e#

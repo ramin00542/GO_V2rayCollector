@@ -1,1 +1,0 @@
-vless://ead2ddaa-1438-44f8-8f31-c9a8b8c115ab@trex.nahidapp.com:443?path=%2Fvless-ws&security=tls&encryption=none&insecure=1&host=trex.nahidapp.com&fp=chrome&type=ws&allowInsecure=1&sni=trex.nahidapp.com#ataTech_ir

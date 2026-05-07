@@ -1,1 +1,0 @@
-vless://09387f07-5bf2-4486-9bb7-f49b959ed48f@shield.zdshop.ir:2053?type=grpc&serviceName=@V2RAYNGRAISI,@V2RAYNGRAISI,@V2RAYNGRAISI,@V2RAYNGRAISI,@V2RAYNGRAISI,@V2RAYNGRAISI,&mode=multi&security=tls& encryption=none&security=tls&type=ws&headerType=&path=&host=dfdc12a050e4f995.kiWiJuiCe.IR.&sni=34f1e29100eca166.kiWiJuiCe.IR.&fp=#

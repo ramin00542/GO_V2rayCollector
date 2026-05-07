@@ -1,3 +1,0 @@
-vless://936f64b8-4045-4cb1-80ea-54315ea40709@151.101.3.8:80?mode=auto&path=%2Fmitivpn&security=none&encryption=none&host=drmitivpn.global.ssl.fastly.net&type=xhttp#telegram%3A%20%40SepehrTyler%20%F0%9F%91%88%F0%9F%8F%BC%F0%9F%94%B4
-vless://e9a5be7f-0071-4a00-9636-eca95550c7f2@snapp.ir:80?type=ws&path=%2Fexopexomexoleco39%2Fping1%2F1%2F1%2F1%2Fping8%2F8%2F8%2F8&host=rms4iveffi4-60c9e41acd-camera.apps.ir-central1.arvancaas.ir&security=none#TR4Y-Test_Abol
-vless://936f64b8-4045-4cb1-80ea-54315ea40709@151.101.3.8:80?mode=auto&path=%2Fmitivpn&security=none&encryption=none&host=drmitivpn.global.ssl.fastly.net&type=xhttp#

@@ -1,1 +1,0 @@
-vless://f93405f5-b64f-40ba-a4da-140b994d511f@143.110.169.55:40987?type=tcp&security=reality&pbk=sO6z1TtkOVNB1lhlsqoBj6lsR_0IyEsfWTXj-YXlCHQ&fp=firefox&sni=*.sourceforge.net&sid=d3043362&spx=%2F#@Capital_NET

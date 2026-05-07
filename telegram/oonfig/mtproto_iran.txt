@@ -1,1 +1,0 @@
-tg://proxy?server=37.32.11.105&port=27015&secret=dd38d0c16949fc43cd2526044e09396bb7

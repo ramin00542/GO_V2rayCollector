@@ -1,3 +1,0 @@
-vless://Parsashonam-46@www.visa.com:8080?path=%2F&security=none&encryption=none&host=Parsashonam.%E6%88%91%E4%BB%AC%E7%B4%AF%E4%BA%86.tech.&type=ws#
-vless://6979dec5-bf73-42d8-89b3-58a25e069f6b@www.gov.se:8080?path=%2F%3Fed%3D2560&security=none&encryption=none&host=v2raylandd-64.utsxgao.workers.deV&type=ws#%40v2raylandd+%DA%A9%D8%A7%D9%86%D8%A7%D9%84+%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85%DB%8C
-vless://46bc1dbd-ffff-4d0f-87d8-9fdb53533092@www.gov.se:80?path=%2F%3Fed%3D2560&security=none&encryption=none&host=v2raylandd-65.utsxgao.workers.DEV&type=ws#%40v2raylandd+%DA%A9%D8%A7%D9%86%D8%A7%D9%84+%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85%DB%8C

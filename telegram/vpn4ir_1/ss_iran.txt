@@ -1,1 +1,0 @@
-vless://f5042692-412d-43fd-9855-20f21f631be4@8.6.112.6:2053?encryption=none&security=tls&sni=ir.tegular.ir&fp=chrome&allowInsecure=1&type=ws&host=ir.tegular.ir&path=%2Firaneman%2Fdoosetdaram%2F%3Fed%3D2560#

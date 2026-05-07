@@ -1,7 +1,0 @@
-vless://idTel-Hqv2rayNG@84.234.31.28:443?security=reality&encryption=none&pbk=FtDr_UhjnVUI0icGx9L4isHVQTNOl_cGsFEDSWigM28&headerType=none&fp=safari&spx=%2F&type=tcp&flow=xtls-rprx-vision&sni=refersion.com&sid=7c4ea43b6c6f#
-vless://7fed5bf9-a1de-41a0-ab89-694265c4895f@199.232.13.32:80?path=%2Fnetherlands%2Famsterdam%2Fvl%2Fws%2Ftls&security=none&encryption=none&host=Channel--VPNCUSTOMIZE.ir&type=ws#%5BTelegram%5D%20%C2%BB%20%40SROVPN%20%C2%AB%20%5B%F0%9F%87%A9%F0%9F%87%AA%5D
-vless://idTel-Hqv2rayNG@84.234.31.28:443?security=reality&encryption=none&pbk=FtDr_UhjnVUI0icGx9L4isHVQTNOl_cGsFEDSWigM28&headerType=none&fp=safari&spx=%2F&type=tcp&flow=xtls-rprx-vision&sni=refersion.com&sid=7c4ea43b6c6f#%F0%9F%87%A9%F0%9F%87%AATel%20%3A%20%40SROVPN
-vless://8ed5d5c6-08c6-40ed-8f15-ff724c4ecad9@ns.cloudflare.com:2086?path=%2FGoodLuck%3Fed%3D2560&security=&encryption=none&host=USA11.serrjioo.ir&type=httpupgrade#%40%F0%9F%87%AC%F0%9F%87%A7%20%40SROVPN%20%7C%20All%20%F0%9F%87%AC%F0%9F%87%A7
-🔺  ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpCb2cwRUxtTU05RFN4RGRR@85.210.120.237:443#
-vless://b82a8d33-9bb0-463a-a94d-53bb5e9b151d@45.11.93.133:70?security=none&encryption=none&host=tgju.org&headerType=http&type=tcp#
-vless://6e961410-077d-4978-98d7-aba54e633257@91.107.254.134:8443?security=none&encryption=none&host=tgju.org&headerType=http&type=tcp#All%C2%B9%20%7C%20%40SROVPN

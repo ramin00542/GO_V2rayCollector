@@ -1,1 +1,0 @@
-vless://5793f2c8-3fc6-4265-8c71-59e38d74d8d7@bookshop.aminetf.ir:443?mode=auto&path=%2F&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&insecure=0&fp=chrome&type=xhttp&allowInsecure=0&sni=shop.aminetf.ir#%40NetBox2

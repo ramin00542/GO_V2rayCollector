@@ -1,2 +1,0 @@
-vless://ecd24aab-1e25-46f2-b7c7-ca78f995d7fa@snapp.ir:80?path=%2F&security=none&encryption=none&host=simorgh.darerio.ir&type=ws#%40Taziyanteam
-vless://a5094968-b0b0-4982-a0f4-5f8ff09275fe@red.nahidapp.com:443?path=%2Fred%2F&security=tls&encryption=none&insecure=0&host=red.nahidapp.com&type=ws&allowInsecure=0&sni=red.nahidapp.com#%40Taziyanteam

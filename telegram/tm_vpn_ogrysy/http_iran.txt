@@ -1,9 +1,0 @@
-https://t.me/proxy?server=3.22.77.153&port=2358&secret=dd00000000000000000000000000000000
-https://t.me/proxy?server=3.70.166.57&port=3030&secret=3TK5IN_7UWQwKOL2uHjU6sE
-https://t.me/proxy?server=162.55.35.203&port=443&secret=DD8b2394ad2ecef7e607d5f52b31a45768
-https://t.me/proxy?server=65.21.251.0&port=443&secret=EE34c5f47056b520cb79414c021e6d0b62536e6170702e6972
-https://t.me/proxy?server=51.103.32.8&port=777&secret=ee101e1bb01f95fe46b4bc5ae728e6ca1135312e3130332e33322e38
-https://t.me/proxy?server=130.185.121.62&port=7090&secret=7hoSHhqt3u_v_-H68frxr6Fzd2lzc2luZm8uY2g=
-https://t.me/onlinetmchat
-https://t.me/proxy?server=52.90.180.61&port=2358&secret=dd00000000000000000000000000000000
-https://t.me/proxy?server=54.217.135.70&port=2358&secret=dd00000000000000000000000000000000

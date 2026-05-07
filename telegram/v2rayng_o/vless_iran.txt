@@ -1,1 +1,0 @@
-vless://7379eb18-959d-4b33-ddf7-e9369a0e1769@170.114.46.1:443?mode=gun&security=tls&encryption=none&type=grpc&serviceName=&sni=ger.vwfghin.info#

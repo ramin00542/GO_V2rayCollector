@@ -1,3 +1,0 @@
-vless://935e8f53-c72d-462c-9c2f-5b5bff06398d@nullnetwork.mashhad-gsm.ir:42726?encryption=none&type=tcp#@techbod
-vless://59941910-c958-45c4-b8c6-b5523970c41f@nullnetwork.mashhad-gsm.ir:42726?encryption=none&type=tcp#@techbod
-vless://04272a6c-8df2-47d4-b948-082f89cf0997@wanted.linkinfo.cloud:8880?path=%2F&security=none&encryption=none&type=ws#@techbod

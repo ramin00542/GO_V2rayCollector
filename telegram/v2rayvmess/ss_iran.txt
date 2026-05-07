@@ -1,1 +1,0 @@
-vless://d4e44ae4-3a7f-4a06-bfdf-a5648998607a@78.47.23.199:45470?path=%2F&security=none&encryption=none&type=ws#
