@@ -18,14 +18,19 @@ jobs:
           go-version: '>=1.21.3'
 
       - name: Run Telegram Tester
+        id: test
         run: |
           cd telegram-tester
           go mod init telegram-tester 2>/dev/null || true
           go get github.com/PuerkitoBio/goquery
-          go run main.go 2>&1 | tee output.txt
+          output=$(go run main.go 2>&1)
+          echo "OUTPUT<<EOF" >> $GITHUB_ENV
+          echo "$output" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
 
-      - name: Upload output as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: telegram-test-output
-          path: telegram-tester/output.txt
+      - name: Show output in summary
+        run: |
+          echo "## 📡 Telegram Test Results" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "${{ env.OUTPUT }}" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
