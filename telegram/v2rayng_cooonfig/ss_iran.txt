@@ -1,3 +1,2 @@
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpCb2cwRUxtTU05RFN4RGRR@series-a2-me.samanehha.co:443#
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpGbGp1c0dYYVdoZThtQUZhcXdvdHBP@51.141.11.19:39550#
-vless://1981e52c-0b70-43c8-90d7-ef4306e43d17@157.90.204.52:21582?path=%2F&security=none&encryption=none&type=ws#

@@ -1,4 +1,4 @@
-https://github.com/DevMoEiN/SNI-Radar.git
 https://t.me/ipcloudflaretamiz_Group2/416748
-http://127.0.0.1:10808
 https://t.me/ipcloudflaretamiz/195
+http://127.0.0.1:10808
+https://github.com/DevMoEiN/SNI-Radar.git

@@ -1,3 +1,2 @@
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpHeTFkZFRGUWNOcmt5Sk1hb0RsMWRh@seoul.dodohee.info:20976#
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo0ZTl1ZmExYTJqZUFOQVZlYkYwd3FO@india.dodohee.info:6980#
-vless://turboo-server@canada.turboo-server.com:10538?mode=gun&security=reality&encryption=none&pbk=lTkMprNNGET2C1Mxr9YH_MUopv4zttTN8pCa-GwNBwU&fp=firefox&spx=%2F&type=grpc&serviceName=Telegram:@turboo_server,@turboo_server&sni=discordapp.com&sid=eeb0316389#

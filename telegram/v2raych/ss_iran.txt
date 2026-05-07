@@ -1,12 +1,1 @@
-vless://fe25fba5-7ebc-45d4-ad6f-0ce68d23a28b@1.iran2.axenet.company:1120?security=tls&encryption=none&insecure=0&headerType=none&type=tcp&allowInsecure=0&sni=zaya1.ketabland.org#
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprRHQ4Y0cxVExnNHVCMG5VTU9BdUA5MS4xMDcuMTQ0LjA6MTA4MA==#
-vless://a5323cba-7ba7-4e10-87f5-a49fd2c4f4c0@104.19.1.89:2096?mode=auto&path=%2F&security=tls&encryption=none&extra=%7B%22scMaxEachPostBytes%22%3A%2B1000000%2C%2B%22scMaxConcurrentPosts%22%3A%2B100%2C%2B%22scMinPostsIntervalMs%22%3A%2B30%2C%2B%22xPaddingBytes%22%3A%2B%22100-1000%22%2C%2B%22noGRPCHeader%22%3A%2Bfalse%7D&insecure=0&host=ita.data-recive.ir&type=xhttp&allowInsecure=0&sni=ita.data-recive.ir#V2rayCH-|-@v2org-|-14041213-|-14176||@v2rayNGcloud
-vless://557d38cc-0474-492a-bca2-0de63a9f3f32@blueshop4.top:38145?security=none&encryption=none&host=www.speedtest.net&headerType=http&type=tcp#V2rayCH-|-@ipv2rayng-|-14041213-|-663||%40Ceuk96
-vless://33bab917-3a20-4294-ad71-7277e61cf2e0@2.188.212.54:2096?security=reality&encryption=none&pbk=YX9MYt8jKxTc6OGfACpBJAOqW4jc6v-RMQos4rzFHwI&headerType=none&fp=random&spx=%2F&type=tcp&sni=www.skyroom.online&sid=af#V2rayCH-|-@configshub2-|-14041213-|-1335975||[
-vless://lpuAyEKaUCL4/pyiOIW6SQXi9JknPZlC8CP8YxTSuKugTp0eZiTmlzq+ZiLJB6pUnpHFT8bxuaqjKOlZSv2YKONOJDQOMD37zrVp+2+6O41Tg0hl+Kuo8svlX2apSkolPJuq3ZZ9A1avzXQiVzrL0G9hlJnzvl2gqIrArGIOaBuVhfclUGCclM3CnS/Urx4MuQku+fcSbMOl2+5qiY2ksR9Sk8LPSetKcATV8VgcoL2mvSbvx5HIET5KgZ8zstDKvI4VTEyPcp3++vgZGsFa/zGDZC4c4ATLgmdRx827fUokc2ONWjWZM6dYjk4fiCTS#V2rayCH-|-@payam_nsi-|-14041213-|-25380
-vless://a3efada9-0c19-4a15-96c2-ed885765398a@94.183.163.205:443?encryption=mlkem768x25519plus.xorpub.0rtt.s5lo-EcyBEE28j4nhP9AZwe1mMdCaTUQ9Ve-IUX-X1s&security=none&type=tcp&headerType=none#V2rayCH-|-@configshub2-|-14041213-|-1335910||[
-vless://0d11eed5-50e3-4e35-bc98-c316982ff0f2@turkish.levron.pro:2088?security=&encryption=none&headerType=http&type=tcp#
-vless://1df695d8-a2f3-40f2-8556-a03fc0e96152@net1.iran-tehran.co.uk:550?security=&encryption=none&headerType=http&type=tcp#
-vless://bb138bcd-2118-4d14-808c-2a6e9423f033@iraan4.tehrandigital.org:35685?security=none&encryption=none&host=uptvs.com&headerType=http&type=tcp#
-vless://8bc21af8-96d9-48a9-9bd7-6361684bedac@mh52M5fSx0.zTZS0jb1r6G4z9mN9o2c.realytag.com:883?security=none&encryption=none&host=skyroom.online%2Cgharar.ir%2Cigap.net&headerType=http&type=tcp#
-vless://c3f6cc06-cc1a-4ab4-d7f8-a3c90b832dc4@185.173.129.127:102?path=%2F&security=none&encryption=none&type=ws#V2rayCH-|-@oxnet_ir-|-14041213-|-12099||oxnet_ir%206

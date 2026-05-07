@@ -1,11 +1,4 @@
-ss://YWVzLTI1Ni1nY206Q0gxVU5URFlwbi9pQUg4TzFkTW12L0hzOGM0NlBVOUdYbkhyR3l0NFNXMD0=@91.107.217.236:80#
-vless://a164e41f-9046-4928-9bc0-9d6388b7ca5e@www.speedtest.net:80?host=ch1.dontbow.store.&path=/melo/is/needed&security=none&type=ws#
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTphOGJ0OWZZMFFzTFM2ZUxuWFVlMFlt@45.158.171.141:8080#
+ss://YWVzLTI1Ni1nY206Q0gxVU5URFlwbi9pQUg4TzFkTW12L0hzOGM0NlBVOUdYbkhyR3l0NFNXMD0=@91.107.217.236:80#
 ss://YWVzLTEyOC1nY206am9pbi0tWkVETU9ERU9OLS1aRURNT0RFT04=@45.145.42.70:25367#
-vless://d628c340-0506-45a5-aebd-b4dbd1147985@ch1.melobigg.site:8443?allowInsecure=false&alpn=http%2F1.1%2Ch2&fp=chrome&path=%2Fmelov2ray&security=tls&sni=ch1.melobigg.site&type=ws#
-vless://46c86b08-9806-44f2-e901-8d325e420b38@185.146.173.58:2095?path=/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER%3Fed%3D2048&security=none&encryption=none&host=emshab.bklink.iR.&type=ws#@V2RAYN2G
 ss://MjAyMi1ibGFrZTMtYWVzLTI1Ni1nY206cFo0K1p1c2FnaG9rc0NVUjc1TDJUVlEwekZQdWdXd2dwdURweVh6eG1jYz06VC9BVXMvcHdNM0FkcXdYbG4wclAwWWlKdDdlcU0rZ0huVUFsVUpsUWFEQT0@188.34.194.165:80?type=tcp#
-vless://0f5da327-c0b9-4859-8152-70fbb9830f11@www.speedtest.net:80?host=ch1.dontbow.store.&path=/melo/is/needed&security=none&type=ws#
-vless://7728f089-122a-483e-beba-6ea57dfa2454@85.237.223.142:33217?security=none&encryption=none&host=bmw.com&headerType=http&type=tcp#
-vless://Telegram-NUFiLTER@185.146.173.58:2095?path=/telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER%3Fed%3D2048&security=none&encryption=none&host=emshab.bklink.iR.&type=ws#@v2rayn2g
-vless://Telegram-NUFiLTER@185.146.173.58:8080?path=%2Ftelegram-NUFiLTER%2Ctelegram-NUFiLTER%2Ctelegram-NUFiLTER%2Ctelegram-NUFiLTER&security=none&encryption=none&host=emshab.bklink.iR.&type=httpupgrade#

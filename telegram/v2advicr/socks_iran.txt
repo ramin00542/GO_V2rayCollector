@@ -1,2 +1,3 @@
 socks://Og%3D%3D@185.8.172.128:443#https://t.me/UnNurmal
 socks://Og@185.8.172.128:443#https://t.me/UnNurmal
+socks://Og@62.220.126.56:31548#https://t.me/UnNurmal

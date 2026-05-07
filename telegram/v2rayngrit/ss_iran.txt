@@ -1,10 +1,1 @@
-vless://5ec3a039-ea63-4bf9-a848-a65c9bfa66f5@www.speedtest.net:443?path=%2Fapi%2Fv1&security=tls&encryption=none&insecure=1&host=gb-8981.shenzogmbh.com&type=ws&allowInsecure=1&sni=gb-8981.shenzogmbh.com#
-vless://309fa273-6579-4cb2-9143-7cad50401eba@185.130.114.219:443?security=reality&encryption=none&pbk=gZGVp5PUdafgsmi1gawa1yLuha_XhXRc_W9SvPiGmTY&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=www.cloudflare.com&sid=7cad5040#%F0%9F%87%B7%F0%9F%87%BA
-vless://309fa273-6579-4cb2-9143-7cad50401eba@91.99.106.117:443?security=reality&encryption=none&pbk=gZGVp5PUdafgsmi1gawa1yLuha_XhXRc_W9SvPiGmTY&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=www.cloudflare.com&sid=7cad5040#%F0%9F%87%A9%F0%9F%87%AA
-vless://22948aee-4981-4ba1-b8df-7a2b494a8a28@65.21.240.236:443?security=tls&encryption=none&insecure=1&headerType=none&type=tcp&allowInsecure=1&sni=advertisement.app-browser.org#%F0%9F%87%AB%F0%9F%87%AE
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpmOGY3YUN6Y1BLYnNGOHAz@134.255.210.49:990#
-vless://978608ba-cac7-461e-af6a-d99d2b53155e@shop.onlineserver2.top:7320?security=none&encryption=none&host=skyroom.online&headerType=http&type=tcp#%F0%9F%AA%A2
-vless://37a554a5-b2e8-4178-94b0-58c20d1b36d5@core-pixel-blue-quick-modern.dlcnamatike7.com:6062?mode=gun&security=reality&encryption=none&pbk=jyOuawCOJuGXcjZa3t8b8Cyh69Lu07iVZ-bEJY30Ow4&fp=firefox&spx=%2F&type=grpc&serviceName=grpc&sni=media.steampowered.com&sid=d57b#
-vless://e127f737-bd10-475a-9461-e68904180eab@130.193.59.133:443?security=reality&encryption=none&pbk=_CjW0Khlrr5z5oc9Oy6-w2ZEanz-zMBktVn5EOX9oTM&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=yandex.ru&sid=f32140952ba18e18#
-vless://7bf5480b-a130-4e9d-a9d2-07f354653853@shop2.afraserver4.top:7335?security=none&encryption=none&host=cafeariel.ir&headerType=http&type=tcp#%F0%9F%AA%A2
-vless://748bd938-7eaf-4f1c-ac99-ce770c3aad93@m40a.vip784.com:33801?security=none&encryption=none&host=varzesh3.ir&headerType=http&type=tcp#

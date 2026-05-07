@@ -1,4 +1,1 @@
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjdklJODVUclc2bjBPR3lmcEhWUzF1@45.87.175.193:8080#
-vless://7ec108c5-5c08-4a9f-ad1b-bf60328792d4@141.193.213.21:2096?path=%2Ffree-server.techsonic.cloud&security=tls&encryption=none&host=free-server.techsonic.cloud&fp=chrome&type=ws&sni=free-server.techsonic.cloud#
-vless://441c8fba-c064-44d8-be60-3215455ad26b@91.99.225.171:80?path=%2F&security=none&encryption=none&host=%2FTELEGRAM--KANAL--JKVPN--JKVPN--JKVPN--JKVPN--JKVPN--JKVPN&type=ws#
-vless://3a83ab7a-9b6f-460c-a128-1799f63695e3@89.208.86.65:443?security=reality&encryption=none&pbk=_CjW0Khlrr5z5oc9Oy6-w2ZEanz-zMBktVn5EOX9oTM&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=tradingview.com&sid=f32140952ba18e18#%40rxv2ray

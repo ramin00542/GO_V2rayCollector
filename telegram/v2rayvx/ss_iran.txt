@@ -1,9 +1,1 @@
-vless://0e3fc469-0ec4-41a4-8ae8-792f7cddb12e@91.231.182.165:36898?security=none&encryption=none&headerType=none&type=tcp#
-vless://d7bbfe83-b037-48ae-996c-b98ed0441ba2@188.114.97.141:443?path=telegram-marambashi%2F%3Fed%3D2048&security=tls&encryption=none&host=e10c0e4b.oodaeq2.pages.dev&type=ws&sni=e10c0e4b.oodaeq2.pages.dev#
-vless://1142470b-d8de-4e9d-99f9-dfefbbdb39e0@104.18.41.138:8443?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=pardazeshvpn-tg27.pages.dev&type=ws&sni=pardazeshvpn-tg27.pages.dev#%40v2ray_swhil
-vless://d7bbfe83-b037-48ae-996c-b98ed0441ba2@188.114.97.141:443?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=e10c0e4b.oodaeq2.pages.dev&fp=randomized&type=ws&sni=e10c0e4b.oodaeq2.pages.dev#
-vless://89b3cbba-e6ac-485a-9481-976a0415eab9@188.114.96.3:443?path=%2FjU7p2gAXOkxbk0Lr%3Fed%3D2560&security=tls&encryption=none&alpn=h2,http/1.1&host=maNSor427-pANel2.PAgES.DeV&fp=randomized&type=ws&sni=MaNsor427-pANeL2.PAGeS.dEV#%40V2ray03
-vless://d9eb0df3-3190-4447-86b6-656fe5ff1119@104.16.119.3:443?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=mmdv2.pages.dev&type=ws&sni=mmdv2.pages.dev#
-vless://1a94747b-8901-4812-ba23-7eb44cc1162f@188.114.96.3:443?path=%2FTelegram-%40SiNABiGO%2F%3Fed%3D2560&security=tls&encryption=none&alpn=h2,http/1.1&host=kIngOFIRAN.PAGes.DEv&fp=randomized&type=ws&sni=kingOfIRaN.Pages.DEV#
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpxZ3BkeXpIajhyWlc5ZkR4eGtVSFJJ@217.196.103.206:29312#
-vless://ecc19b72-2cc8-4690-b23d-960d3e3c6d40@172.64.146.118:8443?path=%2F%3Fed&security=tls&encryption=none&host=pardazeshvpn-tg24.pages.dev&type=ws&sni=pardazeshvpn-tg24.pages.dev#

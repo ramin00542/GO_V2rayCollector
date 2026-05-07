@@ -1,4 +1,2 @@
-ss://YWVzLTI1Ni1nY206ZTRGQ1dyZ3BramkzUVk=@212.38.189.174:9102#
-vless://ce46a621-a0ff-4816-f38a-c023e22f34bc@91.107.133.124:443?security=reality&encryption=none&pbk=DfuW50QGMg_7_GAcfV2W2pRrf_0zCn4d8SDWimQqkDE&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=discord.com&sid=d4dd377e#v2freenet+49
 ss://YWVzLTI1Ni1nY206Y2RCSURWNDJEQ3duZklO@139.64.165.104:8118#
-vless://ce46a621-a0ff-4816-f38a-c023e22f34bc@91.107.133.124:443?security=reality&encryption=none&pbk=DfuW50QGMg_7_GAcfV2W2pRrf_0zCn4d8SDWimQqkDE&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=discord.com&sid=d4dd377e#
+ss://YWVzLTI1Ni1nY206ZTRGQ1dyZ3BramkzUVk=@212.38.189.174:9102#
