@@ -1,3 +1,5 @@
-vless://9c18e5e1-fd77-4f81-8c1e-895acc1c8d60@185.143.234.122:80?path=%2F&security=none&encryption=none&host=finland.lezzaluxa.ir&type=ws#
+ss://MjAyMi1ibGFrZTMtYWVzLTI1Ni1nY206bVp5ejVxZUZ3WjRUV2k1TU1Id1o5WWQ4eERKL0lvbFVWVyt5bjBkY0RyVT06ZVlKN1JyRXB4eWV2Y0c2clBNeHVEMStWTUpDSlU2cG9MaXd5SnZMUGFtTT0@iran.mamad-imnix.ir:3946?#
+vless://413deb75-451e-4deb-9999-bf87cccd06bd@185.143.233.5:443?path=%2F%40alaedin%3Fed%3D128&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&host=alaedin5.8lack.ir&fp=firefox&type=ws&sni=alaedin5.8lack.ir#@vmesskhodam
+vless://c09816d1-9b53-4e0d-85a8-9def477121ab@snappfood.ir:80?path=%2Fws&security=none&encryption=none&host=cdnisfucka.drnimaamini.ir&type=ws#@vmesskhodam
+vless://3b36d989-801f-49d7-95e4-133fbdf7eee4@snapp.ir:8880?encryption=none&security=none&type=ws&headerType=none&path=%2Fprivate&host=tr.sapax-cloud.ir#%F0%vmesskhodam
 vless://9c18e5e1-fd77-4f81-8c1e-895acc1c8d60@185.143.234.122:80?path=%2F&security=none&encryption=none&host=finland.lezzaluxa.ir&type=ws#vmesskhodam
-vless://3b36d989-801f-49d7-95e4-133fbdf7eee4@snapp.ir:80?encryption=none&security=none&type=ws&headerType=none&path=%2Fprivate&host=nl.sapax-cloud.ir#

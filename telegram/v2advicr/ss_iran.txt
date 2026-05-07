@@ -1,3 +1,6 @@
-vless://d0298536-d670-4045-bbb1-ddd5ea68683e@chatgpt.com:443?path=%2Ftelegram-%40v2ray_alpha%3D%3Fed%3D2560&security=tls&encryption=none&host=a.azadnet003.ddns-ip.net&fp=chrome&type=ws&sni=a.azadnet003.ddns-ip.net#%40V2advicr
-vless://7947bfb3-bb9a-4eee-a544-cb05aad24b13@chatgpt.com:2096?path=%2F&security=tls&encryption=none&host=s3d.maxriser.ir&fp=chrome&type=ws&sni=s3d.maxriser.ir#%40vpnbaz%20%7C%20%D9%86%D8%AA%20%D9%85%D9%84%DB%8C
-vless://a66f90d8-cfc8-4eef-ad19-378aeede1d9b@25.129.199.0:2052?path=%2F%3Fed%3D2048&security=none&encryption=none&host=FINLAND.SODOGODPING.IR&type=ws#%40V2advicr
+vless://5416af83-c120-4bfd-80ba-104d8ac61456@62.60.158.79:80?path=%3F5661173337.zip&security=none&encryption=none&host=tgju.org&type=ws#
+vless://d0298536-d670-4045-bbb1-ddd5ea68683e@chatgpt.com:443?path=%2Ftelegram-%40v2ray_alpha%3D%3Fed%3D2560&security=tls&encryption=none&host=a.azadnet003.ddns-ip.net&fp=chrome&type=ws&sni=a.azadnet003.ddns-ip.net#
+vless://41c9e6be-cd11-4511-996c-7db798d38540@185.8.172.182:20249?security=&encryption=none&headerType=none&type=tcp#
+vless://9f6979f5-fec9-4f40-b5f9-15dde47c6b91@185.143.233.5:2052?path=%2F&security=none&encryption=none&host=cdn.sesrsa.com&type=ws#https://t.me/UnNurmal
+vless://a66f90d8-cfc8-4eef-ad19-378aeede1d9b@25.129.199.0:2052?path=%2F%3Fed%3D2048&security=none&encryption=none&host=FINLAND.SODOGODPING.IR&type=ws#
+vless://7947bfb3-bb9a-4eee-a544-cb05aad24b13@chatgpt.com:2096?path=%2F&security=tls&encryption=none&host=s3d.maxriser.ir&fp=chrome&type=ws&sni=s3d.maxriser.ir#

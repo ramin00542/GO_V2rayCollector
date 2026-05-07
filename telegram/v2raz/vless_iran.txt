@@ -1,1 +1,1 @@
-vless://1dd8c900-b978-4ff6-82f7-97bce6ebf678@51.250.14.48:9443?security=reality&encryption=none&pbk=59iHd67rGlyJBUpDq5NXC91EB0U4AXtSlOjAQsW2D14&host=pulavpn.net&headerType=none&fp=qq&spx=%2FPuLaVPN%2FPuLaVPN%2FPuLaVPN%2F%2FPuLaVPN%2FPuLaVPN%2FPuLaVPN%2FPuLaVPN%2F%2FPuLaVPN&type=tcp&flow=xtls-rprx-vision&sni=api-maps.yandex.ru#
+vless://17c4e377-ea15-07d0-98b2-3e348c9ff5d9@89.208.228.139:52006?security=reality&encryption=none&pbk=4CH3o5zOMcFNMbnwXnkAg0FFepmsc0QzhahXkUzb1ik&headerType=&fp=qq&type=tcp&flow=xtls-rprx-vision&sni=max.ru&sid=d8c6b58bcbb0c323#

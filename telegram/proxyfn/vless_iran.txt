@@ -1,1 +1,2 @@
-vless://ddb133fc-d277-4c27-d518-0966796c35dc@104.31.16.37:80?path=nameless-wave-c0e0-work-new.helloworldperianscript.workers.dev&security=none&encryption=none&host=cEnTer.kaSHTI.woRld&type=ws#
+vless://e51aa02e-6358-4ade-963e-1c3ef2ed0d50@45.89.54.240:443?security=reality&encryption=none&pbk=vn4646XM93dX2rjt_H9CQjBX6LTwOEsFetvgcuXELzE&headerType=none&fp=chrome&spx=%2Fdebian-cd&type=tcp&flow=xtls-rprx-vision&sni=cdimage.debian.org&sid=f79efc36#
+vless://cdb38f5b-12c3-414b-eacd-a635dc633701@193.168.144.46:443?mode=gun&security=reality&encryption=none&pbk=rsoZpDByMW3Ukcj68I5vw_-k-CivE6CV6TPJxyPl6WY&fp=chrome&spx=%2Fstorage&type=grpc&serviceName=&sni=mega.io&sid=07a9a22b#

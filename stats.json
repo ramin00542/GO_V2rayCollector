@@ -1,17 +1,17 @@
 {
-  "new": 291737,
+  "new": 295284,
   "protocols": {
-    "http": 50,
-    "hysteria2": 33,
-    "mtproto": 85,
-    "socks": 5,
-    "ss": 162485,
-    "trojan": 249,
-    "vless": 34499,
-    "vmess": 94322,
-    "wireguard": 9
+    "http": 396,
+    "hysteria2": 13,
+    "socks": 28,
+    "ss": 160380,
+    "trojan": 143,
+    "tuic": 3,
+    "vless": 34428,
+    "vmess": 99865,
+    "wireguard": 28
   },
-  "subscription": 281125,
-  "telegram": 10612,
-  "total": 163182
+  "subscription": 284466,
+  "telegram": 10818,
+  "total": 163661
 }

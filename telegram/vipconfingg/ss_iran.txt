@@ -1,1 +1,3 @@
-vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?path=%2F&security=none&encryption=none&host=sr.novatechsapr.ir&type=ws#%40@vipconfingg
+vless://98b61be1-6613-43db-b784-38877b106be6@milli.gold:80?encryption=none&type=ws&host=Pan4e.nexoratechcenter.ir&path=/#@vipconfingg
+vless://98b61be1-6613-43db-b784-38877b106be6@milli.gold:80?encryption=none&type=ws&host=Pan4e.nexoratechcenter.ir&path=/#
+vless://f49886d9-4f8b-4e4d-a620-98f2d74da580@snapp.ir:80?type=ws&encryption=none&path=%2F&host=cwh.persianstorebnd.ir&security=none#vipconfingg

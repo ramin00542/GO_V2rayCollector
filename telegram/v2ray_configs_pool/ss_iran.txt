@@ -1,5 +1,7 @@
+vless://a384c715-aeb5-45e8-859b-f687ca6c083f@5.180.97.139:443?type=tcp&security=reality&sni=google.com&fp=chrome&flow=xtls-rprx-vision&pbk=wBrGfTI9PaFf966aN6KaCY0cL6QRLlop4nzNa6bJsiQ&sid=9f35da6c9412b832#
+vless://96c8de35-de20-4014-85d2-e56e3d64a85b@tapsi.ir:443?path=%2F&security=tls&alpn=h3&encryption=none&insecure=0&host=isoout.pbvsrk.carnagesv.top&fp=random&type=ws&allowInsecure=0&sni=isoout.pbvsrk.carnagesv.top#👉🆔@v2ray_configs_pool📡🇮🇷®️Iran©️Tehrān🅿️ping:72.13ms
+vless://7ef79266-c7e3-4dd5-937b-45ac56adcc16@snapp.ir:443?path=/ws&security=tls&encryption=none&host=vip2.tu5pars.ir&fp=chrome&type=ws&sni=vip2.tu5pars.ir#👉🆔@v2ray_configs_pool📡🇮🇷®️Iran©️Tehrān🅿️ping:107.53ms
+vless://b375b840-8ac0-4d37-98c0-44ab85fd7127@153.76.112.172:7443?type=tcp&security=reality&sni=chat.deepseek.com&flow=xtls-rprx-vision&pbk=5QAO98ot2U7TcGs_f6EEaQjCzNOJLNHqPf6smYsdFVI&sid=be0ce047#👉🆔@v2ray_configs_pool📡🇩🇪®️Germany©️Frankfurt
+vless://a384c715-aeb5-45e8-859b-f687ca6c083f@5.180.97.139:443?type=tcp&security=reality&sni=google.com&fp=chrome&flow=xtls-rprx-vision&pbk=wBrGfTI9PaFf966aN6KaCY0cL6QRLlop4nzNa6bJsiQ&sid=9f35da6c9412b832#👉🆔@v2ray_configs_pool📡🇳🇱®️The
+vless://a3d096e0-1ed1-318c-16d2-0667e91ce11f@hmt.masterdadeh.ir:80?path=/&security=none&encryption=none&type=ws&sni=185.226.94.242#👉🆔@v2ray_configs_pool📡🇮🇷®️Iran©️Tehrān🅿️ping:205.07ms
 vless://fc6522fd-f2e2-47a1-9194-f8c35d224b76@trex.nahidapp.com:443?path=/vless-ws&security=tls&encryption=none&insecure=0&host=trex.nahidapp.com&fp=chrome&type=ws&allowInsecure=0&sni=trex.nahidapp.com#👉🆔@v2ray_configs_pool📡🇮🇷®️Iran©️Tehrān🅿️ping:76.21ms
-vless://9e363a45-22c7-3d91-5820-5ed45bcb3f00@yas.masterdadeh.ir:80?type=ws&host=&security=none&sni=185.226.94.203&alpn=&path=/&headerType=http@ProxyV2IR#
-vless://8addca30-13cd-45e5-8ee7-db087ef6ef28@trex.nahidapp.com:443?path=/vless-ws&security=tls&encryption=none&insecure=0&host=trex.nahidapp.com&fp=chrome&type=ws&allowInsecure=0&sni=trex.nahidapp.com#👉🆔@v2ray_configs_pool📡🇮🇷®️Iran©️Tehrān🅿️ping:76.21ms
-vless://aff777df-4462-4993-bf4d-dd01f30508e6@pg.nexorainnovationhub.ir:80?path=%2F&security=none&encryption=none&host=germany.lezzaluxa.ir&type=ws#👉🆔@v2ray_configs_pool📡🇮🇷®️Iran©️Tehrān🅿️ping:200.66ms
-vless://a22292df-7470-4d78-96d9-6ee1c0925160@milli.gold:80?type=ws&encryption=none&path=/&host=wh.nexoratechcenter.ir&security=none#

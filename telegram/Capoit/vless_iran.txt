@@ -1,2 +1,1 @@
-vless://992d4045-d0f1-4c38-8553-6bb8b1d73277@s4.tehranionliine.ir:80?path=%2F&security=none&encryption=none&type=ws#@Capoit
 vless://44d701d0-115b-432e-8c50-46966ecd3d61@s4.tehranionliine.ir:80?encryption=none&type=ws&path=%2F#

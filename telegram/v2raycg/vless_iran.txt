@@ -1,2 +1,3 @@
-vless://91453cf9-57ea-4c51-91b6-2400d16f4589@185.146.173.96:80?path=%2FSvnTeam%3Fed%3D2048&security=none&encryption=none&host=XF2.SportNewShop.ir.&type=ws#
-vless://91453cf9-57ea-4c51-91b6-2400d16f4589@185.146.173.96:80?path=%2FSvnTeam%3Fed%3D2048&security=none&encryption=none&host=XSu1.SportNewShop.ir.&type=ws#
+vless://91453cf9-57ea-4c51-91b6-2400d16f4589@185.146.173.82:80?path=%2FSvnTeam%3Fed%3D2048&security=none&encryption=none&host=XFr1.SportNewShop.ir.&type=ws#
+vless://91453cf9-57ea-4c51-91b6-2400d16f4589@104.19.255.54:80?path=%2FSvnTeam%3Fed%3D2048&security=none&encryption=none&host=XN1.xn--3f6aaaaaaaaaaaaaaaaaa.CoM.&type=ws#
+vless://91453cf9-57ea-4c51-91b6-2400d16f4589@185.146.173.96:80?path=%2FSvnTeam%3Fed%3D2048&security=none&encryption=none&host=XF2.SportNewShop.ir.&type=ws#S+E+R+V+I+C+E+%F0%9F%87%AB%F0%9F%87%AE+None

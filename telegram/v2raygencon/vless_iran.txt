@@ -1,3 +1,1 @@
-vless://5976b860-e481-41e2-b2f2-9f8901bf84a2@94.183.241.159:22222?security=none&encryption=none&headerType=none&type=tcp#
-vless://a4f7ac23-8146-464b-a932-9753f97303aa@sr-d-2.sedarchahar.top:9102?security=&encryption=none&host=api.live98.ir&headerType=http&type=tcp#
-vless://08b772b5-966b-4dd4-bbb1-0df97744a408@custom.rezadvr.ir:43434?security=none&encryption=none&headerType=none&type=tcp#
+vless://7f8da1f9-2d1c-43d8-ae16-2222e0c5da6b@s2.mesterkit.com:52917?encryption=none&security=none&type=tcp&headerType=http#%40filembad

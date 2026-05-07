@@ -1,1 +1,2 @@
-vless://cb211e44-7725-4ddc-b52e-6a0059162fde@104.21.74.98:443?encryption=none&security=tls&sni=cc.limoo.online&alpn=h2%2Chttp%2F1.1&fp=randomized&type=ws&host=cc.limoo.online&path=%2F_jwiEbjsl0_ol8E…»
+vless://dcf149ac-2220-4cf8-987e-803baa0201e9@104.25.255.187:443?encryption=none&security=tls&sni=cc3.kosnanatfilterchi.eu.org&type=ws&host=cc3.kosnanatfilterchi.eu.org&path=%2F%3Fed%3D2048#BARAYE%20NIKA-BARAYE%20KIAN
+vless://cb211e44-7725-4ddc-b52e-6a0059162fde@104.21.74.98:443?encryption=none&security=tls&sni=cc.limoo.online&alpn=h2%2Chttp%2F1.1&fp=randomized&type=ws&host=cc.limoo.online&path=%2F_jwiEbjsl0_ol8E-%3Fed%3D2048#

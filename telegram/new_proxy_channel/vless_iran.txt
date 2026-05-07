@@ -1,3 +1,1 @@
 vless://a00e3e46-f0c2-4e54-b747-037d715d32c0@188.114.99.99:2096/?type=grpc&serviceName=&authority=&security=tls&fp=chrome&alpn=http%2F1.1&sni=tarasvalete.parhamtraberthos.IR.#Free%20Config%20VIP%F0%9F%94%A5
-vless://ad8aa9eb-7120-4953-a877-e7206f5a7c3c@188.114.99.99:2096/?type=grpc&serviceName=&authority=&security=tls&fp=chrome&alpn=http%2F1.1&sni=tarasvalete.parhamtraberthos.IR.#
-vless://fcbdbaeb-5b6f-40ea-8979-214e79d41566@188.114.99.99:2053/?type=grpc&serviceName=https%3A%2F%2Ft.me%2Fnew_proxy_channel-%40new_proxy_channel&authority=&security=tls&fp=chrome&alpn=http%2F1.1&sni=kanon.parhamtraberthos.IR.#VIP%20Channel…

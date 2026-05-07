@@ -1,2 +1,2 @@
-vless://441c8fba-c064-44d8-be60-3215455ad26b@91.99.225.171:80?path=%2F&security=none&encryption=none&host=%2FTELEGRAM--KANAL--JKVPN--JKVPN--JKVPN--JKVPN--JKVPN--JKVPN&type=ws#
-vless://441c8fba-c064-44d8-be60-3215455ad26b@91.99.225.171:80?path=%2F&security=none&encryption=none&host=%2FTELEGRAM--KANAL--JKVPN--JKVPN--JKVPN--JKVPN--JKVPN--JKVPN&type=ws#%40rxv2ray
+vless://3a83ab7a-9b6f-460c-a128-1799f63695e3@89.208.86.65:443?security=reality&encryption=none&pbk=_CjW0Khlrr5z5oc9Oy6-w2ZEanz-zMBktVn5EOX9oTM&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=tradingview.com&sid=f32140952ba18e18#%40rxv2ray
+vless://47867494-9509-4c32-a90a-e9253b033279@fn11.irsbv2.ir:443?path=%2F&security=none&encryption=none&host=cloudflare.com&type=ws#%40rxv2ray

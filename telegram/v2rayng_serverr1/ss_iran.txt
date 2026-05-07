@@ -1,2 +1,1 @@
-vless://cc12920b-a9e2-4a32-aa7d-65992d8ad92a@mci.vpncustomize.website:2096?mode=multi&security=tls&encryption=none&fp=safari&type=grpc&serviceName=@VPNCUSTOMIZE&sni=multi.TrV2ray.cfd#
-vless://cc12920b-a9e2-4a32-aa7d-65992d8ad92a@mci.vpncustomize.website:2096?mode=multi&security=tls&encryption=none&fp=safari&type=grpc&serviceName=@VPNCUSTOMIZE&sni=multi.TrV2ray.cfd#Telegram%3A%40v2rayng_serverr1
+vless://a613f225-a321-4677-dedb-d0371e88c8e9@mkh.vpncustomize.website:2096?mode=gun&security=tls&encryption=none&fp=safari&type=grpc&serviceName=@VPNCUSTOMIZE,@VPNCUSTOMIZE&sni=V2ray-Napsternet-Irancell-Iran-mkh.varzesh3-cdn.site#Telegram%3A%40v2rayng_serverr1

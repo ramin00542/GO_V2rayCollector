@@ -1,7 +1,1 @@
-vless://b6cdcef0-b61b-424d-81f8-41e40e762dde@109.237.99.132:443?path=%2Fwebsocket&security=tls&encryption=none&fp=chrome&type=ws&sni=de04.abvpn.ru#@TV_v2ray
-vless://1c8ea5a2-e986-42d6-9039-867aed7ca528@178.128.236.252:443?security=reality&encryption=none&pbk=MM2ZuhIbjaM6h7NOhWQZM8R8hkSE7Qc0uaEwzZ9YuQ0&headerType=none&fp=firefox&type=tcp&sni=isna.ir&sid=15bf9cd93a696bc5#@TV_v2ray
-vless://ef78d69f-1bbf-4f5a-a669-df9670ed636a@151.101.2.228:443?path=%2Fws%2F%3Fed%3D2048&security=tls&encryption=none&host=jihvbtctvy9778.com&type=ws&sni=pscresearch.faculty.ucdavis.edu#@TV_v2ray
-vless://e2f4d1fa-0a6d-48c3-a5bb-8b438e78af23@www.speedtest.net:443?path=%2FTelegram-------V2rayi_net_-_-_-_-Telegram-------V2rayi_net%2F%3Fed%3D2560&security=tls&encryption=none&host=119f3a0b.chikiy123w.pages.dev&fp=randomized&type=ws&sni=119f3a0b.chikiy123w.pages.dev#@V2rayi_net
-vless://71ed6628-5870-4d19-8a52-f2a3ba3d4898@162.159.153.7:443?path=%2Fyoulingkaishi&security=tls&encryption=none&host=vbbb.ylks2024.us.kg&type=ws&sni=vbbb.ylks2024.us.kg#@TV_v2ray
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp1MTdUM0J2cFlhYWl1VzJj@api.namasha.co:443#
-vless://71ed6628-5870-4d19-8a52-f2a3ba3d4898@162.159.153.7:443?path=%2Fyoulingkaishi&security=tls&encryption=none&host=vbbb.ylks2024.us.kg&type=ws&sni=vbbb.ylks2024.us.kg#
+vless://ef78d69f-1bbf-4f5a-a669-df9670ed636a@151.101.2.228:443?path=%2Fws%2F%3Fed%3D2048&security=tls&encryption=none&host=jihvbtctvy9778.com&type=ws&sni=pscresearch.faculty.ucdavis.edu#

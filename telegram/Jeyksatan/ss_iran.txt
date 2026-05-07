@@ -1,8 +1,2 @@
-vless://c943eaf7-70c6-45f1-bd3a-71360eedf16b@151.101.3.8:80?path=%2Fcontainers%2Ffi&security=none&encryption=none&host=tsvCY5W4AP61qVbo.net&type=ws#
-vless://1f5056ca-fb4c-4b51-a31e-891083588351@104.21.72.109:80?path=%2F8WrRNGUr2d25Kcpp%2FNTQuMjAwLjI0NC45Mw%3D%3D%3Fed%3D2560&security=none&encryption=none&host=pamchall.com.&type=ws#%40Jeyksatan
-vless://1f5056ca-fb4c-4b51-a31e-891083588351@104.21.72.109:80?path=%2F8WrRNGUr2d25Kcpp%2FNTQuMjAwLjI0NC45Mw%3D%3D%3Fed%3D2560&security=none&encryption=none&host=pamchall.com.&type=ws#
-vless://53d65999-870f-4020-8e7f-70f415533386@193.151.138.148:2095?security=none&encryption=none&headerType=none&type=tcp#
+vless://7a66b8ef-9713-4b69-b839-6bb45070af35@91.99.198.174:443?security=none&encryption=none&host=zula.ir%2F%3FTELEGRAM%40JOKERRVPN&headerType=http&type=tcp#%F0%9F%87%AA%F0%9F%87%A6%40Jeyksatan
 vless://8cad6474-5344-476a-9bf9-8e65d5a70d93@tunnel.bestserver.sbs:80?path=%2F%3Fed%3D2560&security=none&encryption=none&host=v2ray2.bestserver.sbs&type=ws#
-vless://53fa8faf-ba4b-4322-9c69-a3e5b1555049@104.17.147.22:80?path=%2FTelegram%40V2ray_Alpha%2F%3Fed%3D2560&security=none&encryption=none&host=redfree8mahsang6.redfree8.ir&type=ws#%40Jeyksatan
-ss://YWVzLTI1Ni1nY206MzdmZTMyMjgtNTNhYi05NDUzLTE5ZDktZTc3OTQ1NmVmMDlh@37050813702269272654038283817908.international-ixp.com:11312#
-vless://2bc31b80-7870-47e2-b6d7-4358108c0646@0us.amazon-osishop.ir:8880?security=none&encryption=none&host=eN.TwiTtER.cOM.%3A8880&headerType=http&type=tcp#

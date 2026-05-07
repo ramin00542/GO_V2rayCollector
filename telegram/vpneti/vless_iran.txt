@@ -1,1 +1,1 @@
-vless://693f4146-23ff-41ac-a242-b8e239fa859b@164.92.153.174:654/?type=grpc&encryption=none&flow=&sni=trendyol.com&fp=chrome&security=reality&pbk=usm6hgtyNe6Cm1Pm745eHpCrnxwvRf9ZqijYvSim8j0&sid=5133ddd7#%40VPNETI
+vless://6b7376dd-11d8-443c-804a-996072aefd81@16.170.40.252:8443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=coinmarketcap.com&fp=chrome&security=reality&pbk=kV-EuEdgW8OwU85SCOZlC-Cg0XR25QpRPjGYniBSqxY&sid=5e#%40VPNETI

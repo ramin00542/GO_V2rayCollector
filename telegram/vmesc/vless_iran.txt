@@ -1,2 +1,2 @@
-vless://0331b690-79fc-49d5-85f0-54faa4eff89f@go.adslimit.info:2345?security=none&encryption=none&headerType=none&type=tcp#
-vless://6876434f-13cb-4cbb-b053-63fe67f4bffe@f1.springpaatogh8.store:2053?path=%2F%3Fed%3D2560&security=tls&encryption=none&insecure=0&host=chess.sorza.ir&type=ws&allowInsecure=0&sni=digikala.sorza.ir#
+vless://e5f8a9f6-f164-479b-b3b5-b90f213c7145@141.101.121.115:2053?path=%2F&security=tls&encryption=none&insecure=1&host=ir1.airpanel.top&type=ws&allowInsecure=1&sni=ir1.airpanel.top#
+vless://c4e055e5-c9dd-44ae-8daf-2f0f344dcbdb@103.231.75.185:443?security=reality&encryption=none&pbk=ve8spuAYBeV8j7QnofoqGecdYl1KZYYcykiyHHzNg1U&headerType=none&fp=chrome&type=tcp&sni=yahoo.com&sid=0bce#

@@ -1,1 +1,2 @@
-vless://982c75a1-e8f8-4006-b50f-42a2c3bdd0b2@varzesh3.com:80?type=ws&encryption=none&path=%2Fws&host=nobody.fasterspeed.ir&security=none
+vless://810b4a88-75bc-4180-8715-8387ff1af093@Snapp.ir:8080?path=%2F&security=none&encryption=none&host=uplinkdl27.lyraforge.ir&type=ws#
+vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?path=%2F&security=&encryption=none&host=sr.novatechsapr.ir&type=ws#alavi

@@ -1,2 +1,1 @@
-vless://f553d0ca-701d-4f95-90e9-2851d055291e@13.48.126.115:8443?security=reality&encryption=none&pbk=slDQ8ADjK94ymKi6DYgy8wzquWdR6xQdQd-YRcMa9g4&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=www.makers.com&sid=3c#%40GoldenShiineVPN%F0%9F%8C%A0
-vless://376b9861-2fc6-4647-959c-18185cd9c95a@104.31.16.36:443?path=%2Ffflsws&security=tls&encryption=none&host=lmn1701789842450.lmn66.sbs&type=ws&sni=wrk1701790178919.lmn66.sbs#%40GoldenShiineVPN%F0%9F%8C%A0
+vless://f553d0ca-701d-4f95-90e9-2851d055291e@16.16.139.255:8443?security=reality&encryption=none&pbk=XcLXeTUVIcJaJ-C_KuFz1Th29WENS8vUQicVTUxeTl4&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=www.makers.com&sid=3c#%40GoldenShiineVPN%F0%9F%8C%A0

@@ -1,0 +1,1 @@
+vless://3fdcf1ed-8d21-40bd-b64e-5d50ada6b6db@gdrylu.skynetwork.lol:25?security=none&encryption=none&host=fast.com&headerType=http&type=tcp#Telegram%3A%40zeptovpn

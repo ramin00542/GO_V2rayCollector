@@ -1,4 +1,2 @@
-vless://f97c7f12-e303-4679-8723-80edf65bbe37@91.107.160.74:39851?security=none&encryption=none&headerType=http&type=tcp#Test-xcr1f4xr
-vless://7b0066b1-5c34-4cf4-bf89-6d98da423807@37.152.179.33:777?security=none&encryption=none&headerType=none&type=tcp#%40anti_ping%3A%DA%A9%D8%A7%D9%86%D8%A7%D9%84+%D9%85%D8%A7
+vless://7b0066b1-5c34-4cf4-bf89-6d98da423807@37.152.179.33:777?security=none&encryption=none&headerType=none&type=tcp#
 vless://f97c7f12-e303-4679-8723-80edf65bbe37@antipingfree.antime…
-vless://084a7d29-d80b-4660-be82-44f2d0ff6fa3@anti_ping.antiping.click:443?mode=gun&security=tls&encryption=none&type=grpc&serviceName=@freev2raym

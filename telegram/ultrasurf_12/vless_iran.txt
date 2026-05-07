@@ -1,4 +1,3 @@
-vless://b2xhsbsj45hsuzunsozox:14371type=tcp&encryption=none&security=
+vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?path=%2F&security=none&encryption=none&host=sr.novatechsapr.ir&type=ws#%40ultrasurf_12
 vless://a80fishfr…
-vless://a80fishfrnekixhdbejx@ano.vipsite.top:2083type=tcp&security=7325987430hsj-63949
-vless://fekslk01jskaaapqmzisf8site:1517www.httpsecurity=none&encryption=none&host=Jo
+vless://b2xhsbsj45hsuzunsozox:14371type=tcp&encryption=none&security=

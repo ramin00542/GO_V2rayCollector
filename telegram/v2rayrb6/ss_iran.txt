@@ -1,2 +1,1 @@
 vless://63a9805e-4cbe-4a83-833d-b799b45daba4@193.151.145.200:1111?type=tcp&security=none#
-vless://63a9805e-4cbe-4a83-833d-b799b45daba4@193.151.145.200:1111?type=tcp&security=none#aeqb5b53

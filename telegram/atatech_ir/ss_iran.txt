@@ -1,2 +1,1 @@
-vless://0cb44c5c-fba1-4f77-9b3f-4d29cac66b2f@varzesh3.com:80?type=ws&encryption=none&path=%2Fws&host=nobody.fasterspeed.ir&security=none#atatech_ir
-vless://05efb4e3-7e56-4c31-a0fa-7bfed931ad57@snapp.ir:8880?path=%2Felctro&security=none&encryption=none&host=clud.extra-tm.ir&type=ws#
+vless://ead2ddaa-1438-44f8-8f31-c9a8b8c115ab@trex.nahidapp.com:443?path=%2Fvless-ws&security=tls&encryption=none&insecure=1&host=trex.nahidapp.com&fp=chrome&type=ws&allowInsecure=1&sni=trex.nahidapp.com#ataTech_ir

@@ -1,6 +1,1 @@
-vless://6202b230-417c-4d8e-b624-0f71afa9c75d@172.238.14.152:443?encryption%%%%6871%%%55%%%%8875jvcgj%%%8%%9878%%%8%58%%%%9872%%%nvfh%%%%%8%8%8%%73985%8898%888n#
-ss://MjAyMi1ibGFrZTMtYWVzLTI1Ni1nY206bzMwLy96bVFablcrRzZsdGJ3aU5PVEFCdHI2Skx5TDBNQnd1ZDBnZDBGWT06T09xcUpGSHI1S1pYUUloVTFBZFhHT1NtRkFHb0UvdmxmZ0toc1RyU1dMYz0@87.107.111.105:80?type=tcp#
-vless://04272a6c-8df2-47d4-b948-082f89cf0997@wanted.linkinfo.cloud:8880?path=%2F&security=none&encryption=none&type=ws#[🇮🇷]t.me/ConfigsHub
-vless://9d200545-cfe3-4349-8d87-76fb0bf11e12@snapp.ir:80?encryption=none&type=ws&path=%2FFIRELINKKVPN&host=firelinkk.arian-go-internet.ir#[🇮🇷]t.me/ConfigsHub
-vless://6202b230-417c-4d8e-b624-0f71afa9c75d@172.238.14.152:443?encryption%%%%6871%%%55%%%%8875jvcgj%%%8%%9878%%%8%58%%%%9872%%%nvfh%%%%%8%8%8%%73985%8898%888n#[🇯🇵]t.me/ConfigsHub
-vless://dae2ddc6-a892-495f-a001-181cec56ad12@snapp.ir:2052?path=%2F&security=none&encryption=none&host=p1.razstar.ir&type=ws#[🇮🇷]t.me/ConfigsHub
+vless://9aa327ed-c793-4f86-ea56-1c91f30d8b30@3.65.204.222:39054?security=&encryption=none&headerType=&type=tcp#[🇩🇪]t.me/ConfigsHub

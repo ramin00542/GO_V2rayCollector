@@ -1,2 +1,2 @@
-vless://1723e136-0261-45e6-9a53-1b3bb06be78a@Tapsi.ir:8080?path=%2Fcdn&security=&encryption=none&host=Zp.movizdl.ir&type=ws#
-vless://1723e136-0261-45e6-9a53-1b3bb06be78a@Tapsi.ir:8080?path=%2Fcdn&security=&encryption=none&host=Zp.movizdl.ir&type=ws#👉🆔@v2ray_configs_pool📡🇮🇷®️Iran©️Tehrān🅿️ping:73.2ms
+vless://7bb415e0-bae6-4157-85d9-a1dc71da574e@arvancloud.ir:80?path=%2F&security=none&encryption=none&host=t1.tunnellinuweb.ir&type=ws#👉🆔@v2ray_configs_pool📡🇮🇷®️Iran©️Tehrān🅿️ping:59.29ms
+vless://7bb415e0-bae6-4157-85d9-a1dc71da574e@arvancloud.ir:80?path=%2F&security=none&encryption=none&host=t1.tunnellinuweb.ir&type=ws#👉🆔@v2ray_configs_pool📡🇮🇷®️Iran©️Tehrān🅿️ping:1194.33ms

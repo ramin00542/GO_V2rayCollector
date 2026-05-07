@@ -1,2 +1,1 @@
-vless://cda9ae20-f69f-4112-be95-90cdfc7a21ae@172.66.156.81:80?encryption=none&type=ws&host=websocket.network.www.speedtest.net.flutter.dev.russia.pyt.digitalcity5.xyz.skylinkserver.site.vegaskala.com.&path=/&security=none#🇺🇸
-vless://fc5a65f4-5602-4b76-a1e4-e00ca437671c@151.101.205.194:80?path=/-LiV2ry%3Fed%3D2048&security=none&encryption=none&host=e1.ir&extra=%7B%22xPaddingBytes%22%3A%2210-100%22%2C%20%22noSSEHeader%22%3Atrue%7D&type=xhttp#
+vless://2dbc400a-2c9b-4032-90c4-cc20d1bba93b@151.101.3.8:80?path=/-LiV2ry%3Fed%3D2048&security=none&encryption=none&host=fotofactory.pk&type=xhttp#🇩🇪All¹

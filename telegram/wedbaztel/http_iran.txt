@@ -1,10 +1,10 @@
-https://t.me/socks?server=0.0.0.0&port=10880&user=%40vasl_bashim
+https://t.me/socks?server=127.0.0.1&port=10880&user=%40vasl_bashim
+https://t.me/proxy?server=tggo.store&port=443&secret=7uzWmAwONp7D1ujd83Bwkr50Z2dvLnN0b3Jl
+https://t.me/proxy?server=50.7.41.162&port=443&secret=ee011808bcccfd224644ca7f231846a7d46d61782e7275
 https://t.me/proxy?server=95.217.31.48&port=8080&secret=dd104462821249bd7ac519130220c25d09
+https://t.me/socks?server=91.222.196.8&port=7070&user=Amir01&pass=Amir01
+https://t.me/socks?server=62.60.206.234&port=10808
 https://t.me/socks?server=213.176.127.109&port=2087
 https://t.me/proxy?server=65.109.30.209&port=4455&secret=dd104462821249bd7ac519130220c25d09
-https://t.me/proxy?server=tggo.store&port=443&secret=7uzWmAwONp7D1ujd83Bwkr50Z2dvLnN0b3Jl
-https://t.me/socks?server=91.222.196.8&port=7070&user=Amir01&pass=Amir01
 https://t.me/socks?server=62.60.214.144&port=10808
-https://t.me/socks?server=127.0.0.1&port=10880&user=%40vasl_bashim
-https://t.me/socks?server=62.60.206.234&port=10808
-https://t.me/proxy?server=50.7.41.162&port=443&secret=ee011808bcccfd224644ca7f231846a7d46d61782e7275
+https://t.me/socks?server=0.0.0.0&port=10880&user=%40vasl_bashim

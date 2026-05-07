@@ -1,1 +1,1 @@
-vless://89b3cbba-e6ac-485a-9481-976a0415eab9@199.232.0.177:443?type=ws&security=tls&host=Tahagoogooli.ir&path=/veNbt06rF0tTFtp6/MTcyLjY0LjEzNC41OA%3D%3D?ed%3D2560&fp=randomized&sni=SpEedteST.NET&alpn=h2,http/1.1#
+vless://5ee58902-ad14-419d-88dc-d2a74f2c1482@telegram.cloudsnapbot.tech:2053?type=grpc&security=reality&mode=gun&serviceName=,Telegram:@CloudSnapBot&fp=random&sni=Appleid.cdn-apple.com&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc#FREE500GB+EVERY+DAY

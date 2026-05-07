@@ -1,2 +1,2 @@
-vless://220bafe5-d259-453f-b6b5-9f8988521a66@www.speedtest.net:80?path=%2Ftelegram%3DV_2RAYNGVPN&security=none&encryption=none&host=FySuMyYk3.aMirsiTesos.sItE.&type=httpupgrade#%40V_2rayngVpn
 vless://4b109a2c-9c17-4d1c-9794-4e0a585e498f@www.parsvds.ir:8080?path=%2Ftelegram%3DV_2RAYNGVPN&security=none&encryption=none&host=FySuMyYk3.aMirsiTesos.sItE.&type=ws#
+vless://1c607eb9-ccc8-4405-b19c-a9b06d7baee2@opv2raybot1.v2moxbot.store:2052?path=%2F%3Fed%3D2560&security=none&encryption=none&host=opv2raybot.v2moxbot.store&type=ws#%40Opv2raybot

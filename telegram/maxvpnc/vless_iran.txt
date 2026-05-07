@@ -1,1 +1,2 @@
-vless://4dc4d7d7-e5d8-4596-b4b4-abd9f7f75709@tnl2.omidkiani1.top:4600?mode=gun&security=tls&encryption=none&alpn=h2,http/1.1&type=grpc&serviceName=&sni=panel.omidkiani1.top#%DA%A9%D8%A7%D9%86%D9%81%DB%8C%DA%AF+%D8%A8%DB%8C%D8%B4%D8%AA%D8%B1+%D8%AF%D8%B1+%40MaxVPNc
+vless://d04b9da6-2bd1-4022-86a8-915bb6b69660@tnl3.omidkiani1.top:30300?security=tls&encryption=none&alpn=h2,http/1.1&headerType=none&type=tcp&sni=panel3.omidkiani1.top#
+vless://203a7d1e-30e7-49e4-9189-bd57eb30b318@tnl3.omidkiani1.top:30300?security=tls&encryption=none&alpn=h2,http/1.1&headerType=none&type=tcp&sni=panel3.omidkiani1.top#

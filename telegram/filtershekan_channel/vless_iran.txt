@@ -1,2 +1,1 @@
-vless://7ef79266-c7e3-4dd5-937b-45ac56adcc16@snapp.ir:443?path=%2Fws&security=tls&encryption=none&host=vip2.tu5pars.ir&fp=chrome&type=ws&sni=vip2.tu5pars.ir#
-vless://c09816d1-9b53-4e0d-85a8-9def477121ab@185.143.233.122:80?path=%2Fws&security=none&encryption=none&host=cdnisfucka.drnimaamini.ir&type=ws#%40filtershekan_channel
+vless://0d84cdbd-c0fb-47c6-ab5d-a25587df2a4a@185.143.233.5:80?path=%2Fxray&security=none&encryption=none&host=bot.vipiranian.de&type=ws#

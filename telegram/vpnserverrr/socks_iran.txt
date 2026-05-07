@@ -1,5 +1,5 @@
 socks://Og@45.94.213.213:443#%40vpnserverrr
-socks://Og@62.220.126.56:26274#%40vpnserverrr%F0%9F%8E%B2
-socks://Og@62.220.126.56:27969#%40vpnserverrr%F0%9F%8D%AC
-socks://Og@62.220.126.56:28418#%40vpnserverrr%20%F0%9F%8D%84
 socks://Og@62.220.126.56:26274#%40vpnserverrr%20%F0%9F%8E%A8
+socks://Og@62.220.126.56:27969#%40vpnserverrr%F0%9F%8D%AC
+socks://Og@62.220.126.56:26274#%40vpnserverrr%F0%9F%8E%B2
+socks://Og@62.220.126.56:28418#%40vpnserverrr%20%F0%9F%8D%84

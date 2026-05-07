@@ -1,1 +1,1 @@
-vless://2ae36cda-3cca-4ead-831e-80000308bf91@185.213.165.81:12019?security=none&encryption=none&headerType=none&type=tcp#
+vless://a2772ce5-647f-4967-835a-135ed9701422@185.143.234.235:80?path=%2F&security=none&encryption=none&host=vixon.portab.org&type=ws#

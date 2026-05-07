@@ -1,3 +1,1 @@
-vless://f26122cc-07bb-4cc8-e854-d9cae451baaa@45.85.118.88:2087?mode=gun&security=tls&encryption=none&type=grpc&serviceName=&sni=gp.mrclothshop.fun#
-vless://f26122cc-07bb-4cc8-e854-d9cae451baaa@45.85.118.88:2087?mode=gun&security=tls&encryption=none&type=grpc&serviceName=&sni=gp.mrclothshop.fun#%40FATI_FFX+50+GB%F0%9F%98%88
-vless://f26122cc-07bb-4cc8-e854-d9cae451baaa@45.85.119.01:2087?mode=gun&security=tls&encryption=none&type=grpc&serviceName=&sni=gp.mrclothshop.fun#
+vless://f26122cc-07bb-4cc8-e854-d9cae451baaa@45.85.119.01:2087?mode=gun&security=tls&encryption=none&type=grpc&serviceName=&sni=gp.mrclothshop.fun#%40FATI_FFX+50+GB%F0%9F%98%90

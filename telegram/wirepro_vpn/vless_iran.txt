@@ -1,3 +1,2 @@
+vless://SvnTeam@104.17.204.57:443?security=tls&encryption=none&type=grpc&sni=Fnd.SvnNvs.Online&fp=chrome&alpn=h2,http/1.1#
 vless://2199db53-be52-4f99-9ade-255754dd430a@164.90.172.122:8443?type=tcp&path=%2F&host=cloudflare.com&headerType=http&security=none#%40WirePro_VPN-Free%20Config
-vless://b1149adc-102b-4bcf-e9b4-9614ad888d70@195.177.255.165:28093?type=tcp&path=%2F&headerType=http#
-vless://d67f26b6-91bf-447e-b5b9-43ceeab528df@164.90.172.122:8443?type=tcp&path=%2F&host=cloudflare.com&headerType=http&security=none#

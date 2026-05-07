@@ -1,1 +1,1 @@
-vless://TELEGRAM-NUFiLTER@NUFiLTER.fastly80.hosting-ip.com:80?path=%2Ftelegram-NUFiLTER%2Ctelegram-NUFiLTER%2Ctelegram-NUFiLTER%2Ctelegram-NUFiLTER%3Fed%3D2048&security=none&encryption=none&host=Bashetokhobi.ir&type=ws#%40V2rayNGV
+vless://c1ea5250-43d6-4f91-8d0f-64ed231cc559@pishgam.sdcards.ir:8080?path=%2F%3Fed%3D2087&security=none&encryption=none&host=pivaz-a.plas-nim.org&type=httpupgrade#

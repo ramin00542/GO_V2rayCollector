@@ -1,3 +1,1 @@
-vless://388a6c57-87e7-420b-afe2-b3eb670fd7da@104.18.16.56:80?path=%2F%20%40ProxyVPN11&security=none&encryption=none&host=vip.yaml7.ggff.net&type=ws#%F0%9F%94%B0%20%40vpnplusee_free
 vless://6202b230-417c-4d8e-b624-0f71afa9c75d@172.64.149.54:2053?security=tls&encryption=none&insecure=0&host=sni.111000.indevs.in&fp=chrome&type=ws&allowInsecure=0&sni=sni.111000.indevs.in#%F0%9F%94%B0%20%40vpnplusee_free
-vless://6202b230-417c-4d8e-b624-0f71afa9c75d@172.64.149.54:2053?security=tls&encryption=none&insecure=0&host=sni.111000.indevs.in&fp=chrome&type=ws&allowInsecure=0&sni=sni.111000.indevs.in#

@@ -1,1 +1,1 @@
-vless://26a271cd-9d3b-4620-8897-b4addd05b8a9@cf2.serikadeh.ir:443?mode=gun&security=tls&encryption=none&alpn=h2&authority=&fp=chrome&type=grpc&serviceName=Abwej4jM02M9eAJlL3G&sni=cf2.serikadeh.ir#
+vless://26a271cd-9d3b-4620-8897-b4addd05b8a9@cf2.serikadeh.ir:443?mode=gun&security=tls&encryption=none&alpn=h2&authority=&fp=chrome&type=grpc&serviceName=Abwej4jM02M9eAJlL3G&sni=cf2.serikadeh.ir#FREE-Mainmat

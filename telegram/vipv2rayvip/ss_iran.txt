@@ -1,4 +1,4 @@
-vless://tel-Channel-ViPv2rayVip@salamsalamsalam.aattaash.com:2087?type=ws&path=%2F&host=&security=tls&fp=chrome&alpn=http%2F1.1%2Ch2&sni=newfinland2.aattaash.com#ID%20Channel%20%3A%20%40vipv2rayvip-Hamrah%2BWiFi%20-%20Finland2
+vless://tel-Channel-ViPv2rayVip@salamsalamsalam.aattaash.com:2087?type=ws&path=%2F&host=&security=tls&fp=chrome&alpn=http%2F1.1%2Ch2&sni=newfinland1.aattaash.com#ID%20Channel%20%3A%20%40vipv2rayvip-Hamrah%2BWiFi%20-%20Finland
+vless://tel-Channel-ViPv2rayVip@salamsalamsalam.aattaash.com:2087?type=ws&path=%2F&host=&security=tls&fp=chrome&alpn=http%2F1.1%2Ch2&sni=finnew2.aattaash.com#ID%20Channel%20%3A%20%40vipv2rayvip-Hamrah%2BWiFi%20-%20Finland2
+vless://tel-Channel-ViPv2rayVip@salamsalamirancell.aattaash.com:2087?type=ws&path=%2F&host=&security=tls&fp=chrome&alpn=http%2F1.1%2Ch2&sni=newfinland2.aattaash.com#
 vless://tel-Channel-ViPv2rayVip@salamsalamirancell.aattaash.com:2087?type=ws&path=%2F&host=&security=tls&fp=chrome&alpn=http%2F1.1%2Ch2&sni=newfinland2.aattaash.com#ID%20Channel%20%3A%20%40vipv2rayvip-Irancell%20-%20Finland2
-vless://tel-Channel-ViPv2rayVip@salamsalamsalam.aattaash.com:2087?type=ws&path=%2F&host=&security=tls&fp=chrome&alpn=http%2F1.1%2Ch2&sni=newfinland1.aattaash.com#
-vless://tel-Channel-ViPv2rayVip@salamsalamirancell.aattaash.com:2087?path=%2F&security=tls&encryption=none&insecure=0&fp=chrome&type=ws&allowInsecure=0&sni=newger1.aattaash.com#

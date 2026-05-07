@@ -1,2 +1,2 @@
-vless://df0680ca-e43c-498d-ed86-8e196eedd012@84.32.9.35:8880?mode=gun&security=none&encryption=none&type=grpc#
-vless://fc7e3916-4beb-4dab-b4e1-f8898d98ac79@ns.cloudflare.com:2052?path=%2FGoodLuck%3Fed%3D2560&security=none&encryption=none&host=2.dreshghi.ir.ferialmostofi.c-om.padaco.ir.arashnasiri.com.shafashiraz.ir.honartandis.com.shouba.ir.iran-dental.com.sardkhoone.com.mohammadsalehpour.ir.abadgan.com.arvijpub.com.chmctruck.com.gandom-yar.ir&type=httpupgrade#
+vless://df0680ca-e43c-498d-ed86-8e196eedd012@638757556339780622.lisbon-mpl-eah.info:8880?mode=gun&security=none&encryption=none&type=grpc#
+vless://33c1bd18-ca92-f544-8c7e-105bc9d8cb93@a6.softmeto.com:443?security=reality&encryption=none&pbk=SdRoAPjMM_Cbie7jRPeHg3I8XgwUhUxstnpLUn7ElDI&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=refersion.com#

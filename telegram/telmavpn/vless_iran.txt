@@ -1,4 +1,1 @@
-vless://e8254dcc-47dc-4ebb-a534-6922f0f35576@37.32.5.185:443?mode=multi&security=tls&encryption=none&alpn=h3,h2&fp=chrome&type=grpc&serviceName=&sni=zeebusbest7.especializacionpaz.info#%F0%9F%91%89%F0%9F%86%94+%40telmavpn
-vless://920e9472-ecfe-4261-ba29-dd8f9681d6ad@91.107.154.208:15586?security=none&encryption=none&host=telewebion.com&headerType=http&type=tcp#
-vless://e949e611-06bf-4d33-9e7a-db0413ecfa7e@www.speedtest.net:80?path=%2F&security=none&encryption=none&host=SHHPROXY-free.xn--69-pv2cl2k5x3fipr.org.&type=ws#%F0%9F%87%A9%F0%9F%87%AA%40telmavpn+%7C+MCI
-vless://e8254dcc-47dc-4ebb-a534-6922f0f35576@37.32.5.185:443?mode=multi&security=tls&encryption=none&alpn=h3,h2&fp=chrome&type=grpc&serviceName=&sni=zeebusbest7.especializacionpaz.info#
+vless://d342d11e-d424-4583-b36e-524ab1f0afa7@ed9485634jkfhggh.pages.dev:8443?path=Telegram%40SINABIGO%40SINABIGO%40SINABIGO%2F%3Fed%3D2048&security=tls&encryption=none&host=ed9485634jkfhggh.pages.dev&fp=random&type=ws&sni=ed9485634jkfhggh.pages.dev#

@@ -1,3 +1,2 @@
-vless://1949f066-bcb0-49be-88e9-74abd940f80e@51.75.30.8:80?path=%2Fhttp&security=none&encryption=none&type=ws#
-vless://86ef26b2-ff51-4f89-c852-18342022f2c1@45.95.233.229:443?mode=gun&security=tls&encryption=none&authority=&fp=chrome&type=grpc&serviceName=np.mmdba.xyz&sni=np.mmdba.xyz#%F0%9F%87%AB%F0%9F%87%B7+%D9%81%D8%B1%D8%A7%D9%86%D8%B3%D9%87+%F0%9F%95%8A%EF%B8%8F%40Gozargah_Azadi
-vless://For-Freedom@lol.ps:443?path=X4azadi%3Fed%3D1024&security=tls&encryption=none&alpn=h2,http/1.1&host=apps.x4azadi.com&fp=chrome&type=ws&sni…
+vless://1949f066-bcb0-49be-88e9-74abd940f80e@51.75.30.8:80?path=%2Fhttp&security=none&encryption=none&type=ws#%F0%9F%87%AB%F0%9F%87%B7+%D9%81%D8%B1%D8%A7%D9%86%D8%B3%D9%87+%F0%9F%95%8A%EF%B8%8F%40Gozargah_Azadi
+vless://X4azadi-mci@www.speedtest.net:8880?path=X4azadi%3Fed%3D2048&security=none&encryption=none&host=iran.x4azadi.com&type=ws#

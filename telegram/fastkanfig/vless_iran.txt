@@ -1,1 +1,1 @@
-vless://895a74fa-7b90-4cca-912d-cd2b8607c9fa@185.208.79.188:23458?security=&encryption=none&headerType=none&type=tcp#Freee%E2%9A%A1%EF%B8%8F%202
+vless://895a74fa-7b90-4cca-912d-cd2b8607c9fa@185.208.79.188:23458?security=&encryption=none&headerType=none&type=tcp#

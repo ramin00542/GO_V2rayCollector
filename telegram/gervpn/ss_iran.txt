@@ -1,4 +1,2 @@
-vless://c2c8a201-09b9-47a7-b336-fcf1657f54a8@172.66.44.75:443?path=%2FTELEGRAM-MARAMBASHI%2F%3Fed%3D2048&security=tls&encryption=none&alpn=h2,http/1.1&host=bpb-worker-panel-3jc.pages.dev&fp=randomized&type=ws&sni=bpb-wORKer-paNeL-3JC.pAgeS.DeV#%40gervpn
-vless://c2c8a201-09b9-47a7-b336-fcf1657f54a8@172.66.44.75:443?path=%2FTelegram%40Azarakhsh_Proxy%2F%3Fed%3D2560&security=tls&encryption=none&alpn=h2,http/1.1&host=bpb-worker-panel-3jc.pages.dev&fp=randomized&type=ws&sni=bpb-wORKer-paNeL-3JC.pAgeS.DeV#
-vless://bf7e1009-1574-44f7-86df-6cbecd338477@172.66.47.106:443?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=pardazeshvpn-tg18.pages.dev&fp=randomized&type=ws&sni=pardazeshvpn-tg18.pages.dev#
-vless://7d2dfb7a-2ecc-4448-bcbe-245a2092fe85@151.101.64.223:443?path=%2FTelegram-Xv2ry2%3Fed%3D1080&security=tls&encryption=none&host=2v.com&type=ws&sni=python.org#%40gervpn
+vless://bf7e1009-1574-44f7-86df-6cbecd338477@172.66.47.106:443?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=pardazeshvpn-tg18.pages.dev&fp=randomized&type=ws&sni=pardazeshvpn-tg18.pages.dev#%40gervpn
+vless://89b3cbba-e6ac-485a-9481-976a0415eab9@www.speedtest.net:8443?path=%2FISB6gvC3mmVSWxzE%3Fed%3D2560&security=tls&encryption=none&alpn=h2,http/1.1&host=joinmahdiseRver-Az7.pAgES.dev&fp=randomized&type=ws&sni=jOInmAHDiSERVer-AZ7.paGes.dEV#%40gervpn

@@ -1,2 +1,1 @@
-vless://telegram-id-qeshmserver@139.180.146.164:2020?type=tcp&security=reality&pbk=YH_SRHZR1KpI5H1qwcqwp3_8lYSWWMZYWn_FStgKihc&fp=chrome&sni=ea.com&sid=05fb89d5&spx=%2F&flow=xtls-rprx-vision#%40QeshmServer-QeshmServer
-vless://telegram-id-qeshmserver@95.179.138.190:443?type=tcp&security=reality&pbk=ipM5-HQ6sNBZhPGNLNpq8voqMvgxBeL9LDZY4sQ5Yyk&fp=chrome&sni=zula.ir&sid=d2bab77a&spx=%2F#%40QeshmServer-Join%20%40QeshmServer
+vless://qeshmserver@151.101.3.8:80?type=xhttp&mode=auto&host=qeshmserverfree.global.ssl.fastly.net&security=none#@QeshmServer

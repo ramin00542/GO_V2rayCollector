@@ -1,1 +1,1 @@
-vless://9a84e4a2-731d-4dd5-a22d-796c7a345e39@www.speedtest.net:443?encryption=none&security=tls&sni=v4.kiava.workers.dev&type=ws&host=v4.kiava.workers.dev&path=%2Faboutws#
+vless://9a84e4a2-731d-4dd5-a22d-796c7a345e39@www.speedtest.net:443?encryption=none&security=tls&sni=v4.kiava.workers.dev&type=ws&host=v4.kiava.workers.dev&path=%2Faboutws#https%3A%2F%2Ft.me%2Fv2ray4win

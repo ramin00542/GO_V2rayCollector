@@ -1,3 +1,2 @@
+vless://d60fc3c5-9f07-4cdb-b81f-70af27936bdc@141.101.113.247:8880?security=tls&sni=ex.sue.x10.mx&type=ws&path=/Telegram%F0%9F%87%A8%F0%9F%87%B3&host=ex.sue.x10.mx&packetEncoding=xudp&encryption=none#
 vless://2fc52230-4426-4c5b-a662-7cc85d8eee9e@eventx.faraservice.space:5005?security=reality&sni=www.speedtest.net&fp=chrome&pbk=ui0fGumZiFhEhGU13KYIcR3coPPVHuGQMvK-_TThCVc&sid=e3631859&type=tcp&flow=xtls-rprx-vision&packetEncoding=xudp&encryption=none#
-vless://d60fc3c5-9f07-4cdb-b81f-70af27936bdc@154.197.121.247:8880?security=tls&sni=ex.sue.x10.mx&type=ws&path=/Telegram%F0%9F%87%A8%F0%9F%87%B3&host=ex.sue.x10.mx&packetEncoding=xudp&encryption=none#
-vless://914b24f0-ad36-447a-8807-d6fdff103afb@172.67.223.49:443?security=tls&sni=sudoshark.workers.dev&alpn=http/1.1&type=ws&path=/ADvrAJEsvSViONF5?ed&host=g-r3hlvytx-ct024y-0fdnr0myhnad4i.sudoshark.workers.dev&packetEncoding=xudp&encryption=none#

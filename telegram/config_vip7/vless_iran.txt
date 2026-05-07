@@ -1,2 +1,1 @@
-vless://103868fa-6eaa-4368-b497-066c39fd0cf7@g.configvip7.site:8443?mode=gun&security=tls&encryption=none&fp=safari&type=grpc&serviceName=@CONFIG_ViP7,&sni=configvip7.site#grpc+-+Cloned-All_uopll%F0%9F%87%A9%F0%9F%87%AA%F0%9F%8C%8E
 vless://103868fa-6eaa-4368-b497-066c39fd0cf7@g.configvip7.site:8443?mode=gun&security=tls&encryption=none&fp=safari&type=grpc&serviceName=@CONFIG_ViP7,&sni=configvip7.site#

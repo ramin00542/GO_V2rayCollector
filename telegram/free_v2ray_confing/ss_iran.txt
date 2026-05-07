@@ -1,1 +1,1 @@
-vless://7f7c61ec-d034-7037-eaed-0c817b7067c8@cloud3.vpsino.com:6344?security=&encryption=none&headerType=none&type=tcp#%F0%9F%87%A9%F0%9F%87%AA%20tunnel240877_3%20%F0%9F%87%AE%F0%9F%87%B7%20%C2%B2
+vless://9e350477-e6b4-4142-8912-7f2472a8b646@speed.mobilekamali.com:41000?encryption=none&security=none&type=tcp&headerType=http&host=fast.com#

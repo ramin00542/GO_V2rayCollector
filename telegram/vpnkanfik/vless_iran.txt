@@ -1,1 +1,1 @@
-vless://0786d258-03fb-43ce-a5a6-fa355c8f607a@www.speedtest.net:80?path=%2Fdashboard%3Fed%3D2048&security=none&encryption=none&host=Ifiddnejejejddjdid.Ftp3.2debian.org.www.speedtest.net.Asve.Dash.Servicequry.Ir.&type=ws#%40vpnkanfik
+vless://5b184a8d-8ee5-4eb9-a83d-9ea9c9bce7f6@sport.k6n.ir:443?path=%2F%3Fed%3D1024&security=tls&encryption=none&alpn=h2,http/1.1&host=tipac.co.com&fp=chrome&type=ws&sni=speedtest.net#

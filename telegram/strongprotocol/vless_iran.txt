@@ -1,2 +1,2 @@
-vless://f0874314-b134-4d38-84c2-d1b32cd30136@vipde1.persianpinggame.com:9091?security=none&encryption=none&host=myket.ir&headerType=http&type=tcp#@StrongProtocol
-vless://24a4aa9b-b341-4717-9d4a-00d74c2b84e0@168.119.245.178:2020?
+vless://e8f8d7d6-8c21-4499-b6b4-2bc9972fff72@melli.tehransnr.com:443?security=none&encryption=none&headerType=none&type=tcp#@StrongProtocol
+vless://a242cff5-2d44-4e83-927c-2ff37f09e66d@emergency3.layer-ziro.ir:2003?security=none&encryption=none&host=anten.ir&headerType=http&type=tcp#@StrongProtocol

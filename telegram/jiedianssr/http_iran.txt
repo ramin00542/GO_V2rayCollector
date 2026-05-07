@@ -1,6 +1,6 @@
-http://45.136.245.105:81/add.php
-https://t.me/JiedianSsr/224
-https://tgdomo.com
-https://t.me/proxy?server=45.130.147.98&port=443&secret=eed2db08ac89954ac19413ad751aec7c4f7777772e6d6963726f736f66742e636f6d
-http://45.130.147.98:81/add.php
 https://t.me/proxy?server=45.136.245.105&port=443&secret=eeea30907c2c1e4fc380453f9102fa50587777772e6d6963726f736f66742e636f6d
+https://tgdomo.com
+https://t.me/JiedianSsr/224
+https://t.me/proxy?server=45.130.147.98&port=443&secret=eed2db08ac89954ac19413ad751aec7c4f7777772e6d6963726f736f66742e636f6d
+http://45.136.245.105:81/add.php
+http://45.130.147.98:81/add.php

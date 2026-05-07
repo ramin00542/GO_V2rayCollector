@@ -1,4 +1,4 @@
-https://t.me/proxy?server=proxy.toucan-subnet.com&port=443&secret=7l6wniZadrd-DwtrEMtofdhzMy5hbWF6b25hd3MuY29t
 https://t.me/proxy?server=proxy.toucan-subnet.com&port=443&secret=5eb09e265a76b77e0f0b6b10cb687dd8
 https://t.me/proxy?server=proxy.toucan-subnet.com&port=443&secret=dd5eb09e265a76b77e0f0b6b10cb687dd8
+https://t.me/proxy?server=proxy.toucan-subnet.com&port=443&secret=7l6wniZadrd-DwtrEMtofdhzMy5hbWF6b25hd3MuY29t
 https://t.me/proxy?server=proxy.toucan-subnet.com&port=443&secret=ee5eb09e265a76b77e0f0b6b10cb687dd873332e616d617a6f6e6177732e636f6d

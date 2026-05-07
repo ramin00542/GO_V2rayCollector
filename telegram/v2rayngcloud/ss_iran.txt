@@ -1,2 +1,2 @@
-vless://1007b7c2-2170-4ba4-a68d-ec31fbb4bf74@104.20.5.134:80?encryption=none&type=ws&path=%2Fvless-ntls&host=nnet.online#@V2RAYNGCLOUD
-vless://8c4604ef-749c-4b56-adf1-7da405002a21@104.20.5.134:2053?encryption=none&type=ws&security=tls&path=%2F&host=qyi.fqjd663.ggff.net&sni=qyi.fqjd663.ggff.net&alpn=http%2F1.1&fp=chrome&allowInsecure=0#
+vless://388a6c57-87e7-420b-afe2-b3eb670fd7da@104.20.5.134:80?encryption=none&type=ws&path=%2F&host=vip.yaml7.ggff.net#
+vless://89b3cbba-e6ac-485a-9481-976a0415eab9@104.20.5.134:2083?encryption=none&type=ws&security=tls&path=%2F%25252F&host=cIAllO-EGB.pAGES.dev&sni=cIAllO-EGB.pAGES.dev&allowInsecure=1#@V2RAYNGCLOUD
