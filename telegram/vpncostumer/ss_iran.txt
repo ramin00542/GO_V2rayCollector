@@ -1,6 +1,2 @@
-vless://c09816d1-9b53-4e0d-85a8-9def477121ab@185.143.233.122:80?encryption=none&security=none&type=ws&host=cdnisfucka.drnimaamini.ir&path=%2Fws#%40spiderxman69
-vless://30e35bd7-6ce7-4c0c-8fbd-cec03071852f@faraaa.darakio.ir:80?encryption=none&type=ws&path=%2F#@irshum2
-vless://9e363a45-22c7-3d91-5820-5ed45bcb3f00@yas.masterdadeh.ir:80?type=ws&host=&security=none&sni=185.226.94.203&alpn=&path=/&headerType=http#@UnNurmal
-vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?path=%2F&security=none&encryption=none&host=sr.novatechsapr.ir&type=ws#@UnNurmal
-vless://65cb52fc-4c72-4b43-bdac-ed9c31a40714@th.gostargate.top:49961?security=none&encryption=none&headerType=http&type=tcp#
-vless://e146d8d7-7aab-4797-a7f2-4d0f938807f0@185.143.234.200:80?path=%2Fws%2F0-2&security=none&encryption=none&host=0-2-websocket.danalap.shop&type=ws#@UnNurmal
+vless://c3074143-8951-4795-ae0f-71d24cb39d0a@trex.nahidapp.com:443?path=%2Fvless-ws&security=tls&encryption=none&insecure=0&host=trex.nahidapp.com&fp=chrome&type=ws&allowInsecure=0&sni=trex.nahidapp.com#@crayingroom
+vless://dae2ddc6-a892-495f-a001-181cec56ad12@snapp.ir:2052?encryption=none&type=ws&path=%2F&host=p1.razstar.ir#@irshum2

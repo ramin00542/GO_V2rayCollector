@@ -1,2 +1,1 @@
-vless://d621d083-5ac0-4d26-8872-efe55cf57663@cdn827.mohammad420.sbs:2095?path=%2F&security=none&encryption=none&host=www.mehran-net.mohammad420.sbs&type=ws#
-vless://e5e2814a-3fa9-4af4-9304-1249e8de88cb@all.mrmamad420.online:2087?type=grpc&serviceName=&security=tls&fp=chrome&alpn=h2%2Chttp%2F1.1&sni=turk-cdn.dns1-mamad.site#
+vless://e5e2814a-3fa9-4af4-9304-1249e8de88cb@all.mrmamad420.online:2087?type=grpc&serviceName=&security=tls&fp=chrome&alpn=h2%2Chttp%2F1.1&sni=turk-cdn.dns1-mamad.site#Tls82-%40VPNMK1%20%F0%9F%91%88%F0%9F%94%A5%F0%9F%91%88

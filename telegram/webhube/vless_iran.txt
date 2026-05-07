@@ -1,1 +1,2 @@
-vless://505997ba-cbdb-466e-a3ad-69c6a4553b38@151.101.25.242:80?encryption=none&security=none&type=ws&host=pizzabama.global.ssl.fastly.net&path=%2Fcontainers%2Ffi#
+vless://505997ba-cbdb-466e-a3ad-69c6a4553b38@151.101.25.242:80?encryption=none&security=none&type=ws&host=pizzabama.global.ssl.fastly.net&path=%2Fcontainers%2Ffi#%F0%9F%93%A1%F0%9F%87%BA%F0%9F%87%B8%C2%AE%EF%B8%8F%F0%9F%86%94%5Bt.me%2FWEBHUBE%F0%9F%91%89MCI
+vless://d749c2c0-4ba4-45fe-f8f4-2f422d689a21@pxqhkkokwtgf.eu-central-1.clawcloudrun.com:43144?encryption=none&flow=xtls-rprx-vision&security=tls&sni=devblogs.microsoft.com&insecure=1&allowInsecure=1&type=tcp&headerType=none#%F0%9F%86%94%5Bt.me%2FWEBHUBE%5D%F0%9F%91%89MCI527

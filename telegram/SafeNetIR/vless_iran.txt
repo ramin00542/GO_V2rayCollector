@@ -1,2 +1,1 @@
-vless://60de7f07-71b7-4b37-a04c-db5d769ec130@62.60.147.73:20020?security=&encryption=none&headerType=none&type=tcp#
-vless://036cfa36-85a6-4964-b38c-4bfdd06d6e3e@th.gostargate.top:49961?security=none&encryption=none&headerType=http&type=tcp#
+vless://3aa7db12-eb93-47fc-af04-d54c0243b6d2@eco.gymplusplus.com:2052?path=%2F&security=&encryption=none&type=ws#

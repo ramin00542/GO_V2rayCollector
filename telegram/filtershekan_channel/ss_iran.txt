@@ -1,3 +1,1 @@
-vless://87a09075-f5f0-4ff9-80df-3e81fcdfd10d@185.143.234.235:80?path=%2F&security=none&encryption=none&host=d.nsa03.com&type=ws#%40filtershekan_channel
-vless://30e35bd7-6ce7-4c0c-8fbd-cec03071852f@faraaa.darakio.ir:80?path=%2F&security=none&encryption=none&type=ws#%40filtershekan_channel
-vless://7ef79266-c7e3-4dd5-937b-45ac56adcc16@snapp.ir:443?path=%2Fws&security=tls&encryption=none&host=vip2.tu5pars.ir&fp=chrome&type=ws&sni=vip2.tu5pars.ir#%40filtershekan_channel
+vless://dae2ddc6-a892-495f-a001-181cec56ad12@snapp.ir:2052?path=%2F&security=none&encryption=none&host=p1.razstar.ir&type=ws#%40filtershekan_channel

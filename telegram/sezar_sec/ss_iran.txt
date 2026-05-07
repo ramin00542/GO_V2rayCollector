@@ -1,1 +1,1 @@
-vless://6202b230-417c-4d8e-b624-0f71afa9c75d@104.18.13.149:2053?encryption=none&security=tls&sni=sni.111000.indevs.in&fp=chrome&insecure=0&allowInsecure=0&type=ws&host=sni.111000.indevs.in&path=%2F#%40Sezar_Sec%20%2A%2A%2A
+vless://ce069292-c8bf-40dd-a6b1-87818a1e64e9@dnew.cc:443?encryption=none&security=tls&sni=2-7fc.pages.dev&fp=chrome&insecure=0&allowInsecure=0&type=ws&host=2-7fc.pages.dev&path=%2F#%40Sezar_Sec

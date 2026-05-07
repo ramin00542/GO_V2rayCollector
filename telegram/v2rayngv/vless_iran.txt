@@ -1,1 +1,2 @@
-vless://f558f4db-96e5-4e79-8b57-34e39ba4899b@www.bandmusic.ir:8880?path=%2F%3Fed%3D2560&security=none&encryption=none&host=join.2.kiava.cloud.speedtest.net.xn--mgba2h8quf.cdn.ws79.cloudfront.net.kiava.fun&type=ws#%40V2rayNGV
+vless://8f90b851-8f60-411a-ace2-efe1c1edda4b@62.60.159.189:443?path=%2Fws%3Fed%3D2560&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&host=de222.4qwertyuiopasdfghjklzxcvbnmmnbvcxzlkjhgfdsapoiuytrewq1234567890.com&fp=randomized&type=ws&sni=de222.4qwertyuiopasdfghjklzxcvbnmmnbvcxzlkjhgfdsapoiuytrewq1234567890.com#
+vless://53bea386-912e-4fe3-9eff-59c2285a176c@172.67.67.250:2053?path=%2Fadmins%3Fed%3D2560&security=tls&alpn=http%2F1.1&encryption=none&host=9.neshaan.org&fp=chrome&type=ws&sni=9.neshaan.org#%40V2rayNGV

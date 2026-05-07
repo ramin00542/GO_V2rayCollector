@@ -1,1 +1,1 @@
-vless://aef3b456-2f83-4ca6-a66c-32bd2f534b68@162.159.138.6:80?path=%2F%3Fed%3D2048&security=none&encryption=none&host=ac7.zxv.biz.id&type=ws#Channel+id%3A+%40ShadowProxy66%F0%9F%87%A8%F0%9F%87%A6
+vless://9bc90ddf-b865-47cc-9f97-9d5ea3bca89f@104.21.78.131:443?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=vl31.rnd.biz.id&type=ws&sni=vl31.rnd.biz.id#

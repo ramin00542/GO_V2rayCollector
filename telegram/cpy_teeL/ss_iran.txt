@@ -1,1 +1,2 @@
 vless://3159eeeb-9443-4afb-b65e-2c9324088f4f@ger1bot-ws.headerip.com:80?security=none&allowInsecure=0&encryption=none&type=ws&host=ger1.mv5.ir&path=/#
+vless://50cde4d6-7d97-4283-9a60-f650d5c1cbb9@packetnet.mashhad-gsm.ir:42726?type=tcp&security=none#%D8%AF%DA%A9%D8%AA%D8%B1%20%D9%88%DB%8C%D8%AA%D9%88%D8%B1%DB%8C%20%40V2ray21_Bot

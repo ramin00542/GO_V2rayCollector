@@ -1,4 +1,1 @@
-vless://85933f5f-5b27-4c3c-8375-1399ba44bbb7@turkycf.configforvpn.fun:2053?mode=gun&security=reality&encryption=none&pbk=z1tAnqd5RA4I99LrK5FCJgjCd2qWJ2f1ID5xlNUD21M&fp=chrome&spx=%2F&type=grpc&serviceName=@configforVPN&sni=discordapp.com&sid=b1803d25#%40baraye2121
-vless://5a2f17fc-5b8e-4091-8754-6e5783f335c9@104.21.220.87:80?path=%2F&security=none&encryption=none&host=bia-to-channel4.unlimiteddev.shop&type=ws#%40baraye2121
-vless://--MsV2ray--MsV2ray--MsV2ray--@de.MsV2ray.sbs:443?path=%2F&security=tls&encryption=none&host=ws.MsV2ray.sbs&type=ws&sni=ws.MsV2ray.sbs#
-vless://5a2f17fc-5b8e-4091-8754-6e5783f335c9@104.21.220.87:80?path=%2F&security=none&encryption=none&host=bia-to-channel4.unlimiteddev.shop&type=ws#
+vless://01a81336-ab38-47b5-b9b0-cdec837c645b@turkycf.configforvpn.fun:2053?mode=gun&security=reality&encryption=none&pbk=z1tAnqd5RA4I99LrK5FCJgjCd2qWJ2f1ID5xlNUD21M&fp=chrome&spx=%2F&type=grpc&serviceName=@configforVPN&sni=discordapp.com&sid=b1803d25#%40baraye2121

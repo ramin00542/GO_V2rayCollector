@@ -1,3 +1,1 @@
-vless://8a57754e-b0f4-4006-bc26-5748a0f69fde@back.avenprime.ir:80?encryption=none&type=ws&path=/?ed%3D2050#
-vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?path=%2F&security=none&encryption=none&host=sr.novatechsapr.ir&type=ws#%40@vipconfingg
-vless://8a57754e-b0f4-4006-bc26-5748a0f69fde@back.avenprime.ir:80?encryption=none&type=ws&path=/?ed%3D2050#@vipconfingg
+vless://98b61be1-6613-43db-b784-38877b106be6@milli.gold:80?encryption=none&type=ws&host=Pan4e.nexoratechcenter.ir&path=/#@vipconfingg

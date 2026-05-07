@@ -1,1 +1,1 @@
-vless://4fb3e790-b115-47b8-982b-0973c00c0f9f@116.202.177.190:42067?path=%2F&security=none&encryption=none&type=ws#%40v2rayNG_VPNN++%D8%B3%D8%B1%D8%B9%D8%AA+%D9%86%D8%A7%DB%8C%D8%B3
+vless://d4e44ae4-3a7f-4a06-bfdf-a5648998607a@78.47.23.199:45470?path=%2F&security=none&encryption=none&type=ws#

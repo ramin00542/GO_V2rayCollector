@@ -1,1 +1,2 @@
-vless://1d0f7590-d098-4a8b-95b9-f544676ba0d6@vmessx.ddns.net:54279?mode=gun&security=reality&encryption=none&pbk=7m8IPk1en2PEO7iTJOyJFoM9DT-9daSu5Cjml7uP5Ho&fp=firefox&spx=%2F&type=grpc&serviceName=@vmessx @vmessx @vmessx @vmessx&sni=Expat.com&sid=3b2d838a#
+ss://YWVzLTI1Ni1nY206d0RadHhmSWszVWhhY0tIcmhvN2x4dw==@5.182.87.210:35961#
+ss://YWVzLTI1Ni1nY206WTVZMlJtcTlUVDMzaGxpM0dLblY1Yw==@45.8.147.88:45961#

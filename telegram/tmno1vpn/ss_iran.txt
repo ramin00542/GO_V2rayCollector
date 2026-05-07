@@ -1,1 +1,1 @@
-vless://4230993d-f261-40f1-9d4b-775cfd54d9a4@de4.connecton.surf:443?security=tls&type=ws&path=/vless#
+vless://e7579f32-d621-445f-a4b0-edf2e26614dd@usa6.connecton.surf:443?security=tls&type=ws&path=/vless#

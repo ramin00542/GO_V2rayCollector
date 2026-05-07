@@ -1,1 +1,2 @@
-vless://86036bff-c70c-429a-b43e-7ee84764a61e@DotC.psdgold.st:51636?security=none&encryption=none&headerType=none&type=tcp#@vpnv2rayNGv
+vless://0ecb2769-9d3c-4ed3-9ffd-88a96f90f30a@abr.superip.ir:2086?path=%2FAPI%2Fsuperip&security=&encryption=none&host=cd2.phill-up.ir&type=ws#
+vless://0ecb2769-9d3c-4ed3-9ffd-88a96f90f30a@abr.superip.ir:2086?path=%2FAPI%2Fsuperip&security=&encryption=none&host=cd2.phill-up.ir&type=ws#@vpnv2rayNGv

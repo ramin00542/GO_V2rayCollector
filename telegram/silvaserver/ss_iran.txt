@@ -1,3 +1,1 @@
-vless://61f8c7db-c5c8-446e-952e-c48e02e24687@lsping.vps-silva.ir:43208?security=none&encryption=none&headerType=http&type=tcp#text
-vless://2c4864c2-b2f0-437a-97c9-6416d58bfef8@ping.vps-silva.ir:59755?security=none&encryption=none&headerType=http&type=tcp#
-vless://61f8c7db-c5c8-446e-952e-c48e02e24687@lsping.vps-silva.ir:43208?security=none&encryption=none&headerType=http&type=tcp#
+vless://2c4864c2-b2f0-437a-97c9-6416d58bfef8@ping.vps-silva.ir:59755?security=none&encryption=none&headerType=http&type=tcp#%D8%B3%D8%B1%D9%88%DB%8C%D8%B3%20%D8%AA%D8%B3%D8%AA%20%D9%84%D9%88%DA%A…

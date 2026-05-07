@@ -1,4 +1,3 @@
-vless://4941f29c-5db0-49cb-b36a-bf7c562b58f3@NIGGA.fastly80-3.hosting-ip.com:80?path=%2Fws%2F%3Fed%3D2048&security=none&encryption=none&host=xss-xssss-xsssx-x-x-x-xaaaaax-aaaaaa-xaaaaaaa.speedtest.net.cdnjs.com.rubika.ir.bale.ir.VEXTYUE.IR&type=ws#elitevpnv2
-vless://cb0266c4-a81b-4c76-b9fd-5f3c300e42bd@151.101.3.8:80?path=%2F&security=none&encryption=none&host=befreewithus.net&type=ws#
-vless://e3035fb5-4a77-49ed-8a20-44c95f5de0fe@main.systemgamingirani.ir:2082?path=%2F%3Fed%3D2052&security=none&encryption=none&host=www.speedtest.net.tps.debian.org.gr.systemgamingirani.ir&type=ws#test
-vless://356d8a8d-ca75-4356-a83c-903ce5631174@food.france-learns.ir:80?path=%2Fdownload&security=none&encryption=none&host=webdade.com&type=ws#elitevpnv2
+vless://33af7d90-c2e4-4460-ae9f-0453605ad7b2@NIGGA.fastly80-3.hosting-ip.com:80?path=%2Fws%2F%3Fed%3D2048&security=none&encryption=none&host=xss-xssss-xsssx-x-x-x-xaaaaax-aaaaaa-xaaaaaaa.speedtest.net.cdnjs.com.rubika.ir.bale.ir.VEXTYUE.IR&type=ws#
+vless://356d8a8d-ca75-4356-a83c-903ce5631174@food.france-learns.ir:80?path=%2Fdownload&security=none&encryption=none&host=webdade.com&type=ws#
+vless://Parsashonam-262@151.101.3.8:80?mode=auto&path=%2F-----Parsashonam-----Parsashonam-----Parsashonam-----Parsashonam-----Parsashonam-----Parsashonam-----Parsashonam-----Parsashonam-----Parsashonam-----Parsashonam-----Parsashonam-----Parsashonam-----Parsashonam-----Parsashonam-----Parsashonam-----Parsashonam-----Parsashonam-----Parsashonam&security=none&encryption=none&host=ParsashonamTelegramChannel0.ir&type=xhttp#elitevpnv2

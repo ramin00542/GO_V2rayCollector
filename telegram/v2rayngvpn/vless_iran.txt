@@ -1,1 +1,1 @@
-vless://75ffa449-d6fd-4d47-93ce-a389756c0045@snapp.ir:80?path=%2F&security=none&encryption=none&host=iranfuture.musicritmic.ir&type=ws#
+vless://bfbf1ff0-734a-4082-86b1-38dc88441406@snapp.ir:8080?path=%2F&security=none&encryption=none&host=simorgh.darerio.ir&type=ws#@UnNurmal

@@ -1,1 +1,4 @@
-vless://1f5056ca-fb4c-4b51-a31e-891083588351@104.21.72.109:80?path=%2F8WrRNGUr2d25Kcpp%2FNTQuMjAwLjI0NC45Mw%3D%3D%3Fed%3D2560&security=none&encryption=none&host=pamchall.com.&type=ws#
+vless://bbad4026-54a7-4681-a28e-f60efd857ab5@tn.pingtools.net:2087?security=none&encryption=none&host=skyroom.online&headerType=http&type=tcp#
+vless://1f5056ca-fb4c-4b51-a31e-891083588351@104.21.72.109:80?path=%2F8WrRNGUr2d25Kcpp%2FNTQuMjAwLjI0NC45Mw%3D%3D%3Fed%3D2560&security=none&encryption=none&host=pamchall.com.&type=ws#%40Jeyksatan
+vless://6fcd3c2a-e0f8-4e07-bf42-a3570084f877@1.ariyanln.com:1020?security=reality&encryption=none&pbk=-RyTywuH2pogbOrdVF2tbjPoXIZYLHquY6ROCMN9UC0&headerType=none&fp=chrome&type=tcp&sni=canva.com&sid=ad057e6200dca0dd#%E2%9B%91%E2%A4%BF%20%F0%9D%90%82%F0%9D%90%A1%F0%9D%90%9A%F0%9D%90%A7%F0%9D%90%A7%F0%9D%90%9E%F0%9D%90%A5%3A%20%40Jeyksatan
+vless://2eaef053-5fd6-4def-b234-d760690355ff@91.99.203.70:51615?security=none&encryption=none&host=zula.ir&headerType=http&type=tcp#

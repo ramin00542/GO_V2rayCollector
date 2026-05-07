@@ -1,1 +1,1 @@
-vless://9709a49f-40fc-4d0d-bc5c-77827947e30b@162.159.136.234:8080?path=%2Fjoin--ServerNett--ServerNett%3Fed%3D1048&security=none&encryption=none&host=joinsevernettdd.xn--78-pv2cvta065cac9302fea377a148g.xyz.&type=ws#%40AZARBAYJAB1%E1%AF%A4%CC%B8++%F0%93%88%86+%28mci%29%E1%AF%A4%CC%B8++%F0%93%88%86+%28mtn%29
+vless://9709a49f-40fc-4d0d-bc5c-77827947e30b@162.159.136.234:8080?path=%2Fjoin--ServerNett--ServerNett%3Fed%3D1048&security=none&encryption=none&host=joinsevernettdd.xn--78-pv2cvta065cac9302fea377a148g.xyz.&type=ws#

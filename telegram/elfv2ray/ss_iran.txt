@@ -1,1 +1,1 @@
-vless://5ac2d3b6-33cc-4442-9c0b-ae3909cabaae@31.42.190.76:443?path=%2F&security=none&encryption=none&type=ws#
+vless://5ac2d3b6-33cc-4442-9c0b-ae3909cabaae@31.42.190.76:443?path=%2F&security=none&encryption=none&type=ws#%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85%D9%85%D9%88%D9%86%20%7C%20%40iciou

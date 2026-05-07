@@ -1,2 +1,1 @@
-vless://44aded6c-a012-452b-8e13-04d5f15a659f@89.44.242.222:46822?security=none&type=tcp&encryption=none&headerType=none#
-vless://4a0e3cf3-4a10-4a38-bba4-b17b592a0d2b@89.44.242.222:29495?security=none&type=tcp&encryption=none&headerType=none#%F0%9F%87%A8%F0%9F%87%B3_%E5%AE%9A%E5%88%B6%E4%B8%93%E7%BA%BF%EF%BC%9A%40QS00008
+vless://888a20e2-fc3f-4f52-973c-36a6386225b8@89.44.242.222:29500?security=none&type=tcp&encryption=none&headerType=none#

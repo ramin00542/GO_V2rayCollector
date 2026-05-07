@@ -1,1 +1,1 @@
-vless://3dd18d90-6bea-4c9a-ab37-63e89b7700ca@5.159.54.140:443?security=reality&encryption=none&pbk=A6_kAMUcoxeuilXwMvzPYFAP8ekULjxDu4KmQssG7Gc&headerType=none&fp=firefox&spx=%2F&type=tcp&sni=aparat.com&sid=510b7f2f#https://t.me/FREE_VPN02
+https://t.me/socks?server=127.0.0.1&port=10880&user=%40FREE_VPN02

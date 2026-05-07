@@ -1,5 +1,4 @@
-vless://44956c15-75bb-4e09-b5b8-d58af3c1f5cb@13.39.214.100:21464?type=tcp&security=none#21464-IP
-vless://eb4a9ef5-0c22-4046-8ce9-02e7a65ed333@gozarfreebot.niniweblog.org:2093?security=reality&encryption=none&pbk=Hg7mW0OsnC3vNRG_ekiApI7Yv3qE56QjdarXprSmwCg&headerType=none&fp=chrome&spx=%2F&type=tcp&sni=refersion.com&sid=09148c47293175b5#%F0%9F%87%B9%F0%9F%87%B7%20%40vpn_kade01
-vless://bc1cfd52-fddf-4c94-affd-cdc9f47eafde@194.60.133.108:2095?path=%2Fvless&security=none&encryption=none&type=ws#
-vless://6e0342ac-6d42-46a6-b97c-1499582b9247@sq3jawc8ga85xaq.dlcenter.shop:29252?type=tcp&security=none#@vpn_kade01
-vless://e5c756d0-6270-4207-b830-6518385cea93@18.192.200.226:18916?type=tcp&security=none#
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTozVG5RZGdtMm1WSlFidVNDWG1SNVZj@81.19.141.45:443#
+vless://bc1cfd52-fddf-4c94-affd-cdc9f47eafde@194.60.133.108:2095?path=%2Fvless&security=none&encryption=none&type=ws#%DA%A9%D8%A7%D9%86%D8%A7%D9%84%20%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85%D9%85%D9%88%D9%86vpn_kade01%40
+vless://78e4df0c-5174-4e18-a874-995ef6e6a38d@speedtest.net:80?path=%2Folem%2Fws%3Fed%3D1024&security=none&encryption=none&host=foffmelo.com&type=ws#%D8%A8%D9%87%20%D8%B9%D8%B4%D9%82%20%D8%A8%DA%86%D9%87%20%D9%87%D8%A7%DB%8C%20%DA%A9%D8%A7%D9%86%D8%A7%D9%84%F0%9F%98%8D%E2%99%A5%EF%B8%8F
+vless://TMG_119293995@89.23.107.188:443?mode=auto&path=%2FhGg1lC42IGRTGob&security=reality&encryption=none&pbk=_fLNb14FxS25F7oKOOeLGi4W0VV7FZoJyAPAOw2mqQc&host=amazon.com&fp=chrome&spx=%2F&type=xhttp&sni=www.amazon.com&sid=c7196c06b2#

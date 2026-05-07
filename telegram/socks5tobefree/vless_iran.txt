@@ -1,5 +1,1 @@
-vless://b5c72809-4287-46f4-b930-309edc783dd9@ihavesome.run.place:443?security=tls&sni=ihavesome.run.place&fp=random&type=ws&path=/socks5tobefree&host=ihavesome.run.place&encryption=none#@socks5tobefree
-vless://a8c69dd7-9d17-436e-b9ed-383846dbfbdf@cookies.oops.wtf:43774?type=tcp&security=reality&pbk=ZLAYpx5wkCanyDNjQO_-7kwg0K5e728t2FPD9fSZ4VE&fp=random&sni=tutu.ru&sid=b9a9aba39ba5ab&spx=%2F&flow=xtls-rprx-vision#
-vless://abcdf5d9-d08a-4d23-8e63-dee8d85c76cc@lessless.duckdns.org:443?type=ws&path=%2Fgetupdates&host=lessless.duckdns.org&security=tls#lessless-socks5tobefree
-vless://a8c69dd7-9d17-436e-b9ed-383846dbfbdf@cookies.oops.wtf:43774?type=tcp&security=reality&pbk=ZLAYpx5wkCanyDNjQO_-7kwg0K5e728t2FPD9fSZ4VE&fp=random&sni=tutu.ru&sid=b9a9aba39ba5ab&spx=%2F&flow=xtls-rprx-vision#@socks5tobefree
-vless://b5c72809-4287-46f4-b930-309edc783dd9@ihavesome.run.place:443?security=tls&sni=ihavesome.run.place&fp=random&type=ws&path=/socks5tobefree&host=ihavesome.run.place&encryption=none#
+vless://ab3bee31-6d56-4a50-8a84-70e114352783@knowledgemap.ubntddns.com:443?type=ws&path=%2Fgetupdates&host=knowledgemap.ubntddns.com&security=tls#@socks5tobefree

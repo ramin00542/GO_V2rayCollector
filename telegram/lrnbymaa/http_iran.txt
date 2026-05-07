@@ -1,2 +1,2 @@
-https://github.com/INCY-DEV/incy-platforms
 https://github.com/INCY-DEV/incy-platforms/releases/tag/desktop-v3.0.0
+https://github.com/INCY-DEV/incy-platforms

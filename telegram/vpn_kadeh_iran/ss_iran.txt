@@ -1,2 +1,2 @@
-vless://5050a84d-8bac-406d-adfc-b599542df1cc@212.80.10.215:8443?type=tcp&security=none#%F0%9F%87%A9%F0%9F%87%AA%7CVpn_Kadeh_Iran%7CVpn%20Kadeh%20Iran-TEST
-vless://5050a84d-8bac-406d-adfc-b599542df1cc@212.80.10.215:8443?type=tcp&security=none#
+vless://19ceb6c1-09df-479f-9d96-fcf92db6f5ca@de.play98.ir:1993?type=ws&encryption=none&path=%2F&host=&security=none#@Vpn_Kadeh_Iran%5BTEST%5D-free
+vless://19ceb6c1-09df-479f-9d96-fcf92db6f5ca@de.play98.ir:1993?type=ws&encryption=none&path=%2F&host=&security=none#

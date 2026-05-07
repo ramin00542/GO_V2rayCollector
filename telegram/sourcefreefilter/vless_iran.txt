@@ -1,1 +1,1 @@
-vless://abf09f91-cd40-438e-b7b8-fc549b24c003@185.208.79.188:23458?type=tcp&encryption=none&security=none#@v2rayng_vpn403
+vless://abf09f91-cd40-438e-b7b8-fc549b24c003@185.208.79.188:23458?type=tcp&encryption=none&security=none#

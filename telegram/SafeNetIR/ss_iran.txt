@@ -1,2 +1,1 @@
-vless://fbd73a5f-3ed7-49d3-8649-55af03dc36cb@snapp.ir:80?security=none&allowInsecure=0&encryption=none&type=ws&host=firelink.arian-go-internet.ir&path=/ICV2RAY#
-vless://0113dbe3-7b54-455f-b412-00c8e3b3c65c@185.143.233.200:80?path=%2F&security=none&encryption=none&host=a1.supreme-xfast.ir&type=ws#
+vless://02156f38-8366-429c-8b60-0d8038cafe63@45.81.18.34:443?security=reality&encryption=none&pbk=ioufLXV7_DfXZ1oomDTaUMxdduFNWI-j4Ssa3QuME0Q&headerType=none&fp=chrome&spx=%2F&type=tcp&flow=xtls-rprx-vision&sni=www.aparat.com&sid=bcf760#

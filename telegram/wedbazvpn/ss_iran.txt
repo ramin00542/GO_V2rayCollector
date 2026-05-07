@@ -1,6 +1,1 @@
-vless://30e35bd7-6ce7-4c0c-8fbd-cec03071852f@faraaa.darakio.ir:80?encryption=none&type=ws&path=%2F#
-vless://c5e37ade-1f00-4dfa-a01d-3611f83f39e8@snapp.ir:80?encryption=none&type=ws&path=%2F&host=simorgh.darerio.ir#
-vless://30e35bd7-6ce7-4c0c-8fbd-cec03071852f@faraaa.darakio.ir:80?encryption=none&type=ws&path=%2F#@wedbazgap
-vless://cd63c49a-d4cf-4856-89a6-6fe18b5070eb@snapp.ir:8880?encryption=none&type=ws&path=%2F&host=moein.akosha.ir#
-vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?path=%2F&security=none&encryption=none&host=sr.novatechsapr.ir&type=ws#@wedbazgap
-vless://868f9a0f-aa09-4898-a213-e8f7ccf80091@stare.unknowns.ir:8080?encryption=none&type=ws&path=%2F#@wedbazgap
+vless://4ea381a1-6af5-4d2f-af08-4ba432fd7210@79.143.85.9:4430?mode=auto&path=%2F&security=none&encryption=none&host=varzesh3.com&type=xhttp#@wedbazgap

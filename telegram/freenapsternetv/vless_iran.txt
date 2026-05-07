@@ -1,1 +1,2 @@
-vless://480c278e-1c64-4ddd-9635-2df5e8dafffe@www.speedtest.net:8080?path=%2F%40V_2rayngVpn&security=none&encryption=none&host=xn--047h.iman-v2ray.sbs.&type=ws#MCI
+vless://480c278e-1c64-4ddd-9635-2df5e8dafffe@www.speedtest.net:8080?path=%2F%40V_2rayngVpn&security=none&encryption=none&host=xn--047h.iman-v2ray.sbs.&type=ws#
+vless://ab1ba65d-7af4-4ffb-bf26-44d79793af45@www.speedtest.net:8080?path=%2F&security=none&encryption=none&host=xn--047h.iman-v2ray.sbs.&type=ws#

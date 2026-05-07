@@ -1,7 +1,1 @@
-vless://fc1191c8-e724-482f-a492-90d3d386719c@sisand.waztow.wOrkErS.DEv:2096?path=vless-ws%2F%3Fed%3D2048&security=tls&encryption=none&alpn=h2,http/1.1&host=sisand.waztow.wOrkErS.DEv&fp=firefox&type=ws&sni=sisand.waztow.wOrkErS.DEv#4-vless-worker-sisand.waztow.wOrkErS.DEv
-vless://2ca305b5-456a-4262-957e-3fb6788ca1ac@div.puzzley.net:80?type=tcp&encryption=none&security=none#
-vless://fc1191c8-e724-482f-a492-90d3d386719c@sisand.waztow.wOrkErS.DEv:2096?path=vless-ws%2F%3Fed%3D2048&security=tls&encryption=none&alpn=h2,http/1.1&host=sisand.waztow.wOrkErS.DEv&fp=firefox&type=ws&sni=sisand.waztow.wOrkErS.DEv#
-vless://fc1191c8-e724-482f-a492-90d3d386719c@sisand.waztow.WorKErs.dEv:443?path=vless-ws%2F%3Fed%3D2048&security=tls&encryption=none&alpn=h2&host=sisand.waztow.WorKErs.dEv&fp=ios&type=ws&sni=sisand.waztow.WorKErs.dEv#
-vless://fc1191c8-e724-482f-a492-90d3d386719c@sisand.waztow.wORkERS.dEv:8443?path=vless-ws%2F%3Fed%3D2048&security=tls&encryption=none&alpn=h2&host=sisand.waztow.wORkERS.dEv&fp=randomized&type=ws&sni=sisand.waztow.wORkERS.dEv#2-vless-worker-sisand.waztow.wORkERS.dEv
-vless://2ca305b5-456a-4262-957e-3fb6788ca1ac@div.puzzley.net:80?type=tcp&encryption=none&security=none#https://t.me/vpnv2rayonline
-vless://fc1191c8-e724-482f-a492-90d3d386719c@sisand.waztow.WOrkerS.Dev:2053?path=vless-ws%2F%3Fed%3D2048&security=tls&encryption=none&alpn=h2,http/1.1&host=sisand.waztow.WOrkerS.Dev&fp=edge&type=ws&sni=sisand.waztow.WOrkerS.Dev#3-vless-worker-sisand.waztow.WOrkerS.Dev
+vless://fc1191c8-e724-482f-a492-90d3d386719c@sisand.waztow.WOrkerS.Dev:2053?path=vless-ws%2F%3Fed%3D2048&security=tls&encryption=none&alpn=h2,http/1.1&host=sisand.waztow.WOrkerS.Dev&fp=edge&type=ws&sni=sisand.waztow.WOrkerS.Dev#

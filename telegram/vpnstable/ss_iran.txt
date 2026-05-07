@@ -1,1 +1,1 @@
-vless://a2053fc4-7daf-4a78-a53e-394a483c13db@pish152.manikhan.ir:22470?security=none&encryption=none&headerType=none&type=tcp#
+vless://a2053fc4-7daf-4a78-a53e-394a483c13db@pish152.manikhan.ir:22470?security=none&encryption=none&headerType=none&type=tcp#%40Net2ray

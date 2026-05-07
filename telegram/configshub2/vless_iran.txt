@@ -1,4 +1,2 @@
-vless://1d0f67ee-d19e-4dc4-b7e0-0be706bfe4c4@snapp.ir:80?path=%2F&security=none&encryption=none&host=simorgh.darerio.ir&type=ws#
-vless://1d0f67ee-d19e-4dc4-b7e0-0be706bfe4c4@snapp.ir:80?path=/&security=none&encryption=none&host=simorgh.darerio.ir&type=ws#[🇮🇷]t.me/ConfigsHub
-vless://225ddf30-ea59-49fa-9df9-bcb82ef35d96@snapp.ir:80?path=%2F&security=none&encryption=none&host=simorgh.darerio.ir&type=ws#[🇮🇷]t.me/ConfigsHub
-vless://764db33e-0aff-4ff6-ba0e-f666c4e0f6f7@185.143.233.200:80?type=ws&encryption=mlkem768x25519plus.native.0rtt.sdQ0jWsX6B8yh97yoZt4k_1nlR0zlApK3MV_hQD7KyA&path=%2F&host=nima.hayalco.ir&security=none#[🇮🇷]t.me/ConfigsHub
+vless://9f6979f5-fec9-4f40-b5f9-15dde47c6b91@185.143.233.5:2052?path=%2F&security=none&encryption=none&host=cdn.sesrsa.com&type=ws#[🇮🇷]t.me/ConfigsHub
+vless://00e596c1-1fb1-40e3-8eb9-ca4b3270a88c@snapp.ir:8080?type=ws&encryption=none&path=%2F&host=nikan.duravex.ir&security=none#[🇮🇷]t.me/ConfigsHub

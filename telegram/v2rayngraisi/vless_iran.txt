@@ -1,5 +1,1 @@
-vless://d20d3881-03a0-457d-9c67-9ac480fa8d38@94.183.241.105:15254?type=grpc&serviceName=@V2RAYNGRAISI,@V2RAYNGRAISI,@V2RAYNGRAISI,@V2RAYNGRAISI,@V2RAYNGRAISI,@V2RAYNGRAISI,&mode=multi&security=tls&
-vless://09387f07-5bf2-4486-9bb7-f49b959ed48f@5e90629662c14e89.vERtAlIsT.Ir:1310?type=grpc&serviceName=@V2RAYNGRAISI,@V2RAYNGRAISI,@V2RAYNGRAISI,@V2RAYNGRAISI,@V2RAYNGRAISI,@V2RAYNGRAISI,&mode=multi&security=tls&
-vless://09387f07-5bf2-4486-9bb7-f49b959ed48f@safe.zdshop.ir:2053?type=grpc&serviceName=@V2RAYNGRAISI,@V2RAYNGRAISI,@V2RAYNGRAISI,@V2RAYNGRAISI,@V2RAYNGRAISI,@V2RAYNGRAISI,&mode=multi&security=tls&
-vless://09387f07-5bf2-4486-9bb7-f49b959ed48f@shield.zdshop.ir:2053?type=grpc&serviceName=@V2RAYNGRAISI,@V2RAYNGRAISI,@V2RAYNGRAISI,@V2RAYNGRAISI,@V2RAYNGRAISI,@V2RAYNGRAISI,&mode=multi&security=tls&
-vless://ae004633-bb90-4932-8917-78865367555e@212.60.5.78:8443?type=grpc&serviceName=@V2RAYNGRAISI,@V2RAYNGRAISI,@V2RAYNGRAISI,@V2RAYNGRAISI,@V2RAYNGRAISI,@V2RAYNGRAISI,&mode=multi&security=tls&
+vless://09387f07-5bf2-4486-9bb7-f49b959ed48f@shield.zdshop.ir:2053?type=grpc&serviceName=@V2RAYNGRAISI,@V2RAYNGRAISI,@V2RAYNGRAISI,@V2RAYNGRAISI,@V2RAYNGRAISI,@V2RAYNGRAISI,&mode=multi&security=tls& encryption=none&security=tls&type=ws&headerType=&path=&host=dfdc12a050e4f995.kiWiJuiCe.IR.&sni=34f1e29100eca166.kiWiJuiCe.IR.&fp=#

@@ -1,3 +1,3 @@
-vless://3b36d989-801f-49d7-95e4-133fbdf7eee4@snapp.ir:80?encryption=none&security=none&type=ws&headerType=none&path=%2Fprivate&host=nl.sapax-cloud.ir#
-vless://c09816d1-9b53-4e0d-85a8-9def477121ab@snappfood.ir:80?path=%2Fws&security=none&encryption=none&host=cdnisfucka.drnimaamini.ir&type=ws#@vmesskhodam
-vless://87a09075-f5f0-4ff9-80df-3e81fcdfd10d@185.143.234.235:80?path=%2F&security=none&encryption=none&host=d.nsa03.com&type=ws#@sogoandfuckyourlove
+vless://3b36d989-801f-49d7-95e4-133fbdf7eee4@snapp.ir:80?encryption=none&security=none&type=ws&headerType=none&path=%2Fprivate&host=nl.sapax-cloud.ir#%@vmesskhodam
+vless://3b36d989-801f-49d7-95e4-133fbdf7eee4@snapp.ir:8880?encryption=none&security=none&type=ws&headerType=none&path=%2Fprivate&host=tr.sapax-cloud.ir#
+vless://3b36d989-801f-49d7-95e4-133fbdf7eee4@185.143.234.200:8080?encryption=none&security=none&type=ws&headerType=none&path=%2Fprivate&host=de.sapax-cloud.ir#

@@ -1,1 +1,1 @@
-vless://11e5b771-1d4d-4362-b4b5-e39e75981f01@104.21.60.171:443?path=%2F&security=tls&encryption=none&host=3e8B07A5.PUb000bpB.PAGes.Dev&type=ws&sni=3e8B07A5.PUb000bpB.PAGes.Dev#
+ss://YWVzLTEyOC1nY206am9pbi0tWkVETU9ERU9O@45.145.42.70:25366#

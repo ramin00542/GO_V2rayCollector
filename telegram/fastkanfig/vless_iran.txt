@@ -1,5 +1,5 @@
-vless://21cb5cae-36f6-4e20-b497-dc0a30f2edf9@185.143.233.200:8880?path=%2F&security=none&encryption=mlkem768x25519plus.native.0rtt.-dHBgFiE3o72yiSy-lApCXI5RZiQ__iyVOGUfrCZiwM&host=nima.hayalco.ir&type=ws#
 vless://dc64677e-9025-4ec8-95d3-be7e5cf23844@plse3.gishevip.xyz:80?path=%2F&security=none&encryption=none&host=pl1.dns-coco.ir&type=ws#%40fastkanfig
-vless://895a74fa-7b90-4cca-912d-cd2b8607c9fa@185.208.79.188:23458?security=&encryption=none&headerType=none&type=tcp#Freee%E2%9A%A1%EF%B8%8F%202
-vless://58891394-068a-4e3c-ab85-09b4083e0d94@m19.lionets.nl:443?mode=gun&security=reality&encryption=mlkem768x25519plus.native.0rtt.6cBQkJP8JQ5AqiSQDhLM_46lQF8-7qAjY3d9oaBVVEU&authority=m19.lionets.nl&pbk=03RfDn2wfFmBEVW4w7UNzomS6dsS5OAfATlzlM9FTHY&fp=firefox&spx=%2FuHPYg9SaQpI1H1i&type=grpc&serviceName=m19.lionets.nl&sni=aparat.com&sid=405257f7c43c1792#%F0%9F%8D%93%20%40fastkanfig
-vless://a66525c0-328e-4af8-ae76-3ce1e4eeb9d2@snapp.ir:80?path=%2Findex.html&security=none&encryption=none&host=aiagentshop.aruxm.ir&type=ws#%40fastkanfig
+vless://9f70861b-b752-4bac-9b58-82ca8aa8dd26@l1.msljha8844.site:1050?security=none&encryption=none&host=cafeariel.ir&headerType=http&type=tcp#%40fastkanfig%20telegram
+vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?path=%2F&security=none&encryption=none&host=sr.novatechsapr.ir&type=ws#%40fastkanfig%20%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85
+vless://dc64677e-9025-4ec8-95d3-be7e5cf23844@plse3.gishevip.xyz:80?path=%2F&security=none&encryption=none&host=pl1.dns-coco.ir&type=ws#
+vless://dc4dccda-55c9-480a-9bc1-8edd8e2ccf69@185.213.165.81:48660?security=none&encryption=none&headerType=none&type=tcp#

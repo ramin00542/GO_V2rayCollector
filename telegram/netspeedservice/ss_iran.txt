@@ -1,1 +1,1 @@
-vless://cf37227e-d438-4292-8d43-56413fb5d8f1@172.67.229.179:2052?type=ws&host=pdHexy.sHapaRak.bio&path=/&security=none#
+vless://b9ad895b-12ac-40fc-a5ac-a5b2a1285001@104.21.28.62:443?type=ws&host=3k.pureboy.eu.org&path=/?ed%3D2048&security=tls&sni=3k.pureboy.eu.org#

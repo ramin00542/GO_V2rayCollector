@@ -1,1 +1,1 @@
-vless://01bac07c-c780-4fb6-904a-451cd80fbebb@89.23.103.13:8443?security=reality&encryption=none&pbk=kHKrwkcNkDYPWpA034oXIkBKs2mv4Y7uodDCCG7cUVw&headerType=none&fp=chrome&spx=%2F&type=tcp&sni=sourceforge.net#%F0%9F%87%B3%F0%9F%87%B1+Netherlands-%40UniqueNett
+vless://d5a0662a-1a0d-4ecd-ecd7-f243fc1bc882@178.33.172.135:39571?security=none&encryption=none&host=zula.ir&headerType=http&type=tcp#%40UniqueNett-MTN-%F0%9F%87%A9%F0%9F%87%AA-Germany

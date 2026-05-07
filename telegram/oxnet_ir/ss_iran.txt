@@ -1,3 +1,2 @@
-vless://87a09075-f5f0-4ff9-80df-3e81fcdfd10d@185.143.234.235:80?path=%2F&security=none&encryption=none&host=d.nsa03.com&type=ws#%40oxnet_ir%20%7C%20%D8%AA%D8%B1%DA%A9%DB%8C%D8%A8%2010
-vless://a3f3a69a-1468-43f3-9f7f-11c05d183dc6@185.143.234.235:80?path=%2F&security=none&encryption=none&host=al1.apicallminecrafegame.online&type=ws#%D8%AA%D8%B1%DA%A9%DB%8C%D8%A8%20%7C%20oxnet_ir
-vless://0ce525d1-1376-4fac-90ef-61916451f7f5@arvancloud.ir:80?path=%2F&security=none&encryption=none&host=m.ahwazteem.ir&type=ws#
+vless://ecb703b3-8203-41e7-9ecf-e9cf4300edbf@Ikco.ir:8080?path=%2Fcdn&security=none&encryption=none&host=cp.movizdl.ir&type=ws#%40oxnet_ir%20%7C%20%D8%AA%D8%B1%DA%A9%DB%8C%D8%A8%20%D9%BE%D9%86%D8%AC
+vless://255b8da7-01c7-4cf9-a8e2-3313f73d0b8a@sr.novatechsapr.ir:80?path=%2F&security=none&encryption=none&host=sr.novatechsapr.ir&type=ws#%40oxnet_ir%20%7C%20%D8%AA%D8%B1%DA%A9%DB%8C%D8%A8%2011

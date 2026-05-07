@@ -1,8 +1,3 @@
-vless://898dbb77-3379-4980-944f-a56a1ba91bcc@nullnetwork.mashhad-gsm.ir:42726?encryption=none&type=tcp#@techbod
-vless://b0c4962b-f606-4f30-b3ed-2e09a5f5586f@nullnetwork.mashhad-gsm.ir:42726?encryption=none&type=tcp#@techbod
-vless://7d0120c5-c8a4-4653-8015-94660e50b864@packetnet.mashhad-gsm.ir:42726?security=none&encryption=none&headerType=none&type=tcp#@techbod
-vless://7f296207-cab4-4105-8c98-73ca610079f1@vitallife.gg:443?encryption=none&type=ws&security=tls&path=%2Fwp-content%2Fcachecache&host=vitallife.gg&sni=vitallife.gg&alpn=http%2F1.1&fp=chrome&allowInsecure=1#@techbod
-vless://25c65101-45fe-4212-bafa-58a5d74089cd@zir.alihapps3.aghanami.ir:80?path=%2F&security=none&encryption=none&type=ws#@techbod
-vless://3eeb1bff-5d48-4697-a48a-b476bf4e5830@snapp.ir:80?encryption=none&type=ws&path=%2F&host=novin3.deltamarket8.ir#@techbod
-vless://c271e563-0482-4f04-b8da-bccae5a544e1@nullnetwork.mashhad-gsm.ir:42726?encryption=none&type=tcp#@techbod
-vless://b0c4962b-f606-4f30-b3ed-2e09a5f5586f@nullnetwork.mashhad-gsm.ir:42726?encryption=none&type=tcp#
+vless://935e8f53-c72d-462c-9c2f-5b5bff06398d@nullnetwork.mashhad-gsm.ir:42726?encryption=none&type=tcp#@techbod
+vless://59941910-c958-45c4-b8c6-b5523970c41f@nullnetwork.mashhad-gsm.ir:42726?encryption=none&type=tcp#@techbod
+vless://04272a6c-8df2-47d4-b948-082f89cf0997@wanted.linkinfo.cloud:8880?path=%2F&security=none&encryption=none&type=ws#@techbod

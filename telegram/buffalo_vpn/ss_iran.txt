@@ -1,1 +1,2 @@
-vless://a6292090-afe1-4640-97a7-4f1d1d877cf1@mci.filna.cloud:443/?type=grpc&encryption=none&serviceName=PvSPM3IC5KffvrsN6rqb&security=tls&sni=hdfy8c1.foriran.me&alpn=h2&fp=chrome&packetEncoding=xudp#
+vless://b0286bc2-e17c-4c17-b0e6-d39c93f74937@104.22.46.204:443?type=ws&security=tls&host=ap-aminoo.pages.dev&path=/?ed%3D2048&fp=randomized&sni=ap-aminoo.pages.dev&alpn=h2,http/1.1#Buffalo_1
+vless://b0286bc2-e17c-4c17-b0e6-d39c93f74937@104.22.46.204:443?type=ws&security=tls&host=ap-aminoo.pages.dev&path=/?ed%3D2048&fp=randomized&sni=ap-aminoo.pages.dev&alpn=h2,http/1.1#

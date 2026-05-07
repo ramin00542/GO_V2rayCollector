@@ -1,3 +1,2 @@
-vless://df0680ca-e43c-498d-ed86-8e196eedd012@84.32.9.31:8880?mode=gun&security=none&encryption=none&type=grpc#
-vless://df0680ca-e43c-498d-ed86-8e196eedd012@84.32.9.31:8880?mode=gun&security=none&encryption=none&type=grpc#%40SERVER_HOUSING03
-vless://df0680ca-e43c-498d-ed86-8e196eedd012@37.27.42.250:8880?mode=gun&security=none&encryption=none&type=grpc#
+vless://4088e698-69fd-4d15-98bc-f1fe4c071642@104.21.73.239:443?path=%2F4McLR3NKFOydbxDs%2FMTguMTk5LjIxMy4yMDE&security=tls&alpn=http%2F1.1&encryption=none&host=digitalscientificresearchgroup.ir&fp=randomized&type=ws&sni=DigITALsciENTIfiCrESeARCHGRoup.IR#
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpCb2cwRUxtTU05RFN4RGRR@admin.c3.webramz.co:443#
