@@ -37,10 +37,6 @@
 ## 📁 mixed
 
 ## 📁 subscription
-- 🟢 [hysteria2.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/subscription/hysteria2.txt)
-- 🟢 [ssr.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/subscription/ssr.txt)
-- 🟢 [tuic.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/subscription/tuic.txt)
-- 🟢 [wireguard.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/subscription/wireguard.txt)
 - 🟢 [⚡ Shadowsocks.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/subscription/⚡ Shadowsocks.txt)
 - 🟢 [✨ SSR.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/subscription/✨ SSR.txt)
 - 🟢 [🌀 Hysteria2.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/subscription/🌀 Hysteria2.txt)
