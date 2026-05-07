@@ -1,1 +1,1 @@
-vless://e9979910-79d1-4621-a93c-b2a579c44ba7@104.25.131.154:8880?path=%2FC5itOz6YmbLanD7F%3Fed%3D2560&security=none&alpn=http%2F1.1&encryption=none&host=vngsupply.ip-ddns.com&type=ws&sni=vngsUPPly.IP-DDnS.CoM#telegram%20%E2%9E%A0%20%40xroVPN
+vless://52a1f20b-e3e2-4280-a953-1c7e940408b6@103.231.75.17:443?path=%2Flfcinsws&security=tls&encryption=none&type=ws#%F0%9F%87%B9%F0%9F%87%B7%20%DA%A9%D8%A7%D9%86%D8%A7%D9%84%20%D8%AA%D9%84%DA%AF%D8%B1%D8%A7%D9%85%DB%8C%20%D8%A7%DB%8C%DA%A9%D8%B3%D8%B1%D9%88%20%40xrovpn

@@ -1,6 +1,2 @@
-vless://52c602fc-532d-49ee-9383-f8eb0007322b@104.31.16.92:80?type=ws&path=%2F&host=netherlands.ligerteam.com#
-vless://52c602fc-532d-49ee-9383-f8eb0007322b@104.31.16.92:80?type=ws&path=%2F&host=unitedstates.heydasip.com#
-vless://52c602fc-532d-49ee-9383-f8eb0007322b@104.31.16.92:80?type=ws&path=%2F&host=heydasfrance.ligerteam.com#🇫🇷فرانسه🇫🇷-🔵همراه
+vless://b55dea00-2a1d-43e3-b88b-17c024871da3@discord.com:443?sni=DownUpV2rayyyyyyboard-scanners-citation-end.trycloudflare.Com&fp=chrome&host=reforms-frequencies-acids-martha.trycloudflare.com&alpn=http/1.1&type=ws&security=tls&path=%2Fupload%3Fed%3D2048&…
 vless://52c602fc-532d-49ee-9383-f8eb0007322b@104.31.16.92:80?type=ws&path=%2F&host=unitedstates.heydasip.com#🇺🇸نیویورک🇺🇸-🔵همراه
-vless://52c602fc-532d-49ee-9383-f8eb0007322b@54.38.59.30:443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=canva.com&fp=firefox&security=reality&pbk=JYX6QCdjl0yIzfE_TMjJAnD0zyuroMhT2fj3oAzlTWc&sid=8b62ab46#🇵🇱لهستان🇵🇱-🟡ایرانسل|رایتل🟣
-vless://52c602fc-532d-49ee-9383-f8eb0007322b@104.31.16.92:80?type=ws&path=%2F&host=netherlands.ligerteam.com#🇳🇱آمستردام🇳🇱-🔵همراه

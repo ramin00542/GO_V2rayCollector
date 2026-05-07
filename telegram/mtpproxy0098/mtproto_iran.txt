@@ -1,2 +1,2 @@
-tg://proxy?server=pro.melinter.site&port=443&secret=dd45da47059d169d4d0e23b6f1f6c5ead8
 tg://proxy?server=77.72.80.83&port=9443&secret=eeNEgYdJvXrFGRMCIMJdCQ
+tg://proxy?server=pro.melinter.site&port=443&secret=dd45da47059d169d4d0e23b6f1f6c5ead8

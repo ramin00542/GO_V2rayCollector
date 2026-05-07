@@ -1,2 +1,1 @@
-vless://f7fe4c50-8f84-425a-8b60-6fbea946df9e@discord.com:443/?encryption=none&type=ws&host=e.wordpass.workers.dev&path=%2F%3Fed%3D2048&security=tls&sni=e.wordpass.workers.dev&fp=chrome#
-vless://f7fe4c50-8f84-425a-8b60-6fbea946df9e@discord.com:443/?encryption=none&type=ws&host=ww.n8c6n9qvg.workers.dev&path=%2F%3Fed%3D2048&security=tls&sni=ww.n8c6n9qvg.workers.dev&fp=chrome#
+vless://f7fe4c50-8f84-425a-8b60-6fbea946df9e@discord.com:443/?encryption=none&type=ws&host=w.n8c6n9qvg.workers.dev&path=%2F%3Fed%3D2048&security=tls&sni=w.n8c6n9qvg.workers.dev&fp=chrome#t.me%2Fv2ray_reality_new

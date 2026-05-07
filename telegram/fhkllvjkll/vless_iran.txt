@@ -1,3 +1,1 @@
-vless://00f8d77b-ba64-4807-8fc0-bb3cbe89b6e6@v03.vxlimir.com:1370?security=reality&encryption=none&pbk=_N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw&headerType=none&fp=chrome&type=tcp&sni=refersion.com&sid=e1afb93bfe75a34b#%E2%9C%85%D8%B3%D8%B1%D9%88%D8%B1%D9%87%D8%A7%DB%8C%D8%A8%DB%8C%D8%B4%D8%AA%D8%B1%D8%AF%D8%B1%DA%A9%D8%A7%D9%86%D8%A7%D9%84%3Afreenettir%40%E2%9C%85
-vless://53fa8faf-ba4b-4322-9c69-a3e5b1555049@199.232.13.32:80?path=%2FChannel-ELiV2RAY---ELiV2RAY%3Fed%3D2048&host=Telegram---ELi.V2ray.ir&type=ws#
-vless://53fa8faf-ba4b-4322-9c69-a3e5b1555049@199.232.13.32:80?path=%2FChannel-ELiV2RAY---ELiV2RAY%3Fed%3D2048&host=Telegram---ELi.V2ray.ir&type=ws#T∆H∆
+vless://8016e3e2-85a9-4e9c-86cc-379a888aa59d@tgju.org.tr.systemgamingirani.ir:443?security=reality&encryption=none&pbk=tw6uAbjXzRSIKChb6pDbHVNjnU9Don4hbv6dHRkmJx8&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=tgju.org&sid=e54b5ad736ae4c38#

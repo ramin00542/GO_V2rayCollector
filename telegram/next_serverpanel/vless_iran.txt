@@ -1,1 +1,1 @@
-vless://868c70bb-3560-4aab-b00c-6b64ffb96c8e@salar.mohad.sbs:80?path=%2F&security=none&encryption=none&type=ws#
+vless://868c70bb-3560-4aab-b00c-6b64ffb96c8e@salar.mohad.sbs:80?path=%2F&security=none&encryption=none&type=ws#%D9%86%DA%A9%D8%B3%D8%AA+%D8%B3%D8%B1%D9%88%D8%B1+%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86

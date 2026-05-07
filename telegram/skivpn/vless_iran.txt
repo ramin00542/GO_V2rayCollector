@@ -1,2 +1,1 @@
-vless://acbc75cc-45d5-4451-af1e-9c767e5d14c8@pg.nexorainnovationhub.ir:80?path=%2F&security=none&encryption=none&host=finland.lezzaluxa.ir&type=ws#EMO%F0%9F%AB%86%F0%9F%A4%B4%F0%9F%91%B8Skivpn%F0%9F%91%B8%F0%9F%A4%B4
-vless://8a642e35-328c-42ee-aad0-d050b131dbab@pg.nexorainnovationhub.ir:80?path=%2F&security=none&encryption=none&host=finland.lezzaluxa.ir&type=ws#EMO%F0%9F%AB%86%F0%9F%A4%B4%F0%9F%91%B8Skivpn%F0%9F%91%B8%F0%9F%A4%B4
+vless://8a642e35-328c-42ee-aad0-d050b131dbab@pg.nexorainnovationhub.ir:80?path=%2F&security=none&encryption=none&host=germany.lezzaluxa.ir&type=ws#

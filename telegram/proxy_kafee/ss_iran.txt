@@ -1,1 +1,1 @@
-vless://dae2ddc6-a892-495f-a001-181cec56ad12@snapp.ir:2052?path=%2F&security=none&encryption=none&host=p1.razstar.ir&type=ws#%40proxy_kafee%20%7C%20%D8%AA%D8%B1%DA%A9%DB%8C%D8%A8%DB%8C
+vless://0d84cdbd-c0fb-47c6-ab5d-a25587df2a4a@185.143.233.5:80?path=%2Fxray&security=none&encryption=none&host=bot.vipiranian.de&type=ws#%40proxy_kafee%20%7C%20%D8%AA%D8%B1%DA%A9%DB%8C%D8%A8%DB%8C

@@ -1,3 +1,2 @@
+vless://af8f4239-a62d-4e64-8971-9fff51e518ba@snapp.ir:80?path=%2FFIRELINKKVPN&security=none&encryption=none&host=firelinkk.arian-go-internet.ir&type=ws#%D8%AA%D8%B1%DA%A9%DB%8C%D8%A8%DB%8C%20%D9%85%D8%AA%D8%B5%D9%84
 vless://af8f4239-a62d-4e64-8971-9fff51e518ba@snapp.ir:80?path=%2FFIRELINKKVPN&security=none&encryption=none&host=firelinkk.arian-go-internet.ir&type=ws#
-vless://66e438fc-699a-4ac2-85a9-3d9d7e2c6f3a@snapp.ir:2095?path=%2Ffilmirani%3Fed%3D2048&security=none&encryption=none&host=vip.magicping.ir&type=ws#Free-
-vless://1903b9c4-7cea-4beb-be2a-845ae73e29cc@zeusgg.isfahangaming.com:80?path=%2F&security=none&encryption=none&host=zeusgg.isfahangaming.com&type=ws#

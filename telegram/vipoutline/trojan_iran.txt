@@ -1,4 +1,4 @@
-trojan://telegram-id-privatevpns@13.39.186.136:22222?security=tls&sni=trojan.burgerip.co.uk&fp=chrome&headerType=none&allowInsecure=0&alpn=http/1.1&type=tcp#
-trojan://YwuvGJk36B@kotlet.arshiacomplus.dpdns.org:2053?security=tls&sni=kotlet.arshiacomplus.dpdns.org&fp=chrome&allowInsecure=0&alpn=http/1.1&type=ws&path=/yamtekodasayahhh#
 trojan://telegram-id-privatevpns@3.127.91.148:22222?security=tls&sni=trojan.burgerip.co.uk&fp=chrome&headerType=none&allowInsecure=0&alpn=http/1.1&type=tcp#
 trojan://YwuvGJk36B@o.metuji.com:2053?security=tls&sni=o.metuji.com&fp=chrome&allowInsecure=0&type=ws&path=/linkvws#
+trojan://YwuvGJk36B@kotlet.arshiacomplus.dpdns.org:2053?security=tls&sni=kotlet.arshiacomplus.dpdns.org&fp=chrome&allowInsecure=0&alpn=http/1.1&type=ws&path=/yamtekodasayahhh#
+trojan://telegram-id-privatevpns@13.39.186.136:22222?security=tls&sni=trojan.burgerip.co.uk&fp=chrome&headerType=none&allowInsecure=0&alpn=http/1.1&type=tcp#

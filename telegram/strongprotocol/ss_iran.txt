@@ -1,1 +1,8 @@
-vless://f0874314-b134-4d38-84c2-d1b32cd30136@vipde1.persianpinggame.com:9091?security=none&encryption=none&host=myket.ir&headerType=http&type=tcp#@StrongProtocol
+vless://18164b40-8a2d-46f8-b758-bf6c87cb5e9e@ir-www-germani1.khabarkamkwww.fun:8081?security=none&encryption=none&host=www.speedtest.net&headerType=http&type=tcp#
+vless://f7322a53-0931-47fd-a133-233dbb7d43f3@irr1.topsflag.sbs:2094?type=tcp&security=none#
+vless://24a4aa9b-b341-4717-9d4a-00d74c2b84e0@78.47.44.60:2020?encryption=none&security=none&type=tcp&headerType=none#@StrongProtocol
+vless://a242cff5-2d44-4e83-927c-2ff37f09e66d@emergency3.layer-ziro.ir:2003?security=none&encryption=none&host=anten.ir&headerType=http&type=tcp#@StrongProtocol
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp1MTdUM0J2cFlhYWl1VzJj@series-a2-mec.varzesh360.co:443#
+vless://eef39638-45eb-47c1-ba53-708eea36210c@haji.arezoni1.ir:666?security=none&encryption=none&headerType=none&type=tcp#
+vless://e999db7a-1b17-4da6-bc37-c9fa24af2e93@104.19.144.33:8443?encryption=none&security=tls&sni=Q9cI2lEeUz.GiTi4.OrG&type=ws&host=Q9cI2lEeUz.GiTi4.OrG&path=%2F#
+vless://24a4aa9b-b341-4717-9d4a-00d74c2b84e0@78.47.44.60:2020?encryption=none&security=none&type=tcp&headerType=none#

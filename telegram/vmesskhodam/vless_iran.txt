@@ -1,1 +1,2 @@
-vless://04ec7bda-de0b-45a2-ac31-7b83963e5768@185.143.234.122:80?path=%2F&security=none&encryption=none&host=finland.lezzaluxa.ir&type=ws#
+vless://9c18e5e1-fd77-4f81-8c1e-895acc1c8d60@185.143.234.122:80?path=%2F&security=none&encryption=none&host=finland.lezzaluxa.ir&type=ws#
+vless://793be1ac-1869-4293-929c-0ddfdcb0cfe4@185.143.233.5:443?encryption=none&type=ws&security=tls&path=%2F%40alaedin%3Fed%3D128&host=alaedin1.8lack.ir&sni=alaedin1.8lack.ir&alpn=h2%2Chttp%2F1.1&fp=firefox&allowInsecure=0#vmesskhodam

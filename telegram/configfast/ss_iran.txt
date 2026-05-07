@@ -1,1 +1,2 @@
 vless://78f6e997-b936-466b-adb4-3de8b19d1f33@104.20.6.134:443?path=%2Fpowerfull%3Fed%3D2048&security=tls&encryption=none&insecure=0&host=wee.configfast.ir&type=ws&allowInsecure=0&sni=wee.configfast.ir#
+vless://78f6e997-b936-466b-adb4-3de8b19d1f33@104.20.6.134:443?path=%2Fpowerfull%3Fed%3D2048&security=tls&encryption=none&insecure=0&host=wee.configfast.ir&type=ws&allowInsecure=0&sni=wee.configfast.ir#%40ConfigFast

@@ -1,8 +1,2 @@
-vless://SvnTeam@mtn.VPNPROSEC.com:2087/?type=grpc&serviceName=&security=tls&fp=&alpn=http%2F1.1%2Ch2&sni=Grm.gelofenshop.online#Germany
-vless://SvnTeam@mtn.vpnprosec.com:443/?type=grpc&serviceName=&security=tls&fp=chrome&alpn=http%2F1.1%2Ch2&sni=loveukhomeinimybroV2rayloveirantunnel.svnteam.shop#
-vless://SvnTeam@mtn.vpnprosec.com:443?type=grpc&serviceName=&security=tls&fp=chrome&alpn=http%2F1.1%2Ch2&sni=V2rayGrmnl.MmdNet.Online#GERMANY
-vless://SvnTeamm@mtn.vpnprosec.com:2087?type=grpc&serviceName=&security=tls&fp=chrome&alpn=http%2F1.1%2Ch2&sni=V2rayGrmnl.MmdNet.Online#
-vless://80ed960f-1256-42c5-b85a-f2e9f84e735c@all.vpncustomize.cam:443?mode=multi&security=tls&encryption=none&alpn=h2&fp=chrome&type=grpc&serviceName=‌ @VPNCUSTOMIZE ‌&sni=FreeV2rayng.VPNCUSTOMIZE.tech#
-vless://SvnTeam@mtn.vpnprosec.com:443?type=grpc&serviceName=&security=tls&fp=chrome&alpn=http%2F1.1%2Ch2&sni=V2rayGrmnl.MmdNet.Online#
+vless://80ed960f-1256-42c5-b85a-f2e9f84e735c@all.vpncustomize.cam:443?mode=multi&security=tls&encryption=none&alpn=h2&fp=chrome&type=grpc&serviceName=‌
 vless://29858666-4191-4b2f-af3c-36563050838c@all.vpncustomize.cam:443?mode=multi&security=tls&encryption=none&alpn=h2&fp=chrome&type=grpc&serviceName=‌
-vless://SvnTeam@mtn.VPNPROSEC.com:2087/?type=grpc&serviceName=&security=tls&fp=&alpn=http%2F1.1%2Ch2&sni=Fnd.gelofenshop.online#

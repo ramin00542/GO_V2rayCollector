@@ -1,3 +1,1 @@
-vless://4cdc6a82-365c-49bb-a6c7-390566a5fc91@[2a12:5940:1527::2]:2095?type=grpc&serviceName=&authority=&security=reality&pbk=joWIDoA_03Cbcp9YgA3qbZAkskAeWju-xAtEfb98Vg0&fp=chrome&sni=www.sourceforge.net&sid=2e928ced&spx=%2F#
-vless://57efaf8d-ff71-47ca-9b36-283b58ff7eb3@[2a12:5940:1527::2]:8880?type=ws&path=%2F&host=cdnndsszakanalaslitest.possiblesayt.xyz.&security=none#
-vless://2d4aa928-f135-477a-9afc-e8cc9f8cf282@cdnndsszakanalaslitest.possiblesayt.xyz:2095?type=grpc&serviceName=&authority=&security=reality&pbk=joWIDoA_03Cbcp9YgA3qbZAkskAeWju-xAtEfb98Vg0&fp=chrome&sni=www.sourceforge.net&sid=2e928ced&spx=%2F#REALITY%201-vnidpc7o
+vless://0a29e0b5-c4ef-4992-ab0e-1d371dd8b3cd@[2a12:5940:1527::2]:443?type=tcp&path=%2F&host=www.sourceforge.net&headerType=http&security=none#Ipv6-eeexs7rs

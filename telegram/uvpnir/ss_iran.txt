@@ -1,1 +1,2 @@
-vless://2550ffd0-4975-4c29-9012-d5be249421f3@185.239.105.218:23026?path=%2F&security=none&encryption=none&type=ws#%F0%9F%87%AB%F0%9F%87%B7+paris+%7C+t.me%2FUvpnIR+%7C+%40UvpnIR
+vless://3a999fcf-bbb3-4f47-aeb5-cf2e03eb553c@194.120.24.125:21689?type=grpc&serviceName=&authority=&security=none#%40UvpnIR-hamrah-yi9v4cl81
+vless://2550ffd0-4975-4c29-9012-d5be249421f3@185.239.105.218:23026?path=%2F&security=none&encryption=none&type=ws#

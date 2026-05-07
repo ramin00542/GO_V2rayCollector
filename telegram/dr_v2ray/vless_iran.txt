@@ -1,2 +1,2 @@
-vless://1bcfabf7-c143-4dab-989b-2b663e7e69c8@free.tharuwa.store:80?path=%2FFREE%20By%20Tharuwa%20%280767597317%29&security=none&encryption=none&host=zoom.us&type=ws#
-vless://1bcfabf7-c143-4dab-989b-2b663e7e69c8@free.tharuwa.store:80?path=%2FFREE%20By%20Tharuwa%20%280767597317%29&security=none&encryption=none&host=zoom.us&type=ws#Free%20ByTharuwa%20%28t.me%2Fz_z_z_zz_z%29
+vless://126dd15e-2fef-49d1-b5ce-2c4690abda90@157.230.253.157:8443?path=%2FFREE%20By%20Tharuwa%20%280767597317%29&security=tls&encryption=none&fp=chrome&type=ws&sni=zoom.us#
+vless://9f21d61a-98a1-4cc6-bb1b-b62115977f39@188.166.185.59:17003?path=%2FFREE%20By%20Tharuwa%20%280767597317%29&security=none&encryption=none&host=m.zoom.us&type=ws#FREE%20WebSocket%20Server

@@ -1,2 +1,4 @@
-vless://1007b7c2-2170-4ba4-a68d-ec31fbb4bf74@104.20.5.134:80?encryption=none&type=ws&path=%2Fvless-ntls&host=nnet.online#
-vless://d37a75db-76b6-4db8-b213-0d5b044d138d@104.20.5.134:2053?encryption=none&type=ws&security=tls&host=hio-awx.pages.dev&sni=hio-awx.pages.dev&allowInsecure=1#@V2RAYNGCLOUD
+vless://1007b7c2-2170-4ba4-a68d-ec31fbb4bf74@104.20.5.134:80?encryption=none&type=ws&path=%2Fvless-ntls&host=nnet.online#@V2RAYNGCLOUD
+vless://89b3cbba-e6ac-485a-9481-976a0415eab9@104.20.5.134:2083?encryption=none&type=ws&security=tls&path=%2F%25252F&host=cIAllO-EGB.pAGES.dev&sni=cIAllO-EGB.pAGES.dev&allowInsecure=1#@V2RAYNGCLOUD
+vless://89b3cbba-e6ac-485a-9481-976a0415eab9@104.20.5.134:2083?encryption=none&type=ws&security=tls&path=%2F%25252F&host=cIAllO-EGB.pAGES.dev&sni=cIAllO-EGB.pAGES.dev&allowInsecure=1#
+vless://388a6c57-87e7-420b-afe2-b3eb670fd7da@104.20.5.134:80?encryption=none&type=ws&path=%2F&host=vip.yaml7.ggff.net#@V2RAYNGCLOUD

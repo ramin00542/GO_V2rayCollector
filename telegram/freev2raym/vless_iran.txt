@@ -1,4 +1,2 @@
-vless://9044733f-2a53-4a83-bd70-4ad5a2dfd9e6@antipingfree.melin.shop:58634?security=none&encryption=none&host=zula.ir&headerType=http&type=tcp#
-vless://9044733f-2a53-4a83-bd70-4ad5a2dfd9e6@antipingfree.melin.shop:58634?security=none&encryption=none&host=zula.ir&headerType=http&type=tcp#%40anti_ping+%D8%B9%D8%B6%D9%88+%D8%B4%D9%88
-vless://f97c7f12-e303-4679-8723-80edf65bbe37@91.107.160.74:39851?security=none&encryption=none&headerType=http&type=tcp#Test-xcr1f4xr
+vless://f97c7f12-e303-4679-8723-80edf65bbe37@antipingfree.antime…
 vless://084a7d29-d80b-4660-be82-44f2d0ff6fa3@anti_ping.antiping.click:443?mode=gun&security=tls&encryption=none&type=grpc&serviceName=@freev2raym

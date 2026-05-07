@@ -1,1 +1,2 @@
-vless://qeshmserver@151.101.3.8:80?type=xhttp&mode=auto&host=qeshmserverfree.global.ssl.fastly.net&security=none#
+vless://3cac427f-306c-421b-a2a0-adf8f49e1f48@45.76.32.68:43144?type=tcp&security=reality&pbk=iBm5uoc-I3ZPxcCYNLhV1nUL2eSKYt-lUsLocLrj3Sg&fp=chrome&sni=ea.com&sid=5ed04739&spx=%2F&flow=xtls-rprx-vision#%40QeshmServer-Join%20%40QeshmServer-%40QeshmServere
+vless://telegram-id-qeshmserver@108.61.103.121:19297?type=ws&path=%2F&security=none#

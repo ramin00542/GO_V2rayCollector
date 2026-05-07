@@ -1,2 +1,2 @@
-vless://f553d0ca-701d-4f95-90e9-2851d055291e@13.50.251.198:8443?security=reality&encryption=none&pbk=5mEkaGd0wuk_iimLFZXYYMCq419ZHsQM2TPb9Zyff1c&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=www.makers.com&sid=3c#
-ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpXNzRYRkFMTEx1dzZtNUlB@www.outline.network.ak1913.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou:443#
+vless://e9384521-1e42-4757-9624-73cea820ad50@metrix.anvary.ir:443?mode=gun&security=tls&encryption=none&alpn=h2,http/1.1&fp=chrome&type=grpc&serviceName=@melov2ray&sni=Rus.Melov2ray.Shop#%40GoldenShiineVPN%F0%9F%8C%A0
+vless://e9384521-1e42-4757-9624-73cea820ad50@metrix.anvary.ir:443?mode=gun&security=tls&encryption=none&alpn=h2,http/1.1&fp=chrome&type=grpc&serviceName=@melov2ray&sni=Rus.Melov2ray.Shop#

@@ -1,2 +1,2 @@
+vless://0f2e0501-5a4f-45b7-bd5e-209169cd34f9@37.152.173.139:8464?security=none&encryption=none&host=2picrszy.divarcdn.com&headerType=http&type=tcp#
 vless://ae438428-104c-4e6c-af20-03f4f7530515@5.75.196.2:8010?security=none&encryption=none&host=fast.com&headerType=http&type=tcp#VPNPlus100
-vless://ae438428-104c-4e6c-af20-03f4f7530515@5.75.196.2:8010?security=none&encryption=none&host=fast.com&headerType=http&type=tcp#

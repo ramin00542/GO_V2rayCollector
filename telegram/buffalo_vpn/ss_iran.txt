@@ -1,1 +1,1 @@
-vless://89b3cbba-e6ac-485a-9481-976a0415eab9@199.232.0.177:443?type=ws&security=tls&host=Tahagoogooli.ir&path=/veNbt06rF0tTFtp6/MTcyLjY0LjEzNC41OA%3D%3D?ed%3D2560&fp=randomized&sni=SpEedteST.NET&alpn=h2,http/1.1#
+vless://a6292090-afe1-4640-97a7-4f1d1d877cf1@mci.filna.cloud:443/?type=grpc&encryption=none&serviceName=PvSPM3IC5KffvrsN6rqb&security=tls&sni=hdfy8c1.foriran.me&alpn=h2&fp=chrome&packetEncoding=xudp#

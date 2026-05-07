@@ -1,7 +1,7 @@
-https://punkpaste.ir/f/TirexNet-Master-Dns-awud6y
-https://t.me/socks?server=127.0.0.1&port=1083&user=%40TirexNet&pass=%40TirexNet
-https://t.me/socks?server=127.0.0.1&port=1081&user=%40TirexNet&pass=%40TirexNet
-https://punkpaste.ir/f/FVPN-1-1-universal-zhz8nx
 https://punkpaste.ir/f/MasterDnsVPN-GG-1-0--qq3a4h
-https://t.me/socks?server=127.0.0.1&port=1080&user=%40TirexNet&pass=%40TirexNet
+https://punkpaste.ir/f/TirexNet-Master-Dns-awud6y
+https://t.me/socks?server=127.0.0.1&port=1081&user=%40TirexNet&pass=%40TirexNet
 https://t.me/socks?server=127.0.0.1&port=1082&user=%40TirexNet&pass=%40TirexNet
+https://punkpaste.ir/f/FVPN-1-1-universal-zhz8nx
+https://t.me/socks?server=127.0.0.1&port=1083&user=%40TirexNet&pass=%40TirexNet
+https://t.me/socks?server=127.0.0.1&port=1080&user=%40TirexNet&pass=%40TirexNet

@@ -1,3 +1,1 @@
-vless://4230993d-f261-40f1-9d4b-775cfd54d9a4@de4.connecton.surf:443?security=tls&type=ws&path=/vless#🇩🇪
-vless://e263415e-8181-4f89-8197-2da7c0f256d1@uk2.connecton.surf:443?security=tls&type=ws&path=/vless#🇬🇧
-vless://e263415e-8181-4f89-8197-2da7c0f256d1@uk2.connecton.surf:443?security=tls&type=ws&path=/vless#
+vless://4230993d-f261-40f1-9d4b-775cfd54d9a4@de4.connecton.surf:443?security=tls&type=ws&path=/vless#

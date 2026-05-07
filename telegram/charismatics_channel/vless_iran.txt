@@ -1,3 +1,1 @@
-vless://ee9b0614-50ec-41b6-951b-e1d5d755fa4b@45.130.125.198:2053?encryption=none&flow=&fp=chrome&host=kaja.thisiswe.uno&path=%2F&security=tls&sni=kaja.thisiswe.uno&type=ws#
-vless://8c577995-f6cc-4da5-a7a3-c5908f87ea90@fastly2.hamrahflow.ir:443?encryption=&flow=&host=Valsiin.com&path=%2F&security=tls&sni=default.ssl.fastly.net&type=ws#%E2%98%ACSH%CE%9EN%E2%84%A2%F0%9F%93%A1%E2%90%96
-vless://ee9b0614-50ec-41b6-951b-e1d5d755fa4b@45.130.125.198:2053?encryption=none&flow=&fp=chrome&host=kaja.thisiswe.uno&path=%2F&security=tls&sni=kaja.thisiswe.uno&type=ws#%E2%98%ACSH%CE%9EN%E2%84%A2%F0%9F%93%A1%E2%90%90
+vless://2b0e561e-d8ab-45f8-becb-09692e2d4bf0@5.160.144.77:443?encryption=none&flow=&type=#%E2%98%ACSH%CE%9EN%E2%84%A2%F0%9F%93%A1%E2%90%86%20

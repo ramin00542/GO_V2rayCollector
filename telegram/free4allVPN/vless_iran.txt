@@ -1,2 +1,1 @@
-vless://02d87d00-c769-48d8-91cb-bd05e2f62790@151.101.25.242:80?mode=auto&path=%2F&security=none&encryption=none&host=jetfr228.global.ssl.fastly.net&type=xhttp#
-vless://099dbf2d-a8e0-406e-a85f-eba0ac9a68aa@195.135.252.28:443?security=reality&encryption=none&pbk=hGGVm0PiHJwNL34pBG6NLtbFGYVdcWhDu5zHYDoct08&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=yahoo.com&sid=4360e536#Latvia%20Sia%20Veesp
+vless://e0306a33-9971-4b75-a5e0-a176a5a48a2e@15.168.173.144:443?security=reality&allowInsecure=0&encryption=none&type=tcp&sni=swdist.apple.com&sid=232c6f7b520b89&fp=ios&pbk=vP8gpoNVFYROBMtlCswj3S7q6ypRdE9VMGdg5KPKFG0&spx=/WrlEujUojrpP7Bk&headerType=none#Japan+AWS

@@ -1,6 +1,2 @@
-vless://e02208b6-2626-49ef-8b93-0d80ed33f4ac@104.31.16.98:80?type=ws&path=%2F&host=server-j377d.xbox.blackops1.heydasfrance.name.ng#
-vless://64afe0cf-d56b-4471-983a-5428d32958de@51.89.74.164:443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=canva.com&fp=firefox&security=reality&pbk=jaKtop_bUOLThfO3zLRv_s5EY66rGe7lxsB_ezD2kko&sid=a311b9f4#🇩🇪آلمان🇩🇪-🟡ایرانسل|رایتل🟣
-vless://5c28f4c8-0c4e-4a9f-9f95-beca3262872a@104.31.16.98:80?type=ws&path=%2F&host=lashashin.garayane.xbox.heydas.heydasgermany.name.ng#t🇩🇪@injectormconf_@mrclud
-vless://64afe0cf-d56b-4471-983a-5428d32958de@104.31.16.98:80?type=ws&path=%2F&host=server-j377d.xbox.blackops1.heydasfrance.name.ng#
-vless://e02208b6-2626-49ef-8b93-0d80ed33f4ac@104.31.16.98:80?type=ws&path=%2F&host=server-j377d.xbox.blackops1.heydasuk.name.ng#🇬🇧بریتانیا🇬🇧-🔵همراه
-vless://64afe0cf-d56b-4471-983a-5428d32958de@51.195.169.100:443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=yahoo.com&fp=firefox&security=reality&pbk=p0Q_UwGTMDM4Hk1v-2F43NO4AekmT1crXiPIJS_NzF8&sid=01417ce2#
+vless://e02208b6…
+vless://e02208b6-2626-49ef-8b93-0d80ed33f4ac@104.31.16.98:80?type=ws&path=%2F&host=server-j377d.xbox.blackops1.heydasuk.name.ng#

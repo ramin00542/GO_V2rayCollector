@@ -1,1 +1,1 @@
-vless://346d4e21-83c0-4456-b227-5aed15c2d70a@sub1.mosicmovi.space:2083?path=%2F&security=tls&encryption=none&alpn=h2,http/1.1&fp=chrome&type=ws&sni=sub1.mosicmovi.space#%40V2ray_vemo
+vless://62017664-d840-4eab-99c6-90208d75f2cb@ali.faroo.space:443?mode=gun&security=tls&encryption=none&alpn=h2,http/1.1&fp=chrome&type=grpc&serviceName=&sni=en.movianmusic.space#

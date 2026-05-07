@@ -1,1 +1,1 @@
-vless://441239f9-3017-4ab3-b123-23eeaa48133b@104.20.6.134:443?encryption=none&type=ws&host=cdn.hosseincapri.sbs&path=/ws&security=tls&sni=cdn.hosseincapri.sbs#@vmessorg
+vless://26524cce-d514-4014-a426-365fb266a14d@104.20.6.134:443?path=%2Fdanfeng&security=tls&encryption=none&insecure=1&host=snippet.danfeng.rr.kg&type=ws&allowInsecure=1&sni=snippet.danfeng.rr.kg#vmessorg

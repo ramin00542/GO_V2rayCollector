@@ -1,2 +1,2 @@
-vless://3295028b-9f47-dd81-a5db-f5c21bef2179@tr.tehranionliine.ir:80?path=/&security=none&encryption=none&type=ws#%40filembad
-vless://628f8495-f851-42dd-8aa6-0e7157cd31d6@arvancloud.ir:80?path=%2F&security=none&encryption=none&host=m.ahwazteem.ir&type=ws#%40filembad
+vless://764db33e-0aff-4ff6-ba0e-f666c4e0f6f7@185.143.233.200:80?type=ws&encryption=mlkem768x25519plus.native.0rtt.sdQ0jWsX6B8yh97yoZt4k_1nlR0zlApK3MV_hQD7KyA&path=%2F&host=nima.hayalco.ir&security=none#%40filembad
+vless://6202b230-417c-4d8e-b624-0f71afa9c75d@141.98.115.65:8443?security=tls&encryption=none&insecure=1&host=sni.111000.v6.rocks&type=ws&allowInsecure=1&sni=sni.111000.v6.rocks#%40filembad

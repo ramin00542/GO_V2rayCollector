@@ -1,9 +1,9 @@
-https://pai.yt/clash?preset=other
-https://kitty.su/#/register?code=nHSzmdHW
-https://sub.scpnb.top/base64
-https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/DeepSeek_V4.pdf
 https://pai.yt/singbox?preset=other
-https://api-docs.deepseek.com/zh-cn/guides/thinking_mode
-https://pai.yt/base64?preset=other
-https://huggingface.co/collections/deepseek-ai/deepseek-v4
 https://modelscope.cn/collections/deepseek-ai/DeepSeek-V4
+https://api-docs.deepseek.com/zh-cn/guides/thinking_mode
+https://huggingface.co/collections/deepseek-ai/deepseek-v4
+https://pai.yt/clash?preset=other
+https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/DeepSeek_V4.pdf
+https://kitty.su/#/register?code=nHSzmdHW
+https://pai.yt/base64?preset=other
+https://sub.scpnb.top/base64

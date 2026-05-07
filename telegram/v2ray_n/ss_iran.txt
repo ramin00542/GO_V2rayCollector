@@ -1,3 +1,1 @@
-vless://04ec11e1-e60e-4c81-e3cc-eb402d9b9b89@net.vipnetop.tk:11042?path=%2F&security=none&encryption=none&type=ws#%40V2ray_NG%F0%9F%87%AE%F0%9F%87%B7
-vless://b37dfbae-b74c-47b0-9c5e-0eaaab90afaf@fi1.vpnmaster.website:8443?path=%2F&security=tls&encryption=none&type=ws#%40vpnmaster_info%23fi1
-vless://134a208f-9ec0-4ecc-a374-8f598ea1adda@tr1.iranz.me:8443?path=%2F&security=tls&encryption=none&type=ws#%40vpnmaster_info%23tr1
+vless://04ec11e1-e60e-4c81-e3cc-eb402d9b9b89@net.vipnetop.tk:11042?path=%2F&security=none&encryption=none&type=ws#

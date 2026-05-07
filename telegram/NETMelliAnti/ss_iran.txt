@@ -1,4 +1,4 @@
-vless://ae29791e-b4e7-4a42-bab1-e937a24ab4a1@we.configfast.site:1142?security=none&encryption=none&host=bale.ai%2Cweb.splus.ir%2Cigap.net&headerType=http&type=tcp#
-vless://d37a75db-76b6-4db8-b213-0d5b044d138d@104.18.12.149:443?path=%2F&security=tls&encryption=none&insecure=1&host=hio-awx.pages.dev&type=ws&allowInsecure=1&sni=hio-awx.pages.dev#
-vless://7f8da1f9-2d1c-43d8-ae16-2222e0c5da6b@s2.mesterkit.com:52917?security=none&encryption=none&headerType=http&type=tcp#
-vless://7f8da1f9-2d1c-43d8-ae16-2222e0c5da6b@s2.mesterkit.com:52917?security=none&encryption=none&headerType=http&type=tcp#%40NETMelliAnti
+vless://b60e5c32-3d4e-425c-a785-a36cd0621a72@104.18.12.149:443?path=%2F&security=tls&encryption=none&insecure=0&host=S4-f45.pAGeS.DeV&type=ws&allowInsecure=0&sni=S4-f45.pAGeS.DeV#
+vless://ebe44c2c-96ed-4a36-8456-2e9ee60c859c@104.16.80.73:2083?path=%2Fwss14139%3Fed%3D2048&security=tls&alpn=http%2F1.1&encryption=none&insecure=0&host=mnv1.gozargahping.top&fp=chrome&type=ws&allowInsecure=0&sni=mnv1.gozargahping.top#%40NETMelliAnti
+vless://a01daac7-1e65-4645-854d-b47d226f6b08@auth.vercel.com:443?path=%2F&security=tls&encryption=none&insecure=0&host=y6-3cj.pages.dev&type=ws&allowInsecure=0&sni=y6-3cj.pages.dev#
+vless://360d65ec-3dc9-49ef-9839-51a794f492a8@104.18.16.56:443?mode=auto&path=%2Fcloudapi&security=tls&alpn=h2&encryption=none&insecure=0&host=game.zamanpnl.help&fp=chrome&type=xhttp&allowInsecure=0&sni=game.zamanpnl.help#

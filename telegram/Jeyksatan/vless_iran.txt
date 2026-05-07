@@ -1,4 +1,1 @@
-vless://2eaef053-5fd6-4def-b234-d760690355ff@91.99.203.70:51615?security=none&encryption=none&host=zula.ir&headerType=http&type=tcp#
-vless://53fa8faf-ba4b-4322-9c69-a3e5b1555049@104.17.147.22:80?path=%2FTelegram%40V2ray_Alpha%2F%3Fed%3D2560&security=none&encryption=none&host=redfree8mahsang6.redfree8.ir&type=ws#%40Jeyksatan
-vless://761c5103-01a1-45fe-91b4-f351e253f355@230920393.f-sub.com:3799?security=none&encryption=none&host=speedtest.net&headerType=http&type=tcp#
-vless://53fa8faf-ba4b-4322-9c69-a3e5b1555049@104.17.147.22:80?path=%2FTelegram%40V2ray_Alpha%2F%3Fed%3D2560&security=none&encryption=none&host=redfree8mahsang6.redfree8.ir&type=ws#
+vless://1f5056ca-fb4c-4b51-a31e-891083588351@104.21.72.109:80?path=%2F8WrRNGUr2d25Kcpp%2FNTQuMjAwLjI0NC45Mw%3D%3D%3Fed%3D2560&security=none&encryption=none&host=pamchall.com.&type=ws#

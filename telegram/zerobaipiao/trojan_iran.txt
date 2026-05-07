@@ -1,10 +1,12 @@
-trojan://[email protected]:443?allowInsecure=1&sni=%20%20%20%20%20%20%20%5BBy%2BDukeMehdi%5D%2Bb2n.io%2Fv2ray-configs%20%7C%20789%20#
-trojan://[email protected]:443?sni=t.me%25252Fripaojiedian#
-trojan://[email protected]:35502?allowInsecure=1&sni=green2.cdntencentmusic.com#
-trojan://[email protected]:18509?sni=shoppingmall.electricbanana.click#
-trojan://[email protected]:443?allowInsecure=1&sni=t.me%25252Fripaojiedian#
-trojan://[email protected]:443?allowInsecure=1&sni=t.me%2Fripaojiedian#
+vmess://eyJ2IjogIjIiLCAicHMiOiAiXHU4MmYxXHU1NmZkIFYyQ1JPU1MuQ09NIiwgImFkZCI6ICI4Mi4xOTguMjQ2Ljk3IiwgInBvcnQiOiAiMTgwIiwgInR5cGUiOiAibm9uZSIsICJpZCI6ICJkMTNmYzJmNS0zZTA1LTQ3OTUtODFlYi00NDE0M2EwOWU1NTIiLCAiYWlkIjogIjAiLCAibmV0IjogInRjcCIsICJwYXRoIjogIndlYiIsICJob3N0IjogInRlc3QuYXBpLWF3cy5jb20iLCAidGxzIjogIiJ9 trojan://[email protected]:21101?allowInsecure=1&sni=cdnfire.xiaomispeed.com#
+vmess://eyJhZGQiOiAiMjMuMTM4LjE0OC40NyIsICJ2IjogIjIiLCAicHMiOiAiXHU1MzE3XHU3ZjhlXHU1NzMwXHU1MzNhIFYyQ1JPU1MuQ09NIiwgInBvcnQiOiA0MjUwNywgImlkIjogIjRkYjA3YjEzLTY1MjQtNDlkMi1iNDMyLTFmMzEyYzBlOWM3YyIsICJhaWQiOiAiMCIsICJuZXQiOiAibm9uZSIsICJ0eXBlIjogIiIsICJob3N0IjogIiIsICJwYXRoIjogIi8iLCAidGxzIjogIiJ9 vmess://eyJhZGQiOiAiMjE2LjE2Ny4yNi4yMjAiLCAidiI6ICIyIiwgInBzIjogIlx1N2Y4ZVx1NTZmZCBcdTc5ZDFcdTdmNTdcdTYyYzlcdTU5MWFcdTVkZGVOVFQoXHU3ZjhlXHU1NmZkKVx1OTAxYVx1NGZlMVx1NTE2Y1x1NTNmOCIsICJwb3J0IjogMzQxMjgsICJpZCI6ICI0MTQ1ZWMyYS1iYzYxLTRkNzItYmZkNS1mOWZmYmRmNjZjMjgiLCAiYWlkIjogIjAiLCAibmV0IjogIm5vbmUiLCAidHlwZSI6ICIiLCAiaG9zdCI6ICIiLCAicGF0aCI6ICIiLCAidGxzIjogIiJ9 trojan://[email protected]:35502?allowInsecure=1&sni=green2.cdntencentmusic.com#
 trojan://[email protected]:31101?allowInsecure=1&sni=green2.cdntencentmusic.com#
-trojan://[email protected]:31103?allowInsecure=1&sni=green2.cdntencentmusic.com#
-trojan://[email protected]:12990#
 trojan://[email protected]:21101?allowInsecure=1&sni=cdnfire.xiaomispeed.com#
+trojan://[email protected]:443?sni=t.me%25252Fripaojiedian#
+trojan://[email protected]:443?allowInsecure=1&sni=%20%20%20%20%20%20%20%5BBy%2BDukeMehdi%5D%2Bb2n.io%2Fv2ray-configs%20%7C%20789%20#
+trojan://[email protected]:12990#
+trojan://[email protected]:443?allowInsecure=1&sni=t.me%25252Fripaojiedian#
+trojan://[email protected]:18509?sni=shoppingmall.electricbanana.click#
+trojan://[email protected]:31103?allowInsecure=1&sni=green2.cdntencentmusic.com#
+trojan://[email protected]:35502?allowInsecure=1&sni=green2.cdntencentmusic.com#
+trojan://[email protected]:443?allowInsecure=1&sni=t.me%2Fripaojiedian#

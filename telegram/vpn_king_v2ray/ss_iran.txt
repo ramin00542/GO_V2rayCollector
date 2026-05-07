@@ -1,1 +1,1 @@
-vless://6202b230-417c-4d8e-b624-0f71afa9c75d@104.20.6.134:8443?path=%2F%3FTelegram%20%40v2rayngzendegimamad&security=tls&encryption=none&host=sni.111000.dynv6.net&type=ws&sni=sni.111000.dynv6.net#Tel%3A%40VPN_KING_V2RAY
+vless://6202b230-417c-4d8e-b624-0f71afa9c75d@104.20.6.134:8443?path=%2F%3FTelegram%20%40v2rayngzendegimamad&security=tls&encryption=none&host=sni.111000.dynv6.net&type=ws&sni=sni.111000.dynv6.net#

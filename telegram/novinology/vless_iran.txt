@@ -1,3 +1,1 @@
-vless://43d327c1-ab4a-42e6-918a-00b168b3616c@141.95.106.230:38818?security=none&encryption=none&host=ghbi.ir&headerType=http&type=tcp#Tel%3A%20%40Novinology
-vless://884f9b2c-f0c5-44dd-a68e-3e39ce93bb39@172.66.47.84:443?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=cf-wkrs-pages-vless-aoy.pages.dev&type=ws&sni=cf-wkrs-pages-vless-aoy.pages.dev#
 vless://0333b495-1f8b-4d75-be2e-11c023bf78e5@upload.ir:80?path=%2F%3Fed%3D2048&security=none&encryption=none&host=nl21.vlessx.us&type=ws#Tel%3A%20%40Novinology

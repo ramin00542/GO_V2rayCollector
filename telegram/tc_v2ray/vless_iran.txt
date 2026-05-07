@@ -1,4 +1,1 @@
-vless://308d0488-0230-4f92-9e9f-978a3583434a@gr1hztl.private-server.host:2487?encryption=none&headerType=http&type=tcp&path=%2Fprivate&host=prnewswire.com#%2525F0%25259F%252587%2525A9%2525F0%25259F%252587%2525AA%252520Germany%2525201%252520HamrahAval
-vless://308d0488-0230-4f92-9e9f-978a3583434a@bulgtn.private-server.host:2096?encryption=none&headerType=none&type=ws&path=%2F&host=bulgtn.private-server.host#
-vless://1385ed54-d251-48fb-801f-ee52663bcab2@gr2.shahinpanel.site:26717/?type=tcp&security=reality&fp=firefox&pbk=bzqIqnE_o81ih-XahmftHAPn-X1Vh1LqbOzlY2SvPzg&sni=blog.api.www.cloudflare.com&sid=1364c780&spx=%2F#%20-%20Cloned-%40TC_V2ray
-vless://308d0488-0230-4f92-9e9f-978a3583434a@gr1hztl.private-server.host:2487?encryption=none&headerType=http&type=tcp&path=%2Fprivate&host=prnewswire.com#
+vless://1385ed54-d251-48fb-801f-ee52663bcab2@gr2.shahinpanel.site:26717/?type=tcp&security=reality&fp=firefox&pbk=bzqIqnE_o81ih-XahmftHAPn-X1Vh1LqbOzlY2SvPzg&sni=blog.api.www.c…

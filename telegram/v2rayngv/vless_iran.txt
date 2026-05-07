@@ -1,1 +1,1 @@
-vless://c1ea5250-43d6-4f91-8d0f-64ed231cc559@pishgam.sdcards.ir:8080?path=%2F%3Fed%3D2087&security=none&encryption=none&host=pivaz-a.plas-nim.org&type=httpupgrade#
+vless://f558f4db-96e5-4e79-8b57-34e39ba4899b@www.bandmusic.ir:8880?path=%2F%3Fed%3D2560&security=none&encryption=none&host=join.2.kiava.cloud.speedtest.net.xn--mgba2h8quf.cdn.ws79.cloudfront.net.kiava.fun&type=ws#%40V2rayNGV

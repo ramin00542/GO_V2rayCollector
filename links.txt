@@ -111,6 +111,7 @@
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/ConfigWireguard/http_iran.txt)
 ### ConfigX2ray
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/ConfigX2ray/http_iran.txt)
+  - [socks_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/ConfigX2ray/socks_iran.txt)
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/ConfigX2ray/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/ConfigX2ray/vless_iran.txt)
   - [vmess_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/ConfigX2ray/vmess_iran.txt)
@@ -134,6 +135,7 @@
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/Eag1e_YT/http_iran.txt)
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/Eag1e_YT/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/Eag1e_YT/vless_iran.txt)
+  - [vmess_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/Eag1e_YT/vmess_iran.txt)
 ### Easy_Free_VPN
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/Easy_Free_VPN/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/Easy_Free_VPN/vless_iran.txt)
@@ -530,6 +532,7 @@
 ### crayingroom
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/crayingroom/http_iran.txt)
   - [mtproto_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/crayingroom/mtproto_iran.txt)
+  - [socks_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/crayingroom/socks_iran.txt)
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/crayingroom/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/crayingroom/vless_iran.txt)
   - [vmess_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/crayingroom/vmess_iran.txt)
@@ -572,6 +575,7 @@
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/dayno_vpn/http_iran.txt)
 ### decentral_notification
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/decentral_notification/ss_iran.txt)
+  - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/decentral_notification/vless_iran.txt)
 ### defenyx_vpn
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/defenyx_vpn/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/defenyx_vpn/vless_iran.txt)
@@ -653,6 +657,7 @@
 ### entrynet
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/entrynet/http_iran.txt)
 ### ernoxin_shop
+  - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/ernoxin_shop/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/ernoxin_shop/vless_iran.txt)
 ### ertebatazad
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/ertebatazad/http_iran.txt)
@@ -958,6 +963,7 @@
 ### icv2ray
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/icv2ray/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/icv2ray/vless_iran.txt)
+  - [vmess_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/icv2ray/vmess_iran.txt)
 ### idigitalz
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/idigitalz/http_iran.txt)
 ### injectormconf
@@ -1113,6 +1119,7 @@
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/lakvpn1/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/lakvpn1/vless_iran.txt)
 ### lax_vpn
+  - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/lax_vpn/ss_iran.txt)
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/lax_vpn/vless_iran.txt)
 ### leimaorg
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/leimaorg/http_iran.txt)
@@ -2535,6 +2542,7 @@
   - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/v_2rayngvpn/vless_iran.txt)
 ### vaiking_vpn
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vaiking_vpn/ss_iran.txt)
+  - [vless_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vaiking_vpn/vless_iran.txt)
 ### vboxpanel
   - [http_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vboxpanel/http_iran.txt)
   - [ss_iran.txt](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/telegram/vboxpanel/ss_iran.txt)

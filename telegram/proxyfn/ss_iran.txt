@@ -1,5 +1,1 @@
-vless://cdaf9409-936e-4056-94d5-e68e9bf0d306@37.252.4.81:24773?security=reality&encryption=none&pbk=xAACwVeGPMm3pUceuZR5r7KIx1tSHzoFrXS08DhfKAw&headerType=none&fp=firefox&type=tcp&sni=www.speedtest.net&sid=d325de61#
 vless://mahsa-amini2@185.230.163.62:80?mode=gun&security=reality&encryption=none&pbk=Q_KxtcfORnJxFfa70ylJb0BDMwLyecYkQaVktvnatlM&fp=chrome&spx=%2F&type=grpc&serviceName=&sni=account.zula.ir#
-vless://3fd3a47a-ae18-41c2-a426-d3ca21287aec@212.64.193.3:666?mode=gun&security=reality&encryption=none&pbk=ecfRlCGezg7UQ-iyJAdmtzhswMYOrXYO1ROLVdvhhl0&fp=firefox&type=grpc&serviceName=&sni=www.discord.com#
-vless://87a61f18-6e2f-4712-9f88-b0fc4cc6af56@78.47.139.4:443?security=reality&encryption=none&alpn=h2&pbk=qsvf6dt1JiAxPajbOEnSvfIajg6MUWES7EcWhcigel0&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=medium.com&sid=4b29245c#
-vless://mahsa-amini2@185.230.163.62:80?mode=gun&security=reality&encryption=none&pbk=Q_KxtcfORnJxFfa70ylJb0BDMwLyecYkQaVktvnatlM&fp=chrome&spx=%2F&type=grpc&serviceName=&sni=account.zula.ir#%40ProxyFn+%2F+%40nimPRO

@@ -1,3 +1,1 @@
-vless://dac5b2de-7df9-4d38-ba41-f98ceb19bd75@172.67.207.209:443?encryption=none&security=tls&type=ws&host=SAndWORm.pagES.dEV&sni=SANdWoRM.pAgEs.dEV&fp=randomized&alpn=h2,http/1.1&path=/p3Ad1ICVNWGhbzlV#
-vless://dac5b2de-7df9-4d38-ba41-f98ceb19bd75@www.speedtest.net:443?encryption=none&security=tls&type=ws&host=SAndwORM.pAGes.dEv&sni=sANdWoRm.paGes.DEV&fp=randomized&alpn=h2,http/1.1&path=/RHc1hGAzRJ7JzrTR#
-vless://dac5b2de-7df9-4d38-ba41-f98ceb19bd75@c.arakis.site:443?encryption=none&security=tls&type=ws&host=sANdWOrm.paGEs.dev&sni=sAnDwORm.pAGeS.dEV&fp=randomized&alpn=h2,http/1.1&path=/MkDRgI4CUJpkpgyo#
+vless://dac5b2de-7df9-4d38-ba41-f98ceb19bd75@telewebion.com:443?encryption=none&security=tls&type=ws&host=SaNdWorM.paGes.DEv&sni=SANdWORM.PAGES.DeV&fp=randomized&alpn=h2,http/1.1&path=/NUx3f5M3thQHsamp#

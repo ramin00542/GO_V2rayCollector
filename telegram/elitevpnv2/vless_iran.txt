@@ -1,1 +1,1 @@
-vless://Parsashonam-262@151.101.3.8:80?mode=auto&path=%2F-----Parsashonam-----Parsashonam-----Parsashonam-----Parsashonam-----Parsashonam-----Parsashonam-----Parsashonam-----Parsashonam-----Parsashonam-----Parsashonam-----Parsashonam-----Parsashonam-----Parsashonam-----Parsashonam-----Parsashonam-----Parsashonam-----Parsashonam-----Parsashonam&security=none&encryption=none&host=ParsashonamTelegramChannel0.ir&type=xhttp#
+vless://cb0266c4-a81b-4c76-b9fd-5f3c300e42bd@151.101.3.8:80?path=%2F&security=none&encryption=none&host=befreewithus.net&type=ws#elitevpnv2

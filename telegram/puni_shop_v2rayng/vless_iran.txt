@@ -1,5 +1,2 @@
-vless://7c9e3c1d-a360-4429-9189-e45a98de7fde@add.ski1plag.ir:80?path=%2Fupload&security=&encryption=none&host=my.ski1plag.ir&type=ws#
+vless://7c9e3c1d-a360-4429-9189-e45a98de7fde@add.ski1plag.ir:80?path=%2Ftelegram%3A%20%40Eternal_Connect%20-%20telegram%3A%20%40Eternal_Connect%20-%20telegram%3A%20%40Eternal_Connect%20-%20telegram%3A%20%40Etern…
 vless://53fa8faf-ba4b-4322-9c69-a3e5b1555049@…
-vless://15fc2169-d6f4-4d2c-9933-a2c7305c4c84@club.cocomelon.org:443?mode=auto&security=reality&encryption=none&pbk=xnsyJz7SeZKAEmgHz69xLdOrBLjR4ZhOJBWXeZT6JUI&fp=random&type=xhttp&sni=blog.rubygems.org&sid=d6fbe7cfb35245a9#
-vless://7b6eca4c-44ae-40c6-973a-4e3b29d30803@91.99.122.102:443?security=none&encryption=none&host=zula.ir&headerType=http&type=tcp#@puni_shop_v2rayNG
-vless://bd4ceb0e-8c0d-406e-a741-4e5bba96a3a1@188.227.84.154:8443?security=&encryption=none&host=zula.ir&headerType=http&type=tcp#

@@ -1,1 +1,3 @@
+vless://channel-rezaw_server@v.Reza-punisher-shopv2n.fun:20906?mode=gun&security=reality&encryption=none&pbk=tCzRx3x5LfPe6xlYL9wYuJBNl4ERMkwiK01v4PhJEHY&fp=chrome&spx=%2F&type=grpc&serviceName=@rezaw_server
+vless://channel-rezaw_server@v.Reza-punisher-shopv2n.fun:20906?mode=gun&security=reality&encryption=none&pbk=tCzRx3x5LfPe6xlYL9wYuJBNl4ERMkwiK01v4PhJEHY&fp=chrome&spx=%2F&type=grpc&serviceName=@rezaw_server , @rezaw_server , @rezaw_server&sni=www.speedtest.net&sid=d91c694c#
 vless://channel-rezaw_server@v.Reza-punisher-shopv2n.fun:20906?mode=gun&security=reality&encryption=none&pbk=tCzRx3x5LfPe6xlYL9wYuJBNl4ERMkwiK01v4PhJEHY&fp=chrome&spx=%2F&type=grpc&serviceName=@rezaw_server…

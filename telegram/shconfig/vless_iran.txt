@@ -1,3 +1,1 @@
-vless://a8a09765-7681-47ba-9ea0-e0ae79d51088@172.66.45.32:443?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=t-netplus-4vx.pages.dev&fp=random&type=ws&sni=t-netplus-4vx.pages.dev#%40SHconfig
-vless://d9eb0df3-3190-4447-86b6-656fe5ff1119@104.17.178.201:443?path=%2F&security=tls&encryption=none&host=mmdv2.pages.dev&type=ws&sni=mmdv2.pages.dev#
-vless://17a7bf97-fef5-4101-a5c5-7c730fabeeee@www.speedtest.net:443?path=Tel-%40Telegram-------V2rayi_net%2F%3Fed%3D2560&security=tls&encryption=none&host=bpb-worker-panel-h5f.pages.dev&fp=firefox&type=ws&sni=bpb-worker-panel-h5f.pages.dev#%40SHconfig
+vless://d9eb0df3-3190-4447-86b6-656fe5ff1119@172.64.111.69:443?path=%2F%3Fed%3D2048&security=tls&encryption=none&host=mmdv2.pages.dev&fp=randomized&type=ws&sni=mmdv2.pages.dev#%40SHconfig

@@ -1,3 +1,1 @@
-vless://4831ab5a-f3a7-4064-bd9a-643cc89c2e72@net.asokord.fun:35824?security=none&encryption=none&headerType=none&type=tcp#
-vless://dae2ddc6-a892-495f-a001-181cec56ad12@snapp.ir:2052?path=%2F&security=none&encryption=none&host=p1.razstar.ir&type=ws#%DB%8C%D8%A7%D9%85%E2%80%8C%DB%8C%D8%A7%D9%85
-vless://dae2ddc6-a892-495f-a001-181cec56ad12@snapp.ir:2052?path=%2F&security=none&encryption=none&host=p1.razstar.ir&type=ws#%40YamYamProxy
+vless://dae2ddc6-a892-495f-a001-181cec56ad12@snapp.ir:2052?encryption=none&type=ws&path=%2F&host=p1.razstar.ir#@YamYamProxy

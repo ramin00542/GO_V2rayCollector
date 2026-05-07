@@ -1,1 +1,1 @@
-vless://6e9b86ec-3bb8-4faf-9509-b445e8ede4fe@87.236.208.21:33824?type=tcp&security=none#
+vless://6e9b86ec-3bb8-4faf-9509-b445e8ede4fe@87.236.208.21:33824?type=tcp&security=none#@TC_V2ray

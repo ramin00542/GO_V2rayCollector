@@ -1,2 +1,1 @@
-vless://d2deedf3-788b-42b5-86af-5a02f407bda2@red.nahidapp.com:443?path=%2Fred%2F&security=tls&encryption=none&host=red.nahidapp.com&type=ws&sni=red.nahidapp.com#%40filtershekan_channel
-vless://7ef79266-c7e3-4dd5-937b-45ac56adcc16@snapp.ir:443?path=%2Fws&security=tls&encryption=none&host=vip2.tu5pars.ir&fp=chrome&type=ws&sni=vip2.tu5pars.ir#
+vless://a3d096e0-1ed1-318c-16d2-0667e91ce11f@hmt.masterdadeh.ir:80?path=%2F&security=none&encryption=none&type=ws&sni=185.226.94.242#%40filtershekan_channel

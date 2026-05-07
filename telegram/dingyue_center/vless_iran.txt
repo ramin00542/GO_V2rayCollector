@@ -1,2 +1,1 @@
-vless://14b02e2a-8930-4afb-8412-ea4a4954ca5b@cf.tencentapp.cn:443?encryption=none&security=tls&sni=zgtwylnhh.cc.cd&fp=randomized&allowInsecure=1&type=ws&host=zgtwylnhh.cc.cd&path=%2Fproxyip%3D122.10.114.184%3A8443#
-vless://c41313a3-68f9-4569-982e-4a2306665f71@pq.vmjp2.yydjc.top:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=cdn-dynmedia-1.microsoft.com&fp=chrome&pbk=asLJREsp9L0JbURQPIhFxc6bZIgpunEOjOJeHv3YcEs&sid=b0fbe0f0&type=tcp&headerType=none#aws%20jp
+vless://14b02e2a-8930-4afb-8412-ea4a4954ca5b@cf.tencentapp.cn:443?encryption=none&security=tls&sni=zgtwylnhh.cc.cd&fp=randomized&allowInsecure=1&type=ws&host=zgtwylnhh.cc.cd&path=%2Fproxyip%3D122.10.114.184%3A8443#%E5%A4%A9%E4%B9%A613

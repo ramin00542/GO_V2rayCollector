@@ -1,4 +1,4 @@
-https://t.me/socks?server=62.220.126.56&port=32438&user=Telegram:@NetAccount
-https://t.me/socks?server=62.220.126.56&port=32306&user=Telegram:@NetAccount
-https://t.me/socks?server=62.220.126.56&port=32139&user=Telegram:@NetAccount
 https://t.me/socks?server=62.220.126.56&port=32184&user=Telegram:@NetAccount
+https://t.me/socks?server=62.220.126.56&port=32306&user=Telegram:@NetAccount
+https://t.me/socks?server=62.220.126.56&port=32438&user=Telegram:@NetAccount
+https://t.me/socks?server=62.220.126.56&port=32139&user=Telegram:@NetAccount

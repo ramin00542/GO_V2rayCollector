@@ -1,3 +1,1 @@
-vless://6202b230-417c-4d8e-b624-0f71afa9c75d@104.20.6.134:2096?encryption=none&security=tls&sni=sni.111000.indevs.in&insecure=0&allowInsecure=0&type=ws&host=sni.111000.indevs.in&path=%2F#https%3A%2F%2Ft.me%2Fv2ray_youtube
 vless://1f6366d7-980a-4b84-8a5c-f58bda2c053c@194.5.188.12:443?encryption=none&security=none&type=tcp&headerType=none#https%3A%2F%2Ft.me%2Fv2ray_youtube
-vless://99d8648b-fa04-4c67-a8d0-bfb0bf5616ac@min.oraclego.ir:443?encryption=none&security=tls&sni=min.oraclego.ir&fp=chrome&alpn=h2%2Chttp%2F1.1&insecure=0&allowInsecure=0&type=ws&host=min.oraclego.ir&path=%2Fpuladlerweb#

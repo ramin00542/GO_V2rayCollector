@@ -1,6 +1,6 @@
 https://t.me/socks?server=62.220.126.92&port=31876&user=Telegram@vmesskhodam
-https://t.me/proxy?server=178.104.81.34&port=4455&secret=dd104462821249bd7ac519130220c25d09
 https://t.me/socks?server=37.32.7.64&port=47763&user=%40&pass=%40
-https://t.me/proxy?server=204.168.153.162&port=8080&secret=dd104462821249bd7ac519130220c25d09
 https://t.me/proxy?server=i-love-boobs.top&port=853&secret=ee54ce330e4690cc297d2b031ff3f288b06d742e616b656e61692e636c69636b
+https://t.me/proxy?server=178.104.81.34&port=4455&secret=dd104462821249bd7ac519130220c25d09
 https://t.me/socks?server=62.220.126.92&port=32193
+https://t.me/proxy?server=204.168.153.162&port=8080&secret=dd104462821249bd7ac519130220c25d09

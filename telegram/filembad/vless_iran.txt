@@ -1,4 +1,1 @@
-vless://628f8495-f851-42dd-8aa6-0e7157cd31d6@arvancloud.ir:80?path=%2F&security=none&encryption=none&host=m.ahwazteem.ir&type=ws#
-vless://f5549415-75d3-48dc-a7cb-6208c5f33811@185.143.235.253:80?encryption=none&host=ss.oppobot.ir&path=%2F&security=none&type=ws#
-vless://826beb96-4c53-486d-9ddd-c1d09970eb17@yasinpanel.pointspeed.ir:80?path=%2Farvancloud.ir&security=none&encryption=none&host=ybvpnadmin.pointspeed.ir&type=ws#%40filembad
-vless://08b4ede0-5db7-48f2-a363-b3b5fc623d18@snapp.ir:80?path=%2F&security=none&encryption=none&host=simorgh.darerio.ir&type=ws#%40filembad
+vless://810e5833-e1b4-546b-8332-2368440e63f5@snapp.ir:8880?path=%2Fvless&security=none&encryption=none&host=asal.kalak.ca&type=ws#%40filembad

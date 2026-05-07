@@ -1,4 +1,4 @@
+https://t.me/proxy?server=172.104.240.22&port=443&secret=ee38e5bbf02b0e1f52faa0b4a46b44f439736d74702e676f6f676c652e636f6d
+https://t.me/notcoin_bot?start=r_4_4725767
 https://t.me/proxy?server=139.177.182.102&port=443&secret=eec505799155c38b96b9874561ce5b4559736d74702e676f6f676c652e636f6d
 https://T.me/proxy?server=46.101.2.218&port=443&secret=ee8bede6f2d0eae655c0664ad2d6880940733130312e646976617263646e2e636f6d
-https://t.me/notcoin_bot?start=r_4_4725767
-https://t.me/proxy?server=172.104.240.22&port=443&secret=ee38e5bbf02b0e1f52faa0b4a46b44f439736d74702e676f6f676c652e636f6d

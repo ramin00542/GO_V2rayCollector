@@ -1,2 +1,2 @@
-vless://ce46a621-a0ff-4816-f38a-c023e22f34bc@91.107.133.124:443?security=reality&encryption=none&pbk=DfuW50QGMg_7_GAcfV2W2pRrf_0zCn4d8SDWimQqkDE&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=discord.com&sid=d4dd377e#v2freenet+49
-vless://ce46a621-a0ff-4816-f38a-c023e22f34bc@91.107.133.124:443?security=reality&encryption=none&pbk=DfuW50QGMg_7_GAcfV2W2pRrf_0zCn4d8SDWimQqkDE&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=discord.com&sid=d4dd377e#
+vless://9ba65fb5-7a0a-494b-9d0a-841926bf33e5@niaa.ddns.net:2087?mode=gun&security=tls&encryption=none&type=grpc&serviceName=ponisha.ir&sni=aliturkelon5.louxshop.store#%40v2freenet+43+mci
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBdWlyZlQ2U2UvVDVZRmhxQ05pZFNPZkpjN2c1eTVEQyttRGlJc05BWXpJPQ==@3.121.98.210:8080#

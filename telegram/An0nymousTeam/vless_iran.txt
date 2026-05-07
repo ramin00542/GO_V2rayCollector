@@ -1,5 +1,1 @@
-vless://cf00eb1a-a0b3-4e48-b917-0578f2f9566f@85.133.161.168:8080?path=%2Fv1%2Fstream%2Ftrk&security=none&encryption=none&host=anten.ir&type=ws#%40meliproxyy
-vless://7c3f08c8-7b3b-4028-91d8-378a18c2b62a@93.115.25.177:443?security=reality&encryption=none&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=mycatcollection.com&sid=6ba85179e30d4fc2#%40meliproxyy
-vless://7c3f08c8-7b3b-4028-91d8-378a18c2b62a@93.115.25.177:443?security=reality&encryption=none&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=mycatcollection.com&sid=6ba85179e30d4fc2#
-vless://jina@135.220.73.1:443?security=tls&encryption=none&alpn=h2,http/1.1&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=jina-135220731-direct.yektanet.co#
-vless://jina@135.220.73.1:443?security=tls&encryption=none&alpn=h2,http/1.1&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=jina-135220731-direct.yektanet.co#%40meliproxyy
+vless://27b6068a-e1e6-4675-ab14-87143c690390@144.217.133.97:30238/?type=tcp&encryption=none#

@@ -1,9 +1,1 @@
-vless://2cac35d7-ba99-4e26-a890-c138e17a8cf5@DE.nanvaiiisaeed.ir:443?mode=gun&security=reality&encryption=none&pbk=daWw9qkHpEQpAkzkfMB00XAax4ljuXShVm0GfHQwVG8&fp=chrome&type=grpc&sni=DE.nanvaiiisaeed.ir&sid=190d32b118caf07f#
-vless://d4906f5b-8e3a-4c06-8bcd-dfd6870573dd@188.245.208.177:26745?security=none&encryption=none&host=speedtest.net&headerType=http&type=tcp#
-vless://afdbecef-a23d-4900-9a1b-da854dad1a97@151.101.3.8:80?path=%3F%3D9090&security=none&encryption=none&host=External_Net.org&type=ws#
-vless://2f1cc1d7-dfbe-46b1-8bec-ed1cd4fd57ea@93.126.50.231:51234?security=none&encryption=none&host=telewebion.com&headerType=http&type=tcp#@V2rayi_net
-vless://2f1cc1d7-dfbe-46b1-8bec-ed1cd4fd57ea@93.126.50.231:51234?security=none&encryption=none&host=telewebion.com&headerType=http&type=tcp#
-vless://1c8ea5a2-e986-42d6-9039-867aed7ca528@178.128.236.252:443?security=reality&encryption=none&pbk=MM2ZuhIbjaM6h7NOhWQZM8R8hkSE7Qc0uaEwzZ9YuQ0&headerType=none&fp=firefox&type=tcp&sni=isna.ir&sid=15bf9cd93a696bc5#
-vless://19b3d5d3-b1e4-4eb3-aa10-ee63e0ca4a9b@mx1ccfa.matrix-shop8.ir:1022?security=reality&encryption=none&pbk=O4PXR1eZRuubpri7ajbJBfhv3L7ZiJZbgZ80BGzN1X0&headerType=none&fp=chrome&type=tcp&sni=refersion.com#
-vless://59860b15-b2d9-47f9-9b92-81bd1639fcc5@visa.cn:443?path=%2F%3Fed%3D2560&security=tls&encryption=none&host=5-55sfjslf.ifenxiang.cfd&fp=random&type=ws&sni=5-55sfjslf.ifenxiang.cfd#@V2rayi_net
-vless://afdbecef-a23d-4900-9a1b-da854dad1a97@151.101.3.8:80?path=%3F%3D9090&security=none&encryption=none&host=External_Net.org&type=ws#@V2rayi_net
+vless://4ea312d7-3844-4ff8-8062-ed2e03ddc2a1@151.101.66.133:80?path=%2Fws&security=none&encryption=none&host=scp-only.ws.com&type=ws#@V2rayi_net

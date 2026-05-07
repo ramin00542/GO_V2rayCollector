@@ -1,5 +1,1 @@
-vless://401374e6-df77-41fb-f638-dad8184f175b@92.53.188.36:443?mode=gun&security=tls&alpn=h3%2Ch2%2Chttp%2F1.1&encryption=none&type=grpc&sni=pqh23v4.hiddendom.shop#
-vless://53fa8faf-ba4b-4322-9c69-a3e5b1555049@104.21.56.44:443?type=ws&host=301.pooriam.ir&path=/Ewn8AiCso7BnkGtV?ed%3D2550&security=tls&fp=randomized&sni=301.POoRIam.ir&alpn=h2,http/1.1#
-vless://89182351-0416-45b9-b596-88fb476ea1ac@74.248.139.169:443?flow=xtls-rprx-vision&type=tcp&headerType=none&security=tls&fp=randomized&sni=seven.dilik.co&alpn=h2,http/1.1#
-vless://9d0a75d2-f747-4afa-b43f-d208af9e8f9a@us01.ssr.ee:55560?flow=xtls-rprx-vision&type=tcp&headerType=none&security=reality&fp=chrome&sni=itunes.apple.com&pbk=b5MToLVScOCFJ29Ln9kNTKEhbc6Eiqvlv4WFSUU7ZhQ&sid=6ba85179e30d4fc2#
-vless://9d0a75d2-f747-4afa-b43f-d208af9e8f9a@us02.ssr.ee:443?flow=xtls-rprx-vision&type=tcp&headerType=none&security=reality&fp=chrome&sni=itunes.apple.com&pbk=AeJ40fWPYK3WSDtY_AGv3ewG_kwQvAoDtf3KIgk1DRU&sid=6ba85179e30d4fc2#
+vless://e4824193-4f54-453b-d037-88368e85ef0e@45.82.251.78:8880?mode=gun&security=none&encryption=none&authority=sinvt-sinvt&type=grpc#

@@ -1,2 +1,1 @@
-vless://868f9a0f-aa09-4898-a213-e8f7ccf80091@stare.unknowns.ir:8080?path=%2F&security=none&encryption=none&type=ws#%40vpnserverrr%20%F0%9F%90%8D
-vless://dc4dccda-55c9-480a-9bc1-8edd8e2ccf69@185.213.165.81:48660?security=none&encryption=none&headerType=none&type=tcp#
+vless://dc4dccda-55c9-480a-9bc1-8edd8e2ccf69@185.213.165.81:48660?security=none&encryption=none&headerType=none&type=tcp#%40vpnserverrr

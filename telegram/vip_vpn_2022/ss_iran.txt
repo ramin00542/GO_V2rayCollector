@@ -1,1 +1,1 @@
-vless://db487de4-7e8f-4b3b-b5e8-1e7337ea7954@172.64.152.23:443?type=ws&encryption=none&path=%2F%40asrnovin_ir&host=asrnovin.8par.site&security=tls&fp=chrome&alpn=h2%2Chttp%2F1.1&sni=asrnovin.8par.site#
+vless://1a83df32-42f2-4395-97bb-1fb91822c630@185.143.233.5:443?security=tls&allowInsecure=0&encryption=none&type=ws&host=hn.8lack.ir&path=/chat?ed%3D128&sni=hn.8lack.ir&fp=firefox&alpn=h2,http/1.1#
