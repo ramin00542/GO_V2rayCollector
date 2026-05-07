@@ -1,5 +1,3 @@
-
-```markdown
 <div dir="rtl" align="center">
 
 # 🚀 V2rayCollector – جمع‌آوری خودکار کانفیگ V2Ray | تلگرام + ساب‌لینک + فورک‌های گیت‌هاب
@@ -65,48 +63,45 @@
 خروجی‌های پروژه به شکل زیر در مخزن شما قرار می‌گیرند:
 
 </div>
-
-```
 📦 GO_V2rayCollector
- ┣ 📂 .github/workflows
- ┃ ┣ 📜 Collector.yml
- ┃ ┗ 📜 telegram-test.yml
- ┣ 📂 telegram                 # کانفیگ‌های تلگرام (به تفکیک کانال)
- ┃ ┣ 📂 FreeV2rays
- ┃ ┃ ┣ 🔵 VMess.txt
- ┃ ┃ ┣ 🟢 VLess.txt
- ┃ ┃ ┗ ...
- ┃ ┗ ...
- ┣ 📂 subscription             # کانفیگ‌های ساب‌لینک
- ┃ ┣ 🔵 VMess.txt
- ┃ ┣ 🟢 VLess.txt
- ┃ ┗ ...
- ┣ 📂 mixed                    # کانفیگ‌های ناشناخته
- ┃ ┗ 🌍 Mixed.txt
- ┣ 📂 daily_archive            # آرشیو روزانه (ساختار کامل)
- ┃ ┗ 📂 2026-05-08
- ┃   ┣ 📂 subscription
- ┃   ┣ 📂 telegram
- ┃   ┗ 📜 🔵 VMess.txt ...
- ┣ 📂 all_configs              # انباشت روزانه (برای دسترسی سریع)
- ┃ ┣ 📂 subscription
- ┃ ┃ ┣ all_protocols.txt
- ┃ ┃ ┣ http.txt
- ┃ ┃ ┗ unknown.txt
- ┃ ┗ 📂 telegram
- ┃   ┣ all_protocols.txt
- ┃   ┣ http.txt
- ┃   ┣ mtproto.txt
- ┃   ┗ slipnet.txt
- ┣ 📜 collector_stats.md       # گزارش آماری زیبا (جدول + ایموجی)
- ┣ 📜 links.md                 # لینک‌های دانلود همه فایل‌ها با آمار و تاریخ
- ┣ 📜 subscription_links.txt   # لینک‌های ساب‌اسکریپشن یافت شده در تلگرام
- ┣ 📜 clash-config.yaml        # کانفیگ ساده Clash (اختیاری)
- ┣ 📜 config_cache.json        # کش اصلی (برای جلوگیری از دریافت مجدد)
- ┣ 📜 channels.csv             # لیست کانال‌های تلگرام (شما تکمیل می‌کنید)
- ┣ 📜 Sources.json             # لیست ساب‌لینک‌ها (شما تکمیل می‌کنید)
- ┗ 📜 README.md                # همین فایل
-```
+┣ 📂 .github/workflows
+┃ ┣ 📜 Collector.yml
+┃ ┗ 📜 telegram-test.yml
+┣ 📂 telegram # کانفیگ‌های تلگرام (به تفکیک کانال)
+┃ ┣ 📂 FreeV2rays
+┃ ┃ ┣ 🔵 VMess.txt
+┃ ┃ ┣ 🟢 VLess.txt
+┃ ┃ ┗ ...
+┃ ┗ ...
+┣ 📂 subscription # کانفیگ‌های ساب‌لینک
+┃ ┣ 🔵 VMess.txt
+┃ ┣ 🟢 VLess.txt
+┃ ┗ ...
+┣ 📂 mixed # کانفیگ‌های ناشناخته
+┃ ┗ 🌍 Mixed.txt
+┣ 📂 daily_archive # آرشیو روزانه (ساختار کامل)
+┃ ┗ 📂 2026-05-08
+┃ ┣ 📂 subscription
+┃ ┣ 📂 telegram
+┃ ┗ 📜 🔵 VMess.txt ...
+┣ 📂 all_configs # انباشت روزانه (برای دسترسی سریع)
+┃ ┣ 📂 subscription
+┃ ┃ ┣ all_protocols.txt
+┃ ┃ ┣ http.txt
+┃ ┃ ┗ unknown.txt
+┃ ┗ 📂 telegram
+┃ ┣ all_protocols.txt
+┃ ┣ http.txt
+┃ ┣ mtproto.txt
+┃ ┗ slipnet.txt
+┣ 📜 collector_stats.md # گزارش آماری زیبا (جدول + ایموجی)
+┣ 📜 links.md # لینک‌های دانلود همه فایل‌ها با آمار و تاریخ
+┣ 📜 subscription_links.txt # لینک‌های ساب‌اسکریپشن یافت شده در تلگرام
+┣ 📜 clash-config.yaml # کانفیگ ساده Clash (اختیاری)
+┣ 📜 config_cache.json # کش اصلی (برای جلوگیری از دریافت مجدد)
+┣ 📜 channels.csv # لیست کانال‌های تلگرام (شما تکمیل می‌کنید)
+┣ 📜 Sources.json # لیست ساب‌لینک‌ها (شما تکمیل می‌کنید)
+┗ 📜 README.md # همین فایل
 
 ---
 
@@ -245,4 +240,3 @@
 [⬆ بازگشت به بالا](#)
 
 </div>
-```
