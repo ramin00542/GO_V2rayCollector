@@ -16,7 +16,6 @@ const (
 
 var (
 	client = &http.Client{Timeout: requestTimeout}
-	// الگوهای regex برای پیدا کردن کانفیگ‌ها
 	regexPatterns = map[string]string{
 		"vmess":  `vmess://[A-Za-z0-9+/]+={0,2}(?:\?[^\s]*)?`,
 		"vless":  `vless://[^\s]+`,
@@ -27,15 +26,13 @@ var (
 )
 
 func main() {
-	// لیست کانال‌ها (برای تست سریع می‌توانید فقط یکی را نگه دارید)
 	channels := []string{
 		"FreeV2rays",
 		"V2rayCollectorDonate",
 		"ConfigV2rayNG",
 	}
-	
+
 	fmt.Println("🔍 Starting telegram connection test...")
-	
 	successCount := 0
 	for _, ch := range channels {
 		fmt.Printf("\n📡 Testing channel: t.me/%s\n", ch)
@@ -43,7 +40,6 @@ func main() {
 			successCount++
 		}
 	}
-	
 	fmt.Printf("\n✅ Test finished. Successful channels: %d/%d\n", successCount, len(channels))
 }
 
@@ -55,25 +51,24 @@ func testChannel(channel string) bool {
 		return false
 	}
 	defer resp.Body.Close()
-	
+
 	if resp.StatusCode != http.StatusOK {
 		fmt.Printf("   ⚠️ HTTP Error: %d\n", resp.StatusCode)
 		return false
 	}
-	
+
 	doc, err := goquery.NewDocumentFromReader(resp.Body)
 	if err != nil {
 		fmt.Printf("   ❌ Parse error: %v\n", err)
 		return false
 	}
-	
+
 	var configs []string
 	doc.Find(".tgme_widget_message_text, pre, code").Each(func(i int, s *goquery.Selection) {
 		text := strings.TrimSpace(s.Text())
 		if text == "" {
 			return
 		}
-		// استخراج کانفیگ با هر الگو
 		for proto, pattern := range regexPatterns {
 			re := regexp.MustCompile(pattern)
 			matches := re.FindAllString(text, -1)
@@ -82,11 +77,11 @@ func testChannel(channel string) bool {
 			}
 		}
 	})
-	
+
 	if len(configs) > 0 {
 		fmt.Printf("   🟢 Success! Found %d config(s):\n", len(configs))
 		for i, cfg := range configs {
-			if i < 3 { // فقط 3 تا از اولین‌ها را نشان بده
+			if i < 3 {
 				fmt.Printf("      - %s\n", cfg)
 			}
 		}
@@ -96,7 +91,6 @@ func testChannel(channel string) bool {
 		return true
 	} else {
 		fmt.Printf("   ⚠️ Connected but no configs found\n")
-		// حتی اگر کانفیگ پیدا نشد، اتصال برقرار شده
 		return true
 	}
 }
