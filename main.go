@@ -35,7 +35,7 @@ import (
 
 // ========================== تنظیمات ثابت ==========================
 const (
-	MaxConfigsPerProtocol            = 50000 // فقط برای کش داخلی
+	MaxConfigsPerProtocol            = 50000
 	MaxSubscriptionResponseSize      = 50 * 1024 * 1024
 	RequestTimeout                   = 30 * time.Second
 	CacheTTL                         = 30 * 24 * time.Hour
@@ -50,6 +50,7 @@ const (
 )
 
 var (
+	sortFlag      = flag.Bool("sort", false, "sort configs from latest to oldest (already sorted by default)")
 	dedupFlag     = flag.Bool("dedup", true, "enable advanced deduplication (fingerprint-based)")
 	testFlag      = flag.Bool("test", false, "print total configs count (simple test)")
 	concurrent    = flag.Int("concurrent", 3, "number of concurrent workers")
@@ -78,7 +79,7 @@ var (
 	keyToFingerprint = make(map[string]string)
 	fpMutex          sync.RWMutex
 	telegramOffsets  = make(map[string]string)
-	offsetsMutex     sync.RWMutex
+	offsetsMutex     sync.RWMutex // ← اصلاح شده از Mutex
 	mainWg           sync.WaitGroup
 
 	lastArchiveTime  int64
@@ -937,7 +938,7 @@ func extractAllConfigs(text string) []string {
 	return results
 }
 
-// ==================== خروجی‌های اصلی (بدون هیچ محدودیت تعدادی) ====================
+// ==================== خروجی‌های اصلی ====================
 func writeOutputFiles() {
 	writeTelegramPerChannel()
 	writeMixedFromTelegramAndSubscription()
@@ -968,10 +969,11 @@ func writeTelegramPerChannel() {
 			continue
 		}
 		for proto, configs := range protoMap {
-			sort.Slice(configs, func(i, j int) bool {
-				return configCache[configs[i]].Timestamp > configCache[configs[j]].Timestamp
-			})
-			// بدون محدودیت تعداد – تمام کانفیگ‌های ۲۴ ساعت اخیر را ذخیره می‌کنیم
+			if *sortFlag {
+				sort.Slice(configs, func(i, j int) bool {
+					return configCache[configs[i]].Timestamp > configCache[configs[j]].Timestamp
+				})
+			}
 			content := strings.Join(configs, "\n")
 			if content != "" {
 				filename := filepath.Join(channelDir, proto+"_iran.txt")
@@ -1001,10 +1003,11 @@ func writeMixedFromTelegramAndSubscription() {
 		}
 	}
 	for proto, configs := range protoConfigs {
-		sort.Slice(configs, func(i, j int) bool {
-			return configCache[configs[i]].Timestamp > configCache[configs[j]].Timestamp
-		})
-		// بدون محدودیت تعداد
+		if *sortFlag {
+			sort.Slice(configs, func(i, j int) bool {
+				return configCache[configs[i]].Timestamp > configCache[configs[j]].Timestamp
+			})
+		}
 		content := strings.Join(configs, "\n")
 		if content != "" {
 			filename := filepath.Join("mixed", proto+"_iran.txt")
@@ -1038,10 +1041,11 @@ func writeSubscriptionFolder() {
 		}
 	}
 	for proto, configs := range subByProto {
-		sort.Slice(configs, func(i, j int) bool {
-			return configCache[configs[i]].Timestamp > configCache[configs[j]].Timestamp
-		})
-		// بدون محدودیت تعداد
+		if *sortFlag {
+			sort.Slice(configs, func(i, j int) bool {
+				return configCache[configs[i]].Timestamp > configCache[configs[j]].Timestamp
+			})
+		}
 		content := strings.Join(configs, "\n")
 		if content != "" {
 			filename := filepath.Join("subscription", proto+"_iran.txt")
