@@ -2,6 +2,9 @@ name: telegram-test
 on:
   workflow_dispatch:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   test-telegram:
     runs-on: ubuntu-latest
@@ -17,6 +20,6 @@ jobs:
       - name: Run Telegram Tester
         run: |
           cd telegram-tester
-          go mod init telegram-tester
+          go mod init telegram-tester 2>/dev/null || true
           go get github.com/PuerkitoBio/goquery
           go run main.go
