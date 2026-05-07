@@ -1,13 +1,19 @@
 package main
 
 import (
+	"compress/gzip"
+	"context"
 	"crypto/md5"
+	"crypto/tls"
 	"encoding/base64"
 	"encoding/json"
 	"flag"
 	"fmt"
 	"io"
+	"math/rand"
+	"net"
 	"net/http"
+	"net/url"
 	"os"
 	"os/signal"
 	"path/filepath"
@@ -21,59 +27,85 @@ import (
 
 	"github.com/PuerkitoBio/goquery"
 	"github.com/jszwec/csvutil"
-	"github.com/ramin00542/GO_V2rayCollector/collector"
 	"github.com/projectdiscovery/gologger"
 	"github.com/projectdiscovery/gologger/levels"
+	"golang.org/x/time/rate"
 	"gopkg.in/yaml.v3"
 )
 
-// ========================== تنظیمات ==========================
+// ========================== تنظیمات ثابت ==========================
 const (
-	MaxConfigsPerProtocol = 50000
-	MaxAllConfigs         = 50000
-	MaxMixedPerProtocol   = 5000
-	MaxTelegramPerChannelPerProtocol = 5000
-	MaxWorkers            = 5
-	RequestTimeout        = 15 * time.Second
+	MaxConfigsPerProtocol            = 50000 // فقط برای کش داخلی
+	MaxSubscriptionResponseSize      = 50 * 1024 * 1024
+	RequestTimeout                   = 30 * time.Second
+	CacheTTL                         = 30 * 24 * time.Hour
+	RetryCount                       = 3
+	RetryBackoff                     = 2 * time.Second
+	TelegramPageDelayBase            = 1 * time.Second
+	TelegramPageJitter               = 1 * time.Second
+	HealthCheckTimeout               = 5 * time.Second
+	HealthCheckConcurrency           = 10
+	TelegramRequestsPerSecond        = 5
+	TelegramBurstSize                = 10
 )
 
 var (
-	sortFlag    = flag.Bool("sort", false, "sort configs from latest to oldest")
-	dedupFlag   = flag.Bool("dedup", false, "enable advanced deduplication (fingerprint-based)")
-	testFlag    = flag.Bool("test", false, "test connectivity for a sample of configs")
-	concurrent  = flag.Int("concurrent", 3, "number of concurrent workers for fetching sources")
-	maxMessages = flag.Int("max-msgs", 100, "maximum messages to fetch per Telegram channel")
-	clashFlag   = flag.Bool("clash", false, "generate Clash YAML file for all configs")
+	dedupFlag     = flag.Bool("dedup", true, "enable advanced deduplication (fingerprint-based)")
+	testFlag      = flag.Bool("test", false, "print total configs count (simple test)")
+	concurrent    = flag.Int("concurrent", 3, "number of concurrent workers")
+	maxMessages   = flag.Int("max-msgs", 100, "max messages per Telegram channel")
+	clashFlag     = flag.Bool("clash", false, "generate Clash YAML")
+	singboxFlag   = flag.Bool("singbox", false, "generate sing-box JSON")
+	proxyURL      = flag.String("proxy", "", "HTTP/HTTPS proxy URL")
+	baseURL       = flag.String("base-url", "", "base URL for links.txt (overrides GitHub detection)")
+	healthCheck   = flag.Bool("health-check", false, "perform health check")
+	channelsFile  = flag.String("channels", "channels.csv", "Telegram channels CSV file")
+	sourcesFile   = flag.String("sources", "Sources.json", "Subscription sources JSON file")
+	timeout       = flag.Duration("timeout", RequestTimeout, "HTTP request timeout")
+	mixedAge      = flag.Duration("mixed-age", 24*time.Hour, "age limit for mixed output (0 = all)")
 
-	regexCache = make(map[string]*regexp.Regexp)
-	protoList  = []string{"ss", "vmess", "trojan", "vless", "http", "socks", "wireguard", "hysteria2", "mtproto", "tuic", "slipnet"}
+	combinedRegex   *regexp.Regexp
+	protoList       = []string{"vmess", "vless", "trojan", "ss", "ssr", "hysteria2", "tuic", "wireguard", "mtproto", "slipnet", "http", "socks"}
+	httpClient      *http.Client
+	shutdownChan    = make(chan os.Signal, 1)
+	globalCtx       context.Context
+	cancelFunc      context.CancelFunc
+	telegramLimiter *rate.Limiter
 
-	client = &http.Client{Timeout: RequestTimeout}
+	cacheMutex       sync.RWMutex
+	configCache      = make(map[string]CacheEntry)
+	fingerprintToKey = make(map[string]string)
+	keyToFingerprint = make(map[string]string)
+	fpMutex          sync.RWMutex
+	telegramOffsets  = make(map[string]string)
+	offsetsMutex     sync.Mutex
+	mainWg           sync.WaitGroup
 
-	cacheMutex     sync.RWMutex
-	configCache    = make(map[string]CacheEntry)
-
-	subConfigs         = make(map[string][]string)
-	subConfigsMutex    sync.Mutex
-
-	telegramByChannel      = make(map[string]map[string][]string)
-	telegramByChannelMutex sync.Mutex
+	lastArchiveTime  int64
+	archiveTimeMutex sync.RWMutex
+	archiveTimeFile  = "last_archive_time.txt"
 
 	stats = struct {
 		sync.Mutex
 		telegramCount, subCount, newCount, duplicateCount int
-		protoCounts map[string]int
+		protoCounts                                        map[string]int
 	}{protoCounts: make(map[string]int)}
-
-	lastArchiveDate string
-	shutdownChan    = make(chan os.Signal, 1)
 )
 
 type CacheEntry struct {
 	Timestamp   int64  `json:"timestamp"`
 	Source      string `json:"source"`
-	Fingerprint string `json:"fingerprint,omitempty"`
+	Fingerprint string `json:"fingerprint"`
 	Channel     string `json:"channel,omitempty"`
+	Offset      string `json:"offset,omitempty"`
+	Original    string `json:"original,omitempty"`
+	Protocol    string `json:"protocol"`
+}
+
+type CacheData struct {
+	Configs   map[string]CacheEntry `json:"configs"`
+	Timestamp int64                 `json:"timestamp"`
+	Offsets   map[string]string     `json:"offsets"`
 }
 
 type ChannelsType struct {
@@ -81,105 +113,151 @@ type ChannelsType struct {
 	AllMessagesFlag bool   `csv:"AllMessagesFlag"`
 }
 
-type CacheData struct {
-	Configs   map[string]CacheEntry `json:"configs"`
-	Timestamp int64                 `json:"timestamp"`
-	LastDate  string                `json:"last_archive_date,omitempty"`
+type ClashProxy struct {
+	Name     string `yaml:"name"`
+	Type     string `yaml:"type"`
+	Server   string `yaml:"server"`
+	Port     int    `yaml:"port"`
+	UUID     string `yaml:"uuid,omitempty"`
+	Password string `yaml:"password,omitempty"`
+	Cipher   string `yaml:"cipher,omitempty"`
+	Network  string `yaml:"network,omitempty"`
+	TLS      bool   `yaml:"tls,omitempty"`
+	Sni      string `yaml:"sni,omitempty"`
 }
 
 // ========================== MAIN ==========================
 func main() {
 	flag.Parse()
-	initRegexps()
+	initCombinedRegex()
 	setupLogging()
 	createDirs()
+	initHTTPClient()
 	loadCache()
+	initLastArchiveTime()
+	initTelegramLimiter()
 	registerSignalHandler()
 
-	var wg sync.WaitGroup
-	wg.Add(1)
-	go func() {
-		defer wg.Done()
-		fetchAllTelegramChannels()
-	}()
-	wg.Add(1)
-	go func() {
-		defer wg.Done()
-		fetchAllSubscriptions()
-	}()
-	wg.Wait()
+	globalCtx, cancelFunc = context.WithCancel(context.Background())
+	defer cancelFunc()
 
-	updateCache()
+	mainWg.Add(1)
+	go func() {
+		defer mainWg.Done()
+		fetchAllTelegramChannels(globalCtx)
+	}()
+	mainWg.Add(1)
+	go func() {
+		defer mainWg.Done()
+		fetchAllSubscriptions(globalCtx)
+	}()
+	mainWg.Wait()
+
+	pruneCacheByTTL()
 	pruneCacheByProtocol()
+
 	writeOutputFiles()
 	writeAllConfigs()
+	archiveDaily()
+
 	generateLinksFile()
 
-	today := time.Now().Format("2006-01-02")
-	if lastArchiveDate != today {
-		archiveDaily()
-		lastArchiveDate = today
-		saveCache()
+	if *healthCheck && len(configCache) > 0 {
+		performHealthCheck()
 	}
-
 	if *clashFlag {
 		generateClashYAML()
+	}
+	if *singboxFlag {
+		generateSingBoxJSON()
 	}
 	if *testFlag {
 		testSampleConfigs()
 	}
 	printStats()
 	saveCache()
+	saveLastArchiveTime()
 	gologger.Info().Msg("All Done!")
 }
 
-// ==================== توابع اولیه ====================
-func initRegexps() {
-	for _, proto := range protoList {
-		pattern := getPatternForProto(proto)
-		if pattern != "" {
-			regexCache[proto] = regexp.MustCompile(pattern)
-		}
-	}
+func initTelegramLimiter() {
+	telegramLimiter = rate.NewLimiter(rate.Limit(TelegramRequestsPerSecond), TelegramBurstSize)
 }
 
-func getPatternForProto(proto string) string {
-	switch proto {
-	case "ss":
-		return `(?m)(...ss:|^ss:)\/\/.+?(%3A%40|#)`
-	case "vmess":
-		return `(?m)vmess:\/\/[^\s]+`
-	case "trojan":
-		return `(?m)trojan:\/\/.+?(%3A%40|#)`
-	case "vless":
-		return `(?m)vless:\/\/[^\s]+`
-	case "http":
-		return `(?m)https?:\/\/[^\s]+`
-	case "socks":
-		return `(?m)socks(?:5)?:\/\/[^\s]+`
-	case "wireguard":
-		return `(?m)wireguard:\/\/[^\s]+`
-	case "hysteria2":
-		return `(?m)hysteria2:\/\/[^\s]+`
-	case "mtproto":
-		return `(?m)tg:\/\/proxy\?[^\s]+`
-	case "tuic":
-		return `(?m)tuic:\/\/[^\s]+`
-	case "slipnet":
-		return `(?m)(?:slipnet|slip):\/\/[^\s]+`
-	default:
-		return ""
+// ==================== توابع اولیه ====================
+func initCombinedRegex() {
+	patterns := []string{
+		`vmess://[A-Za-z0-9+/]+={0,2}(?:\?[^\s]*)?`,
+		`vless://[^\s]+`,
+		`trojan://[^@\s]+@[^\s]+`,
+		`ss://[A-Za-z0-9+/]+={0,2}@[^\s]+`,
+		`ssr://[A-Za-z0-9+/=]+`,
+		`hysteria2://[^\s]+`,
+		`tuic://[^\s]+`,
+		`wireguard://[^\s]+`,
+		`tg://proxy\?[^\s]+`,
+		`(?:slipnet|slip)://[^\s]+`,
+		`https?://[^\s]+:\d+(?:[^\s]*)?`,
+		`https?://[^@\s]+@[^\s]+`,
+		`socks(?:5)?://[^\s]+@[^\s]+`,
+		`socks(?:5)?://[^\s]+:\d+`,
+	}
+	combined := strings.Join(patterns, "|")
+	var err error
+	combinedRegex, err = regexp.Compile(combined)
+	if err != nil {
+		panic(err)
 	}
 }
 
 func setupLogging() {
-	gologger.DefaultLogger.SetMaxLevel(levels.LevelDebug)
+	if os.Getenv("DEBUG") == "true" {
+		gologger.DefaultLogger.SetMaxLevel(levels.LevelDebug)
+	} else {
+		gologger.DefaultLogger.SetMaxLevel(levels.LevelInfo)
+	}
 }
 
 func createDirs() {
 	dirs := []string{"telegram", "subscription", "mixed", "daily_archive", "all_configs"}
 	for _, d := range dirs {
-		os.MkdirAll(d, 0755)
+		if err := os.MkdirAll(d, 0755); err != nil {
+			gologger.Warning().Msgf("Failed to create directory %s: %v", d, err)
+		}
+	}
+	if err := os.MkdirAll(filepath.Join("all_configs", "subscription"), 0755); err != nil {
+		gologger.Warning().Msgf("Failed to create all_configs/subscription: %v", err)
+	}
+	if err := os.MkdirAll(filepath.Join("all_configs", "telegram"), 0755); err != nil {
+		gologger.Warning().Msgf("Failed to create all_configs/telegram: %v", err)
+	}
+}
+
+func initHTTPClient() {
+	transport := &http.Transport{
+		TLSClientConfig: &tls.Config{InsecureSkipVerify: false},
+		DialContext: (&net.Dialer{
+			Timeout:   30 * time.Second,
+			KeepAlive: 30 * time.Second,
+		}).DialContext,
+		MaxIdleConns:        100,
+		IdleConnTimeout:     90 * time.Second,
+		TLSHandshakeTimeout: 10 * time.Second,
+	}
+	if *proxyURL != "" {
+		proxy, err := url.Parse(*proxyURL)
+		if err == nil {
+			transport.Proxy = http.ProxyURL(proxy)
+			gologger.Info().Msgf("Using proxy: %s", proxy.Redacted())
+		}
+	} else if envProxy := os.Getenv("HTTP_PROXY"); envProxy != "" {
+		if proxy, err := url.Parse(envProxy); err == nil {
+			transport.Proxy = http.ProxyURL(proxy)
+		}
+	}
+	httpClient = &http.Client{
+		Timeout:   *timeout,
+		Transport: transport,
 	}
 }
 
@@ -187,7 +265,12 @@ func registerSignalHandler() {
 	signal.Notify(shutdownChan, syscall.SIGINT, syscall.SIGTERM)
 	go func() {
 		<-shutdownChan
+		gologger.Info().Msg("Shutting down gracefully...")
+		cancelFunc()
+		mainWg.Wait()
 		saveCache()
+		saveLastArchiveTime()
+		gologger.Info().Msg("Clean shutdown complete.")
 		os.Exit(0)
 	}()
 }
@@ -206,8 +289,24 @@ func loadCache() {
 	}
 	cacheMutex.Lock()
 	configCache = cd.Configs
-	lastArchiveDate = cd.LastDate
 	cacheMutex.Unlock()
+
+	offsetsMutex.Lock()
+	if cd.Offsets != nil {
+		telegramOffsets = cd.Offsets
+	}
+	offsetsMutex.Unlock()
+
+	if *dedupFlag {
+		fpMutex.Lock()
+		for key, ent := range cd.Configs {
+			if ent.Fingerprint != "" {
+				fingerprintToKey[ent.Fingerprint] = key
+				keyToFingerprint[key] = ent.Fingerprint
+			}
+		}
+		fpMutex.Unlock()
+	}
 	gologger.Info().Msgf("Loaded %d configs from cache", len(configCache))
 }
 
@@ -216,74 +315,56 @@ func saveCache() {
 	cd := CacheData{
 		Configs:   configCache,
 		Timestamp: time.Now().Unix(),
-		LastDate:  lastArchiveDate,
 	}
 	cacheMutex.RUnlock()
-	data, _ := json.MarshalIndent(cd, "", "  ")
-	os.WriteFile("config_cache.json", data, 0644)
+	offsetsMutex.RLock()
+	cd.Offsets = telegramOffsets
+	offsetsMutex.RUnlock()
+
+	data, err := json.MarshalIndent(cd, "", "  ")
+	if err != nil {
+		gologger.Error().Msgf("Failed to marshal cache: %v", err)
+		return
+	}
+	tmpFile := "config_cache.json.tmp"
+	if err := os.WriteFile(tmpFile, data, 0644); err != nil {
+		gologger.Error().Msgf("Failed to write temp cache: %v", err)
+		return
+	}
+	os.Remove("config_cache.json")
+	if err := os.Rename(tmpFile, "config_cache.json"); err != nil {
+		gologger.Error().Msgf("Failed to rename cache file: %v", err)
+	}
 }
 
-func updateCache() {
-	now := time.Now().Unix()
-	newCount, dupCount := 0, 0
-
-	addIfNew := func(cfg, source, channel string) {
-		if cfg == "" {
-			return
+func deleteConfigEntry(key string) {
+	if *dedupFlag {
+		fpMutex.Lock()
+		if fp, ok := keyToFingerprint[key]; ok {
+			delete(fingerprintToKey, fp)
+			delete(keyToFingerprint, key)
 		}
-		cacheMutex.Lock()
-		defer cacheMutex.Unlock()
-
-		if *dedupFlag && strings.HasPrefix(cfg, "vmess://") {
-			fp := fingerprintVmess(cfg)
-			for ec, e := range configCache {
-				if e.Fingerprint == fp && fp != "" && ec != cfg {
-					dupCount++
-					return
-				}
-			}
-		}
-		if _, exists := configCache[cfg]; exists {
-			dupCount++
-			return
-		}
-		fp := ""
-		if *dedupFlag && strings.HasPrefix(cfg, "vmess://") {
-			fp = fingerprintVmess(cfg)
-		}
-		configCache[cfg] = CacheEntry{Timestamp: now, Source: source, Fingerprint: fp, Channel: channel}
-		newCount++
-		stats.Lock()
-		stats.newCount++
-		if source == "telegram" {
-			stats.telegramCount++
-		} else {
-			stats.subCount++
-		}
-		proto := detectProtocol(cfg)
-		stats.protoCounts[proto]++
-		stats.Unlock()
+		fpMutex.Unlock()
 	}
+	delete(configCache, key)
+}
 
-	telegramByChannelMutex.Lock()
-	for ch, pm := range telegramByChannel {
-		for _, lst := range pm {
-			for _, cfg := range lst {
-				addIfNew(cfg, "telegram", ch)
-			}
+func pruneCacheByTTL() {
+	cutoff := time.Now().Add(-CacheTTL).Unix()
+	cacheMutex.Lock()
+	defer cacheMutex.Unlock()
+	toDelete := []string{}
+	for cfg, ent := range configCache {
+		if ent.Timestamp < cutoff {
+			toDelete = append(toDelete, cfg)
 		}
 	}
-	telegramByChannelMutex.Unlock()
-
-	subConfigsMutex.Lock()
-	for _, lst := range subConfigs {
-		for _, cfg := range lst {
-			addIfNew(cfg, "subscription", "")
-		}
+	for _, cfg := range toDelete {
+		deleteConfigEntry(cfg)
 	}
-	subConfigsMutex.Unlock()
-
-	gologger.Info().Msgf("Cache update: %d new, %d dup", newCount, dupCount)
+	if len(toDelete) > 0 {
+		gologger.Info().Msgf("Pruned %d configs older than %v", len(toDelete), CacheTTL)
+	}
 }
 
 func pruneCacheByProtocol() {
@@ -293,7 +374,10 @@ func pruneCacheByProtocol() {
 	})
 	cacheMutex.RLock()
 	for cfg, e := range configCache {
-		proto := detectProtocol(cfg)
+		proto := e.Protocol
+		if proto == "" {
+			proto = detectProtocol(cfg)
+		}
 		groups[proto] = append(groups[proto], struct {
 			key string
 			ts  int64
@@ -301,32 +385,87 @@ func pruneCacheByProtocol() {
 	}
 	cacheMutex.RUnlock()
 
-	newCache := make(map[string]CacheEntry)
+	newKeys := make(map[string]bool)
 	for proto, items := range groups {
 		if len(items) <= MaxConfigsPerProtocol {
 			for _, it := range items {
-				newCache[it.key] = configCache[it.key]
+				newKeys[it.key] = true
 			}
 			continue
 		}
 		sort.Slice(items, func(i, j int) bool { return items[i].ts > items[j].ts })
 		for i := 0; i < MaxConfigsPerProtocol; i++ {
-			newCache[items[i].key] = configCache[items[i].key]
+			newKeys[items[i].key] = true
 		}
-		gologger.Info().Msgf("Pruned %s: kept %d", proto, MaxConfigsPerProtocol)
+		gologger.Info().Msgf("Pruned %s: kept %d (from %d)", proto, MaxConfigsPerProtocol, len(items))
 	}
+
 	cacheMutex.Lock()
-	configCache = newCache
-	cacheMutex.Unlock()
+	defer cacheMutex.Unlock()
+	for cfg := range configCache {
+		if !newKeys[cfg] {
+			deleteConfigEntry(cfg)
+		}
+	}
 }
 
 func detectProtocol(cfg string) string {
-	for proto, re := range regexCache {
-		if re.MatchString(cfg) {
+	for _, proto := range protoList {
+		if strings.HasPrefix(cfg, proto+"://") {
 			return proto
 		}
 	}
+	switch {
+	case strings.HasPrefix(cfg, "vmess://"):
+		return "vmess"
+	case strings.HasPrefix(cfg, "vless://"):
+		return "vless"
+	case strings.HasPrefix(cfg, "trojan://"):
+		return "trojan"
+	case strings.HasPrefix(cfg, "ss://"):
+		return "ss"
+	case strings.HasPrefix(cfg, "ssr://"):
+		return "ssr"
+	case strings.HasPrefix(cfg, "hysteria2://"):
+		return "hysteria2"
+	case strings.HasPrefix(cfg, "tuic://"):
+		return "tuic"
+	case strings.HasPrefix(cfg, "wireguard://"):
+		return "wireguard"
+	case strings.HasPrefix(cfg, "tg://"):
+		return "mtproto"
+	case strings.HasPrefix(cfg, "slipnet://") || strings.HasPrefix(cfg, "slip://"):
+		return "slipnet"
+	case strings.HasPrefix(cfg, "http://") || strings.HasPrefix(cfg, "https://"):
+		return "http"
+	case strings.HasPrefix(cfg, "socks://") || strings.HasPrefix(cfg, "socks5://"):
+		return "socks"
+	}
 	return "mixed"
+}
+
+func computeFingerprint(cfg, proto string) string {
+	if !*dedupFlag {
+		return ""
+	}
+	switch proto {
+	case "vmess":
+		return fingerprintVmess(cfg)
+	case "vless", "trojan", "ss", "ssr", "hysteria2", "tuic":
+		return fingerprintCredentialURL(cfg)
+	default:
+		re := regexp.MustCompile(`#.*$`)
+		cleaned := re.ReplaceAllString(cfg, "")
+		hash := md5.Sum([]byte(cleaned))
+		return fmt.Sprintf("%x", hash)
+	}
+}
+
+func getStringField(data map[string]interface{}, field string) string {
+	if val, ok := data[field]; ok && val != nil {
+		return fmt.Sprintf("%v", val)
+	}
+	return ""
 }
 
 func fingerprintVmess(vmessUrl string) string {
@@ -342,74 +481,272 @@ func fingerprintVmess(vmessUrl string) string {
 	if err = json.Unmarshal(decoded, &data); err != nil {
 		return ""
 	}
-	add := fmt.Sprintf("%v:%v:%v", data["add"], data["port"], data["id"])
+	add := fmt.Sprintf("%s:%s:%s:%s:%s:%s:%s:%s:%s",
+		getStringField(data, "add"),
+		getStringField(data, "port"),
+		getStringField(data, "id"),
+		getStringField(data, "net"),
+		getStringField(data, "type"),
+		getStringField(data, "host"),
+		getStringField(data, "path"),
+		getStringField(data, "tls"),
+		getStringField(data, "sni"))
 	hash := md5.Sum([]byte(add))
 	return fmt.Sprintf("%x", hash)
 }
 
-// ==================== دریافت از تلگرام ====================
-func fetchAllTelegramChannels() {
-	fileData, err := collector.ReadFileContent("channels.csv")
+func fingerprintCredentialURL(cfg string) string {
+	u, err := url.Parse(cfg)
 	if err != nil {
-		gologger.Warning().Msg("channels.csv not found, skipping Telegram.")
+		hash := md5.Sum([]byte(cfg))
+		return fmt.Sprintf("%x", hash)
+	}
+	userPass := ""
+	if u.User != nil {
+		userPass = u.User.String()
+	}
+	host := u.Hostname()
+	port := u.Port()
+	hash := md5.Sum([]byte(host + ":" + port + ":" + userPass))
+	return fmt.Sprintf("%x", hash)
+}
+
+func addToCache(cfg, source, channel string, offset ...string) {
+	if cfg == "" {
+		return
+	}
+	cfg = strings.TrimSpace(cfg)
+	proto := detectProtocol(cfg)
+	fp := computeFingerprint(cfg, proto)
+
+	cacheMutex.Lock()
+	defer cacheMutex.Unlock()
+
+	if *dedupFlag && fp != "" {
+		fpMutex.RLock()
+		existingKey, found := fingerprintToKey[fp]
+		fpMutex.RUnlock()
+		if found && existingKey != cfg {
+			stats.Lock()
+			stats.duplicateCount++
+			stats.Unlock()
+			return
+		}
+	}
+	if _, exists := configCache[cfg]; exists {
+		stats.Lock()
+		stats.duplicateCount++
+		stats.Unlock()
+		return
+	}
+
+	off := ""
+	if len(offset) > 0 {
+		off = offset[0]
+	}
+	configCache[cfg] = CacheEntry{
+		Timestamp:   time.Now().Unix(),
+		Source:      source,
+		Fingerprint: fp,
+		Channel:     channel,
+		Offset:      off,
+		Original:    cfg,
+		Protocol:    proto,
+	}
+	if *dedupFlag && fp != "" {
+		fpMutex.Lock()
+		fingerprintToKey[fp] = cfg
+		keyToFingerprint[cfg] = fp
+		fpMutex.Unlock()
+	}
+	stats.Lock()
+	stats.newCount++
+	if source == "telegram" {
+		stats.telegramCount++
+	} else {
+		stats.subCount++
+	}
+	stats.protoCounts[proto]++
+	stats.Unlock()
+}
+
+// ==================== مدیریت آخرین زمان آرشیو ====================
+func loadLastArchiveTime() {
+	data, err := os.ReadFile(archiveTimeFile)
+	if err != nil {
+		lastArchiveTime = 0
+		return
+	}
+	val, err := strconv.ParseInt(strings.TrimSpace(string(data)), 10, 64)
+	if err != nil {
+		lastArchiveTime = 0
+		return
+	}
+	lastArchiveTime = val
+}
+
+func initLastArchiveTime() {
+	loadLastArchiveTime()
+	if lastArchiveTime == 0 {
+		cacheMutex.RLock()
+		minTs := int64(1<<63 - 1)
+		for _, e := range configCache {
+			if e.Timestamp < minTs {
+				minTs = e.Timestamp
+			}
+		}
+		cacheMutex.RUnlock()
+		if minTs != int64(1<<63-1) {
+			lastArchiveTime = minTs
+		} else {
+			lastArchiveTime = 0
+		}
+	}
+}
+
+func saveLastArchiveTime() {
+	archiveTimeMutex.RLock()
+	ts := lastArchiveTime
+	archiveTimeMutex.RUnlock()
+	if err := os.WriteFile(archiveTimeFile, []byte(fmt.Sprintf("%d", ts)), 0644); err != nil {
+		gologger.Warning().Msgf("Failed to save archive time: %v", err)
+	}
+}
+
+// ==================== دریافت ====================
+func fetchAllTelegramChannels(ctx context.Context) {
+	fileData, err := os.ReadFile(*channelsFile)
+	if err != nil {
+		gologger.Warning().Msgf("channels.csv not found (%s), skipping Telegram.", *channelsFile)
 		return
 	}
 	var channels []ChannelsType
-	csvutil.Unmarshal([]byte(fileData), &channels)
-	jobs := make(chan ChannelsType, len(channels))
+	if err := csvutil.Unmarshal(fileData, &channels); err != nil {
+		gologger.Error().Msgf("Failed to parse channels.csv: %v", err)
+		return
+	}
+	validChannels := []ChannelsType{}
+	for _, ch := range channels {
+		if !strings.Contains(ch.URL, "t.me") && !strings.Contains(ch.URL, "telegram.me") {
+			gologger.Warning().Msgf("Invalid telegram URL: %s", ch.URL)
+			continue
+		}
+		validChannels = append(validChannels, ch)
+	}
+	jobs := make(chan ChannelsType, len(validChannels))
 	var wg sync.WaitGroup
 	for i := 0; i < *concurrent; i++ {
 		wg.Add(1)
-		go telegramWorker(jobs, &wg)
+		go telegramWorker(ctx, jobs, &wg)
 	}
-	for _, ch := range channels {
-		jobs <- ch
+	for _, ch := range validChannels {
+		select {
+		case <-ctx.Done():
+			break
+		case jobs <- ch:
+		}
 	}
 	close(jobs)
 	wg.Wait()
 }
 
-func telegramWorker(jobs <-chan ChannelsType, wg *sync.WaitGroup) {
+func telegramWorker(ctx context.Context, jobs <-chan ChannelsType, wg *sync.WaitGroup) {
 	defer wg.Done()
 	for ch := range jobs {
-		url := collector.ChangeUrlToTelegramWebUrl(ch.URL)
-		channelName := extractChannelNameFromURL(url)
+		select {
+		case <-ctx.Done():
+			return
+		default:
+		}
+		webURL := changeUrlToTelegramWebUrl(ch.URL)
+		channelName := extractChannelNameFromURL(webURL)
 		if channelName == "" {
 			continue
 		}
-		resp := HttpRequest(url)
-		if resp == nil {
-			continue
+		offsetsMutex.Lock()
+		lastOffset := telegramOffsets[channelName]
+		offsetsMutex.Unlock()
+
+		maxMsg := *maxMessages
+		if ch.AllMessagesFlag {
+			maxMsg = 10000
 		}
-		doc, _ := goquery.NewDocumentFromReader(resp.Body)
-		resp.Body.Close()
-		doc.Url = resp.Request.URL
-		allTexts := getAllMessages(doc, *maxMessages)
-		for _, text := range allTexts {
+		allMessages, lastMsgOffset := fetchTelegramMessagesWithResume(ctx, webURL, lastOffset, maxMsg)
+
+		if lastMsgOffset != "" {
+			offsetsMutex.Lock()
+			telegramOffsets[channelName] = lastMsgOffset
+			offsetsMutex.Unlock()
+			saveOffsetsCheckpoint()
+		}
+		for _, text := range allMessages {
 			processTelegramText(text, channelName)
 		}
+		jitter := time.Duration(rand.Int63n(int64(TelegramPageJitter)))
+		time.Sleep(TelegramPageDelayBase + jitter)
 	}
 }
 
-func extractChannelNameFromURL(url string) string {
-	re := regexp.MustCompile(`t\.me/(?:s/)?([^/?]+)`)
-	m := re.FindStringSubmatch(url)
-	if len(m) > 1 {
-		return m[1]
+func saveOffsetsCheckpoint() {
+	offsetsMutex.RLock()
+	data, err := json.Marshal(telegramOffsets)
+	offsetsMutex.RUnlock()
+	if err != nil {
+		gologger.Warning().Msgf("Failed to marshal offsets checkpoint: %v", err)
+		return
+	}
+	if err := os.WriteFile("telegram_offsets_checkpoint.json", data, 0644); err != nil {
+		gologger.Warning().Msgf("Failed to write offsets checkpoint: %v", err)
+	}
+}
+
+func changeUrlToTelegramWebUrl(tgURL string) string {
+	re := regexp.MustCompile(`(?:https?://)?(?:t\.me|telegram\.me|web\.telegram\.org)/([^/?]+)`)
+	match := re.FindStringSubmatch(tgURL)
+	if len(match) == 2 {
+		return fmt.Sprintf("https://t.me/%s", match[1])
+	}
+	return tgURL
+}
+
+func extractChannelNameFromURL(rawURL string) string {
+	re := regexp.MustCompile(`t\.me/([^/?]+)`)
+	matches := re.FindStringSubmatch(rawURL)
+	if len(matches) > 1 {
+		return matches[1]
 	}
 	return ""
 }
 
-func getAllMessages(startDoc *goquery.Document, max int) []string {
+func fetchTelegramMessagesWithResume(ctx context.Context, startURL, offset string, max int) ([]string, string) {
 	var allTexts []string
-	seen := make(map[string]bool)
-	currentURL := startDoc.Url.String()
-	doc := startDoc
-	for len(allTexts) < max {
+	seenTexts := make(map[string]bool)
+	var lastUsedOffset string
+	currentURL := startURL
+	if offset != "" {
+		currentURL = fmt.Sprintf("%s?before=%s", strings.TrimSuffix(startURL, "/"), offset)
+	}
+	maxIterations := 100
+	iter := 0
+	for len(allTexts) < max && iter < maxIterations {
+		iter++
+		select {
+		case <-ctx.Done():
+			return allTexts, lastUsedOffset
+		default:
+		}
+		doc, err := fetchDocWithRetry(ctx, currentURL)
+		if err != nil {
+			gologger.Debug().Msgf("Failed to fetch %s: %v", currentURL, err)
+			break
+		}
+		if doc == nil {
+			break
+		}
 		texts := extractMessagesFromDoc(doc)
 		for _, t := range texts {
-			if !seen[t] {
-				seen[t] = true
+			if !seenTexts[t] {
+				seenTexts[t] = true
 				allTexts = append(allTexts, t)
 			}
 		}
@@ -422,40 +759,64 @@ func getAllMessages(startDoc *goquery.Document, max int) []string {
 			break
 		}
 		parts := strings.Split(postLink, "/")
-		before := parts[len(parts)-1]
-		nextURL := fmt.Sprintf("%s?before=%s", strings.TrimSuffix(currentURL, "/"), before)
-		nextDoc := loadMore(nextURL)
-		if nextDoc == nil {
+		newOffset := parts[len(parts)-1]
+		if newOffset == offset {
 			break
 		}
-		doc = nextDoc
-		currentURL = nextURL
-		time.Sleep(500 * time.Millisecond)
+		offset = newOffset
+		lastUsedOffset = offset
+		currentURL = fmt.Sprintf("%s?before=%s", strings.TrimSuffix(startURL, "/"), offset)
+		jitter := time.Duration(rand.Int63n(int64(TelegramPageJitter)))
+		time.Sleep(TelegramPageDelayBase + jitter)
 	}
-	return allTexts
+	return allTexts, lastUsedOffset
+}
+
+func fetchDocWithRetry(ctx context.Context, urlStr string) (*goquery.Document, error) {
+	if err := telegramLimiter.Wait(ctx); err != nil {
+		return nil, err
+	}
+
+	var resp *http.Response
+	var err error
+	for i := 0; i < RetryCount; i++ {
+		req, _ := http.NewRequestWithContext(ctx, "GET", urlStr, nil)
+		req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36")
+		resp, err = httpClient.Do(req)
+		if err == nil && resp.StatusCode == http.StatusOK {
+			break
+		}
+		if resp != nil {
+			resp.Body.Close()
+			if resp.StatusCode == http.StatusTooManyRequests {
+				if retryAfter := resp.Header.Get("Retry-After"); retryAfter != "" {
+					secs, _ := strconv.Atoi(retryAfter)
+					time.Sleep(time.Duration(secs) * time.Second)
+				}
+			}
+		}
+		time.Sleep(RetryBackoff * time.Duration(i+1))
+	}
+	if err != nil || resp == nil || resp.StatusCode != http.StatusOK {
+		return nil, fmt.Errorf("failed to fetch %s: %v", urlStr, err)
+	}
+	defer resp.Body.Close()
+	doc, err := goquery.NewDocumentFromReader(resp.Body)
+	if err != nil {
+		return nil, err
+	}
+	return doc, nil
 }
 
 func extractMessagesFromDoc(doc *goquery.Document) []string {
 	var texts []string
-	doc.Find(".tgme_widget_message_text").Each(func(i int, s *goquery.Selection) {
-		html, _ := s.Html()
-		text := strings.ReplaceAll(html, "<br/>", "\n")
-		plain := extractTextFromHTML(text)
-		texts = append(texts, plain)
+	doc.Find(".tgme_widget_message_text, .tgme_widget_message, pre, code").Each(func(i int, s *goquery.Selection) {
+		plain := strings.TrimSpace(s.Text())
+		if plain != "" {
+			texts = append(texts, plain)
+		}
 	})
 	return texts
-}
-
-func loadMore(link string) *goquery.Document {
-	req, _ := http.NewRequest("GET", link, nil)
-	resp, err := client.Do(req)
-	if err != nil {
-		return nil
-	}
-	defer resp.Body.Close()
-	doc, _ := goquery.NewDocumentFromReader(resp.Body)
-	doc.Url = resp.Request.URL
-	return doc
 }
 
 func processTelegramText(text, channelName string) {
@@ -465,58 +826,86 @@ func processTelegramText(text, channelName string) {
 		if cfg == "" {
 			continue
 		}
-		if strings.HasPrefix(cfg, "vmess://") {
-			cfg = editVmessPs(cfg, "telegram")
-		}
-		proto := detectProtocol(cfg)
-		telegramByChannelMutex.Lock()
-		if telegramByChannel[channelName] == nil {
-			telegramByChannel[channelName] = make(map[string][]string)
-		}
-		telegramByChannel[channelName][proto] = append(telegramByChannel[channelName][proto], cfg)
-		telegramByChannelMutex.Unlock()
+		addToCache(cfg, "telegram", channelName)
 	}
 }
 
-// ==================== دریافت از ساب‌لینک ====================
-func fetchAllSubscriptions() {
-	data, err := collector.ReadFileContent("Sources.json")
+func fetchAllSubscriptions(ctx context.Context) {
+	data, err := os.ReadFile(*sourcesFile)
 	if err != nil {
-		gologger.Warning().Msg("Sources.json not found, skipping subscriptions.")
+		gologger.Warning().Msgf("Sources.json not found (%s), skipping subscriptions.", *sourcesFile)
 		return
 	}
 	var sources []string
-	json.Unmarshal([]byte(data), &sources)
+	if err := json.Unmarshal(data, &sources); err != nil {
+		gologger.Error().Msgf("Invalid Sources.json: %v", err)
+		return
+	}
 	jobs := make(chan string, len(sources))
 	var wg sync.WaitGroup
 	for i := 0; i < *concurrent; i++ {
 		wg.Add(1)
-		go subWorker(jobs, &wg)
+		go subWorker(ctx, jobs, &wg)
 	}
 	for _, src := range sources {
-		jobs <- src
+		if !strings.HasPrefix(src, "http://") && !strings.HasPrefix(src, "https://") {
+			continue
+		}
+		select {
+		case <-ctx.Done():
+			break
+		case jobs <- src:
+		}
 	}
 	close(jobs)
 	wg.Wait()
 }
 
-func subWorker(jobs <-chan string, wg *sync.WaitGroup) {
+func subWorker(ctx context.Context, jobs <-chan string, wg *sync.WaitGroup) {
 	defer wg.Done()
 	for src := range jobs {
-		fetchSubscription(src)
+		select {
+		case <-ctx.Done():
+			return
+		default:
+		}
+		fetchSubscription(ctx, src)
 	}
 }
 
-func fetchSubscription(url string) {
-	resp, err := http.Get(url)
+func fetchSubscription(ctx context.Context, urlStr string) {
+	req, _ := http.NewRequestWithContext(ctx, "GET", urlStr, nil)
+	req.Header.Set("Accept-Encoding", "gzip")
+	resp, err := httpClient.Do(req)
 	if err != nil {
+		gologger.Debug().Msgf("Failed to fetch subscription %s: %v", urlStr, err)
 		return
 	}
 	defer resp.Body.Close()
-	body, _ := io.ReadAll(resp.Body)
+
+	limitedReader := io.LimitReader(resp.Body, MaxSubscriptionResponseSize)
+	body, err := io.ReadAll(limitedReader)
+	if err != nil {
+		return
+	}
 	content := string(body)
-	if decoded, err := base64.StdEncoding.DecodeString(strings.TrimSpace(content)); err == nil {
-		content = string(decoded)
+
+	if resp.Header.Get("Content-Encoding") == "gzip" {
+		gr, err := gzip.NewReader(strings.NewReader(content))
+		if err == nil {
+			decompressed, _ := io.ReadAll(gr)
+			gr.Close()
+			content = string(decompressed)
+		}
+	}
+
+	trimmed := strings.TrimSpace(content)
+	if decoded, err := base64.StdEncoding.DecodeString(trimmed); err == nil {
+		if len(decoded) <= int(MaxSubscriptionResponseSize) {
+			content = string(decoded)
+		} else {
+			gologger.Warning().Msgf("Decoded subscription too large (%d bytes), skipping", len(decoded))
+		}
 	}
 	processSubscriptionContent(content)
 }
@@ -528,389 +917,374 @@ func processSubscriptionContent(raw string) {
 		if cfg == "" {
 			continue
 		}
-		if strings.HasPrefix(cfg, "vmess://") {
-			cfg = editVmessPs(cfg, "subscription")
-		}
-		proto := detectProtocol(cfg)
-		subConfigsMutex.Lock()
-		subConfigs[proto] = append(subConfigs[proto], cfg)
-		subConfigsMutex.Unlock()
+		addToCache(cfg, "subscription", "")
 	}
 }
 
-// ==================== توابع کمکی پردازش متن ====================
 func extractAllConfigs(text string) []string {
+	text = strings.ReplaceAll(text, "\n", " ")
+	text = strings.ReplaceAll(text, "\r", " ")
 	var results []string
-	for _, re := range regexCache {
-		matches := re.FindAllString(text, -1)
-		for _, m := range matches {
-			if !contains(results, m) {
-				results = append(results, m)
-			}
+	seen := make(map[string]bool)
+	matches := combinedRegex.FindAllString(text, -1)
+	for _, m := range matches {
+		m = strings.TrimSpace(m)
+		if !seen[m] && m != "" {
+			seen[m] = true
+			results = append(results, m)
 		}
 	}
 	return results
 }
 
-func contains(slice []string, item string) bool {
-	for _, s := range slice {
-		if s == item {
-			return true
-		}
-	}
-	return false
-}
-
-func editVmessPs(config, source string) string {
-	parts := strings.SplitN(config, "vmess://", 2)
-	if len(parts) != 2 {
-		return config
-	}
-	decoded, err := base64.StdEncoding.DecodeString(parts[1])
-	if err != nil {
-		return config
-	}
-	var data map[string]interface{}
-	if err := json.Unmarshal(decoded, &data); err != nil || data == nil {
-		return config
-	}
-	data["ps"] = fmt.Sprintf("%s-%d", source, time.Now().Unix())
-	jsonData, err := json.Marshal(data)
-	if err != nil {
-		return config
-	}
-	return "vmess://" + base64.StdEncoding.EncodeToString(jsonData)
-}
-
-func extractTextFromHTML(html string) string {
-	doc, _ := goquery.NewDocumentFromReader(strings.NewReader(html))
-	return doc.Text()
-}
-
-// ==================== خروجی‌های معمولی (تنها ۲۴ ساعت گذشته) ====================
+// ==================== خروجی‌های اصلی (بدون هیچ محدودیت تعدادی) ====================
 func writeOutputFiles() {
 	writeTelegramPerChannel()
 	writeMixedFromTelegramAndSubscription()
 	writeSubscriptionFolder()
 }
 
-// telegram: فقط کانفیگ‌های ۲۴ ساعت اخیر، هر کانال هر پروتکل حداکثر ۵۰۰۰
 func writeTelegramPerChannel() {
 	threshold := time.Now().Add(-24 * time.Hour).Unix()
 	cacheMutex.RLock()
 	defer cacheMutex.RUnlock()
-
-	type item struct {
-		cfg string
-		ts  int64
-	}
-	channelProtoItems := make(map[string]map[string][]item)
-
+	temp := make(map[string]map[string][]string)
 	for cfg, e := range configCache {
 		if e.Source == "telegram" && e.Channel != "" && e.Timestamp >= threshold {
-			proto := detectProtocol(cfg)
-			if channelProtoItems[e.Channel] == nil {
-				channelProtoItems[e.Channel] = make(map[string][]item)
+			proto := e.Protocol
+			if proto == "" {
+				proto = detectProtocol(cfg)
 			}
-			channelProtoItems[e.Channel][proto] = append(channelProtoItems[e.Channel][proto], item{cfg, e.Timestamp})
+			if temp[e.Channel] == nil {
+				temp[e.Channel] = make(map[string][]string)
+			}
+			temp[e.Channel][proto] = append(temp[e.Channel][proto], cfg)
 		}
 	}
-
-	for channel, protoMap := range channelProtoItems {
+	for channel, protoMap := range temp {
 		channelDir := filepath.Join("telegram", channel)
-		os.MkdirAll(channelDir, 0755)
-
-		for proto, items := range protoMap {
-			sort.Slice(items, func(i, j int) bool { return items[i].ts > items[j].ts })
-			if len(items) > MaxTelegramPerChannelPerProtocol {
-				items = items[:MaxTelegramPerChannelPerProtocol]
-			}
-			lines := make([]string, len(items))
-			for i, it := range items {
-				lines[i] = it.cfg
-			}
-			content := strings.Join(lines, "\n")
+		if err := os.MkdirAll(channelDir, 0755); err != nil {
+			gologger.Warning().Msgf("Cannot create dir %s: %v", channelDir, err)
+			continue
+		}
+		for proto, configs := range protoMap {
+			sort.Slice(configs, func(i, j int) bool {
+				return configCache[configs[i]].Timestamp > configCache[configs[j]].Timestamp
+			})
+			// بدون محدودیت تعداد – تمام کانفیگ‌های ۲۴ ساعت اخیر را ذخیره می‌کنیم
+			content := strings.Join(configs, "\n")
 			if content != "" {
-				collector.WriteToFile(content, filepath.Join(channelDir, proto+"_iran.txt"))
+				filename := filepath.Join(channelDir, proto+"_iran.txt")
+				if err := os.WriteFile(filename, []byte(content), 0644); err != nil {
+					gologger.Warning().Msgf("Failed to write %s: %v", filename, err)
+				}
 			}
 		}
 	}
 }
 
-// mixed: ترکیب telegram + subscription ، فقط ۲۴ ساعت اخیر، هر پروتکل حداکثر ۵۰۰۰
 func writeMixedFromTelegramAndSubscription() {
-	threshold := time.Now().Add(-24 * time.Hour).Unix()
+	var cutoff int64 = 0
+	if *mixedAge > 0 {
+		cutoff = time.Now().Add(-*mixedAge).Unix()
+	}
 	cacheMutex.RLock()
 	defer cacheMutex.RUnlock()
-
-	type item struct {
-		cfg string
-		ts  int64
-	}
-	protoItems := make(map[string][]item)
-
+	protoConfigs := make(map[string][]string)
 	for cfg, e := range configCache {
-		if (e.Source == "telegram" || e.Source == "subscription") && e.Timestamp >= threshold {
-			proto := detectProtocol(cfg)
-			protoItems[proto] = append(protoItems[proto], item{cfg, e.Timestamp})
+		if (e.Source == "telegram" || e.Source == "subscription") && (cutoff == 0 || e.Timestamp >= cutoff) {
+			proto := e.Protocol
+			if proto == "" {
+				proto = detectProtocol(cfg)
+			}
+			protoConfigs[proto] = append(protoConfigs[proto], cfg)
 		}
 	}
-
-	for proto, items := range protoItems {
-		sort.Slice(items, func(i, j int) bool { return items[i].ts > items[j].ts })
-		if len(items) > MaxMixedPerProtocol {
-			items = items[:MaxMixedPerProtocol]
-		}
-		lines := make([]string, len(items))
-		for i, it := range items {
-			lines[i] = it.cfg
-		}
-		content := strings.Join(lines, "\n")
+	for proto, configs := range protoConfigs {
+		sort.Slice(configs, func(i, j int) bool {
+			return configCache[configs[i]].Timestamp > configCache[configs[j]].Timestamp
+		})
+		// بدون محدودیت تعداد
+		content := strings.Join(configs, "\n")
 		if content != "" {
-			collector.WriteToFile(content, filepath.Join("mixed", proto+"_iran.txt"))
+			filename := filepath.Join("mixed", proto+"_iran.txt")
+			if err := os.WriteFile(filename, []byte(content), 0644); err != nil {
+				gologger.Warning().Msgf("Failed to write %s: %v", filename, err)
+			}
+		}
+	}
+	if mixedConfigs, ok := protoConfigs["mixed"]; ok {
+		content := strings.Join(mixedConfigs, "\n")
+		if content != "" {
+			if err := os.WriteFile(filepath.Join("mixed", "mixed_iran.txt"), []byte(content), 0644); err != nil {
+				gologger.Warning().Msgf("Failed to write mixed_iran.txt: %v", err)
+			}
 		}
 	}
 }
 
-// subscription: فقط ساب‌لینک‌ها، فقط ۲۴ ساعت اخیر، بدون محدودیت تعداد
 func writeSubscriptionFolder() {
 	threshold := time.Now().Add(-24 * time.Hour).Unix()
 	cacheMutex.RLock()
 	defer cacheMutex.RUnlock()
-
-	type item struct {
-		cfg string
-		ts  int64
-	}
-	subItems := make(map[string][]item)
-
+	subByProto := make(map[string][]string)
 	for cfg, e := range configCache {
 		if e.Source == "subscription" && e.Timestamp >= threshold {
-			proto := detectProtocol(cfg)
-			subItems[proto] = append(subItems[proto], item{cfg, e.Timestamp})
+			proto := e.Protocol
+			if proto == "" {
+				proto = detectProtocol(cfg)
+			}
+			subByProto[proto] = append(subByProto[proto], cfg)
 		}
 	}
-
-	for proto, items := range subItems {
-		sort.Slice(items, func(i, j int) bool { return items[i].ts > items[j].ts })
-		lines := make([]string, len(items))
-		for i, it := range items {
-			lines[i] = it.cfg
-		}
-		content := strings.Join(lines, "\n")
+	for proto, configs := range subByProto {
+		sort.Slice(configs, func(i, j int) bool {
+			return configCache[configs[i]].Timestamp > configCache[configs[j]].Timestamp
+		})
+		// بدون محدودیت تعداد
+		content := strings.Join(configs, "\n")
 		if content != "" {
-			collector.WriteToFile(content, filepath.Join("subscription", proto+"_iran.txt"))
+			filename := filepath.Join("subscription", proto+"_iran.txt")
+			if err := os.WriteFile(filename, []byte(content), 0644); err != nil {
+				gologger.Warning().Msgf("Failed to write %s: %v", filename, err)
+			}
 		}
 	}
 }
 
-// ==================== all_configs (فقط ۲۴ ساعت اخیر، حداکثر ۵۰۰۰۰) ====================
+// ==================== انباشت روزانه ====================
 func writeAllConfigs() {
-	threshold := time.Now().Add(-24 * time.Hour).Unix()
 	cacheMutex.RLock()
 	defer cacheMutex.RUnlock()
 
-	type item struct {
-		cfg string
-		ts  int64
-	}
+	archiveTimeMutex.RLock()
+	lastArch := lastArchiveTime
+	archiveTimeMutex.RUnlock()
+
 	allowedProtos := map[string]bool{
 		"socks": true, "ss": true, "trojan": true, "tuic": true,
 		"vless": true, "vmess": true, "wireguard": true, "hysteria2": true,
 	}
-	var allItems []item
-	httpItems := []item{}
-	mtprotoItems := []item{}
-	slipnetItems := []item{}
 
-	for cfg, e := range configCache {
-		if e.Timestamp >= threshold {
-			proto := detectProtocol(cfg)
-			if allowedProtos[proto] {
-				allItems = append(allItems, item{cfg, e.Timestamp})
-			} else if proto == "http" {
-				httpItems = append(httpItems, item{cfg, e.Timestamp})
-			} else if proto == "mtproto" {
-				mtprotoItems = append(mtprotoItems, item{cfg, e.Timestamp})
-			} else if proto == "slipnet" {
-				slipnetItems = append(slipnetItems, item{cfg, e.Timestamp})
+	type sourceFiles struct {
+		allProto []string
+		http     []string
+		mtproto  []string
+		slipnet  []string
+		unknown  []string
+	}
+	sources := map[string]*sourceFiles{
+		"telegram":     {},
+		"subscription": {},
+	}
+
+	for cfg, entry := range configCache {
+		src := entry.Source
+		if src != "telegram" && src != "subscription" {
+			continue
+		}
+		if lastArch > 0 && entry.Timestamp < lastArch {
+			continue
+		}
+		proto := entry.Protocol
+		if proto == "" {
+			proto = detectProtocol(cfg)
+		}
+		target := sources[src]
+		switch {
+		case allowedProtos[proto]:
+			target.allProto = append(target.allProto, cfg)
+		case proto == "http":
+			target.http = append(target.http, cfg)
+		case proto == "mtproto":
+			target.mtproto = append(target.mtproto, cfg)
+		case proto == "slipnet":
+			target.slipnet = append(target.slipnet, cfg)
+		default:
+			target.unknown = append(target.unknown, cfg)
+		}
+	}
+
+	appendToFile := func(baseDir, filename string, configs []string) {
+		if len(configs) == 0 {
+			return
+		}
+		path := filepath.Join("all_configs", baseDir, filename)
+		f, err := os.OpenFile(path, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+		if err != nil {
+			gologger.Error().Msgf("Cannot open %s: %v", path, err)
+			return
+		}
+		defer f.Close()
+		for _, cfg := range configs {
+			if _, err := f.WriteString(cfg + "\n"); err != nil {
+				gologger.Warning().Msgf("Error writing to %s: %v", path, err)
 			}
 		}
+		gologger.Info().Msgf("Added %d new configs to %s", len(configs), path)
 	}
 
-	sort.Slice(allItems, func(i, j int) bool { return allItems[i].ts > allItems[j].ts })
-	sort.Slice(httpItems, func(i, j int) bool { return httpItems[i].ts > httpItems[j].ts })
-	sort.Slice(mtprotoItems, func(i, j int) bool { return mtprotoItems[i].ts > mtprotoItems[j].ts })
-	sort.Slice(slipnetItems, func(i, j int) bool { return slipnetItems[i].ts > slipnetItems[j].ts })
-
-	writeLimited := func(filename string, items []item, maxLines int) {
-		if len(items) > maxLines {
-			items = items[:maxLines]
-		}
-		lines := make([]string, len(items))
-		for i, it := range items {
-			lines[i] = it.cfg
-		}
-		content := strings.Join(lines, "\n")
-		os.WriteFile(filepath.Join("all_configs", filename), []byte(content), 0644)
+	for src, sf := range sources {
+		appendToFile(src, "all_protocols.txt", sf.allProto)
+		appendToFile(src, "http.txt", sf.http)
+		appendToFile(src, "mtproto.txt", sf.mtproto)
+		appendToFile(src, "slipnet.txt", sf.slipnet)
+		appendToFile(src, "unknown.txt", sf.unknown)
 	}
-	writeLimited("all_protocols.txt", allItems, MaxAllConfigs)
-	writeLimited("http.txt", httpItems, MaxAllConfigs)
-	writeLimited("mtproto.txt", mtprotoItems, MaxAllConfigs)
-	writeLimited("slipnet.txt", slipnetItems, MaxAllConfigs)
 }
 
-// ==================== آرشیو روزانه (بر اساس روز تقویمی، نه ۲۴ ساعت قبل) ====================
 func archiveDaily() {
-	now := time.Now()
-	// شروع امروز (ساعت 00:00:00)
-	startOfDay := time.Date(now.Year(), now.Month(), now.Day(), 0, 0, 0, 0, now.Location())
-	// پایان امروز (ساعت 23:59:59)
-	endOfDay := startOfDay.Add(24*time.Hour - time.Second)
-
-	startUnix := startOfDay.Unix()
-	endUnix := endOfDay.Unix()
-
-	today := now.Format("2006-01-02")
+	today := time.Now().Format("2006-01-02")
 	archiveDir := filepath.Join("daily_archive", today)
-	os.MkdirAll(archiveDir, 0755)
-
-	cacheMutex.RLock()
-	defer cacheMutex.RUnlock()
-
-	type item struct {
-		cfg string
-		ts  int64
+	if err := os.MkdirAll(archiveDir, 0755); err != nil {
+		gologger.Warning().Msgf("Failed to create archive dir: %v", err)
+		return
 	}
-	byProto := make(map[string][]item)
 
-	for cfg, e := range configCache {
-		if e.Timestamp >= startUnix && e.Timestamp <= endUnix {
-			proto := detectProtocol(cfg)
-			byProto[proto] = append(byProto[proto], item{cfg, e.Timestamp})
+	sourceDir := "all_configs"
+	pattern := filepath.Join(sourceDir, "*", "*.txt")
+	files, err := filepath.Glob(pattern)
+	if err != nil {
+		gologger.Error().Msgf("Failed to list all_configs files: %v", err)
+		return
+	}
+
+	anyData := false
+	for _, srcFile := range files {
+		rel, err := filepath.Rel(sourceDir, srcFile)
+		if err != nil {
+			continue
+		}
+		destFile := filepath.Join(archiveDir, rel)
+		if err := os.MkdirAll(filepath.Dir(destFile), 0755); err != nil {
+			gologger.Warning().Msgf("Cannot create archive subdir: %v", err)
+			continue
+		}
+
+		data, err := os.ReadFile(srcFile)
+		if err != nil {
+			continue
+		}
+		if len(data) == 0 {
+			continue
+		}
+		anyData = true
+		f, err := os.OpenFile(destFile, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+		if err != nil {
+			gologger.Warning().Msgf("Cannot open archive file %s: %v", destFile, err)
+			continue
+		}
+		if _, err := f.Write(data); err != nil {
+			gologger.Warning().Msgf("Error writing to archive file: %v", err)
+		}
+		f.Close()
+		if err := os.Truncate(srcFile, 0); err != nil {
+			gologger.Warning().Msgf("Error truncating %s: %v", srcFile, err)
 		}
 	}
 
-	for proto, items := range byProto {
-		// مرتب‌سازی نزولی (جدیدترین اول)
-		sort.Slice(items, func(i, j int) bool { return items[i].ts > items[j].ts })
-		lines := make([]string, len(items))
-		for i, it := range items {
-			lines[i] = it.cfg
-		}
-		content := strings.Join(lines, "\n")
-		if content != "" {
-			os.WriteFile(filepath.Join(archiveDir, proto+"_iran.txt"), []byte(content), 0644)
-		}
+	if anyData {
+		archiveTimeMutex.Lock()
+		lastArchiveTime = time.Now().Unix()
+		archiveTimeMutex.Unlock()
+		saveLastArchiveTime()
+		gologger.Info().Msgf("Archived configs to %s and cleared all_configs", archiveDir)
+	} else {
+		gologger.Debug().Msg("No new data to archive today")
 	}
-	gologger.Info().Msgf("Daily archive created in %s (configs from %s)", archiveDir, startOfDay.Format("2006-01-02"))
 }
 
-// ==================== فایل links.txt ====================
+// ==================== links.txt ====================
 func generateLinksFile() {
-	repo := os.Getenv("GITHUB_REPOSITORY")
-	if repo == "" {
-		repo = "ramin00542/GO_V2rayCollector"
+	var baseURLStr string
+	if *baseURL != "" {
+		baseURLStr = *baseURL
+	} else {
+		repo := os.Getenv("GITHUB_REPOSITORY")
+		if repo == "" {
+			repo = "ramin00542/GO_V2rayCollector"
+		}
+		branch := os.Getenv("GITHUB_REF_NAME")
+		if branch == "" {
+			branch = "main"
+		}
+		baseURLStr = fmt.Sprintf("https://raw.githubusercontent.com/%s/%s", repo, branch)
 	}
-	branch := "main"
-	baseURL := fmt.Sprintf("https://raw.githubusercontent.com/%s/%s", repo, branch)
 
 	var links []string
 	links = append(links, "# Links to configuration files")
 	links = append(links, "")
 
-	// all_configs
-	links = append(links, "## all_configs")
-	files, _ := filepath.Glob("all_configs/*.txt")
+	links = append(links, "## all_configs/subscription")
+	files, _ := filepath.Glob("all_configs/subscription/*.txt")
 	for _, f := range files {
 		name := filepath.Base(f)
-		url := fmt.Sprintf("%s/all_configs/%s", baseURL, name)
+		url := fmt.Sprintf("%s/all_configs/subscription/%s", baseURLStr, name)
 		links = append(links, fmt.Sprintf("- [%s](%s)", name, url))
 	}
 	links = append(links, "")
 
-	// daily_archive
+	links = append(links, "## all_configs/telegram")
+	files, _ = filepath.Glob("all_configs/telegram/*.txt")
+	for _, f := range files {
+		name := filepath.Base(f)
+		url := fmt.Sprintf("%s/all_configs/telegram/%s", baseURLStr, name)
+		links = append(links, fmt.Sprintf("- [%s](%s)", name, url))
+	}
+	links = append(links, "")
+
 	links = append(links, "## daily_archive")
 	archives, _ := filepath.Glob("daily_archive/*")
 	sort.Strings(archives)
 	for _, arch := range archives {
-		stat, _ := os.Stat(arch)
-		if stat != nil && stat.IsDir() {
+		if info, _ := os.Stat(arch); info != nil && info.IsDir() {
 			subDir := filepath.Base(arch)
 			links = append(links, fmt.Sprintf("### %s", subDir))
-			innerFiles, _ := filepath.Glob(filepath.Join(arch, "*.txt"))
+			innerFiles, _ := filepath.Glob(filepath.Join(arch, "*", "*.txt"))
 			for _, f := range innerFiles {
-				name := filepath.Base(f)
-				url := fmt.Sprintf("%s/daily_archive/%s/%s", baseURL, subDir, name)
-				links = append(links, fmt.Sprintf("  - [%s](%s)", name, url))
+				rel, _ := filepath.Rel(arch, f)
+				url := fmt.Sprintf("%s/daily_archive/%s/%s", baseURLStr, subDir, rel)
+				links = append(links, fmt.Sprintf("  - [%s](%s)", rel, url))
 			}
 		}
 	}
 	links = append(links, "")
 
-	// mixed
-	links = append(links, "## mixed")
-	mixedFiles, _ := filepath.Glob("mixed/*.txt")
-	for _, f := range mixedFiles {
-		name := filepath.Base(f)
-		url := fmt.Sprintf("%s/mixed/%s", baseURL, name)
-		links = append(links, fmt.Sprintf("- [%s](%s)", name, url))
-	}
-	links = append(links, "")
-
-	// subscription
-	links = append(links, "## subscription")
-	subFiles, _ := filepath.Glob("subscription/*.txt")
-	for _, f := range subFiles {
-		name := filepath.Base(f)
-		url := fmt.Sprintf("%s/subscription/%s", baseURL, name)
-		links = append(links, fmt.Sprintf("- [%s](%s)", name, url))
-	}
-	links = append(links, "")
-
-	// telegram
-	links = append(links, "## telegram")
-	channels, _ := filepath.Glob("telegram/*")
-	sort.Strings(channels)
-	for _, ch := range channels {
-		stat, _ := os.Stat(ch)
-		if stat != nil && stat.IsDir() {
-			chName := filepath.Base(ch)
-			links = append(links, fmt.Sprintf("### %s", chName))
-			chFiles, _ := filepath.Glob(filepath.Join(ch, "*.txt"))
-			for _, f := range chFiles {
-				name := filepath.Base(f)
-				url := fmt.Sprintf("%s/telegram/%s/%s", baseURL, chName, name)
-				links = append(links, fmt.Sprintf("  - [%s](%s)", name, url))
-			}
+	for _, name := range []string{"mixed", "subscription", "telegram"} {
+		links = append(links, fmt.Sprintf("## %s", name))
+		files, _ := filepath.Glob(fmt.Sprintf("%s/*.txt", name))
+		for _, f := range files {
+			base := filepath.Base(f)
+			url := fmt.Sprintf("%s/%s/%s", baseURLStr, name, base)
+			links = append(links, fmt.Sprintf("- [%s](%s)", base, url))
 		}
+		links = append(links, "")
 	}
 
-	os.WriteFile("links.txt", []byte(strings.Join(links, "\n")), 0644)
-	gologger.Info().Msg("links.txt generated")
+	if err := os.WriteFile("links.txt", []byte(strings.Join(links, "\n")), 0644); err != nil {
+		gologger.Warning().Msgf("Failed to write links.txt: %v", err)
+	} else {
+		gologger.Info().Msg("links.txt generated")
+	}
 }
 
-// ==================== Clash YAML (بدون تغییر) ====================
-type ClashProxy struct {
-	Name     string `yaml:"name"`
-	Type     string `yaml:"type"`
-	Server   string `yaml:"server"`
-	Port     int    `yaml:"port"`
-	UUID     string `yaml:"uuid,omitempty"`
-	Password string `yaml:"password,omitempty"`
-	Cipher   string `yaml:"cipher,omitempty"`
-	Network  string `yaml:"network,omitempty"`
-	TLS      bool   `yaml:"tls,omitempty"`
-	Sni      string `yaml:"sni,omitempty"`
-}
-
+// ==================== Clash YAML ====================
 func generateClashYAML() {
+	gologger.Info().Msg("Generating Clash YAML...")
 	cacheMutex.RLock()
 	defer cacheMutex.RUnlock()
-	var proxies []ClashProxy
-	count := 0
+
+	type proxyWithTime struct {
+		proxy ClashProxy
+		ts    int64
+	}
+	var list []proxyWithTime
+
 	for cfg, e := range configCache {
-		proto := detectProtocol(cfg)
+		proto := e.Protocol
+		if proto == "" {
+			proto = detectProtocol(cfg)
+		}
 		var cp *ClashProxy
 		switch proto {
 		case "vmess":
@@ -921,16 +1295,24 @@ func generateClashYAML() {
 			cp = trojanToClash(cfg)
 		case "vless":
 			cp = vlessToClash(cfg)
+		case "hysteria2":
+			cp = hysteria2ToClash(cfg)
+		case "tuic":
+			cp = tuicToClash(cfg)
 		default:
 			continue
 		}
 		if cp != nil {
-			proxies = append(proxies, *cp)
-			count++
+			list = append(list, proxyWithTime{*cp, e.Timestamp})
 		}
-		if count >= 2000 {
-			break
-		}
+	}
+	sort.Slice(list, func(i, j int) bool { return list[i].ts > list[j].ts })
+	if len(list) > 2000 {
+		list = list[:2000]
+	}
+	proxies := make([]ClashProxy, len(list))
+	for i, item := range list {
+		proxies[i] = item.proxy
 	}
 	if len(proxies) == 0 {
 		return
@@ -952,7 +1334,9 @@ func generateClashYAML() {
 		Rules: []string{"GEOIP,IRAN,IRAN", "MATCH,PROXY"},
 	}
 	data, _ := yaml.Marshal(&clashConfig)
-	os.WriteFile("clash-config.yaml", data, 0644)
+	if err := os.WriteFile("clash-config.yaml", data, 0644); err != nil {
+		gologger.Warning().Msgf("Failed to write clash-config.yaml: %v", err)
+	}
 }
 
 func vmessToClash(vmessURL, source string) *ClashProxy {
@@ -965,12 +1349,17 @@ func vmessToClash(vmessURL, source string) *ClashProxy {
 		return nil
 	}
 	var data map[string]interface{}
-	json.Unmarshal(decoded, &data)
+	if err := json.Unmarshal(decoded, &data); err != nil {
+		return nil
+	}
 	server, _ := data["add"].(string)
 	portRaw, _ := data["port"].(string)
 	port, _ := strconv.Atoi(portRaw)
 	uuid, _ := data["id"].(string)
-	cipher, _ := data["scy"].(string)
+	cipher, _ := data["cipher"].(string)
+	if cipher == "" {
+		cipher, _ = data["scy"].(string)
+	}
 	if cipher == "" {
 		cipher = "auto"
 	}
@@ -1084,35 +1473,423 @@ func vlessToClash(vlessURL string) *ClashProxy {
 	return &ClashProxy{Name: name, Type: "vless", Server: server, Port: port, UUID: uuid, TLS: tls, Sni: sni}
 }
 
-// ==================== توابع کمکی ====================
-func testSampleConfigs() {
-	gologger.Info().Msg("Test feature not implemented")
-}
-
-func printStats() {
-	stats.Lock()
-	defer stats.Unlock()
-	gologger.Info().Msg("========== STATISTICS ==========")
-	gologger.Info().Msgf("Total configs: %d", len(configCache))
-	gologger.Info().Msgf("New: %d", stats.newCount)
-	gologger.Info().Msgf("Telegram: %d, Subscription: %d", stats.telegramCount, stats.subCount)
-	gologger.Info().Msg("Protocols:")
-	for p, c := range stats.protoCounts {
-		gologger.Info().Msgf("  %s: %d", p, c)
+func hysteria2ToClash(h2URL string) *ClashProxy {
+	if !strings.HasPrefix(h2URL, "hysteria2://") {
+		return nil
 	}
-	statFile, _ := json.MarshalIndent(map[string]interface{}{
-		"total": len(configCache), "new": stats.newCount,
-		"telegram": stats.telegramCount, "subscription": stats.subCount,
-		"protocols": stats.protoCounts,
-	}, "", "  ")
-	os.WriteFile("stats.json", statFile, 0644)
-}
-
-func HttpRequest(url string) *http.Response {
-	req, _ := http.NewRequest("GET", url, nil)
-	resp, err := client.Do(req)
+	u, err := url.Parse(h2URL)
 	if err != nil {
 		return nil
 	}
-	return resp
+	server := u.Hostname()
+	port, _ := strconv.Atoi(u.Port())
+	password := u.Query().Get("auth")
+	if password == "" {
+		password = u.Query().Get("password")
+	}
+	name := fmt.Sprintf("hysteria2_%s_%d", server, port)
+	return &ClashProxy{
+		Name:     name,
+		Type:     "hysteria2",
+		Server:   server,
+		Port:     port,
+		Password: password,
+	}
+}
+
+func tuicToClash(tuicURL string) *ClashProxy {
+	if !strings.HasPrefix(tuicURL, "tuic://") {
+		return nil
+	}
+	u, err := url.Parse(tuicURL)
+	if err != nil {
+		return nil
+	}
+	server := u.Hostname()
+	port, _ := strconv.Atoi(u.Port())
+	uuid := ""
+	password := ""
+	if u.User != nil {
+		uuid = u.User.Username()
+		password, _ = u.User.Password()
+	}
+	name := fmt.Sprintf("tuic_%s_%d", server, port)
+	return &ClashProxy{
+		Name:     name,
+		Type:     "tuic",
+		Server:   server,
+		Port:     port,
+		UUID:     uuid,
+		Password: password,
+	}
+}
+
+// ==================== sing-box JSON ====================
+func generateSingBoxJSON() {
+	gologger.Info().Msg("Generating sing-box JSON...")
+	cacheMutex.RLock()
+	defer cacheMutex.RUnlock()
+
+	outbounds := make([]map[string]interface{}, 0)
+
+	for cfg, e := range configCache {
+		proto := e.Protocol
+		if proto == "" {
+			proto = detectProtocol(cfg)
+		}
+		tag := fmt.Sprintf("%s_%d", proto, e.Timestamp)
+		if len(tag) > 40 {
+			tag = tag[:40]
+		}
+		var outbound map[string]interface{}
+		switch proto {
+		case "vmess":
+			outbound = vmessToSingbox(cfg, tag)
+		case "ss":
+			outbound = ssToSingbox(cfg, tag)
+		case "trojan":
+			outbound = trojanToSingbox(cfg, tag)
+		case "vless":
+			outbound = vlessToSingbox(cfg, tag)
+		case "hysteria2":
+			outbound = hysteria2ToSingbox(cfg, tag)
+		case "tuic":
+			outbound = tuicToSingbox(cfg, tag)
+		default:
+			continue
+		}
+		if outbound != nil {
+			outbounds = append(outbounds, outbound)
+		}
+	}
+
+	result := map[string]interface{}{
+		"outbounds": outbounds,
+		"version":   "1.0.0",
+	}
+	data, _ := json.MarshalIndent(result, "", "  ")
+	if err := os.WriteFile("singbox.json", data, 0644); err != nil {
+		gologger.Warning().Msgf("Failed to write singbox.json: %v", err)
+	}
+}
+
+func vmessToSingbox(vmessURL, tag string) map[string]interface{} {
+	parts := strings.SplitN(vmessURL, "vmess://", 2)
+	if len(parts) != 2 {
+		return nil
+	}
+	decoded, err := base64.StdEncoding.DecodeString(parts[1])
+	if err != nil {
+		return nil
+	}
+	var data map[string]interface{}
+	if err := json.Unmarshal(decoded, &data); err != nil {
+		return nil
+	}
+	server, _ := data["add"].(string)
+	portRaw, _ := data["port"].(string)
+	port, _ := strconv.Atoi(portRaw)
+	uuid, _ := data["id"].(string)
+	security, _ := data["scy"].(string)
+	if security == "" {
+		security, _ = data["cipher"].(string)
+	}
+	if security == "" {
+		security = "auto"
+	}
+	net, _ := data["net"].(string)
+	tlsVal, _ := data["tls"].(string)
+	tls := tlsVal == "tls"
+	sni, _ := data["sni"].(string)
+	host, _ := data["host"].(string)
+	path, _ := data["path"].(string)
+
+	out := map[string]interface{}{
+		"type":        "vmess",
+		"tag":         tag,
+		"server":      server,
+		"server_port": port,
+		"uuid":        uuid,
+		"security":    security,
+	}
+	if tls {
+		out["tls"] = map[string]interface{}{
+			"enabled":     true,
+			"server_name": sni,
+			"insecure":    false,
+		}
+	}
+	if net == "ws" {
+		out["transport"] = map[string]interface{}{
+			"type":    "ws",
+			"path":    path,
+			"headers": map[string]string{"Host": host},
+		}
+	} else if net == "grpc" {
+		out["transport"] = map[string]interface{}{
+			"type":         "grpc",
+			"service_name": path,
+		}
+	}
+	return out
+}
+
+func ssToSingbox(ssURL, tag string) map[string]interface{} {
+	if !strings.HasPrefix(ssURL, "ss://") {
+		return nil
+	}
+	withoutScheme := strings.TrimPrefix(ssURL, "ss://")
+	atIdx := strings.Index(withoutScheme, "@")
+	if atIdx == -1 {
+		return nil
+	}
+	userinfoB64 := withoutScheme[:atIdx]
+	rest := withoutScheme[atIdx+1:]
+	colonIdx := strings.LastIndex(rest, ":")
+	if colonIdx == -1 {
+		return nil
+	}
+	server := rest[:colonIdx]
+	portStr := rest[colonIdx+1:]
+	port, _ := strconv.Atoi(portStr)
+	userinfo, err := base64.StdEncoding.DecodeString(userinfoB64)
+	if err != nil {
+		return nil
+	}
+	parts := strings.SplitN(string(userinfo), ":", 2)
+	if len(parts) != 2 {
+		return nil
+	}
+	method, password := parts[0], parts[1]
+	return map[string]interface{}{
+		"type":        "shadowsocks",
+		"tag":         tag,
+		"server":      server,
+		"server_port": port,
+		"method":      method,
+		"password":    password,
+	}
+}
+
+func trojanToSingbox(trojanURL, tag string) map[string]interface{} {
+	if !strings.HasPrefix(trojanURL, "trojan://") {
+		return nil
+	}
+	u, err := url.Parse(trojanURL)
+	if err != nil {
+		return nil
+	}
+	password := u.User.Username()
+	server := u.Hostname()
+	port, _ := strconv.Atoi(u.Port())
+	sni := u.Query().Get("sni")
+	return map[string]interface{}{
+		"type":        "trojan",
+		"tag":         tag,
+		"server":      server,
+		"server_port": port,
+		"password":    password,
+		"tls": map[string]interface{}{
+			"enabled":     true,
+			"server_name": sni,
+			"insecure":    false,
+		},
+	}
+}
+
+func vlessToSingbox(vlessURL, tag string) map[string]interface{} {
+	if !strings.HasPrefix(vlessURL, "vless://") {
+		return nil
+	}
+	u, err := url.Parse(vlessURL)
+	if err != nil {
+		return nil
+	}
+	uuid := u.User.Username()
+	server := u.Hostname()
+	port, _ := strconv.Atoi(u.Port())
+	flow := u.Query().Get("flow")
+	sni := u.Query().Get("sni")
+	security := u.Query().Get("security")
+	encryption := u.Query().Get("encryption")
+	if encryption == "" {
+		encryption = "none"
+	}
+	out := map[string]interface{}{
+		"type":        "vless",
+		"tag":         tag,
+		"server":      server,
+		"server_port": port,
+		"uuid":        uuid,
+		"encryption":  encryption,
+	}
+	if flow != "" {
+		out["flow"] = flow
+	}
+	if security == "reality" {
+		pbk := u.Query().Get("pbk")
+		serverName := u.Query().Get("sni")
+		fp := u.Query().Get("fp")
+		shortId := u.Query().Get("sid")
+		publicKey := pbk
+		out["tls"] = map[string]interface{}{
+			"enabled":     true,
+			"server_name": serverName,
+			"reality": map[string]interface{}{
+				"enabled":    true,
+				"public_key": publicKey,
+				"short_id":   shortId,
+			},
+			"utls": map[string]interface{}{
+				"enabled":     true,
+				"fingerprint": fp,
+			},
+		}
+	} else if security == "tls" {
+		out["tls"] = map[string]interface{}{
+			"enabled":     true,
+			"server_name": sni,
+			"insecure":    false,
+		}
+	}
+	return out
+}
+
+func hysteria2ToSingbox(h2URL, tag string) map[string]interface{} {
+	u, err := url.Parse(h2URL)
+	if err != nil {
+		return nil
+	}
+	server := u.Hostname()
+	port, _ := strconv.Atoi(u.Port())
+	password := u.Query().Get("auth")
+	if password == "" {
+		password = u.Query().Get("password")
+	}
+	sni := u.Query().Get("sni")
+	insecureStr := u.Query().Get("insecure")
+	insecure := insecureStr == "1" || insecureStr == "true"
+	out := map[string]interface{}{
+		"type":        "hysteria2",
+		"tag":         tag,
+		"server":      server,
+		"server_port": port,
+		"password":    password,
+		"tls": map[string]interface{}{
+			"enabled":     true,
+			"server_name": sni,
+			"insecure":    insecure,
+		},
+	}
+	return out
+}
+
+func tuicToSingbox(tuicURL, tag string) map[string]interface{} {
+	u, err := url.Parse(tuicURL)
+	if err != nil {
+		return nil
+	}
+	server := u.Hostname()
+	port, _ := strconv.Atoi(u.Port())
+	uuid := ""
+	password := ""
+	if u.User != nil {
+		uuid = u.User.Username()
+		password, _ = u.User.Password()
+	}
+	sni := u.Query().Get("sni")
+	return map[string]interface{}{
+		"type":        "tuic",
+		"tag":         tag,
+		"server":      server,
+		"server_port": port,
+		"uuid":        uuid,
+		"password":    password,
+		"tls": map[string]interface{}{
+			"enabled":     true,
+			"server_name": sni,
+			"insecure":    false,
+		},
+	}
+}
+
+// ==================== Health Check ====================
+func performHealthCheck() {
+	gologger.Info().Msg("Starting health check...")
+	cacheMutex.RLock()
+	configs := make([]string, 0, len(configCache))
+	for cfg := range configCache {
+		configs = append(configs, cfg)
+	}
+	cacheMutex.RUnlock()
+	if len(configs) == 0 {
+		return
+	}
+	sampleSize := 500
+	if len(configs) < sampleSize {
+		sampleSize = len(configs)
+	}
+	rng := rand.New(rand.NewSource(time.Now().UnixNano()))
+	shuffled := make([]string, len(configs))
+	copy(shuffled, configs)
+	rng.Shuffle(len(shuffled), func(i, j int) { shuffled[i], shuffled[j] = shuffled[j], shuffled[i] })
+	sample := shuffled[:sampleSize]
+
+	var wg sync.WaitGroup
+	sem := make(chan struct{}, HealthCheckConcurrency)
+	alive := make(map[string]bool)
+	var mu sync.Mutex
+	for _, cfg := range sample {
+		wg.Add(1)
+		go func(c string) {
+			defer wg.Done()
+			sem <- struct{}{}
+			defer func() { <-sem }()
+			if quickCheckWithProtocol(c) {
+				mu.Lock()
+				alive[c] = true
+				mu.Unlock()
+			}
+		}(cfg)
+	}
+	wg.Wait()
+	gologger.Info().Msgf("Health check: %d/%d configs alive", len(alive), sampleSize)
+}
+
+func quickCheckWithProtocol(cfg string) bool {
+	re := regexp.MustCompile(`([a-zA-Z0-9.-]+|\[[a-fA-F0-9:]+\]):(\d+)`)
+	matches := re.FindStringSubmatch(cfg)
+	if len(matches) < 3 {
+		return false
+	}
+	host := matches[1]
+	port := matches[2]
+	ctx, cancel := context.WithTimeout(context.Background(), HealthCheckTimeout)
+	defer cancel()
+	conn, err := (&net.Dialer{}).DialContext(ctx, "tcp", net.JoinHostPort(host, port))
+	if err != nil {
+		return false
+	}
+	conn.Close()
+	return true
+}
+
+// ==================== تست نمونه ====================
+func testSampleConfigs() {
+	cacheMutex.RLock()
+	total := len(configCache)
+	cacheMutex.RUnlock()
+	gologger.Info().Msgf("Total configs in cache: %d", total)
+}
+
+// ==================== آمار ====================
+func printStats() {
+	stats.Lock()
+	defer stats.Unlock()
+	gologger.Info().Msgf("Statistics: New=%d, Duplicates=%d, Telegram=%d, Subscriptions=%d",
+		stats.newCount, stats.duplicateCount, stats.telegramCount, stats.subCount)
+	gologger.Info().Msgf("Protocol counts: %v", stats.protoCounts)
+	cacheMutex.RLock()
+	gologger.Info().Msgf("Total configs in cache: %d", len(configCache))
+	cacheMutex.RUnlock()
 }
