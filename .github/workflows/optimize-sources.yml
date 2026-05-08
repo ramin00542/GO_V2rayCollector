@@ -2,7 +2,7 @@ name: Optimize Sources (Channels & Subscriptions)
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * 0"     # هر یکشنبه ساعت 00:00 (هفتگی)
+    - cron: "0 0 * * 0"     # هر یکشنبه ساعت 00:00
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -33,15 +33,21 @@ jobs:
         run: |
           cd telegram-tester
           go run channel_scanner.go ../channels.csv
-          echo "Channel scanner finished. Updated channels.csv"
           cd ..
 
       - name: Run subscription source checker (optimize Sources.json)
         run: |
           cd telegram-tester
           go run sources_checker.go ../Sources.json
-          echo "Source checker finished. Updated Sources.json"
           cd ..
+
+      - name: Copy auxiliary files to root
+        run: |
+          # کپی فایل‌های dead_* و گزارش‌ها از پوشه telegram-tester به ریشه
+          cp telegram-tester/dead_channels.txt dead_channels.txt 2>/dev/null || true
+          cp telegram-tester/dead_sources.txt dead_sources.txt 2>/dev/null || true
+          cp telegram-tester/scan_report.txt scan_report.txt 2>/dev/null || true
+          cp telegram-tester/sources_report.txt sources_report.txt 2>/dev/null || true
 
       - name: Commit and push changes
         run: |
