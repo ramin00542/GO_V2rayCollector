@@ -32,7 +32,6 @@ jobs:
       - name: Run channel scanner (optimize channels.csv)
         run: |
           cd telegram-tester
-          # اسکنر کانال مستقیماً channels.csv را بازنویسی می‌کند
           go run channel_scanner.go ../channels.csv
           echo "Channel scanner finished. Updated channels.csv"
           cd ..
@@ -40,21 +39,9 @@ jobs:
       - name: Run subscription source checker (optimize Sources.json)
         run: |
           cd telegram-tester
-          # اسکنر ساب‌لینک Sources.json را بازنویسی می‌کند
           go run sources_checker.go ../Sources.json
           echo "Source checker finished. Updated Sources.json"
           cd ..
-
-      - name: Copy optimized files to root
-        run: |
-          # کپی فایل‌های بازنویسی شده از پوشه telegram-tester به ریشه
-          cp telegram-tester/channels.csv channels.csv
-          cp telegram-tester/Sources.json Sources.json
-          # در صورت وجود فایل‌های dead_* و گزارش‌ها، آن‌ها را نیز کپی کن
-          cp telegram-tester/dead_channels.txt dead_channels.txt 2>/dev/null || true
-          cp telegram-tester/dead_sources.txt dead_sources.txt 2>/dev/null || true
-          cp telegram-tester/scan_report.txt scan_report.txt 2>/dev/null || true
-          cp telegram-tester/sources_report.txt sources_report.txt 2>/dev/null || true
 
       - name: Commit and push changes
         run: |
