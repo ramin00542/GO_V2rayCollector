@@ -22,7 +22,7 @@ jobs:
         with:
           go-version: '>=1.21.3'
 
-      - name: Install dependencies for scanners
+      - name: Install dependencies
         run: |
           cd telegram-tester
           go mod init telegram-tester 2>/dev/null || true
@@ -35,74 +35,16 @@ jobs:
           go run channel_scanner.go ../channels.csv
           cd ..
 
-      - name: Run source checker
-        run: |
-          cd telegram-tester
-          go run sources_checker.go ../Sources.json
-          cd ..
-
-      - name: Copy auxiliary files to root (if exist)
+      - name: Copy auxiliary files to root
         run: |
           cp telegram-tester/dead_channels.txt dead_channels.txt 2>/dev/null || true
-          cp telegram-tester/dead_sources.txt dead_sources.txt 2>/dev/null || true
+          cp telegram-tester/dead_channels_archive.txt dead_channels_archive.txt 2>/dev/null || true
           cp telegram-tester/scan_report.txt scan_report.txt 2>/dev/null || true
-          cp telegram-tester/sources_report.txt sources_report.txt 2>/dev/null || true
 
-      - name: Generate beautiful optimization report
-        run: |
-          {
-            echo "# 📊 گزارش بهینه‌سازی منابع (کانال‌ها و ساب‌لینک‌ها)"
-            echo ""
-            echo "**تاریخ اجرا:** $(date '+%Y-%m-%d %H:%M:%S')"
-            echo ""
-            echo "## 📡 کانال‌های تلگرام"
-            echo ""
-            active_channels=$(tail -n +2 channels.csv 2>/dev/null | wc -l)
-            dead_channels=$(cat dead_channels.txt 2>/dev/null | wc -l)
-            echo "- **کانال‌های فعال (دارای کانفیگ و فعالیت ≤۳۰ روز):** \`$active_channels\`"
-            echo "- **کانال‌های غیرفعال/مرده (در لیست سیاه):** \`$dead_channels\`"
-            echo ""
-            if [ -f dead_channels.txt ] && [ -s dead_channels.txt ]; then
-              echo "### نمونه کانال‌های غیرفعال (۱۰ مورد اول)"
-              echo '```'
-              head -n 10 dead_channels.txt | awk '{print $1}'
-              echo '```'
-            else
-              echo "_هیچ کانال مرده‌ای وجود ندارد._"
-            fi
-            echo ""
-            echo "## 🔗 ساب‌لینک‌ها (Sources.json)"
-            echo ""
-            if command -v jq &> /dev/null; then
-              active_sources=$(jq '. | length' Sources.json 2>/dev/null || echo "0")
-            else
-              active_sources=$(grep -c '^  "' Sources.json 2>/dev/null || echo "0")
-            fi
-            dead_sources=$(cat dead_sources.txt 2>/dev/null | wc -l)
-            echo "- **ساب‌لینک‌های فعال (دارای کانفیگ و ≤۳۰ روز):** \`$active_sources\`"
-            echo "- **ساب‌لینک‌های غیرفعال/مرده:** \`$dead_sources\`"
-            echo ""
-            if [ -f dead_sources.txt ] && [ -s dead_sources.txt ]; then
-              echo "### نمونه ساب‌لینک‌های غیرفعال (۱۰ مورد اول)"
-              echo '```'
-              head -n 10 dead_sources.txt | awk '{print $1}'
-              echo '```'
-            else
-              echo "_هیچ ساب‌لینک مرده‌ای وجود ندارد._"
-            fi
-            echo ""
-            echo "---"
-            echo "✅ گزارش به‌روزرسانی خودکار - تولید شده توسط GitHub Actions"
-          } > optimization_report.md
-
-      - name: Add report to job summary
-        run: |
-          cat optimization_report.md >> $GITHUB_STEP_SUMMARY
-
-      - name: Commit and push changes
+      - name: Commit changes
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          git add channels.csv Sources.json dead_channels.txt dead_sources.txt optimization_report.md
-          git diff --staged --quiet || git commit -m "🤖 Weekly optimization: clean dead channels/sources + report"
+          git add channels.csv dead_channels.txt dead_channels_archive.txt scan_report.txt
+          git diff --staged --quiet || git commit -m "🤖 Weekly channel optimization & archive update"
           git push
