@@ -2,11 +2,8 @@ name: Optimize Sources (Channels & Subscriptions)
 
 on:
   schedule:
-    - cron: "0 0 * * 0"   # هر یکشنبه ساعت 00:00
+    - cron: "0 0 * * 0"
   workflow_dispatch:
-
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   optimize:
@@ -19,25 +16,26 @@ jobs:
         with:
           go-version: '>=1.21.3'
 
-      - name: Run channel_scanner (update channels.csv)
+      - name: Create reports directory
+        run: mkdir -p reports
+
+      - name: Run channel_scanner
         run: |
           cd telegram-tester
           go run channel_scanner.go -input ../channels.csv -output ../channels.csv
 
-      - name: Run sources_checker (update Sources.json)
+      - name: Run sources_checker
         run: |
           cd telegram-tester
           go run sources_checker.go ../Sources.json
 
-      - name: Commit and push changes
+      - name: Commit and push
         run: |
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions"
-          # اکنون در ریشه مخزن هستیم، مسیرها مستقیم هستند
           git add channels.csv Sources.json \
                   dead_channels.txt dead_channels_archive.txt \
                   dead_sources.txt dead_sources_archive.txt \
-                  channels_report.md sources_report.md \
-                  scan_cache.json
-          git diff --staged --quiet || git commit -m "🧹 Weekly source optimization"
+                  scan_cache.json reports/
+          git diff --staged --quiet || git commit -m "🧹 Weekly source optimization + reports"
           git push
