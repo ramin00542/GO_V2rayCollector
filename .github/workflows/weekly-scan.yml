@@ -1,8 +1,12 @@
 name: Weekly Re-check Blocked
 on:
   schedule:
-    - cron: "0 3 * * 0"   # هر یکشنبه
+    - cron: "0 4 * * 0"   # هر یکشنبه ساعت 4 بامداد
   workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   weekly:
     runs-on: ubuntu-latest
@@ -21,19 +25,19 @@ jobs:
       - name: Re-check blocked channels and sources
         run: |
           cd telegram-tester
-          # اسکنرها همان اسکریپت‌های معمولی هستند – خودشان blocked list را به‌روز می‌کنند
-          go run channel_scanner.go ../channels.csv ../channels_new.csv
-          go run sources_checker.go ../Sources.json ../sources_report.csv
+          go run channel_scanner.go ../channels.csv
+          go run sources_checker.go ../Sources.json
       - name: Update optimized files
         run: |
-          cp telegram-tester/channels_new.csv channels.csv
-          cp telegram-tester/Sources_valid.json Sources.json
-          cp telegram-tester/blocked_channels.txt blocked_channels.txt
-          cp telegram-tester/blocked_sources.txt blocked_sources.txt
+          mkdir -p stats
+          cp telegram-tester/scan_report.md stats/ 2>/dev/null || true
+          cp telegram-tester/sources_report.md stats/ 2>/dev/null || true
+          cp telegram-tester/dead_channels.txt stats/ 2>/dev/null || true
+          cp telegram-tester/dead_sources.txt stats/ 2>/dev/null || true
       - name: Commit changes
         run: |
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions"
-          git add channels.csv Sources.json blocked_channels.txt blocked_sources.txt
+          git add channels.csv Sources.json stats/
           git diff --staged --quiet || git commit -m "Weekly revive check for blocked sources"
           git push
