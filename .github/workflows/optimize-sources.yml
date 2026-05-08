@@ -1,6 +1,6 @@
 name: Optimize Sources (Channels & Subscriptions)
 on:
-  workflow_dispatch:        # اجرای دستی
+  workflow_dispatch:
   schedule:
     - cron: "0 0 * * 0"     # هر یکشنبه ساعت 00:00 (هفتگی)
 
@@ -32,33 +32,34 @@ jobs:
       - name: Run channel scanner (optimize channels.csv)
         run: |
           cd telegram-tester
-          go run channel_scanner.go ../channels.csv ../channels_new.csv
-          echo "Channel scanner finished. Check channels_new.csv"
+          # اسکنر کانال مستقیماً channels.csv را بازنویسی می‌کند
+          go run channel_scanner.go ../channels.csv
+          echo "Channel scanner finished. Updated channels.csv"
           cd ..
 
       - name: Run subscription source checker (optimize Sources.json)
         run: |
           cd telegram-tester
-          go run sources_checker.go ../Sources.json ../sources_report.csv
-          echo "Source checker finished. Sources_valid.json created."
+          # اسکنر ساب‌لینک Sources.json را بازنویسی می‌کند
+          go run sources_checker.go ../Sources.json
+          echo "Source checker finished. Updated Sources.json"
           cd ..
 
-      - name: Replace files with optimized versions
+      - name: Copy optimized files to root
         run: |
-          # در صورت وجود فایل جدید و معتبر، جایگزین کن
-          if [ -f telegram-tester/channels_new.csv ]; then
-            cp telegram-tester/channels_new.csv channels.csv
-          fi
-          if [ -f telegram-tester/Sources_valid.json ]; then
-            cp telegram-tester/Sources_valid.json Sources.json
-          fi
-          # همچنین می‌توانید گزارش‌ها را هم نگه دارید
-          cp telegram-tester/sources_report.csv sources_report.csv 2>/dev/null || true
+          # کپی فایل‌های بازنویسی شده از پوشه telegram-tester به ریشه
+          cp telegram-tester/channels.csv channels.csv
+          cp telegram-tester/Sources.json Sources.json
+          # در صورت وجود فایل‌های dead_* و گزارش‌ها، آن‌ها را نیز کپی کن
+          cp telegram-tester/dead_channels.txt dead_channels.txt 2>/dev/null || true
+          cp telegram-tester/dead_sources.txt dead_sources.txt 2>/dev/null || true
+          cp telegram-tester/scan_report.txt scan_report.txt 2>/dev/null || true
+          cp telegram-tester/sources_report.txt sources_report.txt 2>/dev/null || true
 
       - name: Commit and push changes
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          git add channels.csv Sources.json sources_report.csv telegram-tester/channels_new.csv telegram-tester/sources_report.csv
-          git diff --staged --quiet || git commit -m "🤖 Optimize channels and sources (auto-generated)"
+          git add channels.csv Sources.json dead_channels.txt dead_sources.txt scan_report.txt sources_report.txt
+          git diff --staged --quiet || git commit -m "🤖 Weekly optimization: clean dead channels/sources"
           git push
