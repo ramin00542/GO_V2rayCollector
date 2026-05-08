@@ -18,7 +18,6 @@ const (
 
 var (
 	client = &http.Client{Timeout: requestTimeout}
-	// الگوهای تشخیص کانفیگ (همان الگوهای main.go)
 	regexPatterns = []*regexp.Regexp{
 		regexp.MustCompile(`vmess://[A-Za-z0-9+/]+={0,2}(?:\?[^\s]*)?`),
 		regexp.MustCompile(`vless://[^\s]+`),
@@ -49,7 +48,6 @@ func main() {
 		outputFile = os.Args[2]
 	}
 
-	// خواندن فایل CSV
 	file, err := os.Open(inputFile)
 	if err != nil {
 		fmt.Printf("Error opening file: %v\n", err)
@@ -105,7 +103,6 @@ func main() {
 		time.Sleep(1 * time.Second)
 	}
 
-	// نوشتن فایل CSV خروجی
 	outFile, err := os.Create(outputFile)
 	if err != nil {
 		fmt.Printf("Error creating output file: %v\n", err)
@@ -154,13 +151,11 @@ func analyzeChannel(channelURL string) (bool, string) {
 		return false, fmt.Sprintf("Parse error: %v", err)
 	}
 
-	// متن داخل pre/code
 	var codeTexts []string
 	doc.Find("pre, code").Each(func(i int, s *goquery.Selection) {
 		codeTexts = append(codeTexts, s.Text())
 	})
 
-	// متن کل پیام‌ها خارج از pre/code
 	var plainTexts []string
 	doc.Find(".tgme_widget_message_text").Each(func(i int, s *goquery.Selection) {
 		clone := s.Clone()
@@ -171,35 +166,35 @@ func analyzeChannel(channelURL string) (bool, string) {
 		}
 	})
 
-	hasConfigInCode := hasAnyConfig(strings.Join(codeTexts, "\n"))
-	hasConfigInPlain := hasAnyConfig(strings.Join(plainTexts, "\n"))
+	hasCode := anyConfig(strings.Join(codeTexts, "\n"))
+	hasPlain := anyConfig(strings.Join(plainTexts, "\n"))
 
-	if hasConfigInPlain && !hasConfigInCode {
+	if hasPlain && !hasCode {
 		return true, "Config found in plain text (outside pre/code)"
 	}
-	if hasConfigInPlain && hasConfigInCode {
-		return true, "Config found both in plain text and in code tags"
+	if hasPlain && hasCode {
+		return true, "Config found both in plain and code"
 	}
-	if !hasConfigInPlain && hasConfigInCode {
-		return false, "Config only in pre/code tags, false is sufficient"
+	if !hasPlain && hasCode {
+		return false, "Config only in pre/code tags, false is enough"
 	}
-	return false, "No config found in this channel (maybe dead channel)"
+	return false, "No config found (dead channel)"
 }
 
-func extractChannelName(rawURL string) string {
-	re := regexp.MustCompile(`t\.me/(?:s/)?([^/?]+)`)
-	matches := re.FindStringSubmatch(rawURL)
-	if len(matches) > 1 {
-		return matches[1]
-	}
-	return ""
-}
-
-func hasAnyConfig(text string) bool {
+func anyConfig(text string) bool {
 	for _, re := range regexPatterns {
 		if re.MatchString(text) {
 			return true
 		}
 	}
 	return false
+}
+
+func extractChannelName(rawURL string) string {
+	re := regexp.MustCompile(`t\.me/(?:s/)?([^/?]+)`)
+	m := re.FindStringSubmatch(rawURL)
+	if len(m) > 1 {
+		return m[1]
+	}
+	return ""
 }
