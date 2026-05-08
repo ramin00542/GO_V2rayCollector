@@ -7,6 +7,7 @@ import (
 	"math/rand"
 	"net/http"
 	"os"
+	"path/filepath"
 	"regexp"
 	"sort"
 	"strings"
@@ -20,7 +21,6 @@ const (
 	deadChannelsArchive = "../dead_channels_archive.txt"
 	activeChannelsFile  = "../channels.csv"
 	reviveCacheFile     = "revive_cache.json"
-	reviveReportFile    = "../revive_report.md"
 	retryCount          = 3
 	baseDelay           = 1 * time.Second
 	jitter              = 500 * time.Millisecond
@@ -30,7 +30,20 @@ const (
 var (
 	client = &http.Client{Timeout: 15 * time.Second}
 	regexPatterns = []*regexp.Regexp{
-		// همان الگوهای قبلی
+		regexp.MustCompile(`vmess://[A-Za-z0-9+/]+={0,2}(?:\?[^\s]*)?`),
+		regexp.MustCompile(`vless://[^\s]+`),
+		regexp.MustCompile(`trojan://[^@\s]+@[^\s]+`),
+		regexp.MustCompile(`ss://[A-Za-z0-9+/]+={0,2}@[^\s]+`),
+		regexp.MustCompile(`ssr://[A-Za-z0-9+/=]+`),
+		regexp.MustCompile(`hysteria2://[^\s]+`),
+		regexp.MustCompile(`tuic://[^\s]+`),
+		regexp.MustCompile(`wireguard://[^\s]+`),
+		regexp.MustCompile(`tg://proxy\?[^\s]+`),
+		regexp.MustCompile(`(?:slipnet|slip)://[^\s]+`),
+		regexp.MustCompile(`https?://[^\s]+:\d+(?:[^\s]*)?`),
+		regexp.MustCompile(`https?://[^@\s]+@[^\s]+`),
+		regexp.MustCompile(`socks(?:5)?://[^\s]+@[^\s]+`),
+		regexp.MustCompile(`socks(?:5)?://[^\s]+:\d+`),
 	}
 )
 
@@ -124,7 +137,8 @@ func analyzeChannel(channelURL string) (ReviveResult, error) {
 		return ReviveResult{}, fmt.Errorf("invalid URL")
 	}
 	rssURL := fmt.Sprintf("https://t.me/s/%s.rss", channelName)
-	if lastPost, hasConfig, err := fetchFromRSS(rssURL); err == nil {
+	lastPost, hasConfig, err := fetchFromRSS(rssURL)
+	if err == nil {
 		revived := hasConfig && time.Since(lastPost).Hours()/24 <= float64(activeDays)
 		status := "inactive"
 		if revived {
@@ -139,7 +153,7 @@ func analyzeChannel(channelURL string) (ReviveResult, error) {
 		}, nil
 	}
 	htmlURL := fmt.Sprintf("https://t.me/s/%s", channelName)
-	lastPost, hasConfig, err := fetchFromHTML(htmlURL)
+	lastPost, hasConfig, err = fetchFromHTML(htmlURL)
 	if err != nil {
 		return ReviveResult{}, err
 	}
@@ -158,15 +172,98 @@ func analyzeChannel(channelURL string) (ReviveResult, error) {
 }
 
 func fetchFromRSS(rssURL string) (lastPost time.Time, hasConfig bool, err error) {
-	// ... (همانند channel_scanner.go)
+	resp, err := client.Get(rssURL)
+	if err != nil {
+		return time.Time{}, false, err
+	}
+	defer resp.Body.Close()
+	if resp.StatusCode != 200 {
+		return time.Time{}, false, fmt.Errorf("HTTP %d", resp.StatusCode)
+	}
+	doc, err := goquery.NewDocumentFromReader(resp.Body)
+	if err != nil {
+		return time.Time{}, false, err
+	}
+	var latestTime time.Time
+	doc.Find("item").Each(func(i int, s *goquery.Selection) {
+		pubDate := s.Find("pubDate").Text()
+		if pubDate != "" {
+			if t, err := time.Parse(time.RFC1123Z, pubDate); err == nil && (latestTime.IsZero() || t.After(latestTime)) {
+				latestTime = t
+			}
+		}
+		desc := s.Find("description").Text()
+		for _, re := range regexPatterns {
+			if re.MatchString(desc) {
+				hasConfig = true
+			}
+		}
+	})
+	if latestTime.IsZero() {
+		return time.Time{}, false, fmt.Errorf("no pubDate")
+	}
+	return latestTime, hasConfig, nil
 }
 
 func fetchFromHTML(htmlURL string) (lastPost time.Time, hasConfig bool, err error) {
-	// ... (همانند channel_scanner.go)
+	resp, err := client.Get(htmlURL)
+	if err != nil {
+		return time.Time{}, false, err
+	}
+	defer resp.Body.Close()
+	if resp.StatusCode == 404 {
+		return time.Time{}, false, fmt.Errorf("channel not found")
+	}
+	if resp.StatusCode != 200 {
+		return time.Time{}, false, fmt.Errorf("HTTP %d", resp.StatusCode)
+	}
+	doc, err := goquery.NewDocumentFromReader(resp.Body)
+	if err != nil {
+		return time.Time{}, false, err
+	}
+	var lastTime time.Time
+	doc.Find("time").Each(func(i int, s *goquery.Selection) {
+		if i == 0 && lastTime.IsZero() {
+			if dt, ok := s.Attr("datetime"); ok {
+				if t, err := time.Parse(time.RFC3339, dt); err == nil {
+					lastTime = t
+				}
+			}
+		}
+	})
+	if lastTime.IsZero() {
+		doc.Find(".datetime").Each(func(i int, s *goquery.Selection) {
+			if i == 0 && lastTime.IsZero() {
+				if t, err := time.Parse(time.RFC3339, strings.TrimSpace(s.Text())); err == nil {
+					lastTime = t
+				}
+			}
+		})
+	}
+	var texts []string
+	doc.Find(".tgme_widget_message_text, pre, code").Each(func(i int, s *goquery.Selection) {
+		texts = append(texts, s.Text())
+	})
+	combined := strings.Join(texts, "\n")
+	for _, re := range regexPatterns {
+		if re.MatchString(combined) {
+			hasConfig = true
+			break
+		}
+	}
+	if lastTime.IsZero() {
+		return time.Time{}, hasConfig, fmt.Errorf("no timestamp")
+	}
+	return lastTime, hasConfig, nil
 }
 
 func extractChannelName(rawURL string) string {
-	// ...
+	re := regexp.MustCompile(`t\.me/(?:s/)?([^/?]+)`)
+	m := re.FindStringSubmatch(rawURL)
+	if len(m) > 1 {
+		return m[1]
+	}
+	return ""
 }
 
 func loadArchive() map[string]bool {
@@ -214,8 +311,61 @@ func loadActiveChannels() map[string]bool {
 }
 
 func addToActiveChannels(urls []string) {
-	// خواندن channels.csv فعلی و افزودن کانال‌های جدید (در صورت تکراری نبودن)
-	// (همانند کد قبلی)
+	records, headers, err := readCSV(activeChannelsFile)
+	if err != nil {
+		fmt.Printf("Error reading CSV: %v\n", err)
+		return
+	}
+	activeSet := make(map[string]bool)
+	for _, row := range records {
+		if len(row) > 0 {
+			activeSet[row[0]] = true
+		}
+	}
+	for _, url := range urls {
+		if !activeSet[url] {
+			records = append(records, []string{url, "false"})
+			fmt.Printf("Adding revived channel: %s\n", url)
+		}
+	}
+	writeCSV(activeChannelsFile, headers, records)
+}
+
+func readCSV(path string) ([][]string, []string, error) {
+	f, err := os.Open(path)
+	if err != nil {
+		return nil, nil, err
+	}
+	defer f.Close()
+	r := csv.NewReader(f)
+	r.FieldsPerRecord = -1
+	all, err := r.ReadAll()
+	if err != nil {
+		return nil, nil, err
+	}
+	if len(all) == 0 {
+		return nil, nil, nil
+	}
+	return all[1:], all[0], nil
+}
+
+func writeCSV(path string, headers []string, records [][]string) error {
+	f, err := os.Create(path)
+	if err != nil {
+		return err
+	}
+	defer f.Close()
+	w := csv.NewWriter(f)
+	defer w.Flush()
+	if err := w.Write(headers); err != nil {
+		return err
+	}
+	for _, row := range records {
+		if err := w.Write(row); err != nil {
+			return err
+		}
+	}
+	return nil
 }
 
 func saveReviveCache(results []ReviveResult) {
@@ -224,9 +374,11 @@ func saveReviveCache(results []ReviveResult) {
 }
 
 func generateEmptyReviveReport() {
-	report := `# 📊 گزارش اسکنر احیای کانال‌ها
+	os.MkdirAll("../stats", 0755)
+	reportPath := "../stats/revive_report.md"
+	report := fmt.Sprintf(`# 📊 گزارش اسکنر احیای کانال‌ها
 
-**تاریخ اجرا:** ` + time.Now().Format("2006-01-02 15:04:05") + `
+**تاریخ اجرا:** %s
 
 ## خلاصه آماری
 
@@ -239,12 +391,15 @@ func generateEmptyReviveReport() {
 هیچ کانالی در بایگانی وجود نداشت. اسکنر کاری انجام نداد.
 
 --- 
-✅ گزارش توسط GitHub Actions تولید شده است.`
-	os.WriteFile(reviveReportFile, []byte(report), 0644)
-	fmt.Printf("✅ Empty report written to %s\n", reviveReportFile)
+✅ گزارش توسط GitHub Actions تولید شده است.`, time.Now().Format("2006-01-02 15:04:05"))
+	os.WriteFile(reportPath, []byte(report), 0644)
+	fmt.Printf("✅ Empty report written to %s\n", reportPath)
 }
 
 func generateReviveReport(revived, stillDead []string, results []ReviveResult) {
+	os.MkdirAll("../stats", 0755)
+	reportPath := "../stats/revive_report.md"
+
 	var sb strings.Builder
 	sb.WriteString("# 📊 گزارش اسکنر احیای کانال‌ها\n\n")
 	sb.WriteString(fmt.Sprintf("**تاریخ اجرا:** %s\n\n", time.Now().Format("2006-01-02 15:04:05")))
@@ -272,6 +427,6 @@ func generateReviveReport(revived, stillDead []string, results []ReviveResult) {
 		sb.WriteString(fmt.Sprintf("- %s\n", url))
 	}
 	sb.WriteString("\n---\n✅ گزارش توسط GitHub Actions تولید شده است.\n")
-	os.WriteFile(reviveReportFile, []byte(sb.String()), 0644)
-	fmt.Printf("✅ Report written to %s\n", reviveReportFile)
+	os.WriteFile(reportPath, []byte(sb.String()), 0644)
+	fmt.Printf("✅ Report written to %s\n", reportPath)
 }
