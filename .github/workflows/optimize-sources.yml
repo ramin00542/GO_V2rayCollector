@@ -2,7 +2,7 @@ name: Optimize Sources (Channels & Subscriptions)
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * 0"     # هر یکشنبه ساعت 00:00
+    - cron: "0 0 * * 0"
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -29,21 +29,20 @@ jobs:
           go get github.com/PuerkitoBio/goquery
           cd ..
 
-      - name: Run channel scanner (optimize channels.csv)
+      - name: Run channel scanner
         run: |
           cd telegram-tester
           go run channel_scanner.go ../channels.csv
           cd ..
 
-      - name: Run subscription source checker (optimize Sources.json)
+      - name: Run source checker
         run: |
           cd telegram-tester
           go run sources_checker.go ../Sources.json
           cd ..
 
-      - name: Copy auxiliary files to root
+      - name: Copy auxiliary files to root (if exist)
         run: |
-          # کپی فایل‌های dead_* و گزارش‌ها از پوشه telegram-tester به ریشه
           cp telegram-tester/dead_channels.txt dead_channels.txt 2>/dev/null || true
           cp telegram-tester/dead_sources.txt dead_sources.txt 2>/dev/null || true
           cp telegram-tester/scan_report.txt scan_report.txt 2>/dev/null || true
@@ -53,6 +52,10 @@ jobs:
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          git add channels.csv Sources.json dead_channels.txt dead_sources.txt scan_report.txt sources_report.txt
+          # اضافه کردن فایل‌های اصلی (حتماً وجود دارند)
+          git add channels.csv Sources.json
+          # اضافه کردن فایل‌های کمکی در صورت وجود
+          git add dead_channels.txt dead_sources.txt 2>/dev/null || true
+          git add scan_report.txt sources_report.txt 2>/dev/null || true
           git diff --staged --quiet || git commit -m "🤖 Weekly optimization: clean dead channels/sources"
           git push
