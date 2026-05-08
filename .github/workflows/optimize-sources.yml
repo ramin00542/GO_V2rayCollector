@@ -48,14 +48,58 @@ jobs:
           cp telegram-tester/scan_report.txt scan_report.txt 2>/dev/null || true
           cp telegram-tester/sources_report.txt sources_report.txt 2>/dev/null || true
 
+      - name: Generate beautiful optimization report
+        run: |
+          {
+            echo "# 📊 بهینه‌سازی منابع (کانال‌ها و ساب‌لینک‌ها)"
+            echo ""
+            echo "**تاریخ اجرا:** $(date '+%Y-%m-%d %H:%M:%S')"
+            echo ""
+            echo "## 📡 کانال‌های تلگرام"
+            echo ""
+            # تعداد کانال‌های فعال (تعداد خطوط channels.csv منهای هدر)
+            active_channels=$(tail -n +2 channels.csv | wc -l)
+            dead_channels=$(cat dead_channels.txt 2>/dev/null | wc -l)
+            echo "- **کانال‌های فعال (دارای کانفیگ و فعالیت ≤۳۰ روز):** \`$active_channels\`"
+            echo "- **کانال‌های غیرفعال/مرده (در لیست سیاه):** \`$dead_channels\`"
+            echo ""
+            if [ -f dead_channels.txt ] && [ -s dead_channels.txt ]; then
+              echo "### نمونه کانال‌های غیرفعال (۱۰ مورد اول)"
+              echo '```'
+              head -n 10 dead_channels.txt | awk '{print $1}'
+              echo '```'
+            else
+              echo "_هیچ کانال مرده‌ای وجود ندارد._"
+            fi
+            echo ""
+            echo "## 🔗 ساب‌لینک‌ها (Sources.json)"
+            echo ""
+            active_sources=$(jq '. | length' Sources.json 2>/dev/null || echo "0")
+            dead_sources=$(cat dead_sources.txt 2>/dev/null | wc -l)
+            echo "- **ساب‌لینک‌های فعال (دارای کانفیگ و ≤۳۰ روز):** \`$active_sources\`"
+            echo "- **ساب‌لینک‌های غیرفعال/مرده:** \`$dead_sources\`"
+            echo ""
+            if [ -f dead_sources.txt ] && [ -s dead_sources.txt ]; then
+              echo "### نمونه ساب‌لینک‌های غیرفعال (۱۰ مورد اول)"
+              echo '```'
+              head -n 10 dead_sources.txt | awk '{print $1}'
+              echo '```'
+            else
+              echo "_هیچ ساب‌لینک مرده‌ای وجود ندارد._"
+            fi
+            echo ""
+            echo "---"
+            echo "✅ گزارش به‌روزرسانی خودکار - تولید شده توسط GitHub Actions"
+          } > optimization_report.md
+
+      - name: Add report to job summary
+        run: |
+          cat optimization_report.md >> $GITHUB_STEP_SUMMARY
+
       - name: Commit and push changes
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          # اضافه کردن فایل‌های اصلی (حتماً وجود دارند)
-          git add channels.csv Sources.json
-          # اضافه کردن فایل‌های کمکی در صورت وجود
-          git add dead_channels.txt dead_sources.txt 2>/dev/null || true
-          git add scan_report.txt sources_report.txt 2>/dev/null || true
-          git diff --staged --quiet || git commit -m "🤖 Weekly optimization: clean dead channels/sources"
+          git add channels.csv Sources.json dead_channels.txt dead_sources.txt optimization_report.md
+          git diff --staged --quiet || git commit -m "🤖 Weekly optimization: clean dead channels/sources + report"
           git push
