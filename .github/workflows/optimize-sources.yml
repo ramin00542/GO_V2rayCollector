@@ -37,5 +37,5 @@ jobs:
                   dead_channels.txt dead_channels_archive.txt \
                   dead_sources.txt dead_sources_archive.txt \
                   scan_cache.json reports/
-          git diff --staged --quiet || git commit -m "🧹 Weekly source optimization + reports"
+          git diff --staged --quiet || git commit -m "🧹 Weekly source optimization + reports (MD & CSV)"
           git push
