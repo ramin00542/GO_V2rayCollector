@@ -15,29 +15,24 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Go
         uses: actions/setup-go@v5
         with:
           go-version: '>=1.21.3'
-      - name: Install deps
-        run: |
-          cd telegram-tester
-          go mod init telegram-tester 2>/dev/null || true
-          go get github.com/PuerkitoBio/goquery
+
+      - name: Create reports directory
+        run: mkdir -p reports
+
       - name: Run channel scanner
         run: |
           cd telegram-tester
-          go run channel_scanner.go ../channels.csv
-      - name: Copy reports to stats folder
-        run: |
-          mkdir -p stats
-          cp telegram-tester/scan_report.md stats/ 2>/dev/null || true
-          cp telegram-tester/dead_channels.txt stats/ 2>/dev/null || true
-          cp telegram-tester/dead_channels_archive.txt stats/ 2>/dev/null || true
+          go run channel_scanner.go -input ../channels.csv -output ../channels.csv
+
       - name: Commit changes
         run: |
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions"
-          git add stats/ channels.csv
+          git add channels.csv reports/
           git diff --staged --quiet || git commit -m "📊 Daily channel scan report"
           git push
