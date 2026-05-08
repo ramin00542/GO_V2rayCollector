@@ -2,7 +2,7 @@ name: Revive Channels from Archive
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 2 * * *"   # هر روز ساعت 2 بامداد
+    - cron: "0 3 * * *"   # هر روز ساعت 3 بامداد
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -35,17 +35,16 @@ jobs:
           go run revive_scanner.go
           cd ..
 
-      - name: Copy output files
+      - name: Copy reports to stats folder
         run: |
-          [ -f telegram-tester/revive_cache.json ] && cp telegram-tester/revive_cache.json revive_cache.json || true
-          [ -f telegram-tester/revive_report.md ] && cp telegram-tester/revive_report.md revive_report.md || true
+          mkdir -p stats
+          cp telegram-tester/revive_report.md stats/ 2>/dev/null || true
+          cp telegram-tester/revive_cache.json stats/ 2>/dev/null || true
 
       - name: Commit and push changes
         run: |
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions"
-          git add channels.csv dead_channels_archive.txt 2>/dev/null || true
-          [ -f revive_cache.json ] && git add revive_cache.json || true
-          [ -f revive_report.md ] && git add revive_report.md || true
+          git add stats/ channels.csv
           git diff --staged --quiet || git commit -m "🔄 Daily revive check"
           git push
