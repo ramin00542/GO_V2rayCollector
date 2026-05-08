@@ -17,7 +17,6 @@ import (
 const (
 	requestTimeout   = 15 * time.Second
 	deadChannelsFile = "dead_channels.txt"
-	reportFile       = "scan_report.txt"
 )
 
 var (
@@ -53,7 +52,6 @@ func main() {
 	}
 	inputFile := os.Args[1]
 
-	// خواندن channels.csv
 	records := readCSV(inputFile)
 	if len(records) < 2 {
 		fmt.Println("No channels found in CSV.")
@@ -99,9 +97,7 @@ func main() {
 		time.Sleep(1 * time.Second)
 	}
 
-	// بازنویسی channels.csv (فقط کانال‌های فعال)
 	writeActiveChannels(inputFile, active)
-	// به‌روزرسانی dead_channels.txt
 	updateDeadChannels(dead)
 
 	fmt.Printf("\n✅ Active channels: %d, Dead/Inactive: %d\n", len(active), len(dead))
@@ -125,7 +121,6 @@ func analyzeChannel(channelURL string) (hasConfig bool, lastPost time.Time, err 
 	if err != nil {
 		return false, time.Time{}, err
 	}
-	// استخراج آخرین تاریخ
 	var lastTime time.Time
 	doc.Find("time").Each(func(i int, s *goquery.Selection) {
 		if i == 0 {
@@ -145,7 +140,6 @@ func analyzeChannel(channelURL string) (hasConfig bool, lastPost time.Time, err 
 			}
 		})
 	}
-	// بررسی وجود کانفیگ
 	var texts []string
 	doc.Find(".tgme_widget_message_text, pre, code").Each(func(i int, s *goquery.Selection) {
 		texts = append(texts, s.Text())
@@ -172,7 +166,6 @@ func extractChannelName(rawURL string) string {
 	return ""
 }
 
-// توابع کمکی
 func readCSV(path string) [][]string {
 	f, err := os.Open(path)
 	if err != nil {
@@ -201,7 +194,7 @@ func writeActiveChannels(path string, channels []ChannelInfo) {
 }
 
 func updateDeadChannels(dead []ChannelInfo) {
-	existing := make(map[string]int64) // URL -> nextCheckTimestamp
+	existing := make(map[string]int64)
 	data, _ := os.ReadFile(deadChannelsFile)
 	for _, line := range strings.Split(string(data), "\n") {
 		parts := strings.Fields(line)
@@ -217,15 +210,14 @@ func updateDeadChannels(dead []ChannelInfo) {
 		var next int64
 		switch {
 		case daysSince > 60 || !ch.HasConfig:
-			next = now + 30*24*3600 // ماهانه
+			next = now + 30*24*3600
 		case daysSince > 30:
-			next = now + 7*24*3600 // هفتگی
+			next = now + 7*24*3600
 		default:
-			next = now + 24*3600 // روزانه (برای کانال‌هایی که کانفیگ ندارند اما اخیراً فعال بوده‌اند)
+			next = now + 24*3600
 		}
 		existing[ch.URL] = next
 	}
-	// ذخیره
 	var lines []string
 	for url, ts := range existing {
 		lines = append(lines, fmt.Sprintf("%s %d", url, ts))
