@@ -1,8 +1,9 @@
 name: Optimize Sources (Channels & Subscriptions)
+
 on:
-  workflow_dispatch:
   schedule:
-    - cron: "0 0 * * 0"     # هر یکشنبه ساعت 00:00
+    - cron: "0 0 * * 0"   # هر یکشنبه ساعت 00:00
+  workflow_dispatch:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -12,49 +13,30 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Go
-        uses: actions/setup-go@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
         with:
           go-version: '>=1.21.3'
 
-      - name: Install dependencies for scanners
+      - name: Run channel_scanner (update channels.csv)
         run: |
           cd telegram-tester
-          go mod init telegram-tester 2>/dev/null || true
-          go get github.com/PuerkitoBio/goquery
-          cd ..
+          go run channel_scanner.go -input ../channels.csv -output ../channels.csv
 
-      - name: Run channel scanner
-        run: |
-          cd telegram-tester
-          go run channel_scanner.go ../channels.csv
-          cd ..
-
-      - name: Run source checker
+      - name: Run sources_checker (update Sources.json)
         run: |
           cd telegram-tester
           go run sources_checker.go ../Sources.json
-          cd ..
-
-      - name: Copy reports to stats folder
-        run: |
-          mkdir -p stats
-          cp telegram-tester/scan_report.md stats/ 2>/dev/null || true
-          cp telegram-tester/sources_report.md stats/ 2>/dev/null || true
-          cp telegram-tester/dead_channels.txt stats/ 2>/dev/null || true
-          cp telegram-tester/dead_channels_archive.txt stats/ 2>/dev/null || true
-          cp telegram-tester/dead_sources.txt stats/ 2>/dev/null || true
-          cp telegram-tester/dead_sources_archive.txt stats/ 2>/dev/null || true
 
       - name: Commit and push changes
         run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Actions"
-          git add channels.csv Sources.json stats/
-          git diff --staged --quiet || git commit -m "🤖 Weekly optimization: clean dead channels/sources"
+          git config user.email "actions@github.com"
+          git config user.name "GitHub Actions"
+          git add ../channels.csv ../Sources.json \
+                  ../dead_channels.txt ../dead_channels_archive.txt \
+                  ../dead_sources.txt ../dead_sources_archive.txt \
+                  ../channels_report.md ../sources_report.md \
+                  ../scan_cache.json
+          git diff --staged --quiet || git commit -m "🧹 Weekly source optimization"
           git push
