@@ -1,5 +1,4 @@
 name: Fix go.sum
-
 on:
   workflow_dispatch:
 
