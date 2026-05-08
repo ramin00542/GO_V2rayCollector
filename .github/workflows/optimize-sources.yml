@@ -33,10 +33,11 @@ jobs:
         run: |
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions"
-          git add ../channels.csv ../Sources.json \
-                  ../dead_channels.txt ../dead_channels_archive.txt \
-                  ../dead_sources.txt ../dead_sources_archive.txt \
-                  ../channels_report.md ../sources_report.md \
-                  ../scan_cache.json
+          # اکنون در ریشه مخزن هستیم، مسیرها مستقیم هستند
+          git add channels.csv Sources.json \
+                  dead_channels.txt dead_channels_archive.txt \
+                  dead_sources.txt dead_sources_archive.txt \
+                  channels_report.md sources_report.md \
+                  scan_cache.json
           git diff --staged --quiet || git commit -m "🧹 Weekly source optimization"
           git push
