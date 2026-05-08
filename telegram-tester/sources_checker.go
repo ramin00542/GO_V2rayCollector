@@ -3,6 +3,7 @@ package main
 
 import (
 	"encoding/base64"
+	"encoding/csv"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -19,7 +20,8 @@ import (
 const (
 	deadSourcesFile     = "../dead_sources.txt"
 	deadSourcesArchive  = "../dead_sources_archive.txt"
-	sourcesReportFile   = "../sources_report.md"
+	sourcesReportMD     = "../reports/sources_report.md"
+	sourcesReportCSV    = "../reports/sources_data.csv"
 	activeSourcesFile   = "../active_sources.json"
 	checkTimeout        = 10 * time.Second
 	sampleSize          = 50 * 1024
@@ -58,6 +60,7 @@ type SourceStatus struct {
 }
 
 func main() {
+	os.MkdirAll("../reports", 0755)
 	if len(os.Args) < 2 {
 		fmt.Println("Usage: go run sources_checker.go <Sources.json>")
 		os.Exit(1)
@@ -75,6 +78,7 @@ func main() {
 	}
 	if len(sources) == 0 {
 		fmt.Println("No sources found.")
+		generateEmptySourcesReport()
 		return
 	}
 	deadMap := loadMap(deadSourcesFile)
@@ -121,8 +125,88 @@ func main() {
 	saveActiveSources(activeURLs)
 	saveMap(deadSourcesFile, deadMap)
 	saveMap(deadSourcesArchive, archiveMap)
-	generateSourcesReport(activeURLs, deadInfos)
+
+	generateSourcesReportMD(activeURLs, deadInfos)
+	generateSourcesReportCSV(activeURLs, deadInfos)
 	fmt.Printf("✅ Active sources: %d, Dead: %d\n", len(activeURLs), len(deadInfos))
+}
+
+func generateEmptySourcesReport() {
+	md := fmt.Sprintf(`# 📊 گزارش اسکنر ساب‌لینک‌ها
+
+**تاریخ اجرا:** %s
+
+## خلاصه آماری
+| معیار | مقدار |
+|-------|-------|
+| کل ساب‌لینک‌ها | 0 |
+| ✅ فعال | 0 |
+| 💀 مرده | 0 |
+
+هیچ ساب‌لینکی یافت نشد.
+`, time.Now().Format("2006-01-02 15:04:05"))
+	os.WriteFile(sourcesReportMD, []byte(md), 0644)
+
+	csvFile, _ := os.Create(sourcesReportCSV)
+	defer csvFile.Close()
+	w := csv.NewWriter(csvFile)
+	w.Write([]string{"ExecutionTime", "Total", "Active", "Dead", "Message"})
+	w.Write([]string{time.Now().Format("2006-01-02 15:04:05"), "0", "0", "0", "empty"})
+	w.Flush()
+}
+
+func generateSourcesReportMD(active []string, dead []SourceStatus) {
+	var sb strings.Builder
+	sb.WriteString("# 📊 گزارش اسکنر ساب‌لینک‌ها\n\n")
+	sb.WriteString(fmt.Sprintf("**تاریخ اجرا:** %s\n\n", time.Now().Format("2006-01-02 15:04:05")))
+	sb.WriteString("## خلاصه آماری\n\n| معیار | مقدار |\n|-------|-------|\n")
+	sb.WriteString(fmt.Sprintf("| کل ساب‌لینک‌ها | %d |\n", len(active)+len(dead)))
+	sb.WriteString(fmt.Sprintf("| ✅ فعال | %d |\n", len(active)))
+	sb.WriteString(fmt.Sprintf("| 💀 مرده | %d |\n\n", len(dead)))
+
+	sb.WriteString("## ✅ ساب‌لینک‌های فعال\n\n")
+	for _, u := range active {
+		sb.WriteString(fmt.Sprintf("- %s\n", u))
+	}
+	if len(active) == 0 {
+		sb.WriteString("(هیچ ساب‌لینک فعالی وجود ندارد)\n")
+	}
+	sb.WriteString("\n## 💀 ساب‌لینک‌های مرده\n\n")
+	if len(dead) > 0 {
+		sb.WriteString(fmt.Sprintf("<details>\n<summary>نمایش همه %d ساب‌لینک (کلیک کنید)</summary>\n\n", len(dead)))
+		for _, d := range dead {
+			sb.WriteString(fmt.Sprintf("- `%s` (%s)\n", d.URL, d.Status))
+		}
+		sb.WriteString("\n</details>\n")
+	} else {
+		sb.WriteString("(هیچ ساب‌لینک مرده‌ای وجود ندارد)\n")
+	}
+	sb.WriteString("\n---\n✅ گزارش توسط GitHub Actions تولید شده است.\n")
+	os.WriteFile(sourcesReportMD, []byte(sb.String()), 0644)
+}
+
+func generateSourcesReportCSV(active []string, dead []SourceStatus) {
+	csvFile, err := os.Create(sourcesReportCSV)
+	if err != nil {
+		fmt.Printf("Error creating CSV: %v\n", err)
+		return
+	}
+	defer csvFile.Close()
+	w := csv.NewWriter(csvFile)
+	defer w.Flush()
+	w.Write([]string{"ExecutionTime", "URL", "Status", "LastModified", "HasConfig", "Error"})
+	nowStr := time.Now().Format("2006-01-02 15:04:05")
+	for _, u := range active {
+		w.Write([]string{nowStr, u, "active", "", "true", ""})
+	}
+	for _, d := range dead {
+		lastModStr := ""
+		if !d.LastMod.IsZero() {
+			lastModStr = d.LastMod.Format("2006-01-02 15:04:05")
+		}
+		w.Write([]string{nowStr, d.URL, d.Status, lastModStr, fmt.Sprintf("%v", d.HasConfig), d.Error})
+	}
+	fmt.Printf("✅ CSV report: %s\n", sourcesReportCSV)
 }
 
 func checkSourceWithRetry(url string) SourceStatus {
@@ -152,33 +236,27 @@ func checkSource(url string) (SourceStatus, error) {
 		return SourceStatus{}, err
 	}
 	defer resp.Body.Close()
-
 	if resp.StatusCode != 200 && resp.StatusCode != 206 {
 		return SourceStatus{URL: url, Status: "DEAD"}, nil
 	}
-
 	lastModStr := resp.Header.Get("Last-Modified")
 	var lastMod time.Time
 	if lastModStr != "" {
 		lastMod, _ = time.Parse(time.RFC1123, lastModStr)
 	}
-
 	limited := io.LimitReader(resp.Body, sampleSize)
 	body, err := io.ReadAll(limited)
 	if err != nil {
 		return SourceStatus{}, err
 	}
 	content := string(body)
-
 	if decoded, err := base64.StdEncoding.DecodeString(strings.TrimSpace(content)); err == nil && len(decoded) > 0 {
 		content = string(decoded)
 	}
-
 	hasConfig := anyConfigInText(content)
 	if !hasConfig {
 		return SourceStatus{URL: url, LastMod: lastMod, HasConfig: false, Status: "NO_CONFIG"}, nil
 	}
-
 	if lastMod.IsZero() {
 		lastMod = time.Now()
 	}
@@ -194,7 +272,6 @@ func anyConfigInText(text string) bool {
 	return false
 }
 
-// ----------------------- I/O helpers -----------------------
 func loadMap(file string) map[string]bool {
 	m := make(map[string]bool)
 	data, err := os.ReadFile(file)
@@ -227,41 +304,4 @@ func saveActiveSources(urls []string) {
 	}
 	os.WriteFile(activeSourcesFile, data, 0644)
 	fmt.Printf("✅ Active sources written to %s\n", activeSourcesFile)
-}
-
-func generateSourcesReport(active []string, dead []SourceStatus) {
-	var sb strings.Builder
-	sb.WriteString("# 📊 گزارش اسکنر ساب‌لینک‌ها\n\n")
-	sb.WriteString(fmt.Sprintf("**تاریخ اجرا:** %s\n\n", time.Now().Format("2006-01-02 15:04:05")))
-	sb.WriteString("## خلاصه آماری\n\n")
-	sb.WriteString("| معیار | مقدار |\n")
-	sb.WriteString("|-------|-------|\n")
-	sb.WriteString(fmt.Sprintf("| کل ساب‌لینک‌های بررسی شده | %d |\n", len(active)+len(dead)))
-	sb.WriteString(fmt.Sprintf("| ✅ فعال | %d |\n", len(active)))
-	sb.WriteString(fmt.Sprintf("| 💀 مرده/غیرفعال | %d |\n\n", len(dead)))
-
-	sb.WriteString("## ✅ ساب‌لینک‌های فعال\n\n")
-	for _, u := range active {
-		sb.WriteString(fmt.Sprintf("- %s\n", u))
-	}
-	if len(active) == 0 {
-		sb.WriteString("(هیچ ساب‌لینک فعالی وجود ندارد)\n")
-	}
-	sb.WriteString("\n")
-
-	sb.WriteString("## 💀 ساب‌لینک‌های مرده/غیرفعال\n\n")
-	if len(dead) > 0 {
-		sb.WriteString("<details>\n")
-		sb.WriteString(fmt.Sprintf("<summary>نمایش همه %d ساب‌لینک (کلیک کنید)</summary>\n\n", len(dead)))
-		for _, d := range dead {
-			sb.WriteString(fmt.Sprintf("- `%s` (%s)\n", d.URL, d.Status))
-		}
-		sb.WriteString("\n</details>\n")
-	} else {
-		sb.WriteString("(هیچ ساب‌لینک مرده‌ای وجود ندارد)\n")
-	}
-
-	sb.WriteString("\n---\n✅ گزارش توسط GitHub Actions تولید شده است.\n")
-	os.WriteFile(sourcesReportFile, []byte(sb.String()), 0644)
-	fmt.Printf("✅ Report written to %s\n", sourcesReportFile)
 }
