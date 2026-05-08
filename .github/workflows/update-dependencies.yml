@@ -1,9 +1,8 @@
-name: Update Dependencies & Code
-
+name: Update Dependencies
 on:
   schedule:
     - cron: "0 0 * * 0"   # هر یکشنبه ساعت 00:00
-  workflow_dispatch:      # اجرای دستی
+  workflow_dispatch:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -15,7 +14,7 @@ jobs:
       contents: write
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup Go
@@ -23,25 +22,22 @@ jobs:
         with:
           go-version: '>=1.21.3'
 
-      # به‌روزرسانی وابستگی‌های اصلی (ریشه)
-      - name: Update main module dependencies
+      - name: Update main module
         run: |
           go get -u all
           go mod tidy
 
-      # به‌روزرسانی وابستگی‌های اسکنرها (telegram-tester)
-      - name: Update telegram-tester dependencies
+      - name: Update telegram-tester module
         run: |
           cd telegram-tester
           go get -u all
           go mod tidy
           cd ..
 
-      # commit و push تغییرات
       - name: Commit and push if changed
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.email "actions@github.com"
+          git config user.name "GitHub Actions"
           git add go.mod go.sum telegram-tester/go.mod telegram-tester/go.sum
-          git diff --staged --quiet || git commit -m "⬆️ Auto-update dependencies [skip ci]"
+          git diff --staged --quiet || git commit -m "⬆️ Auto-update dependencies"
           git push
