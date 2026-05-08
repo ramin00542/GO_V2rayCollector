@@ -1,3 +1,4 @@
+// telegram-tester/sources_checker.go
 package main
 
 import (
@@ -5,21 +6,27 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"math/rand"
 	"net/http"
 	"os"
-	"path/filepath"
 	"regexp"
 	"sort"
 	"strings"
+	"sync"
 	"time"
 )
 
 const (
-	checkTimeout       = 10 * time.Second
-	sampleSize         = 50 * 1024
-	deadSourcesFile    = "dead_sources.txt"
-	deadSourcesArchive = "dead_sources_archive.txt"
-	activeDays         = 30
+	deadSourcesFile     = "dead_sources.txt"
+	deadSourcesArchive  = "dead_sources_archive.txt"
+	sourcesReportFile   = "../sources_report.md"
+	activeSourcesFile   = "../active_sources.json"
+	checkTimeout        = 10 * time.Second
+	sampleSize          = 50 * 1024
+	defaultRetryCount   = 3
+	defaultBaseDelay    = 1 * time.Second
+	defaultJitter       = 500 * time.Millisecond
+	activeDays          = 30
 )
 
 var (
@@ -42,11 +49,12 @@ var (
 	}
 )
 
-type SourceInfo struct {
-	URL       string
-	LastMod   time.Time
-	HasConfig bool
-	Status    string
+type SourceStatus struct {
+	URL       string    `json:"url"`
+	LastMod   time.Time `json:"last_mod"`
+	HasConfig bool      `json:"has_config"`
+	Status    string    `json:"status"`
+	Error     string    `json:"error,omitempty"`
 }
 
 func main() {
@@ -72,98 +80,118 @@ func main() {
 	deadMap := loadMap(deadSourcesFile)
 	archiveMap := loadMap(deadSourcesArchive)
 
-	var active []SourceInfo
-	var dead []SourceInfo
+	var activeURLs []string
+	var deadInfos []SourceStatus
+	jobs := make(chan string, len(sources))
+	results := make(chan SourceStatus, len(sources))
+	var wg sync.WaitGroup
+	workers := 5
+	for i := 0; i < workers; i++ {
+		wg.Add(1)
+		go func() {
+			defer wg.Done()
+			for url := range jobs {
+				res := checkSourceWithRetry(url)
+				results <- res
+				time.Sleep(time.Duration(rand.Intn(500)+500) * time.Millisecond)
+			}
+		}()
+	}
+	for _, url := range sources {
+		jobs <- url
+	}
+	close(jobs)
+	wg.Wait()
+	close(results)
 
-	for i, url := range sources {
-		fmt.Printf("[%d/%d] Checking: %s ... ", i+1, len(sources), url)
-		hasConfig, lastMod, status, err := checkSource(url)
-		if err != nil {
-			fmt.Printf("ERROR: %v\n", err)
-			continue
-		}
-		daysSince := int(time.Since(lastMod).Hours() / 24)
-		if daysSince < 0 {
-			daysSince = 0
-		}
-		fmt.Printf("Last mod: %s (%d days ago), Config: %v\n", lastMod.Format("2006-01-02"), daysSince, hasConfig)
-
-		if status == "OK" && hasConfig && daysSince <= activeDays {
-			active = append(active, SourceInfo{URL: url, LastMod: lastMod, HasConfig: true, Status: status})
-			delete(deadMap, url)
-			delete(archiveMap, url)
+	for res := range results {
+		if res.Status == "OK" && res.HasConfig && time.Since(res.LastMod).Hours()/24 <= float64(activeDays) {
+			activeURLs = append(activeURLs, res.URL)
+			delete(deadMap, res.URL)
+			delete(archiveMap, res.URL)
 		} else {
-			dead = append(dead, SourceInfo{URL: url, LastMod: lastMod, HasConfig: hasConfig, Status: status})
-			deadMap[url] = true
-			if !archiveMap[url] {
-				archiveMap[url] = true
+			deadInfos = append(deadInfos, res)
+			deadMap[res.URL] = true
+			if !archiveMap[res.URL] {
+				archiveMap[res.URL] = true
 			}
 		}
-		time.Sleep(500 * time.Millisecond)
 	}
-	saveActiveSources(active)
+
+	saveActiveSources(activeURLs)
 	saveMap(deadSourcesFile, deadMap)
 	saveMap(deadSourcesArchive, archiveMap)
-	generateSourcesReport(active, dead)
-
-	fmt.Printf("\n✅ Active: %d, Dead: %d\n", len(active), len(dead))
+	generateSourcesReport(activeURLs, deadInfos)
+	fmt.Printf("✅ Active sources: %d, Dead: %d\n", len(activeURLs), len(deadInfos))
 }
 
-func checkSource(url string) (hasConfig bool, lastMod time.Time, status string, err error) {
-	req, err := http.NewRequest("HEAD", url, nil)
+func checkSourceWithRetry(url string) SourceStatus {
+	var lastErr error
+	for attempt := 1; attempt <= defaultRetryCount; attempt++ {
+		res, err := checkSource(url)
+		if err == nil {
+			return res
+		}
+		lastErr = err
+		delay := defaultBaseDelay * time.Duration(1<<uint(attempt-1))
+		jitter := time.Duration(rand.Int63n(int64(defaultJitter)))
+		time.Sleep(delay + jitter)
+	}
+	return SourceStatus{URL: url, Status: "DEAD", Error: lastErr.Error()}
+}
+
+func checkSource(url string) (SourceStatus, error) {
+	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
-		return false, time.Time{}, "ERROR", err
+		return SourceStatus{}, err
 	}
 	req.Header.Set("User-Agent", "Mozilla/5.0")
+	req.Header.Set("Range", "bytes=0-50000")
 	resp, err := httpClient.Do(req)
-	if err != nil || resp.StatusCode != 200 {
-		if resp != nil {
-			resp.Body.Close()
-		}
-		return false, time.Time{}, "DEAD", nil
-	}
-	lm := resp.Header.Get("Last-Modified")
-	if lm != "" {
-		lastMod, _ = time.Parse(time.RFC1123, lm)
-	}
-	resp.Body.Close()
-
-	req2, err := http.NewRequest("GET", url, nil)
 	if err != nil {
-		return false, lastMod, "DEAD", err
+		return SourceStatus{}, err
 	}
-	req2.Header.Set("User-Agent", "Mozilla/5.0")
-	resp2, err := httpClient.Do(req2)
-	if err != nil || resp2.StatusCode != 200 {
-		if resp2 != nil {
-			resp2.Body.Close()
-		}
-		return false, lastMod, "DEAD", nil
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 && resp.StatusCode != 206 {
+		return SourceStatus{URL: url, Status: "DEAD"}, nil
 	}
-	defer resp2.Body.Close()
-	limited := io.LimitReader(resp2.Body, sampleSize)
+
+	lastModStr := resp.Header.Get("Last-Modified")
+	var lastMod time.Time
+	if lastModStr != "" {
+		lastMod, _ = time.Parse(time.RFC1123, lastModStr)
+	}
+
+	limited := io.LimitReader(resp.Body, sampleSize)
 	body, err := io.ReadAll(limited)
 	if err != nil {
-		return false, lastMod, "DEAD", err
+		return SourceStatus{}, err
 	}
 	content := string(body)
+
 	if decoded, err := base64.StdEncoding.DecodeString(strings.TrimSpace(content)); err == nil && len(decoded) > 0 {
 		content = string(decoded)
 	}
-	has := false
-	for _, re := range regexPatterns {
-		if re.MatchString(content) {
-			has = true
-			break
-		}
+
+	hasConfig := anyConfigInText(content)
+	if !hasConfig {
+		return SourceStatus{URL: url, LastMod: lastMod, HasConfig: false, Status: "NO_CONFIG"}, nil
 	}
-	if !has {
-		return false, lastMod, "NO_CONFIG", nil
-	}
+
 	if lastMod.IsZero() {
 		lastMod = time.Now()
 	}
-	return true, lastMod, "OK", nil
+	return SourceStatus{URL: url, LastMod: lastMod, HasConfig: true, Status: "OK"}, nil
+}
+
+func anyConfigInText(text string) bool {
+	for _, re := range regexPatterns {
+		if re.MatchString(text) {
+			return true
+		}
+	}
+	return false
 }
 
 func loadMap(file string) map[string]bool {
@@ -188,57 +216,51 @@ func saveMap(file string, m map[string]bool) {
 	}
 	sort.Strings(lines)
 	os.WriteFile(file, []byte(strings.Join(lines, "\n")), 0644)
-	fmt.Printf("✅ Saved %s with %d entries.\n", file, len(lines))
 }
 
-func saveActiveSources(sources []SourceInfo) {
-	list := make([]string, len(sources))
-	for i, s := range sources {
-		list[i] = s.URL
-	}
-	data, err := json.MarshalIndent(list, "", "  ")
+func saveActiveSources(urls []string) {
+	data, err := json.MarshalIndent(urls, "", "  ")
 	if err != nil {
 		fmt.Printf("Error marshalling JSON: %v\n", err)
 		return
 	}
-	os.WriteFile("../Sources.json", data, 0644)
-	fmt.Printf("✅ Updated Sources.json with %d active sources.\n", len(sources))
+	os.WriteFile(activeSourcesFile, data, 0644)
+	fmt.Printf("✅ Active sources written to %s\n", activeSourcesFile)
 }
 
-func generateSourcesReport(active, dead []SourceInfo) {
-	os.MkdirAll("../stats", 0755)
-	reportPath := "../stats/sources_report.md"
-
+func generateSourcesReport(active []string, dead []SourceStatus) {
 	var sb strings.Builder
 	sb.WriteString("# 📊 گزارش اسکنر ساب‌لینک‌ها\n\n")
 	sb.WriteString(fmt.Sprintf("**تاریخ اجرا:** %s\n\n", time.Now().Format("2006-01-02 15:04:05")))
 	sb.WriteString("## خلاصه آماری\n\n")
 	sb.WriteString("| معیار | مقدار |\n")
 	sb.WriteString("|-------|-------|\n")
-	sb.WriteString(fmt.Sprintf("| **ساب‌لینک‌های فعال** (≤%d روز + کانفیگ) | %d |\n", activeDays, len(active)))
-	sb.WriteString(fmt.Sprintf("| **ساب‌لینک‌های مرده/غیرفعال** | %d |\n\n", len(dead)))
+	sb.WriteString(fmt.Sprintf("| کل ساب‌لینک‌های بررسی شده | %d |\n", len(active)+len(dead)))
+	sb.WriteString(fmt.Sprintf("| ✅ فعال | %d |\n", len(active)))
+	sb.WriteString(fmt.Sprintf("| 💀 مرده/غیرفعال | %d |\n\n", len(dead)))
 
-	if len(active) > 0 {
-		sb.WriteString("## ✅ ساب‌لینک‌های فعال (۱۰ مورد اول)\n\n")
-		for i, s := range active {
-			if i >= 10 {
-				sb.WriteString(fmt.Sprintf("... و %d ساب‌لینک دیگر\n", len(active)-10))
-				break
-			}
-			sb.WriteString(fmt.Sprintf("- %s (آخرین تغییر: %s)\n", s.URL, s.LastMod.Format("2006-01-02")))
-		}
-	} else {
+	sb.WriteString("## ✅ ساب‌لینک‌های فعال\n\n")
+	for _, u := range active {
+		sb.WriteString(fmt.Sprintf("- %s\n", u))
+	}
+	if len(active) == 0 {
 		sb.WriteString("(هیچ ساب‌لینک فعالی وجود ندارد)\n")
 	}
-	sb.WriteString("\n## 💀 ساب‌لینک‌های غیرفعال (۱۰ مورد اول)\n\n")
-	for i, s := range dead {
-		if i >= 10 {
-			sb.WriteString(fmt.Sprintf("... و %d ساب‌لینک دیگر\n", len(dead)-10))
-			break
+	sb.WriteString("\n")
+
+	sb.WriteString("## 💀 ساب‌لینک‌های مرده/غیرفعال\n\n")
+	if len(dead) > 0 {
+		sb.WriteString("<details>\n")
+		sb.WriteString(fmt.Sprintf("<summary>نمایش همه %d ساب‌لینک (کلیک کنید)</summary>\n\n", len(dead)))
+		for _, d := range dead {
+			sb.WriteString(fmt.Sprintf("- `%s` (%s)\n", d.URL, d.Status))
 		}
-		sb.WriteString(fmt.Sprintf("- %s (وضعیت: %s)\n", s.URL, s.Status))
+		sb.WriteString("\n</details>\n")
+	} else {
+		sb.WriteString("(هیچ ساب‌لینک مرده‌ای وجود ندارد)\n")
 	}
-	sb.WriteString("\n---\n✅ گزارش توسط ابزار اسکنر ساب‌لینک‌ها تولید شده است.\n")
-	os.WriteFile(reportPath, []byte(sb.String()), 0644)
-	fmt.Printf("✅ Report written to %s\n", reportPath)
+
+	sb.WriteString("\n---\n✅ گزارش توسط GitHub Actions تولید شده است.\n")
+	os.WriteFile(sourcesReportFile, []byte(sb.String()), 0644)
+	fmt.Printf("✅ Report written to %s\n", sourcesReportFile)
 }
