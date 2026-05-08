@@ -17,6 +17,7 @@ import (
 const (
 	requestTimeout   = 15 * time.Second
 	deadChannelsFile = "dead_channels.txt"
+	reportFile       = "scan_report.txt"
 )
 
 var (
@@ -55,15 +56,30 @@ func main() {
 	// خواندن channels.csv
 	records := readCSV(inputFile)
 	if len(records) < 2 {
-		fmt.Println("No channels found.")
+		fmt.Println("No channels found in CSV.")
 		return
 	}
-	// ستون URL در index 0 فرض می‌شود
-	var activeChannels []ChannelInfo
-	var deadList []ChannelInfo
+	header := records[0]
+	urlIdx := -1
+	for i, col := range header {
+		if strings.EqualFold(col, "URL") {
+			urlIdx = i
+			break
+		}
+	}
+	if urlIdx == -1 {
+		fmt.Println("CSV missing 'URL' column")
+		os.Exit(1)
+	}
+
+	var active []ChannelInfo
+	var dead []ChannelInfo
 
 	for i, row := range records[1:] {
-		url := row[0]
+		if len(row) <= urlIdx {
+			continue
+		}
+		url := row[urlIdx]
 		fmt.Printf("[%d/%d] Scanning: %s ... ", i+1, len(records)-1, url)
 		hasConfig, lastPost, err := analyzeChannel(url)
 		if err != nil {
@@ -71,22 +87,24 @@ func main() {
 			continue
 		}
 		daysSince := int(time.Since(lastPost).Hours() / 24)
+		if daysSince < 0 {
+			daysSince = 0
+		}
 		fmt.Printf("Last post: %s (%d days ago), Config: %v\n", lastPost.Format("2006-01-02"), daysSince, hasConfig)
 		if hasConfig && daysSince <= 30 {
-			activeChannels = append(activeChannels, ChannelInfo{URL: url, LastPost: lastPost, HasConfig: true})
+			active = append(active, ChannelInfo{URL: url, LastPost: lastPost, HasConfig: true})
 		} else {
-			deadList = append(deadList, ChannelInfo{URL: url, LastPost: lastPost, HasConfig: hasConfig})
+			dead = append(dead, ChannelInfo{URL: url, LastPost: lastPost, HasConfig: hasConfig})
 		}
 		time.Sleep(1 * time.Second)
 	}
 
-	// نوشتن channels.csv جدید (فقط کانال‌های فعال)
-	writeActiveChannels("channels.csv", activeChannels)
+	// بازنویسی channels.csv (فقط کانال‌های فعال)
+	writeActiveChannels(inputFile, active)
+	// به‌روزرسانی dead_channels.txt
+	updateDeadChannels(dead)
 
-	// به‌روزرسانی dead_channels.txt با زمان بررسی بعدی
-	updateDeadChannels(deadList)
-
-	fmt.Printf("\n✅ Active channels: %d, Dead/Inactive: %d\n", len(activeChannels), len(deadList))
+	fmt.Printf("\n✅ Active channels: %d, Dead/Inactive: %d\n", len(active), len(dead))
 }
 
 func analyzeChannel(channelURL string) (hasConfig bool, lastPost time.Time, err error) {
@@ -107,7 +125,7 @@ func analyzeChannel(channelURL string) (hasConfig bool, lastPost time.Time, err 
 	if err != nil {
 		return false, time.Time{}, err
 	}
-	// آخرین تاریخ
+	// استخراج آخرین تاریخ
 	var lastTime time.Time
 	doc.Find("time").Each(func(i int, s *goquery.Selection) {
 		if i == 0 {
@@ -127,7 +145,7 @@ func analyzeChannel(channelURL string) (hasConfig bool, lastPost time.Time, err 
 			}
 		})
 	}
-	// بررسی کانفیگ
+	// بررسی وجود کانفیگ
 	var texts []string
 	doc.Find(".tgme_widget_message_text, pre, code").Each(func(i int, s *goquery.Selection) {
 		texts = append(texts, s.Text())
@@ -175,7 +193,7 @@ func writeActiveChannels(path string, channels []ChannelInfo) {
 	defer f.Close()
 	w := csv.NewWriter(f)
 	defer w.Flush()
-	w.Write([]string{"URL", "AllMessagesFlag"}) // ستون دوم را false می‌گذاریم (پیش‌فرض)
+	w.Write([]string{"URL", "AllMessagesFlag"})
 	for _, ch := range channels {
 		w.Write([]string{ch.URL, "false"})
 	}
@@ -183,7 +201,6 @@ func writeActiveChannels(path string, channels []ChannelInfo) {
 }
 
 func updateDeadChannels(dead []ChannelInfo) {
-	// خواندن dead_channels.txt موجود
 	existing := make(map[string]int64) // URL -> nextCheckTimestamp
 	data, _ := os.ReadFile(deadChannelsFile)
 	for _, line := range strings.Split(string(data), "\n") {
@@ -194,17 +211,17 @@ func updateDeadChannels(dead []ChannelInfo) {
 			}
 		}
 	}
-	// به‌روزرسانی: برای هر کانال مرده، زمان بررسی بعدی را محاسبه کن
 	now := time.Now().Unix()
 	for _, ch := range dead {
 		daysSince := int(time.Since(ch.LastPost).Hours() / 24)
 		var next int64
-		if daysSince > 60 || !ch.HasConfig {
-			next = now + 30*24*3600 // یک ماه بعد
-		} else if daysSince > 30 {
-			next = now + 7*24*3600 // یک هفته بعد
-		} else {
-			next = now + 24*3600 // یک روز بعد (برای کانال‌هایی که کانفیگ ندارند اما اخیراً فعال بوده‌اند)
+		switch {
+		case daysSince > 60 || !ch.HasConfig:
+			next = now + 30*24*3600 // ماهانه
+		case daysSince > 30:
+			next = now + 7*24*3600 // هفتگی
+		default:
+			next = now + 24*3600 // روزانه (برای کانال‌هایی که کانفیگ ندارند اما اخیراً فعال بوده‌اند)
 		}
 		existing[ch.URL] = next
 	}
