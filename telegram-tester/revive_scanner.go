@@ -18,10 +18,10 @@ import (
 )
 
 const (
-	deadChannelsArchive = "dead_channels_archive.txt"
-	activeChannelsFile  = "channels.csv"
+	deadChannelsArchive = "../dead_channels_archive.txt" // ← مسیر ریشه
+	activeChannelsFile  = "../channels.csv"              // ← مسیر ریشه
 	reviveCacheFile     = "revive_cache.json"
-	reviveReportFile    = "revive_report.txt"
+	reviveReportFile    = "../revive_report.txt"
 	defaultRetryCount   = 3
 	defaultBaseDelay    = 1 * time.Second
 	defaultJitter       = 500 * time.Millisecond
@@ -120,7 +120,7 @@ func main() {
 }
 
 // ------------------------------------------------------------
-// تولید گزارش حتی در حالت خالی
+// تولید گزارش (حتی در حالت خالی)
 // ------------------------------------------------------------
 func generateEmptyReviveReport() {
 	report := fmt.Sprintf(`# 📊 گزارش اسکنر احیای کانال‌ها
@@ -180,7 +180,7 @@ func generateReviveReport(revived, stillDead []string, results []ReviveResult) {
 }
 
 // ------------------------------------------------------------
-// توابع اصلی (بدون تغییر از قبل)
+// توابع اصلی
 // ------------------------------------------------------------
 func checkChannelWithRetry(url string) ReviveResult {
 	var lastErr error
@@ -326,11 +326,15 @@ func extractChannelName(rawURL string) string {
 	return ""
 }
 
+// ------------------------------------------------------------
 // I/O helpers
+// ------------------------------------------------------------
 func loadArchive() map[string]bool {
 	m := make(map[string]bool)
 	data, err := os.ReadFile(deadChannelsArchive)
 	if err != nil {
+		fmt.Printf("Error reading archive file: %v\n", err)
+		fmt.Println("Looking for file at:", deadChannelsArchive)
 		return m
 	}
 	for _, line := range strings.Split(string(data), "\n") {
@@ -339,6 +343,7 @@ func loadArchive() map[string]bool {
 			m[line] = true
 		}
 	}
+	fmt.Printf("Loaded %d channels from archive.\n", len(m))
 	return m
 }
 
@@ -349,17 +354,23 @@ func saveArchive(m map[string]bool) {
 	}
 	sort.Strings(lines)
 	os.WriteFile(deadChannelsArchive, []byte(strings.Join(lines, "\n")), 0644)
+	fmt.Printf("Saved %d channels to archive.\n", len(lines))
 }
 
 func loadActiveChannels() map[string]bool {
 	m := make(map[string]bool)
 	f, err := os.Open(activeChannelsFile)
 	if err != nil {
+		fmt.Printf("Error opening active channels file: %v\n", err)
 		return m
 	}
 	defer f.Close()
 	r := csv.NewReader(f)
-	records, _ := r.ReadAll()
+	records, err := r.ReadAll()
+	if err != nil {
+		fmt.Printf("Error reading CSV: %v\n", err)
+		return m
+	}
 	if len(records) < 2 {
 		return m
 	}
@@ -368,6 +379,7 @@ func loadActiveChannels() map[string]bool {
 			m[row[0]] = true
 		}
 	}
+	fmt.Printf("Loaded %d active channels from CSV.\n", len(m))
 	return m
 }
 
@@ -386,6 +398,7 @@ func addToActiveChannels(urls []string) {
 	for _, url := range urls {
 		if !activeSet[url] {
 			records = append(records, []string{url, "false"})
+			fmt.Printf("Adding revived channel: %s\n", url)
 		}
 	}
 	if err := writeCSV(activeChannelsFile, headers, records); err != nil {
