@@ -1,3 +1,4 @@
+// telegram-tester/revive_scanner.go
 package main
 
 import (
@@ -7,7 +8,6 @@ import (
 	"math/rand"
 	"net/http"
 	"os"
-	"path/filepath"
 	"regexp"
 	"sort"
 	"strings"
@@ -20,10 +20,12 @@ import (
 const (
 	deadChannelsArchive = "../dead_channels_archive.txt"
 	activeChannelsFile  = "../channels.csv"
-	reviveCacheFile     = "revive_cache.json"
-	retryCount          = 3
-	baseDelay           = 1 * time.Second
-	jitter              = 500 * time.Millisecond
+	reviveCacheFile     = "../revive_cache.json"
+	reviveReportMD      = "../reports/revive_report.md"
+	reviveReportCSV     = "../reports/revive_data.csv"
+	defaultRetryCount   = 3
+	defaultBaseDelay    = 1 * time.Second
+	defaultJitter       = 500 * time.Millisecond
 	activeDays          = 30
 )
 
@@ -57,6 +59,7 @@ type ReviveResult struct {
 }
 
 func main() {
+	os.MkdirAll("../reports", 0755)
 	archive := loadArchive()
 	if len(archive) == 0 {
 		fmt.Println("Archive is empty. Nothing to revive.")
@@ -93,8 +96,10 @@ func main() {
 
 	for res := range resultsCh {
 		results = append(results, res)
-		if res.Revived && !activeMap[res.URL] {
-			revivedList = append(revivedList, res.URL)
+		if res.Revived {
+			if !activeMap[res.URL] {
+				revivedList = append(revivedList, res.URL)
+			}
 		} else {
 			stillDead = append(stillDead, res.URL)
 		}
@@ -112,131 +117,197 @@ func main() {
 	}
 	saveArchive(newArchive)
 	saveReviveCache(results)
-	generateReviveReport(revivedList, stillDead, results)
+	generateReviveReportMD(revivedList, stillDead, results)
+	generateReviveReportCSV(revivedList, stillDead, results)
 	fmt.Printf("✅ Revive scan finished. Revived: %d, Still dead: %d\n", len(revivedList), len(stillDead))
 }
 
+func generateEmptyReviveReport() {
+	md := fmt.Sprintf(`# 📊 گزارش احیای کانال‌ها
+
+**تاریخ اجرا:** %s
+
+## خلاصه
+- کل بایگانی: 0
+- احیا شده: 0
+- باقی‌مانده: 0
+
+هیچ کانالی در بایگانی نبود.
+`, time.Now().Format("2006-01-02 15:04:05"))
+	os.WriteFile(reviveReportMD, []byte(md), 0644)
+
+	csvFile, _ := os.Create(reviveReportCSV)
+	defer csvFile.Close()
+	w := csv.NewWriter(csvFile)
+	w.Write([]string{"ExecutionTime", "TotalArchived", "Revived", "StillDead", "Message"})
+	w.Write([]string{time.Now().Format("2006-01-02 15:04:05"), "0", "0", "0", "empty"})
+	w.Flush()
+}
+
+func generateReviveReportMD(revived, stillDead []string, results []ReviveResult) {
+	var sb strings.Builder
+	sb.WriteString("# 📊 گزارش احیای کانال‌ها\n\n")
+	sb.WriteString(fmt.Sprintf("**تاریخ اجرا:** %s\n\n", time.Now().Format("2006-01-02 15:04:05")))
+	sb.WriteString("## خلاصه آماری\n\n| معیار | مقدار |\n|-------|-------|\n")
+	sb.WriteString(fmt.Sprintf("| کل کانال‌های بایگانی | %d |\n", len(results)))
+	sb.WriteString(fmt.Sprintf("| ✅ احیا شده | %d |\n", len(revived)))
+	sb.WriteString(fmt.Sprintf("| 💀 همچنان مرده | %d |\n\n", len(stillDead)))
+
+	sb.WriteString("## ✅ کانال‌های احیا شده\n\n")
+	if len(revived) > 0 {
+		for _, url := range revived {
+			sb.WriteString(fmt.Sprintf("- %s\n", url))
+		}
+	} else {
+		sb.WriteString("(هیچ کانالی احیا نشد)\n")
+	}
+	sb.WriteString("\n## 💀 کانال‌های باقی‌مانده در بایگانی\n\n")
+	if len(stillDead) > 0 {
+		sb.WriteString(fmt.Sprintf("<details>\n<summary>نمایش همه %d کانال (کلیک کنید)</summary>\n\n", len(stillDead)))
+		for _, url := range stillDead {
+			sb.WriteString(fmt.Sprintf("- %s\n", url))
+		}
+		sb.WriteString("\n</details>\n")
+	} else {
+		sb.WriteString("(هیچ کانال مرده‌ای باقی نمانده)\n")
+	}
+	sb.WriteString("\n---\n✅ گزارش توسط GitHub Actions تولید شده است.\n")
+	os.WriteFile(reviveReportMD, []byte(sb.String()), 0644)
+	fmt.Printf("✅ MD report: %s\n", reviveReportMD)
+}
+
+func generateReviveReportCSV(revived, stillDead []string, results []ReviveResult) {
+	csvFile, err := os.Create(reviveReportCSV)
+	if err != nil {
+		fmt.Printf("Error creating CSV: %v\n", err)
+		return
+	}
+	defer csvFile.Close()
+	w := csv.NewWriter(csvFile)
+	defer w.Flush()
+	w.Write([]string{"ExecutionTime", "URL", "Revived", "LastPost", "HasConfig", "Status", "Error"})
+	nowStr := time.Now().Format("2006-01-02 15:04:05")
+	for _, res := range results {
+		revivedStr := "false"
+		if res.Revived {
+			revivedStr = "true"
+		}
+		lastPostStr := ""
+		if !res.LastPost.IsZero() {
+			lastPostStr = res.LastPost.Format("2006-01-02 15:04:05")
+		}
+		w.Write([]string{nowStr, res.URL, revivedStr, lastPostStr, fmt.Sprintf("%v", res.HasConfig), res.Status, res.Error})
+	}
+	fmt.Printf("✅ CSV report: %s\n", reviveReportCSV)
+}
+
+// ------------------------------------------------------------
+// توابع اصلی (بدون تغییر)
+// ------------------------------------------------------------
 func checkChannelWithRetry(url string) ReviveResult {
 	var lastErr error
-	for attempt := 1; attempt <= retryCount; attempt++ {
-		if res, err := analyzeChannel(url); err == nil {
+	for attempt := 1; attempt <= defaultRetryCount; attempt++ {
+		res, err := analyzeChannelForRevive(url)
+		if err == nil {
 			return res
-		} else {
-			lastErr = err
 		}
-		delay := baseDelay * time.Duration(1<<uint(attempt-1))
-		jit := time.Duration(rand.Int63n(int64(jitter)))
-		time.Sleep(delay + jit)
+		lastErr = err
+		delay := defaultBaseDelay * time.Duration(1<<uint(attempt-1))
+		jitter := time.Duration(rand.Int63n(int64(defaultJitter)))
+		time.Sleep(delay + jitter)
 	}
 	return ReviveResult{URL: url, Status: "error", Error: lastErr.Error(), Revived: false}
 }
 
-func analyzeChannel(channelURL string) (ReviveResult, error) {
+func analyzeChannelForRevive(channelURL string) (ReviveResult, error) {
 	channelName := extractChannelName(channelURL)
 	if channelName == "" {
 		return ReviveResult{}, fmt.Errorf("invalid URL")
 	}
 	rssURL := fmt.Sprintf("https://t.me/s/%s.rss", channelName)
-	lastPost, hasConfig, err := fetchFromRSS(rssURL)
+	res, err := fetchFromRSSRevive(rssURL, channelURL)
 	if err == nil {
-		revived := hasConfig && time.Since(lastPost).Hours()/24 <= float64(activeDays)
-		status := "inactive"
-		if revived {
-			status = "active"
-		}
-		return ReviveResult{
-			URL:       channelURL,
-			LastPost:  lastPost,
-			HasConfig: hasConfig,
-			Status:    status,
-			Revived:   revived,
-		}, nil
+		return res, nil
 	}
 	htmlURL := fmt.Sprintf("https://t.me/s/%s", channelName)
-	lastPost, hasConfig, err = fetchFromHTML(htmlURL)
+	return fetchFromHTMLRevive(htmlURL, channelURL)
+}
+
+func fetchFromRSSRevive(rssURL, origURL string) (ReviveResult, error) {
+	resp, err := client.Get(rssURL)
 	if err != nil {
 		return ReviveResult{}, err
 	}
-	revived := hasConfig && time.Since(lastPost).Hours()/24 <= float64(activeDays)
+	defer resp.Body.Close()
+	if resp.StatusCode != 200 {
+		return ReviveResult{}, fmt.Errorf("HTTP %d", resp.StatusCode)
+	}
+	doc, err := goquery.NewDocumentFromReader(resp.Body)
+	if err != nil {
+		return ReviveResult{}, err
+	}
+	var latestTime time.Time
+	var anyConfig bool
+	doc.Find("item").Each(func(i int, s *goquery.Selection) {
+		pubDate := s.Find("pubDate").Text()
+		if pubDate != "" {
+			t, err := time.Parse(time.RFC1123Z, pubDate)
+			if err == nil && (latestTime.IsZero() || t.After(latestTime)) {
+				latestTime = t
+			}
+		}
+		desc := s.Find("description").Text()
+		if anyConfigInText(desc) {
+			anyConfig = true
+		}
+	})
+	if latestTime.IsZero() {
+		return ReviveResult{}, fmt.Errorf("no pubDate")
+	}
+	revived := anyConfig && time.Since(latestTime).Hours()/24 <= float64(activeDays)
 	status := "inactive"
 	if revived {
 		status = "active"
 	}
 	return ReviveResult{
-		URL:       channelURL,
-		LastPost:  lastPost,
-		HasConfig: hasConfig,
+		URL:       origURL,
+		LastPost:  latestTime,
+		HasConfig: anyConfig,
 		Status:    status,
 		Revived:   revived,
 	}, nil
 }
 
-func fetchFromRSS(rssURL string) (lastPost time.Time, hasConfig bool, err error) {
-	resp, err := client.Get(rssURL)
-	if err != nil {
-		return time.Time{}, false, err
-	}
-	defer resp.Body.Close()
-	if resp.StatusCode != 200 {
-		return time.Time{}, false, fmt.Errorf("HTTP %d", resp.StatusCode)
-	}
-	doc, err := goquery.NewDocumentFromReader(resp.Body)
-	if err != nil {
-		return time.Time{}, false, err
-	}
-	var latestTime time.Time
-	doc.Find("item").Each(func(i int, s *goquery.Selection) {
-		pubDate := s.Find("pubDate").Text()
-		if pubDate != "" {
-			if t, err := time.Parse(time.RFC1123Z, pubDate); err == nil && (latestTime.IsZero() || t.After(latestTime)) {
-				latestTime = t
-			}
-		}
-		desc := s.Find("description").Text()
-		for _, re := range regexPatterns {
-			if re.MatchString(desc) {
-				hasConfig = true
-			}
-		}
-	})
-	if latestTime.IsZero() {
-		return time.Time{}, false, fmt.Errorf("no pubDate")
-	}
-	return latestTime, hasConfig, nil
-}
-
-func fetchFromHTML(htmlURL string) (lastPost time.Time, hasConfig bool, err error) {
+func fetchFromHTMLRevive(htmlURL, origURL string) (ReviveResult, error) {
 	resp, err := client.Get(htmlURL)
 	if err != nil {
-		return time.Time{}, false, err
+		return ReviveResult{}, err
 	}
 	defer resp.Body.Close()
 	if resp.StatusCode == 404 {
-		return time.Time{}, false, fmt.Errorf("channel not found")
+		return ReviveResult{URL: origURL, Status: "banned", Revived: false, Error: "not found"}, nil
 	}
 	if resp.StatusCode != 200 {
-		return time.Time{}, false, fmt.Errorf("HTTP %d", resp.StatusCode)
+		return ReviveResult{}, fmt.Errorf("HTTP %d", resp.StatusCode)
 	}
 	doc, err := goquery.NewDocumentFromReader(resp.Body)
 	if err != nil {
-		return time.Time{}, false, err
+		return ReviveResult{}, err
 	}
 	var lastTime time.Time
 	doc.Find("time").Each(func(i int, s *goquery.Selection) {
 		if i == 0 && lastTime.IsZero() {
 			if dt, ok := s.Attr("datetime"); ok {
-				if t, err := time.Parse(time.RFC3339, dt); err == nil {
-					lastTime = t
-				}
+				t, _ := time.Parse(time.RFC3339, dt)
+				lastTime = t
 			}
 		}
 	})
 	if lastTime.IsZero() {
 		doc.Find(".datetime").Each(func(i int, s *goquery.Selection) {
 			if i == 0 && lastTime.IsZero() {
-				if t, err := time.Parse(time.RFC3339, strings.TrimSpace(s.Text())); err == nil {
-					lastTime = t
-				}
+				t, _ := time.Parse(time.RFC3339, strings.TrimSpace(s.Text()))
+				lastTime = t
 			}
 		})
 	}
@@ -244,17 +315,28 @@ func fetchFromHTML(htmlURL string) (lastPost time.Time, hasConfig bool, err erro
 	doc.Find(".tgme_widget_message_text, pre, code").Each(func(i int, s *goquery.Selection) {
 		texts = append(texts, s.Text())
 	})
-	combined := strings.Join(texts, "\n")
+	has := anyConfigInText(strings.Join(texts, "\n"))
+	revived := has && time.Since(lastTime).Hours()/24 <= float64(activeDays) && !lastTime.IsZero()
+	status := "inactive"
+	if revived {
+		status = "active"
+	}
+	return ReviveResult{
+		URL:       origURL,
+		LastPost:  lastTime,
+		HasConfig: has,
+		Status:    status,
+		Revived:   revived,
+	}, nil
+}
+
+func anyConfigInText(text string) bool {
 	for _, re := range regexPatterns {
-		if re.MatchString(combined) {
-			hasConfig = true
-			break
+		if re.MatchString(text) {
+			return true
 		}
 	}
-	if lastTime.IsZero() {
-		return time.Time{}, hasConfig, fmt.Errorf("no timestamp")
-	}
-	return lastTime, hasConfig, nil
+	return false
 }
 
 func extractChannelName(rawURL string) string {
@@ -266,6 +348,7 @@ func extractChannelName(rawURL string) string {
 	return ""
 }
 
+// I/O helpers
 func loadArchive() map[string]bool {
 	m := make(map[string]bool)
 	data, err := os.ReadFile(deadChannelsArchive)
@@ -298,7 +381,10 @@ func loadActiveChannels() map[string]bool {
 	}
 	defer f.Close()
 	r := csv.NewReader(f)
-	records, _ := r.ReadAll()
+	records, err := r.ReadAll()
+	if err != nil {
+		return m
+	}
 	if len(records) < 2 {
 		return m
 	}
@@ -328,7 +414,9 @@ func addToActiveChannels(urls []string) {
 			fmt.Printf("Adding revived channel: %s\n", url)
 		}
 	}
-	writeCSV(activeChannelsFile, headers, records)
+	if err := writeCSV(activeChannelsFile, headers, records); err != nil {
+		fmt.Printf("Error writing CSV: %v\n", err)
+	}
 }
 
 func readCSV(path string) ([][]string, []string, error) {
@@ -371,62 +459,4 @@ func writeCSV(path string, headers []string, records [][]string) error {
 func saveReviveCache(results []ReviveResult) {
 	data, _ := json.MarshalIndent(results, "", "  ")
 	os.WriteFile(reviveCacheFile, data, 0644)
-}
-
-func generateEmptyReviveReport() {
-	os.MkdirAll("../stats", 0755)
-	reportPath := "../stats/revive_report.md"
-	report := fmt.Sprintf(`# 📊 گزارش اسکنر احیای کانال‌ها
-
-**تاریخ اجرا:** %s
-
-## خلاصه آماری
-
-| معیار | مقدار |
-|-------|-------|
-| کل کانال‌های بایگانی | 0 |
-| کانال‌های احیا شده | 0 |
-| کانال‌های همچنان مرده | 0 |
-
-هیچ کانالی در بایگانی وجود نداشت. اسکنر کاری انجام نداد.
-
---- 
-✅ گزارش توسط GitHub Actions تولید شده است.`, time.Now().Format("2006-01-02 15:04:05"))
-	os.WriteFile(reportPath, []byte(report), 0644)
-	fmt.Printf("✅ Empty report written to %s\n", reportPath)
-}
-
-func generateReviveReport(revived, stillDead []string, results []ReviveResult) {
-	os.MkdirAll("../stats", 0755)
-	reportPath := "../stats/revive_report.md"
-
-	var sb strings.Builder
-	sb.WriteString("# 📊 گزارش اسکنر احیای کانال‌ها\n\n")
-	sb.WriteString(fmt.Sprintf("**تاریخ اجرا:** %s\n\n", time.Now().Format("2006-01-02 15:04:05")))
-	sb.WriteString("## خلاصه آماری\n\n")
-	sb.WriteString("| معیار | مقدار |\n")
-	sb.WriteString("|-------|-------|\n")
-	sb.WriteString(fmt.Sprintf("| کل کانال‌های بایگانی | %d |\n", len(results)))
-	sb.WriteString(fmt.Sprintf("| ✅ کانال‌های احیا شده | %d |\n", len(revived)))
-	sb.WriteString(fmt.Sprintf("| 💀 کانال‌های همچنان مرده | %d |\n\n", len(stillDead)))
-
-	if len(revived) > 0 {
-		sb.WriteString("## ✅ کانال‌های احیا شده\n\n")
-		for _, url := range revived {
-			sb.WriteString(fmt.Sprintf("- %s\n", url))
-		}
-	} else {
-		sb.WriteString("(هیچ کانالی احیا نشد)\n")
-	}
-	sb.WriteString("\n## 💀 کانال‌های باقی‌مانده در بایگانی (۱۰ مورد اول)\n\n")
-	for i, url := range stillDead {
-		if i >= 10 {
-			sb.WriteString(fmt.Sprintf("... و %d کانال دیگر\n", len(stillDead)-10))
-			break
-		}
-		sb.WriteString(fmt.Sprintf("- %s\n", url))
-	}
-	sb.WriteString("\n---\n✅ گزارش توسط GitHub Actions تولید شده است.\n")
-	os.WriteFile(reportPath, []byte(sb.String()), 0644)
-	fmt.Printf("✅ Report written to %s\n", reportPath)
 }
