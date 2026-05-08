@@ -18,10 +18,10 @@ import (
 )
 
 const (
-	deadChannelsArchive = "../dead_channels_archive.txt" // ← مسیر ریشه
-	activeChannelsFile  = "../channels.csv"              // ← مسیر ریشه
+	deadChannelsArchive = "../dead_channels_archive.txt"
+	activeChannelsFile  = "../channels.csv"
 	reviveCacheFile     = "revive_cache.json"
-	reviveReportFile    = "../revive_report.txt"
+	reviveReportFile    = "../revive_report.md" // ← تغییر پسوند به .md
 	defaultRetryCount   = 3
 	defaultBaseDelay    = 1 * time.Second
 	defaultJitter       = 500 * time.Millisecond
@@ -119,9 +119,7 @@ func main() {
 	fmt.Printf("✅ Revive scan finished. Revived: %d, Still dead: %d\n", len(revivedList), len(stillDead))
 }
 
-// ------------------------------------------------------------
-// تولید گزارش (حتی در حالت خالی)
-// ------------------------------------------------------------
+// گزارش برای حالت خالی (با پسوند .md)
 func generateEmptyReviveReport() {
 	report := fmt.Sprintf(`# 📊 گزارش اسکنر احیای کانال‌ها
 
@@ -180,7 +178,7 @@ func generateReviveReport(revived, stillDead []string, results []ReviveResult) {
 }
 
 // ------------------------------------------------------------
-// توابع اصلی
+// توابع اصلی (بدون تغییر)
 // ------------------------------------------------------------
 func checkChannelWithRetry(url string) ReviveResult {
 	var lastErr error
