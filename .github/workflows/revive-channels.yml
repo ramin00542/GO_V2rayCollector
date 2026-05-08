@@ -22,29 +22,18 @@ jobs:
         with:
           go-version: '>=1.21.3'
 
-      - name: Install dependencies
-        run: |
-          cd telegram-tester
-          go mod init telegram-tester 2>/dev/null || true
-          go get github.com/PuerkitoBio/goquery
-          cd ..
+      - name: Create reports directory
+        run: mkdir -p reports
 
       - name: Run revive scanner
         run: |
           cd telegram-tester
           go run revive_scanner.go
-          cd ..
-
-      - name: Copy reports to stats folder
-        run: |
-          mkdir -p stats
-          cp telegram-tester/revive_report.md stats/ 2>/dev/null || true
-          cp telegram-tester/revive_cache.json stats/ 2>/dev/null || true
 
       - name: Commit and push changes
         run: |
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions"
-          git add stats/ channels.csv
+          git add channels.csv reports/ revive_cache.json
           git diff --staged --quiet || git commit -m "🔄 Daily revive check"
           git push
