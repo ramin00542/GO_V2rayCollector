@@ -6,11 +6,9 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
-	"io"
 	"math/rand"
 	"net/http"
 	"os"
-	"path/filepath"
 	"regexp"
 	"sort"
 	"strings"
@@ -29,6 +27,7 @@ const (
 	deadChannelsFile      = "dead_channels.txt"
 	deadChannelsArchive   = "dead_channels_archive.txt"
 	scanCacheFile         = "scan_cache.json"
+	channelsReportFile    = "../channels_report.md"
 )
 
 var (
@@ -84,6 +83,7 @@ func main() {
 	}
 	if len(records) == 0 {
 		fmt.Println("No channels found.")
+		generateEmptyChannelsReport()
 		return
 	}
 	cache := loadCache()
@@ -135,9 +135,78 @@ func main() {
 	updateCSV(*outputCSV, records, headers, activeList)
 	saveMap(deadChannelsFile, deadMap)
 	saveMap(deadChannelsArchive, archiveMap)
+	generateChannelsReport(activeList, deadList, len(records))
 	fmt.Printf("✅ Active: %d, Dead: %d\n", len(activeList), len(deadList))
 }
 
+// گزارش برای حالت خالی (بدون کانال)
+func generateEmptyChannelsReport() {
+	report := fmt.Sprintf(`# 📊 گزارش اسکنر کانال‌های تلگرام
+
+**تاریخ اجرا:** %s
+
+## خلاصه آماری
+
+| معیار | مقدار |
+|-------|-------|
+| کل کانال‌های بررسی شده | 0 |
+| ✅ فعال | 0 |
+| 💀 غیرفعال/مرده | 0 |
+
+هیچ کانالی برای بررسی وجود نداشت.
+
+--- 
+✅ گزارش توسط GitHub Actions تولید شده است.
+`, time.Now().Format("2006-01-02 15:04:05"))
+	os.WriteFile(channelsReportFile, []byte(report), 0644)
+	fmt.Printf("✅ Empty report written to %s\n", channelsReportFile)
+}
+
+// گزارش اصلی با نمایش کامل کانال‌های مرده در بخش جمع‌شونده
+func generateChannelsReport(activeList, deadList []ScanResult, totalChecked int) {
+	var sb strings.Builder
+	sb.WriteString("# 📊 گزارش اسکنر کانال‌های تلگرام\n\n")
+	sb.WriteString(fmt.Sprintf("**تاریخ اجرا:** %s\n\n", time.Now().Format("2006-01-02 15:04:05")))
+	sb.WriteString("## خلاصه آماری\n\n")
+	sb.WriteString("| معیار | مقدار |\n")
+	sb.WriteString("|-------|-------|\n")
+	sb.WriteString(fmt.Sprintf("| کل کانال‌های بررسی شده | %d |\n", totalChecked))
+	sb.WriteString(fmt.Sprintf("| ✅ فعال | %d |\n", len(activeList)))
+	sb.WriteString(fmt.Sprintf("| 💀 غیرفعال/مرده | %d |\n\n", len(deadList)))
+
+	// لیست کانال‌های فعال
+	sb.WriteString("## ✅ کانال‌های فعال\n\n")
+	if len(activeList) > 0 {
+		for _, res := range activeList {
+			sb.WriteString(fmt.Sprintf("- %s\n", res.URL))
+		}
+	} else {
+		sb.WriteString("(هیچ کانال فعالی یافت نشد)\n")
+	}
+	sb.WriteString("\n")
+
+	// لیست کانال‌های مرده به صورت جمع‌شونده (کلیک کنید تا همه را نشان دهد)
+	sb.WriteString("## 💀 کانال‌های غیرفعال/مرده\n\n")
+	if len(deadList) > 0 {
+		sb.WriteString("<details>\n")
+		sb.WriteString(fmt.Sprintf("<summary>نمایش همه %d کانال (کلیک کنید)</summary>\n\n", len(deadList)))
+		for _, res := range deadList {
+			// نمایش وضعیت دقیق (inactive, no_config, banned, error)
+			sb.WriteString(fmt.Sprintf("- %s (وضعیت: %s)\n", res.URL, res.Status))
+		}
+		sb.WriteString("\n</details>\n")
+	} else {
+		sb.WriteString("(هیچ کانال غیرفعالی وجود ندارد)\n")
+	}
+
+	sb.WriteString("\n---\n✅ گزارش توسط GitHub Actions تولید شده است.\n")
+	os.WriteFile(channelsReportFile, []byte(sb.String()), 0644)
+	fmt.Printf("✅ Report written to %s\n", channelsReportFile)
+}
+
+// ------------------------------------------------------------
+// توابع worker و تحلیل (بدون تغییر)
+// ------------------------------------------------------------
 func worker(jobs <-chan struct{ idx int; url string }, results chan<- ScanResult, wg *sync.WaitGroup) {
 	defer wg.Done()
 	for job := range jobs {
