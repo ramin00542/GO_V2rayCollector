@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"path/filepath"
 	"regexp"
 	"sort"
 	"strings"
@@ -17,7 +18,6 @@ const (
 	requestTimeout     = 15 * time.Second
 	deadChannelsFile   = "dead_channels.txt"
 	deadChannelsArchive = "dead_channels_archive.txt"
-	scanReportFile     = "scan_report.md"
 	activeDays         = 30
 )
 
@@ -279,6 +279,9 @@ func saveMap(file string, m map[string]bool) {
 }
 
 func generateScanReport(active, dead []ChannelInfo) {
+	os.MkdirAll("../stats", 0755)
+	reportPath := "../stats/scan_report.md"
+
 	var sb strings.Builder
 	sb.WriteString("# 📊 گزارش اسکنر کانال‌های تلگرام\n\n")
 	sb.WriteString(fmt.Sprintf("**تاریخ اجرا:** %s\n\n", time.Now().Format("2006-01-02 15:04:05")))
@@ -309,6 +312,6 @@ func generateScanReport(active, dead []ChannelInfo) {
 		sb.WriteString(fmt.Sprintf("- %s (آخرین پست: %s)\n", ch.URL, ch.LastPost.Format("2006-01-02")))
 	}
 	sb.WriteString("\n---\n✅ گزارش توسط ابزار اسکنر کانال‌ها تولید شده است.\n")
-	os.WriteFile(scanReportFile, []byte(sb.String()), 0644)
-	fmt.Printf("✅ Report written to %s\n", scanReportFile)
+	os.WriteFile(reportPath, []byte(sb.String()), 0644)
+	fmt.Printf("✅ Report written to %s\n", reportPath)
 }
