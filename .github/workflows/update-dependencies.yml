@@ -13,16 +13,11 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      pull-requests: write
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          # اگر بخواهید از upstream هم pull کنید، می‌توانید توکن اضافه کنید
-          token: ${{ secrets.GITHUB_TOKEN }}
 
-      # ------- بخش به‌روزرسانی وابستگی‌های Go -------
       - name: Setup Go
         uses: actions/setup-go@v5
         with:
@@ -42,22 +37,11 @@ jobs:
           go mod tidy
           cd ..
 
-      # ------- (اختیاری) کشیدن آخرین تغییرات از مخزن اصلی -------
-      # اگر می‌خواهید کدها را از upstream (مثلاً مخزن اصلی mrvcoder) به‌روز کنید،
-      # ابتدا remote را اضافه کرده و merge کنید.
-      # - name: Pull upstream changes
-      #   run: |
-      #     git remote add upstream https://github.com/mrvcoder/V2rayCollector.git
-      #     git fetch upstream
-      #     git merge upstream/main --no-edit --allow-unrelated-histories || true
-
-      # ------- commit و push تغییرات -------
+      # commit و push تغییرات
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add go.mod go.sum telegram-tester/go.mod telegram-tester/go.sum
-          # همچنین اگر فایل‌های کد (مثل main.go) ممکن است تغییر کرده باشند، می‌توانید آن‌ها را هم اضافه کنید
-          git add main.go telegram-tester/*.go .github/workflows/*.yml
-          git diff --staged --quiet || git commit -m "⬆️ Auto-update dependencies and code [skip ci]"
+          git diff --staged --quiet || git commit -m "⬆️ Auto-update dependencies [skip ci]"
           git push
