@@ -1,45 +1,28 @@
-// telegram-tester/channel_scanner.go
 package main
 
 import (
 	"encoding/csv"
-	"encoding/json"
-	"flag"
 	"fmt"
-	"math/rand"
 	"net/http"
 	"os"
 	"regexp"
 	"sort"
 	"strings"
-	"sync"
 	"time"
 
 	"github.com/PuerkitoBio/goquery"
 )
 
 const (
-	defaultActiveDays     = 30
-	defaultConcurrency    = 5
-	defaultRetryCount     = 3
-	defaultBaseDelay      = 1 * time.Second
-	defaultJitter         = 500 * time.Millisecond
-	deadChannelsFile      = "dead_channels.txt"
-	deadChannelsArchive   = "dead_channels_archive.txt"
-	scanCacheFile         = "scan_cache.json"
-	channelsReportFile    = "../channels_report.md"
+	requestTimeout     = 15 * time.Second
+	deadChannelsFile   = "dead_channels.txt"
+	deadChannelsArchive = "dead_channels_archive.txt"
+	scanReportFile     = "scan_report.md"
+	activeDays         = 30
 )
 
 var (
-	inputCSV      = flag.String("input", "channels.csv", "Input CSV file")
-	outputCSV     = flag.String("output", "channels.csv", "Output CSV file")
-	activeDays    = flag.Int("active-days", defaultActiveDays, "Max inactive days")
-	concurrency   = flag.Int("concurrency", defaultConcurrency, "Number of concurrent workers")
-	noRSS         = flag.Bool("no-rss", false, "Use HTML instead of RSS")
-)
-
-var (
-	client = &http.Client{Timeout: 15 * time.Second}
+	client = &http.Client{Timeout: requestTimeout}
 	regexPatterns = []*regexp.Regexp{
 		regexp.MustCompile(`vmess://[A-Za-z0-9+/]+={0,2}(?:\?[^\s]*)?`),
 		regexp.MustCompile(`vless://[^\s]+`),
@@ -58,262 +41,145 @@ var (
 	}
 )
 
-type ScanResult struct {
-	URL          string    `json:"url"`
-	LastPost     time.Time `json:"last_post"`
-	HasConfig    bool      `json:"has_config"`
-	Status       string    `json:"status"`
-	MessageCount int       `json:"msg_count"`
-	Error        string    `json:"error,omitempty"`
-	Timestamp    time.Time `json:"timestamp"`
-}
-
-type ScanCache struct {
-	Results   map[string]ScanResult `json:"results"`
-	LastRun   time.Time             `json:"last_run"`
-	UpdatedAt time.Time             `json:"updated_at"`
+type ChannelInfo struct {
+	URL       string
+	LastPost  time.Time
+	HasConfig bool
 }
 
 func main() {
-	flag.Parse()
-	records, headers, err := readCSV(*inputCSV)
-	if err != nil {
-		fmt.Printf("Error reading CSV: %v\n", err)
+	if len(os.Args) < 2 {
+		fmt.Println("Usage: go run channel_scanner.go <channels.csv>")
 		os.Exit(1)
 	}
-	if len(records) == 0 {
-		fmt.Println("No channels found.")
-		generateEmptyChannelsReport()
+	inputFile := os.Args[1]
+
+	records := readCSV(inputFile)
+	if len(records) < 2 {
+		fmt.Println("No channels found in CSV.")
 		return
 	}
-	cache := loadCache()
-	if cache.Results == nil {
-		cache.Results = make(map[string]ScanResult)
+	header := records[0]
+	urlIdx := -1
+	for i, col := range header {
+		if strings.EqualFold(col, "URL") {
+			urlIdx = i
+			break
+		}
 	}
+	if urlIdx == -1 {
+		fmt.Println("CSV missing 'URL' column")
+		os.Exit(1)
+	}
+
 	deadMap := loadMap(deadChannelsFile)
 	archiveMap := loadMap(deadChannelsArchive)
 
-	jobs := make(chan struct {
-		idx int
-		url string
-	}, len(records))
-	results := make(chan ScanResult, len(records))
-	var wg sync.WaitGroup
-	for i := 0; i < *concurrency; i++ {
-		wg.Add(1)
-		go worker(jobs, results, &wg)
-	}
-	for idx, row := range records {
-		url := row[0]
-		jobs <- struct {
-			idx int
-			url string
-		}{idx, url}
-	}
-	close(jobs)
-	wg.Wait()
-	close(results)
+	var active []ChannelInfo
+	var dead []ChannelInfo
 
-	var activeList []ScanResult
-	var deadList []ScanResult
-	for res := range results {
-		cache.Results[res.URL] = res
-		if res.Status == "active" {
-			activeList = append(activeList, res)
-			delete(deadMap, res.URL)
-			delete(archiveMap, res.URL)
+	for i, row := range records[1:] {
+		url := row[urlIdx]
+		fmt.Printf("[%d/%d] Scanning: %s ... ", i+1, len(records)-1, url)
+		hasConfig, lastPost, err := analyzeChannel(url)
+		if err != nil {
+			fmt.Printf("ERROR: %v\n", err)
+			continue
+		}
+		daysSince := int(time.Since(lastPost).Hours() / 24)
+		if daysSince < 0 {
+			daysSince = 0
+		}
+		fmt.Printf("Last post: %s (%d days ago), Config: %v\n", lastPost.Format("2006-01-02"), daysSince, hasConfig)
+
+		if hasConfig && daysSince <= activeDays {
+			active = append(active, ChannelInfo{URL: url, LastPost: lastPost, HasConfig: true})
+			delete(deadMap, url)
+			delete(archiveMap, url)
 		} else {
-			deadList = append(deadList, res)
-			deadMap[res.URL] = true
-			if !archiveMap[res.URL] {
-				archiveMap[res.URL] = true
+			dead = append(dead, ChannelInfo{URL: url, LastPost: lastPost, HasConfig: hasConfig})
+			deadMap[url] = true
+			if !archiveMap[url] {
+				archiveMap[url] = true
 			}
 		}
+		time.Sleep(1 * time.Second)
 	}
-	cache.UpdatedAt = time.Now()
-	saveCache(cache)
-	updateCSV(*outputCSV, records, headers, activeList)
+
+	writeActiveChannels(inputFile, active)
 	saveMap(deadChannelsFile, deadMap)
 	saveMap(deadChannelsArchive, archiveMap)
-	generateChannelsReport(activeList, deadList, len(records))
-	fmt.Printf("✅ Active: %d, Dead: %d\n", len(activeList), len(deadList))
+	generateScanReport(active, dead)
+
+	fmt.Printf("\n✅ Active: %d, Dead: %d\n", len(active), len(dead))
 }
 
-// گزارش برای حالت خالی (بدون کانال)
-func generateEmptyChannelsReport() {
-	report := fmt.Sprintf(`# 📊 گزارش اسکنر کانال‌های تلگرام
-
-**تاریخ اجرا:** %s
-
-## خلاصه آماری
-
-| معیار | مقدار |
-|-------|-------|
-| کل کانال‌های بررسی شده | 0 |
-| ✅ فعال | 0 |
-| 💀 غیرفعال/مرده | 0 |
-
-هیچ کانالی برای بررسی وجود نداشت.
-
---- 
-✅ گزارش توسط GitHub Actions تولید شده است.
-`, time.Now().Format("2006-01-02 15:04:05"))
-	os.WriteFile(channelsReportFile, []byte(report), 0644)
-	fmt.Printf("✅ Empty report written to %s\n", channelsReportFile)
-}
-
-// گزارش اصلی با نمایش کامل کانال‌های مرده در بخش جمع‌شونده
-func generateChannelsReport(activeList, deadList []ScanResult, totalChecked int) {
-	var sb strings.Builder
-	sb.WriteString("# 📊 گزارش اسکنر کانال‌های تلگرام\n\n")
-	sb.WriteString(fmt.Sprintf("**تاریخ اجرا:** %s\n\n", time.Now().Format("2006-01-02 15:04:05")))
-	sb.WriteString("## خلاصه آماری\n\n")
-	sb.WriteString("| معیار | مقدار |\n")
-	sb.WriteString("|-------|-------|\n")
-	sb.WriteString(fmt.Sprintf("| کل کانال‌های بررسی شده | %d |\n", totalChecked))
-	sb.WriteString(fmt.Sprintf("| ✅ فعال | %d |\n", len(activeList)))
-	sb.WriteString(fmt.Sprintf("| 💀 غیرفعال/مرده | %d |\n\n", len(deadList)))
-
-	// لیست کانال‌های فعال
-	sb.WriteString("## ✅ کانال‌های فعال\n\n")
-	if len(activeList) > 0 {
-		for _, res := range activeList {
-			sb.WriteString(fmt.Sprintf("- %s\n", res.URL))
-		}
-	} else {
-		sb.WriteString("(هیچ کانال فعالی یافت نشد)\n")
-	}
-	sb.WriteString("\n")
-
-	// لیست کانال‌های مرده به صورت جمع‌شونده (کلیک کنید تا همه را نشان دهد)
-	sb.WriteString("## 💀 کانال‌های غیرفعال/مرده\n\n")
-	if len(deadList) > 0 {
-		sb.WriteString("<details>\n")
-		sb.WriteString(fmt.Sprintf("<summary>نمایش همه %d کانال (کلیک کنید)</summary>\n\n", len(deadList)))
-		for _, res := range deadList {
-			// نمایش وضعیت دقیق (inactive, no_config, banned, error)
-			sb.WriteString(fmt.Sprintf("- %s (وضعیت: %s)\n", res.URL, res.Status))
-		}
-		sb.WriteString("\n</details>\n")
-	} else {
-		sb.WriteString("(هیچ کانال غیرفعالی وجود ندارد)\n")
-	}
-
-	sb.WriteString("\n---\n✅ گزارش توسط GitHub Actions تولید شده است.\n")
-	os.WriteFile(channelsReportFile, []byte(sb.String()), 0644)
-	fmt.Printf("✅ Report written to %s\n", channelsReportFile)
-}
-
-// ------------------------------------------------------------
-// توابع worker و تحلیل (بدون تغییر)
-// ------------------------------------------------------------
-func worker(jobs <-chan struct{ idx int; url string }, results chan<- ScanResult, wg *sync.WaitGroup) {
-	defer wg.Done()
-	for job := range jobs {
-		res := analyzeWithRetry(job.url)
-		results <- res
-	}
-}
-
-func analyzeWithRetry(url string) ScanResult {
-	var lastErr error
-	for attempt := 1; attempt <= defaultRetryCount; attempt++ {
-		res, err := analyzeFull(url)
-		if err == nil {
-			return res
-		}
-		lastErr = err
-		delay := defaultBaseDelay * time.Duration(1<<uint(attempt-1))
-		jitter := time.Duration(rand.Int63n(int64(defaultJitter)))
-		time.Sleep(delay + jitter)
-	}
-	return ScanResult{URL: url, Status: "error", Error: lastErr.Error(), Timestamp: time.Now()}
-}
-
-func analyzeFull(channelURL string) (ScanResult, error) {
+func analyzeChannel(channelURL string) (hasConfig bool, lastPost time.Time, err error) {
 	channelName := extractChannelName(channelURL)
 	if channelName == "" {
-		return ScanResult{}, fmt.Errorf("invalid URL")
+		return false, time.Time{}, fmt.Errorf("invalid URL")
 	}
-	if !*noRSS {
-		rssURL := fmt.Sprintf("https://t.me/s/%s.rss", channelName)
-		res, err := fetchFromRSS(rssURL, channelURL)
-		if err == nil {
-			return res, nil
-		}
+	// اول RSS
+	rssURL := fmt.Sprintf("https://t.me/s/%s.rss", channelName)
+	if lastPost, hasConfig, err = fetchFromRSS(rssURL); err == nil {
+		return
 	}
+	// fallback به HTML
 	htmlURL := fmt.Sprintf("https://t.me/s/%s", channelName)
-	return fetchFromHTML(htmlURL, channelURL)
+	return fetchFromHTML(htmlURL)
 }
 
-func fetchFromRSS(rssURL, origURL string) (ScanResult, error) {
+func fetchFromRSS(rssURL string) (lastPost time.Time, hasConfig bool, err error) {
 	resp, err := client.Get(rssURL)
 	if err != nil {
-		return ScanResult{}, err
+		return time.Time{}, false, err
 	}
 	defer resp.Body.Close()
 	if resp.StatusCode != 200 {
-		return ScanResult{}, fmt.Errorf("HTTP %d", resp.StatusCode)
+		return time.Time{}, false, fmt.Errorf("HTTP %d", resp.StatusCode)
 	}
 	doc, err := goquery.NewDocumentFromReader(resp.Body)
 	if err != nil {
-		return ScanResult{}, err
+		return time.Time{}, false, err
 	}
 	var latestTime time.Time
-	var anyConfig bool
-	msgCount := doc.Find("item").Length()
 	doc.Find("item").Each(func(i int, s *goquery.Selection) {
 		pubDate := s.Find("pubDate").Text()
 		if pubDate != "" {
-			t, err := time.Parse(time.RFC1123Z, pubDate)
-			if err == nil && (latestTime.IsZero() || t.After(latestTime)) {
+			if t, err := time.Parse(time.RFC1123Z, pubDate); err == nil && (latestTime.IsZero() || t.After(latestTime)) {
 				latestTime = t
 			}
 		}
 		desc := s.Find("description").Text()
-		if anyConfigInText(desc) {
-			anyConfig = true
+		if anyConfig(desc) {
+			hasConfig = true
 		}
 	})
 	if latestTime.IsZero() {
-		return ScanResult{}, fmt.Errorf("no valid pubDate")
+		return time.Time{}, false, fmt.Errorf("no pubDate")
 	}
-	status := "active"
-	if time.Since(latestTime).Hours()/24 > float64(*activeDays) {
-		status = "inactive"
-	}
-	if !anyConfig {
-		status = "no_config"
-	}
-	return ScanResult{
-		URL:          origURL,
-		LastPost:     latestTime,
-		HasConfig:    anyConfig,
-		Status:       status,
-		MessageCount: msgCount,
-		Timestamp:    time.Now(),
-	}, nil
+	return latestTime, hasConfig, nil
 }
 
-func fetchFromHTML(htmlURL, origURL string) (ScanResult, error) {
+func fetchFromHTML(htmlURL string) (lastPost time.Time, hasConfig bool, err error) {
 	resp, err := client.Get(htmlURL)
 	if err != nil {
-		return ScanResult{}, err
+		return time.Time{}, false, err
 	}
 	defer resp.Body.Close()
 	if resp.StatusCode == 404 {
-		return ScanResult{URL: origURL, Status: "banned", Error: "channel not found", Timestamp: time.Now()}, nil
+		return time.Time{}, false, fmt.Errorf("channel not found")
 	}
 	if resp.StatusCode != 200 {
-		return ScanResult{}, fmt.Errorf("HTTP %d", resp.StatusCode)
+		return time.Time{}, false, fmt.Errorf("HTTP %d", resp.StatusCode)
 	}
 	doc, err := goquery.NewDocumentFromReader(resp.Body)
 	if err != nil {
-		return ScanResult{}, err
+		return time.Time{}, false, err
 	}
 	var lastTime time.Time
 	doc.Find("time").Each(func(i int, s *goquery.Selection) {
-		if i == 0 {
+		if i == 0 && lastTime.IsZero() {
 			if dt, ok := s.Attr("datetime"); ok {
 				if t, err := time.Parse(time.RFC3339, dt); err == nil {
 					lastTime = t
@@ -323,40 +189,25 @@ func fetchFromHTML(htmlURL, origURL string) (ScanResult, error) {
 	})
 	if lastTime.IsZero() {
 		doc.Find(".datetime").Each(func(i int, s *goquery.Selection) {
-			if i == 0 {
+			if i == 0 && lastTime.IsZero() {
 				if t, err := time.Parse(time.RFC3339, strings.TrimSpace(s.Text())); err == nil {
 					lastTime = t
 				}
 			}
 		})
 	}
-	msgCount := doc.Find(".tgme_widget_message_wrap").Length()
 	var texts []string
 	doc.Find(".tgme_widget_message_text, pre, code").Each(func(i int, s *goquery.Selection) {
 		texts = append(texts, s.Text())
 	})
-	has := anyConfigInText(strings.Join(texts, "\n"))
+	hasConfig = anyConfig(strings.Join(texts, "\n"))
 	if lastTime.IsZero() {
-		return ScanResult{}, fmt.Errorf("no timestamp found")
+		return time.Time{}, hasConfig, fmt.Errorf("no timestamp")
 	}
-	status := "active"
-	if time.Since(lastTime).Hours()/24 > float64(*activeDays) {
-		status = "inactive"
-	}
-	if !has {
-		status = "no_config"
-	}
-	return ScanResult{
-		URL:          origURL,
-		LastPost:     lastTime,
-		HasConfig:    has,
-		Status:       status,
-		MessageCount: msgCount,
-		Timestamp:    time.Now(),
-	}, nil
+	return lastTime, hasConfig, nil
 }
 
-func anyConfigInText(text string) bool {
+func anyConfig(text string) bool {
 	for _, re := range regexPatterns {
 		if re.MatchString(text) {
 			return true
@@ -374,74 +225,32 @@ func extractChannelName(rawURL string) string {
 	return ""
 }
 
-// ------------------------------ I/O helpers ------------------------------
-func readCSV(path string) ([][]string, []string, error) {
+// I/O helpers
+func readCSV(path string) [][]string {
 	f, err := os.Open(path)
 	if err != nil {
-		return nil, nil, err
+		return nil
 	}
 	defer f.Close()
 	r := csv.NewReader(f)
-	r.FieldsPerRecord = -1
-	all, err := r.ReadAll()
-	if err != nil {
-		return nil, nil, err
-	}
-	if len(all) == 0 {
-		return nil, nil, nil
-	}
-	return all[1:], all[0], nil
+	records, _ := r.ReadAll()
+	return records
 }
 
-func updateCSV(path string, records [][]string, headers []string, active []ScanResult) error {
-	activeMap := make(map[string]bool)
-	for _, res := range active {
-		activeMap[res.URL] = true
-	}
-	statusIdx := -1
-	for i, h := range headers {
-		if strings.EqualFold(h, "Status") {
-			statusIdx = i
-			break
-		}
-	}
-	if statusIdx == -1 {
-		headers = append(headers, "Status")
-		statusIdx = len(headers) - 1
-		for i := range records {
-			for len(records[i]) < len(headers) {
-				records[i] = append(records[i], "")
-			}
-		}
-	}
-	for i, row := range records {
-		if len(row) == 0 {
-			continue
-		}
-		url := row[0]
-		if activeMap[url] {
-			row[statusIdx] = "active"
-		} else {
-			row[statusIdx] = "inactive"
-		}
-		records[i] = row
-	}
-	outFile, err := os.Create(path)
+func writeActiveChannels(path string, channels []ChannelInfo) {
+	f, err := os.Create(path)
 	if err != nil {
-		return err
+		fmt.Printf("Error writing %s: %v\n", path, err)
+		return
 	}
-	defer outFile.Close()
-	w := csv.NewWriter(outFile)
+	defer f.Close()
+	w := csv.NewWriter(f)
 	defer w.Flush()
-	if err := w.Write(headers); err != nil {
-		return err
+	w.Write([]string{"URL", "AllMessagesFlag"})
+	for _, ch := range channels {
+		w.Write([]string{ch.URL, "false"})
 	}
-	for _, row := range records {
-		if err := w.Write(row); err != nil {
-			return err
-		}
-	}
-	return nil
+	fmt.Printf("✅ Updated %s with %d active channels.\n", path, len(channels))
 }
 
 func loadMap(file string) map[string]bool {
@@ -466,23 +275,40 @@ func saveMap(file string, m map[string]bool) {
 	}
 	sort.Strings(lines)
 	os.WriteFile(file, []byte(strings.Join(lines, "\n")), 0644)
+	fmt.Printf("✅ Saved %s with %d entries.\n", file, len(lines))
 }
 
-func loadCache() ScanCache {
-	data, err := os.ReadFile(scanCacheFile)
-	if err != nil {
-		return ScanCache{Results: make(map[string]ScanResult), LastRun: time.Now()}
-	}
-	var cache ScanCache
-	json.Unmarshal(data, &cache)
-	if cache.Results == nil {
-		cache.Results = make(map[string]ScanResult)
-	}
-	return cache
-}
+func generateScanReport(active, dead []ChannelInfo) {
+	var sb strings.Builder
+	sb.WriteString("# 📊 گزارش اسکنر کانال‌های تلگرام\n\n")
+	sb.WriteString(fmt.Sprintf("**تاریخ اجرا:** %s\n\n", time.Now().Format("2006-01-02 15:04:05")))
+	sb.WriteString("## خلاصه آماری\n\n")
+	sb.WriteString("| معیار | مقدار |\n")
+	sb.WriteString("|-------|-------|\n")
+	sb.WriteString(fmt.Sprintf("| **کانال‌های فعال** (≤%d روز + کانفیگ) | %d |\n", activeDays, len(active)))
+	sb.WriteString(fmt.Sprintf("| **کانال‌های غیرفعال/مرده** | %d |\n\n", len(dead)))
 
-func saveCache(cache ScanCache) {
-	cache.LastRun = time.Now()
-	data, _ := json.MarshalIndent(cache, "", "  ")
-	os.WriteFile(scanCacheFile, data, 0644)
+	if len(active) > 0 {
+		sb.WriteString("## ✅ کانال‌های فعال (۱۰ مورد اول)\n\n")
+		for i, ch := range active {
+			if i >= 10 {
+				sb.WriteString(fmt.Sprintf("... و %d کانال دیگر\n", len(active)-10))
+				break
+			}
+			sb.WriteString(fmt.Sprintf("- %s (آخرین پست: %s)\n", ch.URL, ch.LastPost.Format("2006-01-02")))
+		}
+	} else {
+		sb.WriteString("(هیچ کانال فعالی وجود ندارد)\n")
+	}
+	sb.WriteString("\n## 💀 کانال‌های غیرفعال/مرده (۱۰ مورد اول)\n\n")
+	for i, ch := range dead {
+		if i >= 10 {
+			sb.WriteString(fmt.Sprintf("... و %d کانال دیگر\n", len(dead)-10))
+			break
+		}
+		sb.WriteString(fmt.Sprintf("- %s (آخرین پست: %s)\n", ch.URL, ch.LastPost.Format("2006-01-02")))
+	}
+	sb.WriteString("\n---\n✅ گزارش توسط ابزار اسکنر کانال‌ها تولید شده است.\n")
+	os.WriteFile(scanReportFile, []byte(sb.String()), 0644)
+	fmt.Printf("✅ Report written to %s\n", scanReportFile)
 }
