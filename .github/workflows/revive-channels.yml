@@ -1,0 +1,49 @@
+name: Revive Channels from Archive
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 2 * * *"   # هر روز ساعت 2 بامداد
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  revive:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '>=1.21.3'
+
+      - name: Install dependencies
+        run: |
+          cd telegram-tester
+          go mod init telegram-tester 2>/dev/null || true
+          go get github.com/PuerkitoBio/goquery
+          cd ..
+
+      - name: Run revive scanner
+        run: |
+          cd telegram-tester
+          go run revive_scanner.go
+          cd ..
+
+      - name: Copy reports to root
+        run: |
+          cp telegram-tester/revive_report.txt revive_report.txt 2>/dev/null || true
+          cp telegram-tester/dead_channels_archive.txt dead_channels_archive.txt 2>/dev/null || true
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add channels.csv dead_channels_archive.txt revive_report.txt
+          git diff --staged --quiet || git commit -m "🔄 Daily revive check: moved revived channels to active list"
+          git push
