@@ -12,38 +12,19 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Go
-        uses: actions/setup-go@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
         with:
           go-version: '>=1.21.3'
-
-      - name: Update main module
+      - name: Update dependencies
         run: |
-          go mod tidy
           go get -u ./...
           go mod tidy
-
-      - name: Update telegram-tester module
-        run: |
-          cd telegram-tester
-          # اگر go.mod وجود ندارد، ایجاد کن
-          if [ ! -f go.mod ]; then
-            go mod init telegram-tester
-          fi
-          go mod tidy
-          go get -u ./...
-          go mod tidy
-          cd ..
-
-      - name: Commit and push if changed
+      - name: Commit and push changes
         run: |
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions"
-          git add -A
-          git diff --staged --quiet || git commit -m "⬆️ Auto-update dependencies"
+          git add go.mod go.sum
+          git diff --staged --quiet || git commit -m "chore(deps): update dependencies"
           git push
