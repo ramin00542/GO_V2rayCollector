@@ -2,7 +2,7 @@ name: Revive Channels from Archive
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 2 * * *"
+    - cron: "0 2 * * *"   # هر روز ساعت 2 بامداد
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -12,28 +12,34 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Go
         uses: actions/setup-go@v5
         with:
           go-version: '>=1.21.3'
+
       - name: Install dependencies
         run: |
           cd telegram-tester
           go mod init telegram-tester 2>/dev/null || true
           go get github.com/PuerkitoBio/goquery
           cd ..
+
       - name: Run revive scanner
         run: |
           cd telegram-tester
           go run revive_scanner.go
           cd ..
+
       - name: Copy output files
         run: |
           [ -f telegram-tester/revive_cache.json ] && cp telegram-tester/revive_cache.json revive_cache.json || true
-          [ -f ../revive_report.md ] && cp ../revive_report.md revive_report.md || true
+          [ -f telegram-tester/revive_report.md ] && cp telegram-tester/revive_report.md revive_report.md || true
+
       - name: Commit and push changes
         run: |
           git config user.email "actions@github.com"
