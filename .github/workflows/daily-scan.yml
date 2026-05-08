@@ -1,16 +1,22 @@
-name: Daily Channel & Source Scan
+name: Daily Channel Scan
 on:
-  schedule:
-    - cron: "0 2 * * *"
   workflow_dispatch:
+  schedule:
+    - cron: "0 2 * * *"   # هر روز ساعت 2 بامداد
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   scan:
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-go@v5
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Go
+        uses: actions/setup-go@v5
         with:
           go-version: '>=1.21.3'
       - name: Install deps
@@ -18,24 +24,20 @@ jobs:
           cd telegram-tester
           go mod init telegram-tester 2>/dev/null || true
           go get github.com/PuerkitoBio/goquery
-      - name: Run Channel Scanner
+      - name: Run channel scanner
         run: |
           cd telegram-tester
-          go run channel_scanner.go ../channels.csv ../channels_new.csv
-      - name: Run Source Checker
+          go run channel_scanner.go ../channels.csv
+      - name: Copy reports to stats folder
         run: |
-          cd telegram-tester
-          go run sources_checker.go ../Sources.json ../sources_report.csv
-      - name: Update optimized files
-        run: |
-          cp telegram-tester/channels_new.csv channels.csv
-          cp telegram-tester/Sources_valid.json Sources.json
-          cp telegram-tester/blocked_channels.txt blocked_channels.txt
-          cp telegram-tester/blocked_sources.txt blocked_sources.txt
+          mkdir -p stats
+          cp telegram-tester/scan_report.md stats/ 2>/dev/null || true
+          cp telegram-tester/dead_channels.txt stats/ 2>/dev/null || true
+          cp telegram-tester/dead_channels_archive.txt stats/ 2>/dev/null || true
       - name: Commit changes
         run: |
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions"
-          git add channels.csv Sources.json blocked_channels.txt blocked_sources.txt
-          git diff --staged --quiet || git commit -m "Daily scan: update channel/source status"
+          git add stats/ channels.csv
+          git diff --staged --quiet || git commit -m "📊 Daily channel scan report"
           git push
