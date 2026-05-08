@@ -43,9 +43,8 @@ jobs:
         run: |
           export DEBUG=true
           ./myapp -sort -clash -fork-scan 2>&1 | tee collector_full.log
-          echo "===== FULL LOG (first 200 lines) ====="
+          echo "===== FIRST 200 LINES ====="
           head -n 200 collector_full.log
-          echo "===== END OF LOG SAMPLE ====="
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -59,16 +58,14 @@ jobs:
       - name: Add statistics to job summary
         run: |
           echo "## 📊 Collector Statistics" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
           if [ -f collector_stats.md ]; then
             cat collector_stats.md >> $GITHUB_STEP_SUMMARY
           else
-            echo "No statistics file generated yet." >> $GITHUB_STEP_SUMMARY
+            echo "No stats file yet" >> $GITHUB_STEP_SUMMARY
           fi
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "## 📄 Full log (first 200 lines)" >> $GITHUB_STEP_SUMMARY
+          echo "## 📄 Log excerpt" >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
-          head -n 200 collector_full.log 2>/dev/null || echo "Log not available" >> $GITHUB_STEP_SUMMARY
+          head -n 150 collector_full.log 2>/dev/null || echo "Log not found" >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
 
       - name: Commit changes
