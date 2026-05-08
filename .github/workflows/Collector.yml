@@ -58,8 +58,8 @@ jobs:
       - name: Add statistics to job summary
         run: |
           echo "## 📊 Collector Statistics" >> $GITHUB_STEP_SUMMARY
-          if [ -f collector_stats.md ]; then
-            cat collector_stats.md >> $GITHUB_STEP_SUMMARY
+          if [ -f stats/collector_stats.md ]; then
+            cat stats/collector_stats.md >> $GITHUB_STEP_SUMMARY
           else
             echo "No stats file yet" >> $GITHUB_STEP_SUMMARY
           fi
@@ -72,7 +72,8 @@ jobs:
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          git add telegram/ subscription/ mixed/ daily_archive/ all_configs/ config_cache.json clash-config.yaml stats.json go.sum links.txt links.md collector_stats.txt collector_stats.md subscription_links.txt collector_full.log
+          mkdir -p stats
+          git add telegram/ subscription/ mixed/ daily_archive/ all_configs/ config_cache.json clash-config.yaml stats.json go.sum links.txt links.md stats/ collector_full.log
           git diff --staged --quiet || git commit -m "✔️ $(date '+%Y-%m-%d %H:%M:%S') Collected"
 
       - name: Push changes
