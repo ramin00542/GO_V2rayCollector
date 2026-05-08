@@ -41,17 +41,20 @@ jobs:
           go run sources_checker.go ../Sources.json
           cd ..
 
-      - name: Copy auxiliary files to root
+      - name: Copy reports to stats folder
         run: |
-          cp telegram-tester/dead_channels.txt dead_channels.txt 2>/dev/null || true
-          cp telegram-tester/dead_channels_archive.txt dead_channels_archive.txt 2>/dev/null || true
-          cp telegram-tester/scan_report.md scan_report.md 2>/dev/null || true
-          cp telegram-tester/sources_report.md sources_report.md 2>/dev/null || true
+          mkdir -p stats
+          cp telegram-tester/scan_report.md stats/ 2>/dev/null || true
+          cp telegram-tester/sources_report.md stats/ 2>/dev/null || true
+          cp telegram-tester/dead_channels.txt stats/ 2>/dev/null || true
+          cp telegram-tester/dead_channels_archive.txt stats/ 2>/dev/null || true
+          cp telegram-tester/dead_sources.txt stats/ 2>/dev/null || true
+          cp telegram-tester/dead_sources_archive.txt stats/ 2>/dev/null || true
 
       - name: Commit and push changes
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          git add channels.csv Sources.json dead_channels.txt dead_channels_archive.txt scan_report.md sources_report.md
+          git add channels.csv Sources.json stats/
           git diff --staged --quiet || git commit -m "🤖 Weekly optimization: clean dead channels/sources"
           git push
