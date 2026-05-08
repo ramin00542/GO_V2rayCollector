@@ -1,3 +1,4 @@
+// telegram-tester/channel_scanner.go
 package main
 
 import (
@@ -18,6 +19,7 @@ const (
 
 var (
 	client = &http.Client{Timeout: requestTimeout}
+	// الگوهای تشخیص کانفیگ (همان الگوهای main.go)
 	regexPatterns = []*regexp.Regexp{
 		regexp.MustCompile(`vmess://[A-Za-z0-9+/]+={0,2}(?:\?[^\s]*)?`),
 		regexp.MustCompile(`vless://[^\s]+`),
@@ -80,12 +82,13 @@ func main() {
 		os.Exit(1)
 	}
 
-	results := make([]struct {
+	type result struct {
 		URL       string
 		Current   bool
 		Suggested bool
 		Reason    string
-	}, 0, len(records)-1)
+	}
+	results := make([]result, 0, len(records)-1)
 
 	for i, row := range records[1:] {
 		url := row[urlIdx]
@@ -93,12 +96,12 @@ func main() {
 		fmt.Printf("[%d/%d] Scanning: %s ... ", i+1, len(records)-1, url)
 
 		suggested, reason := analyzeChannel(url)
-		results = append(results, struct {
-			URL       string
-			Current   bool
-			Suggested bool
-			Reason    string
-		}{url, currentFlag, suggested, reason})
+		results = append(results, result{
+			URL:       url,
+			Current:   currentFlag,
+			Suggested: suggested,
+			Reason:    reason,
+		})
 		fmt.Printf("Suggested: %v (%s)\n", suggested, reason)
 		time.Sleep(1 * time.Second)
 	}
@@ -151,11 +154,13 @@ func analyzeChannel(channelURL string) (bool, string) {
 		return false, fmt.Sprintf("Parse error: %v", err)
 	}
 
+	// محتوای داخل تگ‌های pre/code
 	var codeTexts []string
 	doc.Find("pre, code").Each(func(i int, s *goquery.Selection) {
 		codeTexts = append(codeTexts, s.Text())
 	})
 
+	// متن کل پیام‌ها بدون احتساب pre/code
 	var plainTexts []string
 	doc.Find(".tgme_widget_message_text").Each(func(i int, s *goquery.Selection) {
 		clone := s.Clone()
@@ -166,35 +171,35 @@ func analyzeChannel(channelURL string) (bool, string) {
 		}
 	})
 
-	hasCode := anyConfig(strings.Join(codeTexts, "\n"))
-	hasPlain := anyConfig(strings.Join(plainTexts, "\n"))
+	hasConfigInCode := hasAnyConfig(strings.Join(codeTexts, "\n"))
+	hasConfigInPlain := hasAnyConfig(strings.Join(plainTexts, "\n"))
 
-	if hasPlain && !hasCode {
+	if hasConfigInPlain && !hasConfigInCode {
 		return true, "Config found in plain text (outside pre/code)"
 	}
-	if hasPlain && hasCode {
-		return true, "Config found both in plain and code"
+	if hasConfigInPlain && hasConfigInCode {
+		return true, "Config found both in plain text and in code tags"
 	}
-	if !hasPlain && hasCode {
-		return false, "Config only in pre/code tags, false is enough"
+	if !hasConfigInPlain && hasConfigInCode {
+		return false, "Config only in pre/code tags, false is sufficient"
 	}
-	return false, "No config found (dead channel)"
+	return false, "No config found in this channel (maybe dead channel)"
 }
 
-func anyConfig(text string) bool {
+func extractChannelName(rawURL string) string {
+	re := regexp.MustCompile(`t\.me/(?:s/)?([^/?]+)`)
+	matches := re.FindStringSubmatch(rawURL)
+	if len(matches) > 1 {
+		return matches[1]
+	}
+	return ""
+}
+
+func hasAnyConfig(text string) bool {
 	for _, re := range regexPatterns {
 		if re.MatchString(text) {
 			return true
 		}
 	}
 	return false
-}
-
-func extractChannelName(rawURL string) string {
-	re := regexp.MustCompile(`t\.me/(?:s/)?([^/?]+)`)
-	m := re.FindStringSubmatch(rawURL)
-	if len(m) > 1 {
-		return m[1]
-	}
-	return ""
 }
