@@ -27,8 +27,7 @@ const (
 	deadChannelsFile      = "../dead_channels.txt"
 	deadChannelsArchive   = "../dead_channels_archive.txt"
 	scanCacheFile         = "../scan_cache.json"
-	channelsReportMD      = "../reports/channels_report.md"
-	channelsReportCSV     = "../reports/channels_data.csv"
+	channelsReportFile    = "../reports/channels_report.md"
 )
 
 var (
@@ -139,14 +138,12 @@ func main() {
 	saveMap(deadChannelsFile, deadMap)
 	saveMap(deadChannelsArchive, archiveMap)
 
-	generateChannelsReportMD(activeList, deadList, len(records))
-	generateChannelsReportCSV(activeList, deadList)
-
+	generateChannelsReport(activeList, deadList, len(records))
 	fmt.Printf("✅ Active: %d, Dead: %d\n", len(activeList), len(deadList))
 }
 
 func generateEmptyChannelsReport() {
-	md := fmt.Sprintf(`# 📊 گزارش اسکنر کانال‌های تلگرام
+	report := fmt.Sprintf(`# 📊 گزارش اسکنر کانال‌های تلگرام
 
 **تاریخ اجرا:** %s
 
@@ -157,27 +154,23 @@ func generateEmptyChannelsReport() {
 | ✅ فعال | 0 |
 | 💀 غیرفعال | 0 |
 
-هیچ کانالی یافت نشد.
-`, time.Now().Format("2006-01-02 15:04:05"))
-	os.WriteFile(channelsReportMD, []byte(md), 0644)
+هیچ کانالی برای بررسی وجود نداشت.
 
-	csvFile, _ := os.Create(channelsReportCSV)
-	defer csvFile.Close()
-	w := csv.NewWriter(csvFile)
-	w.Write([]string{"ExecutionTime", "Status", "Message"})
-	w.Write([]string{time.Now().Format("2006-01-02 15:04:05"), "empty", "no channels"})
-	w.Flush()
-	fmt.Printf("✅ Empty reports written\n")
+---
+✅ گزارش توسط GitHub Actions تولید شده است.
+`, time.Now().Format("2006-01-02 15:04:05"))
+	os.WriteFile(channelsReportFile, []byte(report), 0644)
+	fmt.Printf("✅ Empty report written to %s\n", channelsReportFile)
 }
 
-func generateChannelsReportMD(activeList, deadList []ScanResult, totalChecked int) {
+func generateChannelsReport(activeList, deadList []ScanResult, totalChecked int) {
 	var sb strings.Builder
 	sb.WriteString("# 📊 گزارش اسکنر کانال‌های تلگرام\n\n")
 	sb.WriteString(fmt.Sprintf("**تاریخ اجرا:** %s\n\n", time.Now().Format("2006-01-02 15:04:05")))
 	sb.WriteString("## خلاصه آماری\n\n| معیار | مقدار |\n|-------|-------|\n")
-	sb.WriteString(fmt.Sprintf("| کل کانال‌ها | %d |\n", totalChecked))
+	sb.WriteString(fmt.Sprintf("| کل کانال‌های بررسی شده | %d |\n", totalChecked))
 	sb.WriteString(fmt.Sprintf("| ✅ فعال | %d |\n", len(activeList)))
-	sb.WriteString(fmt.Sprintf("| 💀 غیرفعال | %d |\n\n", len(deadList)))
+	sb.WriteString(fmt.Sprintf("| 💀 غیرفعال/مرده | %d |\n\n", len(deadList)))
 
 	sb.WriteString("## ✅ کانال‌های فعال\n\n")
 	if len(activeList) > 0 {
@@ -187,41 +180,28 @@ func generateChannelsReportMD(activeList, deadList []ScanResult, totalChecked in
 	} else {
 		sb.WriteString("(هیچ کانال فعالی یافت نشد)\n")
 	}
-	sb.WriteString("\n## 💀 کانال‌های غیرفعال\n\n")
+	sb.WriteString("\n## 💀 کانال‌های غیرفعال/مرده\n\n")
 	if len(deadList) > 0 {
 		sb.WriteString(fmt.Sprintf("<details>\n<summary>نمایش همه %d کانال (کلیک کنید)</summary>\n\n", len(deadList)))
 		for _, res := range deadList {
-			sb.WriteString(fmt.Sprintf("- %s (وضعیت: %s)\n", res.URL, res.Status))
+			lastPostStr := ""
+			if !res.LastPost.IsZero() {
+				lastPostStr = res.LastPost.Format("2006-01-02 15:04:05")
+			}
+			sb.WriteString(fmt.Sprintf("- **%s**  \n  - وضعیت: `%s`  \n  - آخرین پست: %s  \n  - دارای کانفیگ: %v  \n  - تعداد پیام‌ها: %d\n\n", res.URL, res.Status, lastPostStr, res.HasConfig, res.MessageCount))
 		}
-		sb.WriteString("\n</details>\n")
+		sb.WriteString("</details>\n")
 	} else {
 		sb.WriteString("(هیچ کانال غیرفعالی وجود ندارد)\n")
 	}
 	sb.WriteString("\n---\n✅ گزارش توسط GitHub Actions تولید شده است.\n")
-	os.WriteFile(channelsReportMD, []byte(sb.String()), 0644)
-	fmt.Printf("✅ MD report: %s\n", channelsReportMD)
+	os.WriteFile(channelsReportFile, []byte(sb.String()), 0644)
+	fmt.Printf("✅ Report written to %s\n", channelsReportFile)
 }
 
-func generateChannelsReportCSV(activeList, deadList []ScanResult) {
-	csvFile, err := os.Create(channelsReportCSV)
-	if err != nil {
-		fmt.Printf("Error creating CSV: %v\n", err)
-		return
-	}
-	defer csvFile.Close()
-	w := csv.NewWriter(csvFile)
-	defer w.Flush()
-	w.Write([]string{"ExecutionTime", "URL", "Status", "LastPost", "HasConfig", "MessageCount", "Error"})
-	nowStr := time.Now().Format("2006-01-02 15:04:05")
-	for _, res := range activeList {
-		w.Write([]string{nowStr, res.URL, "active", res.LastPost.Format("2006-01-02 15:04:05"), fmt.Sprintf("%v", res.HasConfig), fmt.Sprintf("%d", res.MessageCount), res.Error})
-	}
-	for _, res := range deadList {
-		w.Write([]string{nowStr, res.URL, res.Status, res.LastPost.Format("2006-01-02 15:04:05"), fmt.Sprintf("%v", res.HasConfig), fmt.Sprintf("%d", res.MessageCount), res.Error})
-	}
-	fmt.Printf("✅ CSV report: %s\n", channelsReportCSV)
-}
-
+// ------------------------------------------------------------
+// توابع worker (بدون تغییر)
+// ------------------------------------------------------------
 func worker(jobs <-chan struct{ idx int; url string }, results chan<- ScanResult, wg *sync.WaitGroup) {
 	defer wg.Done()
 	for job := range jobs {
@@ -389,7 +369,7 @@ func extractChannelName(rawURL string) string {
 	return ""
 }
 
-// I/O helpers
+// ------------------------------ I/O helpers ------------------------------
 func readCSV(path string) ([][]string, []string, error) {
 	f, err := os.Open(path)
 	if err != nil {
