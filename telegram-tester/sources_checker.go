@@ -3,7 +3,6 @@ package main
 
 import (
 	"encoding/base64"
-	"encoding/csv"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -20,8 +19,8 @@ import (
 const (
 	deadSourcesFile     = "dead_sources.txt"
 	deadSourcesArchive  = "dead_sources_archive.txt"
-	sourcesReportFile   = "sources_report.txt"
-	activeSourcesFile   = "Sources.json"
+	sourcesReportFile   = "sources_report.md"
+	activeSourcesFile   = "active_sources.json" // خروجی مجزا (جلوگیری از بازنویسی ورودی)
 	checkTimeout        = 10 * time.Second
 	sampleSize          = 50 * 1024
 	defaultRetryCount   = 3
@@ -83,7 +82,6 @@ func main() {
 
 	var activeURLs []string
 	var deadInfos []SourceStatus
-	var mu sync.Mutex
 	jobs := make(chan string, len(sources))
 	results := make(chan SourceStatus, len(sources))
 	var wg sync.WaitGroup
@@ -119,6 +117,7 @@ func main() {
 			}
 		}
 	}
+
 	saveActiveSources(activeURLs)
 	saveMap(deadSourcesFile, deadMap)
 	saveMap(deadSourcesArchive, archiveMap)
@@ -142,53 +141,49 @@ func checkSourceWithRetry(url string) SourceStatus {
 }
 
 func checkSource(url string) (SourceStatus, error) {
-	// HEAD request
-	req, err := http.NewRequest("HEAD", url, nil)
+	// استفاده از GET با هدر محدوده (Range) برای کاهش حجم دانلود – در صورت پشتیبانی
+	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
 		return SourceStatus{}, err
 	}
 	req.Header.Set("User-Agent", "Mozilla/5.0")
+	req.Header.Set("Range", "bytes=0-50000") // درخواست فقط 50 کیلوبایت اول
 	resp, err := httpClient.Do(req)
-	if err != nil || resp.StatusCode != 200 {
-		if resp != nil {
-			resp.Body.Close()
-		}
+	if err != nil {
+		return SourceStatus{}, err
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 && resp.StatusCode != 206 { // 206 = Partial Content
 		return SourceStatus{URL: url, Status: "DEAD"}, nil
 	}
+
+	// استخراج Last-Modified (در صورت وجود)
 	lastModStr := resp.Header.Get("Last-Modified")
 	var lastMod time.Time
 	if lastModStr != "" {
 		lastMod, _ = time.Parse(time.RFC1123, lastModStr)
 	}
-	resp.Body.Close()
 
-	// GET sample
-	req2, err := http.NewRequest("GET", url, nil)
-	if err != nil {
-		return SourceStatus{}, err
-	}
-	req2.Header.Set("User-Agent", "Mozilla/5.0")
-	resp2, err := httpClient.Do(req2)
-	if err != nil || resp2.StatusCode != 200 {
-		if resp2 != nil {
-			resp2.Body.Close()
-		}
-		return SourceStatus{URL: url, Status: "DEAD"}, nil
-	}
-	defer resp2.Body.Close()
-	limited := io.LimitReader(resp2.Body, sampleSize)
+	// خواندن حداکثر sampleSize بایت
+	limited := io.LimitReader(resp.Body, sampleSize)
 	body, err := io.ReadAll(limited)
 	if err != nil {
 		return SourceStatus{}, err
 	}
 	content := string(body)
+
+	// تلاش برای دیکد Base64 (اگر محتوا به صورت base64 ذخیره شده باشد)
 	if decoded, err := base64.StdEncoding.DecodeString(strings.TrimSpace(content)); err == nil && len(decoded) > 0 {
 		content = string(decoded)
 	}
+
 	hasConfig := anyConfigInText(content)
 	if !hasConfig {
 		return SourceStatus{URL: url, LastMod: lastMod, HasConfig: false, Status: "NO_CONFIG"}, nil
 	}
+
+	// اگر Last-Modified نداشت، زمان حال را در نظر بگیر (برای محاسبه activeDays)
 	if lastMod.IsZero() {
 		lastMod = time.Now()
 	}
@@ -236,6 +231,7 @@ func saveActiveSources(urls []string) {
 		return
 	}
 	os.WriteFile(activeSourcesFile, data, 0644)
+	fmt.Printf("✅ Active sources written to %s\n", activeSourcesFile)
 }
 
 func generateSourcesReport(active []string, dead []SourceStatus) {
@@ -243,11 +239,12 @@ func generateSourcesReport(active []string, dead []SourceStatus) {
 	sb.WriteString("# 📊 گزارش اسکنر ساب‌لینک‌ها\n\n")
 	sb.WriteString(fmt.Sprintf("**تاریخ اجرا:** %s\n\n", time.Now().Format("2006-01-02 15:04:05")))
 	sb.WriteString("## خلاصه آماری\n\n")
-	sb.WriteString(fmt.Sprintf("| معیار | مقدار |\n"))
-	sb.WriteString(fmt.Sprintf("|-------|-------|\n"))
+	sb.WriteString("| معیار | مقدار |\n")
+	sb.WriteString("|-------|-------|\n")
 	sb.WriteString(fmt.Sprintf("| کل ساب‌لینک‌های بررسی شده | %d |\n", len(active)+len(dead)))
 	sb.WriteString(fmt.Sprintf("| ✅ فعال | %d |\n", len(active)))
 	sb.WriteString(fmt.Sprintf("| 💀 مرده/غیرفعال | %d |\n\n", len(dead)))
+
 	sb.WriteString("## ✅ ساب‌لینک‌های فعال\n\n")
 	for _, u := range active {
 		sb.WriteString(fmt.Sprintf("- %s\n", u))
@@ -255,14 +252,23 @@ func generateSourcesReport(active []string, dead []SourceStatus) {
 	if len(active) == 0 {
 		sb.WriteString("(هیچ ساب‌لینک فعالی وجود ندارد)\n")
 	}
-	sb.WriteString("\n## 💀 ساب‌لینک‌های مرده (۱۰ مورد اول)\n\n")
-	for i, d := range dead {
-		if i >= 10 {
-			sb.WriteString(fmt.Sprintf("... و %d ساب‌لینک دیگر\n", len(dead)-10))
-			break
+	sb.WriteString("\n")
+
+	// بخش ساب‌لینک‌های مرده به صورت جمع‌شونده (کلیک کنید تا همه را نشان دهد)
+	sb.WriteString("## 💀 ساب‌لینک‌های مرده/غیرفعال\n\n")
+	if len(dead) > 0 {
+		sb.WriteString("<details>\n")
+		sb.WriteString(fmt.Sprintf("<summary>نمایش همه %d ساب‌لینک (کلیک کنید)</summary>\n\n", len(dead)))
+		for _, d := range dead {
+			// نمایش وضعیت (DEAD یا NO_CONFIG) در کنار آدرس
+			sb.WriteString(fmt.Sprintf("- `%s` (%s)\n", d.URL, d.Status))
 		}
-		sb.WriteString(fmt.Sprintf("- %s (%s)\n", d.URL, d.Status))
+		sb.WriteString("\n</details>\n")
+	} else {
+		sb.WriteString("(هیچ ساب‌لینک مرده‌ای وجود ندارد)\n")
 	}
+
+	sb.WriteString("\n---\n✅ گزارش توسط GitHub Actions تولید شده است.\n")
 	os.WriteFile(sourcesReportFile, []byte(sb.String()), 0644)
 	fmt.Printf("✅ Report written to %s\n", sourcesReportFile)
 }
