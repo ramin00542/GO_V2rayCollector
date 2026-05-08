@@ -17,8 +17,8 @@ import (
 )
 
 const (
-	deadSourcesFile     = "dead_sources.txt"
-	deadSourcesArchive  = "dead_sources_archive.txt"
+	deadSourcesFile     = "../dead_sources.txt"
+	deadSourcesArchive  = "../dead_sources_archive.txt"
 	sourcesReportFile   = "../sources_report.md"
 	activeSourcesFile   = "../active_sources.json"
 	checkTimeout        = 10 * time.Second
@@ -194,6 +194,7 @@ func anyConfigInText(text string) bool {
 	return false
 }
 
+// ----------------------- I/O helpers -----------------------
 func loadMap(file string) map[string]bool {
 	m := make(map[string]bool)
 	data, err := os.ReadFile(file)
