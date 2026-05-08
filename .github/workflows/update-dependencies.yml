@@ -24,13 +24,15 @@ jobs:
 
       - name: Update main module
         run: |
-          go get -u all
+          go mod tidy
+          go get -u ./...
           go mod tidy
 
       - name: Update telegram-tester module
         run: |
           cd telegram-tester
-          go get -u all
+          go mod tidy
+          go get -u ./...
           go mod tidy
           cd ..
 
