@@ -21,7 +21,6 @@ const (
 var (
 	httpClient = &http.Client{Timeout: 10 * time.Second}
 	regexPatterns = []*regexp.Regexp{
-		// همان الگوهای قبلی
 		regexp.MustCompile(`vmess://[A-Za-z0-9+/]+={0,2}(?:\?[^\s]*)?`),
 		regexp.MustCompile(`vless://[^\s]+`),
 		regexp.MustCompile(`trojan://[^@\s]+@[^\s]+`),
@@ -57,7 +56,10 @@ func main() {
 		os.Exit(1)
 	}
 	var sources []string
-	json.Unmarshal(data, &sources)
+	if err := json.Unmarshal(data, &sources); err != nil {
+		fmt.Printf("Error parsing JSON: %v\n", err)
+		os.Exit(1)
+	}
 
 	var active []SourceInfo
 	var dead []SourceInfo
@@ -70,6 +72,9 @@ func main() {
 			continue
 		}
 		daysSince := int(time.Since(lastMod).Hours() / 24)
+		if daysSince < 0 {
+			daysSince = 0
+		}
 		fmt.Printf("Last modified: %s (%d days ago), Config: %v\n", lastMod.Format("2006-01-02"), daysSince, hasConfig)
 		if hasConfig && daysSince <= 30 {
 			active = append(active, SourceInfo{URL: url, LastMod: lastMod, HasConfig: true})
@@ -79,8 +84,8 @@ func main() {
 		time.Sleep(500 * time.Millisecond)
 	}
 
-	// نوشتن Sources.json جدید (فقط لینک‌های فعال)
-	writeActiveSources("Sources.json", active)
+	// بازنویسی Sources.json (فقط منابع فعال)
+	writeActiveSources(inputFile, active)
 	// به‌روزرسانی dead_sources.txt
 	updateDeadSources(dead)
 
@@ -88,16 +93,18 @@ func main() {
 }
 
 func checkSource(url string) (hasConfig bool, lastMod time.Time, err error) {
-	// HEAD برای Last-Modified
-	req, _ := http.NewRequest("HEAD", url, nil)
-	req.Header.Set("User-Agent", "Mozilla/5.0")
-	resp, err := httpClient.Do(req)
+	// 1. HEAD request برای Last-Modified
+	req, err := http.NewRequest("HEAD", url, nil)
 	if err != nil {
 		return false, time.Time{}, err
 	}
-	if resp.StatusCode != 200 {
-		resp.Body.Close()
-		return false, time.Time{}, fmt.Errorf("HTTP %d", resp.StatusCode)
+	req.Header.Set("User-Agent", "Mozilla/5.0")
+	resp, err := httpClient.Do(req)
+	if err != nil || resp.StatusCode != 200 {
+		if resp != nil {
+			resp.Body.Close()
+		}
+		return false, time.Time{}, fmt.Errorf("HTTP error: %v", err)
 	}
 	lm := resp.Header.Get("Last-Modified")
 	if lm != "" {
@@ -105,24 +112,39 @@ func checkSource(url string) (hasConfig bool, lastMod time.Time, err error) {
 	}
 	resp.Body.Close()
 
-	// GET نمونه برای بررسی کانفیگ
-	req2, _ := http.NewRequest("GET", url, nil)
-	req2.Header.Set("User-Agent", "Mozilla/5.0")
-	resp2, err := httpClient.Do(req2)
+	// 2. GET نمونه (۵۰ کیلوبایت اول)
+	req2, err := http.NewRequest("GET", url, nil)
 	if err != nil {
 		return false, lastMod, err
 	}
+	req2.Header.Set("User-Agent", "Mozilla/5.0")
+	resp2, err := httpClient.Do(req2)
+	if err != nil || resp2.StatusCode != 200 {
+		if resp2 != nil {
+			resp2.Body.Close()
+		}
+		return false, lastMod, fmt.Errorf("GET failed: %v", err)
+	}
 	defer resp2.Body.Close()
-	body, _ := io.ReadAll(io.LimitReader(resp2.Body, 50*1024))
+	body, err := io.ReadAll(io.LimitReader(resp2.Body, 50*1024))
+	if err != nil {
+		return false, lastMod, err
+	}
 	content := string(body)
-	if decoded, err := base64.StdEncoding.DecodeString(strings.TrimSpace(content)); err == nil {
+	// دیکد base64 در صورت نیاز
+	if decoded, err := base64.StdEncoding.DecodeString(strings.TrimSpace(content)); err == nil && len(decoded) > 0 {
 		content = string(decoded)
 	}
-	has := anyConfig(content)
+	has := hasAnyConfig(content)
+
+	// اگر Last-Modified دریافت نشد (zero)، زمان حال را جایگزین کن (منبع تازه تلقی شود)
+	if lastMod.IsZero() {
+		lastMod = time.Now()
+	}
 	return has, lastMod, nil
 }
 
-func anyConfig(text string) bool {
+func hasAnyConfig(text string) bool {
 	for _, re := range regexPatterns {
 		if re.MatchString(text) {
 			return true
@@ -136,9 +158,16 @@ func writeActiveSources(path string, sources []SourceInfo) {
 	for i, s := range sources {
 		list[i] = s.URL
 	}
-	data, _ := json.MarshalIndent(list, "", "  ")
-	os.WriteFile(path, data, 0644)
-	fmt.Printf("✅ Updated %s with %d active sources.\n", path, len(sources))
+	data, err := json.MarshalIndent(list, "", "  ")
+	if err != nil {
+		fmt.Printf("Error marshalling JSON: %v\n", err)
+		return
+	}
+	if err := os.WriteFile(path, data, 0644); err != nil {
+		fmt.Printf("Error writing %s: %v\n", path, err)
+	} else {
+		fmt.Printf("✅ Updated %s with %d active sources.\n", path, len(sources))
+	}
 }
 
 func updateDeadSources(dead []SourceInfo) {
@@ -156,12 +185,13 @@ func updateDeadSources(dead []SourceInfo) {
 	for _, src := range dead {
 		daysSince := int(time.Since(src.LastMod).Hours() / 24)
 		var next int64
-		if daysSince > 60 || !src.HasConfig {
-			next = now + 30*24*3600
-		} else if daysSince > 30 {
-			next = now + 7*24*3600
-		} else {
-			next = now + 24*3600
+		switch {
+		case daysSince > 60 || !src.HasConfig:
+			next = now + 30*24*3600 // ماهانه
+		case daysSince > 30:
+			next = now + 7*24*3600 // هفتگی
+		default:
+			next = now + 24*3600 // روزانه
 		}
 		existing[src.URL] = next
 	}
