@@ -7,6 +7,7 @@ import (
 	"io"
 	"net/http"
 	"os"
+	"path/filepath"
 	"regexp"
 	"sort"
 	"strings"
@@ -18,14 +19,26 @@ const (
 	sampleSize         = 50 * 1024
 	deadSourcesFile    = "dead_sources.txt"
 	deadSourcesArchive = "dead_sources_archive.txt"
-	sourcesReportFile  = "sources_report.md"
 	activeDays         = 30
 )
 
 var (
 	httpClient = &http.Client{Timeout: checkTimeout}
 	regexPatterns = []*regexp.Regexp{
-		// همان الگوهای قبلی
+		regexp.MustCompile(`vmess://[A-Za-z0-9+/]+={0,2}(?:\?[^\s]*)?`),
+		regexp.MustCompile(`vless://[^\s]+`),
+		regexp.MustCompile(`trojan://[^@\s]+@[^\s]+`),
+		regexp.MustCompile(`ss://[A-Za-z0-9+/]+={0,2}@[^\s]+`),
+		regexp.MustCompile(`ssr://[A-Za-z0-9+/=]+`),
+		regexp.MustCompile(`hysteria2://[^\s]+`),
+		regexp.MustCompile(`tuic://[^\s]+`),
+		regexp.MustCompile(`wireguard://[^\s]+`),
+		regexp.MustCompile(`tg://proxy\?[^\s]+`),
+		regexp.MustCompile(`(?:slipnet|slip)://[^\s]+`),
+		regexp.MustCompile(`https?://[^\s]+:\d+(?:[^\s]*)?`),
+		regexp.MustCompile(`https?://[^@\s]+@[^\s]+`),
+		regexp.MustCompile(`socks(?:5)?://[^\s]+@[^\s]+`),
+		regexp.MustCompile(`socks(?:5)?://[^\s]+:\d+`),
 	}
 )
 
@@ -97,7 +110,6 @@ func main() {
 }
 
 func checkSource(url string) (hasConfig bool, lastMod time.Time, status string, err error) {
-	// HEAD
 	req, err := http.NewRequest("HEAD", url, nil)
 	if err != nil {
 		return false, time.Time{}, "ERROR", err
@@ -116,7 +128,6 @@ func checkSource(url string) (hasConfig bool, lastMod time.Time, status string, 
 	}
 	resp.Body.Close()
 
-	// GET sample
 	req2, err := http.NewRequest("GET", url, nil)
 	if err != nil {
 		return false, lastMod, "DEAD", err
@@ -139,7 +150,13 @@ func checkSource(url string) (hasConfig bool, lastMod time.Time, status string, 
 	if decoded, err := base64.StdEncoding.DecodeString(strings.TrimSpace(content)); err == nil && len(decoded) > 0 {
 		content = string(decoded)
 	}
-	has := anyConfig(content)
+	has := false
+	for _, re := range regexPatterns {
+		if re.MatchString(content) {
+			has = true
+			break
+		}
+	}
 	if !has {
 		return false, lastMod, "NO_CONFIG", nil
 	}
@@ -147,15 +164,6 @@ func checkSource(url string) (hasConfig bool, lastMod time.Time, status string, 
 		lastMod = time.Now()
 	}
 	return true, lastMod, "OK", nil
-}
-
-func anyConfig(text string) bool {
-	for _, re := range regexPatterns {
-		if re.MatchString(text) {
-			return true
-		}
-	}
-	return false
 }
 
 func loadMap(file string) map[string]bool {
@@ -193,11 +201,14 @@ func saveActiveSources(sources []SourceInfo) {
 		fmt.Printf("Error marshalling JSON: %v\n", err)
 		return
 	}
-	os.WriteFile("../Sources.json", data, 0644) // overwrite original
+	os.WriteFile("../Sources.json", data, 0644)
 	fmt.Printf("✅ Updated Sources.json with %d active sources.\n", len(sources))
 }
 
 func generateSourcesReport(active, dead []SourceInfo) {
+	os.MkdirAll("../stats", 0755)
+	reportPath := "../stats/sources_report.md"
+
 	var sb strings.Builder
 	sb.WriteString("# 📊 گزارش اسکنر ساب‌لینک‌ها\n\n")
 	sb.WriteString(fmt.Sprintf("**تاریخ اجرا:** %s\n\n", time.Now().Format("2006-01-02 15:04:05")))
@@ -228,6 +239,6 @@ func generateSourcesReport(active, dead []SourceInfo) {
 		sb.WriteString(fmt.Sprintf("- %s (وضعیت: %s)\n", s.URL, s.Status))
 	}
 	sb.WriteString("\n---\n✅ گزارش توسط ابزار اسکنر ساب‌لینک‌ها تولید شده است.\n")
-	os.WriteFile(sourcesReportFile, []byte(sb.String()), 0644)
-	fmt.Printf("✅ Report written to %s\n", sourcesReportFile)
+	os.WriteFile(reportPath, []byte(sb.String()), 0644)
+	fmt.Printf("✅ Report written to %s\n", reportPath)
 }
