@@ -1,0 +1,64 @@
+name: Optimize Sources (Channels & Subscriptions)
+on:
+  workflow_dispatch:        # اجرای دستی
+  schedule:
+    - cron: "0 0 * * 0"     # هر یکشنبه ساعت 00:00 (هفتگی)
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '>=1.21.3'
+
+      - name: Install dependencies for scanners
+        run: |
+          cd telegram-tester
+          go mod init telegram-tester 2>/dev/null || true
+          go get github.com/PuerkitoBio/goquery
+          cd ..
+
+      - name: Run channel scanner (optimize channels.csv)
+        run: |
+          cd telegram-tester
+          go run channel_scanner.go ../channels.csv ../channels_new.csv
+          echo "Channel scanner finished. Check channels_new.csv"
+          cd ..
+
+      - name: Run subscription source checker (optimize Sources.json)
+        run: |
+          cd telegram-tester
+          go run sources_checker.go ../Sources.json ../sources_report.csv
+          echo "Source checker finished. Sources_valid.json created."
+          cd ..
+
+      - name: Replace files with optimized versions
+        run: |
+          # در صورت وجود فایل جدید و معتبر، جایگزین کن
+          if [ -f telegram-tester/channels_new.csv ]; then
+            cp telegram-tester/channels_new.csv channels.csv
+          fi
+          if [ -f telegram-tester/Sources_valid.json ]; then
+            cp telegram-tester/Sources_valid.json Sources.json
+          fi
+          # همچنین می‌توانید گزارش‌ها را هم نگه دارید
+          cp telegram-tester/sources_report.csv sources_report.csv 2>/dev/null || true
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add channels.csv Sources.json sources_report.csv telegram-tester/channels_new.csv telegram-tester/sources_report.csv
+          git diff --staged --quiet || git commit -m "🤖 Optimize channels and sources (auto-generated)"
+          git push
