@@ -17,7 +17,6 @@ import (
 const (
 	requestTimeout   = 15 * time.Second
 	deadChannelsFile = "dead_channels.txt"
-	reportFile       = "scan_report.txt"
 )
 
 var (
@@ -41,10 +40,9 @@ var (
 )
 
 type ChannelInfo struct {
-	URL           string
-	HasConfig     bool
-	LastPost      time.Time
-	NextCheckDays int // 1, 7, 30
+	URL       string
+	LastPost  time.Time
+	HasConfig bool
 }
 
 func main() {
@@ -54,67 +52,47 @@ func main() {
 	}
 	inputFile := os.Args[1]
 
-	// 1. خواندن channels.csv فعلی
+	// خواندن channels.csv
 	records := readCSV(inputFile)
-	if len(records) == 0 {
+	if len(records) < 2 {
 		fmt.Println("No channels found.")
 		return
 	}
-
-	// 2. بارگذاری لیست کانال‌های مرده (برای بررسی مجدد)
-	deadMap := loadDeadChannels()
-
-	// 3. بررسی هر کانال
-	var aliveChannels []ChannelInfo
+	// ستون URL در index 0 فرض می‌شود
+	var activeChannels []ChannelInfo
 	var deadList []ChannelInfo
 
-	for i, row := range records {
-		if i == 0 {
-			continue // header
-		}
+	for i, row := range records[1:] {
 		url := row[0]
-		fmt.Printf("[%d/%d] Scanning: %s ... ", i, len(records)-1, url)
-
+		fmt.Printf("[%d/%d] Scanning: %s ... ", i+1, len(records)-1, url)
 		hasConfig, lastPost, err := analyzeChannel(url)
 		if err != nil {
 			fmt.Printf("ERROR: %v\n", err)
 			continue
 		}
 		daysSince := int(time.Since(lastPost).Hours() / 24)
-		nextDays := 1
-		if !hasConfig || daysSince > 60 {
-			nextDays = 30 // ماهانه
-		} else if daysSince > 30 {
-			nextDays = 7 // هفتگی
+		fmt.Printf("Last post: %s (%d days ago), Config: %v\n", lastPost.Format("2006-01-02"), daysSince, hasConfig)
+		if hasConfig && daysSince <= 30 {
+			activeChannels = append(activeChannels, ChannelInfo{URL: url, LastPost: lastPost, HasConfig: true})
 		} else {
-			nextDays = 1 // روزانه
-		}
-		info := ChannelInfo{URL: url, HasConfig: hasConfig, LastPost: lastPost, NextCheckDays: nextDays}
-		if hasConfig && daysSince <= 30 { // فعال و دارای کانفیگ
-			aliveChannels = append(aliveChannels, info)
-			fmt.Printf("ALIVE (config found, last post %d days ago) -> daily check\n", daysSince)
-		} else {
-			deadList = append(deadList, info)
-			fmt.Printf("DEAD/SLEEPING (config:%v, last post %d days ago) -> next check in %d days\n", hasConfig, daysSince, nextDays)
+			deadList = append(deadList, ChannelInfo{URL: url, LastPost: lastPost, HasConfig: hasConfig})
 		}
 		time.Sleep(1 * time.Second)
 	}
 
-	// 4. نوشتن channels.csv (فقط کانال‌های زنده)
-	writeChannelsCSV("channels.csv", aliveChannels)
+	// نوشتن channels.csv جدید (فقط کانال‌های فعال)
+	writeActiveChannels("channels.csv", activeChannels)
 
-	// 5. به‌روزرسانی dead_channels.txt (با زمان بعدی بررسی)
-	updateDeadChannels(deadMap, deadList)
-	saveDeadChannels(deadMap)
+	// به‌روزرسانی dead_channels.txt با زمان بررسی بعدی
+	updateDeadChannels(deadList)
 
-	// 6. تولید گزارش
-	generateReport(aliveChannels, deadList, deadMap)
+	fmt.Printf("\n✅ Active channels: %d, Dead/Inactive: %d\n", len(activeChannels), len(deadList))
 }
 
 func analyzeChannel(channelURL string) (hasConfig bool, lastPost time.Time, err error) {
 	channelName := extractChannelName(channelURL)
 	if channelName == "" {
-		return false, time.Time{}, fmt.Errorf("invalid channel URL")
+		return false, time.Time{}, fmt.Errorf("invalid URL")
 	}
 	fullURL := fmt.Sprintf("https://t.me/s/%s", channelName)
 	resp, err := client.Get(fullURL)
@@ -129,12 +107,12 @@ func analyzeChannel(channelURL string) (hasConfig bool, lastPost time.Time, err 
 	if err != nil {
 		return false, time.Time{}, err
 	}
-	// استخراج آخرین تاریخ
+	// آخرین تاریخ
 	var lastTime time.Time
 	doc.Find("time").Each(func(i int, s *goquery.Selection) {
 		if i == 0 {
-			if datetime, ok := s.Attr("datetime"); ok {
-				if t, err := time.Parse(time.RFC3339, datetime); err == nil {
+			if dt, ok := s.Attr("datetime"); ok {
+				if t, err := time.Parse(time.RFC3339, dt); err == nil {
 					lastTime = t
 				}
 			}
@@ -143,14 +121,13 @@ func analyzeChannel(channelURL string) (hasConfig bool, lastPost time.Time, err 
 	if lastTime.IsZero() {
 		doc.Find(".datetime").Each(func(i int, s *goquery.Selection) {
 			if i == 0 {
-				txt := strings.TrimSpace(s.Text())
-				if t, err := time.Parse(time.RFC3339, txt); err == nil {
+				if t, err := time.Parse(time.RFC3339, strings.TrimSpace(s.Text())); err == nil {
 					lastTime = t
 				}
 			}
 		})
 	}
-	// بررسی وجود کانفیگ
+	// بررسی کانفیگ
 	var texts []string
 	doc.Find(".tgme_widget_message_text, pre, code").Each(func(i int, s *goquery.Selection) {
 		texts = append(texts, s.Text())
@@ -177,10 +154,66 @@ func extractChannelName(rawURL string) string {
 	return ""
 }
 
-// توابع کمکی برای خواندن/نوشتن CSV و dead list (به دلیل طولانی نشدن، فقط امضای آن‌ها را می‌نویسم – در کد واقعی باید کامل باشند)
-func readCSV(path string) [][]string { /* ... */ }
-func writeChannelsCSV(path string, channels []ChannelInfo) { /* ... */ }
-func loadDeadChannels() map[string]int64 { /* ... */ }
-func updateDeadChannels(deadMap map[string]int64, newDead []ChannelInfo) { /* ... */ }
-func saveDeadChannels(deadMap map[string]int64) { /* ... */ }
-func generateReport(alive, dead []ChannelInfo, deadMap map[string]int64) { /* ... */ }
+// توابع کمکی
+func readCSV(path string) [][]string {
+	f, err := os.Open(path)
+	if err != nil {
+		return nil
+	}
+	defer f.Close()
+	r := csv.NewReader(f)
+	records, _ := r.ReadAll()
+	return records
+}
+
+func writeActiveChannels(path string, channels []ChannelInfo) {
+	f, err := os.Create(path)
+	if err != nil {
+		fmt.Printf("Error writing %s: %v\n", path, err)
+		return
+	}
+	defer f.Close()
+	w := csv.NewWriter(f)
+	defer w.Flush()
+	w.Write([]string{"URL", "AllMessagesFlag"}) // ستون دوم را false می‌گذاریم (پیش‌فرض)
+	for _, ch := range channels {
+		w.Write([]string{ch.URL, "false"})
+	}
+	fmt.Printf("✅ Updated %s with %d active channels.\n", path, len(channels))
+}
+
+func updateDeadChannels(dead []ChannelInfo) {
+	// خواندن dead_channels.txt موجود
+	existing := make(map[string]int64) // URL -> nextCheckTimestamp
+	data, _ := os.ReadFile(deadChannelsFile)
+	for _, line := range strings.Split(string(data), "\n") {
+		parts := strings.Fields(line)
+		if len(parts) >= 2 {
+			if ts, err := strconv.ParseInt(parts[1], 10, 64); err == nil {
+				existing[parts[0]] = ts
+			}
+		}
+	}
+	// به‌روزرسانی: برای هر کانال مرده، زمان بررسی بعدی را محاسبه کن
+	now := time.Now().Unix()
+	for _, ch := range dead {
+		daysSince := int(time.Since(ch.LastPost).Hours() / 24)
+		var next int64
+		if daysSince > 60 || !ch.HasConfig {
+			next = now + 30*24*3600 // یک ماه بعد
+		} else if daysSince > 30 {
+			next = now + 7*24*3600 // یک هفته بعد
+		} else {
+			next = now + 24*3600 // یک روز بعد (برای کانال‌هایی که کانفیگ ندارند اما اخیراً فعال بوده‌اند)
+		}
+		existing[ch.URL] = next
+	}
+	// ذخیره
+	var lines []string
+	for url, ts := range existing {
+		lines = append(lines, fmt.Sprintf("%s %d", url, ts))
+	}
+	sort.Strings(lines)
+	os.WriteFile(deadChannelsFile, []byte(strings.Join(lines, "\n")), 0644)
+	fmt.Printf("✅ Updated dead_channels.txt with %d entries.\n", len(existing))
+}
