@@ -21,8 +21,7 @@ const (
 	deadChannelsArchive = "../dead_channels_archive.txt"
 	activeChannelsFile  = "../channels.csv"
 	reviveCacheFile     = "../revive_cache.json"
-	reviveReportMD      = "../reports/revive_report.md"
-	reviveReportCSV     = "../reports/revive_data.csv"
+	reviveReportFile    = "../reports/revive_report.md"
 	defaultRetryCount   = 3
 	defaultBaseDelay    = 1 * time.Second
 	defaultJitter       = 500 * time.Millisecond
@@ -117,34 +116,32 @@ func main() {
 	}
 	saveArchive(newArchive)
 	saveReviveCache(results)
-	generateReviveReportMD(revivedList, stillDead, results)
-	generateReviveReportCSV(revivedList, stillDead, results)
+	generateReviveReport(revivedList, stillDead, results)
 	fmt.Printf("✅ Revive scan finished. Revived: %d, Still dead: %d\n", len(revivedList), len(stillDead))
 }
 
 func generateEmptyReviveReport() {
-	md := fmt.Sprintf(`# 📊 گزارش احیای کانال‌ها
+	report := fmt.Sprintf(`# 📊 گزارش احیای کانال‌ها
 
 **تاریخ اجرا:** %s
 
-## خلاصه
-- کل بایگانی: 0
-- احیا شده: 0
-- باقی‌مانده: 0
+## خلاصه آماری
+| معیار | مقدار |
+|-------|-------|
+| کل کانال‌های بایگانی | 0 |
+| ✅ احیا شده | 0 |
+| 💀 همچنان مرده | 0 |
 
-هیچ کانالی در بایگانی نبود.
+هیچ کانالی در بایگانی وجود نداشت.
+
+---
+✅ گزارش توسط GitHub Actions تولید شده است.
 `, time.Now().Format("2006-01-02 15:04:05"))
-	os.WriteFile(reviveReportMD, []byte(md), 0644)
-
-	csvFile, _ := os.Create(reviveReportCSV)
-	defer csvFile.Close()
-	w := csv.NewWriter(csvFile)
-	w.Write([]string{"ExecutionTime", "TotalArchived", "Revived", "StillDead", "Message"})
-	w.Write([]string{time.Now().Format("2006-01-02 15:04:05"), "0", "0", "0", "empty"})
-	w.Flush()
+	os.WriteFile(reviveReportFile, []byte(report), 0644)
+	fmt.Printf("✅ Empty report written to %s\n", reviveReportFile)
 }
 
-func generateReviveReportMD(revived, stillDead []string, results []ReviveResult) {
+func generateReviveReport(revived, stillDead []string, results []ReviveResult) {
 	var sb strings.Builder
 	sb.WriteString("# 📊 گزارش احیای کانال‌ها\n\n")
 	sb.WriteString(fmt.Sprintf("**تاریخ اجرا:** %s\n\n", time.Now().Format("2006-01-02 15:04:05")))
@@ -164,41 +161,29 @@ func generateReviveReportMD(revived, stillDead []string, results []ReviveResult)
 	sb.WriteString("\n## 💀 کانال‌های باقی‌مانده در بایگانی\n\n")
 	if len(stillDead) > 0 {
 		sb.WriteString(fmt.Sprintf("<details>\n<summary>نمایش همه %d کانال (کلیک کنید)</summary>\n\n", len(stillDead)))
-		for _, url := range stillDead {
-			sb.WriteString(fmt.Sprintf("- %s\n", url))
+		// پیدا کردن جزئیات هر کانال از results
+		details := make(map[string]ReviveResult)
+		for _, r := range results {
+			details[r.URL] = r
 		}
-		sb.WriteString("\n</details>\n")
+		for _, url := range stillDead {
+			if d, ok := details[url]; ok {
+				lastPostStr := ""
+				if !d.LastPost.IsZero() {
+					lastPostStr = d.LastPost.Format("2006-01-02 15:04:05")
+				}
+				sb.WriteString(fmt.Sprintf("- **%s**  \n  - آخرین پست: %s  \n  - دارای کانفیگ: %v  \n  - خطا: %s\n\n", url, lastPostStr, d.HasConfig, d.Error))
+			} else {
+				sb.WriteString(fmt.Sprintf("- %s\n", url))
+			}
+		}
+		sb.WriteString("</details>\n")
 	} else {
 		sb.WriteString("(هیچ کانال مرده‌ای باقی نمانده)\n")
 	}
 	sb.WriteString("\n---\n✅ گزارش توسط GitHub Actions تولید شده است.\n")
-	os.WriteFile(reviveReportMD, []byte(sb.String()), 0644)
-	fmt.Printf("✅ MD report: %s\n", reviveReportMD)
-}
-
-func generateReviveReportCSV(revived, stillDead []string, results []ReviveResult) {
-	csvFile, err := os.Create(reviveReportCSV)
-	if err != nil {
-		fmt.Printf("Error creating CSV: %v\n", err)
-		return
-	}
-	defer csvFile.Close()
-	w := csv.NewWriter(csvFile)
-	defer w.Flush()
-	w.Write([]string{"ExecutionTime", "URL", "Revived", "LastPost", "HasConfig", "Status", "Error"})
-	nowStr := time.Now().Format("2006-01-02 15:04:05")
-	for _, res := range results {
-		revivedStr := "false"
-		if res.Revived {
-			revivedStr = "true"
-		}
-		lastPostStr := ""
-		if !res.LastPost.IsZero() {
-			lastPostStr = res.LastPost.Format("2006-01-02 15:04:05")
-		}
-		w.Write([]string{nowStr, res.URL, revivedStr, lastPostStr, fmt.Sprintf("%v", res.HasConfig), res.Status, res.Error})
-	}
-	fmt.Printf("✅ CSV report: %s\n", reviveReportCSV)
+	os.WriteFile(reviveReportFile, []byte(sb.String()), 0644)
+	fmt.Printf("✅ Report written to %s\n", reviveReportFile)
 }
 
 // ------------------------------------------------------------
