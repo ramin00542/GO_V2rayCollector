@@ -22,12 +22,12 @@ jobs:
       - name: Run Telegram Tester
         run: |
           cd telegram-tester
-          go run main.go 2>&1 | tee ../telegram_test_output.txt
+          go run main.go 2>&1 | tee ../telegram_test_output.md
 
       - name: Commit and push output
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          git add telegram_test_output.txt
+          git add telegram_test_output.md
           git diff --staged --quiet || git commit -m "Add telegram test output"
           git push
