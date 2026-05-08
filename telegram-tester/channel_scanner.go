@@ -1,4 +1,3 @@
-// telegram-tester/channel_scanner.go
 package main
 
 import (
@@ -8,7 +7,6 @@ import (
 	"os"
 	"regexp"
 	"sort"
-	"strconv"
 	"strings"
 	"time"
 
@@ -48,6 +46,16 @@ type ChannelInfo struct {
 	HasConfig bool
 }
 
+type ScanStats struct {
+	Total             int
+	Active            int
+	Dead              int
+	Errors            int
+	RevivedFromDead   int
+	RevivedFromArchive int
+	NewArchived       int
+}
+
 func main() {
 	if len(os.Args) < 2 {
 		fmt.Println("Usage: go run channel_scanner.go <channels.csv>")
@@ -73,7 +81,6 @@ func main() {
 		os.Exit(1)
 	}
 
-	// بارگذاری لیست سیاه و بایگانی فعلی
 	deadMap := loadMap(deadChannelsFile)
 	archiveMap := loadMap(deadChannelsArchive)
 
@@ -102,7 +109,6 @@ func main() {
 		if hasConfig && daysSince <= 30 {
 			active = append(active, ChannelInfo{URL: url, LastPost: lastPost, HasConfig: true})
 			stats.Active++
-			// اگر کانال قبلاً در لیست سیاه یا بایگانی بود، اکنون زنده شده است
 			if deadMap[url] {
 				delete(deadMap, url)
 				stats.RevivedFromDead++
@@ -118,7 +124,6 @@ func main() {
 		time.Sleep(1 * time.Second)
 	}
 
-	// به‌روزرسانی deadMap با کانال‌های جدید مرده
 	for _, ch := range dead {
 		deadMap[ch.URL] = true
 		if !archiveMap[ch.URL] {
@@ -127,7 +132,6 @@ func main() {
 		}
 	}
 
-	// نوشتن خروجی‌ها
 	writeActiveChannels(inputFile, active)
 	saveMap(deadChannelsFile, deadMap)
 	saveMap(deadChannelsArchive, archiveMap)
@@ -136,22 +140,6 @@ func main() {
 	fmt.Printf("\n✅ Active: %d, Dead: %d, Archived: %d, Errors: %d\n", stats.Active, stats.Dead, len(archiveMap), stats.Errors)
 }
 
-// ------------------------------------------------------------
-// انواع و ساختارهای کمکی
-// ------------------------------------------------------------
-type ScanStats struct {
-	Total             int
-	Active            int
-	Dead              int
-	Errors            int
-	RevivedFromDead   int
-	RevivedFromArchive int
-	NewArchived       int
-}
-
-// ------------------------------------------------------------
-// توابع تحلیلی
-// ------------------------------------------------------------
 func analyzeChannel(channelURL string) (hasConfig bool, lastPost time.Time, err error) {
 	channelName := extractChannelName(channelURL)
 	if channelName == "" {
@@ -170,7 +158,6 @@ func analyzeChannel(channelURL string) (hasConfig bool, lastPost time.Time, err 
 	if err != nil {
 		return false, time.Time{}, err
 	}
-	// تاریخ آخرین پیام
 	var lastTime time.Time
 	doc.Find("time").Each(func(i int, s *goquery.Selection) {
 		if i == 0 {
@@ -190,7 +177,6 @@ func analyzeChannel(channelURL string) (hasConfig bool, lastPost time.Time, err 
 			}
 		})
 	}
-	// بررسی وجود کانفیگ
 	var texts []string
 	doc.Find(".tgme_widget_message_text, pre, code").Each(func(i int, s *goquery.Selection) {
 		texts = append(texts, s.Text())
@@ -217,9 +203,6 @@ func extractChannelName(rawURL string) string {
 	return ""
 }
 
-// ------------------------------------------------------------
-// توابع فایل
-// ------------------------------------------------------------
 func readCSV(path string) [][]string {
 	f, err := os.Open(path)
 	if err != nil {
@@ -242,7 +225,6 @@ func writeActiveChannels(path string, channels []ChannelInfo) {
 	defer w.Flush()
 	w.Write([]string{"URL", "AllMessagesFlag"})
 	for _, ch := range channels {
-		// مقدار AllMessagesFlag می‌تواند بر اساس تشخیص true/false باشد، اینجا false پیش‌فرض
 		w.Write([]string{ch.URL, "false"})
 	}
 	fmt.Printf("✅ Updated %s with %d active channels.\n", path, len(channels))
@@ -273,9 +255,6 @@ func saveMap(file string, m map[string]bool) {
 	fmt.Printf("✅ Saved %s with %d entries.\n", file, len(lines))
 }
 
-// ------------------------------------------------------------
-// گزارش زیبا
-// ------------------------------------------------------------
 func generateReport(stats *ScanStats, active, dead []ChannelInfo) {
 	var sb strings.Builder
 	sb.WriteString("# 📊 گزارش اسکنر کانال‌های تلگرام\n\n")
