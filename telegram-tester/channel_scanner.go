@@ -6,24 +6,15 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
+	"io"
 	"math/rand"
 	"net/http"
 	"os"
+	"path/filepath"
 	"regexp"
 	"sort"
 	"strings"
-	"sync"
-	"time"
-
-	"github.com/PuerkitoBio/goquery"
-)
-
-const (
-	defaultActiveDays     = 30
-	defaultConcurrency    = 5
-	defaultRetryCount     = 3
-	defaultBaseDelay      = 1 * time.Second
-	defaultJitter         = 500 * time.Millisecond
+@@ -29,6 +27,7 @@
 	deadChannelsFile      = "dead_channels.txt"
 	deadChannelsArchive   = "dead_channels_archive.txt"
 	scanCacheFile         = "scan_cache.json"
@@ -31,55 +22,7 @@ const (
 )
 
 var (
-	inputCSV      = flag.String("input", "channels.csv", "Input CSV file")
-	outputCSV     = flag.String("output", "channels.csv", "Output CSV file")
-	activeDays    = flag.Int("active-days", defaultActiveDays, "Max inactive days")
-	concurrency   = flag.Int("concurrency", defaultConcurrency, "Number of concurrent workers")
-	noRSS         = flag.Bool("no-rss", false, "Use HTML instead of RSS")
-)
-
-var (
-	client = &http.Client{Timeout: 15 * time.Second}
-	regexPatterns = []*regexp.Regexp{
-		regexp.MustCompile(`vmess://[A-Za-z0-9+/]+={0,2}(?:\?[^\s]*)?`),
-		regexp.MustCompile(`vless://[^\s]+`),
-		regexp.MustCompile(`trojan://[^@\s]+@[^\s]+`),
-		regexp.MustCompile(`ss://[A-Za-z0-9+/]+={0,2}@[^\s]+`),
-		regexp.MustCompile(`ssr://[A-Za-z0-9+/=]+`),
-		regexp.MustCompile(`hysteria2://[^\s]+`),
-		regexp.MustCompile(`tuic://[^\s]+`),
-		regexp.MustCompile(`wireguard://[^\s]+`),
-		regexp.MustCompile(`tg://proxy\?[^\s]+`),
-		regexp.MustCompile(`(?:slipnet|slip)://[^\s]+`),
-		regexp.MustCompile(`https?://[^\s]+:\d+(?:[^\s]*)?`),
-		regexp.MustCompile(`https?://[^@\s]+@[^\s]+`),
-		regexp.MustCompile(`socks(?:5)?://[^\s]+@[^\s]+`),
-		regexp.MustCompile(`socks(?:5)?://[^\s]+:\d+`),
-	}
-)
-
-type ScanResult struct {
-	URL          string    `json:"url"`
-	LastPost     time.Time `json:"last_post"`
-	HasConfig    bool      `json:"has_config"`
-	Status       string    `json:"status"`
-	MessageCount int       `json:"msg_count"`
-	Error        string    `json:"error,omitempty"`
-	Timestamp    time.Time `json:"timestamp"`
-}
-
-type ScanCache struct {
-	Results   map[string]ScanResult `json:"results"`
-	LastRun   time.Time             `json:"last_run"`
-	UpdatedAt time.Time             `json:"updated_at"`
-}
-
-func main() {
-	flag.Parse()
-	records, headers, err := readCSV(*inputCSV)
-	if err != nil {
-		fmt.Printf("Error reading CSV: %v\n", err)
-		os.Exit(1)
+@@ -84,6 +83,7 @@
 	}
 	if len(records) == 0 {
 		fmt.Println("No channels found.")
@@ -87,51 +30,7 @@ func main() {
 		return
 	}
 	cache := loadCache()
-	if cache.Results == nil {
-		cache.Results = make(map[string]ScanResult)
-	}
-	deadMap := loadMap(deadChannelsFile)
-	archiveMap := loadMap(deadChannelsArchive)
-
-	jobs := make(chan struct {
-		idx int
-		url string
-	}, len(records))
-	results := make(chan ScanResult, len(records))
-	var wg sync.WaitGroup
-	for i := 0; i < *concurrency; i++ {
-		wg.Add(1)
-		go worker(jobs, results, &wg)
-	}
-	for idx, row := range records {
-		url := row[0]
-		jobs <- struct {
-			idx int
-			url string
-		}{idx, url}
-	}
-	close(jobs)
-	wg.Wait()
-	close(results)
-
-	var activeList []ScanResult
-	var deadList []ScanResult
-	for res := range results {
-		cache.Results[res.URL] = res
-		if res.Status == "active" {
-			activeList = append(activeList, res)
-			delete(deadMap, res.URL)
-			delete(archiveMap, res.URL)
-		} else {
-			deadList = append(deadList, res)
-			deadMap[res.URL] = true
-			if !archiveMap[res.URL] {
-				archiveMap[res.URL] = true
-			}
-		}
-	}
-	cache.UpdatedAt = time.Now()
-	saveCache(cache)
+@@ -135,285 +135,354 @@
 	updateCSV(*outputCSV, records, headers, activeList)
 	saveMap(deadChannelsFile, deadMap)
 	saveMap(deadChannelsArchive, archiveMap)
@@ -139,6 +38,7 @@ func main() {
 	fmt.Printf("✅ Active: %d, Dead: %d\n", len(activeList), len(deadList))
 }
 
+// گزارش برای حالت خالی (بدون کانال)
 func generateEmptyChannelsReport() {
 	report := fmt.Sprintf(`# 📊 گزارش اسکنر کانال‌های تلگرام
 
@@ -161,6 +61,7 @@ func generateEmptyChannelsReport() {
 	fmt.Printf("✅ Empty report written to %s\n", channelsReportFile)
 }
 
+// گزارش اصلی با نمایش کامل کانال‌های مرده در بخش جمع‌شونده
 func generateChannelsReport(activeList, deadList []ScanResult, totalChecked int) {
 	var sb strings.Builder
 	sb.WriteString("# 📊 گزارش اسکنر کانال‌های تلگرام\n\n")
@@ -172,6 +73,7 @@ func generateChannelsReport(activeList, deadList []ScanResult, totalChecked int)
 	sb.WriteString(fmt.Sprintf("| ✅ فعال | %d |\n", len(activeList)))
 	sb.WriteString(fmt.Sprintf("| 💀 غیرفعال/مرده | %d |\n\n", len(deadList)))
 
+	// لیست کانال‌های فعال
 	sb.WriteString("## ✅ کانال‌های فعال\n\n")
 	if len(activeList) > 0 {
 		for _, res := range activeList {
@@ -182,11 +84,13 @@ func generateChannelsReport(activeList, deadList []ScanResult, totalChecked int)
 	}
 	sb.WriteString("\n")
 
+	// لیست کانال‌های مرده به صورت جمع‌شونده (کلیک کنید تا همه را نشان دهد)
 	sb.WriteString("## 💀 کانال‌های غیرفعال/مرده\n\n")
 	if len(deadList) > 0 {
 		sb.WriteString("<details>\n")
 		sb.WriteString(fmt.Sprintf("<summary>نمایش همه %d کانال (کلیک کنید)</summary>\n\n", len(deadList)))
 		for _, res := range deadList {
+			// نمایش وضعیت دقیق (inactive, no_config, banned, error)
 			sb.WriteString(fmt.Sprintf("- %s (وضعیت: %s)\n", res.URL, res.Status))
 		}
 		sb.WriteString("\n</details>\n")
@@ -199,6 +103,9 @@ func generateChannelsReport(activeList, deadList []ScanResult, totalChecked int)
 	fmt.Printf("✅ Report written to %s\n", channelsReportFile)
 }
 
+// ------------------------------------------------------------
+// توابع worker و تحلیل (بدون تغییر)
+// ------------------------------------------------------------
 func worker(jobs <-chan struct{ idx int; url string }, results chan<- ScanResult, wg *sync.WaitGroup) {
 	defer wg.Done()
 	for job := range jobs {
