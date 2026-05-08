@@ -84,16 +84,13 @@ func main() {
 		time.Sleep(500 * time.Millisecond)
 	}
 
-	// بازنویسی Sources.json (فقط منابع فعال)
 	writeActiveSources(inputFile, active)
-	// به‌روزرسانی dead_sources.txt
 	updateDeadSources(dead)
 
 	fmt.Printf("\n✅ Active sources: %d, Dead/Inactive: %d\n", len(active), len(dead))
 }
 
 func checkSource(url string) (hasConfig bool, lastMod time.Time, err error) {
-	// 1. HEAD request برای Last-Modified
 	req, err := http.NewRequest("HEAD", url, nil)
 	if err != nil {
 		return false, time.Time{}, err
@@ -112,7 +109,6 @@ func checkSource(url string) (hasConfig bool, lastMod time.Time, err error) {
 	}
 	resp.Body.Close()
 
-	// 2. GET نمونه (۵۰ کیلوبایت اول)
 	req2, err := http.NewRequest("GET", url, nil)
 	if err != nil {
 		return false, lastMod, err
@@ -131,13 +127,10 @@ func checkSource(url string) (hasConfig bool, lastMod time.Time, err error) {
 		return false, lastMod, err
 	}
 	content := string(body)
-	// دیکد base64 در صورت نیاز
 	if decoded, err := base64.StdEncoding.DecodeString(strings.TrimSpace(content)); err == nil && len(decoded) > 0 {
 		content = string(decoded)
 	}
 	has := hasAnyConfig(content)
-
-	// اگر Last-Modified دریافت نشد (zero)، زمان حال را جایگزین کن (منبع تازه تلقی شود)
 	if lastMod.IsZero() {
 		lastMod = time.Now()
 	}
@@ -187,11 +180,11 @@ func updateDeadSources(dead []SourceInfo) {
 		var next int64
 		switch {
 		case daysSince > 60 || !src.HasConfig:
-			next = now + 30*24*3600 // ماهانه
+			next = now + 30*24*3600
 		case daysSince > 30:
-			next = now + 7*24*3600 // هفتگی
+			next = now + 7*24*3600
 		default:
-			next = now + 24*3600 // روزانه
+			next = now + 24*3600
 		}
 		existing[src.URL] = next
 	}
