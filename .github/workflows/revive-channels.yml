@@ -2,7 +2,7 @@ name: Revive Channels from Archive
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 3 * * *"   # هر روز ساعت 3 بامداد
+    - cron: "0 3 * * *"
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -30,10 +30,10 @@ jobs:
           cd telegram-tester
           go run revive_scanner.go
 
-      - name: Commit and push changes
+      - name: Commit changes
         run: |
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions"
-          git add channels.csv reports/ revive_cache.json
+          git add channels.csv revive_cache.json reports/
           git diff --staged --quiet || git commit -m "🔄 Daily revive check"
           git push
