@@ -9,7 +9,6 @@ import (
 	"math/rand"
 	"net/http"
 	"os"
-	"path/filepath"
 	"regexp"
 	"sort"
 	"strings"
@@ -201,7 +200,7 @@ func generateChannelsReport(activeList, deadList []ScanResult, totalChecked int)
 }
 
 // ------------------------------------------------------------
-// توابع worker (بدون تغییر)
+// worker and analysis functions (unchanged)
 // ------------------------------------------------------------
 func worker(jobs <-chan struct{ idx int; url string }, results chan<- ScanResult, wg *sync.WaitGroup) {
 	defer wg.Done()
@@ -281,7 +280,6 @@ func fetchFromRSS(rssURL, origURL string) (ScanResult, error) {
 	if !anyConfig {
 		status = "no_config"
 	}
-	// دیباگ: چاپ اطلاعات در لاگ
 	fmt.Printf("[DEBUG] %s -> lastPost: %s, days diff: %.1f, hasConfig: %v, status: %s\n",
 		origURL, latestTime.Format("2006-01-02 15:04:05"), time.Since(latestTime).Hours()/24, anyConfig, status)
 	return ScanResult{
@@ -375,7 +373,7 @@ func extractChannelName(rawURL string) string {
 	return ""
 }
 
-// ------------------------------ I/O helpers ------------------------------
+// I/O helpers
 func readCSV(path string) ([][]string, []string, error) {
 	f, err := os.Open(path)
 	if err != nil {
