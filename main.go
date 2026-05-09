@@ -171,6 +171,8 @@ func main() {
 	initSubLinkRegex()
 	setupLogging()
 	createDirs()
+	os.MkdirAll("reports", 0755) // پوشه گزارش‌ها
+	os.MkdirAll("data", 0755)     // هماهنگی با اسکنرها
 	initHTTPClient()
 	loadCache()
 	initLastArchiveTime()
@@ -1196,7 +1198,7 @@ func writeAllConfigs() {
 	}
 }
 
-// ---------- فایل links.md (زیبا با جدول و آمار) ----------
+// ---------- فایل links.md (جمع‌شونده، زیبا) ----------
 func generateLinksFile() {
 	var baseURLStr string
 	if *baseURL != "" {
@@ -1217,8 +1219,8 @@ func generateLinksFile() {
 	sb.WriteString("# 🔗 لینک‌های فایل‌های کانفیگ\n\n")
 	sb.WriteString(fmt.Sprintf("**آخرین به‌روزرسانی:** `%s`\n\n", time.Now().Format("2006-01-02 15:04:05")))
 	sb.WriteString("---\n\n## 📊 گزارش آماری کامل\n\n")
-	sb.WriteString(fmt.Sprintf("- [📈 collector_stats.md](%s/collector_stats.md)\n", strings.TrimSuffix(baseURLStr, "/main")))
-	sb.WriteString(fmt.Sprintf("- [📄 collector_stats.txt (raw)](%s/collector_stats.txt)\n\n", baseURLStr))
+	sb.WriteString(fmt.Sprintf("- [📈 collector_stats.md](%s/reports/collector_stats.md)\n", strings.TrimSuffix(baseURLStr, "/main")))
+	sb.WriteString(fmt.Sprintf("- [📄 collector_stats.txt (raw)](%s/reports/collector_stats.txt)\n\n", baseURLStr))
 	sb.WriteString("---\n\n")
 
 	getFileInfo := func(path string) (int, time.Time) {
@@ -1243,7 +1245,6 @@ func generateLinksFile() {
 		return "🟢"
 	}
 
-	// all_configs/subscription
 	sb.WriteString("## 📁 all_configs/subscription\n\n")
 	sb.WriteString("| وضعیت | نام فایل | تعداد کانفیگ | آخرین به‌روزرسانی | لینک خام |\n")
 	sb.WriteString("|-------|----------|--------------|-------------------|----------|\n")
@@ -1261,7 +1262,6 @@ func generateLinksFile() {
 	}
 	sb.WriteString("\n")
 
-	// all_configs/telegram
 	sb.WriteString("## 📁 all_configs/telegram\n\n")
 	sb.WriteString("| وضعیت | نام فایل | تعداد کانفیگ | آخرین به‌روزرسانی | لینک خام |\n")
 	sb.WriteString("|-------|----------|--------------|-------------------|----------|\n")
@@ -1279,7 +1279,6 @@ func generateLinksFile() {
 	}
 	sb.WriteString("\n")
 
-	// daily_archive
 	sb.WriteString("## 📁 daily_archive\n\n")
 	archives, _ := filepath.Glob("daily_archive/*")
 	sort.Strings(archives)
@@ -1335,7 +1334,6 @@ func generateLinksFile() {
 		}
 	}
 
-	// mixed, subscription, telegram
 	for _, folder := range []string{"mixed", "subscription", "telegram"} {
 		sb.WriteString(fmt.Sprintf("## 📁 %s\n\n", folder))
 		sb.WriteString("| وضعیت | نام فایل | تعداد کانفیگ | آخرین به‌روزرسانی | لینک خام |\n")
@@ -1355,9 +1353,9 @@ func generateLinksFile() {
 		sb.WriteString("\n")
 	}
 
-	os.WriteFile("links.md", []byte(sb.String()), 0644)
-	os.WriteFile("links.txt", []byte(sb.String()), 0644) // پشتیبان
-	gologger.Info().Msg("links.md and links.txt generated")
+	os.WriteFile("reports/links.md", []byte(sb.String()), 0644)
+	os.WriteFile("reports/links.txt", []byte(sb.String()), 0644)
+	gologger.Info().Msg("reports/links.md and reports/links.txt generated")
 }
 
 // ---------- فایل آمار زیبا (Markdown) ----------
@@ -1439,16 +1437,29 @@ func writeStatsFile() {
 	if data, err := os.ReadFile(*sourcesFile); err == nil {
 		var sources []string
 		if json.Unmarshal(data, &sources) == nil {
-			sb.WriteString(fmt.Sprintf("## 🔗 منابع ساب‌لینک\n\n**تعداد ساب‌لینک‌های تعریف شده در `Sources.json`:** `%d`\n\n", len(sources)))
+			if len(sources) > 20 {
+				sb.WriteString("## 🔗 منابع ساب‌لینک (نمایش همه با کلیک)\n\n")
+				sb.WriteString(fmt.Sprintf("<details>\n<summary>نمایش %d ساب‌لینک</summary>\n\n", len(sources)))
+				for _, src := range sources {
+					sb.WriteString(fmt.Sprintf("- `%s`\n", src))
+				}
+				sb.WriteString("\n</details>\n\n")
+			} else if len(sources) > 0 {
+				sb.WriteString("## 🔗 منابع ساب‌لینک\n\n")
+				for _, src := range sources {
+					sb.WriteString(fmt.Sprintf("- `%s`\n", src))
+				}
+				sb.WriteString("\n")
+			}
 		}
 	} else {
 		sb.WriteString("⚠️ فایل `Sources.json` یافت نشد.\n\n")
 	}
 	sb.WriteString("---\n✅ ربات با موفقیت اجرا شد. برای جزئیات بیشتر فایل‌های خروجی را بررسی کنید.\n")
 
-	os.WriteFile("collector_stats.md", []byte(sb.String()), 0644)
-	os.WriteFile("collector_stats.txt", []byte(sb.String()), 0644)
-	gologger.Info().Msg("collector_stats.md and collector_stats.txt generated")
+	os.WriteFile("reports/collector_stats.md", []byte(sb.String()), 0644)
+	os.WriteFile("reports/collector_stats.txt", []byte(sb.String()), 0644)
+	gologger.Info().Msg("reports/collector_stats.md and reports/collector_stats.txt generated")
 }
 
 func protocolIcon(proto string) string {
