@@ -1,3 +1,3 @@
-vless://a6ede51f-8d4f-4382-9d5d-f7b5bf1487a6@185.143.234.200:443?encryption=none&type=ws&security=tls&path=%2F%3Fed%3D443&host=alef.ir.oadeflantrogm.mahanmapcdn.com&sni=alef.ir.oadeflantrogm.mahanmapcdn.com&fp=randomized&allowInsecure=0#Join
-vless://f657ecfb-d101-460b-ad5d-b8d489401cf8@cloudinohost.com:443?encryption=none&type=ws&security=tls&path=%2F&sni=cloudinohost.com&alpn=h2%2Chttp%2F1.1&fp=chrome&allowInsecure=0#Join
 vless://743cba9a-05b7-45fe-8cbc-5a216a6cff3c@cloudinohost.com:443?encryption=none&type=ws&security=tls&path=%2F&sni=cloudinohost.com&alpn=h2%2Chttp%2F1.1&fp=chrome&allowInsecure=0#Join
+vless://f657ecfb-d101-460b-ad5d-b8d489401cf8@cloudinohost.com:443?encryption=none&type=ws&security=tls&path=%2F&sni=cloudinohost.com&alpn=h2%2Chttp%2F1.1&fp=chrome&allowInsecure=0#Join
+vless://a6ede51f-8d4f-4382-9d5d-f7b5bf1487a6@185.143.234.200:443?encryption=none&type=ws&security=tls&path=%2F%3Fed%3D443&host=alef.ir.oadeflantrogm.mahanmapcdn.com&sni=alef.ir.oadeflantrogm.mahanmapcdn.com&fp=randomized&allowInsecure=0#Join
