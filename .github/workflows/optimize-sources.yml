@@ -29,15 +29,11 @@ jobs:
           cd telegram-tester
           go run sources_checker.go ../Sources.json
 
-      - name: Commit and push
+      - name: Commit and push changes
         run: |
           git config user.email "actions@github.com"
-          git config user.name "GitHub Actions"
-          # دریافت آخرین تغییرات ریموت و rebase
+          git config.user.name "GitHub Actions"
           git pull --rebase origin main
-          # اضافه کردن فایل‌های جدید
           git add channels.csv Sources.json data/ reports/
-          # اگر تغییری وجود داشت commit کن
           git diff --staged --quiet || git commit -m "🧹 Weekly source optimization"
-          # push به ریموت
           git push origin main
