@@ -75,10 +75,9 @@ jobs:
         run: |
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions"
-          # اضافه کردن فقط پوشه‌ها و فایل‌هایی که واقعاً وجود دارند
+          # اضافه کردن همه پوشه‌ها و فایل‌های ضروری
           git add telegram/ subscription/ mixed/ daily_archive/ all_configs/ \
-                  config_cache.json clash-config.yaml stats.json go.sum reports/ collector_full.log 2>/dev/null || true
-          # اگر فایل stats.json وجود ندارد، خطا نده
+                  config_cache.json clash-config.yaml reports/ *.txt *.md || true
           git diff --staged --quiet || git commit -m "✔️ $(date '+%Y-%m-%d %H:%M:%S') Collected"
           git pull --rebase --autostash origin main
           git push origin main
