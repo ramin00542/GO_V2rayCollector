@@ -242,7 +242,7 @@ func initTelegramLimiter() {
 	telegramLimiter = rate.NewLimiter(rate.Limit(TelegramRequestsPerSecond), TelegramBurstSize)
 }
 
-// ---------- آرشیو روزانه با پشتیبانی از all_configs و خالی کردن آن ----------
+// ---------- آرشیو روزانه ----------
 func archiveDaily() {
 	today := time.Now().Format("2006-01-02")
 	archiveDir := filepath.Join("daily_archive", today)
@@ -254,7 +254,6 @@ func archiveDaily() {
 	}
 	os.MkdirAll(archiveDir, 0755)
 
-	// آرشیو mixed
 	mixedFiles, _ := filepath.Glob("mixed/*.txt")
 	for _, src := range mixedFiles {
 		dest := filepath.Join(archiveDir, filepath.Base(src))
@@ -267,7 +266,7 @@ func archiveDaily() {
 	copyDir("telegram", filepath.Join(archiveDir, "telegram"))
 	copyDir("all_configs", filepath.Join(archiveDir, "all_configs"))
 
-	// پاک کردن all_configs (حذف کل و ساخت مجدد)
+	// پاک کردن all_configs
 	if err := os.RemoveAll("all_configs"); err == nil {
 		os.MkdirAll("all_configs", 0755)
 		os.MkdirAll(filepath.Join("all_configs", "telegram"), 0755)
@@ -305,10 +304,10 @@ func initCombinedRegex() {
 		`ss://[A-Za-z0-9+/]+={0,2}@[^\s]+`,
 		`ssr://[A-Za-z0-9+/=]+`,
 		`hysteria2://[^\s]+`,
-		`hy2://[^\s]+`, // Hysteria2 (hiddify)
+		`hy2://[^\s]+`,
 		`tuic://[^\s]+`,
 		`wireguard://[^\s]+`,
-		`warp://[^\s]+`, // Cloudflare WARP
+		`warp://[^\s]+`,
 		`tg://proxy\?[^\s]+`,
 		`tg://socks\?[^\s]+`,
 		`slipnet://[^\s]+`,
@@ -1029,7 +1028,7 @@ func fetchFromGitHubForks(ctx context.Context) {
 			break
 		}
 		for _, fork := range forks {
-			owner, _ := fork["owner"].(map[string]interface{})
+			// owner, _ := fork["owner"].(map[string]interface{})  // حذف شد
 			fullName, _ := fork["full_name"].(string)
 			if fullName == "" {
 				continue
@@ -1181,7 +1180,6 @@ func writeAllConfigs() {
 		"vmess": true, "vless": true, "trojan": true, "ss": true,
 		"hysteria2": true, "tuic": true, "wireguard": true,
 		"socks": true, // SOCKS معمولی
-		// پروتکل‌های خاص در فایل‌های جداگانه می‌روند
 	}
 	type sourceFiles struct {
 		allProto      []string
@@ -1300,7 +1298,6 @@ func generateLinksFile() {
 		return "🟢"
 	}
 
-	// all_configs/subscription
 	sb.WriteString("## 📁 all_configs/subscription\n\n")
 	sb.WriteString("| وضعیت | نام فایل | تعداد کانفیگ | آخرین به‌روزرسانی | لینک خام |\n")
 	sb.WriteString("|-------|----------|--------------|-------------------|----------|\n")
@@ -1318,7 +1315,6 @@ func generateLinksFile() {
 	}
 	sb.WriteString("\n")
 
-	// all_configs/telegram
 	sb.WriteString("## 📁 all_configs/telegram\n\n")
 	sb.WriteString("| وضعیت | نام فایل | تعداد کانفیگ | آخرین به‌روزرسانی | لینک خام |\n")
 	sb.WriteString("|-------|----------|--------------|-------------------|----------|\n")
@@ -1336,7 +1332,6 @@ func generateLinksFile() {
 	}
 	sb.WriteString("\n")
 
-	// daily_archive
 	sb.WriteString("## 📁 daily_archive\n\n")
 	archives, _ := filepath.Glob("daily_archive/*")
 	sort.Strings(archives)
@@ -1392,7 +1387,6 @@ func generateLinksFile() {
 		}
 	}
 
-	// mixed, subscription, telegram
 	for _, folder := range []string{"mixed", "subscription", "telegram"} {
 		sb.WriteString(fmt.Sprintf("## 📁 %s\n\n", folder))
 		sb.WriteString("| وضعیت | نام فایل | تعداد کانفیگ | آخرین به‌روزرسانی | لینک خام |\n")
@@ -1451,7 +1445,10 @@ func writeStatsFile() {
 		sb.WriteString("_هیچ پروتکلی یافت نشد._\n\n")
 	} else {
 		sb.WriteString("| پروتکل | تعداد |\n|--------|-------|\n")
-		type kv struct{ p string; c int }
+		type kv struct {
+			p string
+			c int
+		}
 		var sorted []kv
 		for p, c := range protoCounts {
 			sorted = append(sorted, kv{p, c})
