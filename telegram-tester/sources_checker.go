@@ -42,14 +42,18 @@ var (
 		regexp.MustCompile(`ss://[A-Za-z0-9+/]+={0,2}@[^\s]+`),
 		regexp.MustCompile(`ssr://[A-Za-z0-9+/=]+`),
 		regexp.MustCompile(`hysteria2://[^\s]+`),
+		regexp.MustCompile(`hy2://[^\s]+`),
 		regexp.MustCompile(`tuic://[^\s]+`),
 		regexp.MustCompile(`wireguard://[^\s]+`),
+		regexp.MustCompile(`warp://[^\s]+`),
 		regexp.MustCompile(`tg://proxy\?[^\s]+`),
-		regexp.MustCompile(`(?:slipnet|slip)://[^\s]+`),
+		regexp.MustCompile(`tg://socks\?[^\s]+`),
+		regexp.MustCompile(`slipnet://[^\s]+`),
 		regexp.MustCompile(`https?://[^\s]+:\d+(?:[^\s]*)?`),
 		regexp.MustCompile(`https?://[^@\s]+@[^\s]+`),
 		regexp.MustCompile(`socks(?:5)?://[^\s]+@[^\s]+`),
 		regexp.MustCompile(`socks(?:5)?://[^\s]+:\d+`),
+		regexp.MustCompile(`-----BEGIN ARGO VPN BRIDGE BLOCK-----[\s\S]+?-----END ARGO VPN BRIDGE BLOCK-----`),
 	}
 )
 
@@ -176,7 +180,7 @@ func main() {
 		updatedOld[k] = v
 	}
 
-	// ذخیره منابع فعال در فایل اصلی Sources.json
+	// ذخیره منابع فعال در Sources.json
 	saveActiveSources(activeURLs, inputFile)
 	saveDeadSourceArchive(deadSourcesRecent, updatedRecent)
 	saveDeadSourceArchive(deadSourcesOld, updatedOld)
