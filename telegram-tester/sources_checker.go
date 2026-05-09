@@ -17,17 +17,19 @@ import (
 )
 
 const (
-	dataDir               = "../data"
-	deadSourcesFile       = dataDir + "/dead_sources.txt"
-	deadSourcesArchive    = dataDir + "/dead_sources_archive.txt"
-	sourcesReportFile     = "../reports/sources_report.md"
-	activeSourcesFile     = "../active_sources.json"
-	checkTimeout          = 10 * time.Second
-	sampleSize            = 50 * 1024
-	defaultRetryCount     = 3
-	defaultBaseDelay      = 1 * time.Second
-	defaultJitter         = 500 * time.Millisecond
-	activeDays            = 30
+	checkTimeout        = 10 * time.Second
+	sampleSize          = 50 * 1024
+	defaultRetryCount   = 3
+	defaultBaseDelay    = 1 * time.Second
+	defaultJitter       = 500 * time.Millisecond
+	defaultActiveDays   = 30
+	defaultConcurrency  = 5
+
+	dataDir            = "../data"
+	deadSourcesFile    = dataDir + "/dead_sources.txt"
+	deadSourcesArchive = dataDir + "/dead_sources_archive.txt"
+	activeSourcesFile  = "../active_sources.json"
+	sourcesReportFile  = "../reports/sources_report.md"
 )
 
 var (
@@ -58,15 +60,24 @@ type SourceStatus struct {
 	Error     string    `json:"error,omitempty"`
 }
 
-func main() {
-	os.MkdirAll("../reports", 0755)
-	os.MkdirAll(dataDir, 0755)
+var printMutex sync.Mutex
 
+func safePrintf(format string, args ...interface{}) {
+	printMutex.Lock()
+	defer printMutex.Unlock()
+	fmt.Printf(format, args...)
+}
+
+func main() {
 	if len(os.Args) < 2 {
 		fmt.Println("Usage: go run sources_checker.go <Sources.json>")
 		os.Exit(1)
 	}
 	inputFile := os.Args[1]
+
+	os.MkdirAll("../reports", 0755)
+	os.MkdirAll(dataDir, 0755)
+
 	data, err := os.ReadFile(inputFile)
 	if err != nil {
 		fmt.Printf("Error reading %s: %v\n", inputFile, err)
@@ -82,25 +93,17 @@ func main() {
 		generateEmptySourcesReport()
 		return
 	}
+
 	deadMap := loadMap(deadSourcesFile)
 	archiveMap := loadMap(deadSourcesArchive)
 
-	var activeURLs []string
-	var deadInfos []SourceStatus
 	jobs := make(chan string, len(sources))
 	results := make(chan SourceStatus, len(sources))
 	var wg sync.WaitGroup
-	workers := 5
+	workers := defaultConcurrency
 	for i := 0; i < workers; i++ {
 		wg.Add(1)
-		go func() {
-			defer wg.Done()
-			for url := range jobs {
-				res := checkSourceWithRetry(url)
-				results <- res
-				time.Sleep(time.Duration(rand.Intn(500)+500) * time.Millisecond)
-			}
-		}()
+		go worker(jobs, results, &wg)
 	}
 	for _, url := range sources {
 		jobs <- url
@@ -109,8 +112,10 @@ func main() {
 	wg.Wait()
 	close(results)
 
+	var activeURLs []string
+	var deadInfos []SourceStatus
 	for res := range results {
-		if res.Status == "OK" && res.HasConfig && time.Since(res.LastMod).Hours()/24 <= float64(activeDays) {
+		if res.Status == "OK" && res.HasConfig && time.Since(res.LastMod).Hours()/24 <= float64(defaultActiveDays) {
 			activeURLs = append(activeURLs, res.URL)
 			delete(deadMap, res.URL)
 			delete(archiveMap, res.URL)
@@ -126,9 +131,135 @@ func main() {
 	saveActiveSources(activeURLs)
 	saveMap(deadSourcesFile, deadMap)
 	saveMap(deadSourcesArchive, archiveMap)
-
 	generateSourcesReport(activeURLs, deadInfos)
-	fmt.Printf("✅ Active sources: %d, Dead: %d\n", len(activeURLs), len(deadInfos))
+	fmt.Printf("\n✅ Active sources: %d, Dead: %d\n", len(activeURLs), len(deadInfos))
+}
+
+func worker(jobs <-chan string, results chan<- SourceStatus, wg *sync.WaitGroup) {
+	defer wg.Done()
+	for url := range jobs {
+		res := checkSourceWithRetry(url)
+		results <- res
+	}
+}
+
+func checkSourceWithRetry(url string) SourceStatus {
+	var lastErr error
+	for attempt := 1; attempt <= defaultRetryCount; attempt++ {
+		res, err := checkSource(url)
+		if err == nil {
+			return res
+		}
+		lastErr = err
+		delay := defaultBaseDelay * time.Duration(1<<uint(attempt-1))
+		jitter := time.Duration(rand.Int63n(int64(defaultJitter)))
+		time.Sleep(delay + jitter)
+	}
+	return SourceStatus{URL: url, Status: "DEAD", Error: lastErr.Error()}
+}
+
+func checkSource(url string) (SourceStatus, error) {
+	req, err := http.NewRequest("GET", url, nil)
+	if err != nil {
+		return SourceStatus{}, err
+	}
+	req.Header.Set("User-Agent", "Mozilla/5.0")
+	req.Header.Set("Range", "bytes=0-50000")
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		return SourceStatus{}, err
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 && resp.StatusCode != 206 {
+		return SourceStatus{URL: url, Status: "DEAD"}, nil
+	}
+
+	lastModStr := resp.Header.Get("Last-Modified")
+	var lastMod time.Time
+	if lastModStr != "" {
+		lastMod, _ = time.Parse(time.RFC1123, lastModStr)
+	}
+
+	limited := io.LimitReader(resp.Body, sampleSize)
+	body, err := io.ReadAll(limited)
+	if err != nil {
+		return SourceStatus{}, err
+	}
+	content := string(body)
+
+	if decoded, err := base64.StdEncoding.DecodeString(strings.TrimSpace(content)); err == nil && len(decoded) > 0 {
+		content = string(decoded)
+	}
+
+	hasConfig := anyConfigInText(content)
+	daysSince := 0
+	if !lastMod.IsZero() {
+		daysSince = int(time.Since(lastMod).Hours() / 24)
+	}
+	status := "DEAD"
+	if resp.StatusCode == 200 || resp.StatusCode == 206 {
+		if hasConfig && daysSince <= defaultActiveDays {
+			status = "OK"
+		} else if !hasConfig {
+			status = "NO_CONFIG"
+		} else {
+			status = "INACTIVE"
+		}
+	}
+	safePrintf("[INFO] %s -> lastMod: %s (%d days), hasConfig: %v, status: %s\n",
+		url, lastMod.Format("2006-01-02"), daysSince, hasConfig, status)
+	return SourceStatus{
+		URL:       url,
+		LastMod:   lastMod,
+		HasConfig: hasConfig,
+		Status:    status,
+	}, nil
+}
+
+func anyConfigInText(text string) bool {
+	for _, re := range regexPatterns {
+		if re.MatchString(text) {
+			return true
+		}
+	}
+	return false
+}
+
+// I/O helpers
+func loadMap(file string) map[string]bool {
+	m := make(map[string]bool)
+	data, err := os.ReadFile(file)
+	if err != nil {
+		return m
+	}
+	for _, line := range strings.Split(string(data), "\n") {
+		line = strings.TrimSpace(line)
+		if line != "" {
+			m[line] = true
+		}
+	}
+	return m
+}
+
+func saveMap(file string, m map[string]bool) {
+	var lines []string
+	for k := range m {
+		lines = append(lines, k)
+	}
+	sort.Strings(lines)
+	os.WriteFile(file, []byte(strings.Join(lines, "\n")), 0644)
+	fmt.Printf("✅ Saved %s with %d entries.\n", file, len(lines))
+}
+
+func saveActiveSources(urls []string) {
+	data, err := json.MarshalIndent(urls, "", "  ")
+	if err != nil {
+		fmt.Printf("Error marshalling JSON: %v\n", err)
+		return
+	}
+	os.WriteFile(activeSourcesFile, data, 0644)
+	fmt.Printf("✅ Active sources written to %s\n", activeSourcesFile)
 }
 
 func generateEmptySourcesReport() {
@@ -144,6 +275,9 @@ func generateEmptySourcesReport() {
 | 💀 مرده | 0 |
 
 هیچ ساب‌لینکی یافت نشد.
+
+---
+✅ گزارش توسط GitHub Actions تولید شده است.
 `, time.Now().Format("2006-01-02 15:04:05"))
 	os.WriteFile(sourcesReportFile, []byte(report), 0644)
 }
@@ -173,7 +307,7 @@ func generateSourcesReport(active []string, dead []SourceStatus) {
 			if !d.LastMod.IsZero() {
 				lastModStr = d.LastMod.Format("2006-01-02 15:04:05")
 			}
-			sb.WriteString(fmt.Sprintf("- **%s**  \n  - وضعیت: `%s`  \n  - آخرین تغییر: %s  \n  - دارای کانفیگ: %v  \n  - خطا: %s\n\n", d.URL, d.Status, lastModStr, d.HasConfig, d.Error))
+			sb.WriteString(fmt.Sprintf("- **%s**  \n  - وضعیت: `%s`  \n  - آخرین تغییر: %s  \n  - دارای کانفیگ: %v\n\n", d.URL, d.Status, lastModStr, d.HasConfig))
 		}
 		sb.WriteString("</details>\n")
 	} else {
@@ -181,104 +315,5 @@ func generateSourcesReport(active []string, dead []SourceStatus) {
 	}
 	sb.WriteString("\n---\n✅ گزارش توسط GitHub Actions تولید شده است.\n")
 	os.WriteFile(sourcesReportFile, []byte(sb.String()), 0644)
-}
-
-// ------------------------------------------------------------
-// توابع اصلی (بدون تغییر)
-// ------------------------------------------------------------
-func checkSourceWithRetry(url string) SourceStatus {
-	var lastErr error
-	for attempt := 1; attempt <= defaultRetryCount; attempt++ {
-		res, err := checkSource(url)
-		if err == nil {
-			return res
-		}
-		lastErr = err
-		delay := defaultBaseDelay * time.Duration(1<<uint(attempt-1))
-		jitter := time.Duration(rand.Int63n(int64(defaultJitter)))
-		time.Sleep(delay + jitter)
-	}
-	return SourceStatus{URL: url, Status: "DEAD", Error: lastErr.Error()}
-}
-
-func checkSource(url string) (SourceStatus, error) {
-	req, err := http.NewRequest("GET", url, nil)
-	if err != nil {
-		return SourceStatus{}, err
-	}
-	req.Header.Set("User-Agent", "Mozilla/5.0")
-	req.Header.Set("Range", "bytes=0-50000")
-	resp, err := httpClient.Do(req)
-	if err != nil {
-		return SourceStatus{}, err
-	}
-	defer resp.Body.Close()
-	if resp.StatusCode != 200 && resp.StatusCode != 206 {
-		return SourceStatus{URL: url, Status: "DEAD"}, nil
-	}
-	lastModStr := resp.Header.Get("Last-Modified")
-	var lastMod time.Time
-	if lastModStr != "" {
-		lastMod, _ = time.Parse(time.RFC1123, lastModStr)
-	}
-	limited := io.LimitReader(resp.Body, sampleSize)
-	body, err := io.ReadAll(limited)
-	if err != nil {
-		return SourceStatus{}, err
-	}
-	content := string(body)
-	if decoded, err := base64.StdEncoding.DecodeString(strings.TrimSpace(content)); err == nil && len(decoded) > 0 {
-		content = string(decoded)
-	}
-	hasConfig := anyConfigInText(content)
-	if !hasConfig {
-		return SourceStatus{URL: url, LastMod: lastMod, HasConfig: false, Status: "NO_CONFIG"}, nil
-	}
-	if lastMod.IsZero() {
-		lastMod = time.Now()
-	}
-	return SourceStatus{URL: url, LastMod: lastMod, HasConfig: true, Status: "OK"}, nil
-}
-
-func anyConfigInText(text string) bool {
-	for _, re := range regexPatterns {
-		if re.MatchString(text) {
-			return true
-		}
-	}
-	return false
-}
-
-func loadMap(file string) map[string]bool {
-	m := make(map[string]bool)
-	data, err := os.ReadFile(file)
-	if err != nil {
-		return m
-	}
-	for _, line := range strings.Split(string(data), "\n") {
-		line = strings.TrimSpace(line)
-		if line != "" {
-			m[line] = true
-		}
-	}
-	return m
-}
-
-func saveMap(file string, m map[string]bool) {
-	var lines []string
-	for k := range m {
-		lines = append(lines, k)
-	}
-	sort.Strings(lines)
-	os.WriteFile(file, []byte(strings.Join(lines, "\n")), 0644)
-}
-
-func saveActiveSources(urls []string) {
-	data, err := json.MarshalIndent(urls, "", "  ")
-	if err != nil {
-		fmt.Printf("Error marshalling JSON: %v\n", err)
-		return
-	}
-	os.WriteFile(activeSourcesFile, data, 0644)
-	fmt.Printf("✅ Active sources written to %s\n", activeSourcesFile)
+	fmt.Printf("✅ Report written to %s\n", sourcesReportFile)
 }
