@@ -36,66 +36,60 @@ jobs:
           go get -u ./...
           go mod tidy
 
-      - name: Generate statistics
+      - name: 📊 Generate statistics using git diff
         id: stats
         run: |
-          ADDED=$(diff -u go.mod.bak go.mod | grep -E '^\+[^+]' | grep -v '^+++' | wc -l || echo "0")
-          REMOVED=$(diff -u go.mod.bak go.mod | grep -E '^-[^-]' | grep -v '^---' | wc -l || echo "0")
-          SUM_CHANGES=$(diff -u go.sum.bak go.sum | grep -E '^[+-]' | grep -v '^[+-][+-][+-]' | wc -l || echo "0")
-          MOD_CHANGES=$(git diff --numstat go.mod | awk '{print $1+$2}' || echo "0")
+          # تغییرات خطوط در go.mod
+          MOD_ADDED=$(git diff --numstat go.mod.bak go.mod | awk '{print $1}' | grep -E '^[0-9]+$' || echo 0)
+          MOD_REMOVED=$(git diff --numstat go.mod.bak go.mod | awk '{print $2}' | grep -E '^[0-9]+$' || echo 0)
+          MOD_CHANGES=$((MOD_ADDED + MOD_REMOVED))
+          
+          # تغییرات در go.sum
+          SUM_ADDED=$(git diff --numstat go.sum.bak go.sum | awk '{print $1}' | grep -E '^[0-9]+$' || echo 0)
+          SUM_REMOVED=$(git diff --numstat go.sum.bak go.sum | awk '{print $2}' | grep -E '^[0-9]+$' || echo 0)
+          SUM_CHANGES=$((SUM_ADDED + SUM_REMOVED))
+          
+          # آمار اضافه/حذف خطوط (تخمینی)
+          ADDED=$MOD_ADDED
+          REMOVED=$MOD_REMOVED
+          
           echo "added=$ADDED" >> $GITHUB_OUTPUT
           echo "removed=$REMOVED" >> $GITHUB_OUTPUT
-          echo "sum_changes=$SUM_CHANGES" >> $GITHUB_OUTPUT
           echo "mod_changes=$MOD_CHANGES" >> $GITHUB_OUTPUT
+          echo "sum_changes=$SUM_CHANGES" >> $GITHUB_OUTPUT
 
-      - name: 📊 Build Markdown report
+      - name: 📝 Prepare formatted diff
+        id: diff
+        run: |
+          # ایجاد diff زیبا برای go.mod (فقط در صورت وجود تغییر)
+          if git diff --quiet go.mod.bak go.mod; then
+            DIFF_TEXT="(هیچ تغییری در go.mod مشاهده نشد)"
+          else
+            DIFF_TEXT=$(git diff --no-index --color=never go.mod.bak go.mod | sed 's/^/    /')
+          fi
+          echo "diff_text<<EOF" >> $GITHUB_OUTPUT
+          echo "$DIFF_TEXT" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: 📄 Build Markdown report
         run: |
           NOW=$(date '+%Y-%m-%d %H:%M:%S')
           ADDED="${{ steps.stats.outputs.added }}"
           REMOVED="${{ steps.stats.outputs.removed }}"
           MOD_CHANGES="${{ steps.stats.outputs.mod_changes }}"
           SUM_CHANGES="${{ steps.stats.outputs.sum_changes }}"
-          DIFF_OUT=$(diff -u go.mod.bak go.mod | sed 's/^/  /')
           
-          echo "# 📦 گزارش به‌روزرسانی وابستگی‌ها" > reports/deps_update_report.md
-          echo "" >> reports/deps_update_report.md
-          echo "**تاریخ اجرا:** ${NOW}" >> reports/deps_update_report.md
-          echo "" >> reports/deps_update_report.md
-          echo "## خلاصه آماری" >> reports/deps_update_report.md
-          echo "| معیار | مقدار |" >> reports/deps_update_report.md
-          echo "|-------|-------|" >> reports/deps_update_report.md
-          echo "| وابستگی‌های اضافه شده (خطوط + در go.mod) | ${ADDED} |" >> reports/deps_update_report.md
-          echo "| وابستگی‌های حذف شده (خطوط - در go.mod) | ${REMOVED} |" >> reports/deps_update_report.md
-          echo "| خطوط تغییر یافته در go.mod | ${MOD_CHANGES} |" >> reports/deps_update_report.md
-          echo "| تغییرات در go.sum | ${SUM_CHANGES} |" >> reports/deps_update_report.md
-          echo "" >> reports/deps_update_report.md
-          echo "## جزئیات تغییرات (go.mod)" >> reports/deps_update_report.md
-          echo "\`\`\`diff" >> reports/deps_update_report.md
-          echo "${DIFF_OUT}" >> reports/deps_update_report.md
-          echo "\`\`\`" >> reports/deps_update_report.md
-          echo "" >> reports/deps_update_report.md
-          echo "---" >> reports/deps_update_report.md
-          echo "✅ گزارش توسط GitHub Actions تولید شده است." >> reports/deps_update_report.md
+          cat > reports/deps_update_report.md << 'EOF'
+          # 📦 گزارش به‌روزرسانی وابستگی‌ها
           
-          cat reports/deps_update_report.md
-
-      - name: 💾 Commit and push changes including report
-        run: |
-          git config user.email "actions@github.com"
-          git config user.name "GitHub Actions"
-          git add go.mod go.sum reports/deps_update_report.md
-          git diff --staged --quiet || git commit -m "chore(deps): update dependencies (report included)"
-          git push
-
-      - name: Add summary to job
-        run: |
-          echo "## 📊 به‌روزرسانی وابستگی‌ها" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "| معیار | مقدار |" >> $GITHUB_STEP_SUMMARY
-          echo "|-------|-------|" >> $GITHUB_STEP_SUMMARY
-          echo "| اضافه شده | ${{ steps.stats.outputs.added }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| حذف شده | ${{ steps.stats.outputs.removed }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| خطوط تغییر کرده در go.mod | ${{ steps.stats.outputs.mod_changes }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| تغییرات در go.sum | ${{ steps.stats.outputs.sum_changes }} |" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "✅ گزارش کامل در [reports/deps_update_report.md](https://github.com/${{ github.repository }}/blob/main/reports/deps_update_report.md) ذخیره شده است." >> $GITHUB_STEP_SUMMARY
+          **تاریخ اجرا:** $NOW
+          
+          ## خلاصه آماری
+          | معیار | مقدار |
+          |-------|-------|
+          | وابستگی‌های اضافه شده (خطوط + در go.mod) | $ADDED |
+          | وابستگی‌های حذف شده (خطوط - در go.mod) | $REMOVED |
+          | خطوط تغییر یافته در go.mod | $MOD_CHANGES |
+          | تغییرات در go.sum | $SUM_CHANGES |
+          
+          ## جزئیات تغییرات (go.mod)
