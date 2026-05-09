@@ -1,154 +1,253 @@
 # 📊 گزارش اسکنر کانال‌های تلگرام
 
-**تاریخ اجرا:** 2026-05-09 09:03:33
+**تاریخ اجرا:** 2026-05-09 10:59:56
 
 ## خلاصه آماری
 
 | معیار | مقدار |
 |-------|-------|
-| کل کانال‌های بررسی شده | 30 |
-| ✅ فعال | 5 |
-| 💀 غیرفعال/مرده | 25 |
+| کل کانال‌های بررسی شده | 1732 |
+| ✅ فعال | 237 |
 
 ## ✅ کانال‌های فعال
 
-- https://t.me/Ae_proxy
-- https://t.me/AmyraxVPN
-- https://t.me/v2ray_configs_pool
-- https://t.me/appxa
+- https://t.me/KurdConfing
+- https://t.me/s/mahxray
+- https://t.me/vmessorg
+- https://t.me/s/Freedomnetir
+- https://t.me/atatech_ir
+- https://t.me/s/mpproxy
+- https://t.me/s/sourcefreefilter
+- https://t.me/s/moft_vpn
+- https://t.me/v2rayNG_Matsuri
+- https://t.me/v2rayngcustom
+- https://t.me/srcvpn
+- https://t.me/s/stretten
+- https://t.me/Parsashonam
+- https://t.me/s/V2ray_Alpha
+- https://t.me/s/free1_vpn
+- https://t.me/s/farahvpn
+- https://t.me/v2rayngvpn
+- https://t.me/s/irv2rey
+- https://t.me/v2range
+- https://t.me/YamYamProxy
+- https://t.me/VlessVpnFree
+- https://t.me/G0Dv2ray
+- https://t.me/free_vpn02
+- https://t.me/PewezaVPN
+- https://t.me/soskeynet
+- https://t.me/s/hddify
+- https://t.me/vmess_iran
+- https://t.me/ConfigX2ray
 - https://t.me/V2All
-
-## 💀 کانال‌های غیرفعال/مرده
-
-<details>
-<summary>نمایش همه 25 کانال (کلیک کنید)</summary>
-
-- **https://t.me/Alfred_Config**  
-  - وضعیت: `inactive`  
-  - آخرین پست: 2026-02-26 08:13:25  
-  - دارای کانفیگ: false
-
-- **https://t.me/Awlix_ir**  
-  - وضعیت: `inactive`  
-  - آخرین پست: 2026-03-26 18:17:59  
-  - دارای کانفیگ: false
-
-- **https://t.me/ArV2ray**  
-  - وضعیت: `inactive`  
-  - آخرین پست: 2026-01-06 11:00:57  
-  - دارای کانفیگ: true
-
-- **https://t.me/CUSTOMVPNSERVER**  
-  - وضعیت: `inactive`  
-  - آخرین پست: 2026-01-26 22:36:08  
-  - دارای کانفیگ: true
-
-- **https://t.me/Capital_NET**  
-  - وضعیت: `inactive`  
-  - آخرین پست: 2023-10-06 15:51:53  
-  - دارای کانفیگ: true
-
-- **https://t.me/CloudCityy**  
-  - وضعیت: `inactive`  
-  - آخرین پست: 2024-10-04 22:07:47  
-  - دارای کانفیگ: true
-
-- **https://t.me/Configforvpn01**  
-  - وضعیت: `inactive`  
-  - آخرین پست: 2024-01-05 16:44:07  
-  - دارای کانفیگ: true
-
-- **https://t.me/ConfigsHUB**  
-  - وضعیت: `inactive`  
-  - آخرین پست: 2026-05-02 22:22:29  
-  - دارای کانفیگ: false
-
-- **https://t.me/AliAlma_GSM**  
-  - وضعیت: `error`  
-  - آخرین پست:   
-  - دارای کانفیگ: false
-
-- **https://t.me/CUSTOMIZEGP**  
-  - وضعیت: `error`  
-  - آخرین پست:   
-  - دارای کانفیگ: false
-
-- **https://t.me/Alpha_V2ray_Iran**  
-  - وضعیت: `error`  
-  - آخرین پست:   
-  - دارای کانفیگ: false
-
-- **https://t.me/DarkTeam_VPN**  
-  - وضعیت: `inactive`  
-  - آخرین پست: 2026-05-07 19:25:09  
-  - دارای کانفیگ: false
-
-- **https://t.me/DailyV2RY**  
-  - وضعیت: `inactive`  
-  - آخرین پست: 2026-04-20 20:44:32  
-  - دارای کانفیگ: false
-
-- **https://t.me/DarkVPNpro**  
-  - وضعیت: `inactive`  
-  - آخرین پست: 2026-01-04 21:57:13  
-  - دارای کانفیگ: true
-
-- **https://t.me/DeamNet_proxy**  
-  - وضعیت: `inactive`  
-  - آخرین پست: 2025-07-29 16:18:08  
-  - دارای کانفیگ: false
-
-- **https://t.me/Ahmedhamoomi_Servers**  
-  - وضعیت: `inactive`  
-  - آخرین پست: 2025-11-07 17:35:13  
-  - دارای کانفیگ: true
-
-- **https://t.me/CookVip**  
-  - وضعیت: `error`  
-  - آخرین پست:   
-  - دارای کانفیگ: false
-
-- **https://t.me/An0nymousTeam**  
-  - وضعیت: `inactive`  
-  - آخرین پست: 2026-02-18 11:34:08  
-  - دارای کانفیگ: true
-
-- **https://t.me/SudoFlux**  
-  - وضعیت: `inactive`  
-  - آخرین پست: 2026-02-09 17:52:36  
-  - دارای کانفیگ: false
-
-- **https://t.me/Cov2ray**  
-  - وضعیت: `error`  
-  - آخرین پست:   
-  - دارای کانفیگ: false
-
-- **https://t.me/Airdorap_Free**  
-  - وضعیت: `error`  
-  - آخرین پست:   
-  - دارای کانفیگ: false
-
-- **https://t.me/c/1796213998/108538**  
-  - وضعیت: `error`  
-  - آخرین پست:   
-  - دارای کانفیگ: false
-
-- **https://t.me/c/1796213998/1**  
-  - وضعیت: `error`  
-  - آخرین پست:   
-  - دارای کانفیگ: false
-
-- **https://t.me/c/1796213998/108613**  
-  - وضعیت: `error`  
-  - آخرین پست:   
-  - دارای کانفیگ: false
-
-- **https://t.me/c/1796213998/432502**  
-  - وضعیت: `error`  
-  - آخرین پست:   
-  - دارای کانفیگ: false
-
-</details>
+- https://t.me/s/configshub2
+- https://t.me/s/jetmtp
+- https://t.me/s/ultrasurf_12
+- https://t.me/s/external_net
+- https://t.me/iran_v2ray1
+- https://t.me/farahvpn
+- https://t.me/wedbazvpn
+- https://t.me/s/vpnsshocean
+- https://t.me/s/PrivateVPNs
+- https://t.me/s/juzibaipiao
+- https://t.me/s/v2rayngseven
+- https://t.me/s/AzadNet
+- https://t.me/s/v2rayNGcloud
+- https://t.me/vipconfingg
+- https://t.me/v2ray_free_conf
+- https://t.me/s/oneclickvpnkeys
+- https://t.me/netmelinpv
+- https://t.me/s/kingmtp
+- https://t.me/antimeli
+- https://t.me/V2rayng_Fast
+- https://t.me/Speeds_vpn1
+- https://t.me/s/nofilter_v2rayng
+- https://t.me/archivetell
+- https://t.me/techbod
+- https://t.me/filtershekan_channel
+- https://t.me/sourcefreefilter
+- https://t.me/zibanabz
+- https://t.me/ConfigWireguard
+- https://t.me/v2rayvpnchannel
+- https://t.me/s/V2rayHapp
+- https://t.me/s/proxystore11
+- https://t.me/s/v2rayvpnchannel
+- https://t.me/s/vip_vpn_2022
+- https://t.me/s/turboo_server
+- https://t.me/PrivateVPNs
+- https://t.me/s/blueshekan
+- https://t.me/s/v2nodes
+- https://t.me/s/vmess_iran
+- https://t.me/s/v2rayconfigamir
+- https://t.me/s/vpnplusee_free
+- https://t.me/s/ana_service
+- https://t.me/V2pedia
+- https://t.me/s/SimChin_ir
+- https://t.me/freeland8
+- https://t.me/s/vpncostumer
+- https://t.me/s/ConfigWireguard
+- https://t.me/s/IraneAzad_Net
+- https://t.me/filembad
+- https://t.me/s/SafeNetIR
+- https://t.me/s/hotspotproxy
+- https://t.me/proxy_kafee
+- https://t.me/s/sinavm
+- https://t.me/s/v_2rayng0
+- https://t.me/anty_filter
+- https://t.me/vmesskhodam
+- https://t.me/Fr33C0nfig
+- https://t.me/ConfigX2ray0
+- https://t.me/s/ehsawn8
+- https://t.me/s/ipcloudflaretamiz
+- https://t.me/s/iran_v2ray1
+- https://t.me/s/dns68
+- https://t.me/s/Fr33C0nfig
+- https://t.me/s/V2pedia
+- https://t.me/s/NetAccount
+- https://t.me/crgaming7
+- https://t.me/s/taziyanteam
+- https://t.me/s/vpnserverrr
+- https://t.me/s/YamYamProxy
+- https://t.me/Capoit
+- https://t.me/s/guard_revil
+- https://t.me/s/iP_CF
+- https://t.me/configshub2
+- https://t.me/v2rayngcloud
+- https://t.me/s/free_outline_keys
+- https://t.me/Freedomnetir
+- https://t.me/s/configfast
+- https://t.me/v2rayngconfig
+- https://t.me/s/free1ss
+- https://t.me/v2rayng_fars
+- https://t.me/s/opensstpvpn
+- https://t.me/dns68
+- https://t.me/s/LonUp_M
+- https://t.me/s/configpluse
+- https://t.me/vpnproxy_v2rayng
+- https://t.me/s/v2ray_vmes
+- https://t.me/s/tehranargo
+- https://t.me/s/sezar_sec
+- https://t.me/s/v2rayngvpn
+- https://t.me/s/croownvpn
+- https://t.me/s/npvv2rayfilter
+- https://t.me/Eag1e_YT
+- https://t.me/s/prrofile_purple
+- https://t.me/s/vpnfail_v2ray
+- https://t.me/oxnet_ir
+- https://t.me/s/v2ray1_ng
+- https://t.me/BigSmoke_Config
+- https://t.me/v2rfa
+- https://t.me/s/wxdy666
+- https://t.me/s/Ae_proxy
+- https://t.me/v2rayconfigamir
+- https://t.me/oneclickvpnkeys
+- https://t.me/V2rayEnglish
+- https://t.me/s/skivpn
+- https://t.me/s/G0Dv2ray
+- https://t.me/s/singbox1
+- https://t.me/s/v2range
+- https://t.me/s/AmyraxVPN
+- https://t.me/moft_vpn
+- https://t.me/v2ray1_ng
+- https://t.me/s/ZibaNabz
+- https://t.me/s/v2mystery
+- https://t.me/s/vpn_kanfik
+- https://t.me/AmyraxVPN
+- https://t.me/juzibaipiao
+- https://t.me/s/grizzlyvpn
+- https://t.me/SafeNetIR
+- https://t.me/s/king_network7
+- https://t.me/v2nodes
+- https://t.me/NetAccount
+- https://t.me/s/eaglevps
+- https://t.me/s/PewezaVPN
+- https://t.me/free1_vpn
+- https://t.me/vpnfail_v2ray
+- https://t.me/s/soskeynet
+- https://t.me/LonUp_M
+- https://t.me/s/fv2ray
+- https://t.me/V2ray_Alpha
+- https://t.me/s/vmessorg
+- https://t.me/s/v2rayng_fars
+- https://t.me/VlessConfig
+- https://t.me/s/free_vpn02
+- https://t.me/s/KurdConfing
+- https://t.me/s/oonfig
+- https://t.me/s/srcvpn
+- https://t.me/skivpn
+- https://t.me/s/oxnet_ir
+- https://t.me/v2ray_youtube
+- https://t.me/s/VPN_SOLVE
+- https://t.me/s/proxy_kafee
+- https://t.me/DirectVPN
+- https://t.me/v2ray_configs_pool
+- https://t.me/s/falcunargo
+- https://t.me/s/sharecentrepro
+- https://t.me/singbox1
+- https://t.me/s/vpnproxy_v2rayng
+- https://t.me/s/filtershekan_channel
+- https://t.me/Spotify_Porteghali
+- https://t.me/vpnplusee_free
+- https://t.me/sharecentrepro
+- https://t.me/s/freeland8
+- https://t.me/vip_vpn_2022
+- https://t.me/appxa
+- https://t.me/s/v2ray_configs_pool
+- https://t.me/v2rayngseven
+- https://t.me/s/appsooner
+- https://t.me/VPN_SOLVE
+- https://t.me/s/v2rayngvpn_1
+- https://t.me/vpnsshocean
+- https://t.me/persianvpnhub
+- https://t.me/hddify
+- https://t.me/s/vmesskhodam
+- https://t.me/icv2ray
+- https://t.me/s/Parsashonam
+- https://t.me/s/antimeli
+- https://t.me/s/wedbazvpn
+- https://t.me/s/DirectVPN
+- https://t.me/Network_442
+- https://t.me/ultrasurf_12
+- https://t.me/s/freevpnchina
+- https://t.me/s/fastkanfig
+- https://t.me/crayingroom
+- https://t.me/falcunargo
+- https://t.me/s/v2rayngcustom
+- https://t.me/s/VlessConfig
+- https://t.me/s/maznet
+- https://t.me/s/v2rfa
+- https://t.me/s/givevpn
+- https://t.me/Ae_proxy
+- https://t.me/s/vistav2ray
+- https://t.me/npvv2rayfilter
+- https://t.me/givevpn
+- https://t.me/s/ConfigX2ray
+- https://t.me/azadi_az_inja_migzare
+- https://t.me/vpnserverrr
+- https://t.me/vipv2rayngnp
+- https://t.me/iP_CF
+- https://t.me/free1ss
+- https://t.me/s/icv2ray
+- https://t.me/s/Canfing_VPN
+- https://t.me/s/v2rayNG_Matsuri
+- https://t.me/prrofile_purple
+- https://t.me/IraneAzad_Net
+- https://t.me/s/Network_442
+- https://t.me/s/netmelinpv
+- https://t.me/stretten
+- https://t.me/s/V2rayng_Fast
+- https://t.me/s/v2ray_free_conf
+- https://t.me/s/v2ray_youtube
+- https://t.me/meliproxyy
+- https://t.me/cpy_teeL
+- https://t.me/s/kurdistan_vpn_perfectt
+- https://t.me/s/freedatazone1
+- https://t.me/taziyanteam
+- https://t.me/s/meliproxyy
+- https://t.me/free_outline_keys
+- https://t.me/s/VIPV2rayNGNP
+- https://t.me/s/v2rayngconfig
+- https://t.me/s/vless1
 
 ---
 ✅ گزارش توسط GitHub Actions تولید شده است.
