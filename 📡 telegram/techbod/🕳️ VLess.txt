@@ -1,0 +1,1 @@
+vless://5f7e51d9-ea04-4c18-9dc5-9d21853dfc11@joker.preghost.ir:36099?mode=auto&path=%2F&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&extra=%7B%22xPaddingBytes%22%3A%22100-1000%22%7D&insecure=0&fp=chrome&type=xhttp&allowInsecure=0&sni=joker.preghost.ir#@techbod

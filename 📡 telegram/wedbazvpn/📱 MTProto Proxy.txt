@@ -1,2 +1,3 @@
+tg://proxy?server=213.233.184.133&port=8443&secret=dd3b54584a0135f19594825070bb1450d0Join
 tg://proxy?server=ninja.spectranet.pro&port=443&secret=eec72c7ef46ddd254e5fb5f248521c4f986e696e6a612e737065637472616e65742e70726fJoin
 tg://proxy?server=5.231.56.165&port=443&secret=7c81481b8a23812706cbd96fb2c8b0b8Join

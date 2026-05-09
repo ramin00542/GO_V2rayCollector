@@ -1,1 +1,1 @@
-tg://socks?server=127.0.0.1&port=10886
+socks://Og@193.151.130.53:8080#Emo%F0%9F%A4%B4%20Skivpn

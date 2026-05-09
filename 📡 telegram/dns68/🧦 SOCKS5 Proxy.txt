@@ -1,4 +1,4 @@
-tg://socks?server=47.239.159.70&port=3060&user=123&pass=123
-tg://socks?server=47.239.147.84&port=3060&user=123&pass=123
 tg://socks?server=47.239.172.228&port=3060&user=123&pass=123
+tg://socks?server=47.239.147.84&port=3060&user=123&pass=123
+tg://socks?server=47.239.159.70&port=3060&user=123&pass=123
 tg://socks?server=47.239.159.125&port=3060&user=123&pass=123…

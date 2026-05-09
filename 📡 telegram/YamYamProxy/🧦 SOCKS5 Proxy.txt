@@ -1,4 +1,4 @@
-socks://130.185.75.82:9595?type=tcp#@YamYamProxysocks://62.220.126.92:30871?type=tcp#@YamYamProxyترکیبات
 socks://Og@62.220.126.92:30871#@YamYamProxyترکیبات
+socks://130.185.75.82:9595?type=tcp#@YamYamProxysocks://62.220.126.92:30871?type=tcp#@YamYamProxyترکیبات
 socks://62.220.126.56:24353?type=tcp#@YamYamProxyترکیبات
 socks://193.151.130.53:8080?type=tcp#@YamYamProxyvless://0146ee19-29eb-400b-b50b-b032bddafd65@camp.nahidapp.com:443?encryption=none&type=ws&security=tls&path=%2FIF_VPN_Bot&host=camp.nahidapp.com&allowInsecure=1#@YamYamProxyترکیبات

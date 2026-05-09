@@ -1,3 +1,1 @@
-socks://Og@62.220.126.56:30081#@vmesskhodamTarkibi🌐@vmesskhodam
-socks://Og%3D%3D@188.121.110.192:84#@vmesskhodamhysteria2://DBUklcvOyH@45.81.19.251:443?security=tls&insecure=1&sni=web.bale.ai#@vmesskhodam🌐@vmesskhodam
-socks://Og@62.220.126.92:30376#@vmesskhodam@vmesskhodam
+https://t.me/socks?server=10.31.48.110&port=2075&user=berkeh&pass=berkeh2https://t.me/socks?server=62.220.126.92&port=31876https://t.me/socks?server=62.220.126.92&port=31876&user=Telegram@vmesskhodam🌐@vmesskhodam
