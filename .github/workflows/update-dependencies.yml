@@ -2,7 +2,7 @@ name: Update Dependencies
 
 on:
   schedule:
-    - cron: "0 0 * * 0"   # هر یکشنبه
+    - cron: "0 0 * * 0"
   workflow_dispatch:
 
 env:
@@ -39,44 +39,44 @@ jobs:
       - name: Generate statistics
         id: stats
         run: |
-          # محاسبه خطوط اضافه/حذف شده در go.mod
           ADDED=$(diff -u go.mod.bak go.mod | grep -E '^\+[^+]' | grep -v '^+++' | wc -l || echo "0")
           REMOVED=$(diff -u go.mod.bak go.mod | grep -E '^-[^-]' | grep -v '^---' | wc -l || echo "0")
-          # تغییرات go.sum تقریبی
           SUM_CHANGES=$(diff -u go.sum.bak go.sum | grep -E '^[+-]' | grep -v '^[+-][+-][+-]' | wc -l || echo "0")
+          MOD_CHANGES=$(git diff --numstat go.mod | awk '{print $1+$2}' || echo "0")
           echo "added=$ADDED" >> $GITHUB_OUTPUT
           echo "removed=$REMOVED" >> $GITHUB_OUTPUT
           echo "sum_changes=$SUM_CHANGES" >> $GITHUB_OUTPUT
-
-          # گرفتن لیست ماژول‌های به‌روز شده (غیر مستقیم)
-          MOD_CHANGES=$(git diff --numstat go.mod | awk '{print $1+$2}' || echo "0")
           echo "mod_changes=$MOD_CHANGES" >> $GITHUB_OUTPUT
 
       - name: Build Markdown report
         run: |
           NOW=$(date '+%Y-%m-%d %H:%M:%S')
-          cat > reports/deps_update_report.md << EOF
-  # 📦 گزارش به‌روزرسانی وابستگی‌ها
-
-  **تاریخ اجرا:** $NOW
-
-  ## خلاصه آماری
-  | معیار | مقدار |
-  |-------|-------|
-  | وابستگی‌های اضافه شده (خطوط + در go.mod) | ${{ steps.stats.outputs.added }} |
-  | وابستگی‌های حذف شده (خطوط - در go.mod) | ${{ steps.stats.outputs.removed }} |
-  | خطوط تغییر یافته در go.mod | ${{ steps.stats.outputs.mod_changes }} |
-  | تغییرات در go.sum | ${{ steps.stats.outputs.sum_changes }} |
-
-  ## جزئیات تغییرات (go.mod)
-
-  \`\`\`diff
-  $(diff -u go.mod.bak go.mod | sed 's/^/  /')
-  \`\`\`
-
-  ---
-  ✅ گزارش توسط GitHub Actions تولید شده است.
-  EOF
+          ADDED="${{ steps.stats.outputs.added }}"
+          REMOVED="${{ steps.stats.outputs.removed }}"
+          MOD_CHANGES="${{ steps.stats.outputs.mod_changes }}"
+          SUM_CHANGES="${{ steps.stats.outputs.sum_changes }}"
+          DIFF_OUT=$(diff -u go.mod.bak go.mod | sed 's/^/  /')
+          
+          echo "# 📦 گزارش به‌روزرسانی وابستگی‌ها" > reports/deps_update_report.md
+          echo "" >> reports/deps_update_report.md
+          echo "**تاریخ اجرا:** ${NOW}" >> reports/deps_update_report.md
+          echo "" >> reports/deps_update_report.md
+          echo "## خلاصه آماری" >> reports/deps_update_report.md
+          echo "| معیار | مقدار |" >> reports/deps_update_report.md
+          echo "|-------|-------|" >> reports/deps_update_report.md
+          echo "| وابستگی‌های اضافه شده (خطوط + در go.mod) | ${ADDED} |" >> reports/deps_update_report.md
+          echo "| وابستگی‌های حذف شده (خطوط - در go.mod) | ${REMOVED} |" >> reports/deps_update_report.md
+          echo "| خطوط تغییر یافته در go.mod | ${MOD_CHANGES} |" >> reports/deps_update_report.md
+          echo "| تغییرات در go.sum | ${SUM_CHANGES} |" >> reports/deps_update_report.md
+          echo "" >> reports/deps_update_report.md
+          echo "## جزئیات تغییرات (go.mod)" >> reports/deps_update_report.md
+          echo "\`\`\`diff" >> reports/deps_update_report.md
+          echo "${DIFF_OUT}" >> reports/deps_update_report.md
+          echo "\`\`\`" >> reports/deps_update_report.md
+          echo "" >> reports/deps_update_report.md
+          echo "---" >> reports/deps_update_report.md
+          echo "✅ گزارش توسط GitHub Actions تولید شده است." >> reports/deps_update_report.md
+          
           cat reports/deps_update_report.md
 
       - name: Commit and push changes including report
