@@ -40,14 +40,18 @@ var (
 		regexp.MustCompile(`ss://[A-Za-z0-9+/]+={0,2}@[^\s]+`),
 		regexp.MustCompile(`ssr://[A-Za-z0-9+/=]+`),
 		regexp.MustCompile(`hysteria2://[^\s]+`),
+		regexp.MustCompile(`hy2://[^\s]+`),
 		regexp.MustCompile(`tuic://[^\s]+`),
 		regexp.MustCompile(`wireguard://[^\s]+`),
+		regexp.MustCompile(`warp://[^\s]+`),
 		regexp.MustCompile(`tg://proxy\?[^\s]+`),
-		regexp.MustCompile(`(?:slipnet|slip)://[^\s]+`),
+		regexp.MustCompile(`tg://socks\?[^\s]+`),
+		regexp.MustCompile(`slipnet://[^\s]+`),
 		regexp.MustCompile(`https?://[^\s]+:\d+(?:[^\s]*)?`),
 		regexp.MustCompile(`https?://[^@\s]+@[^\s]+`),
 		regexp.MustCompile(`socks(?:5)?://[^\s]+@[^\s]+`),
 		regexp.MustCompile(`socks(?:5)?://[^\s]+:\d+`),
+		regexp.MustCompile(`-----BEGIN ARGO VPN BRIDGE BLOCK-----[\s\S]+?-----END ARGO VPN BRIDGE BLOCK-----`),
 	}
 )
 
@@ -78,11 +82,9 @@ func main() {
 	os.MkdirAll("../reports", 0755)
 	os.MkdirAll(dataDir, 0755)
 
-	// بارگذاری هر دو آرشیو
 	recentDead := loadDeadArchive(deadChannelsRecent)
 	oldDead := loadDeadArchive(deadChannelsOld)
 
-	// ترکیب همه کانال‌های بایگانی شده
 	allDead := make(map[string]DeadChannelInfo)
 	for k, v := range recentDead {
 		allDead[k] = v
@@ -124,8 +126,8 @@ func main() {
 	wg.Wait()
 	close(resultsCh)
 
-	newRecent := make(map[string]DeadChannelInfo)
-	newOld := make(map[string]DeadChannelInfo)
+	updatedRecent := make(map[string]DeadChannelInfo)
+	updatedOld := make(map[string]DeadChannelInfo)
 
 	for res := range resultsCh {
 		results = append(results, res)
@@ -133,10 +135,8 @@ func main() {
 			if !activeMap[res.URL] {
 				revivedList = append(revivedList, res.URL)
 			}
-			// حذف از هر دو آرشیو (با عدم اضافه کردن به newRecent/newOld)
 			continue
 		}
-		// هنوز مرده است – بر اساس سن دوباره در آرشیو مناسب قرار می‌گیرد
 		info := DeadChannelInfo{
 			URL:       res.URL,
 			LastPost:  res.LastPost.Unix(),
@@ -144,21 +144,20 @@ func main() {
 		}
 		daysSince := int(time.Since(res.LastPost).Hours() / 24)
 		if daysSince > 365 {
-			newOld[res.URL] = info
+			updatedOld[res.URL] = info
 		} else {
-			newRecent[res.URL] = info
+			updatedRecent[res.URL] = info
 		}
 	}
-
-	// حفظ کانال‌هایی که اصلاً اسکن نشده‌اند (نباید وجود داشته باشد، اما ایمنی)
+	// حفظ کانال‌های اسکن نشده
 	for k, v := range recentDead {
-		if _, exists := newRecent[k]; !exists {
-			newRecent[k] = v
+		if _, exists := updatedRecent[k]; !exists {
+			updatedRecent[k] = v
 		}
 	}
 	for k, v := range oldDead {
-		if _, exists := newOld[k]; !exists {
-			newOld[k] = v
+		if _, exists := updatedOld[k]; !exists {
+			updatedOld[k] = v
 		}
 	}
 
@@ -169,11 +168,11 @@ func main() {
 		fmt.Println("No revived channels found.")
 	}
 
-	saveDeadArchive(deadChannelsRecent, newRecent)
-	saveDeadArchive(deadChannelsOld, newOld)
+	saveDeadArchive(deadChannelsRecent, updatedRecent)
+	saveDeadArchive(deadChannelsOld, updatedOld)
 	generateReviveReport(revivedList, results)
 	fmt.Printf("✅ Revive scan finished. Revived: %d, Still dead (recent: %d, old: %d)\n",
-		len(revivedList), len(newRecent), len(newOld))
+		len(revivedList), len(updatedRecent), len(updatedOld))
 }
 
 func loadDeadArchive(file string) map[string]DeadChannelInfo {
@@ -356,7 +355,7 @@ func extractChannelName(rawURL string) string {
 	return ""
 }
 
-// ---------- I/O helpers ----------
+// -------------------- I/O helpers --------------------
 func loadActiveChannels() map[string]bool {
 	m := make(map[string]bool)
 	f, err := os.Open(activeChannelsFile)
@@ -409,9 +408,9 @@ func readCSV(path string) ([][]string, []string, error) {
 		return nil, nil, err
 	}
 	defer f.Close()
-	r := csv.NewReader(f)
-	r.FieldsPerRecord = -1
-	all, err := r.ReadAll()
+	rd := csv.NewReader(f)
+	rd.FieldsPerRecord = -1
+	all, err := rd.ReadAll()
 	if err != nil {
 		return nil, nil, err
 	}
@@ -453,6 +452,9 @@ func generateEmptyReviveReport() {
 | 💀 همچنان مرده | 0 |
 
 هیچ کانالی در بایگانی وجود نداشت.
+
+---
+✅ گزارش توسط GitHub Actions تولید شده است.
 `, time.Now().Format("2006-01-02 15:04:05"))
 	os.WriteFile(reviveReportFile, []byte(report), 0644)
 	fmt.Printf("✅ Empty report written to %s\n", reviveReportFile)
