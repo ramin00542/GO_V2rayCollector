@@ -199,7 +199,7 @@ func generateReviveReport(revived, stillDead []string, results []ReviveResult) {
 }
 
 // ------------------------------------------------------------
-// توابع اصلی (با اصلاح منطق تشخیص احیا مانند نسخه اول)
+// توابع اصلی
 // ------------------------------------------------------------
 func checkChannelWithRetry(url string) ReviveResult {
 	var lastErr error
