@@ -1,4 +1,4 @@
 tg://proxy?server=xn--80agb2axz5d.xn--80ajveggb2e.xn--p1ai&port=443&secret=ee69e899d89ec68e220ca177557322b27f7275737369616e2d616e696d616c732e7275tg://proxy?server=yazaebalsyadelatproxy.uk&port=443&secret=ee69e899d89ec68e220ca177557322b27f7275737369616e2d616e696d616c732e7275Proxy◖@V2RAYNG_FARS◗
-https://t.me/proxy?server=quickrouteapp.xyz&port=443&secret=ee7e4f1c8b3d2a5e9c6f0b4d8a1c5e7f2b717569636b726f7574656170702e78797aProxy◖@V2RAYNG_FARS◗
 tg://proxy?server=77.42.123.21&port=443&secret=dd104462821249bd7ac519130220c25d09Proxy◖@V2RAYNG_FARS◗
 https://t.me/proxy?server=b.similemat.com&port=2443&secret=5467af21db9f8a03a7786dd43d4d7c45Proxy◖@V2RAYNG_FARS◗
+https://t.me/proxy?server=quickrouteapp.xyz&port=443&secret=ee7e4f1c8b3d2a5e9c6f0b4d8a1c5e7f2b717569636b726f7574656170702e78797aProxy◖@V2RAYNG_FARS◗
