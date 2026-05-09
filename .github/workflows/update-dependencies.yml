@@ -17,14 +17,53 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version: '>=1.21.3'
-      - name: Update dependencies
+
+      - name: Update dependencies and collect stats
+        id: deps
         run: |
+          # ذخیره نسخه قبلی go.mod و go.sum
+          cp go.mod go.mod.bak
+          cp go.sum go.sum.bak
+          
+          # به‌روزرسانی
           go get -u ./...
           go mod tidy
-      - name: Commit and push changes
+          
+          # محاسبه آمار
+          ADDED=$(grep -Fxvf go.mod.bak go.mod | grep -v "^module" | wc -l || echo "0")
+          REMOVED=$(grep -Fxvf go.mod go.mod.bak | grep -v "^module" | wc -l || echo "0")
+          UPDATED=$(git diff --numstat go.mod | awk '{print $1+$2}' || echo "0")
+          
+          echo "added=$ADDED" >> $GITHUB_OUTPUT
+          echo "removed=$REMOVED" >> $GITHUB_OUTPUT
+          echo "updated=$UPDATED" >> $GITHUB_OUTPUT
+          
+          # نمایش آمار در لاگ
+          echo "📊 آمار به‌روزرسانی وابستگی‌ها:"
+          echo "  - وابستگی‌های اضافه شده: $ADDED"
+          echo "  - وابستگی‌های حذف شده: $REMOVED"
+          echo "  - خطوط تغییر کرده در go.mod: $UPDATED"
+
+      - name: Commit and push changes with stats
         run: |
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions"
+          
+          # ایجاد پیام commit همراه با آمار
+          COMMIT_MSG="chore(deps): update dependencies"
+          if [ -n "${{ steps.deps.outputs.updated }}" ] && [ "${{ steps.deps.outputs.updated }}" != "0" ]; then
+            COMMIT_MSG="$COMMIT_MSG | added: ${{ steps.deps.outputs.added }} removed: ${{ steps.deps.outputs.removed }} changed_lines: ${{ steps.deps.outputs.updated }}"
+          fi
+          
           git add go.mod go.sum
-          git diff --staged --quiet || git commit -m "chore(deps): update dependencies"
+          git diff --staged --quiet || git commit -m "$COMMIT_MSG"
           git push
+          
+          # خروجی نهایی برای خلاصه اجرا
+          echo "### ✅ به‌روزرسانی وابستگی‌ها انجام شد" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| معیار | مقدار |" >> $GITHUB_STEP_SUMMARY
+          echo "|-------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| وابستگی‌های اضافه شده | ${{ steps.deps.outputs.added }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| وابستگی‌های حذف شده | ${{ steps.deps.outputs.removed }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| خطوط تغییر کرده در go.mod | ${{ steps.deps.outputs.updated }} |" >> $GITHUB_STEP_SUMMARY
