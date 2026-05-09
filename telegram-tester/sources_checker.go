@@ -17,16 +17,17 @@ import (
 )
 
 const (
-	deadSourcesFile     = "../dead_sources.txt"
-	deadSourcesArchive  = "../dead_sources_archive.txt"
-	sourcesReportFile   = "../reports/sources_report.md"
-	activeSourcesFile   = "../active_sources.json"
-	checkTimeout        = 10 * time.Second
-	sampleSize          = 50 * 1024
-	defaultRetryCount   = 3
-	defaultBaseDelay    = 1 * time.Second
-	defaultJitter       = 500 * time.Millisecond
-	activeDays          = 30
+	dataDir               = "../data"
+	deadSourcesFile       = dataDir + "/dead_sources.txt"
+	deadSourcesArchive    = dataDir + "/dead_sources_archive.txt"
+	sourcesReportFile     = "../reports/sources_report.md"
+	activeSourcesFile     = "../active_sources.json"
+	checkTimeout          = 10 * time.Second
+	sampleSize            = 50 * 1024
+	defaultRetryCount     = 3
+	defaultBaseDelay      = 1 * time.Second
+	defaultJitter         = 500 * time.Millisecond
+	activeDays            = 30
 )
 
 var (
@@ -59,6 +60,8 @@ type SourceStatus struct {
 
 func main() {
 	os.MkdirAll("../reports", 0755)
+	os.MkdirAll(dataDir, 0755)
+
 	if len(os.Args) < 2 {
 		fmt.Println("Usage: go run sources_checker.go <Sources.json>")
 		os.Exit(1)
@@ -141,12 +144,8 @@ func generateEmptySourcesReport() {
 | 💀 مرده | 0 |
 
 هیچ ساب‌لینکی یافت نشد.
-
----
-✅ گزارش توسط GitHub Actions تولید شده است.
 `, time.Now().Format("2006-01-02 15:04:05"))
 	os.WriteFile(sourcesReportFile, []byte(report), 0644)
-	fmt.Printf("✅ Empty report written to %s\n", sourcesReportFile)
 }
 
 func generateSourcesReport(active []string, dead []SourceStatus) {
@@ -182,7 +181,6 @@ func generateSourcesReport(active []string, dead []SourceStatus) {
 	}
 	sb.WriteString("\n---\n✅ گزارش توسط GitHub Actions تولید شده است.\n")
 	os.WriteFile(sourcesReportFile, []byte(sb.String()), 0644)
-	fmt.Printf("✅ Report written to %s\n", sourcesReportFile)
 }
 
 // ------------------------------------------------------------
