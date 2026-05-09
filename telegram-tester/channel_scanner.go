@@ -75,7 +75,6 @@ type ScanCache struct {
 	UpdatedAt time.Time             `json:"updated_at"`
 }
 
-// برای قفل کردن چاپ کنسول در زمان همزمانی (اختیاری)
 var printMutex sync.Mutex
 
 func safePrintf(format string, args ...interface{}) {
@@ -284,7 +283,6 @@ func fetchFromRSS(rssURL, origURL string) (ScanResult, error) {
 	if anyConfig && daysSince <= *activeDays {
 		status = "active"
 	}
-	// نمایش لاگ خوانا (با قفل برای همزمانی)
 	safePrintf("[INFO] %s -> last: %s (%d days), config: %v, status: %s\n",
 		origURL, latestTime.Format("2006-01-02"), daysSince, anyConfig, status)
 	return ScanResult{
@@ -376,7 +374,7 @@ func extractChannelName(rawURL string) string {
 	return ""
 }
 
-// I/O helpers (بدون تغییر)
+// I/O helpers
 func readCSV(path string) ([][]string, []string, error) {
 	f, err := os.Open(path)
 	if err != nil {
@@ -468,6 +466,7 @@ func saveMap(file string, m map[string]bool) {
 	}
 	sort.Strings(lines)
 	os.WriteFile(file, []byte(strings.Join(lines, "\n")), 0644)
+	fmt.Printf("✅ Saved %s with %d entries.\n", file, len(lines))
 }
 
 func loadCache() ScanCache {
@@ -487,4 +486,5 @@ func saveCache(cache ScanCache) {
 	cache.LastRun = time.Now()
 	data, _ := json.MarshalIndent(cache, "", "  ")
 	os.WriteFile(scanCacheFile, data, 0644)
+	fmt.Printf("✅ Cache saved to %s\n", scanCacheFile)
 }
