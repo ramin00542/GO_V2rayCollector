@@ -1,6 +1,6 @@
 # 📊 گزارش اسکنر ساب‌لینک‌ها
 
-**تاریخ اجرا:** 2026-05-09 07:57:12
+**تاریخ اجرا:** 2026-05-09 08:01:52
 
 ## خلاصه آماری
 
@@ -19,6 +19,16 @@
 <details>
 <summary>نمایش همه 11 ساب‌لینک (کلیک کنید)</summary>
 
+- **https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Australia.txt**  
+  - وضعیت: `OK`  
+  - آخرین تغییر:   
+  - دارای کانفیگ: true
+
+- **https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Austria.txt**  
+  - وضعیت: `OK`  
+  - آخرین تغییر:   
+  - دارای کانفیگ: true
+
 - **https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Armenia.txt**  
   - وضعیت: `OK`  
   - آخرین تغییر:   
@@ -30,16 +40,6 @@
   - دارای کانفیگ: true
 
 - **https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Albania.txt**  
-  - وضعیت: `OK`  
-  - آخرین تغییر:   
-  - دارای کانفیگ: true
-
-- **https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Austria.txt**  
-  - وضعیت: `OK`  
-  - آخرین تغییر:   
-  - دارای کانفیگ: true
-
-- **https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Australia.txt**  
   - وضعیت: `OK`  
   - آخرین تغییر:   
   - دارای کانفیگ: true
@@ -64,12 +64,12 @@
   - آخرین تغییر:   
   - دارای کانفیگ: true
 
-- **https://raw.githubusercontent.com/ehsanzeus/V2rayCollector/main/trojan_iran.txt**  
+- **https://raw.githubusercontent.com/IR-NETLIFY/NETLIFY/refs/heads/main/IR_NETLIFY_SUB.txt**  
   - وضعیت: `OK`  
   - آخرین تغییر:   
   - دارای کانفیگ: true
 
-- **https://raw.githubusercontent.com/IR-NETLIFY/NETLIFY/refs/heads/main/IR_NETLIFY_SUB.txt**  
+- **https://raw.githubusercontent.com/ehsanzeus/V2rayCollector/main/trojan_iran.txt**  
   - وضعیت: `OK`  
   - آخرین تغییر:   
   - دارای کانفیگ: true

@@ -1,6 +1,6 @@
 # 📊 گزارش اسکنر کانال‌های تلگرام
 
-**تاریخ اجرا:** 2026-05-09 07:57:12
+**تاریخ اجرا:** 2026-05-09 08:01:51
 
 ## خلاصه آماری
 
@@ -20,15 +20,15 @@
 <details>
 <summary>نمایش همه 24 کانال (کلیک کنید)</summary>
 
-- **https://t.me/s/Ahmedhamoomi_Servers**  
-  - وضعیت: `inactive`  
-  - آخرین پست: 2025-11-07 17:35:13  
-  - دارای کانفیگ: true
-
 - **https://t.me/s/SudoFlux**  
   - وضعیت: `inactive`  
   - آخرین پست: 2026-02-09 17:52:36  
   - دارای کانفیگ: false
+
+- **https://t.me/s/Ahmedhamoomi_Servers**  
+  - وضعیت: `inactive`  
+  - آخرین پست: 2025-11-07 17:35:13  
+  - دارای کانفیگ: true
 
 - **https://t.me/s/An0nymousTeam**  
   - وضعیت: `inactive`  
@@ -55,11 +55,6 @@
   - آخرین پست:   
   - دارای کانفیگ: false
 
-- **https://t.me/ArV2ray**  
-  - وضعیت: `inactive`  
-  - آخرین پست: 2026-01-06 11:00:57  
-  - دارای کانفیگ: true
-
 - **https://t.me/s/Airdorap_Free**  
   - وضعیت: `error`  
   - آخرین پست:   
@@ -69,6 +64,11 @@
   - وضعیت: `error`  
   - آخرین پست:   
   - دارای کانفیگ: false
+
+- **https://t.me/ArV2ray**  
+  - وضعیت: `inactive`  
+  - آخرین پست: 2026-01-06 11:00:57  
+  - دارای کانفیگ: true
 
 - **https://t.me/Awlix_ir**  
   - وضعیت: `inactive`  
@@ -85,15 +85,20 @@
   - آخرین پست: 2023-10-06 15:51:53  
   - دارای کانفیگ: true
 
+- **https://t.me/CloudCityy**  
+  - وضعیت: `inactive`  
+  - آخرین پست: 2024-10-04 22:07:47  
+  - دارای کانفیگ: true
+
 - **https://t.me/AliAlma_GSM**  
   - وضعیت: `error`  
   - آخرین پست:   
   - دارای کانفیگ: false
 
-- **https://t.me/CloudCityy**  
-  - وضعیت: `inactive`  
-  - آخرین پست: 2024-10-04 22:07:47  
-  - دارای کانفیگ: true
+- **https://t.me/Alpha_V2ray_Iran**  
+  - وضعیت: `error`  
+  - آخرین پست:   
+  - دارای کانفیگ: false
 
 - **https://t.me/Configforvpn01**  
   - وضعیت: `inactive`  
@@ -103,11 +108,6 @@
 - **https://t.me/ConfigsHUB**  
   - وضعیت: `inactive`  
   - آخرین پست: 2026-05-02 22:22:29  
-  - دارای کانفیگ: false
-
-- **https://t.me/Alpha_V2ray_Iran**  
-  - وضعیت: `error`  
-  - آخرین پست:   
   - دارای کانفیگ: false
 
 - **https://t.me/DailyV2RY**  
@@ -130,12 +130,12 @@
   - آخرین پست:   
   - دارای کانفیگ: false
 
-- **https://t.me/CookVip**  
+- **https://t.me/Cov2ray**  
   - وضعیت: `error`  
   - آخرین پست:   
   - دارای کانفیگ: false
 
-- **https://t.me/Cov2ray**  
+- **https://t.me/CookVip**  
   - وضعیت: `error`  
   - آخرین پست:   
   - دارای کانفیگ: false
