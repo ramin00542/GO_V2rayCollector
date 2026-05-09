@@ -1,0 +1,1 @@
+vless://0df5e45d-98bc-4e33-b399-78d0e762903c@185.143.234.200:443/?encryption=none&headerType=none&allowInsecure=0&type=ws&mux=true&security=tls&sni=alef.ir.oadeflantrogm.abrirmahan.com&fp=randomized&path=%2F%3Fed%3D443&host=alef.ir.oadeflantrogm.abrirmahan.com#filembad-37
