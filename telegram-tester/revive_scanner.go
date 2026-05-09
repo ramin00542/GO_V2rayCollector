@@ -18,15 +18,17 @@ import (
 )
 
 const (
-	dataDir               = "../data"
-	deadChannelsArchive   = dataDir + "/dead_channels_archive.txt"
-	activeChannelsFile    = "../channels.csv"
-	reviveCacheFile       = dataDir + "/revive_cache.json"
-	reviveReportFile      = "../reports/revive_report.md"
-	defaultRetryCount     = 3
-	defaultBaseDelay      = 1 * time.Second
-	defaultJitter         = 500 * time.Millisecond
-	activeDays            = 30
+	defaultRetryCount   = 3
+	defaultBaseDelay    = 1 * time.Second
+	defaultJitter       = 500 * time.Millisecond
+	activeDays          = 30
+	defaultConcurrency  = 5
+
+	dataDir             = "../data"
+	deadChannelsArchive = dataDir + "/dead_channels_archive.txt"
+	activeChannelsFile  = "../channels.csv"
+	reviveCacheFile     = dataDir + "/revive_cache.json"
+	reviveReportFile    = "../reports/revive_report.md"
 )
 
 var (
@@ -58,6 +60,14 @@ type ReviveResult struct {
 	Error     string    `json:"error,omitempty"`
 }
 
+var printMutex sync.Mutex
+
+func safePrintf(format string, args ...interface{}) {
+	printMutex.Lock()
+	defer printMutex.Unlock()
+	fmt.Printf(format, args...)
+}
+
 func main() {
 	os.MkdirAll("../reports", 0755)
 	os.MkdirAll(dataDir, 0755)
@@ -77,7 +87,7 @@ func main() {
 	jobs := make(chan string, len(archive))
 	resultsCh := make(chan ReviveResult, len(archive))
 	var wg sync.WaitGroup
-	workers := 5
+	workers := defaultConcurrency
 	for i := 0; i < workers; i++ {
 		wg.Add(1)
 		go func() {
@@ -136,8 +146,12 @@ func generateEmptyReviveReport() {
 | 💀 همچنان مرده | 0 |
 
 هیچ کانالی در بایگانی وجود نداشت.
+
+---
+✅ گزارش توسط GitHub Actions تولید شده است.
 `, time.Now().Format("2006-01-02 15:04:05"))
 	os.WriteFile(reviveReportFile, []byte(report), 0644)
+	fmt.Printf("✅ Empty report written to %s\n", reviveReportFile)
 }
 
 func generateReviveReport(revived, stillDead []string, results []ReviveResult) {
@@ -181,10 +195,11 @@ func generateReviveReport(revived, stillDead []string, results []ReviveResult) {
 	}
 	sb.WriteString("\n---\n✅ گزارش توسط GitHub Actions تولید شده است.\n")
 	os.WriteFile(reviveReportFile, []byte(sb.String()), 0644)
+	fmt.Printf("✅ Report written to %s\n", reviveReportFile)
 }
 
 // ------------------------------------------------------------
-// توابع اصلی (بدون تغییر)
+// توابع اصلی (با اصلاح منطق تشخیص احیا مانند نسخه اول)
 // ------------------------------------------------------------
 func checkChannelWithRetry(url string) ReviveResult {
 	var lastErr error
@@ -246,11 +261,14 @@ func fetchFromRSSRevive(rssURL, origURL string) (ReviveResult, error) {
 	if latestTime.IsZero() {
 		return ReviveResult{}, fmt.Errorf("no pubDate")
 	}
-	revived := anyConfig && time.Since(latestTime).Hours()/24 <= float64(activeDays)
+	daysSince := int(time.Since(latestTime).Hours() / 24)
+	revived := anyConfig && daysSince <= activeDays
 	status := "inactive"
 	if revived {
 		status = "active"
 	}
+	safePrintf("[INFO] %s -> last: %s (%d days), config: %v, revived: %v\n",
+		origURL, latestTime.Format("2006-01-02"), daysSince, anyConfig, revived)
 	return ReviveResult{
 		URL:       origURL,
 		LastPost:  latestTime,
@@ -298,11 +316,17 @@ func fetchFromHTMLRevive(htmlURL, origURL string) (ReviveResult, error) {
 		texts = append(texts, s.Text())
 	})
 	has := anyConfigInText(strings.Join(texts, "\n"))
-	revived := has && time.Since(lastTime).Hours()/24 <= float64(activeDays) && !lastTime.IsZero()
+	if lastTime.IsZero() {
+		return ReviveResult{}, fmt.Errorf("no timestamp found")
+	}
+	daysSince := int(time.Since(lastTime).Hours() / 24)
+	revived := has && daysSince <= activeDays
 	status := "inactive"
 	if revived {
 		status = "active"
 	}
+	safePrintf("[INFO] %s -> last: %s (%d days), config: %v, revived: %v\n",
+		origURL, lastTime.Format("2006-01-02"), daysSince, has, revived)
 	return ReviveResult{
 		URL:       origURL,
 		LastPost:  lastTime,
@@ -353,6 +377,7 @@ func saveArchive(m map[string]bool) {
 	}
 	sort.Strings(lines)
 	os.WriteFile(deadChannelsArchive, []byte(strings.Join(lines, "\n")), 0644)
+	fmt.Printf("✅ Updated archive, %d channels still dead.\n", len(lines))
 }
 
 func loadActiveChannels() map[string]bool {
@@ -441,4 +466,5 @@ func writeCSV(path string, headers []string, records [][]string) error {
 func saveReviveCache(results []ReviveResult) {
 	data, _ := json.MarshalIndent(results, "", "  ")
 	os.WriteFile(reviveCacheFile, data, 0644)
+	fmt.Printf("✅ Revive cache saved to %s\n", reviveCacheFile)
 }
