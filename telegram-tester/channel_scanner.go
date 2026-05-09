@@ -9,6 +9,7 @@ import (
 	"math/rand"
 	"net/http"
 	"os"
+	"path/filepath"
 	"regexp"
 	"sort"
 	"strings"
@@ -24,9 +25,10 @@ const (
 	defaultRetryCount     = 3
 	defaultBaseDelay      = 1 * time.Second
 	defaultJitter         = 500 * time.Millisecond
-	deadChannelsFile      = "../dead_channels.txt"
-	deadChannelsArchive   = "../dead_channels_archive.txt"
-	scanCacheFile         = "../scan_cache.json"
+	dataDir               = "../data"
+	deadChannelsFile      = dataDir + "/dead_channels.txt"
+	deadChannelsArchive   = dataDir + "/dead_channels_archive.txt"
+	scanCacheFile         = dataDir + "/scan_cache.json"
 	channelsReportFile    = "../reports/channels_report.md"
 )
 
@@ -77,6 +79,7 @@ type ScanCache struct {
 func main() {
 	flag.Parse()
 	os.MkdirAll("../reports", 0755)
+	os.MkdirAll(dataDir, 0755)
 
 	records, headers, err := readCSV(*inputCSV)
 	if err != nil {
@@ -160,7 +163,6 @@ func generateEmptyChannelsReport() {
 ✅ گزارش توسط GitHub Actions تولید شده است.
 `, time.Now().Format("2006-01-02 15:04:05"))
 	os.WriteFile(channelsReportFile, []byte(report), 0644)
-	fmt.Printf("✅ Empty report written to %s\n", channelsReportFile)
 }
 
 func generateChannelsReport(activeList, deadList []ScanResult, totalChecked int) {
@@ -196,7 +198,6 @@ func generateChannelsReport(activeList, deadList []ScanResult, totalChecked int)
 	}
 	sb.WriteString("\n---\n✅ گزارش توسط GitHub Actions تولید شده است.\n")
 	os.WriteFile(channelsReportFile, []byte(sb.String()), 0644)
-	fmt.Printf("✅ Report written to %s\n", channelsReportFile)
 }
 
 // ------------------------------------------------------------
@@ -280,6 +281,9 @@ func fetchFromRSS(rssURL, origURL string) (ScanResult, error) {
 	if !anyConfig {
 		status = "no_config"
 	}
+	// دیباگ: چاپ اطلاعات در لاگ
+	fmt.Printf("[DEBUG] %s -> lastPost: %s, days diff: %.1f, hasConfig: %v, status: %s\n",
+		origURL, latestTime.Format("2006-01-02 15:04:05"), time.Since(latestTime).Hours()/24, anyConfig, status)
 	return ScanResult{
 		URL:          origURL,
 		LastPost:     latestTime,
@@ -341,6 +345,8 @@ func fetchFromHTML(htmlURL, origURL string) (ScanResult, error) {
 	if !has {
 		status = "no_config"
 	}
+	fmt.Printf("[DEBUG] %s -> lastPost: %s, days diff: %.1f, hasConfig: %v, status: %s\n",
+		origURL, lastTime.Format("2006-01-02 15:04:05"), time.Since(lastTime).Hours()/24, has, status)
 	return ScanResult{
 		URL:          origURL,
 		LastPost:     lastTime,
