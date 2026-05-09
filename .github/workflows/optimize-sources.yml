@@ -16,8 +16,8 @@ jobs:
         with:
           go-version: '>=1.21.3'
 
-      - name: Create reports directory
-        run: mkdir -p reports
+      - name: Create directories
+        run: mkdir -p reports data
 
       - name: Run channel_scanner
         run: |
@@ -33,9 +33,6 @@ jobs:
         run: |
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions"
-          git add channels.csv Sources.json \
-                  dead_channels.txt dead_channels_archive.txt \
-                  dead_sources.txt dead_sources_archive.txt \
-                  scan_cache.json reports/
-          git diff --staged --quiet || git commit -m "🧹 Weekly source optimization + reports (MD & CSV)"
+          git add channels.csv Sources.json data/ reports/
+          git diff --staged --quiet || git commit -m "🧹 Weekly source optimization"
           git push
