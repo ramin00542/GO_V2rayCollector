@@ -374,7 +374,7 @@ func extractChannelName(rawURL string) string {
 	return ""
 }
 
-// I/O helpers
+// ---------- I/O helpers (با اصلاح updateCSV برای تنظیم AllMessagesFlag) ----------
 func readCSV(path string) ([][]string, []string, error) {
 	f, err := os.Open(path)
 	if err != nil {
@@ -398,13 +398,19 @@ func updateCSV(path string, records [][]string, headers []string, active []ScanR
 	for _, res := range active {
 		activeMap[res.URL] = true
 	}
+
+	// پیدا کردن اندیس ستون Status و AllMessagesFlag
 	statusIdx := -1
+	flagIdx := -1
 	for i, h := range headers {
 		if strings.EqualFold(h, "Status") {
 			statusIdx = i
-			break
+		}
+		if strings.EqualFold(h, "AllMessagesFlag") {
+			flagIdx = i
 		}
 	}
+	// اگر ستون Status وجود نداشت، ایجاد کن
 	if statusIdx == -1 {
 		headers = append(headers, "Status")
 		statusIdx = len(headers) - 1
@@ -414,6 +420,18 @@ func updateCSV(path string, records [][]string, headers []string, active []ScanR
 			}
 		}
 	}
+	// اگر ستون AllMessagesFlag وجود نداشت، ایجاد کن
+	if flagIdx == -1 {
+		headers = append(headers, "AllMessagesFlag")
+		flagIdx = len(headers) - 1
+		for i := range records {
+			for len(records[i]) < len(headers) {
+				records[i] = append(records[i], "")
+			}
+		}
+	}
+
+	// به‌روزرسانی هر ردیف
 	for i, row := range records {
 		if len(row) == 0 {
 			continue
@@ -421,11 +439,14 @@ func updateCSV(path string, records [][]string, headers []string, active []ScanR
 		url := row[0]
 		if activeMap[url] {
 			row[statusIdx] = "active"
+			row[flagIdx] = "true"
 		} else {
 			row[statusIdx] = "inactive"
+			row[flagIdx] = "false"
 		}
 		records[i] = row
 	}
+
 	outFile, err := os.Create(path)
 	if err != nil {
 		return err
