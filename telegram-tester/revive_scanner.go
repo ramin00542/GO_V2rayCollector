@@ -18,14 +18,15 @@ import (
 )
 
 const (
-	deadChannelsArchive = "../dead_channels_archive.txt"
-	activeChannelsFile  = "../channels.csv"
-	reviveCacheFile     = "../revive_cache.json"
-	reviveReportFile    = "../reports/revive_report.md"
-	defaultRetryCount   = 3
-	defaultBaseDelay    = 1 * time.Second
-	defaultJitter       = 500 * time.Millisecond
-	activeDays          = 30
+	dataDir               = "../data"
+	deadChannelsArchive   = dataDir + "/dead_channels_archive.txt"
+	activeChannelsFile    = "../channels.csv"
+	reviveCacheFile       = dataDir + "/revive_cache.json"
+	reviveReportFile      = "../reports/revive_report.md"
+	defaultRetryCount     = 3
+	defaultBaseDelay      = 1 * time.Second
+	defaultJitter         = 500 * time.Millisecond
+	activeDays            = 30
 )
 
 var (
@@ -59,6 +60,8 @@ type ReviveResult struct {
 
 func main() {
 	os.MkdirAll("../reports", 0755)
+	os.MkdirAll(dataDir, 0755)
+
 	archive := loadArchive()
 	if len(archive) == 0 {
 		fmt.Println("Archive is empty. Nothing to revive.")
@@ -133,12 +136,8 @@ func generateEmptyReviveReport() {
 | 💀 همچنان مرده | 0 |
 
 هیچ کانالی در بایگانی وجود نداشت.
-
----
-✅ گزارش توسط GitHub Actions تولید شده است.
 `, time.Now().Format("2006-01-02 15:04:05"))
 	os.WriteFile(reviveReportFile, []byte(report), 0644)
-	fmt.Printf("✅ Empty report written to %s\n", reviveReportFile)
 }
 
 func generateReviveReport(revived, stillDead []string, results []ReviveResult) {
@@ -161,7 +160,6 @@ func generateReviveReport(revived, stillDead []string, results []ReviveResult) {
 	sb.WriteString("\n## 💀 کانال‌های باقی‌مانده در بایگانی\n\n")
 	if len(stillDead) > 0 {
 		sb.WriteString(fmt.Sprintf("<details>\n<summary>نمایش همه %d کانال (کلیک کنید)</summary>\n\n", len(stillDead)))
-		// پیدا کردن جزئیات هر کانال از results
 		details := make(map[string]ReviveResult)
 		for _, r := range results {
 			details[r.URL] = r
@@ -183,7 +181,6 @@ func generateReviveReport(revived, stillDead []string, results []ReviveResult) {
 	}
 	sb.WriteString("\n---\n✅ گزارش توسط GitHub Actions تولید شده است.\n")
 	os.WriteFile(reviveReportFile, []byte(sb.String()), 0644)
-	fmt.Printf("✅ Report written to %s\n", reviveReportFile)
 }
 
 // ------------------------------------------------------------
