@@ -4,6 +4,7 @@ package main
 import (
 	"encoding/base64"
 	"encoding/json"
+	"flag"
 	"fmt"
 	"io"
 	"math/rand"
@@ -28,7 +29,7 @@ const (
 	dataDir            = "../data"
 	deadSourcesRecent  = dataDir + "/dead_sources_recent.json"
 	deadSourcesOld     = dataDir + "/dead_sources_old.json"
-	activeSourcesFile  = "../active_sources.json"
+	activeSourcesFile  = "../Sources.json"   // مستقیماً فایل اصلی را بازنویسی می‌کند
 	sourcesReportFile  = "../reports/sources_report.md"
 )
 
@@ -50,12 +51,15 @@ var (
 		regexp.MustCompile(`socks(?:5)?://[^\s]+@[^\s]+`),
 		regexp.MustCompile(`socks(?:5)?://[^\s]+:\d+`),
 	}
+)
+
+var (
 	oldScan = flag.Bool("old-scan", false, "Scan only sources older than 365 days (yearly)")
 )
 
 type DeadSourceInfo struct {
 	URL       string `json:"url"`
-	LastMod   int64  `json:"last_mod"`   // Unix timestamp
+	LastMod   int64  `json:"last_mod"`
 	CheckedAt int64  `json:"checked_at"`
 }
 
@@ -165,6 +169,7 @@ func main() {
 			}
 		}
 	}
+	// حفظ موارد اسکن نشده
 	for k, v := range recentDead {
 		updatedRecent[k] = v
 	}
@@ -172,7 +177,7 @@ func main() {
 		updatedOld[k] = v
 	}
 
-	// به‌روزرسانی فایل اصلی Sources.json (فقط activeURLs)
+	// ذخیره منابع فعال در فایل اصلی Sources.json
 	saveActiveSources(activeURLs, inputFile)
 	saveDeadSourceArchive(deadSourcesRecent, updatedRecent)
 	saveDeadSourceArchive(deadSourcesOld, updatedOld)
