@@ -19,20 +19,20 @@ jobs:
       - name: Create directories
         run: mkdir -p reports data
 
-      - name: Run channel_scanner
+      - name: Run channel_scanner (weekly)
         run: |
           cd telegram-tester
           go run channel_scanner.go -input ../channels.csv -output ../channels.csv
 
-      - name: Run sources_checker
+      - name: Run sources_checker (weekly)
         run: |
           cd telegram-tester
           go run sources_checker.go ../Sources.json
 
-      - name: Commit and push changes
+      - name: Commit and push
         run: |
           git config user.email "actions@github.com"
-          git config.user.name "GitHub Actions"
+          git config user.name "GitHub Actions"
           git pull --rebase origin main
           git add channels.csv Sources.json data/ reports/
           git diff --staged --quiet || git commit -m "🧹 Weekly source optimization"
