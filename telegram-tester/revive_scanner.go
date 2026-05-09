@@ -25,9 +25,9 @@ const (
 	defaultConcurrency  = 5
 
 	dataDir             = "../data"
-	deadChannelsArchive = dataDir + "/dead_channels_archive.txt"
+	deadChannelsRecent  = dataDir + "/dead_channels_recent.json"
+	deadChannelsOld     = dataDir + "/dead_channels_old.json"
 	activeChannelsFile  = "../channels.csv"
-	reviveCacheFile     = dataDir + "/revive_cache.json"
 	reviveReportFile    = "../reports/revive_report.md"
 )
 
@@ -51,6 +51,12 @@ var (
 	}
 )
 
+type DeadChannelInfo struct {
+	URL       string `json:"url"`
+	LastPost  int64  `json:"last_post"`
+	CheckedAt int64  `json:"checked_at"`
+}
+
 type ReviveResult struct {
 	URL       string    `json:"url"`
 	LastPost  time.Time `json:"last_post"`
@@ -72,20 +78,32 @@ func main() {
 	os.MkdirAll("../reports", 0755)
 	os.MkdirAll(dataDir, 0755)
 
-	archive := loadArchive()
-	if len(archive) == 0 {
+	// بارگذاری هر دو آرشیو
+	recentDead := loadDeadArchive(deadChannelsRecent)
+	oldDead := loadDeadArchive(deadChannelsOld)
+
+	// ترکیب همه کانال‌های بایگانی شده
+	allDead := make(map[string]DeadChannelInfo)
+	for k, v := range recentDead {
+		allDead[k] = v
+	}
+	for k, v := range oldDead {
+		allDead[k] = v
+	}
+
+	if len(allDead) == 0 {
 		fmt.Println("Archive is empty. Nothing to revive.")
 		generateEmptyReviveReport()
 		return
 	}
-	fmt.Printf("Loaded %d archived channels.\n", len(archive))
+	fmt.Printf("Loaded %d archived channels (recent: %d, old: %d).\n", len(allDead), len(recentDead), len(oldDead))
+
 	activeMap := loadActiveChannels()
 	var revivedList []string
-	var stillDead []string
 	var results []ReviveResult
 
-	jobs := make(chan string, len(archive))
-	resultsCh := make(chan ReviveResult, len(archive))
+	jobs := make(chan string, len(allDead))
+	resultsCh := make(chan ReviveResult, len(allDead))
 	var wg sync.WaitGroup
 	workers := defaultConcurrency
 	for i := 0; i < workers; i++ {
@@ -99,12 +117,15 @@ func main() {
 			}
 		}()
 	}
-	for url := range archive {
+	for url := range allDead {
 		jobs <- url
 	}
 	close(jobs)
 	wg.Wait()
 	close(resultsCh)
+
+	newRecent := make(map[string]DeadChannelInfo)
+	newOld := make(map[string]DeadChannelInfo)
 
 	for res := range resultsCh {
 		results = append(results, res)
@@ -112,8 +133,32 @@ func main() {
 			if !activeMap[res.URL] {
 				revivedList = append(revivedList, res.URL)
 			}
+			// حذف از هر دو آرشیو (با عدم اضافه کردن به newRecent/newOld)
+			continue
+		}
+		// هنوز مرده است – بر اساس سن دوباره در آرشیو مناسب قرار می‌گیرد
+		info := DeadChannelInfo{
+			URL:       res.URL,
+			LastPost:  res.LastPost.Unix(),
+			CheckedAt: time.Now().Unix(),
+		}
+		daysSince := int(time.Since(res.LastPost).Hours() / 24)
+		if daysSince > 365 {
+			newOld[res.URL] = info
 		} else {
-			stillDead = append(stillDead, res.URL)
+			newRecent[res.URL] = info
+		}
+	}
+
+	// حفظ کانال‌هایی که اصلاً اسکن نشده‌اند (نباید وجود داشته باشد، اما ایمنی)
+	for k, v := range recentDead {
+		if _, exists := newRecent[k]; !exists {
+			newRecent[k] = v
+		}
+	}
+	for k, v := range oldDead {
+		if _, exists := newOld[k]; !exists {
+			newOld[k] = v
 		}
 	}
 
@@ -123,84 +168,41 @@ func main() {
 	} else {
 		fmt.Println("No revived channels found.")
 	}
-	newArchive := make(map[string]bool)
-	for _, url := range stillDead {
-		newArchive[url] = true
-	}
-	saveArchive(newArchive)
-	saveReviveCache(results)
-	generateReviveReport(revivedList, stillDead, results)
-	fmt.Printf("✅ Revive scan finished. Revived: %d, Still dead: %d\n", len(revivedList), len(stillDead))
+
+	saveDeadArchive(deadChannelsRecent, newRecent)
+	saveDeadArchive(deadChannelsOld, newOld)
+	generateReviveReport(revivedList, results)
+	fmt.Printf("✅ Revive scan finished. Revived: %d, Still dead (recent: %d, old: %d)\n",
+		len(revivedList), len(newRecent), len(newOld))
 }
 
-func generateEmptyReviveReport() {
-	report := fmt.Sprintf(`# 📊 گزارش احیای کانال‌ها
-
-**تاریخ اجرا:** %s
-
-## خلاصه آماری
-| معیار | مقدار |
-|-------|-------|
-| کل کانال‌های بایگانی | 0 |
-| ✅ احیا شده | 0 |
-| 💀 همچنان مرده | 0 |
-
-هیچ کانالی در بایگانی وجود نداشت.
-
----
-✅ گزارش توسط GitHub Actions تولید شده است.
-`, time.Now().Format("2006-01-02 15:04:05"))
-	os.WriteFile(reviveReportFile, []byte(report), 0644)
-	fmt.Printf("✅ Empty report written to %s\n", reviveReportFile)
+func loadDeadArchive(file string) map[string]DeadChannelInfo {
+	m := make(map[string]DeadChannelInfo)
+	data, err := os.ReadFile(file)
+	if err != nil {
+		return m
+	}
+	var list []DeadChannelInfo
+	if err := json.Unmarshal(data, &list); err != nil {
+		return m
+	}
+	for _, item := range list {
+		m[item.URL] = item
+	}
+	return m
 }
 
-func generateReviveReport(revived, stillDead []string, results []ReviveResult) {
-	var sb strings.Builder
-	sb.WriteString("# 📊 گزارش احیای کانال‌ها\n\n")
-	sb.WriteString(fmt.Sprintf("**تاریخ اجرا:** %s\n\n", time.Now().Format("2006-01-02 15:04:05")))
-	sb.WriteString("## خلاصه آماری\n\n| معیار | مقدار |\n|-------|-------|\n")
-	sb.WriteString(fmt.Sprintf("| کل کانال‌های بایگانی | %d |\n", len(results)))
-	sb.WriteString(fmt.Sprintf("| ✅ احیا شده | %d |\n", len(revived)))
-	sb.WriteString(fmt.Sprintf("| 💀 همچنان مرده | %d |\n\n", len(stillDead)))
-
-	sb.WriteString("## ✅ کانال‌های احیا شده\n\n")
-	if len(revived) > 0 {
-		for _, url := range revived {
-			sb.WriteString(fmt.Sprintf("- %s\n", url))
-		}
-	} else {
-		sb.WriteString("(هیچ کانالی احیا نشد)\n")
+func saveDeadArchive(file string, m map[string]DeadChannelInfo) {
+	list := make([]DeadChannelInfo, 0, len(m))
+	for _, v := range m {
+		list = append(list, v)
 	}
-	sb.WriteString("\n## 💀 کانال‌های باقی‌مانده در بایگانی\n\n")
-	if len(stillDead) > 0 {
-		sb.WriteString(fmt.Sprintf("<details>\n<summary>نمایش همه %d کانال (کلیک کنید)</summary>\n\n", len(stillDead)))
-		details := make(map[string]ReviveResult)
-		for _, r := range results {
-			details[r.URL] = r
-		}
-		for _, url := range stillDead {
-			if d, ok := details[url]; ok {
-				lastPostStr := ""
-				if !d.LastPost.IsZero() {
-					lastPostStr = d.LastPost.Format("2006-01-02 15:04:05")
-				}
-				sb.WriteString(fmt.Sprintf("- **%s**  \n  - آخرین پست: %s  \n  - دارای کانفیگ: %v  \n  - خطا: %s\n\n", url, lastPostStr, d.HasConfig, d.Error))
-			} else {
-				sb.WriteString(fmt.Sprintf("- %s\n", url))
-			}
-		}
-		sb.WriteString("</details>\n")
-	} else {
-		sb.WriteString("(هیچ کانال مرده‌ای باقی نمانده)\n")
-	}
-	sb.WriteString("\n---\n✅ گزارش توسط GitHub Actions تولید شده است.\n")
-	os.WriteFile(reviveReportFile, []byte(sb.String()), 0644)
-	fmt.Printf("✅ Report written to %s\n", reviveReportFile)
+	sort.Slice(list, func(i, j int) bool { return list[i].URL < list[j].URL })
+	data, _ := json.MarshalIndent(list, "", "  ")
+	os.WriteFile(file, data, 0644)
+	fmt.Printf("✅ Saved %s with %d entries.\n", file, len(list))
 }
 
-// ------------------------------------------------------------
-// توابع اصلی
-// ------------------------------------------------------------
 func checkChannelWithRetry(url string) ReviveResult {
 	var lastErr error
 	for attempt := 1; attempt <= defaultRetryCount; attempt++ {
@@ -354,32 +356,7 @@ func extractChannelName(rawURL string) string {
 	return ""
 }
 
-// I/O helpers
-func loadArchive() map[string]bool {
-	m := make(map[string]bool)
-	data, err := os.ReadFile(deadChannelsArchive)
-	if err != nil {
-		return m
-	}
-	for _, line := range strings.Split(string(data), "\n") {
-		line = strings.TrimSpace(line)
-		if line != "" {
-			m[line] = true
-		}
-	}
-	return m
-}
-
-func saveArchive(m map[string]bool) {
-	var lines []string
-	for k := range m {
-		lines = append(lines, k)
-	}
-	sort.Strings(lines)
-	os.WriteFile(deadChannelsArchive, []byte(strings.Join(lines, "\n")), 0644)
-	fmt.Printf("✅ Updated archive, %d channels still dead.\n", len(lines))
-}
-
+// ---------- I/O helpers ----------
 func loadActiveChannels() map[string]bool {
 	m := make(map[string]bool)
 	f, err := os.Open(activeChannelsFile)
@@ -463,8 +440,41 @@ func writeCSV(path string, headers []string, records [][]string) error {
 	return nil
 }
 
-func saveReviveCache(results []ReviveResult) {
-	data, _ := json.MarshalIndent(results, "", "  ")
-	os.WriteFile(reviveCacheFile, data, 0644)
-	fmt.Printf("✅ Revive cache saved to %s\n", reviveCacheFile)
+func generateEmptyReviveReport() {
+	report := fmt.Sprintf(`# 📊 گزارش احیای کانال‌ها
+
+**تاریخ اجرا:** %s
+
+## خلاصه آماری
+| معیار | مقدار |
+|-------|-------|
+| کل کانال‌های بایگانی | 0 |
+| ✅ احیا شده | 0 |
+| 💀 همچنان مرده | 0 |
+
+هیچ کانالی در بایگانی وجود نداشت.
+`, time.Now().Format("2006-01-02 15:04:05"))
+	os.WriteFile(reviveReportFile, []byte(report), 0644)
+	fmt.Printf("✅ Empty report written to %s\n", reviveReportFile)
+}
+
+func generateReviveReport(revived []string, results []ReviveResult) {
+	var sb strings.Builder
+	sb.WriteString("# 📊 گزارش احیای کانال‌ها\n\n")
+	sb.WriteString(fmt.Sprintf("**تاریخ اجرا:** %s\n\n", time.Now().Format("2006-01-02 15:04:05")))
+	sb.WriteString("## خلاصه آماری\n\n| معیار | مقدار |\n|-------|-------|\n")
+	sb.WriteString(fmt.Sprintf("| کل کانال‌های بایگانی | %d |\n", len(results)))
+	sb.WriteString(fmt.Sprintf("| ✅ احیا شده | %d |\n\n", len(revived)))
+
+	sb.WriteString("## ✅ کانال‌های احیا شده\n\n")
+	if len(revived) > 0 {
+		for _, url := range revived {
+			sb.WriteString(fmt.Sprintf("- %s\n", url))
+		}
+	} else {
+		sb.WriteString("(هیچ کانالی احیا نشد)\n")
+	}
+	sb.WriteString("\n---\n✅ گزارش توسط GitHub Actions تولید شده است.\n")
+	os.WriteFile(reviveReportFile, []byte(sb.String()), 0644)
+	fmt.Printf("✅ Report written to %s\n", reviveReportFile)
 }
