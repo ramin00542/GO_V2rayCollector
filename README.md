@@ -89,7 +89,6 @@
    │   ├── 📊 collector_stats.md
    │   ├── 📄 collector_stats.txt
    │   ├── 🔗 links.md
-   │   ├── 📃 links.txt
    │   └── 📝 sources_report.md
    │
    ├── 📱 telegram-tester/
