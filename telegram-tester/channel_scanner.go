@@ -374,9 +374,9 @@ func readCSV(path string) ([][]string, []string, error) {
 		return nil, nil, err
 	}
 	defer f.Close()
-	r := csv.NewReader(r)
-	r.FieldsPerRecord = -1
-	all, err := r.ReadAll()
+	rd := csv.NewReader(f)           // ← تغییر این خط
+	rd.FieldsPerRecord = -1
+	all, err := rd.ReadAll()         // ← اینجا هم از rd استفاده کنید
 	if err != nil {
 		return nil, nil, err
 	}
