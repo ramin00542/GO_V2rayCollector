@@ -1,3 +1,0 @@
-vless://269a5853-db3c-4d71-934c-f64d1b37bd2c@cloud.sapienza-ren.ir:2083?path=%2FW565Lk&security=tls&encryption=none&insecure=0&type=ws&allowInsecure=0&sni=turkiye.phantompanel.shop#%40V2rayNGX
-vless://fc5e2e68-b416-49bb-a689-61032faf7fcf@172.64.152.23:8443?path=%2F&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&insecure=1&host=backup.f-sub.cfd&fp=chrome&type=ws&allowInsecure=1&sni=backup.f-sub.cfd#%40V2rayNGX
-vless://d749c2c0-4ba4-45fe-f8f4-2f422d689a21@pxqhkkokwtgf.eu-central…

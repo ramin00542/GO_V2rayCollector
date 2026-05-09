@@ -1,1 +1,0 @@
-vless://4bdd9eae-414f-40cb-8e08-289e20e04dfd@camp.nahidapp.com:443?path=%2FIF_VPN_Bot&security=tls&encryption=none&host=camp.nahidapp.com&type=ws#filembad-135

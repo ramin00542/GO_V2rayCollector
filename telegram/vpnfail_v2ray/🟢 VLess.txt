@@ -1,1 +1,0 @@
-vless://983da2df-bc52-4226-84c1-bbfef0704427@04cc4ef1beb1b536.freestly.sapienza-mahan.ir:443?mode=auto&security=tls&alpn=h2%2Chttp%2F1.1&encryption=none&insecure=1&host=nazan-baba-z2.global.ssl.fastly.net&fp=firefox&type=xhttp&allowInsecure=1&sni=speedtest.net#canfingV2rayNG-207

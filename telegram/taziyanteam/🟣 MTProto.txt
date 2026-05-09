@@ -1,3 +1,0 @@
-tg://proxy?server=135.181.31.175&port=443&secret=dd104462821249bd7ac519130220c25d09ترکیب
-tg://proxy?server=95.217.235.33&port=443&secret=dd104462821249bd7ac519130220c25d09پروکسی
-tg://proxy?server=65.108.50.120&port=443&secret=dd104462821249bd7ac519130220c25d09پروکسی

@@ -1,1 +1,0 @@
-trojan://fcfe033b-0003-4c58-9d96-c5132353a17a@jp2.e4b593af-e26c-4ff1-9b02-d699594d7bbb.02444020.the-best-airport.com:443/?type=tcp&security=tls&sni=new.download.the-best-airport.com#[14296]

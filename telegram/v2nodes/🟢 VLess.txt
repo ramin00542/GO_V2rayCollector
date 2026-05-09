@@ -1,1 +1,0 @@
-vless://4e7bd311-d91e-4a85-aa08-121313cf50d9@seoul1.ap221.com:443?sni=seoul.ap221.com&flow=xtls-rprx-vision-udp443&fp=chrome&security=tls#🇰🇷[openproxylist.com]

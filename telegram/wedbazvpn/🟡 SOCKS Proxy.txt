@@ -1,3 +1,0 @@
-socks://62.220.126.56:31511?type=tcp#@wedbazgapsocks://62.220.126.56:31899?type=tcp#@wedbazgapsocks://62.220.126.56:32184?type=tcp#@wedbazgapبزنید
-socks://62.220.126.92:27211#@wedbazgapsocks://62.220.126.56:30170#@wedbazgapبزنید
-socks://62.220.126.56:30170?type=tcp#@wedbazgapsocks://62.220.126.92:27211?type=tcp#@wedbazgapبزنید
