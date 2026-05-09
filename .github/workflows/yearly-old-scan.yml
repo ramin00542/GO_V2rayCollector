@@ -1,4 +1,4 @@
-name: Yearly Scan of Very Old Channels & Sources
+name: Yearly Scan of Very Old Dead Items
 on:
   schedule:
     - cron: "0 0 1 1 *"   # هر سال 1 ژانویه ساعت 00:00
@@ -16,18 +16,18 @@ jobs:
           go-version: '>=1.21.3'
       - name: Create directories
         run: mkdir -p reports data
-      - name: Run channel_scanner on old archive only
+      - name: Scan old channels
         run: |
           cd telegram-tester
           go run channel_scanner.go -input ../channels.csv -output ../channels.csv -old-scan
-      - name: Run sources_checker on old archive only
+      - name: Scan old sources
         run: |
           cd telegram-tester
           go run sources_checker.go ../Sources.json -old-scan
       - name: Commit and push
         run: |
           git config user.email "actions@github.com"
-          git config user.name "GitHub Actions"
+          git config.user.name "GitHub Actions"
           git pull --rebase origin main
           git add channels.csv Sources.json data/ reports/
           git diff --staged --quiet || git commit -m "📅 Yearly scan of very old dead items"
