@@ -1,6 +1,6 @@
 # 📊 گزارش اسکنر ساب‌لینک‌ها
 
-**تاریخ اجرا:** 2026-05-09 08:51:24
+**تاریخ اجرا:** 2026-05-09 09:03:34
 
 ## خلاصه آماری
 
@@ -19,12 +19,12 @@
 <details>
 <summary>نمایش همه 11 ساب‌لینک (کلیک کنید)</summary>
 
-- **https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Austria.txt**  
+- **https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Armenia.txt**  
   - وضعیت: `OK`  
   - آخرین تغییر:   
   - دارای کانفیگ: true
 
-- **https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Armenia.txt**  
+- **https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Austria.txt**  
   - وضعیت: `OK`  
   - آخرین تغییر:   
   - دارای کانفیگ: true
@@ -34,12 +34,12 @@
   - آخرین تغییر:   
   - دارای کانفیگ: true
 
-- **https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Albania.txt**  
+- **https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Argentina.txt**  
   - وضعیت: `OK`  
   - آخرین تغییر:   
   - دارای کانفیگ: true
 
-- **https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Argentina.txt**  
+- **https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Albania.txt**  
   - وضعیت: `OK`  
   - آخرین تغییر:   
   - دارای کانفیگ: true
@@ -54,7 +54,7 @@
   - آخرین تغییر:   
   - دارای کانفیگ: true
 
-- **https://raw.githubusercontent.com/ehsanzeus/V2rayCollector/main/trojan_iran.txt**  
+- **https://raw.githubusercontent.com/ehsanzeus/V2rayCollector/main/ss_iran.txt**  
   - وضعیت: `OK`  
   - آخرین تغییر:   
   - دارای کانفیگ: true
@@ -64,7 +64,7 @@
   - آخرین تغییر:   
   - دارای کانفیگ: true
 
-- **https://raw.githubusercontent.com/ehsanzeus/V2rayCollector/main/ss_iran.txt**  
+- **https://raw.githubusercontent.com/ehsanzeus/V2rayCollector/main/trojan_iran.txt**  
   - وضعیت: `OK`  
   - آخرین تغییر:   
   - دارای کانفیگ: true
