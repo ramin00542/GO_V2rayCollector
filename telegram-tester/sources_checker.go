@@ -226,7 +226,6 @@ func anyConfigInText(text string) bool {
 	return false
 }
 
-// I/O helpers
 func loadMap(file string) map[string]bool {
 	m := make(map[string]bool)
 	data, err := os.ReadFile(file)
