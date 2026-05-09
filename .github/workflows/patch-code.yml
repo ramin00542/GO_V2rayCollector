@@ -1,0 +1,80 @@
+name: ➕ Add Invizible Pro Protocol (obfs4/webtunnel)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  add-protocol:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Backup original main.go
+        run: cp main.go main.go.backup
+
+      # 1. اضافه کردن الگوهای regex به initCombinedRegex
+      - name: Add obfs4/webtunnel regex patterns
+        run: |
+          sed -i '/patterns := \[\]string{/,/}/ {
+              /^[[:space:]]*}/ i\
+                `obfs4\s+\S+:\d+\s+cert=\S+\s+iat-mode=\d+`,\
+                `webtunnel\s+\S+:\d+\s+cert=\S+`,
+          }' main.go
+
+      # 2. اضافه کردن case "invizible" در protocolFileName
+      - name: Add invizible case to protocolFileName
+        run: |
+          sed -i '/case "slipnet":/a\
+	case "invizible":\
+		return "🛡️ Invizible_Pro"' main.go
+
+      # 3. اضافه کردن شرط تشخیص در detectProtocol
+      - name: Add detection logic in detectProtocol
+        run: |
+          sed -i '/if strings.HasPrefix(cfg, "-----BEGIN ARGO") {/a\
+	}\
+	// تشخیص Invizible Pro\
+	if strings.Contains(cfg, "obfs4") || strings.Contains(cfg, "webtunnel") {\
+		return "invizible"\
+	}' main.go
+
+      # 4. اضافه کردن فیلد invizible به struct در writeAllConfigs
+      - name: Add invizible field to sourceFiles struct
+        run: |
+          sed -i '/type sourceFiles struct {/,/^[[:space:]]*}/ {
+              /socks[[:space:]]*\[\]string/a\
+		invizible     []string
+          }' main.go
+
+      # 5. اضافه کردن case در حلقه switch writeAllConfigs
+      - name: Add case for invizible in loop
+        run: |
+          sed -i '/case proto == "socks":/a\
+		case proto == "invizible":\
+			target.invizible = append(target.invizible, cfg)' main.go
+
+      # 6. اضافه کردن appendToFile برای invizible.txt
+      - name: Add appendToFile for invizible
+        run: |
+          sed -i '/appendToFile(subDir, "socks.txt", sf.socks)/a\
+		appendToFile(subDir, "invizible.txt", sf.invizible)' main.go
+
+      # 7. اضافه کردن آیکون در protocolIcon
+      - name: Add icon to protocolIcon
+        run: |
+          sed -i '/case "slipnet":/a\
+	case "invizible":\
+		return "🛡️"' main.go
+
+      - name: Verify changes (diff)
+        run: diff main.go.backup main.go || true
+
+      - name: Commit and push changes
+        run: |
+          git config user.email "actions@github.com"
+          git config.user.name "GitHub Actions"
+          git add main.go
+          git diff --staged --quiet || git commit -m "✨ Add Invizible Pro (obfs4/webtunnel) support"
+          git push
