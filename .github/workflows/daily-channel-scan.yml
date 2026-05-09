@@ -1,38 +1,29 @@
-name: Daily Channel Scan
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: "0 2 * * *"
+# 📊 گزارش اسکنر کانال‌های تلگرام
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+**تاریخ اجرا:** 2026-05-09 11:30:00
 
-jobs:
-  scan:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+## خلاصه آماری
 
-      - name: Setup Go
-        uses: actions/setup-go@v5
-        with:
-          go-version: '>=1.21.3'
+| معیار | مقدار |
+|-------|-------|
+| **کل کانال‌های بررسی شده** | `45` |
+| **✅ کانال‌های فعال** (باقی‌مانده در `channels.csv`) | `12` |
+| **📁 منتقل شده به آرشیو اخیر** (۳۰ تا ۳۶۵ روز غیرفعال) | `28` |
+| **🗄️ منتقل شده به آرشیو قدیم** (بیش از ۳۶۵ روز غیرفعال) | `5` |
 
-      - name: Create reports directory
-        run: mkdir -p reports
+## ✅ کانال‌های فعال (باقی‌مانده در `channels.csv`)
 
-      - name: Run channel scanner
-        run: |
-          cd telegram-tester
-          go run channel_scanner.go -input ../channels.csv -output ../channels.csv
+- https://t.me/s/Ae_proxy
+- https://t.me/s/AmyraxVPN
+...
 
-      - name: Commit changes
-        run: |
-          git config user.email "actions@github.com"
-          git config user.name "GitHub Actions"
-          git add channels.csv reports/
-          git diff --staged --quiet || git commit -m "📊 Daily channel scan report"
-          git push
+## 📁 کانال‌های منتقل شده به آرشیو اخیر (۳۰–۳۶۵ روز)
+
+> این کانال‌ها هر هفته دوباره اسکن می‌شوند.
+
+## 🗄️ کانال‌های منتقل شده به آرشیو قدیم (بیش از ۳۶۵ روز)
+
+> این کانال‌ها فقط سالی یک بار اسکن می‌شوند.
+
+---
+✅ گزارش توسط GitHub Actions تولید شده است.
