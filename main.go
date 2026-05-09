@@ -73,7 +73,7 @@ var (
 	// داخلی
 	combinedRegex   *regexp.Regexp
 	subLinkRegex    *regexp.Regexp
-	protoList       = []string{"vmess", "vless", "trojan", "ss", "ssr", "hysteria2", "tuic", "wireguard", "mtproto", "slipnet", "http", "socks"}
+	protoList       = []string{"vmess", "vless", "trojan", "ss", "ssr", "hysteria2", "tuic", "wireguard", "mtproto", "slipnet", "http", "socks", "argo", "telegram_socks"}
 	httpClient      *http.Client
 	shutdownChan    = make(chan os.Signal, 1)
 	globalCtx       context.Context
@@ -154,11 +154,17 @@ func protocolFileName(proto string) string {
 	case "mixed":
 		return "🌍 Mixed"
 	case "mtproto":
-		return "🟣 MTProto"
+		return "🟣 MTProto Proxy"
 	case "http":
 		return "🟠 HTTP Proxy"
 	case "socks":
 		return "🟡 SOCKS Proxy"
+	case "telegram_socks":
+		return "📡 Telegram SOCKS5"
+	case "argo":
+		return "🚀 Argo"
+	case "slipnet":
+		return "slipnet"
 	default:
 		return proto
 	}
@@ -171,8 +177,8 @@ func main() {
 	initSubLinkRegex()
 	setupLogging()
 	createDirs()
-	os.MkdirAll("reports", 0755) // پوشه گزارش‌ها
-	os.MkdirAll("data", 0755)     // هماهنگی با اسکنرها
+	os.MkdirAll("reports", 0755)
+	os.MkdirAll("data", 0755)
 	initHTTPClient()
 	loadCache()
 	initLastArchiveTime()
@@ -236,7 +242,7 @@ func initTelegramLimiter() {
 	telegramLimiter = rate.NewLimiter(rate.Limit(TelegramRequestsPerSecond), TelegramBurstSize)
 }
 
-// ---------- آرشیو روزانه ----------
+// ---------- آرشیو روزانه با پشتیبانی از all_configs و خالی کردن آن ----------
 func archiveDaily() {
 	today := time.Now().Format("2006-01-02")
 	archiveDir := filepath.Join("daily_archive", today)
@@ -248,6 +254,7 @@ func archiveDaily() {
 	}
 	os.MkdirAll(archiveDir, 0755)
 
+	// آرشیو mixed
 	mixedFiles, _ := filepath.Glob("mixed/*.txt")
 	for _, src := range mixedFiles {
 		dest := filepath.Join(archiveDir, filepath.Base(src))
@@ -258,9 +265,18 @@ func archiveDaily() {
 	}
 	copyDir("subscription", filepath.Join(archiveDir, "subscription"))
 	copyDir("telegram", filepath.Join(archiveDir, "telegram"))
+	copyDir("all_configs", filepath.Join(archiveDir, "all_configs"))
+
+	// پاک کردن all_configs (حذف کل و ساخت مجدد)
+	if err := os.RemoveAll("all_configs"); err == nil {
+		os.MkdirAll("all_configs", 0755)
+		os.MkdirAll(filepath.Join("all_configs", "telegram"), 0755)
+		os.MkdirAll(filepath.Join("all_configs", "subscription"), 0755)
+		gologger.Info().Msg("Cleared all_configs after archiving")
+	}
 
 	os.WriteFile(markerFile, []byte("archived"), 0644)
-	gologger.Info().Msgf("Archived mixed, subscription, telegram to %s", archiveDir)
+	gologger.Info().Msgf("Archived mixed, subscription, telegram, all_configs to %s", archiveDir)
 }
 
 func copyDir(src, dst string) {
@@ -289,14 +305,18 @@ func initCombinedRegex() {
 		`ss://[A-Za-z0-9+/]+={0,2}@[^\s]+`,
 		`ssr://[A-Za-z0-9+/=]+`,
 		`hysteria2://[^\s]+`,
+		`hy2://[^\s]+`, // Hysteria2 (hiddify)
 		`tuic://[^\s]+`,
 		`wireguard://[^\s]+`,
+		`warp://[^\s]+`, // Cloudflare WARP
 		`tg://proxy\?[^\s]+`,
-		`(?:slipnet|slip)://[^\s]+`,
+		`tg://socks\?[^\s]+`,
+		`slipnet://[^\s]+`,
 		`https?://[^\s]+:\d+(?:[^\s]*)?`,
 		`https?://[^@\s]+@[^\s]+`,
 		`socks(?:5)?://[^\s]+@[^\s]+`,
 		`socks(?:5)?://[^\s]+:\d+`,
+		`-----BEGIN ARGO VPN BRIDGE BLOCK-----[\s\S]+?-----END ARGO VPN BRIDGE BLOCK-----`,
 	}
 	combined := strings.Join(patterns, "|")
 	var err error
@@ -496,6 +516,25 @@ func pruneCacheByProtocol() {
 }
 
 func detectProtocol(cfg string) string {
+	// پروکسی تلگرام را پیش از هر چیز بررسی کن
+	if strings.HasPrefix(cfg, "tg://socks?") || strings.Contains(cfg, "t.me/socks?") {
+		return "telegram_socks"
+	}
+	if strings.HasPrefix(cfg, "tg://proxy?") || strings.Contains(cfg, "t.me/proxy?") {
+		return "mtproto"
+	}
+	if strings.HasPrefix(cfg, "hy2://") {
+		return "hysteria2"
+	}
+	if strings.HasPrefix(cfg, "warp://") {
+		return "wireguard"
+	}
+	if strings.HasPrefix(cfg, "slipnet://") {
+		return "slipnet"
+	}
+	if strings.HasPrefix(cfg, "-----BEGIN ARGO") {
+		return "argo"
+	}
 	for _, proto := range protoList {
 		if strings.HasPrefix(cfg, proto+"://") {
 			return proto
@@ -659,7 +698,7 @@ func computeFingerprint(cfg, proto string) string {
 	switch proto {
 	case "vmess":
 		return fingerprintVmess(cfg)
-	case "vless", "trojan", "ss", "ssr", "hysteria2", "tuic":
+	case "vless", "trojan", "ss", "ssr", "hysteria2", "tuic", "argo", "slipnet":
 		return fingerprintCredentialURL(cfg)
 	default:
 		re := regexp.MustCompile(`#.*$`)
@@ -756,7 +795,7 @@ func saveLastArchiveTime() {
 	}
 }
 
-// ---------- دریافت تلگرام (ادب‌دار) ----------
+// ---------- دریافت تلگرام ----------
 func fetchAllTelegramChannels(ctx context.Context) {
 	fileData, err := os.ReadFile(*channelsFile)
 	if err != nil {
@@ -788,6 +827,9 @@ func fetchAllTelegramChannels(ctx context.Context) {
 }
 
 func fetchTelegramSimple(ctx context.Context, url, channelName string) error {
+	if err := telegramLimiter.Wait(ctx); err != nil {
+		return err
+	}
 	req, err := http.NewRequestWithContext(ctx, "GET", url, nil)
 	if err != nil {
 		return err
@@ -881,7 +923,10 @@ func subWorker(ctx context.Context, jobs <-chan string, wg *sync.WaitGroup) {
 }
 
 func fetchSubscription(ctx context.Context, urlStr string) {
-	req, _ := http.NewRequestWithContext(ctx, "GET", urlStr, nil)
+	req, err := http.NewRequestWithContext(ctx, "GET", urlStr, nil)
+	if err != nil {
+		return
+	}
 	req.Header.Set("Accept-Encoding", "gzip")
 	resp, err := httpClient.Do(req)
 	if err != nil {
@@ -1133,15 +1178,19 @@ func writeAllConfigs() {
 	archiveTimeMutex.RUnlock()
 
 	allowedProtos := map[string]bool{
-		"socks": true, "ss": true, "trojan": true, "tuic": true,
-		"vless": true, "vmess": true, "wireguard": true, "hysteria2": true,
+		"vmess": true, "vless": true, "trojan": true, "ss": true,
+		"hysteria2": true, "tuic": true, "wireguard": true,
+		"socks": true, // SOCKS معمولی
+		// پروتکل‌های خاص در فایل‌های جداگانه می‌روند
 	}
 	type sourceFiles struct {
-		allProto []string
-		http     []string
-		mtproto  []string
-		slipnet  []string
-		unknown  []string
+		allProto      []string
+		http          []string
+		mtproto       []string
+		telegramSocks []string
+		slipnet       []string
+		argo          []string
+		unknown       []string
 	}
 	sources := map[string]*sourceFiles{
 		"telegram":     {},
@@ -1167,8 +1216,12 @@ func writeAllConfigs() {
 			target.http = append(target.http, cfg)
 		case proto == "mtproto":
 			target.mtproto = append(target.mtproto, cfg)
+		case proto == "telegram_socks":
+			target.telegramSocks = append(target.telegramSocks, cfg)
 		case proto == "slipnet":
 			target.slipnet = append(target.slipnet, cfg)
+		case proto == "argo":
+			target.argo = append(target.argo, cfg)
 		default:
 			target.unknown = append(target.unknown, cfg)
 		}
@@ -1193,7 +1246,9 @@ func writeAllConfigs() {
 		appendToFile(src, "all_protocols.txt", sf.allProto)
 		appendToFile(src, "http.txt", sf.http)
 		appendToFile(src, "mtproto.txt", sf.mtproto)
+		appendToFile(src, "telegram_socks.txt", sf.telegramSocks)
 		appendToFile(src, "slipnet.txt", sf.slipnet)
+		appendToFile(src, "argo.txt", sf.argo)
 		appendToFile(src, "unknown.txt", sf.unknown)
 	}
 }
@@ -1245,6 +1300,7 @@ func generateLinksFile() {
 		return "🟢"
 	}
 
+	// all_configs/subscription
 	sb.WriteString("## 📁 all_configs/subscription\n\n")
 	sb.WriteString("| وضعیت | نام فایل | تعداد کانفیگ | آخرین به‌روزرسانی | لینک خام |\n")
 	sb.WriteString("|-------|----------|--------------|-------------------|----------|\n")
@@ -1262,6 +1318,7 @@ func generateLinksFile() {
 	}
 	sb.WriteString("\n")
 
+	// all_configs/telegram
 	sb.WriteString("## 📁 all_configs/telegram\n\n")
 	sb.WriteString("| وضعیت | نام فایل | تعداد کانفیگ | آخرین به‌روزرسانی | لینک خام |\n")
 	sb.WriteString("|-------|----------|--------------|-------------------|----------|\n")
@@ -1279,6 +1336,7 @@ func generateLinksFile() {
 	}
 	sb.WriteString("\n")
 
+	// daily_archive
 	sb.WriteString("## 📁 daily_archive\n\n")
 	archives, _ := filepath.Glob("daily_archive/*")
 	sort.Strings(archives)
@@ -1334,6 +1392,7 @@ func generateLinksFile() {
 		}
 	}
 
+	// mixed, subscription, telegram
 	for _, folder := range []string{"mixed", "subscription", "telegram"} {
 		sb.WriteString(fmt.Sprintf("## 📁 %s\n\n", folder))
 		sb.WriteString("| وضعیت | نام فایل | تعداد کانفیگ | آخرین به‌روزرسانی | لینک خام |\n")
@@ -1488,6 +1547,10 @@ func protocolIcon(proto string) string {
 		return "🟠"
 	case "socks":
 		return "🟡"
+	case "telegram_socks":
+		return "📡"
+	case "argo":
+		return "🚀"
 	default:
 		return "📄"
 	}
