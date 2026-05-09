@@ -1,6 +1,6 @@
 # 📊 گزارش اسکنر ساب‌لینک‌ها
 
-**تاریخ اجرا:** 2026-05-09 08:01:52
+**تاریخ اجرا:** 2026-05-09 08:26:48
 
 ## خلاصه آماری
 
@@ -24,17 +24,12 @@
   - آخرین تغییر:   
   - دارای کانفیگ: true
 
-- **https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Austria.txt**  
-  - وضعیت: `OK`  
-  - آخرین تغییر:   
-  - دارای کانفیگ: true
-
-- **https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Armenia.txt**  
-  - وضعیت: `OK`  
-  - آخرین تغییر:   
-  - دارای کانفیگ: true
-
 - **https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Argentina.txt**  
+  - وضعیت: `OK`  
+  - آخرین تغییر:   
+  - دارای کانفیگ: true
+
+- **https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Austria.txt**  
   - وضعیت: `OK`  
   - آخرین تغییر:   
   - دارای کانفیگ: true
@@ -44,12 +39,12 @@
   - آخرین تغییر:   
   - دارای کانفیگ: true
 
-- **https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Azerbaijan.txt**  
+- **https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Armenia.txt**  
   - وضعیت: `OK`  
   - آخرین تغییر:   
   - دارای کانفیگ: true
 
-- **https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Bahrain.txt**  
+- **https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Azerbaijan.txt**  
   - وضعیت: `OK`  
   - آخرین تغییر:   
   - دارای کانفیگ: true
@@ -59,7 +54,7 @@
   - آخرین تغییر:   
   - دارای کانفیگ: true
 
-- **https://raw.githubusercontent.com/ehsanzeus/V2rayCollector/main/ss_iran.txt**  
+- **https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Bahrain.txt**  
   - وضعیت: `OK`  
   - آخرین تغییر:   
   - دارای کانفیگ: true
@@ -70,6 +65,11 @@
   - دارای کانفیگ: true
 
 - **https://raw.githubusercontent.com/ehsanzeus/V2rayCollector/main/trojan_iran.txt**  
+  - وضعیت: `OK`  
+  - آخرین تغییر:   
+  - دارای کانفیگ: true
+
+- **https://raw.githubusercontent.com/ehsanzeus/V2rayCollector/main/ss_iran.txt**  
   - وضعیت: `OK`  
   - آخرین تغییر:   
   - دارای کانفیگ: true
