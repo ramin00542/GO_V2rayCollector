@@ -1445,6 +1445,7 @@ func writeStatsFile() {
 		sb.WriteString("_هیچ پروتکلی یافت نشد._\n\n")
 	} else {
 		sb.WriteString("| پروتکل | تعداد |\n|--------|-------|\n")
+		// تعریف نوع kv در اینجا (در سطح تابع) کافی است
 		type kv struct {
 			p string
 			c int
@@ -1454,9 +1455,9 @@ func writeStatsFile() {
 			sorted = append(sorted, kv{p, c})
 		}
 		sort.Slice(sorted, func(i, j int) bool { return sorted[i].c > sorted[j].c })
-		for _, kv := range sorted {
-			icon := protocolIcon(kv.p)
-			sb.WriteString(fmt.Sprintf("| %s **%s** | `%d` |\n", icon, kv.p, kv.c))
+		for _, kvItem := range sorted {
+			icon := protocolIcon(kvItem.p)
+			sb.WriteString(fmt.Sprintf("| %s **%s** | `%d` |\n", icon, kvItem.p, kvItem.c))
 		}
 		sb.WriteString("\n")
 	}
@@ -1472,18 +1473,22 @@ func writeStatsFile() {
 
 	if len(channelStats) > 0 {
 		sb.WriteString("## 🗂️ کانال‌های تلگرام (به تفکیک تعداد کانفیگ)\n\n")
+		type kv struct {
+			p string
+			c int
+		}
 		var sorted []kv
 		for ch, c := range channelStats {
 			sorted = append(sorted, kv{ch, c})
 		}
 		sort.Slice(sorted, func(i, j int) bool { return sorted[i].c > sorted[j].c })
 		sb.WriteString("| کانال | تعداد کانفیگ |\n|-------|--------------|\n")
-		for i, kv := range sorted {
+		for i, kvItem := range sorted {
 			if i >= 20 {
 				sb.WriteString(fmt.Sprintf("| ... و `%d` کانال دیگر | ... |\n", len(sorted)-20))
 				break
 			}
-			sb.WriteString(fmt.Sprintf("| `%s` | `%d` |\n", kv.p, kv.c))
+			sb.WriteString(fmt.Sprintf("| `%s` | `%d` |\n", kvItem.p, kvItem.c))
 		}
 		sb.WriteString("\n")
 	} else {
