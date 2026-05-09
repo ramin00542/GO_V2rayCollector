@@ -62,7 +62,7 @@ var (
 
 type DeadChannelInfo struct {
 	URL       string `json:"url"`
-	LastPost  int64  `json:"last_post"`  // Unix timestamp
+	LastPost  int64  `json:"last_post"`
 	CheckedAt int64  `json:"checked_at"`
 }
 
@@ -84,17 +84,16 @@ func safePrintf(format string, args ...interface{}) {
 	fmt.Printf(format, args...)
 }
 
-// ---------- توابع اصلی ----------
 func main() {
 	flag.Parse()
 	os.MkdirAll("../reports", 0755)
 	os.MkdirAll(dataDir, 0755)
 
-	// بارگذاری آرشیوها
+	// بارگذاری آرشیوهای موجود
 	recentDead := loadDeadArchive(deadChannelsRecent)
 	oldDead := loadDeadArchive(deadChannelsOld)
 
-	// خواندن کانال‌های فعال از CSV
+	// خواندن کانال‌های فعال فعلی از CSV (فقط برای اسکن)
 	records, headers, err := readCSV(*inputCSV)
 	if err != nil {
 		fmt.Printf("Error reading CSV: %v\n", err)
@@ -106,7 +105,7 @@ func main() {
 		return
 	}
 
-	// ساختن لیست URLهایی که باید اسکن شوند
+	// ساخت لیست URLهایی که باید اسکن شوند
 	urlSet := make(map[string]bool)
 	for _, row := range records {
 		if len(row) > 0 {
@@ -155,12 +154,14 @@ func main() {
 	for res := range results {
 		if res.Status == "active" {
 			activeList = append(activeList, res)
-			// حذف از هر دو آرشیو (اگر وجود داشت)
+			// حذف از هر دو آرشیو
 			delete(recentDead, res.URL)
 			delete(oldDead, res.URL)
 		} else {
-			// غیرفعال – بر اساس سن به آرشیو مناسب منتقل می‌شود
-			daysSince := int(time.Since(res.LastPost).Hours() / 24)
+			daysSince := 0
+			if !res.LastPost.IsZero() {
+				daysSince = int(time.Since(res.LastPost).Hours() / 24)
+			}
 			info := DeadChannelInfo{
 				URL:       res.URL,
 				LastPost:  res.LastPost.Unix(),
@@ -175,8 +176,7 @@ func main() {
 			}
 		}
 	}
-
-	// ترکیب با آرشیوهای قبلی (مواردی که اسکن نشده‌اند)
+	// حفظ موارد اسکن نشده از آرشیوهای قبلی
 	for k, v := range recentDead {
 		updatedRecent[k] = v
 	}
@@ -184,8 +184,14 @@ func main() {
 		updatedOld[k] = v
 	}
 
-	// به‌روزرسانی CSV و ذخیره آرشیوها
-	updateCSV(*outputCSV, records, headers, activeList)
+	// بازنویسی channels.csv فقط با کانال‌های فعال
+	if err := writeActiveCSV(*outputCSV, headers, activeList); err != nil {
+		fmt.Printf("Error writing CSV: %v\n", err)
+	} else {
+		fmt.Printf("✅ Updated %s with %d active channels.\n", *outputCSV, len(activeList))
+	}
+
+	// ذخیره آرشیوها
 	saveDeadArchive(deadChannelsRecent, updatedRecent)
 	saveDeadArchive(deadChannelsOld, updatedOld)
 	generateChannelsReport(activeList, len(urlList))
@@ -360,13 +366,15 @@ func extractChannelName(rawURL string) string {
 }
 
 // ---------- توابع کمکی ----------
+
+// readCSV خواندن فایل CSV و بازگرداندن رکوردها و هدر
 func readCSV(path string) ([][]string, []string, error) {
 	f, err := os.Open(path)
 	if err != nil {
 		return nil, nil, err
 	}
 	defer f.Close()
-	r := csv.NewReader(f)
+	r := csv.NewReader(r)
 	r.FieldsPerRecord = -1
 	all, err := r.ReadAll()
 	if err != nil {
@@ -378,12 +386,11 @@ func readCSV(path string) ([][]string, []string, error) {
 	return all[1:], all[0], nil
 }
 
-func updateCSV(path string, records [][]string, headers []string, active []ScanResult) error {
-	activeMap := make(map[string]bool)
-	for _, res := range active {
-		activeMap[res.URL] = true
-	}
-	// پیدا کردن ستون Status و AllMessagesFlag
+// writeActiveCSV بازنویسی کامل CSV با فقط کانال‌های فعال
+func writeActiveCSV(path string, oldHeaders []string, active []ScanResult) error {
+	// تعیین هدر نهایی: اطمینان از وجود ستون‌های Status و AllMessagesFlag
+	headers := make([]string, len(oldHeaders))
+	copy(headers, oldHeaders)
 	statusIdx := -1
 	flagIdx := -1
 	for i, h := range headers {
@@ -397,35 +404,21 @@ func updateCSV(path string, records [][]string, headers []string, active []ScanR
 	if statusIdx == -1 {
 		headers = append(headers, "Status")
 		statusIdx = len(headers) - 1
-		for i := range records {
-			for len(records[i]) < len(headers) {
-				records[i] = append(records[i], "")
-			}
-		}
 	}
 	if flagIdx == -1 {
 		headers = append(headers, "AllMessagesFlag")
 		flagIdx = len(headers) - 1
-		for i := range records {
-			for len(records[i]) < len(headers) {
-				records[i] = append(records[i], "")
-			}
-		}
 	}
-	for i, row := range records {
-		if len(row) == 0 {
-			continue
-		}
-		url := row[0]
-		if activeMap[url] {
-			row[statusIdx] = "active"
-			row[flagIdx] = "true"
-		} else {
-			row[statusIdx] = "inactive"
-			row[flagIdx] = "false"
-		}
-		records[i] = row
+
+	rows := make([][]string, 0, len(active))
+	for _, res := range active {
+		row := make([]string, len(headers))
+		row[0] = res.URL // فرض اولی URL است
+		row[statusIdx] = "active"
+		row[flagIdx] = "true"
+		rows = append(rows, row)
 	}
+
 	outFile, err := os.Create(path)
 	if err != nil {
 		return err
@@ -436,7 +429,7 @@ func updateCSV(path string, records [][]string, headers []string, active []ScanR
 	if err := w.Write(headers); err != nil {
 		return err
 	}
-	for _, row := range records {
+	for _, row := range rows {
 		if err := w.Write(row); err != nil {
 			return err
 		}
@@ -509,4 +502,5 @@ func generateChannelsReport(activeList []ScanResult, totalChecked int) {
 	}
 	sb.WriteString("\n---\n✅ گزارش توسط GitHub Actions تولید شده است.\n")
 	os.WriteFile(channelsReportFile, []byte(sb.String()), 0644)
+	fmt.Printf("✅ Report written to %s\n", channelsReportFile)
 }
