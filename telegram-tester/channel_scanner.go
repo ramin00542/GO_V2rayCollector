@@ -25,9 +25,9 @@ const (
 	defaultBaseDelay      = 1 * time.Second
 	defaultJitter         = 500 * time.Millisecond
 	dataDir               = "../data"
-	deadChannelsFile      = dataDir + "/dead_channels.txt"
-	deadChannelsArchive   = dataDir + "/dead_channels_archive.txt"
-	scanCacheFile         = dataDir + "/scan_cache.json"
+	deadChannelsRecent    = dataDir + "/dead_channels_recent.json"
+	deadChannelsOld       = dataDir + "/dead_channels_old.json"
+	activeChannelsFile    = "../channels.csv"
 	channelsReportFile    = "../reports/channels_report.md"
 )
 
@@ -37,6 +37,7 @@ var (
 	activeDays    = flag.Int("active-days", defaultActiveDays, "Max inactive days")
 	concurrency   = flag.Int("concurrency", defaultConcurrency, "Number of concurrent workers")
 	noRSS         = flag.Bool("no-rss", false, "Use HTML instead of RSS")
+	oldScan       = flag.Bool("old-scan", false, "Scan only channels older than 365 days (yearly)")
 )
 
 var (
@@ -59,6 +60,12 @@ var (
 	}
 )
 
+type DeadChannelInfo struct {
+	URL       string `json:"url"`
+	LastPost  int64  `json:"last_post"`  // Unix timestamp
+	CheckedAt int64  `json:"checked_at"`
+}
+
 type ScanResult struct {
 	URL          string    `json:"url"`
 	LastPost     time.Time `json:"last_post"`
@@ -69,12 +76,6 @@ type ScanResult struct {
 	Timestamp    time.Time `json:"timestamp"`
 }
 
-type ScanCache struct {
-	Results   map[string]ScanResult `json:"results"`
-	LastRun   time.Time             `json:"last_run"`
-	UpdatedAt time.Time             `json:"updated_at"`
-}
-
 var printMutex sync.Mutex
 
 func safePrintf(format string, args ...interface{}) {
@@ -83,11 +84,17 @@ func safePrintf(format string, args ...interface{}) {
 	fmt.Printf(format, args...)
 }
 
+// ---------- توابع اصلی ----------
 func main() {
 	flag.Parse()
 	os.MkdirAll("../reports", 0755)
 	os.MkdirAll(dataDir, 0755)
 
+	// بارگذاری آرشیوها
+	recentDead := loadDeadArchive(deadChannelsRecent)
+	oldDead := loadDeadArchive(deadChannelsOld)
+
+	// خواندن کانال‌های فعال از CSV
 	records, headers, err := readCSV(*inputCSV)
 	if err != nil {
 		fmt.Printf("Error reading CSV: %v\n", err)
@@ -98,119 +105,97 @@ func main() {
 		generateEmptyChannelsReport()
 		return
 	}
-	cache := loadCache()
-	if cache.Results == nil {
-		cache.Results = make(map[string]ScanResult)
-	}
-	deadMap := loadMap(deadChannelsFile)
-	archiveMap := loadMap(deadChannelsArchive)
 
-	jobs := make(chan struct {
-		idx int
-		url string
-	}, len(records))
-	results := make(chan ScanResult, len(records))
+	// ساختن لیست URLهایی که باید اسکن شوند
+	urlSet := make(map[string]bool)
+	for _, row := range records {
+		if len(row) > 0 {
+			urlSet[row[0]] = true
+		}
+	}
+	if *oldScan {
+		for url := range oldDead {
+			urlSet[url] = true
+		}
+	} else {
+		for url := range recentDead {
+			urlSet[url] = true
+		}
+	}
+	urlList := make([]string, 0, len(urlSet))
+	for u := range urlSet {
+		urlList = append(urlList, u)
+	}
+
+	if len(urlList) == 0 {
+		fmt.Println("No channels to scan.")
+		return
+	}
+
+	// اسکن همزمان
+	jobs := make(chan string, len(urlList))
+	results := make(chan ScanResult, len(urlList))
 	var wg sync.WaitGroup
 	for i := 0; i < *concurrency; i++ {
 		wg.Add(1)
 		go worker(jobs, results, &wg)
 	}
-	for idx, row := range records {
-		url := row[0]
-		jobs <- struct {
-			idx int
-			url string
-		}{idx, url}
+	for _, url := range urlList {
+		jobs <- url
 	}
 	close(jobs)
 	wg.Wait()
 	close(results)
 
+	// پردازش نتایج
 	var activeList []ScanResult
-	var deadList []ScanResult
+	updatedRecent := make(map[string]DeadChannelInfo)
+	updatedOld := make(map[string]DeadChannelInfo)
+
 	for res := range results {
-		cache.Results[res.URL] = res
 		if res.Status == "active" {
 			activeList = append(activeList, res)
-			delete(deadMap, res.URL)
-			delete(archiveMap, res.URL)
+			// حذف از هر دو آرشیو (اگر وجود داشت)
+			delete(recentDead, res.URL)
+			delete(oldDead, res.URL)
 		} else {
-			deadList = append(deadList, res)
-			deadMap[res.URL] = true
-			if !archiveMap[res.URL] {
-				archiveMap[res.URL] = true
+			// غیرفعال – بر اساس سن به آرشیو مناسب منتقل می‌شود
+			daysSince := int(time.Since(res.LastPost).Hours() / 24)
+			info := DeadChannelInfo{
+				URL:       res.URL,
+				LastPost:  res.LastPost.Unix(),
+				CheckedAt: time.Now().Unix(),
+			}
+			if daysSince > 365 {
+				updatedOld[res.URL] = info
+				delete(recentDead, res.URL)
+			} else {
+				updatedRecent[res.URL] = info
+				delete(oldDead, res.URL)
 			}
 		}
 	}
-	cache.UpdatedAt = time.Now()
-	saveCache(cache)
+
+	// ترکیب با آرشیوهای قبلی (مواردی که اسکن نشده‌اند)
+	for k, v := range recentDead {
+		updatedRecent[k] = v
+	}
+	for k, v := range oldDead {
+		updatedOld[k] = v
+	}
+
+	// به‌روزرسانی CSV و ذخیره آرشیوها
 	updateCSV(*outputCSV, records, headers, activeList)
-	saveMap(deadChannelsFile, deadMap)
-	saveMap(deadChannelsArchive, archiveMap)
-
-	generateChannelsReport(activeList, deadList, len(records))
-	fmt.Printf("\n✅ Active: %d, Dead: %d\n", len(activeList), len(deadList))
+	saveDeadArchive(deadChannelsRecent, updatedRecent)
+	saveDeadArchive(deadChannelsOld, updatedOld)
+	generateChannelsReport(activeList, len(urlList))
+	fmt.Printf("\n✅ Active: %d, Recent dead: %d, Old dead: %d\n", len(activeList), len(updatedRecent), len(updatedOld))
 }
 
-func generateEmptyChannelsReport() {
-	report := fmt.Sprintf(`# 📊 گزارش اسکنر کانال‌های تلگرام
-
-**تاریخ اجرا:** %s
-
-## خلاصه آماری
-| معیار | مقدار |
-|-------|-------|
-| کل کانال‌ها | 0 |
-| ✅ فعال | 0 |
-| 💀 غیرفعال | 0 |
-
-هیچ کانالی برای بررسی وجود نداشت.
-
----
-✅ گزارش توسط GitHub Actions تولید شده است.
-`, time.Now().Format("2006-01-02 15:04:05"))
-	os.WriteFile(channelsReportFile, []byte(report), 0644)
-}
-
-func generateChannelsReport(activeList, deadList []ScanResult, totalChecked int) {
-	var sb strings.Builder
-	sb.WriteString("# 📊 گزارش اسکنر کانال‌های تلگرام\n\n")
-	sb.WriteString(fmt.Sprintf("**تاریخ اجرا:** %s\n\n", time.Now().Format("2006-01-02 15:04:05")))
-	sb.WriteString("## خلاصه آماری\n\n| معیار | مقدار |\n|-------|-------|\n")
-	sb.WriteString(fmt.Sprintf("| کل کانال‌های بررسی شده | %d |\n", totalChecked))
-	sb.WriteString(fmt.Sprintf("| ✅ فعال | %d |\n", len(activeList)))
-	sb.WriteString(fmt.Sprintf("| 💀 غیرفعال/مرده | %d |\n\n", len(deadList)))
-
-	sb.WriteString("## ✅ کانال‌های فعال\n\n")
-	if len(activeList) > 0 {
-		for _, res := range activeList {
-			sb.WriteString(fmt.Sprintf("- %s\n", res.URL))
-		}
-	} else {
-		sb.WriteString("(هیچ کانال فعالی یافت نشد)\n")
-	}
-	sb.WriteString("\n## 💀 کانال‌های غیرفعال/مرده\n\n")
-	if len(deadList) > 0 {
-		sb.WriteString(fmt.Sprintf("<details>\n<summary>نمایش همه %d کانال (کلیک کنید)</summary>\n\n", len(deadList)))
-		for _, res := range deadList {
-			lastPostStr := ""
-			if !res.LastPost.IsZero() {
-				lastPostStr = res.LastPost.Format("2006-01-02 15:04:05")
-			}
-			sb.WriteString(fmt.Sprintf("- **%s**  \n  - وضعیت: `%s`  \n  - آخرین پست: %s  \n  - دارای کانفیگ: %v\n\n", res.URL, res.Status, lastPostStr, res.HasConfig))
-		}
-		sb.WriteString("</details>\n")
-	} else {
-		sb.WriteString("(هیچ کانال غیرفعالی وجود ندارد)\n")
-	}
-	sb.WriteString("\n---\n✅ گزارش توسط GitHub Actions تولید شده است.\n")
-	os.WriteFile(channelsReportFile, []byte(sb.String()), 0644)
-}
-
-func worker(jobs <-chan struct{ idx int; url string }, results chan<- ScanResult, wg *sync.WaitGroup) {
+func worker(jobs <-chan string, results chan<- ScanResult, wg *sync.WaitGroup) {
 	defer wg.Done()
-	for job := range jobs {
-		res := analyzeWithRetry(job.url)
+	for url := range jobs {
+		res := analyzeWithRetry(url)
 		results <- res
 	}
 }
@@ -374,7 +359,7 @@ func extractChannelName(rawURL string) string {
 	return ""
 }
 
-// ---------- I/O helpers (با اصلاح updateCSV برای تنظیم AllMessagesFlag) ----------
+// ---------- توابع کمکی ----------
 func readCSV(path string) ([][]string, []string, error) {
 	f, err := os.Open(path)
 	if err != nil {
@@ -398,8 +383,7 @@ func updateCSV(path string, records [][]string, headers []string, active []ScanR
 	for _, res := range active {
 		activeMap[res.URL] = true
 	}
-
-	// پیدا کردن اندیس ستون Status و AllMessagesFlag
+	// پیدا کردن ستون Status و AllMessagesFlag
 	statusIdx := -1
 	flagIdx := -1
 	for i, h := range headers {
@@ -410,7 +394,6 @@ func updateCSV(path string, records [][]string, headers []string, active []ScanR
 			flagIdx = i
 		}
 	}
-	// اگر ستون Status وجود نداشت، ایجاد کن
 	if statusIdx == -1 {
 		headers = append(headers, "Status")
 		statusIdx = len(headers) - 1
@@ -420,7 +403,6 @@ func updateCSV(path string, records [][]string, headers []string, active []ScanR
 			}
 		}
 	}
-	// اگر ستون AllMessagesFlag وجود نداشت، ایجاد کن
 	if flagIdx == -1 {
 		headers = append(headers, "AllMessagesFlag")
 		flagIdx = len(headers) - 1
@@ -430,8 +412,6 @@ func updateCSV(path string, records [][]string, headers []string, active []ScanR
 			}
 		}
 	}
-
-	// به‌روزرسانی هر ردیف
 	for i, row := range records {
 		if len(row) == 0 {
 			continue
@@ -446,7 +426,6 @@ func updateCSV(path string, records [][]string, headers []string, active []ScanR
 		}
 		records[i] = row
 	}
-
 	outFile, err := os.Create(path)
 	if err != nil {
 		return err
@@ -465,47 +444,69 @@ func updateCSV(path string, records [][]string, headers []string, active []ScanR
 	return nil
 }
 
-func loadMap(file string) map[string]bool {
-	m := make(map[string]bool)
+func loadDeadArchive(file string) map[string]DeadChannelInfo {
+	m := make(map[string]DeadChannelInfo)
 	data, err := os.ReadFile(file)
 	if err != nil {
 		return m
 	}
-	for _, line := range strings.Split(string(data), "\n") {
-		line = strings.TrimSpace(line)
-		if line != "" {
-			m[line] = true
-		}
+	var list []DeadChannelInfo
+	if err := json.Unmarshal(data, &list); err != nil {
+		return m
+	}
+	for _, item := range list {
+		m[item.URL] = item
 	}
 	return m
 }
 
-func saveMap(file string, m map[string]bool) {
-	var lines []string
-	for k := range m {
-		lines = append(lines, k)
+func saveDeadArchive(file string, m map[string]DeadChannelInfo) {
+	list := make([]DeadChannelInfo, 0, len(m))
+	for _, v := range m {
+		list = append(list, v)
 	}
-	sort.Strings(lines)
-	os.WriteFile(file, []byte(strings.Join(lines, "\n")), 0644)
-	fmt.Printf("✅ Saved %s with %d entries.\n", file, len(lines))
+	sort.Slice(list, func(i, j int) bool { return list[i].URL < list[j].URL })
+	data, _ := json.MarshalIndent(list, "", "  ")
+	os.WriteFile(file, data, 0644)
+	fmt.Printf("✅ Saved %s with %d entries.\n", file, len(list))
 }
 
-func loadCache() ScanCache {
-	data, err := os.ReadFile(scanCacheFile)
-	if err != nil {
-		return ScanCache{Results: make(map[string]ScanResult), LastRun: time.Now()}
-	}
-	var cache ScanCache
-	json.Unmarshal(data, &cache)
-	if cache.Results == nil {
-		cache.Results = make(map[string]ScanResult)
-	}
-	return cache
+func generateEmptyChannelsReport() {
+	report := fmt.Sprintf(`# 📊 گزارش اسکنر کانال‌های تلگرام
+
+**تاریخ اجرا:** %s
+
+## خلاصه آماری
+| معیار | مقدار |
+|-------|-------|
+| کل کانال‌ها | 0 |
+| ✅ فعال | 0 |
+| 💀 غیرفعال | 0 |
+
+هیچ کانالی برای بررسی وجود نداشت.
+
+---
+✅ گزارش توسط GitHub Actions تولید شده است.
+`, time.Now().Format("2006-01-02 15:04:05"))
+	os.WriteFile(channelsReportFile, []byte(report), 0644)
 }
 
-func saveCache(cache ScanCache) {
-	cache.LastRun = time.Now()
-	data, _ := json.MarshalIndent(cache, "", "  ")
-	os.WriteFile(scanCacheFile, data, 0644)
-	fmt.Printf("✅ Cache saved to %s\n", scanCacheFile)
+func generateChannelsReport(activeList []ScanResult, totalChecked int) {
+	var sb strings.Builder
+	sb.WriteString("# 📊 گزارش اسکنر کانال‌های تلگرام\n\n")
+	sb.WriteString(fmt.Sprintf("**تاریخ اجرا:** %s\n\n", time.Now().Format("2006-01-02 15:04:05")))
+	sb.WriteString("## خلاصه آماری\n\n| معیار | مقدار |\n|-------|-------|\n")
+	sb.WriteString(fmt.Sprintf("| کل کانال‌های بررسی شده | %d |\n", totalChecked))
+	sb.WriteString(fmt.Sprintf("| ✅ فعال | %d |\n\n", len(activeList)))
+
+	sb.WriteString("## ✅ کانال‌های فعال\n\n")
+	if len(activeList) > 0 {
+		for _, res := range activeList {
+			sb.WriteString(fmt.Sprintf("- %s\n", res.URL))
+		}
+	} else {
+		sb.WriteString("(هیچ کانال فعالی یافت نشد)\n")
+	}
+	sb.WriteString("\n---\n✅ گزارش توسط GitHub Actions تولید شده است.\n")
+	os.WriteFile(channelsReportFile, []byte(sb.String()), 0644)
 }
