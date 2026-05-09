@@ -1,12 +1,11 @@
-// telegram-tester/sources_checker.go
+// telegram-tester/channel_scanner.go
 package main
 
 import (
-	"encoding/base64"
+	"encoding/csv"
 	"encoding/json"
 	"flag"
 	"fmt"
-	"io"
 	"math/rand"
 	"net/http"
 	"os"
@@ -15,26 +14,34 @@ import (
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/PuerkitoBio/goquery"
 )
 
 const (
-	checkTimeout        = 10 * time.Second
-	sampleSize          = 50 * 1024
-	defaultRetryCount   = 3
-	defaultBaseDelay    = 1 * time.Second
-	defaultJitter       = 500 * time.Millisecond
-	defaultActiveDays   = 30
-	defaultConcurrency  = 5
-
-	dataDir            = "../data"
-	deadSourcesRecent  = dataDir + "/dead_sources_recent.json"
-	deadSourcesOld     = dataDir + "/dead_sources_old.json"
-	activeSourcesFile  = "../Sources.json"   // مستقیماً فایل اصلی را بازنویسی می‌کند
-	sourcesReportFile  = "../reports/sources_report.md"
+	defaultActiveDays     = 30
+	defaultConcurrency    = 5
+	defaultRetryCount     = 3
+	defaultBaseDelay      = 1 * time.Second
+	defaultJitter         = 500 * time.Millisecond
+	dataDir               = "../data"
+	deadChannelsRecent    = dataDir + "/dead_channels_recent.json"
+	deadChannelsOld       = dataDir + "/dead_channels_old.json"
+	activeChannelsFile    = "../channels.csv"
+	channelsReportFile    = "../reports/channels_report.md"
 )
 
 var (
-	httpClient = &http.Client{Timeout: checkTimeout}
+	inputCSV      = flag.String("input", "channels.csv", "Input CSV file")
+	outputCSV     = flag.String("output", "channels.csv", "Output CSV file")
+	activeDays    = flag.Int("active-days", defaultActiveDays, "Max inactive days")
+	concurrency   = flag.Int("concurrency", defaultConcurrency, "Number of concurrent workers")
+	noRSS         = flag.Bool("no-rss", false, "Use HTML instead of RSS")
+	oldScan       = flag.Bool("old-scan", false, "Scan only channels older than 365 days (yearly)")
+)
+
+var (
+	client = &http.Client{Timeout: 15 * time.Second}
 	regexPatterns = []*regexp.Regexp{
 		regexp.MustCompile(`vmess://[A-Za-z0-9+/]+={0,2}(?:\?[^\s]*)?`),
 		regexp.MustCompile(`vless://[^\s]+`),
@@ -53,22 +60,20 @@ var (
 	}
 )
 
-var (
-	oldScan = flag.Bool("old-scan", false, "Scan only sources older than 365 days (yearly)")
-)
-
-type DeadSourceInfo struct {
+type DeadChannelInfo struct {
 	URL       string `json:"url"`
-	LastMod   int64  `json:"last_mod"`
+	LastPost  int64  `json:"last_post"`  // Unix timestamp
 	CheckedAt int64  `json:"checked_at"`
 }
 
-type SourceStatus struct {
-	URL       string    `json:"url"`
-	LastMod   time.Time `json:"last_mod"`
-	HasConfig bool      `json:"has_config"`
-	Status    string    `json:"status"`
-	Error     string    `json:"error,omitempty"`
+type ScanResult struct {
+	URL          string    `json:"url"`
+	LastPost     time.Time `json:"last_post"`
+	HasConfig    bool      `json:"has_config"`
+	Status       string    `json:"status"`
+	MessageCount int       `json:"msg_count"`
+	Error        string    `json:"error,omitempty"`
+	Timestamp    time.Time `json:"timestamp"`
 }
 
 var printMutex sync.Mutex
@@ -79,39 +84,34 @@ func safePrintf(format string, args ...interface{}) {
 	fmt.Printf(format, args...)
 }
 
+// ---------- توابع اصلی ----------
 func main() {
 	flag.Parse()
 	os.MkdirAll("../reports", 0755)
 	os.MkdirAll(dataDir, 0755)
 
-	if len(os.Args) < 2 {
-		fmt.Println("Usage: go run sources_checker.go <Sources.json> [-old-scan]")
-		os.Exit(1)
-	}
-	inputFile := os.Args[1]
+	// بارگذاری آرشیوها
+	recentDead := loadDeadArchive(deadChannelsRecent)
+	oldDead := loadDeadArchive(deadChannelsOld)
 
-	data, err := os.ReadFile(inputFile)
+	// خواندن کانال‌های فعال از CSV
+	records, headers, err := readCSV(*inputCSV)
 	if err != nil {
-		fmt.Printf("Error reading %s: %v\n", inputFile, err)
+		fmt.Printf("Error reading CSV: %v\n", err)
 		os.Exit(1)
 	}
-	var sources []string
-	if err := json.Unmarshal(data, &sources); err != nil {
-		fmt.Printf("Error parsing JSON: %v\n", err)
-		os.Exit(1)
-	}
-	if len(sources) == 0 {
-		fmt.Println("No sources found.")
-		generateEmptySourcesReport()
+	if len(records) == 0 {
+		fmt.Println("No channels found.")
+		generateEmptyChannelsReport()
 		return
 	}
 
-	recentDead := loadDeadSourceArchive(deadSourcesRecent)
-	oldDead := loadDeadSourceArchive(deadSourcesOld)
-
+	// ساختن لیست URLهایی که باید اسکن شوند
 	urlSet := make(map[string]bool)
-	for _, src := range sources {
-		urlSet[src] = true
+	for _, row := range records {
+		if len(row) > 0 {
+			urlSet[row[0]] = true
+		}
 	}
 	if *oldScan {
 		for url := range oldDead {
@@ -127,12 +127,18 @@ func main() {
 		urlList = append(urlList, u)
 	}
 
+	if len(urlList) == 0 {
+		fmt.Println("No channels to scan.")
+		return
+	}
+
+	// اسکن همزمان
 	jobs := make(chan string, len(urlList))
-	results := make(chan SourceStatus, len(urlList))
+	results := make(chan ScanResult, len(urlList))
 	var wg sync.WaitGroup
-	for i := 0; i < defaultConcurrency; i++ {
+	for i := 0; i < *concurrency; i++ {
 		wg.Add(1)
-		go sourceWorker(jobs, results, &wg)
+		go worker(jobs, results, &wg)
 	}
 	for _, url := range urlList {
 		jobs <- url
@@ -141,23 +147,23 @@ func main() {
 	wg.Wait()
 	close(results)
 
-	var activeURLs []string
-	updatedRecent := make(map[string]DeadSourceInfo)
-	updatedOld := make(map[string]DeadSourceInfo)
+	// پردازش نتایج
+	var activeList []ScanResult
+	updatedRecent := make(map[string]DeadChannelInfo)
+	updatedOld := make(map[string]DeadChannelInfo)
 
 	for res := range results {
-		daysSince := 0
-		if !res.LastMod.IsZero() {
-			daysSince = int(time.Since(res.LastMod).Hours() / 24)
-		}
-		if res.Status == "OK" && res.HasConfig && daysSince <= defaultActiveDays {
-			activeURLs = append(activeURLs, res.URL)
+		if res.Status == "active" {
+			activeList = append(activeList, res)
+			// حذف از هر دو آرشیو (اگر وجود داشت)
 			delete(recentDead, res.URL)
 			delete(oldDead, res.URL)
 		} else {
-			info := DeadSourceInfo{
+			// غیرفعال – بر اساس سن به آرشیو مناسب منتقل می‌شود
+			daysSince := int(time.Since(res.LastPost).Hours() / 24)
+			info := DeadChannelInfo{
 				URL:       res.URL,
-				LastMod:   res.LastMod.Unix(),
+				LastPost:  res.LastPost.Unix(),
 				CheckedAt: time.Now().Unix(),
 			}
 			if daysSince > 365 {
@@ -169,7 +175,8 @@ func main() {
 			}
 		}
 	}
-	// حفظ موارد اسکن نشده
+
+	// ترکیب با آرشیوهای قبلی (مواردی که اسکن نشده‌اند)
 	for k, v := range recentDead {
 		updatedRecent[k] = v
 	}
@@ -177,12 +184,12 @@ func main() {
 		updatedOld[k] = v
 	}
 
-	// ذخیره منابع فعال در فایل اصلی Sources.json
-	saveActiveSources(activeURLs, inputFile)
-	saveDeadSourceArchive(deadSourcesRecent, updatedRecent)
-	saveDeadSourceArchive(deadSourcesOld, updatedOld)
-	generateSourcesReport(activeURLs)
-	fmt.Printf("\n✅ Active sources: %d, Recent dead: %d, Old dead: %d\n", len(activeURLs), len(updatedRecent), len(updatedOld))
+	// به‌روزرسانی CSV و ذخیره آرشیوها
+	updateCSV(*outputCSV, records, headers, activeList)
+	saveDeadArchive(deadChannelsRecent, updatedRecent)
+	saveDeadArchive(deadChannelsOld, updatedOld)
+	generateChannelsReport(activeList, len(urlList))
+	fmt.Printf("\n✅ Active: %d, Recent dead: %d, Old dead: %d\n", len(activeList), len(updatedRecent), len(updatedOld))
 }
 
 func worker(jobs <-chan string, results chan<- ScanResult, wg *sync.WaitGroup) {
