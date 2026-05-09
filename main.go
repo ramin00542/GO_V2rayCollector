@@ -176,7 +176,7 @@ func main() {
 	initCombinedRegex()
 	initSubLinkRegex()
 	setupLogging()
-	createDirs()
+	createDirs() // ساخت همه پوشه‌های لازم
 	os.MkdirAll("reports", 0755)
 	os.MkdirAll("data", 0755)
 	initHTTPClient()
@@ -187,6 +187,18 @@ func main() {
 
 	globalCtx, cancelFunc = context.WithCancel(context.Background())
 	defer cancelFunc()
+
+	// لاگ اولیه برای اطمینان از وجود فایل‌های ورودی
+	if _, err := os.Stat(*channelsFile); os.IsNotExist(err) {
+		gologger.Warning().Msgf("channels.csv not found at %s, Telegram fetching will be skipped", *channelsFile)
+	} else {
+		gologger.Info().Msgf("✅ channels.csv found, will fetch from %d channels", countChannels(*channelsFile))
+	}
+	if _, err := os.Stat(*sourcesFile); os.IsNotExist(err) {
+		gologger.Warning().Msgf("Sources.json not found at %s, subscription fetching will be skipped", *sourcesFile)
+	} else {
+		gologger.Info().Msgf("✅ Sources.json found")
+	}
 
 	mainWg.Add(1)
 	go func() {
@@ -206,6 +218,8 @@ func main() {
 		}()
 	}
 	mainWg.Wait()
+
+	gologger.Info().Msg("All fetching completed. Now processing cache...")
 
 	pruneCacheByTTL()
 	pruneCacheByProtocol()
@@ -238,6 +252,19 @@ func main() {
 	gologger.Info().Msg("All Done!")
 }
 
+// helper to count channels in CSV
+func countChannels(path string) int {
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return 0
+	}
+	var channels []ChannelsType
+	if err := csvutil.Unmarshal(data, &channels); err != nil {
+		return 0
+	}
+	return len(channels)
+}
+
 func initTelegramLimiter() {
 	telegramLimiter = rate.NewLimiter(rate.Limit(TelegramRequestsPerSecond), TelegramBurstSize)
 }
@@ -252,6 +279,7 @@ func archiveDaily() {
 		gologger.Debug().Msg("Already archived today, skipping")
 		return
 	}
+	gologger.Info().Msgf("📦 Running daily archive for %s", today)
 	os.MkdirAll(archiveDir, 0755)
 
 	mixedFiles, _ := filepath.Glob("mixed/*.txt")
@@ -267,12 +295,14 @@ func archiveDaily() {
 	copyDir("all_configs", filepath.Join(archiveDir, "all_configs"))
 
 	// پاک کردن all_configs
-	if err := os.RemoveAll("all_configs"); err == nil {
-		os.MkdirAll("all_configs", 0755)
-		os.MkdirAll(filepath.Join("all_configs", "telegram"), 0755)
-		os.MkdirAll(filepath.Join("all_configs", "subscription"), 0755)
-		gologger.Info().Msg("Cleared all_configs after archiving")
+	if err := os.RemoveAll("all_configs"); err != nil {
+		gologger.Warning().Msgf("Failed to remove all_configs: %v", err)
 	}
+	// همیشه دوباره بساز
+	os.MkdirAll("all_configs", 0755)
+	os.MkdirAll(filepath.Join("all_configs", "telegram"), 0755)
+	os.MkdirAll(filepath.Join("all_configs", "subscription"), 0755)
+	gologger.Info().Msg("Cleared all_configs after archiving")
 
 	os.WriteFile(markerFile, []byte("archived"), 0644)
 	gologger.Info().Msgf("Archived mixed, subscription, telegram, all_configs to %s", archiveDir)
@@ -289,7 +319,11 @@ func copyDir(src, dst string) {
 			os.MkdirAll(destPath, info.Mode())
 			return nil
 		}
-		data, _ := os.ReadFile(path)
+		data, err := os.ReadFile(path)
+		if err != nil {
+			gologger.Warning().Msgf("Failed to read %s: %v", path, err)
+			return nil
+		}
 		os.WriteFile(destPath, data, info.Mode())
 		return nil
 	})
@@ -345,10 +379,17 @@ func setupLogging() {
 func createDirs() {
 	dirs := []string{"telegram", "subscription", "mixed", "daily_archive", "all_configs"}
 	for _, d := range dirs {
-		os.MkdirAll(d, 0755)
+		if err := os.MkdirAll(d, 0755); err != nil {
+			gologger.Fatal().Msgf("Cannot create directory %s: %v", d, err)
+		}
 	}
-	os.MkdirAll(filepath.Join("all_configs", "subscription"), 0755)
-	os.MkdirAll(filepath.Join("all_configs", "telegram"), 0755)
+	if err := os.MkdirAll(filepath.Join("all_configs", "subscription"), 0755); err != nil {
+		gologger.Fatal().Msgf("Cannot create all_configs/subscription: %v", err)
+	}
+	if err := os.MkdirAll(filepath.Join("all_configs", "telegram"), 0755); err != nil {
+		gologger.Fatal().Msgf("Cannot create all_configs/telegram: %v", err)
+	}
+	gologger.Info().Msg("All required directories created")
 }
 
 func initHTTPClient() {
@@ -611,7 +652,9 @@ func isVlessSecure(vlessUrl string) bool {
 	}
 	security := u.Query().Get("security")
 	allowInsecure := u.Query().Get("allowInsecure")
-	if security == "" || security == "none" {
+	// فقط پروتکل‌های امن را قبول کن
+	secureProtocols := map[string]bool{"tls": true, "reality": true, "xtls": true}
+	if !secureProtocols[security] {
 		return false
 	}
 	return allowInsecure != "1" && allowInsecure != "true"
@@ -806,7 +849,12 @@ func fetchAllTelegramChannels(ctx context.Context) {
 		gologger.Error().Msgf("Failed to parse channels.csv: %v", err)
 		return
 	}
-	for _, ch := range channels {
+	if len(channels) == 0 {
+		gologger.Warning().Msg("No channels found in channels.csv")
+		return
+	}
+	gologger.Info().Msgf("Starting to fetch %d Telegram channels", len(channels))
+	for i, ch := range channels {
 		select {
 		case <-ctx.Done():
 			return
@@ -814,9 +862,11 @@ func fetchAllTelegramChannels(ctx context.Context) {
 		}
 		channelName := extractChannelNameFromURL(ch.URL)
 		if channelName == "" {
+			gologger.Warning().Msgf("Invalid channel URL: %s", ch.URL)
 			continue
 		}
 		webURL := fmt.Sprintf("https://t.me/s/%s", channelName)
+		gologger.Debug().Msgf("Fetching channel %d/%d: %s", i+1, len(channels), webURL)
 		if err := fetchTelegramSimple(ctx, webURL, channelName); err != nil {
 			gologger.Warning().Msgf("Failed to fetch %s: %v", webURL, err)
 		}
@@ -853,14 +903,19 @@ func fetchTelegramSimple(ctx context.Context, url, channelName string) error {
 			texts = append(texts, plain)
 		}
 	})
+	collected := 0
 	for _, text := range texts {
 		configs := extractAllConfigs(text)
 		for _, cfg := range configs {
 			cfg = strings.TrimSpace(cfg)
 			if cfg != "" {
 				addToCache(cfg, "telegram", channelName)
+				collected++
 			}
 		}
+	}
+	if collected > 0 {
+		gologger.Debug().Msgf("Collected %d configs from %s", collected, channelName)
 	}
 	return nil
 }
@@ -891,6 +946,11 @@ func fetchAllSubscriptions(ctx context.Context) {
 		gologger.Error().Msgf("Invalid Sources.json: %v", err)
 		return
 	}
+	if len(sources) == 0 {
+		gologger.Warning().Msg("No sources found in Sources.json")
+		return
+	}
+	gologger.Info().Msgf("Starting to fetch %d subscription sources", len(sources))
 	jobs := make(chan string, len(sources))
 	var wg sync.WaitGroup
 	for i := 0; i < *concurrent; i++ {
@@ -963,6 +1023,7 @@ func fetchSubscription(ctx context.Context, urlStr string) {
 
 func processSubscriptionContent(raw string) {
 	configs := extractAllConfigs(raw)
+	gologger.Debug().Msgf("Extracted %d configs from subscription content", len(configs))
 	for _, cfg := range configs {
 		cfg = strings.TrimSpace(cfg)
 		if cfg == "" {
@@ -988,13 +1049,9 @@ func extractAllConfigs(text string) []string {
 	return results
 }
 
-// ---------- اسکن فورک‌های گیت‌هاب ----------
+// ---------- اسکن فورک‌های گیت‌هاب (بدون نیاز به توکن) ----------
 func fetchFromGitHubForks(ctx context.Context) {
-	token := os.Getenv("GITHUB_TOKEN")
-	if token == "" {
-		gologger.Warning().Msg("No GitHub token found, skipping fork scan")
-		return
-	}
+	gologger.Info().Msg("Scanning GitHub forks for subscription links...")
 	baseURL := fmt.Sprintf("https://api.github.com/repos/%s/forks?per_page=%d", *targetRepo, ForksPerPage)
 	page := 1
 	var allRawURLs []string
@@ -1009,11 +1066,14 @@ func fetchFromGitHubForks(ctx context.Context) {
 		if err != nil {
 			break
 		}
-		req.Header.Set("Authorization", "Bearer "+token)
+		// بدون توکن درخواست بزن (محدودیت نرخ 60 در ساعت برای IP عمومی)
 		req.Header.Set("Accept", "application/vnd.github.v3+json")
 		resp, err := httpClient.Do(req)
 		if err != nil || resp.StatusCode != 200 {
 			if resp != nil {
+				if resp.StatusCode == 403 {
+					gologger.Warning().Msg("GitHub API rate limit reached, stopping fork scan")
+				}
 				resp.Body.Close()
 			}
 			break
@@ -1028,7 +1088,6 @@ func fetchFromGitHubForks(ctx context.Context) {
 			break
 		}
 		for _, fork := range forks {
-			// owner, _ := fork["owner"].(map[string]interface{})  // حذف شد
 			fullName, _ := fork["full_name"].(string)
 			if fullName == "" {
 				continue
@@ -1108,6 +1167,7 @@ func writeTelegramPerChannel() {
 			if content != "" {
 				filename := filepath.Join(channelDir, protocolFileName(proto)+".txt")
 				os.WriteFile(filename, []byte(content), 0644)
+				gologger.Debug().Msgf("Written %d configs to %s", len(configs), filename)
 			}
 		}
 	}
@@ -1139,6 +1199,7 @@ func writeMixedFromTelegramAndSubscription() {
 	if content != "" {
 		filename := filepath.Join("mixed", protocolFileName("mixed")+".txt")
 		os.WriteFile(filename, []byte(content), 0644)
+		gologger.Info().Msgf("Written %d mixed configs to %s", len(unknown), filename)
 	}
 }
 
@@ -1164,6 +1225,7 @@ func writeSubscriptionFolder() {
 		if content != "" {
 			filename := filepath.Join("subscription", protocolFileName(proto)+".txt")
 			os.WriteFile(filename, []byte(content), 0644)
+			gologger.Debug().Msgf("Written %d configs to %s", len(configs), filename)
 		}
 	}
 }
@@ -1179,7 +1241,7 @@ func writeAllConfigs() {
 	allowedProtos := map[string]bool{
 		"vmess": true, "vless": true, "trojan": true, "ss": true,
 		"hysteria2": true, "tuic": true, "wireguard": true,
-		"socks": true, // SOCKS معمولی
+		"socks": true,
 	}
 	type sourceFiles struct {
 		allProto      []string
@@ -1194,6 +1256,7 @@ func writeAllConfigs() {
 		"telegram":     {},
 		"subscription": {},
 	}
+	newlyAdded := 0
 	for cfg, entry := range configCache {
 		src := entry.Source
 		if src != "telegram" && src != "subscription" {
@@ -1223,6 +1286,7 @@ func writeAllConfigs() {
 		default:
 			target.unknown = append(target.unknown, cfg)
 		}
+		newlyAdded++
 	}
 	appendToFile := func(baseDir, filename string, configs []string) {
 		if len(configs) == 0 {
@@ -1248,6 +1312,9 @@ func writeAllConfigs() {
 		appendToFile(src, "slipnet.txt", sf.slipnet)
 		appendToFile(src, "argo.txt", sf.argo)
 		appendToFile(src, "unknown.txt", sf.unknown)
+	}
+	if newlyAdded == 0 {
+		gologger.Info().Msg("No new configs to add to all_configs")
 	}
 }
 
@@ -1445,7 +1512,6 @@ func writeStatsFile() {
 		sb.WriteString("_هیچ پروتکلی یافت نشد._\n\n")
 	} else {
 		sb.WriteString("| پروتکل | تعداد |\n|--------|-------|\n")
-		// تعریف نوع kv در اینجا (در سطح تابع) کافی است
 		type kv struct {
 			p string
 			c int
