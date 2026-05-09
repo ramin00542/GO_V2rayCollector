@@ -29,7 +29,7 @@ const (
 	dataDir            = "../data"
 	deadSourcesRecent  = dataDir + "/dead_sources_recent.json"
 	deadSourcesOld     = dataDir + "/dead_sources_old.json"
-	activeSourcesFile  = "../Sources.json"   // مستقیماً فایل اصلی را بازنویسی می‌کند
+	activeSourcesFile  = "../Sources.json"
 	sourcesReportFile  = "../reports/sources_report.md"
 )
 
@@ -169,7 +169,6 @@ func main() {
 			}
 		}
 	}
-	// حفظ موارد اسکن نشده
 	for k, v := range recentDead {
 		updatedRecent[k] = v
 	}
@@ -341,4 +340,5 @@ func generateSourcesReport(active []string) {
 	}
 	sb.WriteString("\n---\n✅ گزارش توسط GitHub Actions تولید شده است.\n")
 	os.WriteFile(sourcesReportFile, []byte(sb.String()), 0644)
+	fmt.Printf("✅ Report written to %s\n", sourcesReportFile)
 }
