@@ -1,0 +1,1 @@
+trojan://humanity@37.255.229.57:443?type=ws&security=tls&path=%2Fassignment&sni=www.gossipglove.com&fp=chrome&allowInsecure=1#.%40iproxyemبزنید
