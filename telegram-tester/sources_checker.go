@@ -1,7 +1,7 @@
 // telegram-tester/sources_checker.go
 package main
 
-import (
+import (1
 	"encoding/base64"
 	"encoding/json"
 	"fmt"
