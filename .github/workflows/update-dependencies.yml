@@ -1,4 +1,4 @@
-name: Update Dependencies
+name: 🔄 Update Dependencies
 
 on:
   schedule:
@@ -31,7 +31,7 @@ jobs:
           cp go.mod go.mod.bak
           cp go.sum go.sum.bak
 
-      - name: Update dependencies
+      - name: ⬆️ Update dependencies
         run: |
           go get -u ./...
           go mod tidy
@@ -48,7 +48,7 @@ jobs:
           echo "sum_changes=$SUM_CHANGES" >> $GITHUB_OUTPUT
           echo "mod_changes=$MOD_CHANGES" >> $GITHUB_OUTPUT
 
-      - name: Build Markdown report
+      - name: 📊 Build Markdown report
         run: |
           NOW=$(date '+%Y-%m-%d %H:%M:%S')
           ADDED="${{ steps.stats.outputs.added }}"
@@ -79,7 +79,7 @@ jobs:
           
           cat reports/deps_update_report.md
 
-      - name: Commit and push changes including report
+      - name: 💾 Commit and push changes including report
         run: |
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions"
