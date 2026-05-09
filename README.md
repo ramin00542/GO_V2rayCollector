@@ -60,44 +60,87 @@
 
 ```
 📦 GO_V2rayCollector
- ┣ 📂 .github/workflows
- ┃ ┣ 📜 Collector.yml
- ┃ ┗ 📜 telegram-test.yml
- ┣ 📂 telegram                 # کانفیگ‌های تلگرام (به تفکیک کانال)
- ┃ ┣ 📂 FreeV2rays
- ┃ ┃ ┣ 🔵 VMess.txt
- ┃ ┃ ┣ 🟢 VLess.txt
- ┃ ┃ ┗ ...
- ┃ ┗ ...
- ┣ 📂 subscription             # کانفیگ‌های ساب‌لینک
- ┃ ┣ 🔵 VMess.txt
- ┃ ┣ 🟢 VLess.txt
- ┃ ┗ ...
- ┣ 📂 mixed                    # کانفیگ‌های ناشناخته
- ┃ ┗ 🌍 Mixed.txt
- ┣ 📂 daily_archive            # آرشیو روزانه (ساختار کامل)
- ┃ ┗ 📂 2026-05-08
- ┃   ┣ 📂 subscription
- ┃   ┣ 📂 telegram
- ┃   ┗ 📜 🔵 VMess.txt ...
- ┣ 📂 all_configs              # انباشت روزانه (برای دسترسی سریع)
- ┃ ┣ 📂 subscription
- ┃ ┃ ┣ all_protocols.txt
- ┃ ┃ ┣ http.txt
- ┃ ┃ ┗ unknown.txt
- ┃ ┗ 📂 telegram
- ┃   ┣ all_protocols.txt
- ┃   ┣ http.txt
- ┃   ┣ mtproto.txt
- ┃   ┗ slipnet.txt
- ┣ 📜 collector_stats.md       # گزارش آماری زیبا (جدول + ایموجی)
- ┣ 📜 links.md                 # لینک‌های دانلود همه فایل‌ها با آمار و تاریخ
- ┣ 📜 subscription_links.txt   # لینک‌های ساب‌اسکریپشن یافت شده در تلگرام
- ┣ 📜 clash-config.yaml        # کانفیگ ساده Clash (اختیاری)
- ┣ 📜 config_cache.json        # کش اصلی (برای جلوگیری از دریافت مجدد)
- ┣ 📜 channels.csv             # لیست کانال‌های تلگرام (شما تکمیل می‌کنید)
- ┣ 📜 Sources.json             # لیست ساب‌لینک‌ها (شما تکمیل می‌کنید)
- ┗ 📜 README.md                # همین فایل
+ └ 📂 .github/workflows
+   ├── ⚙️ .github/
+   │   └── workflows/
+   │       ├── 🤖 Collector.yml
+   │       ├── 📅 daily-channel-scan.yml
+   │       ├── 🔧 fix-gosum.yml
+   │       ├── 🧹 optimize-sources.yml
+   │       ├── 🩹 patch-code.yml
+   │       ├── 🔄 revive-channels.yml
+   │       ├── 📱 telegram-test.yml
+   │       ├── ⬆️ update-dependencies.yml
+   │       └── 📆 yearly-old-scan.yml
+   │
+   ├── 💾 Backup/
+   │
+   ├── 🧹 collector/
+   │   └── 🛠️ helpers.go
+   │
+   ├── 📁 data/
+   │   ├── ☠️ dead_channels_old.json
+   │   ├── 🕒 dead_channels_recent.json
+   │   ├── ☠️ dead_sources_old.json
+   │   └── 🕒 dead_sources_recent.json
+   │
+   ├── 📈 reports/
+   │   ├── 📝 channels_report.md
+   │   ├── 📊 collector_stats.md
+   │   ├── 📄 collector_stats.txt
+   │   ├── 🔗 links.md
+   │   ├── 📃 links.txt
+   │   └── 📝 sources_report.md
+   │
+   ├── 📱 telegram-tester/
+   │   ├── 📡 channel_scanner.go
+   │   ├── 🏁 main.go
+   │   ├── 🔄 revive_scanner.go
+   │   └── ✅ sources_checker.go
+   │
+   ├── 📡 telegram/                (root-level, empty or other content)
+   │
+   ├── 🔗 subscription/            (root-level, empty or other content)
+   │
+   ├── 🗄️ daily_archive/
+   │
+   ├── 📦 all_configs/
+   │   ├── 📡 telegram/
+   │   │   ├── 📄 all_protocols.txt
+   │   │   ├── 🧦 SOCKS5 Proxy.txt
+   │   │   ├── 📱 MTProto Proxy.txt
+   │   │   ├── 🧩 Tuic.txt
+   │   │   ├── 🔄 SSR.txt
+   │   │   ├── ☁️ Argo.txt
+   │   │   ├── 🌐 HTTP_HTTPS.txt
+   │   │   ├── 🕸️ slipnet.txt
+   │   │   ├── 🛡️ Invizible_Pro.txt
+   │   │   └── 🌌 WARP.txt
+   │   └── 🔗 subscription/
+   │       ├── 📄 all_protocols.txt
+   │       ├── 🧦 SOCKS5 Proxy.txt
+   │       ├── 📱 MTProto Proxy.txt
+   │       ├── 🧩 Tuic.txt
+   │       ├── 🔄 SSR.txt
+   │       ├── ☁️ Argo.txt
+   │       ├── 🌐 HTTP_HTTPS.txt
+   │       ├── 🕸️ slipnet.txt
+   │       ├── 🛡️ Invizible_Pro.txt
+   │       └── 🌌 WARP.txt
+   │
+   ├── 🙈 .gitignore
+   ├── 📖 README.md
+   ├── 📦 Sources.json
+   ├── 📊 channels.csv
+   ├── ⚙️ clash-config.yaml
+   ├── 📜 collector_full.log
+   ├── 🗃️ config_cache.json
+   ├── 🐹 go.mod
+   ├── 🔐 go.sum
+   ├── ⏱️ last_archive_time.txt
+   ├── 🏁 main.go          (top-level main.go)
+   ├── 📱 myapp
+   └── 🔗 subscription_links.txtهمین فایل
 ```
 
 ---
