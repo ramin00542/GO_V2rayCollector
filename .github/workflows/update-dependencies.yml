@@ -1,95 +1,63 @@
 name: 🔄 Update Dependencies
-
 on:
   schedule:
     - cron: "0 0 * * 0"
   workflow_dispatch:
-
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   update:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Go
-        uses: actions/setup-go@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
         with:
           go-version: '>=1.21.3'
-
       - name: Create reports directory
         run: mkdir -p reports
-
       - name: Backup current go.mod and go.sum
         run: |
           cp go.mod go.mod.bak
           cp go.sum go.sum.bak
-
-      - name: ⬆️ Update dependencies
+      - name: Update dependencies
         run: |
           go get -u ./...
           go mod tidy
-
-      - name: 📊 Generate statistics using git diff
+      - name: Generate statistics
         id: stats
         run: |
-          # تغییرات خطوط در go.mod
           MOD_ADDED=$(git diff --numstat go.mod.bak go.mod | awk '{print $1}' | grep -E '^[0-9]+$' || echo 0)
           MOD_REMOVED=$(git diff --numstat go.mod.bak go.mod | awk '{print $2}' | grep -E '^[0-9]+$' || echo 0)
           MOD_CHANGES=$((MOD_ADDED + MOD_REMOVED))
-          
-          # تغییرات در go.sum
           SUM_ADDED=$(git diff --numstat go.sum.bak go.sum | awk '{print $1}' | grep -E '^[0-9]+$' || echo 0)
           SUM_REMOVED=$(git diff --numstat go.sum.bak go.sum | awk '{print $2}' | grep -E '^[0-9]+$' || echo 0)
           SUM_CHANGES=$((SUM_ADDED + SUM_REMOVED))
-          
-          # آمار اضافه/حذف خطوط (تخمینی)
-          ADDED=$MOD_ADDED
-          REMOVED=$MOD_REMOVED
-          
-          echo "added=$ADDED" >> $GITHUB_OUTPUT
-          echo "removed=$REMOVED" >> $GITHUB_OUTPUT
+          echo "added=$MOD_ADDED" >> $GITHUB_OUTPUT
+          echo "removed=$MOD_REMOVED" >> $GITHUB_OUTPUT
           echo "mod_changes=$MOD_CHANGES" >> $GITHUB_OUTPUT
           echo "sum_changes=$SUM_CHANGES" >> $GITHUB_OUTPUT
-
-      - name: 📝 Prepare formatted diff
-        id: diff
-        run: |
-          # ایجاد diff زیبا برای go.mod (فقط در صورت وجود تغییر)
-          if git diff --quiet go.mod.bak go.mod; then
-            DIFF_TEXT="(هیچ تغییری در go.mod مشاهده نشد)"
-          else
-            DIFF_TEXT=$(git diff --no-index --color=never go.mod.bak go.mod | sed 's/^/    /')
-          fi
-          echo "diff_text<<EOF" >> $GITHUB_OUTPUT
-          echo "$DIFF_TEXT" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
-
-      - name: 📄 Build Markdown report
+      - name: Build Markdown report
         run: |
           NOW=$(date '+%Y-%m-%d %H:%M:%S')
-          ADDED="${{ steps.stats.outputs.added }}"
-          REMOVED="${{ steps.stats.outputs.removed }}"
-          MOD_CHANGES="${{ steps.stats.outputs.mod_changes }}"
-          SUM_CHANGES="${{ steps.stats.outputs.sum_changes }}"
-          
-          cat > reports/deps_update_report.md << 'EOF'
+          cat > reports/deps_update_report.md << EOF
           # 📦 گزارش به‌روزرسانی وابستگی‌ها
-          
-          **تاریخ اجرا:** $NOW
-          
+          **تاریخ اجرا:** ${NOW}
           ## خلاصه آماری
           | معیار | مقدار |
           |-------|-------|
-          | وابستگی‌های اضافه شده (خطوط + در go.mod) | $ADDED |
-          | وابستگی‌های حذف شده (خطوط - در go.mod) | $REMOVED |
-          | خطوط تغییر یافته در go.mod | $MOD_CHANGES |
-          | تغییرات در go.sum | $SUM_CHANGES |
-          
-          ## جزئیات تغییرات (go.mod)
+          | وابستگی‌های اضافه شده | ${{ steps.stats.outputs.added }} |
+          | وابستگی‌های حذف شده | ${{ steps.stats.outputs.removed }} |
+          | خطوط تغییر یافته در go.mod | ${{ steps.stats.outputs.mod_changes }} |
+          | تغییرات در go.sum | ${{ steps.stats.outputs.sum_changes }} |
+          ---
+          ✅ گزارش توسط GitHub Actions تولید شده است.
+          EOF
+      - name: Commit and push
+        run: |
+          git config user.email "actions@github.com"
+          git config.user.name "GitHub Actions"
+          git add go.mod go.sum reports/deps_update_report.md
+          git diff --staged --quiet || git commit -m "chore(deps): update dependencies [skip ci]"
+          git pull --rebase --autostash origin main
+          git push origin main
