@@ -16,18 +16,42 @@ jobs:
           go-version: '>=1.21.3'
       - name: Create directories
         run: mkdir -p reports data
+
       - name: Scan old channels
+        id: channels
         run: |
           cd telegram-tester
-          go run channel_scanner.go -input ../channels.csv -output ../channels.csv -old-scan
+          go run channel_scanner.go -input ../channels.csv -output ../channels.csv -old-scan 2>&1 | tee ../channel_output.txt
+
       - name: Scan old sources
+        id: sources
         run: |
           cd telegram-tester
-          go run sources_checker.go ../Sources.json -old-scan
+          go run sources_checker.go ../Sources.json -old-scan 2>&1 | tee ../source_output.txt
+
+      - name: Generate Markdown report
+        run: |
+          cat > reports/yearly_report.md << 'EOF'
+          # 📅 گزارش اسکن سالانه کانال‌ها و ساب‌لینک‌های بسیار قدیمی
+
+          **تاریخ اجرا:** $(date '+%Y-%m-%d %H:%M:%S')
+
+          ## خلاصه وضعیت کانال‌های تلگرام
+
+          $(grep -E "Active:|Recent dead:|Old dead:" channel_output.txt | tail -1 || echo "اطلاعاتی یافت نشد")
+
+          ## خلاصه وضعیت ساب‌لینک‌ها
+
+          $(grep -E "Active sources:|Recent dead:|Old dead:" source_output.txt | tail -1 || echo "اطلاعاتی یافت نشد")
+
+          ---
+          ✅ گزارش اسکن سالانه توسط GitHub Actions تولید شده است.
+          EOF
+
       - name: Commit and push
         run: |
           git config user.email "actions@github.com"
-          git config.user.name "GitHub Actions"
+          git config user.name "GitHub Actions"
           git pull --rebase origin main
           git add channels.csv Sources.json data/ reports/
           git diff --staged --quiet || git commit -m "📅 Yearly scan of very old dead items"
