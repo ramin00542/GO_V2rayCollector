@@ -1,1 +1,0 @@
-trojan://telegram-id-v2rayvpnchannel@52.58.203.172:22223?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#OurChannel
