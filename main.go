@@ -49,7 +49,7 @@ const (
 	DefaultTargetRepo                = "mahsanet/MahsaFreeConfig"
 )
 
-// نام پوشه‌ها با ایموجی (درخواست کاربر)
+// نام پوشه‌ها با ایموجی (مطابق درخواست)
 const (
 	TelegramDir     = "📡 telegram"
 	SubscriptionDir = "🔗 subscription"
@@ -187,7 +187,12 @@ func main() {
 	initCombinedRegex()
 	initSubLinkRegex()
 	setupLogging()
-	createDirs() // ساخت همه پوشه‌های لازم با ایموجی
+	
+	// ساخت پوشه‌ها با ایموجی
+	if err := createDirs(); err != nil {
+		gologger.Fatal().Msgf("Failed to create directories: %v", err)
+	}
+	
 	os.MkdirAll("reports", 0755)
 	os.MkdirAll("data", 0755)
 	initHTTPClient()
@@ -199,11 +204,12 @@ func main() {
 	globalCtx, cancelFunc = context.WithCancel(context.Background())
 	defer cancelFunc()
 
-	// لاگ اولیه برای اطمینان از وجود فایل‌های ورودی
+	// بررسی وجود فایل‌های ورودی
 	if _, err := os.Stat(*channelsFile); os.IsNotExist(err) {
 		gologger.Warning().Msgf("channels.csv not found at %s, Telegram fetching will be skipped", *channelsFile)
 	} else {
-		gologger.Info().Msgf("✅ channels.csv found, will fetch from %d channels", countChannels(*channelsFile))
+		cnt := countChannels(*channelsFile)
+		gologger.Info().Msgf("✅ channels.csv found with %d channels", cnt)
 	}
 	if _, err := os.Stat(*sourcesFile); os.IsNotExist(err) {
 		gologger.Warning().Msgf("Sources.json not found at %s, subscription fetching will be skipped", *sourcesFile)
@@ -260,10 +266,19 @@ func main() {
 	saveLastArchiveTime()
 	sendTelegramReport()
 
+	// اگر هیچ کانفیگ جدیدی جمع‌آوری نشد، پیام هشدار چاپ کن
+	stats.Lock()
+	newCfg := stats.newCount
+	stats.Unlock()
+	if newCfg == 0 {
+		gologger.Warning().Msg("⚠️ No new configs were collected. Check your channels.csv and Sources.json files.")
+	} else {
+		gologger.Info().Msgf("✅ Successfully collected %d new configs", newCfg)
+	}
+	
 	gologger.Info().Msg("All Done!")
 }
 
-// helper to count channels in CSV
 func countChannels(path string) int {
 	data, err := os.ReadFile(path)
 	if err != nil {
@@ -291,7 +306,10 @@ func archiveDaily() {
 		return
 	}
 	gologger.Info().Msgf("📦 Running daily archive for %s", today)
-	os.MkdirAll(archiveDir, 0755)
+	if err := os.MkdirAll(archiveDir, 0755); err != nil {
+		gologger.Error().Msgf("Failed to create archive dir: %v", err)
+		return
+	}
 
 	// فقط all_configs را کپی کن
 	copyDir(AllConfigsDir, filepath.Join(archiveDir, AllConfigsDir))
@@ -378,20 +396,22 @@ func setupLogging() {
 	}
 }
 
-func createDirs() {
+func createDirs() error {
 	dirs := []string{TelegramDir, SubscriptionDir, MixedDir, DailyArchiveDir, AllConfigsDir}
 	for _, d := range dirs {
 		if err := os.MkdirAll(d, 0755); err != nil {
-			gologger.Fatal().Msgf("Cannot create directory %s: %v", d, err)
+			return fmt.Errorf("failed to create dir %s: %w", d, err)
 		}
+		gologger.Info().Msgf("Created directory: %s", d)
 	}
 	if err := os.MkdirAll(filepath.Join(AllConfigsDir, SubscriptionDir), 0755); err != nil {
-		gologger.Fatal().Msgf("Cannot create %s/%s: %v", AllConfigsDir, SubscriptionDir, err)
+		return fmt.Errorf("failed to create %s/%s: %w", AllConfigsDir, SubscriptionDir, err)
 	}
 	if err := os.MkdirAll(filepath.Join(AllConfigsDir, TelegramDir), 0755); err != nil {
-		gologger.Fatal().Msgf("Cannot create %s/%s: %v", AllConfigsDir, TelegramDir, err)
+		return fmt.Errorf("failed to create %s/%s: %w", AllConfigsDir, TelegramDir, err)
 	}
 	gologger.Info().Msg("All required directories created (with emoji)")
+	return nil
 }
 
 func initHTTPClient() {
@@ -596,7 +616,6 @@ func detectProtocol(cfg string) string {
 	case strings.HasPrefix(cfg, "wireguard://"):
 		return "wireguard"
 	case strings.HasPrefix(cfg, "http://") || strings.HasPrefix(cfg, "https://"):
-		// http/https عادی (نه پروکسی تلگرام)
 		return "http"
 	case strings.HasPrefix(cfg, "socks://") || strings.HasPrefix(cfg, "socks5://"):
 		return "socks"
@@ -1238,7 +1257,7 @@ func writeAllConfigs() {
 	}
 
 	type sourceFiles struct {
-		allProto      []string // فقط ۶ پروتکل اصلی
+		allProto      []string
 		http          []string
 		mtproto       []string
 		telegramSocks []string
