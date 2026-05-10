@@ -1,1 +1,2 @@
+https://t.me/socks?server=0.0.0.0&port=10880@VPNPROXY_V2RAYNG
 https://t.me/socks?server=127.0.0.1&port=10880&user=%40@VPNPROXY_V2RAYNG@VPNPROXY_V2RAYNG

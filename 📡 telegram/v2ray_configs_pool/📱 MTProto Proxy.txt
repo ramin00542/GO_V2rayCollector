@@ -1,4 +1,4 @@
 https://t.me/proxy?server=147.45.73.240&port=443&secret=eeb685ee05fb62946f822dcd5d700267e16974756e65732e6170706c652e636f6d&&channel=@baicai_dev
 https://t.me/proxy?server=144.31.54.207&port=443&secret=eec5081bcd191b76e90ee894d248e44c42706574726f766963682e7275&&channel=@baicai_dev
-https://t.me/proxy?server=46.225.29.180&port=443&secret=Telegram&user=@HoosheMasnui
 https://t.me/proxy?server=46.225.29.180&port=443&secret=ee636c6f7564666c6172652e636f6db6#@proxy_kafee
+https://t.me/proxy?server=46.225.29.180&port=443&secret=Telegram&user=@HoosheMasnui

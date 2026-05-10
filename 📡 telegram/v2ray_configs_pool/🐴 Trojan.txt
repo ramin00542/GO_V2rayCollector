@@ -1,0 +1,1 @@
+trojan://telegram-id-privatevpns@51.44.92.102:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#👉🆔@v2ray_configs_pool📡🇫🇷®️France©️Paris🅿️ping:33.88ms
