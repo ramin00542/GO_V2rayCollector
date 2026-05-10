@@ -1,0 +1,1 @@
+vless://3172e740-3424-4320-b8e0-b4830c313adf@game.shadownet1.online:443?security=reality&encryption=none&pbk=2A7ptdiKXjjz8p_3gXcsX-v5BOCtOxkupLxfk9gPoF4&headerType=none&fp=chrome&spx=%2F&type=tcp&sni=www.aparat.com&sid=bb#%40vipconfingg%D8%AA%D8%B1%DA%A9%DB%8C%D8%A8%DB%8C%F0%9F%8E%96@vipconfingg
