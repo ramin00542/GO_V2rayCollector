@@ -15,9 +15,9 @@
     "checked_at": 1778353586
   },
   {
-    "url": "https://github.com/sakha1370/V2rayCollector/raw/refs/heads/main/socks_iran.txt",
+    "url": "https://github.com/sakha1370/V2rayCollector/raw/refs/heads/main/mtproto_iran.txt",
     "last_mod": -62135596800,
-    "checked_at": 1778353586
+    "checked_at": 1778987280
   },
   {
     "url": "https://raw.githubusercontent.com/CyrusTheV/we2rain/main/mixed_iran.txt",
@@ -38,6 +38,11 @@
     "url": "https://raw.githubusercontent.com/CyrusTheV/we2rain/main/vmess_iran.txt",
     "last_mod": -62135596800,
     "checked_at": 1778353586
+  },
+  {
+    "url": "https://raw.githubusercontent.com/IR-NETLIFY/NETLIFY/refs/heads/main/IR_NETLIFY_SUB.txt",
+    "last_mod": -62135596800,
+    "checked_at": 1778987280
   },
   {
     "url": "https://raw.githubusercontent.com/ashkan45/V2rayCollector/main/ss_iran.txt",
@@ -130,22 +135,7 @@
     "checked_at": 1778353586
   },
   {
-    "url": "https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Ir.txt",
-    "last_mod": -62135596800,
-    "checked_at": 1778353586
-  },
-  {
     "url": "https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Mauritius.txt",
-    "last_mod": -62135596800,
-    "checked_at": 1778353586
-  },
-  {
-    "url": "https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Qatar.txt",
-    "last_mod": -62135596800,
-    "checked_at": 1778353586
-  },
-  {
-    "url": "https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Saudi_Arabia.txt",
     "last_mod": -62135596800,
     "checked_at": 1778353586
   }
