@@ -1,10 +1,5 @@
 [
   {
-    "url": "https://t.me/Alfred_Config",
-    "last_post": -62135596800,
-    "checked_at": 1780469576
-  },
-  {
     "url": "https://t.me/AliAlma_GSM",
     "last_post": -62135596800,
     "checked_at": 1778353547
@@ -13,11 +8,6 @@
     "url": "https://t.me/Alpha_V2ray_Iran",
     "last_post": -62135596800,
     "checked_at": 1778353547
-  },
-  {
-    "url": "https://t.me/AmyraxVPN",
-    "last_post": 1779819870,
-    "checked_at": 1779862656
   },
   {
     "url": "https://t.me/ArV2ray",
@@ -305,6 +295,11 @@
     "checked_at": 1780469576
   },
   {
+    "url": "https://t.me/ShadowSocks_s",
+    "last_post": 1780478949,
+    "checked_at": 1780555020
+  },
+  {
     "url": "https://t.me/Shadowlinkserverr",
     "last_post": -62135596800,
     "checked_at": 1778353547
@@ -473,6 +468,11 @@
     "url": "https://t.me/XsV2ray",
     "last_post": 1750059376,
     "checked_at": 1778353547
+  },
+  {
+    "url": "https://t.me/YamYamProxy",
+    "last_post": 1780326717,
+    "checked_at": 1780555020
   },
   {
     "url": "https://t.me/YtTe3la",
@@ -660,11 +660,6 @@
     "checked_at": 1778353547
   },
   {
-    "url": "https://t.me/givevpn",
-    "last_post": 1780297041,
-    "checked_at": 1780382206
-  },
-  {
     "url": "https://t.me/gpair_vpn_pro2",
     "last_post": -62135596800,
     "checked_at": 1778353547
@@ -785,11 +780,6 @@
     "checked_at": 1778353547
   },
   {
-    "url": "https://t.me/leastping",
-    "last_post": 1779441150,
-    "checked_at": 1779862656
-  },
-  {
     "url": "https://t.me/lightning6",
     "last_post": 1777811000,
     "checked_at": 1778353547
@@ -823,11 +813,6 @@
     "url": "https://t.me/mikasavpn",
     "last_post": -62135596800,
     "checked_at": 1778353547
-  },
-  {
-    "url": "https://t.me/moft_vpn",
-    "last_post": 1780308181,
-    "checked_at": 1780469576
   },
   {
     "url": "https://t.me/moh3enivx",
@@ -878,11 +863,6 @@
     "url": "https://t.me/nofiltering2",
     "last_post": 1769510047,
     "checked_at": 1778353547
-  },
-  {
-    "url": "https://t.me/noviin_tel",
-    "last_post": 1780102854,
-    "checked_at": 1780120264
   },
   {
     "url": "https://t.me/npvv2rayfilter",
@@ -960,11 +940,6 @@
     "checked_at": 1778353547
   },
   {
-    "url": "https://t.me/s/AmyraxVPN",
-    "last_post": 1779819870,
-    "checked_at": 1779862656
-  },
-  {
     "url": "https://t.me/s/ArV2ray",
     "last_post": 1767662915,
     "checked_at": 1778353547
@@ -973,6 +948,11 @@
     "url": "https://t.me/s/Awlix_ir",
     "last_post": 1773444995,
     "checked_at": 1778353547
+  },
+  {
+    "url": "https://t.me/s/BITXRADX",
+    "last_post": -62135596800,
+    "checked_at": 1780555020
   },
   {
     "url": "https://t.me/s/CUSTOMIZEGP",
@@ -1038,6 +1018,11 @@
     "url": "https://t.me/s/Forall_Proxy",
     "last_post": 1776606764,
     "checked_at": 1778353547
+  },
+  {
+    "url": "https://t.me/s/Fourusvpn",
+    "last_post": -62135596800,
+    "checked_at": 1780555020
   },
   {
     "url": "https://t.me/s/Fr33C0nfig",
@@ -1213,6 +1198,11 @@
     "url": "https://t.me/s/ShadowProxy66",
     "last_post": 1780398132,
     "checked_at": 1780469576
+  },
+  {
+    "url": "https://t.me/s/ShadowSocks_s",
+    "last_post": 1780478949,
+    "checked_at": 1780555020
   },
   {
     "url": "https://t.me/s/Shadowlinkserverr",
@@ -1405,6 +1395,11 @@
     "checked_at": 1778353547
   },
   {
+    "url": "https://t.me/s/YamYamProxy",
+    "last_post": 1780325745,
+    "checked_at": 1780555020
+  },
+  {
     "url": "https://t.me/s/YtTe3la",
     "last_post": -62135596800,
     "checked_at": 1778353547
@@ -1575,6 +1570,11 @@
     "checked_at": 1780382206
   },
   {
+    "url": "https://t.me/s/configyou",
+    "last_post": 1780252347,
+    "checked_at": 1780555020
+  },
+  {
     "url": "https://t.me/s/confing_costume",
     "last_post": 1780098190,
     "checked_at": 1780296888
@@ -1588,11 +1588,6 @@
     "url": "https://t.me/s/connectshu",
     "last_post": 1769855447,
     "checked_at": 1778353547
-  },
-  {
-    "url": "https://t.me/s/croownvpn",
-    "last_post": 1779546128,
-    "checked_at": 1780120264
   },
   {
     "url": "https://t.me/s/curetech",
@@ -1628,6 +1623,11 @@
     "url": "https://t.me/s/damonconfig",
     "last_post": 1769600249,
     "checked_at": 1778353547
+  },
+  {
+    "url": "https://t.me/s/dark7web_news",
+    "last_post": 1780429317,
+    "checked_at": 1780555020
   },
   {
     "url": "https://t.me/s/darkma3ter24",
@@ -1930,6 +1930,11 @@
     "checked_at": 1778353547
   },
   {
+    "url": "https://t.me/s/fv2ray",
+    "last_post": -62135596800,
+    "checked_at": 1780555020
+  },
+  {
     "url": "https://t.me/s/fxnodes",
     "last_post": -62135596800,
     "checked_at": 1778353547
@@ -1943,11 +1948,6 @@
     "url": "https://t.me/s/gervpn",
     "last_post": -62135596800,
     "checked_at": 1778353547
-  },
-  {
-    "url": "https://t.me/s/givevpn",
-    "last_post": 1780297041,
-    "checked_at": 1780382206
   },
   {
     "url": "https://t.me/s/goldd_v2ray",
@@ -2205,11 +2205,6 @@
     "checked_at": 1778353547
   },
   {
-    "url": "https://t.me/s/leastping",
-    "last_post": 1779441150,
-    "checked_at": 1779862656
-  },
-  {
     "url": "https://t.me/s/lightning6",
     "last_post": 1777811000,
     "checked_at": 1778353547
@@ -2318,11 +2313,6 @@
     "url": "https://t.me/s/moein_insta",
     "last_post": 1773229735,
     "checked_at": 1778353547
-  },
-  {
-    "url": "https://t.me/s/moft_vpn",
-    "last_post": 1780308181,
-    "checked_at": 1780469576
   },
   {
     "url": "https://t.me/s/moh3enivx",
@@ -2485,11 +2475,6 @@
     "checked_at": 1778353547
   },
   {
-    "url": "https://t.me/s/noviin_tel",
-    "last_post": 1780102854,
-    "checked_at": 1780120264
-  },
-  {
     "url": "https://t.me/s/npvv2rayfilter",
     "last_post": 1777469941,
     "checked_at": 1778909184
@@ -2648,6 +2633,11 @@
     "url": "https://t.me/s/proxyvpnvip",
     "last_post": -62135596800,
     "checked_at": 1778353547
+  },
+  {
+    "url": "https://t.me/s/proxyy",
+    "last_post": 1780132743,
+    "checked_at": 1780555020
   },
   {
     "url": "https://t.me/s/proxyymeliii",
@@ -2840,11 +2830,6 @@
     "checked_at": 1778353547
   },
   {
-    "url": "https://t.me/s/soranvpn",
-    "last_post": 1779810892,
-    "checked_at": 1779948620
-  },
-  {
     "url": "https://t.me/s/sourcevipn",
     "last_post": -62135596800,
     "checked_at": 1778353547
@@ -2990,11 +2975,6 @@
     "checked_at": 1778353547
   },
   {
-    "url": "https://t.me/s/uvpn_org",
-    "last_post": 1779911908,
-    "checked_at": 1780296888
-  },
-  {
     "url": "https://t.me/s/v22rayngg",
     "last_post": -62135596800,
     "checked_at": 1778353547
@@ -3135,14 +3115,14 @@
     "checked_at": 1780382206
   },
   {
+    "url": "https://t.me/s/v2rayNGcloud",
+    "last_post": 1780474354,
+    "checked_at": 1780555020
+  },
+  {
     "url": "https://t.me/s/v2rayNgg_iran",
     "last_post": -62135596800,
     "checked_at": 1778353547
-  },
-  {
-    "url": "https://t.me/s/v2ray_83",
-    "last_post": 1780002206,
-    "checked_at": 1780469576
   },
   {
     "url": "https://t.me/s/v2ray_chaneaI",
@@ -3210,6 +3190,11 @@
     "checked_at": 1778353547
   },
   {
+    "url": "https://t.me/s/v2ray_vmes",
+    "last_post": 1777867775,
+    "checked_at": 1780555020
+  },
+  {
     "url": "https://t.me/s/v2raych",
     "last_post": 1772633986,
     "checked_at": 1778353547
@@ -3255,11 +3240,6 @@
     "checked_at": 1778353547
   },
   {
-    "url": "https://t.me/s/v2rayn5",
-    "last_post": 1780171863,
-    "checked_at": 1780469576
-  },
-  {
     "url": "https://t.me/s/v2rayng14",
     "last_post": 1754920382,
     "checked_at": 1778353547
@@ -3275,11 +3255,6 @@
     "checked_at": 1778353547
   },
   {
-    "url": "https://t.me/s/v2rayng_25",
-    "last_post": 1779900405,
-    "checked_at": 1780120264
-  },
-  {
     "url": "https://t.me/s/v2rayng_76",
     "last_post": -62135596800,
     "checked_at": 1778353547
@@ -3293,6 +3268,11 @@
     "url": "https://t.me/s/v2rayng_blue",
     "last_post": 1779880271,
     "checked_at": 1780035183
+  },
+  {
+    "url": "https://t.me/s/v2rayng_fars",
+    "last_post": 1780404887,
+    "checked_at": 1780555020
   },
   {
     "url": "https://t.me/s/v2rayng_lion",
@@ -3353,11 +3333,6 @@
     "url": "https://t.me/s/v2rayngconfig",
     "last_post": 1775783619,
     "checked_at": 1778479101
-  },
-  {
-    "url": "https://t.me/s/v2rayngconfiig",
-    "last_post": 1756139624,
-    "checked_at": 1778353547
   },
   {
     "url": "https://t.me/s/v2rayngcustom",
@@ -3580,6 +3555,11 @@
     "checked_at": 1778353547
   },
   {
+    "url": "https://t.me/s/viturey",
+    "last_post": -62135596800,
+    "checked_at": 1780555020
+  },
+  {
     "url": "https://t.me/s/vless1",
     "last_post": 1779439272,
     "checked_at": 1779690403
@@ -3772,11 +3752,6 @@
   {
     "url": "https://t.me/s/vpnmeg",
     "last_post": 1760747441,
-    "checked_at": 1778353547
-  },
-  {
-    "url": "https://t.me/s/vpnmega1",
-    "last_post": 1777371508,
     "checked_at": 1778353547
   },
   {
@@ -4065,11 +4040,6 @@
     "checked_at": 1778353547
   },
   {
-    "url": "https://t.me/uvpn_org",
-    "last_post": 1779911908,
-    "checked_at": 1780296888
-  },
-  {
     "url": "https://t.me/v2RayChannel",
     "last_post": -62135596800,
     "checked_at": 1778353547
@@ -4150,6 +4120,11 @@
     "checked_at": 1778353547
   },
   {
+    "url": "https://t.me/v2rayng_fars",
+    "last_post": 1780404887,
+    "checked_at": 1780555020
+  },
+  {
     "url": "https://t.me/v2rayng_lion",
     "last_post": -62135596800,
     "checked_at": 1778353547
@@ -4178,6 +4153,11 @@
     "url": "https://t.me/v2rayng_vpnrog",
     "last_post": -62135596800,
     "checked_at": 1778353547
+  },
+  {
+    "url": "https://t.me/v2rayngcloud",
+    "last_post": 1780474354,
+    "checked_at": 1780555020
   },
   {
     "url": "https://t.me/v2rayngconfig",
