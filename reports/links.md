@@ -1,6 +1,6 @@
 # 🔗 لینک‌های فایل‌های کانفیگ
 
-**آخرین به‌روزرسانی:** `2026-06-08 20:11:11`
+**آخرین به‌روزرسانی:** `2026-06-08 22:11:29`
 
 ---
 
@@ -15,11 +15,21 @@
 
 | وضعیت | نام فایل | تعداد کانفیگ | آخرین به‌روزرسانی | لینک خام |
 |-------|----------|--------------|-------------------|----------|
+| 🟢 | `☁️ Argo.txt` | `1` | `2026-06-08 22:11:29` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/📦 all_configs/🔗 subscription/☁️ Argo.txt) |
+| 🟢 | `📄 all_protocols.txt` | `62570` | `2026-06-08 22:11:29` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/📦 all_configs/🔗 subscription/📄 all_protocols.txt) |
+| 🟢 | `🔄 SSR.txt` | `29` | `2026-06-08 22:11:29` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/📦 all_configs/🔗 subscription/🔄 SSR.txt) |
+| 🟢 | `🧦 SOCKS.txt` | `1` | `2026-06-08 22:11:29` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/📦 all_configs/🔗 subscription/🧦 SOCKS.txt) |
+| 🟢 | `🧩 Tuic.txt` | `2` | `2026-06-08 22:11:29` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/📦 all_configs/🔗 subscription/🧩 Tuic.txt) |
 
 ## 📁 all_configs/telegram
 
 | وضعیت | نام فایل | تعداد کانفیگ | آخرین به‌روزرسانی | لینک خام |
 |-------|----------|--------------|-------------------|----------|
+| 🟢 | `📄 all_protocols.txt` | `236` | `2026-06-08 22:11:29` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/📦 all_configs/📡 telegram/📄 all_protocols.txt) |
+| 🟢 | `📱 MTProto Proxy.txt` | `99` | `2026-06-08 22:11:29` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/📦 all_configs/📡 telegram/📱 MTProto Proxy.txt) |
+| 🟢 | `🕸️ slipnet.txt` | `2` | `2026-06-08 22:11:29` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/📦 all_configs/📡 telegram/🕸️ slipnet.txt) |
+| 🟢 | `🧦 SOCKS.txt` | `41` | `2026-06-08 22:11:29` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/📦 all_configs/📡 telegram/🧦 SOCKS.txt) |
+| 🟢 | `🧦 SOCKS5 Proxy.txt` | `3` | `2026-06-08 22:11:29` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/📦 all_configs/📡 telegram/🧦 SOCKS5 Proxy.txt) |
 
 ## 📁 daily_archive
 
@@ -27,53 +37,53 @@
 
 | وضعیت | نام فایل | تعداد کانفیگ | آخرین به‌روزرسانی | لینک خام |
 |-------|----------|--------------|-------------------|----------|
-| 🟢 | `all_protocols.txt` | `105` | `2026-06-08 19:50:57` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-09/📦 all_configs/📡 telegram%!(EXTRA string=all_protocols.txt)) |
-| 🟢 | `http.txt` | `52` | `2026-06-08 19:50:57` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-09/📦 all_configs/📡 telegram%!(EXTRA string=http.txt)) |
-| 🟢 | `mtproto.txt` | `61` | `2026-06-08 19:50:57` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-09/📦 all_configs/📡 telegram%!(EXTRA string=mtproto.txt)) |
-| 🟢 | `socks.txt` | `56` | `2026-06-08 19:50:57` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-09/📦 all_configs/📡 telegram%!(EXTRA string=socks.txt)) |
-| 🟢 | `telegram_socks.txt` | `47` | `2026-06-08 19:50:57` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-09/📦 all_configs/📡 telegram%!(EXTRA string=telegram_socks.txt)) |
-| 🟢 | `all_protocols.txt` | `57921` | `2026-06-08 19:50:57` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-09/📦 all_configs/🔗 subscription%!(EXTRA string=all_protocols.txt)) |
-| 🟢 | `argo.txt` | `1` | `2026-06-08 19:50:57` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-09/📦 all_configs/🔗 subscription%!(EXTRA string=argo.txt)) |
-| 🟢 | `http.txt` | `20` | `2026-06-08 19:50:57` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-09/📦 all_configs/🔗 subscription%!(EXTRA string=http.txt)) |
-| 🟢 | `mtproto.txt` | `1` | `2026-06-08 19:50:57` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-09/📦 all_configs/🔗 subscription%!(EXTRA string=mtproto.txt)) |
-| 🟢 | `socks.txt` | `4` | `2026-06-08 19:50:57` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-09/📦 all_configs/🔗 subscription%!(EXTRA string=socks.txt)) |
-| 🟢 | `ssr.txt` | `25` | `2026-06-08 19:50:57` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-09/📦 all_configs/🔗 subscription%!(EXTRA string=ssr.txt)) |
-| 🟢 | `tuic.txt` | `2` | `2026-06-08 19:50:57` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-09/📦 all_configs/🔗 subscription%!(EXTRA string=tuic.txt)) |
+| 🟢 | `all_protocols.txt` | `105` | `2026-06-08 21:51:47` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-09/📦 all_configs/📡 telegram%!(EXTRA string=all_protocols.txt)) |
+| 🟢 | `http.txt` | `52` | `2026-06-08 21:51:47` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-09/📦 all_configs/📡 telegram%!(EXTRA string=http.txt)) |
+| 🟢 | `mtproto.txt` | `61` | `2026-06-08 21:51:47` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-09/📦 all_configs/📡 telegram%!(EXTRA string=mtproto.txt)) |
+| 🟢 | `socks.txt` | `56` | `2026-06-08 21:51:47` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-09/📦 all_configs/📡 telegram%!(EXTRA string=socks.txt)) |
+| 🟢 | `telegram_socks.txt` | `47` | `2026-06-08 21:51:47` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-09/📦 all_configs/📡 telegram%!(EXTRA string=telegram_socks.txt)) |
+| 🟢 | `all_protocols.txt` | `57921` | `2026-06-08 21:51:48` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-09/📦 all_configs/🔗 subscription%!(EXTRA string=all_protocols.txt)) |
+| 🟢 | `argo.txt` | `1` | `2026-06-08 21:51:48` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-09/📦 all_configs/🔗 subscription%!(EXTRA string=argo.txt)) |
+| 🟢 | `http.txt` | `20` | `2026-06-08 21:51:48` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-09/📦 all_configs/🔗 subscription%!(EXTRA string=http.txt)) |
+| 🟢 | `mtproto.txt` | `1` | `2026-06-08 21:51:48` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-09/📦 all_configs/🔗 subscription%!(EXTRA string=mtproto.txt)) |
+| 🟢 | `socks.txt` | `4` | `2026-06-08 21:51:48` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-09/📦 all_configs/🔗 subscription%!(EXTRA string=socks.txt)) |
+| 🟢 | `ssr.txt` | `25` | `2026-06-08 21:51:48` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-09/📦 all_configs/🔗 subscription%!(EXTRA string=ssr.txt)) |
+| 🟢 | `tuic.txt` | `2` | `2026-06-08 21:51:48` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-09/📦 all_configs/🔗 subscription%!(EXTRA string=tuic.txt)) |
 
 ### 2026-05-10
 
 | وضعیت | نام فایل | تعداد کانفیگ | آخرین به‌روزرسانی | لینک خام |
 |-------|----------|--------------|-------------------|----------|
-| 🟢 | `📄 all_protocols.txt` | `387` | `2026-06-08 19:50:57` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-10/📦 all_configs/📡 telegram%!(EXTRA string=📄 all_protocols.txt)) |
-| 🟢 | `📱 MTProto Proxy.txt` | `295` | `2026-06-08 19:50:57` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-10/📦 all_configs/📡 telegram%!(EXTRA string=📱 MTProto Proxy.txt)) |
-| 🟢 | `🕸️ slipnet.txt` | `24` | `2026-06-08 19:50:57` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-10/📦 all_configs/📡 telegram%!(EXTRA string=🕸️ slipnet.txt)) |
-| 🟢 | `🧦 SOCKS.txt` | `270` | `2026-06-08 19:50:57` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-10/📦 all_configs/📡 telegram%!(EXTRA string=🧦 SOCKS.txt)) |
-| 🟢 | `🧦 SOCKS5 Proxy.txt` | `250` | `2026-06-08 19:50:57` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-10/📦 all_configs/📡 telegram%!(EXTRA string=🧦 SOCKS5 Proxy.txt)) |
-| 🟢 | `☁️ Argo.txt` | `4` | `2026-06-08 19:50:57` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-10/📦 all_configs/🔗 subscription%!(EXTRA string=☁️ Argo.txt)) |
-| 🟢 | `📄 all_protocols.txt` | `174188` | `2026-06-08 19:50:57` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-10/📦 all_configs/🔗 subscription%!(EXTRA string=📄 all_protocols.txt)) |
-| 🟢 | `📱 MTProto Proxy.txt` | `4` | `2026-06-08 19:50:57` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-10/📦 all_configs/🔗 subscription%!(EXTRA string=📱 MTProto Proxy.txt)) |
-| 🟢 | `🔄 SSR.txt` | `100` | `2026-06-08 19:50:57` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-10/📦 all_configs/🔗 subscription%!(EXTRA string=🔄 SSR.txt)) |
-| 🟢 | `🛡️ Invizible_Pro.txt` | `8` | `2026-06-08 19:50:57` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-10/📦 all_configs/🔗 subscription%!(EXTRA string=🛡️ Invizible_Pro.txt)) |
-| 🟢 | `🧦 SOCKS.txt` | `15` | `2026-06-08 19:50:57` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-10/📦 all_configs/🔗 subscription%!(EXTRA string=🧦 SOCKS.txt)) |
-| 🟢 | `🧦 SOCKS5 Proxy.txt` | `4` | `2026-06-08 19:50:57` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-10/📦 all_configs/🔗 subscription%!(EXTRA string=🧦 SOCKS5 Proxy.txt)) |
-| 🟢 | `🧩 Tuic.txt` | `8` | `2026-06-08 19:50:57` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-10/📦 all_configs/🔗 subscription%!(EXTRA string=🧩 Tuic.txt)) |
+| 🟢 | `📄 all_protocols.txt` | `387` | `2026-06-08 21:51:48` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-10/📦 all_configs/📡 telegram%!(EXTRA string=📄 all_protocols.txt)) |
+| 🟢 | `📱 MTProto Proxy.txt` | `295` | `2026-06-08 21:51:48` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-10/📦 all_configs/📡 telegram%!(EXTRA string=📱 MTProto Proxy.txt)) |
+| 🟢 | `🕸️ slipnet.txt` | `24` | `2026-06-08 21:51:48` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-10/📦 all_configs/📡 telegram%!(EXTRA string=🕸️ slipnet.txt)) |
+| 🟢 | `🧦 SOCKS.txt` | `270` | `2026-06-08 21:51:48` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-10/📦 all_configs/📡 telegram%!(EXTRA string=🧦 SOCKS.txt)) |
+| 🟢 | `🧦 SOCKS5 Proxy.txt` | `250` | `2026-06-08 21:51:48` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-10/📦 all_configs/📡 telegram%!(EXTRA string=🧦 SOCKS5 Proxy.txt)) |
+| 🟢 | `☁️ Argo.txt` | `4` | `2026-06-08 21:51:48` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-10/📦 all_configs/🔗 subscription%!(EXTRA string=☁️ Argo.txt)) |
+| 🟢 | `📄 all_protocols.txt` | `174188` | `2026-06-08 21:51:48` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-10/📦 all_configs/🔗 subscription%!(EXTRA string=📄 all_protocols.txt)) |
+| 🟢 | `📱 MTProto Proxy.txt` | `4` | `2026-06-08 21:51:48` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-10/📦 all_configs/🔗 subscription%!(EXTRA string=📱 MTProto Proxy.txt)) |
+| 🟢 | `🔄 SSR.txt` | `100` | `2026-06-08 21:51:48` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-10/📦 all_configs/🔗 subscription%!(EXTRA string=🔄 SSR.txt)) |
+| 🟢 | `🛡️ Invizible_Pro.txt` | `8` | `2026-06-08 21:51:48` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-10/📦 all_configs/🔗 subscription%!(EXTRA string=🛡️ Invizible_Pro.txt)) |
+| 🟢 | `🧦 SOCKS.txt` | `15` | `2026-06-08 21:51:48` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-10/📦 all_configs/🔗 subscription%!(EXTRA string=🧦 SOCKS.txt)) |
+| 🟢 | `🧦 SOCKS5 Proxy.txt` | `4` | `2026-06-08 21:51:48` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-10/📦 all_configs/🔗 subscription%!(EXTRA string=🧦 SOCKS5 Proxy.txt)) |
+| 🟢 | `🧩 Tuic.txt` | `8` | `2026-06-08 21:51:48` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-05-10/📦 all_configs/🔗 subscription%!(EXTRA string=🧩 Tuic.txt)) |
 
 ### 2026-06-08
 
 | وضعیت | نام فایل | تعداد کانفیگ | آخرین به‌روزرسانی | لینک خام |
 |-------|----------|--------------|-------------------|----------|
-| 🟢 | `📄 all_protocols.txt` | `1229` | `2026-06-08 20:11:11` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-06-08/📦 all_configs/📡 telegram%!(EXTRA string=📄 all_protocols.txt)) |
-| 🟢 | `📱 MTProto Proxy.txt` | `661` | `2026-06-08 20:11:11` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-06-08/📦 all_configs/📡 telegram%!(EXTRA string=📱 MTProto Proxy.txt)) |
-| 🟢 | `🕸️ slipnet.txt` | `44` | `2026-06-08 20:11:11` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-06-08/📦 all_configs/📡 telegram%!(EXTRA string=🕸️ slipnet.txt)) |
-| 🟢 | `🧦 SOCKS.txt` | `604` | `2026-06-08 20:11:11` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-06-08/📦 all_configs/📡 telegram%!(EXTRA string=🧦 SOCKS.txt)) |
-| 🟢 | `🧦 SOCKS5 Proxy.txt` | `301` | `2026-06-08 20:11:11` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-06-08/📦 all_configs/📡 telegram%!(EXTRA string=🧦 SOCKS5 Proxy.txt)) |
-| 🟢 | `☁️ Argo.txt` | `6` | `2026-06-08 20:11:11` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-06-08/📦 all_configs/🔗 subscription%!(EXTRA string=☁️ Argo.txt)) |
-| 🟢 | `📄 all_protocols.txt` | `357162` | `2026-06-08 20:11:11` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-06-08/📦 all_configs/🔗 subscription%!(EXTRA string=📄 all_protocols.txt)) |
-| 🟢 | `📱 MTProto Proxy.txt` | `6` | `2026-06-08 20:11:11` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-06-08/📦 all_configs/🔗 subscription%!(EXTRA string=📱 MTProto Proxy.txt)) |
-| 🟢 | `🔄 SSR.txt` | `160` | `2026-06-08 20:11:11` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-06-08/📦 all_configs/🔗 subscription%!(EXTRA string=🔄 SSR.txt)) |
-| 🟢 | `🛡️ Invizible_Pro.txt` | `14` | `2026-06-08 20:11:11` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-06-08/📦 all_configs/🔗 subscription%!(EXTRA string=🛡️ Invizible_Pro.txt)) |
-| 🟢 | `🧦 SOCKS.txt` | `31` | `2026-06-08 20:11:11` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-06-08/📦 all_configs/🔗 subscription%!(EXTRA string=🧦 SOCKS.txt)) |
-| 🟢 | `🧩 Tuic.txt` | `12` | `2026-06-08 20:11:11` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-06-08/📦 all_configs/🔗 subscription%!(EXTRA string=🧩 Tuic.txt)) |
+| 🟢 | `📄 all_protocols.txt` | `1229` | `2026-06-08 21:51:48` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-06-08/📦 all_configs/📡 telegram%!(EXTRA string=📄 all_protocols.txt)) |
+| 🟢 | `📱 MTProto Proxy.txt` | `661` | `2026-06-08 21:51:48` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-06-08/📦 all_configs/📡 telegram%!(EXTRA string=📱 MTProto Proxy.txt)) |
+| 🟢 | `🕸️ slipnet.txt` | `44` | `2026-06-08 21:51:48` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-06-08/📦 all_configs/📡 telegram%!(EXTRA string=🕸️ slipnet.txt)) |
+| 🟢 | `🧦 SOCKS.txt` | `604` | `2026-06-08 21:51:48` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-06-08/📦 all_configs/📡 telegram%!(EXTRA string=🧦 SOCKS.txt)) |
+| 🟢 | `🧦 SOCKS5 Proxy.txt` | `301` | `2026-06-08 21:51:48` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-06-08/📦 all_configs/📡 telegram%!(EXTRA string=🧦 SOCKS5 Proxy.txt)) |
+| 🟢 | `☁️ Argo.txt` | `6` | `2026-06-08 21:51:48` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-06-08/📦 all_configs/🔗 subscription%!(EXTRA string=☁️ Argo.txt)) |
+| 🟢 | `📄 all_protocols.txt` | `357162` | `2026-06-08 21:51:48` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-06-08/📦 all_configs/🔗 subscription%!(EXTRA string=📄 all_protocols.txt)) |
+| 🟢 | `📱 MTProto Proxy.txt` | `6` | `2026-06-08 21:51:48` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-06-08/📦 all_configs/🔗 subscription%!(EXTRA string=📱 MTProto Proxy.txt)) |
+| 🟢 | `🔄 SSR.txt` | `160` | `2026-06-08 21:51:48` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-06-08/📦 all_configs/🔗 subscription%!(EXTRA string=🔄 SSR.txt)) |
+| 🟢 | `🛡️ Invizible_Pro.txt` | `14` | `2026-06-08 21:51:48` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-06-08/📦 all_configs/🔗 subscription%!(EXTRA string=🛡️ Invizible_Pro.txt)) |
+| 🟢 | `🧦 SOCKS.txt` | `31` | `2026-06-08 21:51:48` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-06-08/📦 all_configs/🔗 subscription%!(EXTRA string=🧦 SOCKS.txt)) |
+| 🟢 | `🧩 Tuic.txt` | `12` | `2026-06-08 21:51:48` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🗄️ daily_archive/2026-06-08/📦 all_configs/🔗 subscription%!(EXTRA string=🧩 Tuic.txt)) |
 
 ## 📁 🌍 mixed
 
@@ -84,19 +94,19 @@
 
 | وضعیت | نام فایل | تعداد کانفیگ | آخرین به‌روزرسانی | لینک خام |
 |-------|----------|--------------|-------------------|----------|
-| 🟢 | `☁️ Argo.txt` | `1` | `2026-06-08 19:50:57` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🔗 subscription/☁️ Argo.txt) |
-| 🟢 | `⚡ Hysteria2.txt` | `56` | `2026-06-08 20:11:11` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🔗 subscription/⚡ Hysteria2.txt) |
-| 🟢 | `🐍 Shadowsocks.txt` | `714` | `2026-06-08 20:11:11` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🔗 subscription/🐍 Shadowsocks.txt) |
-| 🟢 | `🐴 Trojan.txt` | `1246` | `2026-06-08 20:11:11` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🔗 subscription/🐴 Trojan.txt) |
-| 🟢 | `📦 VMess.txt` | `728` | `2026-06-08 20:11:11` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🔗 subscription/📦 VMess.txt) |
-| 🟢 | `📱 MTProto Proxy.txt` | `1` | `2026-06-08 19:50:57` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🔗 subscription/📱 MTProto Proxy.txt) |
-| 🟢 | `🔄 SSR.txt` | `3` | `2026-06-08 20:11:11` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🔗 subscription/🔄 SSR.txt) |
-| 🟢 | `🔒 WireGuard.txt` | `1` | `2026-06-08 20:11:11` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🔗 subscription/🔒 WireGuard.txt) |
-| 🟢 | `🕳️ VLess.txt` | `4577` | `2026-06-08 20:11:11` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🔗 subscription/🕳️ VLess.txt) |
-| 🟢 | `🛡️ Invizible_Pro.txt` | `1` | `2026-06-08 19:50:57` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🔗 subscription/🛡️ Invizible_Pro.txt) |
-| 🟢 | `🧦 SOCKS.txt` | `4` | `2026-06-08 19:50:57` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🔗 subscription/🧦 SOCKS.txt) |
-| 🟢 | `🧦 SOCKS5 Proxy.txt` | `3` | `2026-06-08 19:50:57` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🔗 subscription/🧦 SOCKS5 Proxy.txt) |
-| 🟢 | `🧩 Tuic.txt` | `1` | `2026-06-08 19:50:57` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🔗 subscription/🧩 Tuic.txt) |
+| 🟢 | `☁️ Argo.txt` | `1` | `2026-06-08 22:11:29` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🔗 subscription/☁️ Argo.txt) |
+| 🟢 | `⚡ Hysteria2.txt` | `165` | `2026-06-08 22:11:29` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🔗 subscription/⚡ Hysteria2.txt) |
+| 🟢 | `🐍 Shadowsocks.txt` | `5895` | `2026-06-08 22:11:29` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🔗 subscription/🐍 Shadowsocks.txt) |
+| 🟢 | `🐴 Trojan.txt` | `6972` | `2026-06-08 22:11:29` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🔗 subscription/🐴 Trojan.txt) |
+| 🟢 | `📦 VMess.txt` | `13052` | `2026-06-08 22:11:29` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🔗 subscription/📦 VMess.txt) |
+| 🟢 | `📱 MTProto Proxy.txt` | `1` | `2026-06-08 21:51:47` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🔗 subscription/📱 MTProto Proxy.txt) |
+| 🟢 | `🔄 SSR.txt` | `27` | `2026-06-08 22:11:29` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🔗 subscription/🔄 SSR.txt) |
+| 🟢 | `🔒 WireGuard.txt` | `14` | `2026-06-08 22:11:29` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🔗 subscription/🔒 WireGuard.txt) |
+| 🟢 | `🕳️ VLess.txt` | `36097` | `2026-06-08 22:11:29` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🔗 subscription/🕳️ VLess.txt) |
+| 🟢 | `🛡️ Invizible_Pro.txt` | `1` | `2026-06-08 21:51:47` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🔗 subscription/🛡️ Invizible_Pro.txt) |
+| 🟢 | `🧦 SOCKS.txt` | `4` | `2026-06-08 21:51:47` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🔗 subscription/🧦 SOCKS.txt) |
+| 🟢 | `🧦 SOCKS5 Proxy.txt` | `3` | `2026-06-08 21:51:47` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🔗 subscription/🧦 SOCKS5 Proxy.txt) |
+| 🟢 | `🧩 Tuic.txt` | `1` | `2026-06-08 22:11:29` | [دانلود](https://raw.githubusercontent.com/ramin00542/GO_V2rayCollector/main/🔗 subscription/🧩 Tuic.txt) |
 
 ## 📁 📡 telegram
 
