@@ -1,4 +1,4 @@
 tg://proxy?server=91.107.182.145&port=8443&secret=dd104462821249bd7ac519130220c25d09-𝗝𝗼𝗶𝗻
-tg://proxy?server=172.65.154.71&port=3389&secret=7iV5NRkoNVOW19Hwt4AGVGhkbC5nb29nbGUuY29t-𝗝𝗼𝗶𝗻
-tg://proxy?server=91.107.240.187&port=8443&secret=dd104462821249bd7ac519130220c25d09-𝗝𝗼𝗶𝗻
 tg://proxy?server=94.130.163.60&port=443&secret=dd104462821249bd7ac519130220c25d09-𝗝𝗼𝗶𝗻
+tg://proxy?server=91.107.240.187&port=8443&secret=dd104462821249bd7ac519130220c25d09-𝗝𝗼𝗶𝗻
+tg://proxy?server=172.65.154.71&port=3389&secret=7iV5NRkoNVOW19Hwt4AGVGhkbC5nb29nbGUuY29t-𝗝𝗼𝗶𝗻
