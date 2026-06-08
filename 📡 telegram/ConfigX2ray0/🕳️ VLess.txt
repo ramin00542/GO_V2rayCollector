@@ -1,0 +1,1 @@
+vless://27302727-9dfa-4975-990e-88c7a63747cd@216.24.57.1:443?encryption=none&type=ws&security=tls&path=%2Findex.html&sni=oiov.pages.dev&allowInsecure=0&ech=ip.gs%2Budp%3A%2F%2F8.8.8.8#1https://t.me/ConfigX2rayکانفیگ

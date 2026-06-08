@@ -1,1 +1,1 @@
-vless://0df5e45d-98bc-4e33-b399-78d0e762903c@185.143.234.200:443/?encryption=none&headerType=none&allowInsecure=0&type=ws&mux=true&security=tls&sni=alef.ir.oadeflantrogm.abrirmahan.com&fp=randomized&path=%2F%3Fed%3D443&host=alef.ir.oadeflantrogm.abrirmahan.com#filembad-37
+vless://98a0fab4-3be2-48ae-a99e-3d812315e11b@ch.zoroem.opik.net:80?security=reality&encryption=none&pbk=ch8e7oMj3tLwZRnLDW2qWsXqxxbOcL95z6FItmfSS0s&headerType=&fp=chrome&spx=%2FqFadgFoEHBBNmNv&type=tcp&sni=Www.yahoo.com&sid=9c4c37f240#canfingV2rayNG-243

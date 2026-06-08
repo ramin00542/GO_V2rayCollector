@@ -4,1430 +4,1409 @@
 [[34mINF[0m] Created directory: 🗄️ daily_archive
 [[34mINF[0m] Created directory: 📦 all_configs
 [[34mINF[0m] All required directories created (with emoji)
-[[34mINF[0m] Loaded 58842 configs from cache
-[[34mINF[0m] ✅ channels.csv found with 235 channels
+[[34mINF[0m] Loaded 58890 configs from cache
+[[34mINF[0m] ✅ channels.csv found with 291 channels
 [[34mINF[0m] ✅ Sources.json found
 [[34mINF[0m] Scanning GitHub forks for subscription links...
-[[34mINF[0m] Starting to fetch 235 Telegram channels
-[[35mDBG[0m] Fetching channel 1/235: https://t.me/s/s
-[[34mINF[0m] Starting to fetch 572 subscription sources
-[[35mDBG[0m] Extracted 90 configs from subscription content
-[[35mDBG[0m] Extracted 81 configs from subscription content
-[[35mDBG[0m] Extracted 214 configs from subscription content
-[[35mDBG[0m] Extracted 880 configs from subscription content
+[[34mINF[0m] Starting to fetch 291 Telegram channels
+[[35mDBG[0m] Fetching channel 1/291: https://t.me/s/s
+[[34mINF[0m] Starting to fetch 554 subscription sources
+[[35mDBG[0m] Extracted 200 configs from subscription content
+[[35mDBG[0m] Extracted 148 configs from subscription content
 [[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Extracted 13 configs from subscription content
 [[35mDBG[0m] Extracted 2116 configs from subscription content
-[[35mDBG[0m] Extracted 583 configs from subscription content
-[[35mDBG[0m] Extracted 3 configs from subscription content
-[[34mINF[0m] Found subscription in fork PENZA84/MahsaFreeConfig: https://raw.githubusercontent.com/PENZA84/MahsaFreeConfig/main/mci/sub_1.txt
-[[34mINF[0m] Found subscription in fork PENZA84/MahsaFreeConfig: https://raw.githubusercontent.com/PENZA84/MahsaFreeConfig/main/mci/sub_2.txt
-[[34mINF[0m] Found subscription in fork PENZA84/MahsaFreeConfig: https://raw.githubusercontent.com/PENZA84/MahsaFreeConfig/main/mci/sub_3.txt
-[[35mDBG[0m] Extracted 34 configs from subscription content
-[[34mINF[0m] Found subscription in fork PENZA84/MahsaFreeConfig: https://raw.githubusercontent.com/PENZA84/MahsaFreeConfig/main/mci/sub_4.txt
-[[35mDBG[0m] Extracted 417 configs from subscription content
-[[35mDBG[0m] Extracted 17 configs from subscription content
-[[34mINF[0m] Found subscription in fork PENZA84/MahsaFreeConfig: https://raw.githubusercontent.com/PENZA84/MahsaFreeConfig/main/mtn/sub_1.txt
-[[34mINF[0m] Found subscription in fork PENZA84/MahsaFreeConfig: https://raw.githubusercontent.com/PENZA84/MahsaFreeConfig/main/mtn/sub_2.txt
-[[34mINF[0m] Found subscription in fork PENZA84/MahsaFreeConfig: https://raw.githubusercontent.com/PENZA84/MahsaFreeConfig/main/mtn/sub_3.txt
-[[34mINF[0m] Found subscription in fork PENZA84/MahsaFreeConfig: https://raw.githubusercontent.com/PENZA84/MahsaFreeConfig/main/mtn/sub_4.txt
-[[35mDBG[0m] Fetching channel 2/235: https://t.me/s/v2rayconfigamir
-[[35mDBG[0m] Collected 113 configs from v2rayconfigamir
+[[35mDBG[0m] Extracted 105 configs from subscription content
+[[35mDBG[0m] Extracted 595 configs from subscription content
+[[34mINF[0m] Found subscription in fork amirragzon3/MahsaFreeConfig: https://raw.githubusercontent.com/amirragzon3/MahsaFreeConfig/main/mci/sub_1.txt
+[[35mDBG[0m] Extracted 148 configs from subscription content
+[[34mINF[0m] Found subscription in fork amirragzon3/MahsaFreeConfig: https://raw.githubusercontent.com/amirragzon3/MahsaFreeConfig/main/mci/sub_2.txt
+[[34mINF[0m] Found subscription in fork amirragzon3/MahsaFreeConfig: https://raw.githubusercontent.com/amirragzon3/MahsaFreeConfig/main/mci/sub_3.txt
+[[35mDBG[0m] Extracted 6 configs from subscription content
+[[34mINF[0m] Found subscription in fork amirragzon3/MahsaFreeConfig: https://raw.githubusercontent.com/amirragzon3/MahsaFreeConfig/main/mci/sub_4.txt
+[[35mDBG[0m] Fetching channel 2/291: https://t.me/s/s
+[[34mINF[0m] Found subscription in fork amirragzon3/MahsaFreeConfig: https://raw.githubusercontent.com/amirragzon3/MahsaFreeConfig/main/mtn/sub_1.txt
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[34mINF[0m] Found subscription in fork amirragzon3/MahsaFreeConfig: https://raw.githubusercontent.com/amirragzon3/MahsaFreeConfig/main/mtn/sub_2.txt
+[[35mDBG[0m] Extracted 200 configs from subscription content
+[[34mINF[0m] Found subscription in fork amirragzon3/MahsaFreeConfig: https://raw.githubusercontent.com/amirragzon3/MahsaFreeConfig/main/mtn/sub_3.txt
+[[35mDBG[0m] Extracted 199 configs from subscription content
+[[34mINF[0m] Found subscription in fork amirragzon3/MahsaFreeConfig: https://raw.githubusercontent.com/amirragzon3/MahsaFreeConfig/main/mtn/sub_4.txt
+[[35mDBG[0m] Extracted 4 configs from subscription content
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Extracted 1323 configs from subscription content
+[[35mDBG[0m] Fetching channel 3/291: https://t.me/s/s
 [[35mDBG[0m] Extracted 80 configs from subscription content
 [[35mDBG[0m] Extracted 148 configs from subscription content
+[[35mDBG[0m] Extracted 3528 configs from subscription content
+[[35mDBG[0m] Extracted 579 configs from subscription content
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[34mINF[0m] Found subscription in fork whooooooooami/MahsaFreeConfig: https://raw.githubusercontent.com/whooooooooami/MahsaFreeConfig/main/mci/sub_1.txt
+[[35mDBG[0m] Extracted 80 configs from subscription content
+[[34mINF[0m] Found subscription in fork whooooooooami/MahsaFreeConfig: https://raw.githubusercontent.com/whooooooooami/MahsaFreeConfig/main/mci/sub_2.txt
+[[34mINF[0m] Found subscription in fork whooooooooami/MahsaFreeConfig: https://raw.githubusercontent.com/whooooooooami/MahsaFreeConfig/main/mci/sub_3.txt
+[[35mDBG[0m] Extracted 7 configs from subscription content
+[[34mINF[0m] Found subscription in fork whooooooooami/MahsaFreeConfig: https://raw.githubusercontent.com/whooooooooami/MahsaFreeConfig/main/mci/sub_4.txt
+[[35mDBG[0m] Extracted 705 configs from subscription content
+[[34mINF[0m] Found subscription in fork whooooooooami/MahsaFreeConfig: https://raw.githubusercontent.com/whooooooooami/MahsaFreeConfig/main/mtn/sub_1.txt
+[[35mDBG[0m] Fetching channel 4/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 491 configs from subscription content
+[[34mINF[0m] Found subscription in fork whooooooooami/MahsaFreeConfig: https://raw.githubusercontent.com/whooooooooami/MahsaFreeConfig/main/mtn/sub_2.txt
+[[34mINF[0m] Found subscription in fork whooooooooami/MahsaFreeConfig: https://raw.githubusercontent.com/whooooooooami/MahsaFreeConfig/main/mtn/sub_3.txt
+[[34mINF[0m] Found subscription in fork whooooooooami/MahsaFreeConfig: https://raw.githubusercontent.com/whooooooooami/MahsaFreeConfig/main/mtn/sub_4.txt
+[[35mDBG[0m] Extracted 1407 configs from subscription content
+[[35mDBG[0m] Extracted 94 configs from subscription content
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Fetching channel 5/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 258 configs from subscription content
+[[35mDBG[0m] Extracted 148 configs from subscription content
+[[35mDBG[0m] Extracted 4 configs from subscription content
+[[34mINF[0m] Found subscription in fork PENZA84/MahsaFreeConfig: https://raw.githubusercontent.com/PENZA84/MahsaFreeConfig/main/mci/sub_1.txt
+[[34mINF[0m] Found subscription in fork PENZA84/MahsaFreeConfig: https://raw.githubusercontent.com/PENZA84/MahsaFreeConfig/main/mci/sub_2.txt
+[[35mDBG[0m] Extracted 191 configs from subscription content
+[[34mINF[0m] Found subscription in fork PENZA84/MahsaFreeConfig: https://raw.githubusercontent.com/PENZA84/MahsaFreeConfig/main/mci/sub_3.txt
+[[34mINF[0m] Found subscription in fork PENZA84/MahsaFreeConfig: https://raw.githubusercontent.com/PENZA84/MahsaFreeConfig/main/mci/sub_4.txt
+[[34mINF[0m] Found subscription in fork PENZA84/MahsaFreeConfig: https://raw.githubusercontent.com/PENZA84/MahsaFreeConfig/main/mtn/sub_1.txt
 [[35mDBG[0m] Extracted 3 configs from subscription content
-[[35mDBG[0m] Extracted 10 configs from subscription content
-[[35mDBG[0m] Extracted 6 configs from subscription content
-[[35mDBG[0m] Extracted 1593 configs from subscription content
+[[35mDBG[0m] Extracted 148 configs from subscription content
+[[34mINF[0m] Found subscription in fork PENZA84/MahsaFreeConfig: https://raw.githubusercontent.com/PENZA84/MahsaFreeConfig/main/mtn/sub_2.txt
+[[35mDBG[0m] Fetching channel 6/291: https://t.me/s/skivpn
+[[35mDBG[0m] Collected 4 configs from skivpn
+[[34mINF[0m] Found subscription in fork PENZA84/MahsaFreeConfig: https://raw.githubusercontent.com/PENZA84/MahsaFreeConfig/main/mtn/sub_3.txt
+[[34mINF[0m] Found subscription in fork PENZA84/MahsaFreeConfig: https://raw.githubusercontent.com/PENZA84/MahsaFreeConfig/main/mtn/sub_4.txt
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Extracted 129 configs from subscription content
+[[35mDBG[0m] Extracted 383 configs from subscription content
+[[35mDBG[0m] Extracted 269 configs from subscription content
+[[35mDBG[0m] Extracted 186 configs from subscription content
+[[35mDBG[0m] Fetching channel 7/291: https://t.me/s/V2pedia
+[[35mDBG[0m] Extracted 3542 configs from subscription content
+[[35mDBG[0m] Extracted 29622 configs from subscription content
 [[34mINF[0m] Found subscription in fork kiyky/MahsaFreeConfig: https://raw.githubusercontent.com/kiyky/MahsaFreeConfig/main/mci/sub_1.txt
-[[35mDBG[0m] Extracted 1421 configs from subscription content
 [[34mINF[0m] Found subscription in fork kiyky/MahsaFreeConfig: https://raw.githubusercontent.com/kiyky/MahsaFreeConfig/main/mci/sub_2.txt
 [[34mINF[0m] Found subscription in fork kiyky/MahsaFreeConfig: https://raw.githubusercontent.com/kiyky/MahsaFreeConfig/main/mci/sub_3.txt
+[[35mDBG[0m] Extracted 3633 configs from subscription content
 [[34mINF[0m] Found subscription in fork kiyky/MahsaFreeConfig: https://raw.githubusercontent.com/kiyky/MahsaFreeConfig/main/mci/sub_4.txt
-[[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Extracted 2432 configs from subscription content
 [[34mINF[0m] Found subscription in fork kiyky/MahsaFreeConfig: https://raw.githubusercontent.com/kiyky/MahsaFreeConfig/main/mtn/sub_1.txt
-[[35mDBG[0m] Fetching channel 3/235: https://t.me/s/V2rayEnglish
+[[35mDBG[0m] Extracted 80 configs from subscription content
 [[34mINF[0m] Found subscription in fork kiyky/MahsaFreeConfig: https://raw.githubusercontent.com/kiyky/MahsaFreeConfig/main/mtn/sub_2.txt
-[[35mDBG[0m] Collected 10 configs from V2rayEnglish
 [[34mINF[0m] Found subscription in fork kiyky/MahsaFreeConfig: https://raw.githubusercontent.com/kiyky/MahsaFreeConfig/main/mtn/sub_3.txt
+[[35mDBG[0m] Extracted 5 configs from subscription content
+[[35mDBG[0m] Extracted 3812 configs from subscription content
 [[34mINF[0m] Found subscription in fork kiyky/MahsaFreeConfig: https://raw.githubusercontent.com/kiyky/MahsaFreeConfig/main/mtn/sub_4.txt
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Extracted 386 configs from subscription content
-[[35mDBG[0m] Extracted 3362 configs from subscription content
-[[35mDBG[0m] Extracted 1610 configs from subscription content
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Fetching channel 8/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 148 configs from subscription content
+[[35mDBG[0m] Extracted 369 configs from subscription content
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Extracted 148 configs from subscription content
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Fetching channel 9/291: https://t.me/s/mtmvpn
+[[35mDBG[0m] Collected 24 configs from mtmvpn
 [[34mINF[0m] Found subscription in fork m000einr1990-spec/MahsaFreeConfig: https://raw.githubusercontent.com/m000einr1990-spec/MahsaFreeConfig/main/mci/sub_1.txt
 [[34mINF[0m] Found subscription in fork m000einr1990-spec/MahsaFreeConfig: https://raw.githubusercontent.com/m000einr1990-spec/MahsaFreeConfig/main/mci/sub_2.txt
-[[35mDBG[0m] Fetching channel 4/235: https://t.me/s/Parsashonam
+[[35mDBG[0m] Extracted 100 configs from subscription content
 [[34mINF[0m] Found subscription in fork m000einr1990-spec/MahsaFreeConfig: https://raw.githubusercontent.com/m000einr1990-spec/MahsaFreeConfig/main/mci/sub_3.txt
-[[35mDBG[0m] Collected 3 configs from Parsashonam
-[[35mDBG[0m] Extracted 1538 configs from subscription content
 [[34mINF[0m] Found subscription in fork m000einr1990-spec/MahsaFreeConfig: https://raw.githubusercontent.com/m000einr1990-spec/MahsaFreeConfig/main/mci/sub_4.txt
+[[35mDBG[0m] Extracted 10 configs from subscription content
 [[34mINF[0m] Found subscription in fork m000einr1990-spec/MahsaFreeConfig: https://raw.githubusercontent.com/m000einr1990-spec/MahsaFreeConfig/main/mtn/sub_1.txt
-[[35mDBG[0m] Extracted 208 configs from subscription content
 [[34mINF[0m] Found subscription in fork m000einr1990-spec/MahsaFreeConfig: https://raw.githubusercontent.com/m000einr1990-spec/MahsaFreeConfig/main/mtn/sub_2.txt
-[[35mDBG[0m] Extracted 148 configs from subscription content
 [[34mINF[0m] Found subscription in fork m000einr1990-spec/MahsaFreeConfig: https://raw.githubusercontent.com/m000einr1990-spec/MahsaFreeConfig/main/mtn/sub_3.txt
-[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Extracted 2 configs from subscription content
+[[35mDBG[0m] Extracted 80 configs from subscription content
 [[34mINF[0m] Found subscription in fork m000einr1990-spec/MahsaFreeConfig: https://raw.githubusercontent.com/m000einr1990-spec/MahsaFreeConfig/main/mtn/sub_4.txt
-[[35mDBG[0m] Extracted 209 configs from subscription content
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Fetching channel 5/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Extracted 191 configs from subscription content
-[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Extracted 3724 configs from subscription content
+[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Fetching channel 10/291: https://t.me/s/FreakConfig
+[[35mDBG[0m] Collected 24 configs from FreakConfig
+[[35mDBG[0m] Extracted 7 configs from subscription content
+[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Extracted 663 configs from subscription content
 [[34mINF[0m] Found subscription in fork hiddify/MahsaFreeConfig: https://raw.githubusercontent.com/hiddify/MahsaFreeConfig/main/mci/sub_1.txt
+[[35mDBG[0m] Extracted 880 configs from subscription content
 [[34mINF[0m] Found subscription in fork hiddify/MahsaFreeConfig: https://raw.githubusercontent.com/hiddify/MahsaFreeConfig/main/mci/sub_2.txt
+[[35mDBG[0m] Extracted 104 configs from subscription content
 [[34mINF[0m] Found subscription in fork hiddify/MahsaFreeConfig: https://raw.githubusercontent.com/hiddify/MahsaFreeConfig/main/mci/sub_3.txt
-[[35mDBG[0m] Extracted 1 configs from subscription content
 [[34mINF[0m] Found subscription in fork hiddify/MahsaFreeConfig: https://raw.githubusercontent.com/hiddify/MahsaFreeConfig/main/mci/sub_4.txt
-[[35mDBG[0m] Extracted 74 configs from subscription content
-[[35mDBG[0m] Extracted 2170 configs from subscription content
 [[34mINF[0m] Found subscription in fork hiddify/MahsaFreeConfig: https://raw.githubusercontent.com/hiddify/MahsaFreeConfig/main/mtn/sub_1.txt
 [[34mINF[0m] Found subscription in fork hiddify/MahsaFreeConfig: https://raw.githubusercontent.com/hiddify/MahsaFreeConfig/main/mtn/sub_2.txt
 [[34mINF[0m] Found subscription in fork hiddify/MahsaFreeConfig: https://raw.githubusercontent.com/hiddify/MahsaFreeConfig/main/mtn/sub_3.txt
-[[34mINF[0m] Found subscription in fork hiddify/MahsaFreeConfig: https://raw.githubusercontent.com/hiddify/MahsaFreeConfig/main/mtn/sub_4.txt
 [[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Fetching channel 6/235: https://t.me/s/v2ray_configs_pool
-[[35mDBG[0m] Extracted 99 configs from subscription content
-[[35mDBG[0m] Collected 16 configs from v2ray_configs_pool
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Extracted 197 configs from subscription content
+[[35mDBG[0m] Fetching channel 11/291: https://t.me/s/s
+[[34mINF[0m] Found subscription in fork hiddify/MahsaFreeConfig: https://raw.githubusercontent.com/hiddify/MahsaFreeConfig/main/mtn/sub_4.txt
+[[35mDBG[0m] Extracted 3557 configs from subscription content
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Extracted 78 configs from subscription content
+[[35mDBG[0m] Extracted 269 configs from subscription content
+[[35mDBG[0m] Fetching channel 12/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Extracted 502 configs from subscription content
+[[35mDBG[0m] Extracted 3 configs from subscription content
 [[34mINF[0m] Found subscription in fork mahyamkashani/MahsaFreeConfig: https://raw.githubusercontent.com/mahyamkashani/MahsaFreeConfig/main/mci/sub_1.txt
-[[35mDBG[0m] Fetching channel 7/235: https://t.me/s/LonUp_M
 [[34mINF[0m] Found subscription in fork mahyamkashani/MahsaFreeConfig: https://raw.githubusercontent.com/mahyamkashani/MahsaFreeConfig/main/mci/sub_2.txt
-[[35mDBG[0m] Collected 193 configs from LonUp_M
-[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Extracted 34 configs from subscription content
 [[34mINF[0m] Found subscription in fork mahyamkashani/MahsaFreeConfig: https://raw.githubusercontent.com/mahyamkashani/MahsaFreeConfig/main/mci/sub_3.txt
 [[34mINF[0m] Found subscription in fork mahyamkashani/MahsaFreeConfig: https://raw.githubusercontent.com/mahyamkashani/MahsaFreeConfig/main/mci/sub_4.txt
 [[34mINF[0m] Found subscription in fork mahyamkashani/MahsaFreeConfig: https://raw.githubusercontent.com/mahyamkashani/MahsaFreeConfig/main/mtn/sub_1.txt
 [[34mINF[0m] Found subscription in fork mahyamkashani/MahsaFreeConfig: https://raw.githubusercontent.com/mahyamkashani/MahsaFreeConfig/main/mtn/sub_2.txt
+[[35mDBG[0m] Extracted 14 configs from subscription content
 [[34mINF[0m] Found subscription in fork mahyamkashani/MahsaFreeConfig: https://raw.githubusercontent.com/mahyamkashani/MahsaFreeConfig/main/mtn/sub_3.txt
 [[34mINF[0m] Found subscription in fork mahyamkashani/MahsaFreeConfig: https://raw.githubusercontent.com/mahyamkashani/MahsaFreeConfig/main/mtn/sub_4.txt
-[[35mDBG[0m] Extracted 47790 configs from subscription content
-[[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Extracted 209 configs from subscription content
-[[35mDBG[0m] Fetching channel 8/235: https://t.me/s/azadi_az_inja_migzare
-[[35mDBG[0m] Collected 3 configs from azadi_az_inja_migzare
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[34mINF[0m] Found subscription in fork EDK-Rise/MahsaFreeConfig: https://raw.githubusercontent.com/EDK-Rise/MahsaFreeConfig/main/mci/sub_1.txt
 [[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Extracted 87 configs from subscription content
+[[35mDBG[0m] Fetching channel 13/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 11 configs from subscription content
+[[35mDBG[0m] Extracted 870 configs from subscription content
+[[35mDBG[0m] Extracted 295 configs from subscription content
+[[35mDBG[0m] Fetching channel 14/291: https://t.me/s/ConfigWireguard
+[[35mDBG[0m] Extracted 258 configs from subscription content
+[[35mDBG[0m] Extracted 5 configs from subscription content
+[[35mDBG[0m] Collected 13 configs from ConfigWireguard
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[34mINF[0m] Found subscription in fork EDK-Rise/MahsaFreeConfig: https://raw.githubusercontent.com/EDK-Rise/MahsaFreeConfig/main/mci/sub_1.txt
 [[34mINF[0m] Found subscription in fork EDK-Rise/MahsaFreeConfig: https://raw.githubusercontent.com/EDK-Rise/MahsaFreeConfig/main/mci/sub_2.txt
 [[34mINF[0m] Found subscription in fork EDK-Rise/MahsaFreeConfig: https://raw.githubusercontent.com/EDK-Rise/MahsaFreeConfig/main/mci/sub_3.txt
 [[34mINF[0m] Found subscription in fork EDK-Rise/MahsaFreeConfig: https://raw.githubusercontent.com/EDK-Rise/MahsaFreeConfig/main/mci/sub_4.txt
 [[34mINF[0m] Found subscription in fork EDK-Rise/MahsaFreeConfig: https://raw.githubusercontent.com/EDK-Rise/MahsaFreeConfig/main/mtn/sub_1.txt
-[[35mDBG[0m] Extracted 148 configs from subscription content
 [[34mINF[0m] Found subscription in fork EDK-Rise/MahsaFreeConfig: https://raw.githubusercontent.com/EDK-Rise/MahsaFreeConfig/main/mtn/sub_2.txt
-[[35mDBG[0m] Extracted 318 configs from subscription content
+[[35mDBG[0m] Fetching channel 15/291: https://t.me/s/V2All
 [[34mINF[0m] Found subscription in fork EDK-Rise/MahsaFreeConfig: https://raw.githubusercontent.com/EDK-Rise/MahsaFreeConfig/main/mtn/sub_3.txt
-[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Extracted 260 configs from subscription content
+[[35mDBG[0m] Collected 82 configs from V2All
 [[34mINF[0m] Found subscription in fork EDK-Rise/MahsaFreeConfig: https://raw.githubusercontent.com/EDK-Rise/MahsaFreeConfig/main/mtn/sub_4.txt
-[[35mDBG[0m] Fetching channel 9/235: https://t.me/s/hddify
-[[35mDBG[0m] Collected 9 configs from hddify
-[[35mDBG[0m] Extracted 1664 configs from subscription content
-[[35mDBG[0m] Extracted 115 configs from subscription content
-[[35mDBG[0m] Extracted 209 configs from subscription content
-[[35mDBG[0m] Extracted 17 configs from subscription content
+[[35mDBG[0m] Extracted 6042 configs from subscription content
+[[35mDBG[0m] Extracted 317 configs from subscription content
+[[35mDBG[0m] Extracted 1752 configs from subscription content
+[[35mDBG[0m] Extracted 176 configs from subscription content
+[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Fetching channel 16/291: https://t.me/s/PrivateVPNs
+[[35mDBG[0m] Collected 32 configs from PrivateVPNs
+[[35mDBG[0m] Extracted 113 configs from subscription content
+[[35mDBG[0m] Extracted 2 configs from subscription content
+[[35mDBG[0m] Extracted 104 configs from subscription content
 [[34mINF[0m] Found subscription in fork Wolf6470/MahsaFreeConfig: https://raw.githubusercontent.com/Wolf6470/MahsaFreeConfig/main/mci/sub_1.txt
 [[34mINF[0m] Found subscription in fork Wolf6470/MahsaFreeConfig: https://raw.githubusercontent.com/Wolf6470/MahsaFreeConfig/main/mci/sub_2.txt
-[[35mDBG[0m] Fetching channel 10/235: https://t.me/s/SafeNetIR
+[[35mDBG[0m] Extracted 80 configs from subscription content
 [[34mINF[0m] Found subscription in fork Wolf6470/MahsaFreeConfig: https://raw.githubusercontent.com/Wolf6470/MahsaFreeConfig/main/mci/sub_3.txt
-[[35mDBG[0m] Extracted 405 configs from subscription content
-[[35mDBG[0m] Collected 14 configs from SafeNetIR
-[[35mDBG[0m] Extracted 200 configs from subscription content
 [[34mINF[0m] Found subscription in fork Wolf6470/MahsaFreeConfig: https://raw.githubusercontent.com/Wolf6470/MahsaFreeConfig/main/mci/sub_4.txt
 [[34mINF[0m] Found subscription in fork Wolf6470/MahsaFreeConfig: https://raw.githubusercontent.com/Wolf6470/MahsaFreeConfig/main/mtn/sub_1.txt
 [[34mINF[0m] Found subscription in fork Wolf6470/MahsaFreeConfig: https://raw.githubusercontent.com/Wolf6470/MahsaFreeConfig/main/mtn/sub_2.txt
-[[35mDBG[0m] Extracted 2265 configs from subscription content
+[[35mDBG[0m] Fetching channel 17/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Extracted 188 configs from subscription content
 [[34mINF[0m] Found subscription in fork Wolf6470/MahsaFreeConfig: https://raw.githubusercontent.com/Wolf6470/MahsaFreeConfig/main/mtn/sub_3.txt
-[[35mDBG[0m] Extracted 870 configs from subscription content
+[[35mDBG[0m] Extracted 2612 configs from subscription content
 [[34mINF[0m] Found subscription in fork Wolf6470/MahsaFreeConfig: https://raw.githubusercontent.com/Wolf6470/MahsaFreeConfig/main/mtn/sub_4.txt
-[[35mDBG[0m] Fetching channel 11/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 480 configs from subscription content
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Extracted 15 configs from subscription content
-[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Extracted 106 configs from subscription content
+[[35mDBG[0m] Fetching channel 18/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 214 configs from subscription content
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Extracted 7 configs from subscription content
+[[35mDBG[0m] Extracted 622 configs from subscription content
+[[35mDBG[0m] Extracted 1871 configs from subscription content
+[[35mDBG[0m] Extracted 1708 configs from subscription content
+[[35mDBG[0m] Extracted 71 configs from subscription content
 [[34mINF[0m] Found subscription in fork yasbija/MahsaFreeConfig: https://raw.githubusercontent.com/yasbija/MahsaFreeConfig/main/mci/sub_1.txt
-[[35mDBG[0m] Extracted 338 configs from subscription content
+[[35mDBG[0m] Fetching channel 19/291: https://t.me/s/azadi_az_inja_migzare
+[[35mDBG[0m] Collected 7 configs from azadi_az_inja_migzare
 [[34mINF[0m] Found subscription in fork yasbija/MahsaFreeConfig: https://raw.githubusercontent.com/yasbija/MahsaFreeConfig/main/mci/sub_2.txt
 [[34mINF[0m] Found subscription in fork yasbija/MahsaFreeConfig: https://raw.githubusercontent.com/yasbija/MahsaFreeConfig/main/mci/sub_3.txt
 [[34mINF[0m] Found subscription in fork yasbija/MahsaFreeConfig: https://raw.githubusercontent.com/yasbija/MahsaFreeConfig/main/mci/sub_4.txt
-[[35mDBG[0m] Fetching channel 12/235: https://t.me/s/s
+[[35mDBG[0m] Extracted 38 configs from subscription content
+[[35mDBG[0m] Extracted 409 configs from subscription content
 [[34mINF[0m] Found subscription in fork yasbija/MahsaFreeConfig: https://raw.githubusercontent.com/yasbija/MahsaFreeConfig/main/mtn/sub_1.txt
-[[35mDBG[0m] Extracted 103 configs from subscription content
 [[34mINF[0m] Found subscription in fork yasbija/MahsaFreeConfig: https://raw.githubusercontent.com/yasbija/MahsaFreeConfig/main/mtn/sub_2.txt
-[[35mDBG[0m] Extracted 148 configs from subscription content
 [[34mINF[0m] Found subscription in fork yasbija/MahsaFreeConfig: https://raw.githubusercontent.com/yasbija/MahsaFreeConfig/main/mtn/sub_3.txt
+[[35mDBG[0m] Extracted 104 configs from subscription content
 [[34mINF[0m] Found subscription in fork yasbija/MahsaFreeConfig: https://raw.githubusercontent.com/yasbija/MahsaFreeConfig/main/mtn/sub_4.txt
+[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Extracted 539 configs from subscription content
 [[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Extracted 105 configs from subscription content
-[[35mDBG[0m] Extracted 258 configs from subscription content
-[[35mDBG[0m] Fetching channel 13/235: https://t.me/s/meliproxyy
-[[35mDBG[0m] Collected 3 configs from meliproxyy
-[[35mDBG[0m] Extracted 1 configs from subscription content
-[[35mDBG[0m] Extracted 2764 configs from subscription content
+[[35mDBG[0m] Extracted 148 configs from subscription content
+[[35mDBG[0m] Extracted 12 configs from subscription content
+[[35mDBG[0m] Fetching channel 20/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 148 configs from subscription content
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Extracted 104 configs from subscription content
 [[34mINF[0m] Found subscription in fork AivarSaar/MahsaFreeConfig: https://raw.githubusercontent.com/AivarSaar/MahsaFreeConfig/main/mci/sub_1.txt
-[[35mDBG[0m] Extracted 80 configs from subscription content
 [[34mINF[0m] Found subscription in fork AivarSaar/MahsaFreeConfig: https://raw.githubusercontent.com/AivarSaar/MahsaFreeConfig/main/mci/sub_2.txt
+[[35mDBG[0m] Extracted 1327 configs from subscription content
 [[34mINF[0m] Found subscription in fork AivarSaar/MahsaFreeConfig: https://raw.githubusercontent.com/AivarSaar/MahsaFreeConfig/main/mci/sub_3.txt
-[[35mDBG[0m] Extracted 35671 configs from subscription content
 [[34mINF[0m] Found subscription in fork AivarSaar/MahsaFreeConfig: https://raw.githubusercontent.com/AivarSaar/MahsaFreeConfig/main/mci/sub_4.txt
+[[35mDBG[0m] Fetching channel 21/291: https://t.me/s/vpnmega1
 [[34mINF[0m] Found subscription in fork AivarSaar/MahsaFreeConfig: https://raw.githubusercontent.com/AivarSaar/MahsaFreeConfig/main/mtn/sub_1.txt
+[[35mDBG[0m] Extracted 583 configs from subscription content
+[[35mDBG[0m] Collected 2 configs from vpnmega1
 [[34mINF[0m] Found subscription in fork AivarSaar/MahsaFreeConfig: https://raw.githubusercontent.com/AivarSaar/MahsaFreeConfig/main/mtn/sub_2.txt
 [[34mINF[0m] Found subscription in fork AivarSaar/MahsaFreeConfig: https://raw.githubusercontent.com/AivarSaar/MahsaFreeConfig/main/mtn/sub_3.txt
-[[35mDBG[0m] Extracted 208 configs from subscription content
 [[34mINF[0m] Found subscription in fork AivarSaar/MahsaFreeConfig: https://raw.githubusercontent.com/AivarSaar/MahsaFreeConfig/main/mtn/sub_4.txt
-[[35mDBG[0m] Extracted 2 configs from subscription content
-[[35mDBG[0m] Extracted 2 configs from subscription content
 [[35mDBG[0m] Extracted 24 configs from subscription content
-[[35mDBG[0m] Extracted 394 configs from subscription content
-[[35mDBG[0m] Fetching channel 14/235: https://t.me/s/PewezaVPN
-[[35mDBG[0m] Collected 6 configs from PewezaVPN
-[[35mDBG[0m] Fetching channel 15/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Extracted 148 configs from subscription content
+[[35mDBG[0m] Extracted 539 configs from subscription content
+[[35mDBG[0m] Extracted 509 configs from subscription content
+[[35mDBG[0m] Fetching channel 22/291: https://t.me/s/ConfigX2ray0
+[[35mDBG[0m] Collected 6 configs from ConfigX2ray0
+[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Extracted 5244 configs from subscription content
+[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Extracted 2432 configs from subscription content
 [[34mINF[0m] Found subscription in fork ehsan7672/MahsaFreeConfig: https://raw.githubusercontent.com/ehsan7672/MahsaFreeConfig/main/mci/sub_1.txt
-[[35mDBG[0m] Extracted 331 configs from subscription content
 [[34mINF[0m] Found subscription in fork ehsan7672/MahsaFreeConfig: https://raw.githubusercontent.com/ehsan7672/MahsaFreeConfig/main/mci/sub_2.txt
-[[35mDBG[0m] Extracted 1367 configs from subscription content
+[[35mDBG[0m] Extracted 148 configs from subscription content
 [[34mINF[0m] Found subscription in fork ehsan7672/MahsaFreeConfig: https://raw.githubusercontent.com/ehsan7672/MahsaFreeConfig/main/mci/sub_3.txt
 [[34mINF[0m] Found subscription in fork ehsan7672/MahsaFreeConfig: https://raw.githubusercontent.com/ehsan7672/MahsaFreeConfig/main/mci/sub_4.txt
+[[35mDBG[0m] Fetching channel 23/291: https://t.me/s/s
 [[34mINF[0m] Found subscription in fork ehsan7672/MahsaFreeConfig: https://raw.githubusercontent.com/ehsan7672/MahsaFreeConfig/main/mtn/sub_1.txt
 [[34mINF[0m] Found subscription in fork ehsan7672/MahsaFreeConfig: https://raw.githubusercontent.com/ehsan7672/MahsaFreeConfig/main/mtn/sub_2.txt
-[[35mDBG[0m] Extracted 80 configs from subscription content
 [[34mINF[0m] Found subscription in fork ehsan7672/MahsaFreeConfig: https://raw.githubusercontent.com/ehsan7672/MahsaFreeConfig/main/mtn/sub_3.txt
+[[35mDBG[0m] Extracted 566 configs from subscription content
 [[34mINF[0m] Found subscription in fork ehsan7672/MahsaFreeConfig: https://raw.githubusercontent.com/ehsan7672/MahsaFreeConfig/main/mtn/sub_4.txt
-[[35mDBG[0m] Extracted 649 configs from subscription content
-[[35mDBG[0m] Extracted 232 configs from subscription content
-[[35mDBG[0m] Fetching channel 16/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 1327 configs from subscription content
-[[35mDBG[0m] Extracted 409 configs from subscription content
-[[34mINF[0m] Found subscription in fork vsevolobo/MahsaFreeConfig: https://raw.githubusercontent.com/vsevolobo/MahsaFreeConfig/main/mci/sub_1.txt
+[[35mDBG[0m] Extracted 1855 configs from subscription content
+[[35mDBG[0m] Extracted 312 configs from subscription content
+[[35mDBG[0m] Extracted 0 configs from subscription content
+[[35mDBG[0m] Fetching channel 24/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 2788 configs from subscription content
 [[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Extracted 405 configs from subscription content
+[[35mDBG[0m] Fetching channel 25/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 226 configs from subscription content
+[[34mINF[0m] Found subscription in fork vsevolobo/MahsaFreeConfig: https://raw.githubusercontent.com/vsevolobo/MahsaFreeConfig/main/mci/sub_1.txt
+[[35mDBG[0m] Extracted 1 configs from subscription content
 [[34mINF[0m] Found subscription in fork vsevolobo/MahsaFreeConfig: https://raw.githubusercontent.com/vsevolobo/MahsaFreeConfig/main/mci/sub_2.txt
 [[34mINF[0m] Found subscription in fork vsevolobo/MahsaFreeConfig: https://raw.githubusercontent.com/vsevolobo/MahsaFreeConfig/main/mci/sub_3.txt
-[[35mDBG[0m] Extracted 200 configs from subscription content
+[[35mDBG[0m] Extracted 6337 configs from subscription content
 [[34mINF[0m] Found subscription in fork vsevolobo/MahsaFreeConfig: https://raw.githubusercontent.com/vsevolobo/MahsaFreeConfig/main/mci/sub_4.txt
 [[34mINF[0m] Found subscription in fork vsevolobo/MahsaFreeConfig: https://raw.githubusercontent.com/vsevolobo/MahsaFreeConfig/main/mtn/sub_1.txt
-[[35mDBG[0m] Extracted 104 configs from subscription content
 [[34mINF[0m] Found subscription in fork vsevolobo/MahsaFreeConfig: https://raw.githubusercontent.com/vsevolobo/MahsaFreeConfig/main/mtn/sub_2.txt
+[[35mDBG[0m] Extracted 194 configs from subscription content
 [[34mINF[0m] Found subscription in fork vsevolobo/MahsaFreeConfig: https://raw.githubusercontent.com/vsevolobo/MahsaFreeConfig/main/mtn/sub_3.txt
-[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Extracted 1595 configs from subscription content
 [[34mINF[0m] Found subscription in fork vsevolobo/MahsaFreeConfig: https://raw.githubusercontent.com/vsevolobo/MahsaFreeConfig/main/mtn/sub_4.txt
-[[35mDBG[0m] Extracted 1210 configs from subscription content
-[[35mDBG[0m] Extracted 209 configs from subscription content
-[[35mDBG[0m] Fetching channel 17/235: https://t.me/s/NetAccount
-[[35mDBG[0m] Extracted 1885 configs from subscription content
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Extracted 1323 configs from subscription content
-[[35mDBG[0m] Extracted 306 configs from subscription content
+[[35mDBG[0m] Extracted 148 configs from subscription content
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Fetching channel 26/291: https://t.me/s/wedbazvpn
+[[35mDBG[0m] Collected 20 configs from wedbazvpn
+[[35mDBG[0m] Extracted 148 configs from subscription content
+[[35mDBG[0m] Extracted 757 configs from subscription content
+[[35mDBG[0m] Extracted 317 configs from subscription content
+[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Extracted 591 configs from subscription content
 [[34mINF[0m] Found subscription in fork FrankHunton/MFC3303: https://raw.githubusercontent.com/FrankHunton/MFC3303/main/mci/sub_1.txt
+[[35mDBG[0m] Extracted 80 configs from subscription content
 [[34mINF[0m] Found subscription in fork FrankHunton/MFC3303: https://raw.githubusercontent.com/FrankHunton/MFC3303/main/mci/sub_2.txt
 [[34mINF[0m] Found subscription in fork FrankHunton/MFC3303: https://raw.githubusercontent.com/FrankHunton/MFC3303/main/mci/sub_3.txt
 [[34mINF[0m] Found subscription in fork FrankHunton/MFC3303: https://raw.githubusercontent.com/FrankHunton/MFC3303/main/mci/sub_4.txt
+[[35mDBG[0m] Extracted 35671 configs from subscription content
+[[35mDBG[0m] Extracted 209 configs from subscription content
 [[34mINF[0m] Found subscription in fork FrankHunton/MFC3303: https://raw.githubusercontent.com/FrankHunton/MFC3303/main/mtn/sub_1.txt
+[[35mDBG[0m] Fetching channel 27/291: https://t.me/s/s
 [[34mINF[0m] Found subscription in fork FrankHunton/MFC3303: https://raw.githubusercontent.com/FrankHunton/MFC3303/main/mtn/sub_2.txt
 [[34mINF[0m] Found subscription in fork FrankHunton/MFC3303: https://raw.githubusercontent.com/FrankHunton/MFC3303/main/mtn/sub_3.txt
-[[35mDBG[0m] Extracted 1711 configs from subscription content
+[[35mDBG[0m] Extracted 100 configs from subscription content
 [[34mINF[0m] Found subscription in fork FrankHunton/MFC3303: https://raw.githubusercontent.com/FrankHunton/MFC3303/main/mtn/sub_4.txt
-[[35mDBG[0m] Fetching channel 18/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 482 configs from subscription content
+[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Extracted 200 configs from subscription content
+[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Extracted 1 configs from subscription content
+[[35mDBG[0m] Extracted 2265 configs from subscription content
+[[35mDBG[0m] Fetching channel 28/291: https://t.me/s/v2rayconfigamir
+[[35mDBG[0m] Collected 71 configs from v2rayconfigamir
+[[35mDBG[0m] Extracted 493 configs from subscription content
 [[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Extracted 2 configs from subscription content
-[[35mDBG[0m] Extracted 101 configs from subscription content
-[[35mDBG[0m] Extracted 27 configs from subscription content
-[[35mDBG[0m] Fetching channel 19/235: https://t.me/s/free1_vpn
-[[35mDBG[0m] Collected 6 configs from free1_vpn
-[[35mDBG[0m] Extracted 97 configs from subscription content
+[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Fetching channel 29/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 255 configs from subscription content
+[[35mDBG[0m] Extracted 726 configs from subscription content
+[[35mDBG[0m] Extracted 880 configs from subscription content
 [[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Fetching channel 20/235: https://t.me/s/vpnplusee_free
-[[35mDBG[0m] Collected 7 configs from vpnplusee_free
-[[35mDBG[0m] Extracted 258 configs from subscription content
-[[35mDBG[0m] Extracted 1868 configs from subscription content
-[[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Extracted 339 configs from subscription content
-[[35mDBG[0m] Extracted 194 configs from subscription content
+[[35mDBG[0m] Extracted 5308 configs from subscription content
+[[35mDBG[0m] Extracted 29416 configs from subscription content
+[[35mDBG[0m] Fetching channel 30/291: https://t.me/s/s
 [[34mINF[0m] Found subscription in fork ARMANERGAN/MahsaFreeConfig: https://raw.githubusercontent.com/ARMANERGAN/MahsaFreeConfig/main/mci/sub_1.txt
-[[35mDBG[0m] Extracted 1375 configs from subscription content
-[[35mDBG[0m] Fetching channel 21/235: https://t.me/s/sharecentrepro
+[[35mDBG[0m] Extracted 2432 configs from subscription content
 [[34mINF[0m] Found subscription in fork ARMANERGAN/MahsaFreeConfig: https://raw.githubusercontent.com/ARMANERGAN/MahsaFreeConfig/main/mci/sub_2.txt
-[[35mDBG[0m] Collected 11 configs from sharecentrepro
 [[34mINF[0m] Found subscription in fork ARMANERGAN/MahsaFreeConfig: https://raw.githubusercontent.com/ARMANERGAN/MahsaFreeConfig/main/mci/sub_3.txt
 [[34mINF[0m] Found subscription in fork ARMANERGAN/MahsaFreeConfig: https://raw.githubusercontent.com/ARMANERGAN/MahsaFreeConfig/main/mci/sub_4.txt
 [[34mINF[0m] Found subscription in fork ARMANERGAN/MahsaFreeConfig: https://raw.githubusercontent.com/ARMANERGAN/MahsaFreeConfig/main/mtn/sub_1.txt
-[[35mDBG[0m] Extracted 21 configs from subscription content
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Extracted 104 configs from subscription content
 [[34mINF[0m] Found subscription in fork ARMANERGAN/MahsaFreeConfig: https://raw.githubusercontent.com/ARMANERGAN/MahsaFreeConfig/main/mtn/sub_2.txt
 [[34mINF[0m] Found subscription in fork ARMANERGAN/MahsaFreeConfig: https://raw.githubusercontent.com/ARMANERGAN/MahsaFreeConfig/main/mtn/sub_3.txt
 [[34mINF[0m] Found subscription in fork ARMANERGAN/MahsaFreeConfig: https://raw.githubusercontent.com/ARMANERGAN/MahsaFreeConfig/main/mtn/sub_4.txt
-[[35mDBG[0m] Extracted 188 configs from subscription content
-[[35mDBG[0m] Extracted 1193 configs from subscription content
-[[35mDBG[0m] Extracted 1421 configs from subscription content
-[[35mDBG[0m] Extracted 102 configs from subscription content
-[[35mDBG[0m] Fetching channel 22/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 589 configs from subscription content
+[[35mDBG[0m] Extracted 192 configs from subscription content
 [[35mDBG[0m] Extracted 148 configs from subscription content
+[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Extracted 1 configs from subscription content
+[[35mDBG[0m] Extracted 148 configs from subscription content
+[[35mDBG[0m] Extracted 269 configs from subscription content
+[[35mDBG[0m] Fetching channel 31/291: https://t.me/s/V2rayNGX
+[[35mDBG[0m] Collected 6 configs from V2rayNGX
+[[35mDBG[0m] Extracted 3832 configs from subscription content
+[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Fetching channel 32/291: https://t.me/s/s
 [[34mINF[0m] Found subscription in fork monddelta/MahsaFreeConfig: https://raw.githubusercontent.com/monddelta/MahsaFreeConfig/main/mci/sub_1.txt
+[[35mDBG[0m] Extracted 148 configs from subscription content
 [[34mINF[0m] Found subscription in fork monddelta/MahsaFreeConfig: https://raw.githubusercontent.com/monddelta/MahsaFreeConfig/main/mci/sub_2.txt
-[[35mDBG[0m] Extracted 1627 configs from subscription content
+[[35mDBG[0m] Extracted 599 configs from subscription content
 [[34mINF[0m] Found subscription in fork monddelta/MahsaFreeConfig: https://raw.githubusercontent.com/monddelta/MahsaFreeConfig/main/mci/sub_3.txt
+[[35mDBG[0m] Extracted 12 configs from subscription content
 [[34mINF[0m] Found subscription in fork monddelta/MahsaFreeConfig: https://raw.githubusercontent.com/monddelta/MahsaFreeConfig/main/mci/sub_4.txt
 [[34mINF[0m] Found subscription in fork monddelta/MahsaFreeConfig: https://raw.githubusercontent.com/monddelta/MahsaFreeConfig/main/mtn/sub_1.txt
 [[34mINF[0m] Found subscription in fork monddelta/MahsaFreeConfig: https://raw.githubusercontent.com/monddelta/MahsaFreeConfig/main/mtn/sub_2.txt
 [[34mINF[0m] Found subscription in fork monddelta/MahsaFreeConfig: https://raw.githubusercontent.com/monddelta/MahsaFreeConfig/main/mtn/sub_3.txt
-[[35mDBG[0m] Extracted 401 configs from subscription content
 [[34mINF[0m] Found subscription in fork monddelta/MahsaFreeConfig: https://raw.githubusercontent.com/monddelta/MahsaFreeConfig/main/mtn/sub_4.txt
-[[35mDBG[0m] Extracted 2 configs from subscription content
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Fetching channel 23/235: https://t.me/s/s
+[[35mDBG[0m] Extracted 317 configs from subscription content
+[[35mDBG[0m] Extracted 10 configs from subscription content
 [[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Extracted 8 configs from subscription content
-[[35mDBG[0m] Extracted 54 configs from subscription content
+[[35mDBG[0m] Fetching channel 33/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 132 configs from subscription content
 [[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Fetching channel 24/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 4 configs from subscription content
+[[35mDBG[0m] Extracted 272 configs from subscription content
+[[35mDBG[0m] Fetching channel 34/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 3 configs from subscription content
+[[35mDBG[0m] Extracted 645 configs from subscription content
+[[35mDBG[0m] Extracted 6450 configs from subscription content
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Extracted 148 configs from subscription content
+[[35mDBG[0m] Extracted 104 configs from subscription content
 [[35mDBG[0m] Extracted 80 configs from subscription content
 [[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Fetching channel 35/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 1286 configs from subscription content
+[[35mDBG[0m] Extracted 268 configs from subscription content
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Extracted 499 configs from subscription content
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Extracted 1 configs from subscription content
+[[35mDBG[0m] Fetching channel 36/291: https://t.me/s/free_vpn02
+[[35mDBG[0m] Extracted 99 configs from subscription content
 [[34mINF[0m] Found subscription in fork aminafsh/MahsaFreeConfig: https://raw.githubusercontent.com/aminafsh/MahsaFreeConfig/main/mci/sub_1.txt
-[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Collected 21 configs from free_vpn02
 [[34mINF[0m] Found subscription in fork aminafsh/MahsaFreeConfig: https://raw.githubusercontent.com/aminafsh/MahsaFreeConfig/main/mci/sub_2.txt
+[[35mDBG[0m] Extracted 80 configs from subscription content
 [[34mINF[0m] Found subscription in fork aminafsh/MahsaFreeConfig: https://raw.githubusercontent.com/aminafsh/MahsaFreeConfig/main/mci/sub_3.txt
-[[35mDBG[0m] Fetching channel 25/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Extracted 342 configs from subscription content
+[[35mDBG[0m] Extracted 2 configs from subscription content
 [[34mINF[0m] Found subscription in fork aminafsh/MahsaFreeConfig: https://raw.githubusercontent.com/aminafsh/MahsaFreeConfig/main/mci/sub_4.txt
 [[34mINF[0m] Found subscription in fork aminafsh/MahsaFreeConfig: https://raw.githubusercontent.com/aminafsh/MahsaFreeConfig/main/mtn/sub_1.txt
 [[34mINF[0m] Found subscription in fork aminafsh/MahsaFreeConfig: https://raw.githubusercontent.com/aminafsh/MahsaFreeConfig/main/mtn/sub_2.txt
-[[34mINF[0m] Found subscription in fork aminafsh/MahsaFreeConfig: https://raw.githubusercontent.com/aminafsh/MahsaFreeConfig/main/mtn/sub_3.txt
 [[35mDBG[0m] Extracted 2432 configs from subscription content
+[[34mINF[0m] Found subscription in fork aminafsh/MahsaFreeConfig: https://raw.githubusercontent.com/aminafsh/MahsaFreeConfig/main/mtn/sub_3.txt
+[[35mDBG[0m] Extracted 112 configs from subscription content
 [[34mINF[0m] Found subscription in fork aminafsh/MahsaFreeConfig: https://raw.githubusercontent.com/aminafsh/MahsaFreeConfig/main/mtn/sub_4.txt
-[[35mDBG[0m] Extracted 11 configs from subscription content
-[[35mDBG[0m] Extracted 71 configs from subscription content
-[[35mDBG[0m] Extracted 207 configs from subscription content
-[[35mDBG[0m] Fetching channel 26/235: https://t.me/s/v2rayvpnchannel
-[[35mDBG[0m] Extracted 1855 configs from subscription content
-[[35mDBG[0m] Collected 34 configs from v2rayvpnchannel
+[[35mDBG[0m] Fetching channel 37/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Extracted 104 configs from subscription content
 [[35mDBG[0m] Extracted 3 configs from subscription content
+[[35mDBG[0m] Extracted 99 configs from subscription content
+[[35mDBG[0m] Extracted 1389 configs from subscription content
+[[35mDBG[0m] Extracted 148 configs from subscription content
+[[35mDBG[0m] Fetching channel 38/291: https://t.me/s/vmessorg
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Extracted 104 configs from subscription content
 [[34mINF[0m] Found subscription in fork h-sajad555/MahsaFreeConfig: https://raw.githubusercontent.com/h-sajad555/MahsaFreeConfig/main/mci/sub_1.txt
+[[35mDBG[0m] Extracted 563 configs from subscription content
+[[35mDBG[0m] Collected 12 configs from vmessorg
 [[34mINF[0m] Found subscription in fork h-sajad555/MahsaFreeConfig: https://raw.githubusercontent.com/h-sajad555/MahsaFreeConfig/main/mci/sub_2.txt
 [[34mINF[0m] Found subscription in fork h-sajad555/MahsaFreeConfig: https://raw.githubusercontent.com/h-sajad555/MahsaFreeConfig/main/mci/sub_3.txt
-[[35mDBG[0m] Extracted 3832 configs from subscription content
+[[35mDBG[0m] Extracted 200 configs from subscription content
 [[34mINF[0m] Found subscription in fork h-sajad555/MahsaFreeConfig: https://raw.githubusercontent.com/h-sajad555/MahsaFreeConfig/main/mci/sub_4.txt
+[[35mDBG[0m] Extracted 608 configs from subscription content
 [[34mINF[0m] Found subscription in fork h-sajad555/MahsaFreeConfig: https://raw.githubusercontent.com/h-sajad555/MahsaFreeConfig/main/mtn/sub_1.txt
-[[35mDBG[0m] Extracted 148 configs from subscription content
 [[34mINF[0m] Found subscription in fork h-sajad555/MahsaFreeConfig: https://raw.githubusercontent.com/h-sajad555/MahsaFreeConfig/main/mtn/sub_2.txt
 [[34mINF[0m] Found subscription in fork h-sajad555/MahsaFreeConfig: https://raw.githubusercontent.com/h-sajad555/MahsaFreeConfig/main/mtn/sub_3.txt
-[[35mDBG[0m] Extracted 12 configs from subscription content
+[[35mDBG[0m] Extracted 10 configs from subscription content
 [[34mINF[0m] Found subscription in fork h-sajad555/MahsaFreeConfig: https://raw.githubusercontent.com/h-sajad555/MahsaFreeConfig/main/mtn/sub_4.txt
+[[35mDBG[0m] Extracted 232 configs from subscription content
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Fetching channel 39/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Extracted 3567 configs from subscription content
 [[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Fetching channel 27/235: https://t.me/s/Fr33C0nfig
-[[35mDBG[0m] Collected 4 configs from Fr33C0nfig
-[[35mDBG[0m] Extracted 4003 configs from subscription content
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Extracted 33186 configs from subscription content
 [[34mINF[0m] Found subscription in fork lowercase78/MahsaFreeConfig: https://raw.githubusercontent.com/lowercase78/MahsaFreeConfig/main/mci/sub_1.txt
+[[35mDBG[0m] Fetching channel 40/291: https://t.me/s/vpnfail_v2ray
+[[35mDBG[0m] Extracted 572 configs from subscription content
+[[35mDBG[0m] Collected 38 configs from vpnfail_v2ray
 [[34mINF[0m] Found subscription in fork lowercase78/MahsaFreeConfig: https://raw.githubusercontent.com/lowercase78/MahsaFreeConfig/main/mci/sub_2.txt
+[[35mDBG[0m] Extracted 880 configs from subscription content
 [[34mINF[0m] Found subscription in fork lowercase78/MahsaFreeConfig: https://raw.githubusercontent.com/lowercase78/MahsaFreeConfig/main/mci/sub_3.txt
 [[34mINF[0m] Found subscription in fork lowercase78/MahsaFreeConfig: https://raw.githubusercontent.com/lowercase78/MahsaFreeConfig/main/mci/sub_4.txt
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Extracted 4 configs from subscription content
 [[34mINF[0m] Found subscription in fork lowercase78/MahsaFreeConfig: https://raw.githubusercontent.com/lowercase78/MahsaFreeConfig/main/mtn/sub_1.txt
-[[35mDBG[0m] Fetching channel 28/235: https://t.me/s/s
+[[35mDBG[0m] Extracted 80 configs from subscription content
 [[34mINF[0m] Found subscription in fork lowercase78/MahsaFreeConfig: https://raw.githubusercontent.com/lowercase78/MahsaFreeConfig/main/mtn/sub_2.txt
+[[35mDBG[0m] Extracted 1 configs from subscription content
 [[34mINF[0m] Found subscription in fork lowercase78/MahsaFreeConfig: https://raw.githubusercontent.com/lowercase78/MahsaFreeConfig/main/mtn/sub_3.txt
 [[34mINF[0m] Found subscription in fork lowercase78/MahsaFreeConfig: https://raw.githubusercontent.com/lowercase78/MahsaFreeConfig/main/mtn/sub_4.txt
-[[35mDBG[0m] Extracted 107 configs from subscription content
+[[35mDBG[0m] Extracted 3337 configs from subscription content
+[[35mDBG[0m] Extracted 524 configs from subscription content
+[[35mDBG[0m] Extracted 103 configs from subscription content
+[[35mDBG[0m] Extracted 502 configs from subscription content
+[[35mDBG[0m] Fetching channel 41/291: https://t.me/s/atatech_ir
+[[35mDBG[0m] Collected 2 configs from atatech_ir
 [[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Fetching channel 29/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 1581 configs from subscription content
-[[35mDBG[0m] Extracted 13 configs from subscription content
-[[35mDBG[0m] Extracted 818 configs from subscription content
+[[35mDBG[0m] Extracted 148 configs from subscription content
+[[35mDBG[0m] Extracted 95 configs from subscription content
 [[34mINF[0m] Found subscription in fork gxiaobai2024/MahsaFreeConfig: https://raw.githubusercontent.com/gxiaobai2024/MahsaFreeConfig/main/mci/sub_1.txt
+[[35mDBG[0m] Extracted 310 configs from subscription content
 [[34mINF[0m] Found subscription in fork gxiaobai2024/MahsaFreeConfig: https://raw.githubusercontent.com/gxiaobai2024/MahsaFreeConfig/main/mci/sub_2.txt
 [[34mINF[0m] Found subscription in fork gxiaobai2024/MahsaFreeConfig: https://raw.githubusercontent.com/gxiaobai2024/MahsaFreeConfig/main/mci/sub_3.txt
+[[35mDBG[0m] Extracted 6 configs from subscription content
 [[34mINF[0m] Found subscription in fork gxiaobai2024/MahsaFreeConfig: https://raw.githubusercontent.com/gxiaobai2024/MahsaFreeConfig/main/mci/sub_4.txt
-[[35mDBG[0m] Extracted 80 configs from subscription content
 [[34mINF[0m] Found subscription in fork gxiaobai2024/MahsaFreeConfig: https://raw.githubusercontent.com/gxiaobai2024/MahsaFreeConfig/main/mtn/sub_1.txt
-[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Fetching channel 42/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 1 configs from subscription content
 [[34mINF[0m] Found subscription in fork gxiaobai2024/MahsaFreeConfig: https://raw.githubusercontent.com/gxiaobai2024/MahsaFreeConfig/main/mtn/sub_2.txt
-[[35mDBG[0m] Extracted 6042 configs from subscription content
+[[35mDBG[0m] Extracted 508 configs from subscription content
+[[35mDBG[0m] Extracted 25309 configs from subscription content
 [[34mINF[0m] Found subscription in fork gxiaobai2024/MahsaFreeConfig: https://raw.githubusercontent.com/gxiaobai2024/MahsaFreeConfig/main/mtn/sub_3.txt
 [[34mINF[0m] Found subscription in fork gxiaobai2024/MahsaFreeConfig: https://raw.githubusercontent.com/gxiaobai2024/MahsaFreeConfig/main/mtn/sub_4.txt
 [[35mDBG[0m] Extracted 148 configs from subscription content
 [[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Fetching channel 30/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 308 configs from subscription content
-[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Fetching channel 43/291: https://t.me/s/ShadowsocksM
+[[35mDBG[0m] Collected 8 configs from ShadowsocksM
+[[35mDBG[0m] Extracted 3362 configs from subscription content
 [[35mDBG[0m] Extracted 1 configs from subscription content
-[[35mDBG[0m] Extracted 107 configs from subscription content
-[[35mDBG[0m] Fetching channel 31/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 394 configs from subscription content
-[[35mDBG[0m] Extracted 4 configs from subscription content
+[[35mDBG[0m] Extracted 140 configs from subscription content
+[[35mDBG[0m] Extracted 608 configs from subscription content
+[[35mDBG[0m] Fetching channel 44/291: https://t.me/s/s
 [[34mINF[0m] Found subscription in fork CheneyCccc/MahsaFreeConfig: https://raw.githubusercontent.com/CheneyCccc/MahsaFreeConfig/main/mci/sub_1.txt
 [[34mINF[0m] Found subscription in fork CheneyCccc/MahsaFreeConfig: https://raw.githubusercontent.com/CheneyCccc/MahsaFreeConfig/main/mci/sub_2.txt
 [[34mINF[0m] Found subscription in fork CheneyCccc/MahsaFreeConfig: https://raw.githubusercontent.com/CheneyCccc/MahsaFreeConfig/main/mci/sub_3.txt
-[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Extracted 2116 configs from subscription content
 [[34mINF[0m] Found subscription in fork CheneyCccc/MahsaFreeConfig: https://raw.githubusercontent.com/CheneyCccc/MahsaFreeConfig/main/mci/sub_4.txt
 [[34mINF[0m] Found subscription in fork CheneyCccc/MahsaFreeConfig: https://raw.githubusercontent.com/CheneyCccc/MahsaFreeConfig/main/mtn/sub_1.txt
-[[35mDBG[0m] Extracted 138 configs from subscription content
+[[35mDBG[0m] Extracted 1734 configs from subscription content
 [[34mINF[0m] Found subscription in fork CheneyCccc/MahsaFreeConfig: https://raw.githubusercontent.com/CheneyCccc/MahsaFreeConfig/main/mtn/sub_2.txt
 [[34mINF[0m] Found subscription in fork CheneyCccc/MahsaFreeConfig: https://raw.githubusercontent.com/CheneyCccc/MahsaFreeConfig/main/mtn/sub_3.txt
-[[35mDBG[0m] Extracted 0 configs from subscription content
 [[34mINF[0m] Found subscription in fork CheneyCccc/MahsaFreeConfig: https://raw.githubusercontent.com/CheneyCccc/MahsaFreeConfig/main/mtn/sub_4.txt
-[[35mDBG[0m] Extracted 1 configs from subscription content
-[[35mDBG[0m] Fetching channel 32/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 2116 configs from subscription content
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Extracted 4 configs from subscription content
+[[35mDBG[0m] Extracted 2 configs from subscription content
+[[35mDBG[0m] Fetching channel 45/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 154 configs from subscription content
+[[35mDBG[0m] Extracted 81 configs from subscription content
+[[35mDBG[0m] Extracted 430 configs from subscription content
+[[35mDBG[0m] Fetching channel 46/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 148 configs from subscription content
+[[35mDBG[0m] Extracted 148 configs from subscription content
+[[35mDBG[0m] Extracted 107 configs from subscription content
 [[34mINF[0m] Found subscription in fork Figi100/MahsaFreeConfig: https://raw.githubusercontent.com/Figi100/MahsaFreeConfig/main/mci/sub_1.txt
 [[34mINF[0m] Found subscription in fork Figi100/MahsaFreeConfig: https://raw.githubusercontent.com/Figi100/MahsaFreeConfig/main/mci/sub_2.txt
 [[34mINF[0m] Found subscription in fork Figi100/MahsaFreeConfig: https://raw.githubusercontent.com/Figi100/MahsaFreeConfig/main/mci/sub_3.txt
 [[34mINF[0m] Found subscription in fork Figi100/MahsaFreeConfig: https://raw.githubusercontent.com/Figi100/MahsaFreeConfig/main/mci/sub_4.txt
+[[35mDBG[0m] Extracted 81 configs from subscription content
 [[34mINF[0m] Found subscription in fork Figi100/MahsaFreeConfig: https://raw.githubusercontent.com/Figi100/MahsaFreeConfig/main/mtn/sub_1.txt
-[[35mDBG[0m] Extracted 33306 configs from subscription content
 [[34mINF[0m] Found subscription in fork Figi100/MahsaFreeConfig: https://raw.githubusercontent.com/Figi100/MahsaFreeConfig/main/mtn/sub_2.txt
 [[34mINF[0m] Found subscription in fork Figi100/MahsaFreeConfig: https://raw.githubusercontent.com/Figi100/MahsaFreeConfig/main/mtn/sub_3.txt
-[[34mINF[0m] Found subscription in fork Figi100/MahsaFreeConfig: https://raw.githubusercontent.com/Figi100/MahsaFreeConfig/main/mtn/sub_4.txt
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Fetching channel 33/235: https://t.me/s/v2range
-[[35mDBG[0m] Collected 8 configs from v2range
-[[35mDBG[0m] Extracted 1920 configs from subscription content
-[[34mINF[0m] Fetched 160 potential subscription URLs from forks
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 26 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 29 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 25 configs from subscription content
-[[35mDBG[0m] Extracted 0 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 3 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 29 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 29 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 3 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 28 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 14 configs from subscription content
-[[35mDBG[0m] Extracted 29 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 2 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 0 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 27 configs from subscription content
-[[35mDBG[0m] Extracted 2 configs from subscription content
-[[35mDBG[0m] Extracted 5 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 17 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 21 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 27 configs from subscription content
-[[35mDBG[0m] Extracted 26 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 4 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 3 configs from subscription content
-[[35mDBG[0m] Extracted 9 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 7 configs from subscription content
-[[35mDBG[0m] Extracted 29 configs from subscription content
-[[35mDBG[0m] Extracted 9 configs from subscription content
-[[35mDBG[0m] Extracted 28 configs from subscription content
-[[35mDBG[0m] Extracted 0 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 24 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 27 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 26 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 27 configs from subscription content
-[[35mDBG[0m] Extracted 9 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 3 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 4 configs from subscription content
-[[35mDBG[0m] Extracted 27 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 27 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 27 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 2 configs from subscription content
-[[35mDBG[0m] Extracted 3 configs from subscription content
-[[35mDBG[0m] Extracted 3 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 4 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 27 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 1 configs from subscription content
-[[35mDBG[0m] Extracted 1 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 26 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 24 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 4 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 26 configs from subscription content
-[[35mDBG[0m] Extracted 9 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 21 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 26 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 30 configs from subscription content
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Extracted 1 configs from subscription content
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Fetching channel 34/235: https://t.me/s/vip_vpn_2022
-[[35mDBG[0m] Collected 4 configs from vip_vpn_2022
-[[35mDBG[0m] Extracted 5699 configs from subscription content
-[[35mDBG[0m] Extracted 35562 configs from subscription content
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Extracted 73 configs from subscription content
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Extracted 5 configs from subscription content
-[[35mDBG[0m] Fetching channel 35/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 5 configs from subscription content
-[[35mDBG[0m] Extracted 537 configs from subscription content
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Extracted 2181 configs from subscription content
-[[35mDBG[0m] Extracted 226 configs from subscription content
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Extracted 18 configs from subscription content
-[[35mDBG[0m] Extracted 572 configs from subscription content
-[[35mDBG[0m] Fetching channel 36/235: https://t.me/s/ultrasurf_12
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Collected 11 configs from ultrasurf_12
-[[35mDBG[0m] Extracted 188 configs from subscription content
-[[35mDBG[0m] Extracted 3 configs from subscription content
-[[35mDBG[0m] Extracted 1359 configs from subscription content
-[[35mDBG[0m] Extracted 6450 configs from subscription content
-[[35mDBG[0m] Fetching channel 37/235: https://t.me/s/KurdConfing
-[[35mDBG[0m] Collected 15 configs from KurdConfing
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Extracted 29416 configs from subscription content
-[[35mDBG[0m] Extracted 199 configs from subscription content
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Fetching channel 38/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 4790 configs from subscription content
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Fetching channel 39/235: https://t.me/s/DirectVPN
-[[35mDBG[0m] Collected 40 configs from DirectVPN
-[[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Extracted 245 configs from subscription content
-[[35mDBG[0m] Extracted 87 configs from subscription content
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Fetching channel 40/235: https://t.me/s/V2pedia
-[[35mDBG[0m] Collected 4 configs from V2pedia
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Extracted 3 configs from subscription content
-[[35mDBG[0m] Extracted 488 configs from subscription content
-[[35mDBG[0m] Fetching channel 41/235: https://t.me/s/proxy_kafee
-[[35mDBG[0m] Extracted 10 configs from subscription content
-[[35mDBG[0m] Collected 11 configs from proxy_kafee
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Extracted 1291 configs from subscription content
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Fetching channel 42/235: https://t.me/s/IraneAzad_Net
-[[35mDBG[0m] Collected 4 configs from IraneAzad_Net
-[[35mDBG[0m] Extracted 1085 configs from subscription content
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Extracted 207 configs from subscription content
-[[35mDBG[0m] Fetching channel 43/235: https://t.me/s/cpy_teeL
-[[35mDBG[0m] Collected 7 configs from cpy_teeL
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Extracted 3461 configs from subscription content
-[[35mDBG[0m] Extracted 2464 configs from subscription content
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Fetching channel 44/235: https://t.me/s/prrofile_purple
-[[35mDBG[0m] Collected 34 configs from prrofile_purple
-[[35mDBG[0m] Extracted 192 configs from subscription content
-[[35mDBG[0m] Extracted 203 configs from subscription content
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Fetching channel 45/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Extracted 309 configs from subscription content
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Fetching channel 46/235: https://t.me/s/v2rayng_fars
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Collected 16 configs from v2rayng_fars
-[[35mDBG[0m] Fetching channel 47/235: https://t.me/s/V2ray_Alpha
-[[35mDBG[0m] Extracted 33186 configs from subscription content
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Extracted 1 configs from subscription content
-[[35mDBG[0m] Collected 4 configs from V2ray_Alpha
-[[35mDBG[0m] Extracted 258 configs from subscription content
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Extracted 394 configs from subscription content
-[[35mDBG[0m] Fetching channel 48/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Extracted 456 configs from subscription content
-[[35mDBG[0m] Extracted 317 configs from subscription content
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Fetching channel 49/235: https://t.me/s/Porteqal3
-[[35mDBG[0m] Extracted 7 configs from subscription content
-[[35mDBG[0m] Extracted 8289 configs from subscription content
-[[35mDBG[0m] Extracted 103 configs from subscription content
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Fetching channel 50/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 394 configs from subscription content
-[[35mDBG[0m] Extracted 307 configs from subscription content
-[[35mDBG[0m] Extracted 29622 configs from subscription content
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Extracted 1871 configs from subscription content
-[[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Fetching channel 51/235: https://t.me/s/antimeli
-[[35mDBG[0m] Extracted 129 configs from subscription content
-[[35mDBG[0m] Collected 3 configs from antimeli
-[[35mDBG[0m] Extracted 2 configs from subscription content
-[[35mDBG[0m] Extracted 6396 configs from subscription content
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Extracted 413 configs from subscription content
-[[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Extracted 209 configs from subscription content
-[[35mDBG[0m] Fetching channel 52/235: https://t.me/s/ConfigX2ray0
-[[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Collected 6 configs from ConfigX2ray0
-[[35mDBG[0m] Extracted 1795 configs from subscription content
-[[35mDBG[0m] Extracted 317 configs from subscription content
-[[35mDBG[0m] Extracted 22 configs from subscription content
-[[35mDBG[0m] Extracted 214 configs from subscription content
-[[35mDBG[0m] Extracted 310 configs from subscription content
-[[35mDBG[0m] Fetching channel 53/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Extracted 44 configs from subscription content
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Extracted 27 configs from subscription content
-[[35mDBG[0m] Extracted 150 configs from subscription content
-[[35mDBG[0m] Extracted 103 configs from subscription content
-[[35mDBG[0m] Extracted 1473 configs from subscription content
-[[35mDBG[0m] Extracted 310 configs from subscription content
-[[35mDBG[0m] Fetching channel 54/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 272 configs from subscription content
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Extracted 11 configs from subscription content
-[[35mDBG[0m] Extracted 407 configs from subscription content
-[[35mDBG[0m] Fetching channel 55/235: https://t.me/s/crayingroom
-[[35mDBG[0m] Extracted 314 configs from subscription content
-[[35mDBG[0m] Collected 10 configs from crayingroom
-[[35mDBG[0m] Extracted 5045 configs from subscription content
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Extracted 3235 configs from subscription content
-[[35mDBG[0m] Extracted 726 configs from subscription content
-[[35mDBG[0m] Fetching channel 56/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 854 configs from subscription content
-[[35mDBG[0m] Extracted 482 configs from subscription content
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Fetching channel 57/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 394 configs from subscription content
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Extracted 207 configs from subscription content
-[[35mDBG[0m] Extracted 342 configs from subscription content
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Extracted 55 configs from subscription content
-[[35mDBG[0m] Fetching channel 58/235: https://t.me/s/moft_vpn
-[[35mDBG[0m] Collected 11 configs from moft_vpn
-[[35mDBG[0m] Extracted 9 configs from subscription content
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Extracted 431 configs from subscription content
-[[35mDBG[0m] Extracted 312 configs from subscription content
-[[35mDBG[0m] Fetching channel 59/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 260 configs from subscription content
-[[35mDBG[0m] Extracted 2116 configs from subscription content
-[[35mDBG[0m] Extracted 161 configs from subscription content
-[[35mDBG[0m] Extracted 1393 configs from subscription content
-[[35mDBG[0m] Fetching channel 60/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Extracted 186 configs from subscription content
-[[35mDBG[0m] Fetching channel 61/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 103 configs from subscription content
-[[35mDBG[0m] Extracted 816 configs from subscription content
-[[35mDBG[0m] Extracted 3557 configs from subscription content
-[[35mDBG[0m] Fetching channel 62/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Extracted 198 configs from subscription content
-[[35mDBG[0m] Extracted 1649 configs from subscription content
-[[35mDBG[0m] Extracted 3 configs from subscription content
-[[35mDBG[0m] Extracted 1601 configs from subscription content
-[[35mDBG[0m] Extracted 3 configs from subscription content
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Fetching channel 63/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 112 configs from subscription content
-[[35mDBG[0m] Extracted 2 configs from subscription content
-[[35mDBG[0m] Extracted 15 configs from subscription content
-[[35mDBG[0m] Extracted 17 configs from subscription content
-[[35mDBG[0m] Fetching channel 64/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Extracted 102 configs from subscription content
-[[35mDBG[0m] Extracted 2116 configs from subscription content
-[[35mDBG[0m] Extracted 214 configs from subscription content
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Extracted 3 configs from subscription content
-[[35mDBG[0m] Fetching channel 65/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 10 configs from subscription content
-[[35mDBG[0m] Extracted 1 configs from subscription content
-[[35mDBG[0m] Extracted 78 configs from subscription content
-[[35mDBG[0m] Fetching channel 66/235: https://t.me/s/vpnsshocean
-[[35mDBG[0m] Extracted 342 configs from subscription content
-[[35mDBG[0m] Collected 2 configs from vpnsshocean
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Extracted 102 configs from subscription content
-[[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Extracted 1614 configs from subscription content
-[[35mDBG[0m] Fetching channel 67/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Extracted 103 configs from subscription content
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Extracted 159 configs from subscription content
-[[35mDBG[0m] Extracted 48 configs from subscription content
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Fetching channel 68/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Extracted 99 configs from subscription content
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Extracted 482 configs from subscription content
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Extracted 63 configs from subscription content
-[[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Fetching channel 69/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 5 configs from subscription content
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Extracted 107 configs from subscription content
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Fetching channel 70/235: https://t.me/s/juzibaipiao
-[[35mDBG[0m] Collected 1 configs from juzibaipiao
-[[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Extracted 2 configs from subscription content
-[[35mDBG[0m] Extracted 1 configs from subscription content
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Fetching channel 71/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Extracted 1 configs from subscription content
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Fetching channel 72/235: https://t.me/s/vmesskhodam
-[[35mDBG[0m] Extracted 558 configs from subscription content
-[[35mDBG[0m] Collected 18 configs from vmesskhodam
-[[35mDBG[0m] Extracted 98 configs from subscription content
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Extracted 4 configs from subscription content
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Fetching channel 73/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 1637 configs from subscription content
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Extracted 394 configs from subscription content
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Fetching channel 74/235: https://t.me/s/filtershekan_channel
-[[35mDBG[0m] Extracted 9 configs from subscription content
-[[35mDBG[0m] Collected 6 configs from filtershekan_channel
-[[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Extracted 2 configs from subscription content
-[[35mDBG[0m] Extracted 2 configs from subscription content
-[[35mDBG[0m] Extracted 211 configs from subscription content
-[[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Fetching channel 75/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Extracted 1062 configs from subscription content
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Extracted 450 configs from subscription content
-[[35mDBG[0m] Extracted 1286 configs from subscription content
-[[35mDBG[0m] Extracted 91 configs from subscription content
-[[35mDBG[0m] Extracted 6 configs from subscription content
-[[35mDBG[0m] Extracted 69 configs from subscription content
-[[35mDBG[0m] Fetching channel 76/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Extracted 794 configs from subscription content
-[[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Fetching channel 77/235: https://t.me/s/oxnet_ir
-[[35mDBG[0m] Collected 10 configs from oxnet_ir
-[[35mDBG[0m] Extracted 1853 configs from subscription content
-[[35mDBG[0m] Extracted 200 configs from subscription content
-[[35mDBG[0m] Extracted 4764 configs from subscription content
-[[35mDBG[0m] Fetching channel 78/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 37 configs from subscription content
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Extracted 384 configs from subscription content
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Extracted 622 configs from subscription content
-[[35mDBG[0m] Fetching channel 79/235: https://t.me/s/v2ray_youtube
-[[35mDBG[0m] Collected 6 configs from v2ray_youtube
-[[35mDBG[0m] Extracted 214 configs from subscription content
-[[35mDBG[0m] Extracted 163 configs from subscription content
-[[35mDBG[0m] Extracted 482 configs from subscription content
-[[35mDBG[0m] Fetching channel 80/235: https://t.me/s/v2rayngcloud
-[[35mDBG[0m] Collected 4 configs from v2rayngcloud
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Extracted 6 configs from subscription content
-[[35mDBG[0m] Fetching channel 81/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 278 configs from subscription content
-[[35mDBG[0m] Extracted 3337 configs from subscription content
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Extracted 12 configs from subscription content
-[[35mDBG[0m] Fetching channel 82/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 1 configs from subscription content
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Extracted 73 configs from subscription content
-[[35mDBG[0m] Extracted 11 configs from subscription content
-[[35mDBG[0m] Extracted 103 configs from subscription content
-[[35mDBG[0m] Fetching channel 83/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 1644 configs from subscription content
-[[35mDBG[0m] Extracted 312 configs from subscription content
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Extracted 342 configs from subscription content
-[[35mDBG[0m] Extracted 439 configs from subscription content
-[[35mDBG[0m] Extracted 3055 configs from subscription content
-[[35mDBG[0m] Fetching channel 84/235: https://t.me/s/V2ray20261
-[[35mDBG[0m] Collected 1 configs from V2ray20261
-[[35mDBG[0m] Extracted 2472 configs from subscription content
-[[35mDBG[0m] Extracted 295 configs from subscription content
-[[35mDBG[0m] Extracted 207 configs from subscription content
-[[35mDBG[0m] Fetching channel 85/235: https://t.me/s/VPN_SOLVE
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Collected 12 configs from VPN_SOLVE
-[[35mDBG[0m] Extracted 258 configs from subscription content
-[[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Extracted 3812 configs from subscription content
-[[35mDBG[0m] Extracted 6405 configs from subscription content
-[[35mDBG[0m] Fetching channel 86/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Extracted 545 configs from subscription content
-[[35mDBG[0m] Extracted 1 configs from subscription content
-[[35mDBG[0m] Extracted 35873 configs from subscription content
-[[35mDBG[0m] Extracted 491 configs from subscription content
-[[35mDBG[0m] Fetching channel 87/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 266 configs from subscription content
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Extracted 7 configs from subscription content
-[[35mDBG[0m] Extracted 524 configs from subscription content
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Extracted 482 configs from subscription content
-[[35mDBG[0m] Fetching channel 88/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 636 configs from subscription content
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Extracted 314 configs from subscription content
-[[35mDBG[0m] Extracted 1 configs from subscription content
-[[35mDBG[0m] Extracted 21 configs from subscription content
-[[35mDBG[0m] Fetching channel 89/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 317 configs from subscription content
-[[35mDBG[0m] Extracted 21 configs from subscription content
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Extracted 15 configs from subscription content
-[[35mDBG[0m] Extracted 2 configs from subscription content
-[[35mDBG[0m] Fetching channel 90/235: https://t.me/s/v2rayNG_Matsuri
-[[35mDBG[0m] Extracted 1760 configs from subscription content
-[[35mDBG[0m] Collected 16 configs from v2rayNG_Matsuri
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Extracted 3512 configs from subscription content
-[[35mDBG[0m] Extracted 4 configs from subscription content
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Fetching channel 91/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 32 configs from subscription content
-[[35mDBG[0m] Extracted 2181 configs from subscription content
-[[35mDBG[0m] Extracted 176 configs from subscription content
-[[35mDBG[0m] Extracted 107 configs from subscription content
-[[35mDBG[0m] Extracted 1 configs from subscription content
-[[35mDBG[0m] Extracted 386 configs from subscription content
-[[35mDBG[0m] Extracted 1209 configs from subscription content
-[[35mDBG[0m] Fetching channel 92/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Extracted 209 configs from subscription content
-[[35mDBG[0m] Extracted 394 configs from subscription content
-[[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Extracted 3 configs from subscription content
-[[35mDBG[0m] Fetching channel 93/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Extracted 386 configs from subscription content
-[[35mDBG[0m] Extracted 168 configs from subscription content
-[[35mDBG[0m] Extracted 2 configs from subscription content
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Fetching channel 94/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Extracted 1843 configs from subscription content
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Extracted 308 configs from subscription content
-[[35mDBG[0m] Extracted 3517 configs from subscription content
-[[35mDBG[0m] Fetching channel 95/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 218 configs from subscription content
-[[35mDBG[0m] Extracted 2612 configs from subscription content
-[[35mDBG[0m] Extracted 6 configs from subscription content
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Extracted 4 configs from subscription content
-[[35mDBG[0m] Extracted 3341 configs from subscription content
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Fetching channel 96/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 27 configs from subscription content
-[[35mDBG[0m] Extracted 818 configs from subscription content
-[[35mDBG[0m] Extracted 148 configs from subscription content
-[[35mDBG[0m] Fetching channel 97/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 417 configs from subscription content
-[[35mDBG[0m] Extracted 317 configs from subscription content
-[[35mDBG[0m] Extracted 4 configs from subscription content
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Extracted 495 configs from subscription content
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Fetching channel 98/235: https://t.me/s/iP_CF
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Collected 2 configs from iP_CF
-[[35mDBG[0m] Extracted 154 configs from subscription content
-[[35mDBG[0m] Extracted 1329 configs from subscription content
-[[35mDBG[0m] Extracted 1080 configs from subscription content
-[[35mDBG[0m] Fetching channel 99/235: https://t.me/s/taziyanteam
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Collected 5 configs from taziyanteam
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Extracted 18 configs from subscription content
+[[35mDBG[0m] Fetching channel 47/291: https://t.me/s/s
 [[35mDBG[0m] Extracted 1369 configs from subscription content
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Extracted 311 configs from subscription content
-[[35mDBG[0m] Extracted 1753 configs from subscription content
-[[35mDBG[0m] Extracted 6 configs from subscription content
-[[35mDBG[0m] Fetching channel 100/235: https://t.me/s/v2nodes
-[[35mDBG[0m] Collected 32 configs from v2nodes
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Extracted 104 configs from subscription content
+[[34mINF[0m] Found subscription in fork Figi100/MahsaFreeConfig: https://raw.githubusercontent.com/Figi100/MahsaFreeConfig/main/mtn/sub_4.txt
+[[35mDBG[0m] Extracted 2783 configs from subscription content
 [[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Fetching channel 101/235: https://t.me/s/v2ray1_ng
-[[35mDBG[0m] Collected 6 configs from v2ray1_ng
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Extracted 413 configs from subscription content
+[[34mINF[0m] Fetched 176 potential subscription URLs from forks
+[[35mDBG[0m] Extracted 1747 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 0 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 0 configs from subscription content
+[[35mDBG[0m] Extracted 24 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 0 configs from subscription content
+[[35mDBG[0m] Extracted 3 configs from subscription content
+[[35mDBG[0m] Extracted 17 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 26 configs from subscription content
+[[35mDBG[0m] Extracted 21 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 3 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 0 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 26 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 24 configs from subscription content
+[[35mDBG[0m] Extracted 2 configs from subscription content
+[[35mDBG[0m] Extracted 2 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 4 configs from subscription content
+[[35mDBG[0m] Extracted 4 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 27 configs from subscription content
+[[35mDBG[0m] Extracted 4 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 3 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 3 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 27 configs from subscription content
+[[35mDBG[0m] Extracted 3 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
 [[35mDBG[0m] Extracted 16 configs from subscription content
-[[35mDBG[0m] Extracted 15 configs from subscription content
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Extracted 705 configs from subscription content
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Extracted 144 configs from subscription content
-[[35mDBG[0m] Fetching channel 102/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 369 configs from subscription content
-[[35mDBG[0m] Extracted 1595 configs from subscription content
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Extracted 3567 configs from subscription content
-[[35mDBG[0m] Extracted 493 configs from subscription content
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Extracted 512 configs from subscription content
-[[35mDBG[0m] Extracted 104 configs from subscription content
-[[35mDBG[0m] Fetching channel 103/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 880 configs from subscription content
-[[35mDBG[0m] Extracted 124 configs from subscription content
-[[35mDBG[0m] Extracted 160 configs from subscription content
-[[35mDBG[0m] Extracted 2432 configs from subscription content
-[[35mDBG[0m] Fetching channel 104/235: https://t.me/s/dns68
-[[35mDBG[0m] Extracted 562 configs from subscription content
-[[35mDBG[0m] Extracted 80 configs from subscription content
-[[35mDBG[0m] Collected 2 configs from dns68
-[[35mDBG[0m] Extracted 364 configs from subscription content
-[[35mDBG[0m] Extracted 3340 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 27 configs from subscription content
+[[35mDBG[0m] Extracted 9 configs from subscription content
+[[35mDBG[0m] Extracted 0 configs from subscription content
+[[35mDBG[0m] Extracted 0 configs from subscription content
+[[35mDBG[0m] Extracted 2 configs from subscription content
 [[35mDBG[0m] Extracted 1 configs from subscription content
-[[35mDBG[0m] Extracted 35712 configs from subscription content
-[[35mDBG[0m] Extracted 6337 configs from subscription content
-[[35mDBG[0m] Fetching channel 105/235: https://t.me/s/s
-[[35mDBG[0m] Extracted 24602 configs from subscription content
-[[35mDBG[0m] Fetching channel 106/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 107/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 108/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 109/235: https://t.me/s/vpnserverrr
-[[35mDBG[0m] Collected 9 configs from vpnserverrr
-[[35mDBG[0m] Fetching channel 110/235: https://t.me/s/vipconfingg
-[[35mDBG[0m] Collected 11 configs from vipconfingg
-[[35mDBG[0m] Fetching channel 111/235: https://t.me/s/icv2ray
-[[35mDBG[0m] Collected 20 configs from icv2ray
-[[35mDBG[0m] Fetching channel 112/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 113/235: https://t.me/s/PrivateVPNs
-[[35mDBG[0m] Collected 40 configs from PrivateVPNs
-[[35mDBG[0m] Fetching channel 114/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 115/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 116/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 117/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 118/235: https://t.me/s/VlessVpnFree
-[[35mDBG[0m] Collected 32 configs from VlessVpnFree
-[[35mDBG[0m] Fetching channel 119/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 120/235: https://t.me/s/freeland8
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 28 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 3 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 26 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 9 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 26 configs from subscription content
+[[35mDBG[0m] Extracted 28 configs from subscription content
+[[35mDBG[0m] Extracted 25 configs from subscription content
+[[35mDBG[0m] Extracted 7 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 27 configs from subscription content
+[[35mDBG[0m] Extracted 14 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 29 configs from subscription content
+[[35mDBG[0m] Extracted 4 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 27 configs from subscription content
+[[35mDBG[0m] Extracted 14 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 27 configs from subscription content
+[[35mDBG[0m] Extracted 27 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 27 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 9 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 26 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 0 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 21 configs from subscription content
+[[35mDBG[0m] Extracted 29 configs from subscription content
+[[35mDBG[0m] Extracted 29 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 29 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 26 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 0 configs from subscription content
+[[35mDBG[0m] Extracted 10 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 5 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 1 configs from subscription content
+[[35mDBG[0m] Extracted 9 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 0 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 1 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 29 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Extracted 537 configs from subscription content
+[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Fetching channel 48/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 1329 configs from subscription content
+[[35mDBG[0m] Extracted 1 configs from subscription content
+[[35mDBG[0m] Extracted 12 configs from subscription content
+[[35mDBG[0m] Fetching channel 49/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 211 configs from subscription content
+[[35mDBG[0m] Extracted 3517 configs from subscription content
+[[35mDBG[0m] Extracted 953 configs from subscription content
+[[35mDBG[0m] Extracted 33306 configs from subscription content
+[[35mDBG[0m] Extracted 154 configs from subscription content
+[[35mDBG[0m] Fetching channel 50/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 1885 configs from subscription content
+[[35mDBG[0m] Extracted 630 configs from subscription content
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Extracted 97 configs from subscription content
+[[35mDBG[0m] Fetching channel 51/291: https://t.me/s/cicdoVPN
+[[35mDBG[0m] Collected 4 configs from cicdoVPN
+[[35mDBG[0m] Extracted 558 configs from subscription content
+[[35mDBG[0m] Extracted 1562 configs from subscription content
+[[35mDBG[0m] Extracted 47790 configs from subscription content
+[[35mDBG[0m] Extracted 318 configs from subscription content
+[[35mDBG[0m] Extracted 2 configs from subscription content
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Extracted 69 configs from subscription content
+[[35mDBG[0m] Fetching channel 52/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 626 configs from subscription content
+[[35mDBG[0m] Extracted 1414 configs from subscription content
+[[35mDBG[0m] Extracted 1627 configs from subscription content
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Fetching channel 53/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 258 configs from subscription content
+[[35mDBG[0m] Extracted 245 configs from subscription content
+[[35mDBG[0m] Extracted 1 configs from subscription content
+[[35mDBG[0m] Extracted 8289 configs from subscription content
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Fetching channel 54/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 93 configs from subscription content
+[[35mDBG[0m] Extracted 514 configs from subscription content
+[[35mDBG[0m] Extracted 503 configs from subscription content
+[[35mDBG[0m] Fetching channel 55/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 1843 configs from subscription content
+[[35mDBG[0m] Extracted 1760 configs from subscription content
+[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Extracted 1367 configs from subscription content
+[[35mDBG[0m] Fetching channel 56/291: https://t.me/s/cpy_teeL
+[[35mDBG[0m] Collected 2 configs from cpy_teeL
+[[35mDBG[0m] Extracted 74 configs from subscription content
+[[35mDBG[0m] Extracted 641 configs from subscription content
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Fetching channel 57/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 731 configs from subscription content
+[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Extracted 258 configs from subscription content
+[[35mDBG[0m] Fetching channel 58/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 589 configs from subscription content
+[[35mDBG[0m] Extracted 2052 configs from subscription content
+[[35mDBG[0m] Extracted 148 configs from subscription content
+[[35mDBG[0m] Extracted 10 configs from subscription content
+[[35mDBG[0m] Extracted 188 configs from subscription content
+[[35mDBG[0m] Fetching channel 59/291: https://t.me/s/filembad
+[[35mDBG[0m] Collected 49 configs from filembad
+[[35mDBG[0m] Extracted 1 configs from subscription content
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Extracted 19 configs from subscription content
+[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Extracted 1920 configs from subscription content
+[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Fetching channel 60/291: https://t.me/s/VlessVpnFree
+[[35mDBG[0m] Collected 30 configs from VlessVpnFree
+[[35mDBG[0m] Extracted 148 configs from subscription content
+[[35mDBG[0m] Extracted 8 configs from subscription content
+[[35mDBG[0m] Extracted 148 configs from subscription content
+[[35mDBG[0m] Extracted 1393 configs from subscription content
+[[35mDBG[0m] Extracted 16 configs from subscription content
+[[35mDBG[0m] Extracted 7 configs from subscription content
+[[35mDBG[0m] Fetching channel 61/291: https://t.me/s/Fr33C0nfig
+[[35mDBG[0m] Collected 6 configs from Fr33C0nfig
+[[35mDBG[0m] Extracted 100 configs from subscription content
+[[35mDBG[0m] Extracted 148 configs from subscription content
+[[35mDBG[0m] Extracted 1753 configs from subscription content
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Extracted 258 configs from subscription content
+[[35mDBG[0m] Extracted 197 configs from subscription content
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Fetching channel 62/291: https://t.me/s/freeland8
+[[35mDBG[0m] Extracted 148 configs from subscription content
 [[35mDBG[0m] Collected 2 configs from freeland8
-[[35mDBG[0m] Fetching channel 121/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 122/235: https://t.me/s/YamYamProxy
-[[35mDBG[0m] Collected 12 configs from YamYamProxy
-[[35mDBG[0m] Fetching channel 123/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 124/235: https://t.me/s/BigSmoke_Config
-[[35mDBG[0m] Collected 6 configs from BigSmoke_Config
-[[35mDBG[0m] Fetching channel 125/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 126/235: https://t.me/s/Freedomnetir
-[[35mDBG[0m] Collected 2 configs from Freedomnetir
-[[35mDBG[0m] Fetching channel 127/235: https://t.me/s/givevpn
-[[35mDBG[0m] Collected 15 configs from givevpn
-[[35mDBG[0m] Fetching channel 128/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 129/235: https://t.me/s/persianvpnhub
-[[35mDBG[0m] Collected 20 configs from persianvpnhub
-[[35mDBG[0m] Fetching channel 130/235: https://t.me/s/VlessConfig
-[[35mDBG[0m] Collected 40 configs from VlessConfig
-[[35mDBG[0m] Fetching channel 131/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 132/235: https://t.me/s/filembad
-[[35mDBG[0m] Collected 51 configs from filembad
-[[35mDBG[0m] Fetching channel 133/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 134/235: https://t.me/s/vpnfail_v2ray
-[[35mDBG[0m] Collected 38 configs from vpnfail_v2ray
-[[35mDBG[0m] Fetching channel 135/235: https://t.me/s/ConfigX2ray
-[[35mDBG[0m] Collected 8 configs from ConfigX2ray
-[[35mDBG[0m] Fetching channel 136/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 137/235: https://t.me/s/configshub2
-[[35mDBG[0m] Collected 20 configs from configshub2
-[[35mDBG[0m] Fetching channel 138/235: https://t.me/s/free1ss
-[[35mDBG[0m] Collected 40 configs from free1ss
-[[35mDBG[0m] Fetching channel 139/235: https://t.me/s/shadowsockskeys
-[[35mDBG[0m] Collected 28 configs from shadowsockskeys
-[[35mDBG[0m] Fetching channel 140/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 141/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 142/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 143/235: https://t.me/s/vmessorg
-[[35mDBG[0m] Collected 8 configs from vmessorg
-[[35mDBG[0m] Fetching channel 144/235: https://t.me/s/v2rfa
-[[35mDBG[0m] Collected 11 configs from v2rfa
-[[35mDBG[0m] Fetching channel 145/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 146/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 147/235: https://t.me/s/anty_filter
-[[35mDBG[0m] Collected 7 configs from anty_filter
-[[35mDBG[0m] Fetching channel 148/235: https://t.me/s/srcvpn
-[[35mDBG[0m] Collected 4 configs from srcvpn
-[[35mDBG[0m] Fetching channel 149/235: https://t.me/s/vipv2rayngnp
-[[35mDBG[0m] Collected 17 configs from vipv2rayngnp
-[[35mDBG[0m] Fetching channel 150/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 151/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 152/235: https://t.me/s/wedbazvpn
-[[35mDBG[0m] Collected 30 configs from wedbazvpn
-[[35mDBG[0m] Fetching channel 153/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 154/235: https://t.me/s/falcunargo
-[[35mDBG[0m] Collected 17 configs from falcunargo
-[[35mDBG[0m] Fetching channel 155/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 156/235: https://t.me/s/archivetell
-[[35mDBG[0m] Collected 2 configs from archivetell
-[[35mDBG[0m] Fetching channel 157/235: https://t.me/s/free_vpn02
-[[35mDBG[0m] Collected 24 configs from free_vpn02
-[[35mDBG[0m] Fetching channel 158/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 159/235: https://t.me/s/free_outline_keys
-[[35mDBG[0m] Collected 40 configs from free_outline_keys
-[[35mDBG[0m] Fetching channel 160/235: https://t.me/s/appxa
-[[35mDBG[0m] Collected 5 configs from appxa
-[[35mDBG[0m] Fetching channel 161/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 162/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 163/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 164/235: https://t.me/s/Eag1e_YT
-[[35mDBG[0m] Collected 6 configs from Eag1e_YT
-[[35mDBG[0m] Fetching channel 165/235: https://t.me/s/vmess_iran
-[[35mDBG[0m] Collected 6 configs from vmess_iran
-[[35mDBG[0m] Fetching channel 166/235: https://t.me/s/V2rayng_Fast
-[[35mDBG[0m] Collected 16 configs from V2rayng_Fast
-[[35mDBG[0m] Fetching channel 167/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 168/235: https://t.me/s/Ae_proxy
-[[35mDBG[0m] Collected 45 configs from Ae_proxy
-[[35mDBG[0m] Fetching channel 169/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 170/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 171/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 172/235: https://t.me/s/techbod
-[[35mDBG[0m] Collected 18 configs from techbod
-[[35mDBG[0m] Fetching channel 173/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 174/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 175/235: https://t.me/s/v2rayngconfig
-[[35mDBG[0m] Collected 44 configs from v2rayngconfig
-[[35mDBG[0m] Fetching channel 176/235: https://t.me/s/farahvpn
+[[35mDBG[0m] Extracted 401 configs from subscription content
+[[35mDBG[0m] Extracted 62 configs from subscription content
+[[35mDBG[0m] Extracted 1375 configs from subscription content
+[[35mDBG[0m] Extracted 10 configs from subscription content
+[[35mDBG[0m] Extracted 148 configs from subscription content
+[[35mDBG[0m] Extracted 1868 configs from subscription content
+[[35mDBG[0m] Extracted 1291 configs from subscription content
+[[35mDBG[0m] Extracted 537 configs from subscription content
+[[35mDBG[0m] Fetching channel 63/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 431 configs from subscription content
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Extracted 2 configs from subscription content
+[[35mDBG[0m] Fetching channel 64/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 2 configs from subscription content
+[[35mDBG[0m] Extracted 2 configs from subscription content
+[[35mDBG[0m] Extracted 144 configs from subscription content
+[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Extracted 501 configs from subscription content
+[[35mDBG[0m] Extracted 5936 configs from subscription content
+[[35mDBG[0m] Fetching channel 65/291: https://t.me/s/V2RAYROZ
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Collected 24 configs from V2RAYROZ
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Fetching channel 66/291: https://t.me/s/v2range
+[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Collected 12 configs from v2range
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Extracted 3340 configs from subscription content
+[[35mDBG[0m] Extracted 3461 configs from subscription content
+[[35mDBG[0m] Fetching channel 67/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 4003 configs from subscription content
+[[35mDBG[0m] Extracted 4 configs from subscription content
+[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Extracted 100 configs from subscription content
+[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Extracted 124 configs from subscription content
+[[35mDBG[0m] Extracted 173 configs from subscription content
+[[35mDBG[0m] Fetching channel 68/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Extracted 1601 configs from subscription content
+[[35mDBG[0m] Extracted 95 configs from subscription content
+[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Fetching channel 69/291: https://t.me/s/DirectVPN
+[[35mDBG[0m] Collected 32 configs from DirectVPN
+[[35mDBG[0m] Extracted 269 configs from subscription content
+[[35mDBG[0m] Extracted 40 configs from subscription content
+[[35mDBG[0m] Extracted 3072 configs from subscription content
+[[35mDBG[0m] Fetching channel 70/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 166 configs from subscription content
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Extracted 5 configs from subscription content
+[[35mDBG[0m] Extracted 31 configs from subscription content
+[[35mDBG[0m] Fetching channel 71/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Extracted 540 configs from subscription content
+[[35mDBG[0m] Extracted 731 configs from subscription content
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Extracted 148 configs from subscription content
+[[35mDBG[0m] Fetching channel 72/291: https://t.me/s/farahvpn
 [[35mDBG[0m] Collected 40 configs from farahvpn
-[[35mDBG[0m] Fetching channel 177/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 178/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 179/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 180/235: https://t.me/s/crgaming7
-[[35mDBG[0m] Collected 26 configs from crgaming7
-[[35mDBG[0m] Fetching channel 181/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 182/235: https://t.me/s/skivpn
-[[35mDBG[0m] Collected 16 configs from skivpn
-[[35mDBG[0m] Fetching channel 183/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 184/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 185/235: https://t.me/s/atatech_ir
-[[35mDBG[0m] Collected 22 configs from atatech_ir
-[[35mDBG[0m] Fetching channel 186/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 187/235: https://t.me/s/v2rayngseven
-[[35mDBG[0m] Collected 3 configs from v2rayngseven
-[[35mDBG[0m] Fetching channel 188/235: https://t.me/s/stretten
-[[35mDBG[0m] Collected 95 configs from stretten
-[[35mDBG[0m] Fetching channel 189/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 190/235: https://t.me/s/zibanabz
-[[35mDBG[0m] Collected 1 configs from zibanabz
-[[35mDBG[0m] Fetching channel 191/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 192/235: https://t.me/s/singbox1
-[[35mDBG[0m] Collected 21 configs from singbox1
-[[35mDBG[0m] Fetching channel 193/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 194/235: https://t.me/s/npvv2rayfilter
-[[35mDBG[0m] Collected 5 configs from npvv2rayfilter
-[[35mDBG[0m] Fetching channel 195/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 196/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 197/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 198/235: https://t.me/s/iran_v2ray1
-[[35mDBG[0m] Collected 3 configs from iran_v2ray1
-[[35mDBG[0m] Fetching channel 199/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 200/235: https://t.me/s/Network_442
-[[35mDBG[0m] Collected 3 configs from Network_442
-[[35mDBG[0m] Fetching channel 201/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 202/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 203/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 204/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 205/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 206/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 207/235: https://t.me/s/Spotify_Porteghali
-[[35mDBG[0m] Collected 3 configs from Spotify_Porteghali
-[[35mDBG[0m] Fetching channel 208/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 209/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 210/235: https://t.me/s/AmyraxVPN
-[[35mDBG[0m] Collected 1 configs from AmyraxVPN
-[[35mDBG[0m] Fetching channel 211/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 212/235: https://t.me/s/v2ray_free_conf
-[[35mDBG[0m] Collected 40 configs from v2ray_free_conf
-[[35mDBG[0m] Fetching channel 213/235: https://t.me/s/V2All
-[[35mDBG[0m] Collected 94 configs from V2All
-[[35mDBG[0m] Fetching channel 214/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 215/235: https://t.me/s/Capoit
-[[35mDBG[0m] Collected 3 configs from Capoit
-[[35mDBG[0m] Fetching channel 216/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 217/235: https://t.me/s/vpnproxy_v2rayng
-[[35mDBG[0m] Collected 12 configs from vpnproxy_v2rayng
-[[35mDBG[0m] Fetching channel 218/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 219/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 220/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 221/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 222/235: https://t.me/s/v2rayngvpn
-[[35mDBG[0m] Collected 12 configs from v2rayngvpn
-[[35mDBG[0m] Fetching channel 223/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 224/235: https://t.me/s/Speeds_vpn1
-[[35mDBG[0m] Collected 4 configs from Speeds_vpn1
-[[35mDBG[0m] Fetching channel 225/235: https://t.me/s/vpnv2rayngv
-[[35mDBG[0m] Collected 2 configs from vpnv2rayngv
-[[35mDBG[0m] Fetching channel 226/235: https://t.me/s/G0Dv2ray
-[[35mDBG[0m] Collected 5 configs from G0Dv2ray
-[[35mDBG[0m] Fetching channel 227/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 228/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 229/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 230/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 231/235: https://t.me/s/v2rayngcustom
-[[35mDBG[0m] Collected 10 configs from v2rayngcustom
-[[35mDBG[0m] Fetching channel 232/235: https://t.me/s/s
-[[35mDBG[0m] Fetching channel 233/235: https://t.me/s/soskeynet
-[[35mDBG[0m] Collected 193 configs from soskeynet
-[[35mDBG[0m] Fetching channel 234/235: https://t.me/s/sourcefreefilter
-[[35mDBG[0m] Collected 11 configs from sourcefreefilter
-[[35mDBG[0m] Fetching channel 235/235: https://t.me/s/s
+[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Extracted 36 configs from subscription content
+[[35mDBG[0m] Extracted 100 configs from subscription content
+[[35mDBG[0m] Fetching channel 73/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Extracted 10 configs from subscription content
+[[35mDBG[0m] Extracted 2170 configs from subscription content
+[[35mDBG[0m] Extracted 3072 configs from subscription content
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Extracted 90 configs from subscription content
+[[35mDBG[0m] Fetching channel 74/291: https://t.me/s/sharecentrepro
+[[35mDBG[0m] Collected 5 configs from sharecentrepro
+[[35mDBG[0m] Extracted 1 configs from subscription content
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Extracted 317 configs from subscription content
+[[35mDBG[0m] Fetching channel 75/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 28 configs from subscription content
+[[35mDBG[0m] Extracted 2464 configs from subscription content
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Extracted 539 configs from subscription content
+[[35mDBG[0m] Fetching channel 76/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 214 configs from subscription content
+[[35mDBG[0m] Extracted 1723 configs from subscription content
+[[35mDBG[0m] Extracted 258 configs from subscription content
+[[35mDBG[0m] Extracted 214 configs from subscription content
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Fetching channel 77/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Extracted 3512 configs from subscription content
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Extracted 148 configs from subscription content
+[[35mDBG[0m] Extracted 98 configs from subscription content
+[[35mDBG[0m] Extracted 3 configs from subscription content
+[[35mDBG[0m] Extracted 148 configs from subscription content
+[[35mDBG[0m] Fetching channel 78/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 168 configs from subscription content
+[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Extracted 608 configs from subscription content
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Extracted 6396 configs from subscription content
+[[35mDBG[0m] Fetching channel 79/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 98 configs from subscription content
+[[35mDBG[0m] Extracted 610 configs from subscription content
+[[35mDBG[0m] Extracted 5 configs from subscription content
+[[35mDBG[0m] Extracted 122 configs from subscription content
+[[35mDBG[0m] Fetching channel 80/291: https://t.me/s/icv2ray
+[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Collected 18 configs from icv2ray
+[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Extracted 1 configs from subscription content
+[[35mDBG[0m] Extracted 7 configs from subscription content
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Extracted 35873 configs from subscription content
+[[35mDBG[0m] Fetching channel 81/291: https://t.me/s/v2ray_free_conf
+[[35mDBG[0m] Extracted 19 configs from subscription content
+[[35mDBG[0m] Collected 38 configs from v2ray_free_conf
+[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Fetching channel 82/291: https://t.me/s/daily_configs
+[[35mDBG[0m] Extracted 434 configs from subscription content
+[[35mDBG[0m] Collected 2 configs from daily_configs
+[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Fetching channel 83/291: https://t.me/s/antimeli
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Extracted 608 configs from subscription content
+[[35mDBG[0m] Extracted 148 configs from subscription content
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Fetching channel 84/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 36 configs from subscription content
+[[35mDBG[0m] Extracted 148 configs from subscription content
+[[35mDBG[0m] Extracted 99 configs from subscription content
+[[35mDBG[0m] Fetching channel 85/291: https://t.me/s/iran_v2ray1
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Collected 6 configs from iran_v2ray1
+[[35mDBG[0m] Extracted 562 configs from subscription content
+[[35mDBG[0m] Extracted 954 configs from subscription content
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Extracted 278 configs from subscription content
+[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Fetching channel 86/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Extracted 1363 configs from subscription content
+[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Extracted 16 configs from subscription content
+[[35mDBG[0m] Extracted 8 configs from subscription content
+[[35mDBG[0m] Fetching channel 87/291: https://t.me/s/v2rayvlp
+[[35mDBG[0m] Collected 2 configs from v2rayvlp
+[[35mDBG[0m] Extracted 6 configs from subscription content
+[[35mDBG[0m] Extracted 163 configs from subscription content
+[[35mDBG[0m] Extracted 166 configs from subscription content
+[[35mDBG[0m] Extracted 148 configs from subscription content
+[[35mDBG[0m] Extracted 98 configs from subscription content
+[[35mDBG[0m] Extracted 1795 configs from subscription content
+[[35mDBG[0m] Fetching channel 88/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 1737 configs from subscription content
+[[35mDBG[0m] Extracted 1366 configs from subscription content
+[[35mDBG[0m] Extracted 98 configs from subscription content
+[[35mDBG[0m] Extracted 1714 configs from subscription content
+[[35mDBG[0m] Extracted 450 configs from subscription content
+[[35mDBG[0m] Extracted 54 configs from subscription content
+[[35mDBG[0m] Extracted 1085 configs from subscription content
+[[35mDBG[0m] Extracted 599 configs from subscription content
+[[35mDBG[0m] Fetching channel 89/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 348 configs from subscription content
+[[35mDBG[0m] Extracted 1955 configs from subscription content
+[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Extracted 214 configs from subscription content
+[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Fetching channel 90/291: https://t.me/s/noviin_tel
+[[35mDBG[0m] Collected 1 configs from noviin_tel
+[[35mDBG[0m] Extracted 148 configs from subscription content
+[[35mDBG[0m] Extracted 100 configs from subscription content
+[[35mDBG[0m] Fetching channel 91/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 107 configs from subscription content
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Extracted 100 configs from subscription content
+[[35mDBG[0m] Extracted 8 configs from subscription content
+[[35mDBG[0m] Extracted 271 configs from subscription content
+[[35mDBG[0m] Extracted 1853 configs from subscription content
+[[35mDBG[0m] Fetching channel 92/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 837 configs from subscription content
+[[35mDBG[0m] Extracted 456 configs from subscription content
+[[35mDBG[0m] Extracted 148 configs from subscription content
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Extracted 2116 configs from subscription content
+[[35mDBG[0m] Fetching channel 93/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 4764 configs from subscription content
+[[35mDBG[0m] Extracted 430 configs from subscription content
+[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Extracted 6 configs from subscription content
+[[35mDBG[0m] Fetching channel 94/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Extracted 5699 configs from subscription content
+[[35mDBG[0m] Extracted 103 configs from subscription content
+[[35mDBG[0m] Extracted 97 configs from subscription content
+[[35mDBG[0m] Extracted 98 configs from subscription content
+[[35mDBG[0m] Extracted 791 configs from subscription content
+[[35mDBG[0m] Fetching channel 95/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 2788 configs from subscription content
+[[35mDBG[0m] Extracted 210 configs from subscription content
+[[35mDBG[0m] Extracted 148 configs from subscription content
+[[35mDBG[0m] Extracted 148 configs from subscription content
+[[35mDBG[0m] Extracted 35712 configs from subscription content
+[[35mDBG[0m] Fetching channel 96/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 545 configs from subscription content
+[[35mDBG[0m] Extracted 6405 configs from subscription content
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Extracted 539 configs from subscription content
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Extracted 608 configs from subscription content
+[[35mDBG[0m] Fetching channel 97/291: https://t.me/s/vpn_ioss
+[[35mDBG[0m] Collected 19 configs from vpn_ioss
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Extracted 271 configs from subscription content
+[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Extracted 1716 configs from subscription content
+[[35mDBG[0m] Extracted 270 configs from subscription content
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Extracted 2116 configs from subscription content
+[[35mDBG[0m] Fetching channel 98/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 30 configs from subscription content
+[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Extracted 168 configs from subscription content
+[[35mDBG[0m] Extracted 1775 configs from subscription content
+[[35mDBG[0m] Fetching channel 99/291: https://t.me/s/techbod
+[[35mDBG[0m] Collected 16 configs from techbod
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Extracted 148 configs from subscription content
+[[35mDBG[0m] Fetching channel 100/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 35562 configs from subscription content
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Extracted 536 configs from subscription content
+[[35mDBG[0m] Extracted 499 configs from subscription content
+[[35mDBG[0m] Extracted 1080 configs from subscription content
+[[35mDBG[0m] Extracted 148 configs from subscription content
+[[35mDBG[0m] Fetching channel 101/291: https://t.me/s/s
+[[35mDBG[0m] Extracted 107 configs from subscription content
+[[35mDBG[0m] Extracted 608 configs from subscription content
+[[35mDBG[0m] Extracted 5308 configs from subscription content
+[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Fetching channel 102/291: https://t.me/s/v2rayngseven
+[[35mDBG[0m] Collected 2 configs from v2rayngseven
+[[35mDBG[0m] Extracted 234 configs from subscription content
+[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Extracted 80 configs from subscription content
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Fetching channel 103/291: https://t.me/s/dns68
+[[35mDBG[0m] Collected 3 configs from dns68
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Extracted 499 configs from subscription content
+[[35mDBG[0m] Extracted 2432 configs from subscription content
+[[35mDBG[0m] Extracted 880 configs from subscription content
+[[35mDBG[0m] Fetching channel 104/291: https://t.me/s/SafeNet_Server
+[[35mDBG[0m] Collected 22 configs from SafeNet_Server
+[[35mDBG[0m] Extracted 107 configs from subscription content
+[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Extracted 104 configs from subscription content
+[[35mDBG[0m] Extracted 2 configs from subscription content
+[[35mDBG[0m] Fetching channel 105/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 106/291: https://t.me/s/free1_vpn
+[[35mDBG[0m] Collected 10 configs from free1_vpn
+[[35mDBG[0m] Fetching channel 107/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 108/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 109/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 110/291: https://t.me/s/singbox1
+[[35mDBG[0m] Collected 29 configs from singbox1
+[[35mDBG[0m] Fetching channel 111/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 112/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 113/291: https://t.me/s/Ae_proxy
+[[35mDBG[0m] Collected 8 configs from Ae_proxy
+[[35mDBG[0m] Fetching channel 114/291: https://t.me/s/FOX_VPN66
+[[35mDBG[0m] Collected 3 configs from FOX_VPN66
+[[35mDBG[0m] Fetching channel 115/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 116/291: https://t.me/s/archivetell
+[[35mDBG[0m] Collected 2 configs from archivetell
+[[35mDBG[0m] Fetching channel 117/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 118/291: https://t.me/s/Network_442
+[[35mDBG[0m] Collected 19 configs from Network_442
+[[35mDBG[0m] Fetching channel 119/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 120/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 121/291: https://t.me/s/free1ss
+[[35mDBG[0m] Collected 38 configs from free1ss
+[[35mDBG[0m] Fetching channel 122/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 123/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 124/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 125/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 126/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 127/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 128/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 129/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 130/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 131/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 132/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 133/291: https://t.me/s/configshub2
+[[35mDBG[0m] Collected 36 configs from configshub2
+[[35mDBG[0m] Fetching channel 134/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 135/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 136/291: https://t.me/s/taziyanteam
+[[35mDBG[0m] Collected 2 configs from taziyanteam
+[[35mDBG[0m] Fetching channel 137/291: https://t.me/s/v2ray_shop_2
+[[35mDBG[0m] Collected 4 configs from v2ray_shop_2
+[[35mDBG[0m] Fetching channel 138/291: https://t.me/s/Capoit
+[[35mDBG[0m] Collected 16 configs from Capoit
+[[35mDBG[0m] Fetching channel 139/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 140/291: https://t.me/s/oxnet_ir
+[[35mDBG[0m] Collected 2 configs from oxnet_ir
+[[35mDBG[0m] Fetching channel 141/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 142/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 143/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 144/291: https://t.me/s/vmesskhodam
+[[35mDBG[0m] Collected 96 configs from vmesskhodam
+[[35mDBG[0m] Fetching channel 145/291: https://t.me/s/psiphonf
+[[35mDBG[0m] Collected 6 configs from psiphonf
+[[35mDBG[0m] Fetching channel 146/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 147/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 148/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 149/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 150/291: https://t.me/s/free_outline_keys
+[[35mDBG[0m] Collected 36 configs from free_outline_keys
+[[35mDBG[0m] Fetching channel 151/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 152/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 153/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 154/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 155/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 156/291: https://t.me/s/oneclickvpnkeys
+[[35mDBG[0m] Collected 18 configs from oneclickvpnkeys
+[[35mDBG[0m] Fetching channel 157/291: https://t.me/s/anty_filter
+[[35mDBG[0m] Collected 4 configs from anty_filter
+[[35mDBG[0m] Fetching channel 158/291: https://t.me/s/sourcefreefilter
+[[35mDBG[0m] Collected 4 configs from sourcefreefilter
+[[35mDBG[0m] Fetching channel 159/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 160/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 161/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 162/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 163/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 164/291: https://t.me/s/Freedomnetir
+[[35mDBG[0m] Collected 4 configs from Freedomnetir
+[[35mDBG[0m] Fetching channel 165/291: https://t.me/s/NetMeli8
+[[35mDBG[0m] Collected 3 configs from NetMeli8
+[[35mDBG[0m] Fetching channel 166/291: https://t.me/s/crgaming7
+[[35mDBG[0m] Collected 14 configs from crgaming7
+[[35mDBG[0m] Fetching channel 167/291: https://t.me/s/nofiltering2
+[[35mDBG[0m] Collected 19 configs from nofiltering2
+[[35mDBG[0m] Fetching channel 168/291: https://t.me/s/V2ray_Alpha
+[[35mDBG[0m] Collected 6 configs from V2ray_Alpha
+[[35mDBG[0m] Fetching channel 169/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 170/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 171/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 172/291: https://t.me/s/hddify
+[[35mDBG[0m] Collected 1 configs from hddify
+[[35mDBG[0m] Fetching channel 173/291: https://t.me/s/Spotify_Porteghali
+[[35mDBG[0m] Collected 8 configs from Spotify_Porteghali
+[[35mDBG[0m] Fetching channel 174/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 175/291: https://t.me/s/v2nodes
+[[35mDBG[0m] Collected 40 configs from v2nodes
+[[35mDBG[0m] Fetching channel 176/291: https://t.me/s/configV2rayForFree
+[[35mDBG[0m] Collected 2 configs from configV2rayForFree
+[[35mDBG[0m] Fetching channel 177/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 178/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 179/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 180/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 181/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 182/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 183/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 184/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 185/291: https://t.me/s/meliproxyy
+[[35mDBG[0m] Collected 42 configs from meliproxyy
+[[35mDBG[0m] Fetching channel 186/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 187/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 188/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 189/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 190/291: https://t.me/s/soskeynet
+[[35mDBG[0m] Collected 203 configs from soskeynet
+[[35mDBG[0m] Fetching channel 191/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 192/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 193/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 194/291: https://t.me/s/DeamNet_proxy
+[[35mDBG[0m] Collected 40 configs from DeamNet_proxy
+[[35mDBG[0m] Fetching channel 195/291: https://t.me/s/v2rfa
+[[35mDBG[0m] Collected 8 configs from v2rfa
+[[35mDBG[0m] Fetching channel 196/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 197/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 198/291: https://t.me/s/Napsternetvirani
+[[35mDBG[0m] Collected 10 configs from Napsternetvirani
+[[35mDBG[0m] Fetching channel 199/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 200/291: https://t.me/s/prrofile_purple
+[[35mDBG[0m] Collected 10 configs from prrofile_purple
+[[35mDBG[0m] Fetching channel 201/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 202/291: https://t.me/s/configV2rayNG
+[[35mDBG[0m] Collected 14 configs from configV2rayNG
+[[35mDBG[0m] Fetching channel 203/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 204/291: https://t.me/s/SafeNetIR
+[[35mDBG[0m] Collected 24 configs from SafeNetIR
+[[35mDBG[0m] Fetching channel 205/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 206/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 207/291: https://t.me/s/v2ray_youtube
+[[35mDBG[0m] Collected 24 configs from v2ray_youtube
+[[35mDBG[0m] Fetching channel 208/291: https://t.me/s/GH_v2rayng
+[[35mDBG[0m] Collected 2 configs from GH_v2rayng
+[[35mDBG[0m] Fetching channel 209/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 210/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 211/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 212/291: https://t.me/s/shadowsockskeys
+[[35mDBG[0m] Collected 36 configs from shadowsockskeys
+[[35mDBG[0m] Fetching channel 213/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 214/291: https://t.me/s/Outline_Vpn
+[[35mDBG[0m] Collected 30 configs from Outline_Vpn
+[[35mDBG[0m] Fetching channel 215/291: https://t.me/s/VlessConfig
+[[35mDBG[0m] Collected 28 configs from VlessConfig
+[[35mDBG[0m] Fetching channel 216/291: https://t.me/s/v2rayngn
+[[35mDBG[0m] Collected 1 configs from v2rayngn
+[[35mDBG[0m] Fetching channel 217/291: https://t.me/s/Hope_Net
+[[35mDBG[0m] Collected 84 configs from Hope_Net
+[[35mDBG[0m] Fetching channel 218/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 219/291: https://t.me/s/SEVEN_ping
+[[35mDBG[0m] Collected 1 configs from SEVEN_ping
+[[35mDBG[0m] Fetching channel 220/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 221/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 222/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 223/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 224/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 225/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 226/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 227/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 228/291: https://t.me/s/proxy_kafee
+[[35mDBG[0m] Collected 11 configs from proxy_kafee
+[[35mDBG[0m] Fetching channel 229/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 230/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 231/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 232/291: https://t.me/s/vpnv2rayngv
+[[35mDBG[0m] Collected 42 configs from vpnv2rayngv
+[[35mDBG[0m] Fetching channel 233/291: https://t.me/s/vipconfingg
+[[35mDBG[0m] Collected 2 configs from vipconfingg
+[[35mDBG[0m] Fetching channel 234/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 235/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 236/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 237/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 238/291: https://t.me/s/netmelinpv
+[[35mDBG[0m] Collected 3 configs from netmelinpv
+[[35mDBG[0m] Fetching channel 239/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 240/291: https://t.me/s/filtershekan_channel
+[[35mDBG[0m] Collected 10 configs from filtershekan_channel
+[[35mDBG[0m] Fetching channel 241/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 242/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 243/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 244/291: https://t.me/s/v2ray_configs_pool
+[[35mDBG[0m] Collected 40 configs from v2ray_configs_pool
+[[35mDBG[0m] Fetching channel 245/291: https://t.me/s/tunnelnim
+[[35mDBG[0m] Collected 5 configs from tunnelnim
+[[35mDBG[0m] Fetching channel 246/291: https://t.me/s/vpnproxy_v2rayng
+[[35mDBG[0m] Collected 2 configs from vpnproxy_v2rayng
+[[35mDBG[0m] Fetching channel 247/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 248/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 249/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 250/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 251/291: https://t.me/s/vpnsshocean
+[[35mDBG[0m] Collected 6 configs from vpnsshocean
+[[35mDBG[0m] Fetching channel 252/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 253/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 254/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 255/291: https://t.me/s/persianvpnhub
+[[35mDBG[0m] Collected 28 configs from persianvpnhub
+[[35mDBG[0m] Fetching channel 256/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 257/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 258/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 259/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 260/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 261/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 262/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 263/291: https://t.me/s/BigSmoke_Config
+[[35mDBG[0m] Collected 152 configs from BigSmoke_Config
+[[35mDBG[0m] Fetching channel 264/291: https://t.me/s/v2rayngvpn
+[[35mDBG[0m] Collected 34 configs from v2rayngvpn
+[[35mDBG[0m] Fetching channel 265/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 266/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 267/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 268/291: https://t.me/s/v2ray1_ng
+[[35mDBG[0m] Collected 8 configs from v2ray1_ng
+[[35mDBG[0m] Fetching channel 269/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 270/291: https://t.me/s/shh_proxy
+[[35mDBG[0m] Collected 6 configs from shh_proxy
+[[35mDBG[0m] Fetching channel 271/291: https://t.me/s/LonUp_M
+[[35mDBG[0m] Collected 202 configs from LonUp_M
+[[35mDBG[0m] Fetching channel 272/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 273/291: https://t.me/s/givevpn
+[[35mDBG[0m] Collected 5 configs from givevpn
+[[35mDBG[0m] Fetching channel 274/291: https://t.me/s/ConfigX2ray
+[[35mDBG[0m] Collected 6 configs from ConfigX2ray
+[[35mDBG[0m] Fetching channel 275/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 276/291: https://t.me/s/VmessProtocol
+[[35mDBG[0m] Collected 10 configs from VmessProtocol
+[[35mDBG[0m] Fetching channel 277/291: https://t.me/s/Parsashonam
+[[35mDBG[0m] Collected 14 configs from Parsashonam
+[[35mDBG[0m] Fetching channel 278/291: https://t.me/s/proxy_mtm
+[[35mDBG[0m] Collected 24 configs from proxy_mtm
+[[35mDBG[0m] Fetching channel 279/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 280/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 281/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 282/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 283/291: https://t.me/s/appxa
+[[35mDBG[0m] Collected 9 configs from appxa
+[[35mDBG[0m] Fetching channel 284/291: https://t.me/s/mehrosaboran
+[[35mDBG[0m] Collected 60 configs from mehrosaboran
+[[35mDBG[0m] Fetching channel 285/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 286/291: https://t.me/s/v2rayngcloud
+[[35mDBG[0m] Collected 6 configs from v2rayngcloud
+[[35mDBG[0m] Fetching channel 287/291: https://t.me/s/v2rayvpnchannel
+[[35mDBG[0m] Collected 30 configs from v2rayvpnchannel
+[[35mDBG[0m] Fetching channel 288/291: https://t.me/s/s
+[[35mDBG[0m] Fetching channel 289/291: https://t.me/s/V2ray20261
+[[35mDBG[0m] Collected 5 configs from V2ray20261
+[[35mDBG[0m] Fetching channel 290/291: https://t.me/s/v2rayyngvpn
+[[35mDBG[0m] Collected 2 configs from v2rayyngvpn
+[[35mDBG[0m] Fetching channel 291/291: https://t.me/s/v2rayNG_Matsuri
+[[35mDBG[0m] Collected 19 configs from v2rayNG_Matsuri
 [[34mINF[0m] All fetching completed. Now processing cache...
-[[35mDBG[0m] Written 1 configs to 📡 telegram/v2rayconfigamir/🐴 Trojan.txt
-[[35mDBG[0m] Written 39 configs to 📡 telegram/v2rayconfigamir/📱 MTProto Proxy.txt
-[[35mDBG[0m] Written 5 configs to 📡 telegram/v2rayconfigamir/🕳️ VLess.txt
-[[35mDBG[0m] Written 16 configs to 📡 telegram/LonUp_M/🕳️ VLess.txt
-[[35mDBG[0m] Written 13 configs to 📡 telegram/LonUp_M/🧦 SOCKS.txt
-[[35mDBG[0m] Written 4 configs to 📡 telegram/LonUp_M/📦 VMess.txt
-[[35mDBG[0m] Written 2 configs to 📡 telegram/archivetell/🌐 HTTP / HTTPS.txt
-[[35mDBG[0m] Written 2 configs to 📡 telegram/ultrasurf_12/🧦 SOCKS.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/ultrasurf_12/🧦 SOCKS5 Proxy.txt
-[[35mDBG[0m] Written 5 configs to 📡 telegram/vipconfingg/🧦 SOCKS5 Proxy.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/vipconfingg/🕳️ VLess.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/vipconfingg/🌐 HTTP / HTTPS.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/vipconfingg/🧦 SOCKS.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/zibanabz/📱 MTProto Proxy.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/cpy_teeL/🕳️ VLess.txt
-[[35mDBG[0m] Written 4 configs to 📡 telegram/v2ray_configs_pool/📱 MTProto Proxy.txt
-[[35mDBG[0m] Written 6 configs to 📡 telegram/v2ray_configs_pool/🕸️ slipnet.txt
-[[35mDBG[0m] Written 14 configs to 📡 telegram/v2ray_configs_pool/🕳️ VLess.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/v2ray_configs_pool/🐴 Trojan.txt
-[[35mDBG[0m] Written 2 configs to 📡 telegram/oneclickvpnkeys/🕳️ VLess.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/SafeNetIR/📱 MTProto Proxy.txt
-[[35mDBG[0m] Written 3 configs to 📡 telegram/Network_442/🌐 HTTP / HTTPS.txt
-[[35mDBG[0m] Written 7 configs to 📡 telegram/filembad/📱 MTProto Proxy.txt
-[[35mDBG[0m] Written 12 configs to 📡 telegram/filembad/🕳️ VLess.txt
-[[35mDBG[0m] Written 11 configs to 📡 telegram/filembad/📦 VMess.txt
-[[35mDBG[0m] Written 2 configs to 📡 telegram/filembad/🐍 Shadowsocks.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/filembad/🐴 Trojan.txt
-[[35mDBG[0m] Written 2 configs to 📡 telegram/ConfigX2ray/🧦 SOCKS5 Proxy.txt
-[[35mDBG[0m] Written 2 configs to 📡 telegram/ConfigX2ray/🧦 SOCKS.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/anty_filter/🧦 SOCKS5 Proxy.txt
-[[35mDBG[0m] Written 2 configs to 📡 telegram/anty_filter/🧦 SOCKS.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/anty_filter/📱 MTProto Proxy.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/sharecentrepro/📦 VMess.txt
-[[35mDBG[0m] Written 2 configs to 📡 telegram/vpnsshocean/🌐 HTTP / HTTPS.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/free1_vpn/🧦 SOCKS5 Proxy.txt
-[[35mDBG[0m] Written 2 configs to 📡 telegram/iran_v2ray1/📱 MTProto Proxy.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/iran_v2ray1/🧦 SOCKS5 Proxy.txt
-[[35mDBG[0m] Written 2 configs to 📡 telegram/vpnserverrr/🧦 SOCKS.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/vpnserverrr/🐍 Shadowsocks.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/vpnserverrr/🧦 SOCKS5 Proxy.txt
-[[35mDBG[0m] Written 5 configs to 📡 telegram/vmesskhodam/🧦 SOCKS.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/vmesskhodam/🧦 SOCKS5 Proxy.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/vmesskhodam/🕳️ VLess.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/vmesskhodam/📱 MTProto Proxy.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/vmesskhodam/🐍 Shadowsocks.txt
-[[35mDBG[0m] Written 2 configs to 📡 telegram/sourcefreefilter/📱 MTProto Proxy.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/Parsashonam/🌐 HTTP / HTTPS.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/azadi_az_inja_migzare/📱 MTProto Proxy.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/azadi_az_inja_migzare/🧦 SOCKS.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/vpnv2rayngv/🧦 SOCKS5 Proxy.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/skivpn/🧦 SOCKS.txt
+[[34mINF[0m] Pruned 58316 configs older than 720h0m0s
+[[35mDBG[0m] Written 1 configs to 📡 telegram/farahvpn/📦 VMess.txt
+[[35mDBG[0m] Written 2 configs to 📡 telegram/VlessVpnFree/🕳️ VLess.txt
+[[35mDBG[0m] Written 1 configs to 📡 telegram/sourcefreefilter/📱 MTProto Proxy.txt
+[[35mDBG[0m] Written 1 configs to 📡 telegram/vpnfail_v2ray/🕳️ VLess.txt
+[[35mDBG[0m] Written 2 configs to 📡 telegram/appxa/🕸️ slipnet.txt
+[[35mDBG[0m] Written 1 configs to 📡 telegram/appxa/🌐 HTTP / HTTPS.txt
+[[35mDBG[0m] Written 3 configs to 📡 telegram/mehrosaboran/📱 MTProto Proxy.txt
+[[35mDBG[0m] Written 1 configs to 📡 telegram/NetMeli8/📱 MTProto Proxy.txt
+[[35mDBG[0m] Written 1 configs to 📡 telegram/v2rayvlp/🕳️ VLess.txt
+[[35mDBG[0m] Written 3 configs to 📡 telegram/vmesskhodam/📱 MTProto Proxy.txt
+[[35mDBG[0m] Written 8 configs to 📡 telegram/PrivateVPNs/🐴 Trojan.txt
+[[35mDBG[0m] Written 1 configs to 📡 telegram/vmessorg/⚡ Hysteria2.txt
+[[35mDBG[0m] Written 2 configs to 📡 telegram/vmessorg/📱 MTProto Proxy.txt
+[[35mDBG[0m] Written 2 configs to 📡 telegram/Freedomnetir/🌐 HTTP / HTTPS.txt
+[[35mDBG[0m] Written 1 configs to 📡 telegram/Network_442/🌐 HTTP / HTTPS.txt
+[[35mDBG[0m] Written 1 configs to 📡 telegram/v2ray_configs_pool/🕳️ VLess.txt
+[[35mDBG[0m] Written 1 configs to 📡 telegram/atatech_ir/🌐 HTTP / HTTPS.txt
+[[35mDBG[0m] Written 1 configs to 📡 telegram/dns68/🌐 HTTP / HTTPS.txt
+[[35mDBG[0m] Written 1 configs to 📡 telegram/dns68/🧦 SOCKS5 Proxy.txt
+[[35mDBG[0m] Written 2 configs to 📡 telegram/azadi_az_inja_migzare/🕳️ VLess.txt
+[[35mDBG[0m] Written 1 configs to 📡 telegram/Fr33C0nfig/🌐 HTTP / HTTPS.txt
+[[35mDBG[0m] Written 1 configs to 📡 telegram/SEVEN_ping/🌐 HTTP / HTTPS.txt
+[[35mDBG[0m] Written 2 configs to 📡 telegram/vpnproxy_v2rayng/🌐 HTTP / HTTPS.txt
+[[35mDBG[0m] Written 1 configs to 📡 telegram/ConfigX2ray0/🕳️ VLess.txt
 [[35mDBG[0m] Written 3 configs to 📡 telegram/skivpn/📱 MTProto Proxy.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/skivpn/🧦 SOCKS5 Proxy.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/filtershekan_channel/🧦 SOCKS.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/npvv2rayfilter/🌐 HTTP / HTTPS.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/wedbazvpn/📦 VMess.txt
-[[35mDBG[0m] Written 4 configs to 📡 telegram/wedbazvpn/📱 MTProto Proxy.txt
-[[35mDBG[0m] Written 4 configs to 📡 telegram/IraneAzad_Net/🧦 SOCKS.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/givevpn/🧦 SOCKS.txt
 [[35mDBG[0m] Written 2 configs to 📡 telegram/givevpn/📱 MTProto Proxy.txt
-[[35mDBG[0m] Written 16 configs to 📡 telegram/atatech_ir/🌐 HTTP / HTTPS.txt
-[[35mDBG[0m] Written 2 configs to 📡 telegram/atatech_ir/📱 MTProto Proxy.txt
-[[35mDBG[0m] Written 2 configs to 📡 telegram/icv2ray/🕳️ VLess.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/icv2ray/📱 MTProto Proxy.txt
-[[35mDBG[0m] Written 2 configs to 📡 telegram/V2rayEnglish/🧦 SOCKS.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/vpnplusee_free/🕳️ VLess.txt
-[[35mDBG[0m] Written 2 configs to 📡 telegram/falcunargo/📱 MTProto Proxy.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/falcunargo/🧦 SOCKS.txt
-[[35mDBG[0m] Written 2 configs to 📡 telegram/falcunargo/🌐 HTTP / HTTPS.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/KurdConfing/📦 VMess.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/KurdConfing/🧦 SOCKS5 Proxy.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/KurdConfing/🧦 SOCKS.txt
-[[35mDBG[0m] Written 2 configs to 📡 telegram/prrofile_purple/🧦 SOCKS.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/prrofile_purple/⚡ Hysteria2.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/v2ray_youtube/🕳️ VLess.txt
-[[35mDBG[0m] Written 20 configs to 📡 telegram/v2rayngconfig/🌐 HTTP / HTTPS.txt
-[[35mDBG[0m] Written 2 configs to 📡 telegram/vipv2rayngnp/🧦 SOCKS.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/vipv2rayngnp/📦 VMess.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/vipv2rayngnp/📱 MTProto Proxy.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/Porteqal3/🧦 SOCKS5 Proxy.txt
-[[35mDBG[0m] Written 15 configs to 📡 telegram/free_outline_keys/🕳️ VLess.txt
-[[35mDBG[0m] Written 5 configs to 📡 telegram/free_outline_keys/🐍 Shadowsocks.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/proxy_kafee/📱 MTProto Proxy.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/proxy_kafee/🧦 SOCKS5 Proxy.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/V2ray20261/📱 MTProto Proxy.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/G0Dv2ray/🌐 HTTP / HTTPS.txt
-[[35mDBG[0m] Written 2 configs to 📡 telegram/v2rayngvpn/🧦 SOCKS.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/dns68/⚡ Hysteria2.txt
-[[35mDBG[0m] Written 4 configs to 📡 telegram/dns68/🧦 SOCKS5 Proxy.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/dns68/🕳️ VLess.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/meliproxyy/🧦 SOCKS5 Proxy.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/meliproxyy/🕳️ VLess.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/moft_vpn/📱 MTProto Proxy.txt
-[[35mDBG[0m] Written 4 configs to 📡 telegram/v2rayng_fars/📱 MTProto Proxy.txt
-[[35mDBG[0m] Written 4 configs to 📡 telegram/v2rayng_fars/🧦 SOCKS.txt
-[[35mDBG[0m] Written 2 configs to 📡 telegram/v2rayng_fars/🧦 SOCKS5 Proxy.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/Freedomnetir/🧦 SOCKS5 Proxy.txt
-[[35mDBG[0m] Written 5 configs to 📡 telegram/crgaming7/🧦 SOCKS.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/crgaming7/📦 VMess.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/vmess_iran/📱 MTProto Proxy.txt
-[[35mDBG[0m] Written 2 configs to 📡 telegram/shadowsockskeys/🐍 Shadowsocks.txt
-[[35mDBG[0m] Written 8 configs to 📡 telegram/YamYamProxy/🧦 SOCKS.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/YamYamProxy/🕳️ VLess.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/YamYamProxy/🐍 Shadowsocks.txt
-[[35mDBG[0m] Written 12 configs to 📡 telegram/techbod/🧦 SOCKS.txt
-[[35mDBG[0m] Written 2 configs to 📡 telegram/techbod/🕳️ VLess.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/techbod/🧦 SOCKS5 Proxy.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/techbod/🌐 HTTP / HTTPS.txt
-[[35mDBG[0m] Written 3 configs to 📡 telegram/free_vpn02/📱 MTProto Proxy.txt
-[[35mDBG[0m] Written 2 configs to 📡 telegram/free_vpn02/🧦 SOCKS5 Proxy.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/free_vpn02/🌐 HTTP / HTTPS.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/free_vpn02/📦 VMess.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/free_vpn02/🧦 SOCKS.txt
-[[35mDBG[0m] Written 4 configs to 📡 telegram/free1ss/🐍 Shadowsocks.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/v2ray1_ng/📱 MTProto Proxy.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/v2ray1_ng/🧦 SOCKS5 Proxy.txt
-[[35mDBG[0m] Written 2 configs to 📡 telegram/vpnproxy_v2rayng/🧦 SOCKS5 Proxy.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/vpnproxy_v2rayng/🌐 HTTP / HTTPS.txt
-[[35mDBG[0m] Written 43 configs to 📡 telegram/stretten/🕳️ VLess.txt
-[[35mDBG[0m] Written 2 configs to 📡 telegram/antimeli/🧦 SOCKS.txt
-[[35mDBG[0m] Written 6 configs to 📡 telegram/appxa/🌐 HTTP / HTTPS.txt
-[[35mDBG[0m] Written 5 configs to 📡 telegram/persianvpnhub/📱 MTProto Proxy.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/persianvpnhub/📦 VMess.txt
-[[35mDBG[0m] Written 4 configs to 📡 telegram/singbox1/🧦 SOCKS.txt
-[[35mDBG[0m] Written 2 configs to 📡 telegram/vpnfail_v2ray/🕳️ VLess.txt
-[[35mDBG[0m] Written 12 configs to 📡 telegram/VPN_SOLVE/🧦 SOCKS5 Proxy.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/PewezaVPN/📱 MTProto Proxy.txt
-[[35mDBG[0m] Written 2 configs to 📡 telegram/PewezaVPN/🧦 SOCKS.txt
+[[35mDBG[0m] Written 1 configs to 📡 telegram/vpnsshocean/🌐 HTTP / HTTPS.txt
+[[35mDBG[0m] Written 2 configs to 📡 telegram/v2rayyngvpn/📱 MTProto Proxy.txt
+[[35mDBG[0m] Written 2 configs to 📡 telegram/Capoit/📱 MTProto Proxy.txt
+[[35mDBG[0m] Written 1 configs to 📡 telegram/Capoit/🌐 HTTP / HTTPS.txt
+[[35mDBG[0m] Written 2 configs to 📡 telegram/v2rayngvpn/📱 MTProto Proxy.txt
+[[35mDBG[0m] Written 1 configs to 📡 telegram/nofiltering2/🕳️ VLess.txt
+[[35mDBG[0m] Written 1 configs to 📡 telegram/ShadowsocksM/📦 VMess.txt
+[[35mDBG[0m] Written 4 configs to 📡 telegram/sharecentrepro/📦 VMess.txt
+[[35mDBG[0m] Written 3 configs to 📡 telegram/configshub2/🕳️ VLess.txt
+[[35mDBG[0m] Written 2 configs to 📡 telegram/singbox1/📱 MTProto Proxy.txt
+[[35mDBG[0m] Written 4 configs to 📡 telegram/free_outline_keys/🕳️ VLess.txt
+[[35mDBG[0m] Written 2 configs to 📡 telegram/cicdoVPN/📱 MTProto Proxy.txt
+[[35mDBG[0m] Written 16 configs to 📡 telegram/v2rayconfigamir/📱 MTProto Proxy.txt
+[[35mDBG[0m] Written 2 configs to 📡 telegram/v2rayconfigamir/📦 VMess.txt
+[[35mDBG[0m] Written 2 configs to 📡 telegram/v2rfa/📱 MTProto Proxy.txt
+[[35mDBG[0m] Written 2 configs to 📡 telegram/mtmvpn/🕳️ VLess.txt
+[[35mDBG[0m] Written 1 configs to 📡 telegram/mtmvpn/⚡ Hysteria2.txt
+[[35mDBG[0m] Written 1 configs to 📡 telegram/free_vpn02/📱 MTProto Proxy.txt
+[[35mDBG[0m] Written 1 configs to 📡 telegram/free_vpn02/⚡ Hysteria2.txt
+[[35mDBG[0m] Written 2 configs to 📡 telegram/vpnmega1/📱 MTProto Proxy.txt
+[[35mDBG[0m] Written 1 configs to 📡 telegram/filtershekan_channel/📱 MTProto Proxy.txt
+[[35mDBG[0m] Written 9 configs to 📡 telegram/filembad/🕳️ VLess.txt
 [[35mDBG[0m] Written 1 configs to 📡 telegram/v2ray_free_conf/🕳️ VLess.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/Capoit/🧦 SOCKS5 Proxy.txt
+[[35mDBG[0m] Written 41 configs to 📡 telegram/soskeynet/🕳️ VLess.txt
+[[35mDBG[0m] Written 6 configs to 📡 telegram/soskeynet/📦 VMess.txt
+[[35mDBG[0m] Written 1 configs to 📡 telegram/soskeynet/🐍 Shadowsocks.txt
+[[35mDBG[0m] Written 1 configs to 📡 telegram/persianvpnhub/🕳️ VLess.txt
+[[35mDBG[0m] Written 1 configs to 📡 telegram/persianvpnhub/📦 VMess.txt
+[[35mDBG[0m] Written 1 configs to 📡 telegram/hddify/📱 MTProto Proxy.txt
+[[35mDBG[0m] Written 1 configs to 📡 telegram/VlessConfig/🕳️ VLess.txt
+[[35mDBG[0m] Written 1 configs to 📡 telegram/V2ray20261/🌐 HTTP / HTTPS.txt
+[[35mDBG[0m] Written 1 configs to 📡 telegram/psiphonf/🕳️ VLess.txt
+[[35mDBG[0m] Written 1 configs to 📡 telegram/psiphonf/📱 MTProto Proxy.txt
+[[35mDBG[0m] Written 1 configs to 📡 telegram/v2range/📦 VMess.txt
 [[35mDBG[0m] Written 3 configs to 📡 telegram/v2range/📱 MTProto Proxy.txt
-[[35mDBG[0m] Written 2 configs to 📡 telegram/v2range/🧦 SOCKS.txt
-[[35mDBG[0m] Written 8 configs to 📡 telegram/soskeynet/🧦 SOCKS.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/soskeynet/📦 VMess.txt
-[[35mDBG[0m] Written 2 configs to 📡 telegram/ConfigX2ray0/🧦 SOCKS.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/hddify/🧦 SOCKS5 Proxy.txt
-[[35mDBG[0m] Written 21 configs to 📡 telegram/V2All/🕳️ VLess.txt
-[[35mDBG[0m] Written 4 configs to 📡 telegram/V2All/🐍 Shadowsocks.txt
-[[35mDBG[0m] Written 2 configs to 📡 telegram/crayingroom/🧦 SOCKS5 Proxy.txt
-[[35mDBG[0m] Written 2 configs to 📡 telegram/crayingroom/📱 MTProto Proxy.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/crayingroom/🧦 SOCKS.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/AmyraxVPN/🌐 HTTP / HTTPS.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/v2nodes/🐍 Shadowsocks.txt
-[[35mDBG[0m] Written 2 configs to 📡 telegram/v2nodes/📦 VMess.txt
-[[35mDBG[0m] Written 3 configs to 📡 telegram/taziyanteam/📱 MTProto Proxy.txt
-[[35mDBG[0m] Written 2 configs to 📡 telegram/v2rayvpnchannel/🐴 Trojan.txt
-[[35mDBG[0m] Written 2 configs to 📡 telegram/BigSmoke_Config/📱 MTProto Proxy.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/BigSmoke_Config/🧦 SOCKS5 Proxy.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/iP_CF/📱 MTProto Proxy.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/iP_CF/🌐 HTTP / HTTPS.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/juzibaipiao/📱 MTProto Proxy.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/v2rayngseven/🧦 SOCKS5 Proxy.txt
-[[35mDBG[0m] Written 1 configs to 📡 telegram/Eag1e_YT/🧦 SOCKS.txt
-[[35mDBG[0m] Written 113 configs to 🔗 subscription/⚡ Hysteria2.txt
-[[35mDBG[0m] Written 1 configs to 🔗 subscription/📱 MTProto Proxy.txt
-[[35mDBG[0m] Written 2 configs to 🔗 subscription/🛡️ Invizible_Pro.txt
-[[35mDBG[0m] Written 33431 configs to 🔗 subscription/🕳️ VLess.txt
-[[35mDBG[0m] Written 12714 configs to 🔗 subscription/📦 VMess.txt
-[[35mDBG[0m] Written 26 configs to 🔗 subscription/🔄 SSR.txt
-[[35mDBG[0m] Written 20 configs to 🔗 subscription/🌐 HTTP / HTTPS.txt
-[[35mDBG[0m] Written 14 configs to 🔗 subscription/🔒 WireGuard.txt
-[[35mDBG[0m] Written 2 configs to 🔗 subscription/🧩 Tuic.txt
-[[35mDBG[0m] Written 5 configs to 🔗 subscription/🧦 SOCKS.txt
-[[35mDBG[0m] Written 1 configs to 🔗 subscription/☁️ Argo.txt
-[[35mDBG[0m] Written 5546 configs to 🔗 subscription/🐍 Shadowsocks.txt
-[[35mDBG[0m] Written 6502 configs to 🔗 subscription/🐴 Trojan.txt
-[[34mINF[0m] Added 6 new configs to 📦 all_configs/📡 telegram/🕸️ slipnet.txt
-[[34mINF[0m] Added 97 new configs to 📦 all_configs/📡 telegram/🧦 SOCKS.txt
-[[34mINF[0m] Added 196 new configs to 📦 all_configs/📡 telegram/📄 all_protocols.txt
-[[34mINF[0m] Added 104 new configs to 📦 all_configs/📡 telegram/📱 MTProto Proxy.txt
-[[34mINF[0m] Added 50 new configs to 📦 all_configs/📡 telegram/🧦 SOCKS5 Proxy.txt
+[[35mDBG[0m] Written 1 configs to 📡 telegram/V2All/🐍 Shadowsocks.txt
+[[35mDBG[0m] Written 4 configs to 📡 telegram/V2All/🐴 Trojan.txt
+[[35mDBG[0m] Written 14 configs to 📡 telegram/Hope_Net/📦 VMess.txt
+[[35mDBG[0m] Written 4 configs to 🔗 subscription/🔄 SSR.txt
+[[35mDBG[0m] Written 729 configs to 🔗 subscription/📦 VMess.txt
+[[35mDBG[0m] Written 1247 configs to 🔗 subscription/🐴 Trojan.txt
+[[35mDBG[0m] Written 4578 configs to 🔗 subscription/🕳️ VLess.txt
+[[35mDBG[0m] Written 715 configs to 🔗 subscription/🐍 Shadowsocks.txt
+[[35mDBG[0m] Written 57 configs to 🔗 subscription/⚡ Hysteria2.txt
+[[35mDBG[0m] Written 2 configs to 🔗 subscription/🔒 WireGuard.txt
+[[34mINF[0m] Added 88 new configs to 📦 all_configs/📡 telegram/📱 MTProto Proxy.txt
 [[31mERR[0m] Cannot open 📦 all_configs/📡 telegram/🌐 HTTP / HTTPS.txt: open 📦 all_configs/📡 telegram/🌐 HTTP / HTTPS.txt: no such file or directory
-[[34mINF[0m] Added 1 new configs to 📦 all_configs/🔗 subscription/📱 MTProto Proxy.txt
+[[34mINF[0m] Added 41 new configs to 📦 all_configs/📡 telegram/🧦 SOCKS.txt
+[[34mINF[0m] Added 8 new configs to 📦 all_configs/📡 telegram/🕸️ slipnet.txt
+[[34mINF[0m] Added 4 new configs to 📦 all_configs/📡 telegram/🧦 SOCKS5 Proxy.txt
+[[34mINF[0m] Added 209 new configs to 📦 all_configs/📡 telegram/📄 all_protocols.txt
+[[34mINF[0m] Added 7714 new configs to 📦 all_configs/🔗 subscription/📄 all_protocols.txt
 [[34mINF[0m] Added 2 new configs to 📦 all_configs/🔗 subscription/🛡️ Invizible_Pro.txt
-[[34mINF[0m] Added 2 new configs to 📦 all_configs/🔗 subscription/🧩 Tuic.txt
-[[34mINF[0m] Added 1 new configs to 📦 all_configs/🔗 subscription/☁️ Argo.txt
-[[34mINF[0m] Added 58320 new configs to 📦 all_configs/🔗 subscription/📄 all_protocols.txt
-[[34mINF[0m] Added 26 new configs to 📦 all_configs/🔗 subscription/🔄 SSR.txt
-[[31mERR[0m] Cannot open 📦 all_configs/🔗 subscription/🌐 HTTP / HTTPS.txt: open 📦 all_configs/🔗 subscription/🌐 HTTP / HTTPS.txt: no such file or directory
-[[34mINF[0m] Added 5 new configs to 📦 all_configs/🔗 subscription/🧦 SOCKS.txt
-[[35mDBG[0m] Already archived today, skipping
+[[34mINF[0m] Added 5 new configs to 📦 all_configs/🔗 subscription/🔄 SSR.txt
+[[34mINF[0m] Added 1 new configs to 📦 all_configs/🔗 subscription/🧦 SOCKS.txt
+[[34mINF[0m] 📦 Running daily archive for 2026-06-08
+[[34mINF[0m] Cleared 📦 all_configs after archiving
+[[34mINF[0m] Archived 📦 all_configs to 🗄️ daily_archive/2026-06-08
 [[34mINF[0m] reports/links.md generated
 [[34mINF[0m] reports/collector_stats.md and reports/collector_stats.txt generated
 [[34mINF[0m] reports/sources_report.md generated (enhanced version)
-[[34mINF[0m] Stats: New=48, Dup=544989, Insecure=214285, Telegram=11, Subs=37, Total=58890
-[[34mINF[0m] ✅ Successfully collected 48 new configs
+[[34mINF[0m] subscription_links.txt generated with 8 links
+[[34mINF[0m] Stats: New=7519, Dup=567563, Insecure=212827, Telegram=187, Subs=7332, Total=8093
+[[34mINF[0m] ✅ Successfully collected 7519 new configs
 [[34mINF[0m] All Done!

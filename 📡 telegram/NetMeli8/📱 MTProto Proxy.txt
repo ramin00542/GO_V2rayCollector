@@ -1,0 +1,1 @@
+tg://proxy?server=65.108.201.8&port=443&secret=dd104462821249bd7ac519130220c25d09tg://proxy?server=94.130.163.60&port=443&secret=dd104462821249bd7ac519130220c25d09tg://proxy?server=65.108.29.212&port=4455&secret=dd104462821249bd7ac519130220c25d09tg://proxy?server=95.217.38.86&port=4455&secret=dd104462821249bd7ac519130220c25d09اشتراک‌گذاری
