@@ -1,4 +1,4 @@
-trojan://825929f4-c702-35ce-9124-00d3f95b8c32@adak.sonofthewinds.com:34470?security=tls&headerType=none&type=tcp&sni=gj1.sonofthewinds.com#[74623]
 trojan://telegram-id-directvpn@13.37.27.156:22223?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#[74644]
 trojan://telegram-id-privatevpns@13.37.27.156:22222?security=tls&alpn=http/1.1&headerType=none&type=tcp&sni=trojan.burgerip.co.uk#[74637]
 trojan://Masir_Sefid@188.213.130.61:1040?security=reality&pbk=w0XepGv1Hk0gBh1Apiw-nvn8SfzjWcDuxdxN1mpaF3g&headerType=none&fp=chrome&spx=%2FaRBYGa427aKKE16&type=tcp&sni=store.steampowered.com&sid=84e87fdcdf2ea9e8#[74618]
+trojan://825929f4-c702-35ce-9124-00d3f95b8c32@adak.sonofthewinds.com:34470?security=tls&headerType=none&type=tcp&sni=gj1.sonofthewinds.com#[74623]
