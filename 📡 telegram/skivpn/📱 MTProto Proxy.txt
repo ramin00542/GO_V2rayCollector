@@ -1,5 +1,5 @@
 tg://proxy?server=91.107.178.105&port=8443&secret=dd104462821249bd7ac519130220c25d09
 tg://proxy?server=91.107.182.145&port=8443&secret=dd104462821249bd7ac519130220c25d09
-tg://proxy?server=94.130.163.24&port=443&secret=dd104462821249bd7ac519130220c25d09
-tg://proxy?server=178.105.183.45&port=443&secret=dd104462821249bd7ac519130220c25d09
 tg://proxy?server=name.nolags.pw&port=443&secret=dd287755b048284177f71c965b016b38cc
+tg://proxy?server=178.105.183.45&port=443&secret=dd104462821249bd7ac519130220c25d09
+tg://proxy?server=94.130.163.24&port=443&secret=dd104462821249bd7ac519130220c25d09

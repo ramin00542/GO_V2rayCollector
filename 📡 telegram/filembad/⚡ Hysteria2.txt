@@ -1,1 +1,2 @@
+hysteria2://5z15av99psrlhdqp@32.195.51.20:39150?security=tls&obfs=salamander&obfs-password=dlxmzvxvcp3i6v0e&insecure=0&sni=32.195.51.20#%40filembad
 hysteria2://6XeWYrScbC@vercel.adinetorbat.ir:21120?security=tls&fp=chrome&alpn=h3#%40filembad
