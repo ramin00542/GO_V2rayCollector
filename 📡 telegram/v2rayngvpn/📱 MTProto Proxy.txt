@@ -1,2 +1,2 @@
-tg://proxy?server=172.65.139.221&port=3389&secret=dd104462821249bd7ac519130220c25d09https://t.me/proxy?server=172.65.134.209&port=3389&secret=dd104462821249bd7ac519130220c25d09✅
 tg://proxy?server=95.217.38.85&port=4455&secret=dd104462821249bd7ac519130220c25d09✅
+tg://proxy?server=172.65.139.221&port=3389&secret=dd104462821249bd7ac519130220c25d09https://t.me/proxy?server=172.65.134.209&port=3389&secret=dd104462821249bd7ac519130220c25d09✅
