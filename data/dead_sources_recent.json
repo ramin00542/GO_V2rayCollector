@@ -15,6 +15,11 @@
     "checked_at": 1778353586
   },
   {
+    "url": "https://github.com/sakha1370/V2rayCollector/raw/refs/heads/main/mtproto_iran.txt",
+    "last_mod": -62135596800,
+    "checked_at": 1781410073
+  },
+  {
     "url": "https://github.com/sakha1370/V2rayCollector/raw/refs/heads/main/socks_iran.txt",
     "last_mod": -62135596800,
     "checked_at": 1779594060
@@ -180,22 +185,7 @@
     "checked_at": 1780804482
   },
   {
-    "url": "https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Gibraltar.txt",
-    "last_mod": -62135596800,
-    "checked_at": 1779594060
-  },
-  {
-    "url": "https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Iceland.txt",
-    "last_mod": -62135596800,
-    "checked_at": 1780199451
-  },
-  {
     "url": "https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Malta.txt",
-    "last_mod": -62135596800,
-    "checked_at": 1780199451
-  },
-  {
-    "url": "https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Mauritius.txt",
     "last_mod": -62135596800,
     "checked_at": 1780199451
   },
@@ -210,9 +200,9 @@
     "checked_at": 1780804482
   },
   {
-    "url": "https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Pakistan.txt",
+    "url": "https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Nl.txt",
     "last_mod": -62135596800,
-    "checked_at": 1780804482
+    "checked_at": 1781410073
   },
   {
     "url": "https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Panama.txt",
@@ -223,11 +213,6 @@
     "url": "https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Paraguay.txt",
     "last_mod": -62135596800,
     "checked_at": 1780199451
-  },
-  {
-    "url": "https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Peru.txt",
-    "last_mod": -62135596800,
-    "checked_at": 1780804482
   },
   {
     "url": "https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Puerto_Rico.txt",
