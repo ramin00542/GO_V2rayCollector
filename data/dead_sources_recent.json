@@ -45,6 +45,31 @@
     "checked_at": 1778353586
   },
   {
+    "url": "https://raw.githubusercontent.com/Hamicl/V2rayCollector/main/mixed_iran.txt",
+    "last_mod": -62135596800,
+    "checked_at": 1782015254
+  },
+  {
+    "url": "https://raw.githubusercontent.com/Hamicl/V2rayCollector/main/ss_iran.txt",
+    "last_mod": -62135596800,
+    "checked_at": 1782015254
+  },
+  {
+    "url": "https://raw.githubusercontent.com/Hamicl/V2rayCollector/main/trojan_iran.txt",
+    "last_mod": -62135596800,
+    "checked_at": 1782015254
+  },
+  {
+    "url": "https://raw.githubusercontent.com/Hamicl/V2rayCollector/main/vless_iran.txt",
+    "last_mod": -62135596800,
+    "checked_at": 1782015254
+  },
+  {
+    "url": "https://raw.githubusercontent.com/Hamicl/V2rayCollector/main/vmess_iran.txt",
+    "last_mod": -62135596800,
+    "checked_at": 1782015254
+  },
+  {
     "url": "https://raw.githubusercontent.com/IR-NETLIFY/NETLIFY/refs/heads/main/IR_NETLIFY_SUB.txt",
     "last_mod": -62135596800,
     "checked_at": 1778987280
@@ -73,6 +98,31 @@
     "url": "https://raw.githubusercontent.com/amirebni/V2rayCollector/main/vmess_iran.txt",
     "last_mod": -62135596800,
     "checked_at": 1780804482
+  },
+  {
+    "url": "https://raw.githubusercontent.com/ariaghasemi/GO_V2rayCollector/main/mixed_iran.txt",
+    "last_mod": -62135596800,
+    "checked_at": 1782015254
+  },
+  {
+    "url": "https://raw.githubusercontent.com/ariaghasemi/GO_V2rayCollector/main/ss_iran.txt",
+    "last_mod": -62135596800,
+    "checked_at": 1782015254
+  },
+  {
+    "url": "https://raw.githubusercontent.com/ariaghasemi/GO_V2rayCollector/main/trojan_iran.txt",
+    "last_mod": -62135596800,
+    "checked_at": 1782015254
+  },
+  {
+    "url": "https://raw.githubusercontent.com/ariaghasemi/GO_V2rayCollector/main/vless_iran.txt",
+    "last_mod": -62135596800,
+    "checked_at": 1782015254
+  },
+  {
+    "url": "https://raw.githubusercontent.com/ariaghasemi/GO_V2rayCollector/main/vmess_iran.txt",
+    "last_mod": -62135596800,
+    "checked_at": 1782015254
   },
   {
     "url": "https://raw.githubusercontent.com/ashkan45/V2rayCollector/main/ss_iran.txt",
@@ -185,6 +235,16 @@
     "checked_at": 1780804482
   },
   {
+    "url": "https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Gibraltar.txt",
+    "last_mod": -62135596800,
+    "checked_at": 1782015254
+  },
+  {
+    "url": "https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Iceland.txt",
+    "last_mod": -62135596800,
+    "checked_at": 1782015254
+  },
+  {
     "url": "https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Malta.txt",
     "last_mod": -62135596800,
     "checked_at": 1780199451
@@ -205,11 +265,6 @@
     "checked_at": 1781410073
   },
   {
-    "url": "https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Panama.txt",
-    "last_mod": -62135596800,
-    "checked_at": 1780804482
-  },
-  {
     "url": "https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Paraguay.txt",
     "last_mod": -62135596800,
     "checked_at": 1780199451
@@ -223,5 +278,15 @@
     "url": "https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Qatar.txt",
     "last_mod": -62135596800,
     "checked_at": 1779594060
+  },
+  {
+    "url": "https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Saudi_Arabia.txt",
+    "last_mod": -62135596800,
+    "checked_at": 1782015254
+  },
+  {
+    "url": "https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Uzbekistan.txt",
+    "last_mod": -62135596800,
+    "checked_at": 1782015254
   }
 ]
