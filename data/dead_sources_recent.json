@@ -70,6 +70,31 @@
     "checked_at": 1782015254
   },
   {
+    "url": "https://raw.githubusercontent.com/HamiidFx/V2rayCollector/main/mixed_iran.txt",
+    "last_mod": -62135596800,
+    "checked_at": 1783220741
+  },
+  {
+    "url": "https://raw.githubusercontent.com/HamiidFx/V2rayCollector/main/ss_iran.txt",
+    "last_mod": -62135596800,
+    "checked_at": 1783220741
+  },
+  {
+    "url": "https://raw.githubusercontent.com/HamiidFx/V2rayCollector/main/trojan_iran.txt",
+    "last_mod": -62135596800,
+    "checked_at": 1783220741
+  },
+  {
+    "url": "https://raw.githubusercontent.com/HamiidFx/V2rayCollector/main/vless_iran.txt",
+    "last_mod": -62135596800,
+    "checked_at": 1783220741
+  },
+  {
+    "url": "https://raw.githubusercontent.com/HamiidFx/V2rayCollector/main/vmess_iran.txt",
+    "last_mod": -62135596800,
+    "checked_at": 1783220741
+  },
+  {
     "url": "https://raw.githubusercontent.com/IR-NETLIFY/NETLIFY/refs/heads/main/IR_NETLIFY_SUB.txt",
     "last_mod": -62135596800,
     "checked_at": 1778987280
@@ -248,6 +273,16 @@
     "url": "https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Iceland.txt",
     "last_mod": -62135596800,
     "checked_at": 1782015254
+  },
+  {
+    "url": "https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Ir.txt",
+    "last_mod": -62135596800,
+    "checked_at": 1783220741
+  },
+  {
+    "url": "https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Iraq.txt",
+    "last_mod": -62135596800,
+    "checked_at": 1783220741
   },
   {
     "url": "https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Malta.txt",
