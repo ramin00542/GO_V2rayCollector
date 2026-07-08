@@ -1,0 +1,1 @@
+trojan://%4D%69%54%69%56%50%4E@www.speedtest.net:443?path=%2F%4D%69%54%69%56%50%4E%3DDe&security=tls&alpn=http%2F1.1&insecure=0&host=germany.App-Cloud.ir&fp=chrome&type=ws&allowInsecure=0&sni=germany.App-Cloud.ir#telegram%20%
