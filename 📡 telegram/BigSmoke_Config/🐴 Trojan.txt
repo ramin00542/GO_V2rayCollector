@@ -1,0 +1,1 @@
+trojan://humanity@104.18.152.246:443?security=tls&sni=www.calmloud.com&alpn=http%2F1.1&fp=chrome&allowinsecure=0&type=ws&host=www.calmloud.com&path=%2Fassignment#🇩🇪All⁵
