@@ -1,7 +1,7 @@
-tg://proxy?server=65.109.255.65&port=8443&secret=dd104462821249bd7ac519130220c25d09tg://proxy?server=88.99.175.27&port=8443&secret=dd104462821249bd7ac519130220c25d09-𝗝𝗼𝗶𝗻
-tg://proxy?server=5.78.29.45&port=4455&secret=dd104462821249bd7ac519130220c25d09-𝗝𝗼𝗶𝗻
 tg://proxy?server=91.98.97.88&port=4455&secret=dd104462821249bd7ac519130220c25d09-𝗝𝗼𝗶𝗻
-tg://proxy?server=65.21.235.85&port=4455&secret=dd104462821249bd7ac519130220c25d09-𝗝𝗼𝗶𝗻
-tg://proxy?server=65.109.248.235&port=8443&secret=dd104462821249bd7ac519130220c25d09tg://proxy?server=65.109.244.117&port=8443&secret=dd104462821249bd7ac519130220c25d09https://t.me/proxy?server=nab.goooalir.co.uk&port=8443&secret=dd104462821249bd7ac519130220c25d09-𝗝𝗼𝗶𝗻
-tg://proxy?server=78.47.67.183&port=443&secret=dd104462821249bd7ac519130220c25d09https://t.me/proxy?server=87.248.129.180&port=443&secret=ee1603010200010001fc030386e24c3add626973636f7474692e79656b74616e65742e636f6dhttps://t.me/proxy?server=87.248.129.176&port=443&secret=ee1603010200010001fc030386e24c3add626973636f7474692e79656b74616e65742e636f6dhttps://t.me/proxy?server=65.108.126.206&port=443&secret=3XnnAQIAAQAH8AMDhuJMOt0-𝗝𝗼𝗶𝗻
 tg://proxy?server=167.233.176.11&port=443&secret=dd104462821249bd7ac519130220c25d09-𝗝𝗼𝗶𝗻
+tg://proxy?server=5.78.29.45&port=4455&secret=dd104462821249bd7ac519130220c25d09-𝗝𝗼𝗶𝗻
+tg://proxy?server=78.47.67.183&port=443&secret=dd104462821249bd7ac519130220c25d09https://t.me/proxy?server=87.248.129.180&port=443&secret=ee1603010200010001fc030386e24c3add626973636f7474692e79656b74616e65742e636f6dhttps://t.me/proxy?server=87.248.129.176&port=443&secret=ee1603010200010001fc030386e24c3add626973636f7474692e79656b74616e65742e636f6dhttps://t.me/proxy?server=65.108.126.206&port=443&secret=3XnnAQIAAQAH8AMDhuJMOt0-𝗝𝗼𝗶𝗻
+tg://proxy?server=65.21.235.85&port=4455&secret=dd104462821249bd7ac519130220c25d09-𝗝𝗼𝗶𝗻
+tg://proxy?server=65.109.255.65&port=8443&secret=dd104462821249bd7ac519130220c25d09tg://proxy?server=88.99.175.27&port=8443&secret=dd104462821249bd7ac519130220c25d09-𝗝𝗼𝗶𝗻
+tg://proxy?server=65.109.248.235&port=8443&secret=dd104462821249bd7ac519130220c25d09tg://proxy?server=65.109.244.117&port=8443&secret=dd104462821249bd7ac519130220c25d09https://t.me/proxy?server=nab.goooalir.co.uk&port=8443&secret=dd104462821249bd7ac519130220c25d09-𝗝𝗼𝗶𝗻
