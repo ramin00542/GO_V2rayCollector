@@ -20,11 +20,6 @@
     "checked_at": 1781410073
   },
   {
-    "url": "https://github.com/sakha1370/V2rayCollector/raw/refs/heads/main/socks_iran.txt",
-    "last_mod": -62135596800,
-    "checked_at": 1779594060
-  },
-  {
     "url": "https://raw.githubusercontent.com/CyrusTheV/we2rain/main/mixed_iran.txt",
     "last_mod": -62135596800,
     "checked_at": 1778353586
@@ -270,21 +265,6 @@
     "checked_at": 1782015254
   },
   {
-    "url": "https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Iceland.txt",
-    "last_mod": -62135596800,
-    "checked_at": 1782015254
-  },
-  {
-    "url": "https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Ir.txt",
-    "last_mod": -62135596800,
-    "checked_at": 1783220741
-  },
-  {
-    "url": "https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Iraq.txt",
-    "last_mod": -62135596800,
-    "checked_at": 1783220741
-  },
-  {
     "url": "https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Malta.txt",
     "last_mod": -62135596800,
     "checked_at": 1780199451
@@ -298,11 +278,6 @@
     "url": "https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Nigeria.txt",
     "last_mod": -62135596800,
     "checked_at": 1780804482
-  },
-  {
-    "url": "https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Nl.txt",
-    "last_mod": -62135596800,
-    "checked_at": 1781410073
   },
   {
     "url": "https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Panama.txt",
@@ -323,5 +298,10 @@
     "url": "https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Qatar.txt",
     "last_mod": -62135596800,
     "checked_at": 1779594060
+  },
+  {
+    "url": "https://raw.githubusercontent.com/wang1680/v2ray-configs/main/Countries/Uzbekistan.txt",
+    "last_mod": -62135596800,
+    "checked_at": 1783824506
   }
 ]
