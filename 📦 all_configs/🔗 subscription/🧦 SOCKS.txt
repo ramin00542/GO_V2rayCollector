@@ -1,0 +1,6 @@
+socks://Og@80.191.243.212:1080#
+socks://Og@89.47.202.228:1095#%F0%9F%87%AE%F0%9F%87%B9%20%40ConfigV2RayNG%20%DA%A9%D8%A7%D9%86%D8%A7%D9%84%20%D9%85%D8%A7
+socks://Og@185.235.197.46:8443#MTMVPN%201
+socks://Og@128.140.82.50:8443#%40MDvpnSEC
+socks://TjljeUY2anZneTNaRW1DTktlMDR6QklSOjFUZWxlZ3JhbV9Nb2ppVlBO@ch-zur.pvdata.host:1080#MTMVPN%2041socks://TjljeUY2anZneTNaRW1DTktlMDR6QklSOjFUZWxlZ3JhbV9Nb2ppVlBO@ch-zur.pvdata.host:1080#MTMVPN%2042
+socks://Og@78.110.121.34:10808#Telegram%20%40mtmvpn%201
