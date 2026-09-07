@@ -9,3 +9,8 @@ socks://Og@128.140.82.50:8443#%40MDvpnSEC
 socks://TjljeUY2anZneTNaRW1DTktlMDR6QklSOjFUZWxlZ3JhbV9Nb2ppVlBO@ch-zur.pvdata.host:1080#MTMVPN%2041socks://TjljeUY2anZneTNaRW1DTktlMDR6QklSOjFUZWxlZ3JhbV9Nb2ppVlBO@ch-zur.pvdata.host:1080#MTMVPN%2042
 socks://Og@78.110.121.34:10808#Telegram%20%40mtmvpn%201
 socks://Og@80.191.243.212:1080#
+socks://TjljeUY2anZneTNaRW1DTktlMDR6QklSOjFUZWxlZ3JhbV9Nb2ppVlBO@ch-zur.pvdata.host:1080#MTMVPN%2041socks://TjljeUY2anZneTNaRW1DTktlMDR6QklSOjFUZWxlZ3JhbV9Nb2ppVlBO@ch-zur.pvdata.host:1080#MTMVPN%2042
+socks://Og@128.140.82.50:8443#%40MDvpnSEC
+socks://Og@80.191.243.212:1080#
+socks://Og@185.235.197.46:8443#MTMVPN%201
+socks://Og@78.110.121.34:10808#Telegram%20%40mtmvpn%201
