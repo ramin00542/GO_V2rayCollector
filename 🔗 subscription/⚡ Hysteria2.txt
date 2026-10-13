@@ -1,4 +1,4 @@
+hysteria2://capadm96216165:nXUv9sPkKFsDMmhZ7jbE28sw@208.69.78.217:21175?sni=vpn.local&obfs=salamander&obfs-password=mbQXP2ASuHbF6ZPq&insecure=1#EPODONIOS
 hysteria2://56ff50da-a238-4646-95ab-dd159634bd87@37.9.4.112:17701/?obfs=salamander&obfs-password=588c76723192f87cfe6d6786816177cd2bd9773acdc545928d7d1d5e8338d4ce&sni=ru03.arpanet-cdn.com#🇷🇺
 hysteria2://8bd04756-3beb-4348-82c9-d35453df50ce@157.22.240.206:28152?security=tls&alpn=h3&insecure=0&sni=alb1337.zaebalsanoproxyklinus.lol#%F0%9F%87%A6%F0%9F%87%B1193025%20%7C%20%E2%9A%A1%EF%B8%8FTelegram%20%3D%20t.me%2FLonU
 hysteria2://2iv39iey4nw13btu@185.83.112.145:53423?security=tls&obfs=salamander&alpn=h3&obfs-password=8foko94vimvype1w&insecure=0&sni=185.83.112.145#🇮🇷
-hysteria2://0637f970-5223-4d8e-86b4-07c62509c6e8@153.76.204.223:13188?security=tls&obfs=salamander&obfs-password=WM0CSORkdxWByZqumlLav9pU7irma8IV&insecure=0&sni=audio-forwarder.nord-central.duckdns.org#EPODONIOS
