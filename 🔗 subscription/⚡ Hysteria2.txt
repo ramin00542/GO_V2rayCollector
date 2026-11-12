@@ -1,1 +1,2 @@
+hysteria2://2iv39iey4nw13btu@185.83.112.145:53423?security=tls&obfs=salamander&alpn=h3&obfs-password=8foko94vimvype1w&insecure=0&sni=185.83.112.145#🇮🇷
 hysteria2://7ab3c77e-8fcc-4848-918f-cae3d4eac794@194.87.118.184:2053/?sni=match-stream.lovkisport.blog#🇷🇺
