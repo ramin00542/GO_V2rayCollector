@@ -1,8 +1,9 @@
-trojan://jyneij42qcfg3x9f@179.254.191.2:39105?type=tcp&security=none#@Vip_Security
+trojan://stdd834er4umvi3q@62.144.51.95:8443?security=reality&pbk=1lS1OPDgOftXWJPbXKiN8QG2Y8XCSWQNUE_pLJKFgSg&headerType=none&fp=chrome&spx=%2F3ca39cd1f3b9e98&type=tcp&sni=beta.www.cloudflare.com&sid=a2956fb1cdff#configV2rayNG-708
+trojan://AanARxLoEJexARCmUdenceBWVfXvcdDR@217.60.19.234:2084?security=reality&type=grpc&serviceName=grpc-health-check&mode=gun&sni=login.vk.com&fp=chrome&pbk=Xx3r5KsSKa1I8O3avmwMbgXOWj_-MqiqzTO_7BzBxyU&sid=58c5b3ee013bdc8f#@Vip_Security
+trojan://LDSLDq9XlM4-92pvTPOUuklMb99BLOCrdyejsupEca4@156.246.93.237:17443?allowInsecure=1&sni=jpk.wentibuxiaobuda.xyz#@Vip_Security
 trojan://HAB6WFjL2pKev0cN3ML1hz6V4pj1_S00@170.168.5.123:8228?security=tls&type=grpc&serviceName=trgrpc&mode=gun&sni=nl100.marshonet.store&alpn=h2#@Vip_Security
+trojan://jyneij42qcfg3x9f@179.254.191.2:39105?type=tcp&security=none#@Vip_Security
 trojan://og85o9QeVVvtMD2sxPjO@sonau.yaremonta.loc.cc:8444?security=none&headerType=&type=tcp#@Vip_Security
 trojan://e7TTceggMwUMg%2BaFN:F4@172.66.47.18:443?security=tls&sni=APkD964o1oghlTghHt0L0Of.pAgeS.Dev&fp=chrome&type=ws&path=/tr/SIeRkg2QvR2Zcpu0SeEMow?ed=2560#ConfigsHUB-331
 trojan://pu0149u56dhl4t43@shop.raadshop.bond:8447?mode=auto&path=%2F1d236330ba&security=reality&extra=%7B%22mode%22%3A%22auto%22%2C%22xPaddingBytes%22%3A%22100-1000%22%7D&pbk=XriFROPBSExFRv1woiPKt6tmBn1AW8UPSVnk6jqG1Rk&fp=chrome&spx=%2Ff87520c3783261d&type=xhttp&sni=dl.google.com&sid=5200238f5ec02cd0#configV2rayNG-572
 trojan://463f7453753f4d47@ikr200.zxom.eu.org:20045?encryption=chacha20#@Vip_Security
-trojan://0ab6c98dae3b48e8b9c4a776b6c9c19a@leviko-de5955.shopingggg.ir:443?security=tls&insecure=0&headerType=none&type=tcp&allowInsecure=0&sni=courses.iloverussia2026.com#@Vip_Security
-trojan://d7563108-615c-4338-a7bd-77f359869a4a@157.254.38.210:20051?sni=hk.catxstar.com&allowInsecure=0#@Vip_Security
